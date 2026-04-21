@@ -1,0 +1,10 @@
+Return a string containing space-delimited numbers starting from 0 upto n inclusive.
+>>> string_sequence(0)
+'0'
+>>> string_sequence(5)
+'0 1 2 3 4 5'
+
+```yui
+標準ライブラリを使う
+
+string_sequence = 入力 n に対し {

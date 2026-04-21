@@ -1,0 +1,10 @@
+Return length of given string
+>>> strlen('')
+0
+>>> strlen('abc')
+3
+
+```yui
+標準ライブラリを使う
+
+strlen = 入力 string に対し {

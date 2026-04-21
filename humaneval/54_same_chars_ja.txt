@@ -1,0 +1,21 @@
+2つの単語が同じ文字セットから構成されるかどうか判定する。
+
+実行例
+>>> same_chars('eabcdzzzz', 'dddzzzzzzzddeddabc')
+True
+>>> same_chars('abcd', 'dddddddabc')
+True
+>>> same_chars('dddddddabc', 'abcd')
+True
+>>> same_chars('eabcd', 'dddddddabc')
+False
+>>> same_chars('abcd', 'dddddddabce')
+False
+>>> same_chars('eabcdzzzz', 'dddzzzzzzzddddabc')
+False
+
+### 回答
+```yui
+標準ライブラリを使う
+
+same_chars = 入力 s0, s1 に対し {

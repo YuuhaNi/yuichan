@@ -1,0 +1,12 @@
+正の整数aとbが与えられたとき、aとbの間にある偶数の数字を昇順で返してください。
+
+例えば:
+generate_integers(2, 8) => [2, 4, 6, 8]
+generate_integers(8, 2) => [2, 4, 6, 8]
+generate_integers(10, 14) => []
+
+### 回答
+```yui
+標準ライブラリを使う
+
+generate_integers = 入力 a, b に対し {

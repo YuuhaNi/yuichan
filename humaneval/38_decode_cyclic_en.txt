@@ -1,0 +1,6 @@
+returns encoded string by cycling groups of three characters.
+
+```yui
+標準ライブラリを使う
+
+decode_cyclic = 入力 s に対し {

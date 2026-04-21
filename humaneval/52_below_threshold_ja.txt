@@ -1,0 +1,13 @@
+リスト l 内の全ての数値が閾値 t 以下の場合、Trueを返す。
+
+実行例
+>>> below_threshold([1, 2, 4, 10], 100)
+True
+>>> below_threshold([1, 20, 4, 10], 5)
+False
+
+### 回答
+```yui
+標準ライブラリを使う
+
+below_threshold = 入力 l, t に対し {

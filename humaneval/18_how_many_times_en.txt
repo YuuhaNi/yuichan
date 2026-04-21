@@ -1,0 +1,12 @@
+Find how many times a given substring can be found in the original string. Count overlaping cases.
+>>> how_many_times('', 'a')
+0
+>>> how_many_times('aaa', 'a')
+3
+>>> how_many_times('aaaa', 'aa')
+3
+
+```yui
+標準ライブラリを使う
+
+how_many_times = 入力 string, substring に対し {

@@ -1,0 +1,13 @@
+整数 a と b の最大公約数を返す
+
+実行例
+>>> greatest_common_divisor(3, 5)
+1
+>>> greatest_common_divisor(25, 15)
+5
+
+### 回答
+```yui
+標準ライブラリを使う
+
+greatest_common_divisor = 入力 a, b に対し {

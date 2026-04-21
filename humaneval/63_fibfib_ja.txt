@@ -1,0 +1,20 @@
+FibFib数列はフィボナッチ数列に似た数列で、以下のように定義される：
+fibfib(0) == 0
+fibfib(1) == 0
+fibfib(2) == 1
+fibfib(n) == fibfib(n-1) + fibfib(n-2) + fibfib(n-3).
+fibfib数列のn番目の要素を効率よく計算する関数を書いてください。
+
+実行例
+>>> fibfib(1)
+0
+>>> fibfib(5)
+4
+>>> fibfib(8)
+24
+
+### 回答
+```yui
+標準ライブラリを使う
+
+fibfib = 入力 n に対し {

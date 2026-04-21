@@ -1,0 +1,12 @@
+Return n-th Fibonacci number.
+>>> fib(10)
+55
+>>> fib(1)
+1
+>>> fib(8)
+21
+
+```yui
+標準ライブラリを使う
+
+fib = 入力 n に対し {

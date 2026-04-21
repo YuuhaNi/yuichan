@@ -1,0 +1,11 @@
+与えられた数値nが、ちょうど4つの正の偶数の合計として表現できるかどうかを評価してください。
+例
+is_equal_to_sum_even(4) == False
+is_equal_to_sum_even(6) == False
+is_equal_to_sum_even(8) == True
+
+### 回答
+```yui
+標準ライブラリを使う
+
+is_equal_to_sum_even = 入力 n に対し {

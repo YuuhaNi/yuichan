@@ -1,0 +1,15 @@
+リストの要素が単調増加または単調減少する場合にTrueを返す。
+
+実行例
+>>> monotonic([1, 2, 4, 20])
+True
+>>> monotonic([1, 20, 4, 10])
+False
+>>> monotonic([4, 1, 0, -10])
+True
+
+### 回答
+```yui
+標準ライブラリを使う
+
+monotonic = 入力 l に対し {

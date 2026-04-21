@@ -1,0 +1,16 @@
+クラスの名前（文字列）と拡張子のリストが与えられます。
+この拡張子は、指定されたクラスに追加のクラスをロードするために使用されます。
+拡張子の強度は次のように計算されます：CAPは拡張子の名前に含まれる
+大文字の数、SMは小文字の数です。強度は、CAP - SM で与えられます。
+最も強い拡張子を見つけて、この形式の文字列を返してください：ClassName.StrongestExtensionName。
+同じ強度を持つ2つ以上の拡張子がある場合は、リストで最初に来るものを選びます。
+例えば、"Slices"というクラスと、拡張子のリスト['SErviNGSliCes', 'Cheese', 'StuFfed'] が与えられた場合、'
+SErviNGSliCes'が最も強い拡張子（強度は-1）となるため、'Slices.SErviNGSliCes'を返すべきです。
+例：
+Strongest_Extension('my_class', ['AA', 'Be', 'CC']) == 'my_class.AA'
+
+### 回答
+```yui
+標準ライブラリを使う
+
+Strongest_Extension = 入力 class_name, extensions に対し {

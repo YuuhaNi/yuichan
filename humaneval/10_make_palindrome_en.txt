@@ -1,0 +1,6 @@
+Test if given string is a palindrome
+
+```yui
+標準ライブラリを使う
+
+make_palindrome = 入力 string に対し {

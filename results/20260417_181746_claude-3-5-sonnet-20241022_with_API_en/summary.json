@@ -1,0 +1,14 @@
+{
+  "model": "claude-3-5-sonnet-20241022",
+  "lang": "ja",
+  "template": null,
+  "context": "docs/API_en.md",
+  "k": 1,
+  "total_problems": 1,
+  "passed_problems": 0,
+  "failed_problems": 1,
+  "pass_at_k": 0.0,
+  "timestamp": "20260417_181746",
+  "total_samples": 1,
+  "passed_samples": 0
+}

@@ -1,0 +1,13 @@
+引数は'zero'から'nine'までの英単語の数を空白で区切った文字列である。
+有効な英単語は''、'zero', 'one'、'two'、'three'、'four'、'five'、'six'、'seven'、'eight'、'nine'である。
+関数は、英単語の数を小さい方から大きい方へとソートした文字列を返す。
+
+実行例
+>>> sort_numbers('three one five')
+'one three five'
+
+### 回答
+```yui
+標準ライブラリを使う
+
+sort_numbers = 入力 numbers に対し {

@@ -1,0 +1,14 @@
+整数のリストが与えられる。
+リストの2番目に小さい要素を返す関数 next_smallest() を書きなさい。
+そのような要素がない場合は None を返す。
+
+next_smallest([1, 2, 3, 4, 5]) == 2
+next_smallest([5, 1, 4, 3, 2]) == 2
+next_smallest([]) == None
+next_smallest([1, 1]) == None
+
+### 回答
+```yui
+標準ライブラリを使う
+
+next_smallest = 入力 lst に対し {

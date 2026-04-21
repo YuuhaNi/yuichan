@@ -1,0 +1,15 @@
+文字列を引数にとり、アルファベットを回転させて暗号化した
+文字列を返す関数encryptを作成せよ。
+アルファベットは、文字位置を2倍して2つ下にシフトするように
+回転する。
+例:
+encrypt('hi') returns 'lm'
+encrypt('asdfghjkl') returns 'ewhjklnop'
+encrypt('gf') returns 'kj'
+encrypt('et') returns 'ix'
+
+### 回答
+```yui
+標準ライブラリを使う
+
+encrypt = 入力 s に対し {

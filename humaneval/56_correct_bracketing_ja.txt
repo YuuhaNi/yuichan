@@ -1,0 +1,19 @@
+引数bracketsは"<"と">"の文字列である。
+すべての開き括弧が対応する閉じ括弧を持つ場合、Trueを返す。
+
+
+実行例
+>>> correct_bracketing("<")
+False
+>>> correct_bracketing("<>")
+True
+>>> correct_bracketing("<<><>>")
+True
+>>> correct_bracketing("><<>")
+False
+
+### 回答
+```yui
+標準ライブラリを使う
+
+correct_bracketing = 入力 brackets に対し {

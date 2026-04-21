@@ -1,0 +1,16 @@
+整数aを受け取り、この整数がある整数の3乗である場合にTrue
+を返す関数を書きなさい。
+注意：入力は常に処理可能であると仮定してよい。
+例:
+iscube(1) ==> True
+iscube(2) ==> False
+iscube(-1) ==> True
+iscube(64) ==> True
+iscube(0) ==> True
+iscube(180) ==> False
+
+### 回答
+```yui
+標準ライブラリを使う
+
+iscube = 入力 a に対し {

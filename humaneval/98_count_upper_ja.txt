@@ -1,0 +1,11 @@
+文字列 s が与えられたとき、偶数のインデックスに含まれる大文字の母音の数を数える。
+例えば:
+count_upper('aBCdEf') returns 1
+count_upper('abcdefg') returns 0
+count_upper('dBBE') returns 0
+
+### 回答
+```yui
+標準ライブラリを使う
+
+count_upper = 入力 s に対し {

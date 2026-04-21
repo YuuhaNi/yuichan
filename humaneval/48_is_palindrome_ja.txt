@@ -1,0 +1,17 @@
+与えられた文字列が回文かどうかを判定する
+
+実行例
+>>> is_palindrome('')
+True
+>>> is_palindrome('aba')
+True
+>>> is_palindrome('aaaaa')
+True
+>>> is_palindrome('zbcd')
+False
+
+### 回答
+```yui
+標準ライブラリを使う
+
+is_palindrome = 入力 text に対し {

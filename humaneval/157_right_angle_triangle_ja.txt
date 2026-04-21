@@ -1,0 +1,11 @@
+三角形の3辺の長さを与える。三角形が直角三角形ならTrueを、そうでなければFalseを返す。
+直角三角形とは、1つの角が直角または90度である三角形のことである。
+例:
+right_angle_triangle(3, 4, 5) == True
+right_angle_triangle(1, 2, 3) == False
+
+### 回答
+```yui
+標準ライブラリを使う
+
+right_angle_triangle = 入力 a, b, c に対し {

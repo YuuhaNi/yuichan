@@ -1,0 +1,7 @@
+Given a positive integer n, return the count of the numbers of n-digit
+positive integers that start or end with 1.
+
+```yui
+標準ライブラリを使う
+
+starts_one_ends = 入力 n に対し {

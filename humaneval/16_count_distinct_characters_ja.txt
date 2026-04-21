@@ -1,0 +1,13 @@
+文字列が与えられたとき、その文字列が（大文字小文字に関係なく）いくつの異なる文字が含まれているか数える
+
+実行例
+>>> count_distinct_characters('xyzXYZ')
+3
+>>> count_distinct_characters('Jerry')
+4
+
+### 回答
+```yui
+標準ライブラリを使う
+
+count_distinct_characters = 入力 string に対し {

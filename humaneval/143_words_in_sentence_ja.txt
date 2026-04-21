@@ -1,0 +1,21 @@
+文を表す文字列が与えられ、その文には空白で区切られたいくつかの単語が含まれている。
+元の文の単語を含みその長さが素数である文字列を返す必要がある。
+新しい文字列の単語の順序は元の文字列と同じでなければならない。
+
+例 1:
+入力: sentence = "This is a test"
+出力: "is"
+
+例 2:
+入力: sentence = "lets go for swimming"
+出力: "go for"
+
+制約:
+* 1 <= len(sentence) <= 100
+* sentence contains only letters
+
+### 回答
+```yui
+標準ライブラリを使う
+
+words_in_sentence = 入力 sentence に対し {

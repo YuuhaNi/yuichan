@@ -1,0 +1,17 @@
+単語の文字列が与えられ、あなたのタスクは退屈指数を数える
+ことである。退屈指数とは、"I "で始まる文のことである。
+文は'.'、’?’、'!'のいずれかで区切られる。          
+
+例えば:
+
+実行例
+>>> is_bored("Hello world")
+0
+>>> is_bored("The sky is blue. The sun is shining. I love this weather")
+1
+
+### 回答
+```yui
+標準ライブラリを使う
+
+is_bored = 入力 S に対し {

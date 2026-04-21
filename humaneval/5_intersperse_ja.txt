@@ -1,0 +1,13 @@
+数値リスト numbers 中の全ての連続する二要素の間に、'delimeterの値を挿入する
+
+実行例
+>>> intersperse([], 4)
+[]
+>>> intersperse([1, 2, 3], 4)
+[1, 4, 2, 4, 3]
+
+### 回答
+```yui
+標準ライブラリを使う
+
+intersperse = 入力 numbers, delimeter に対し {

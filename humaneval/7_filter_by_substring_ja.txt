@@ -1,0 +1,13 @@
+文字列リストstringsを、与えれた部分文字列substringを含むものだけにフィルタする
+
+実行例
+>>> filter_by_substring([], 'a')
+[]
+>>> filter_by_substring(['abc', 'bacd', 'cde', 'array'], 'a')
+['abc', 'bacd', 'array']
+
+### 回答
+```yui
+標準ライブラリを使う
+
+filter_by_substring = 入力 strings, substring に対し {

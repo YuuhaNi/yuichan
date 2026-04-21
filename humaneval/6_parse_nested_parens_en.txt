@@ -1,0 +1,11 @@
+Input to this function is a string represented multiple groups for nested parentheses separated by spaces.
+For each of the group, output the deepest level of nesting of parentheses.
+E.g. (()()) has maximum two levels of nesting while ((())) has three.
+
+>>> parse_nested_parens('(()()) ((())) () ((())()())')
+[2, 3, 1, 3]
+
+```yui
+標準ライブラリを使う
+
+parse_nested_parens = 入力 paren_string に対し {

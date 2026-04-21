@@ -1,0 +1,16 @@
+部分文字列substringが文字列stringの中で何回見つかるか数える。
+重なるケースもカウントに含まれる。
+
+実行例
+>>> how_many_times('', 'a')
+0
+>>> how_many_times('aaa', 'a')
+3
+>>> how_many_times('aaaa', 'aa')
+3
+
+### 回答
+```yui
+標準ライブラリを使う
+
+how_many_times = 入力 string, substring に対し {

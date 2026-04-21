@@ -1,0 +1,18 @@
+数字のみで構成された文字列のリストを引数として受け取り、新しいリストを返します。
+出力される新しいリストの各要素は、"the number of odd elements in the string i of the 
+input."となりますが、この文字列内のすべての 'i' は、入力リストのi番目の文字列に含ま
+れる奇数の数に置き換えられます。
+
+
+実行例
+>>> odd_count(['1234567'])
+["the number of odd elements 4n the str4ng 4 of the 4nput."]
+>>> odd_count(['3',"11111111"])
+["the number of odd elements 1n the str1ng 1 of the 1nput.",
+"the number of odd elements 8n the str8ng 8 of the 8nput."]
+
+### 回答
+```yui
+標準ライブラリを使う
+
+odd_count = 入力 lst に対し {

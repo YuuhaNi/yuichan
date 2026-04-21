@@ -1,0 +1,10 @@
+Given a non-empty list of integers lst. add the even elements that are at odd indices..
+
+
+Examples:
+add([4, 2, 6, 7]) ==> 2
+
+```yui
+標準ライブラリを使う
+
+add = 入力 lst に対し {

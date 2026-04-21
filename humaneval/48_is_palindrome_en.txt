@@ -1,0 +1,14 @@
+Checks if given string is a palindrome
+>>> is_palindrome('')
+True
+>>> is_palindrome('aba')
+True
+>>> is_palindrome('aaaaa')
+True
+>>> is_palindrome('zbcd')
+False
+
+```yui
+標準ライブラリを使う
+
+is_palindrome = 入力 text に対し {

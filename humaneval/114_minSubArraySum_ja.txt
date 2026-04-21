@@ -1,0 +1,10 @@
+整数の配列 nums が与えられたとき、nums の空でない部分配列の最小和を求めよ。
+例:
+minSubArraySum([2, 3, 4, 1, 2, 4]) == 1
+minSubArraySum([-1, -2, -3]) == -6
+
+### 回答
+```yui
+標準ライブラリを使う
+
+minSubArraySum = 入力 nums に対し {

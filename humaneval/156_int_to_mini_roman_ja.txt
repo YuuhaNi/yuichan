@@ -1,0 +1,14 @@
+正の整数が与えられたとき、ローマ数字に相当する文字列を小文字で返す。
+制限事項1 <= num <= 1000
+例:
+
+実行例
+>>> int_to_mini_roman(19) == 'xix'
+>>> int_to_mini_roman(152) == 'clii'
+>>> int_to_mini_roman(426) == 'cdxxvi'
+
+### 回答
+```yui
+標準ライブラリを使う
+
+int_to_mini_roman = 入力 number に対し {

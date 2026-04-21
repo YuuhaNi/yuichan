@@ -1,0 +1,16 @@
+この関数は、角括弧だけを含む文字列を入力として受け取ります。括弧が有効な順序で
+並んでいて、その中に少なくとも1つの括弧が入れ子になっている場合、関数はTrueを
+返すようにしてください。
+
+is_nested('[[]]') ➞ True
+is_nested('[]]]]]]][[[[[]') ➞ False
+is_nested('[][]') ➞ False
+is_nested('[]') ➞ False
+is_nested('[[][]]') ➞ True
+is_nested('[[]][[') ➞ True
+
+### 回答
+```yui
+標準ライブラリを使う
+
+is_nested = 入力 string に対し {

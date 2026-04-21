@@ -1,0 +1,14 @@
+与えられた文字列の最後の文字がアルファベットであり、かつ単語の一部でなければTrueを、
+そうでなければFalseを返す関数を作成せよ。
+注意：単語とはスペースで区切られた文字の並びである。
+例:
+check_if_last_char_is_a_letter("apple pie") ➞ False
+check_if_last_char_is_a_letter("apple pi e") ➞ True
+check_if_last_char_is_a_letter("apple pi e ") ➞ False
+check_if_last_char_is_a_letter("") ➞ False
+
+### 回答
+```yui
+標準ライブラリを使う
+
+check_if_last_char_is_a_letter = 入力 txt に対し {

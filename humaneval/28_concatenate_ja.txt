@@ -1,0 +1,13 @@
+文字列のリストを1つの文字列に連結する
+
+実行例
+>>> concatenate([])
+''
+>>> concatenate(['a', 'b', 'c'])
+'abc'
+
+### 回答
+```yui
+標準ライブラリを使う
+
+concatenate = 入力 strings に対し {

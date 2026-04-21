@@ -1,0 +1,23 @@
+与えられた数が素数であれば真を、そうでなければ偽を返す。
+
+実行例
+>>> is_prime(6)
+False
+>>> is_prime(101)
+True
+>>> is_prime(11)
+True
+>>> is_prime(13441)
+True
+>>> is_prime(61)
+True
+>>> is_prime(4)
+False
+>>> is_prime(1)
+False
+
+### 回答
+```yui
+標準ライブラリを使う
+
+is_prime = 入力 n に対し {

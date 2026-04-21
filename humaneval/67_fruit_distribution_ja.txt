@@ -1,0 +1,15 @@
+この課題では、果物の入ったカゴに配られたリンゴとオレンジの数を表す文字列が
+与えられ、このカゴにはリンゴ、オレンジ、マンゴーの果実が入っている。オレンジ
+とリンゴの総数を表す文字列と、かごの中の果物の総数を表す整数が与えられたら、
+かごの中のマンゴーの果物の数を返しなさい。
+たとえば:
+fruit_distribution("5 apples and 6 oranges", 19) ->19 - 5 - 6 = 8
+fruit_distribution("0 apples and 1 oranges",3) -> 3 - 0 - 1 = 2
+fruit_distribution("2 apples and 3 oranges", 100) -> 100 - 2 - 3 = 95
+fruit_distribution("100 apples and 1 oranges",120) -> 120 - 100 - 1 = 19
+
+### 回答
+```yui
+標準ライブラリを使う
+
+fruit_distribution = 入力 s, n に対し {

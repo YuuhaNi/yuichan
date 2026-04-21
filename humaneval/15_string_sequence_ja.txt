@@ -1,0 +1,13 @@
+0からnまでの数字を空白区切りで連結した文字列で返す。
+
+実行例
+>>> string_sequence(0)
+'0'
+>>> string_sequence(5)
+'0 1 2 3 4 5'
+
+### 回答
+```yui
+標準ライブラリを使う
+
+string_sequence = 入力 n に対し {

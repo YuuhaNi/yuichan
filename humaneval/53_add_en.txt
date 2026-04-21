@@ -1,0 +1,10 @@
+Add two numbers x and y
+>>> add(2, 3)
+5
+>>> add(5, 7)
+12
+
+```yui
+標準ライブラリを使う
+
+add = 入力 x, y に対し {

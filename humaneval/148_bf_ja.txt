@@ -1,0 +1,15 @@
+私たちの太陽系には8つの惑星があります：太陽に最も近いのはVenus, Earth, Mars, Jupiter, Saturn, 
+Uranus, Neptuneです。
+planet1とplanet2という2つの惑星名を文字列として受け取る関数を作成してください。
+この関数は、planet1の軌道とplanet2の軌道の間に位置するすべての惑星を太陽に近い順に並べたタプルを返すべきです。
+planet1またはplanet2が正確な惑星名でない場合、関数は空のタプルを返すべきです。
+例
+bf("Jupiter", "Neptune") ==> ("Saturn", "Uranus")
+bf("Earth", "Mercury") ==> ("Venus")
+bf("Mercury", "Uranus") ==> ("Venus", "Earth", "Mars", "Jupiter", "Saturn")
+
+### 回答
+```yui
+標準ライブラリを使う
+
+bf = 入力 planet1, planet2 に対し {

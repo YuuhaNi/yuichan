@@ -1,0 +1,10 @@
+Concatenate list of strings into a single string
+>>> concatenate([])
+''
+>>> concatenate(['a', 'b', 'c'])
+'abc'
+
+```yui
+標準ライブラリを使う
+
+concatenate = 入力 strings に対し {

@@ -1,0 +1,8 @@
+For a given string, flip lowercase characters to uppercase and uppercase to lowercase.
+>>> flip_case('Hello')
+'hELLO'
+
+```yui
+標準ライブラリを使う
+
+flip_case = 入力 string に対し {

@@ -1,0 +1,12 @@
+カンマまたは空白で区切られた単語の文字列が与えられる。あなたのタスクは、
+文字列を単語に分割し、単語の配列を返すことである。
+
+例えば:
+words_string("Hi, my name is John") == ["Hi", "my", "name", "is", "John"]
+words_string("One, two, three, four, five, six") == ["One", "two", "three", "four", "five", "six"]
+
+### 回答
+```yui
+標準ライブラリを使う
+
+words_string = 入力 s に対し {

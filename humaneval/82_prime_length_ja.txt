@@ -1,0 +1,12 @@
+文字列を受け取り、文字列の長さが素数であればTrueを、そうでなければFalseを返す関数を書く。
+例
+prime_length('Hello') == True
+prime_length('abcdcba') == True
+prime_length('kittens') == True
+prime_length('orange') == False
+
+### 回答
+```yui
+標準ライブラリを使う
+
+prime_length = 入力 string に対し {

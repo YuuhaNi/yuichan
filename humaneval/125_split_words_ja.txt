@@ -1,0 +1,13 @@
+単語の文字列が与えられた場合、空白で分割された単語のリストを返す。
+テキスト中に空白が存在しない場合は、カンマ ',' で分割する必要がある。カンマが存在しない場合は、
+アルファベットの奇数順の小文字の数を返す必要がある。ord('a') = 0, ord('b') = 1, ... ord('z') = 25
+例
+split_words("Hello world!") ➞ ["Hello", "world!"]
+split_words("Hello,world!") ➞ ["Hello", "world!"]
+split_words("abcdef") == 3
+
+### 回答
+```yui
+標準ライブラリを使う
+
+split_words = 入力 txt に対し {

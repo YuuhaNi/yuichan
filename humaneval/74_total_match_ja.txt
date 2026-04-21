@@ -1,0 +1,17 @@
+２つの文字列リストを受け取り、リストの全文字数の合計がもう一方
+のリストより少ないリストを返す関数を書きなさい。
+
+もし2つのリストの文字数が同じなら、最初のリストを返す。
+
+例
+total_match([], []) ➞ []
+total_match(['hi', 'admin'], ['hI', 'Hi']) ➞ ['hI', 'Hi']
+total_match(['hi', 'admin'], ['hi', 'hi', 'admin', 'project']) ➞ ['hi', 'admin']
+total_match(['hi', 'admin'], ['hI', 'hi', 'hi']) ➞ ['hI', 'hi', 'hi']
+total_match(['4'], ['1', '2', '3', '4', '5']) ➞ ['4']
+
+### 回答
+```yui
+標準ライブラリを使う
+
+total_match = 入力 lst1, lst2 に対し {

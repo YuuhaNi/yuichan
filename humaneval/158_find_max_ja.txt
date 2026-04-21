@@ -1,0 +1,13 @@
+文字列のリストを受け取る関数を書きなさい。
+リストは異なる単語を含む。異なる固有の文字数が最も多い単語を返す。
+複数の文字列が同じ文字数を持つ場合は、辞書順で最初に来るものを返すことにする。
+
+find_max(["name", "of", "string"]) == "string"
+find_max(["name", "enam", "game"]) == "enam"
+find_max(["aaaaaaa", "bb" ,"cc"]) == ""aaaaaaa"
+
+### 回答
+```yui
+標準ライブラリを使う
+
+find_max = 入力 words に対し {

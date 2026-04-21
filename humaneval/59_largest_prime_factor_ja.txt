@@ -1,0 +1,13 @@
+nの最大となる素因数を返す。ただし、 n > 1 を前提とし、素数ではないものとする。
+
+実行例
+>>> largest_prime_factor(13195)
+29
+>>> largest_prime_factor(2048)
+2
+
+### 回答
+```yui
+標準ライブラリを使う
+
+largest_prime_factor = 入力 n に対し {

@@ -1,0 +1,16 @@
+あなたは文字列sが与えられる。
+あなたのタスクは、その文字列が幸せかどうかをチェックすることである。
+文字列は幸せとは、文字列の長さが少なくとも3以上で、連続する3文字がすべて異なる場合である。
+例えば:
+is_happy(a) => False
+is_happy(aa) => False
+is_happy(abcd) => True
+is_happy(aabb) => False
+is_happy(adb) => True
+is_happy(xyy) => False
+
+### 回答
+```yui
+標準ライブラリを使う
+
+is_happy = 入力 s に対し {

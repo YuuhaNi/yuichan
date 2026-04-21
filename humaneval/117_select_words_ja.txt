@@ -1,0 +1,16 @@
+ある文字列sと自然数nが与えらる。あなたに課せられたタスクは、文字列s
+の中から、ちょうどn個の子音を含むすべての単語のリストを現れる順に返す
+関数を実装することである。
+注意：入力文字列には英文字と空白しか含まれないと仮定してもよい。
+例:
+select_words("Mary had a little lamb", 4) ==> ["little"]
+select_words("Mary had a little lamb", 3) ==> ["Mary", "lamb"]
+select_words("simple white space", 2) ==> []
+select_words("Hello world", 4) ==> ["world"]
+select_words("Uncle sam", 3) ==> ["Uncle"]
+
+### 回答
+```yui
+標準ライブラリを使う
+
+select_words = 入力 s, n に対し {

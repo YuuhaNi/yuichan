@@ -1,0 +1,6 @@
+Add more test cases.
+
+```yui
+標準ライブラリを使う
+
+vowels_count = 入力 s に対し {

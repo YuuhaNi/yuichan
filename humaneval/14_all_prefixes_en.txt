@@ -1,0 +1,8 @@
+Return list of all prefixes from shortest to longest of the input string
+>>> all_prefixes('abc')
+['a', 'ab', 'abc']
+
+```yui
+標準ライブラリを使う
+
+all_prefixes = 入力 string に対し {
