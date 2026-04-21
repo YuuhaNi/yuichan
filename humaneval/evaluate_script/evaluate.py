@@ -21,11 +21,15 @@ from pathlib import Path
 from typing import List, Dict, Any, Tuple
 from datetime import datetime, timezone, timedelta
 
-# .envファイルを読み込む（スクリプトと同じディレクトリから）
+# .envファイルを読み込む（プロジェクトルート優先、なければスクリプトディレクトリ）
 try:
     from dotenv import load_dotenv
-    # スクリプトのディレクトリにある.envファイルを読み込む
-    env_path = Path(__file__).parent / '.env'
+    # プロジェクトルート（humaneval/evaluate_script の2階層上）の.envを優先
+    project_root = Path(__file__).parent.parent.parent
+    env_path = project_root / '.env'
+    if not env_path.exists():
+        # なければスクリプトディレクトリの.envを使用
+        env_path = Path(__file__).parent / '.env'
     load_dotenv(dotenv_path=env_path)
 except ImportError:
     pass  # python-dotenvがない場合はスキップ
@@ -229,7 +233,7 @@ def call_openai_api(system_prompt, user_prompt, api_key, model_name='gpt-4', tem
                 ],
                 temperature=temperature,
                 n=k,
-                max_tokens=1000
+                max_tokens=2048
             )
 
         generated_codes = []
@@ -259,7 +263,7 @@ def call_anthropic_api(system_prompt, user_prompt, api_key, model_name='claude-3
         try:
             response = client.messages.create(
                 model=model_name,
-                max_tokens=1000,
+                max_tokens=2048,
                 temperature=temperature,
                 system=system_prompt,
                 messages=[
@@ -453,7 +457,7 @@ def call_mlx_api(system_prompt, user_prompt, model_name, hf_token=None, temperat
                 model,
                 tokenizer,
                 prompt=prompt,
-                max_tokens=1000,
+                max_tokens=2048,
                 verbose=False
             )
 
@@ -742,7 +746,7 @@ def main():
                         help='pass@k のk値')
     parser.add_argument('--temperature', type=float, default=0.2,
                         help='生成時のtemperature（0.0〜2.0、デフォルト: 0.2）。GPT-5系では無視されます。')
-    parser.add_argument('--lang', choices=['en', 'ja'], default='en',
+    parser.add_argument('--lang', choices=['en', 'ja'], default='ja',
                         help='問題文の言語')
     parser.add_argument('--template', default='docs/template/PC_.md',
                         help='プロンプトテンプレートファイルのパス（デフォルト: docs/template/PC_.md）。PC_*.mdはコンテキスト付き、P_*.mdはコンテキストなし。')
