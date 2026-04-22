@@ -1,0 +1,47 @@
+標準ライブラリを使う
+
+tri = 入力 n に対し {
+   # メモ化用のオブジェクト
+   memo = {}
+   
+   # トリボナッチ値を計算する内部関数
+   calc = 入力 k に対し {
+      # メモに既にあれば返す
+      もし memo に k があるならば {
+         memo[k] が答え
+      }
+      
+      # tri(1) = 3
+      もし k が 1 ならば {
+         result = 3
+      }
+      # k が偶数: tri(k) = 1 + k/2
+      そうでなければ {
+         parity = 剰余(k, 2)
+         もし parity が 0 ならば {
+            result = 和(1, 商(k, 2))
+         }
+         # k が奇数: tri(k) = tri(k-1) + tri(k-2) + tri(k+1)
+         そうでなければ {
+            a = calc(差(k, 1))
+            b = calc(差(k, 2))
+            c = calc(和(k, 1))
+            result = 和(和(a, b), c)
+         }
+      }
+      
+      # メモに保存
+      memo[k] = result
+      result が答え
+   }
+   
+   # 0 から n までの値を配列に集める
+   result = []
+   i = 0
+   和(n, 1) 回くり返す {
+      result に calc(i) を追加する
+      i を増やす
+   }
+   
+   result が答え
+}

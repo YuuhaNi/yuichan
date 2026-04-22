@@ -1,0 +1,22 @@
+標準ライブラリを使う
+
+generate_integers = 入力 a, b に対し {
+   result = []
+
+   start = 最小値(a, b)
+   finish = 最大値(a, b)
+
+   もし差(finish, start)が1以下ならば{
+      resultが答え
+   }
+
+   i = start
+   差(finish, start, 1)回くり返す{
+      もし剰余(i, 2)が0ならば{
+         resultにiを追加する
+      }
+      iを増やす
+   }
+
+   resultが答え
+}

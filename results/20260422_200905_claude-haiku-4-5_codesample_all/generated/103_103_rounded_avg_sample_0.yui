@@ -1,0 +1,50 @@
+標準ライブラリを使う
+
+rounded_avg = 入力 n, m に対し {
+   もし n が m より大きい ならば {
+      差(0, 1) が答え
+   }
+   
+   # n から m までの合計を計算
+   total = 0
+   i = n
+   差(m, n) を増やす 回 くり返す {
+      total = 和(total, i)
+      i を増やす
+   }
+   
+   # 個数を計算 (m - n + 1)
+   count = 和(差(m, n), 1)
+   
+   # 平均を計算 (小数)
+   avg = 商(小数化(total), 小数化(count))
+   
+   # 最も近い整数に丸める (0.5 以上で切り上げ)
+   rounded = 整数化(和(avg, 0.5))
+   
+   # 10進数を2進数文字列に変換
+   # 2進数表記を手動で構築する
+   binary = ""
+   num = rounded
+   
+   もし num が 0 ならば {
+      binary = "0b0"
+   }
+   そうでなければ {
+      temp = ""
+      num回 くり返す {
+         bit = 剰余(num, 2)
+         temp に 文字列化(bit) を追加する
+         num = 商(num, 2)
+         もし num が 0 ならば {
+            くり返しを抜ける
+         }
+      }
+      # temp を反転して binary に "0b" を付ける
+      binary = "0b"
+      reversed = reverse(temp)
+      binary に reversed を追加する
+   }
+   
+   binary が答え
+}

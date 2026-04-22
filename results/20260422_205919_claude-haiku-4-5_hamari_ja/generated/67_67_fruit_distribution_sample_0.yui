@@ -1,0 +1,21 @@
+標準ライブラリを使う
+
+fruit_distribution = 入力 s, n に対し {
+   # 文字列を " and " で分割
+   parts = s を " and " で分割する
+   
+   # 最初の部分からリンゴの数を抽出
+   apple_part = parts[0]
+   apple_str = apple_part を " " で分割する
+   apples = 数値化(apple_str[0])
+   
+   # 2番目の部分からオレンジの数を抽出
+   orange_part = parts[1]
+   orange_str = orange_part を " " で分割する
+   oranges = 数値化(orange_str[0])
+   
+   # マンゴーの数を計算
+   mangoes = 差(差(n, apples), oranges)
+   
+   mangoes が答え
+}

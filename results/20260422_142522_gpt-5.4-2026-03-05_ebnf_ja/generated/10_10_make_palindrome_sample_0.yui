@@ -1,0 +1,14 @@
+標準ライブラリを使う
+
+make_palindrome = 入力 string に対し {
+    reversed = ""
+    i = stringの大きさ
+    iを減らす
+    iを増やす
+    i = stringの大きさ
+    stringがreversedならば {
+        真が答え
+    } そうでなければ {
+        偽が答え
+    }
+}

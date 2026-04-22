@@ -1,0 +1,92 @@
+標準ライブラリを使う
+
+int_to_mini_roman = 入力 number に対し {
+   result = ""
+   
+   # 1000の位
+   もし number が 1000 以上 ならば {
+      result に "m" を追加する
+      number = 差(number, 1000)
+   }
+   
+   # 900の位
+   もし number が 900 以上 ならば {
+      result に "cm" を追加する
+      number = 差(number, 900)
+   }
+   
+   # 500の位
+   もし number が 500 以上 ならば {
+      result に "d" を追加する
+      number = 差(number, 500)
+   }
+   
+   # 400の位
+   もし number が 400 以上 ならば {
+      result に "cd" を追加する
+      number = 差(number, 400)
+   }
+   
+   # 100の位
+   100回くり返す {
+      もし number が 100 以上 ならば {
+         result に "c" を追加する
+         number = 差(number, 100)
+      } そうでなければ {
+         くり返しを抜ける
+      }
+   }
+   
+   # 90の位
+   もし number が 90 以上 ならば {
+      result に "xc" を追加する
+      number = 差(number, 90)
+   }
+   
+   # 50の位
+   もし number が 50 以上 ならば {
+      result に "l" を追加する
+      number = 差(number, 50)
+   }
+   
+   # 40の位
+   もし number が 40 以上 ならば {
+      result に "xl" を追加する
+      number = 差(number, 40)
+   }
+   
+   # 10の位
+   10回くり返す {
+      もし number が 10 以上 ならば {
+         result に "x" を追加する
+         number = 差(number, 10)
+      } そうでなければ {
+         くり返しを抜ける
+      }
+   }
+   
+   # 9の位
+   もし number が 9 ならば {
+      result に "ix" を追加する
+      number = 差(number, 9)
+   }
+   
+   # 5の位
+   もし number が 5 以上 ならば {
+      result に "v" を追加する
+      number = 差(number, 5)
+   }
+   
+   # 4の位
+   もし number が 4 ならば {
+      result に "iv" を追加する
+      number = 差(number, 4)
+   }
+   
+   # 1の位
+   number回くり返す {
+      result に "i" を追加する
+   }
+   
+   result が答え
+}

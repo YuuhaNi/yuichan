@@ -1,0 +1,18 @@
+標準ライブラリを使う
+
+mean_absolute_deviation = 入力 numbers に対し {
+    n = 配列化(numbers)
+    len = 配列数(n)
+    avg = 和(n) / len
+    deviations = [絶対値(n[0] - avg)]
+    i = 1
+    もし i < len なら {
+        deviations = []
+        i = 0
+        繰り返し i < len の間 {
+            deviations = deviations + [絶対値(n[i] - avg)]
+            i = i + 1
+        }
+    }
+    戻す 和(deviations) / len
+}

@@ -1,0 +1,23 @@
+標準ライブラリを使う
+
+parse_music = 入力 music_string に対し {
+    result = []
+    notes = music_string を分割する(" ")
+    notes の大きさ回 くり返す {
+        note = notes[くり返しの番号]
+        もし note が "o'" ならば {
+            result に 4 を追加する
+        } そうでなければ {
+            もし note が "o|'" ならば {
+                result に 2 を追加する
+            } そうでなければ {
+                もし note が ".|" ならば {
+                    result に 1 を追加する
+                } そうでなければ {
+                    何もしない
+                }
+            }
+        }
+    }
+    result が 答え
+}

@@ -1,0 +1,48 @@
+標準ライブラリを使う
+
+int_to_mini_roman = 入力 number に対し {
+   # ローマ数字の値と対応する文字列を大きい順に並べたペア
+   # [値, 文字列] の配列の配列
+   values = [
+      [1000, "m"],
+      [900, "cm"],
+      [500, "d"],
+      [400, "cd"],
+      [100, "c"],
+      [90, "xc"],
+      [50, "l"],
+      [40, "xl"],
+      [10, "x"],
+      [9, "ix"],
+      [5, "v"],
+      [4, "iv"],
+      [1, "i"]
+   ]
+   
+   result = ""
+   n = values の大きさ
+   i = 0
+   
+   n 回くり返す {
+      pair = values[i]
+      val = pair[0]
+      roman = pair[1]
+      
+      # number が val 以上の間、roman を追加して number から val を引く
+      もし number が val 以上 ならば {
+         number 回くり返す {
+            もし number が val 以上 ならば {
+               result に roman を追加する
+               number = 差(number, val)
+            }
+            そうでなければ {
+               くり返しを抜ける
+            }
+         }
+      }
+      
+      i を増やす
+   }
+   
+   result が答え
+}

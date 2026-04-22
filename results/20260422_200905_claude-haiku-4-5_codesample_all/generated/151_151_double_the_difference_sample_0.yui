@@ -1,0 +1,28 @@
+標準ライブラリを使う
+
+double_the_difference = 入力 lst に対し {
+   total = 0
+   n = lst の大きさ
+   i = 0
+   n 回くり返す {
+      x = lst[i]
+      # 負の数をスキップ
+      もし x が 0 より小さい ならば {
+         i を増やす
+         くり返しを続ける
+      }
+      # 整数判定: 小数でないかチェック
+      もし 整数判定(x) が 偽 ならば {
+         i を増やす
+         くり返しを続ける
+      }
+      # 奇数判定: 2 で割った余りが 1 なら奇数
+      remainder = 剰余(x, 2)
+      もし remainder が 1 ならば {
+         square = 積(x, x)
+         total = 和(total, square)
+      }
+      i を増やす
+   }
+   total が答え
+}

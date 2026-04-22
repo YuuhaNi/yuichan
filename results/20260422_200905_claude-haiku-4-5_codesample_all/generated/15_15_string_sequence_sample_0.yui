@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+string_sequence=入力nに対し{
+   result=""
+   i=0
+   和(n,1)回くり返す{
+      もしiが0ならば{
+         result=文字列化(i)
+      }
+      そうでなければ{
+         result=和(result," ")
+         result=和(result,文字列化(i))
+      }
+      iを増やす
+   }
+   resultが答え
+}

@@ -1,0 +1,16 @@
+標準ライブラリを使う
+
+maximum = 入力 arr, k に対し {
+    もし k が 0 ならば {
+        [] が答え
+    } そうでなければ {
+        sorted = 呼び出す(ソート, arr)
+        result = []
+        i = 差(長さ(sorted), k)
+        i 回 くり返す {
+            result に sorted[i] を追加する
+            i を増やす
+        }
+        result が答え
+    }
+}

@@ -1,0 +1,22 @@
+標準ライブラリを使う
+
+tri = 入力 n に対し {
+    result = [1]
+    i = 1
+    もし i が n 以下 なら {
+        result = result + [3]
+        i = 2
+    }
+    もし i が n 以下 なら {
+        result = result + [2]
+        i = 3
+    }
+    i から n まで繰り返す {
+        もし 剰余(i, 2) が 0 と等しい なら {
+            result = result + [和(1, 商(i, 2))]
+        } そうでなければ {
+            result = result + [和(result[商(差(i, 1), 2)], result[差(i, 2)], result[和(i, 1)])]
+        }
+    }
+    result
+}

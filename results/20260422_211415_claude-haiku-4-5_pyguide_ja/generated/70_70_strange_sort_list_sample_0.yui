@@ -1,0 +1,50 @@
+標準ライブラリを使う
+
+strange_sort_list = 入力 lst に対し {
+   result = []
+   work = lst
+   
+   lstの大きさ回くり返す{
+      もしworkの大きさが0ならば{
+         くり返しを抜ける
+      }
+      
+      min_val = 最小値(work)
+      resultにmin_valを追加する
+      
+      # min_val を work から削除
+      i = 0
+      workの大きさ回くり返す{
+         もしiがworkの大きさ以上ならば{
+            くり返しを抜ける
+         }
+         もしwork[i]がmin_valならば{
+            work = 削除(work, i)
+            くり返しを抜ける
+         }
+         iを増やす
+      }
+      
+      もしworkの大きさが0ならば{
+         くり返しを抜ける
+      }
+      
+      max_val = 最大値(work)
+      resultにmax_valを追加する
+      
+      # max_val を work から削除
+      i = 0
+      workの大きさ回くり返す{
+         もしiがworkの大きさ以上ならば{
+            くり返しを抜ける
+         }
+         もしwork[i]がmax_valならば{
+            work = 削除(work, i)
+            くり返しを抜ける
+         }
+         iを増やす
+      }
+   }
+   
+   resultが答え
+}

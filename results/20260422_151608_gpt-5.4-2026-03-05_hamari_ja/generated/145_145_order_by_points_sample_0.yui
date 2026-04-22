@@ -1,0 +1,71 @@
+標準ライブラリを使う
+
+order_by_points = 入力 nums に対し {
+   n=numsの大きさ
+   もしnが0ならば{
+      []が答え
+   }
+
+   sums=[]
+   i=0
+   n回くり返す{
+      x=nums[i]
+      もしxが0より小さいならば{
+         x=差(0,x)
+      }
+
+      s=0
+      もしxが0ならば{
+         s=0
+      }
+      そうでなければ{
+         くり返し{
+            s=和(s,剰余(x,10))
+            x=商(x,10)
+            もしxが0ならば{
+               くり返しを抜ける
+            }
+         }
+      }
+
+      sumsにsを追加する
+      iを増やす
+   }
+
+   result=[]
+   used=[]
+   i=0
+   n回くり返す{
+      usedに0を追加する
+      iを増やす
+   }
+
+   count=0
+   n回くり返す{
+      best_idx=差(0,1)
+      best_sum=0
+
+      i=0
+      n回くり返す{
+         もしused[i]が0ならば{
+            もしbest_idxが差(0,1)ならば{
+               best_idx=i
+               best_sum=sums[i]
+            }
+            そうでなければ{
+               もしsums[i]がbest_sumより小さいならば{
+                  best_idx=i
+                  best_sum=sums[i]
+               }
+            }
+         }
+         iを増やす
+      }
+
+      resultにnums[best_idx]を追加する
+      used[best_idx]=1
+      countを増やす
+   }
+
+   resultが答え
+}

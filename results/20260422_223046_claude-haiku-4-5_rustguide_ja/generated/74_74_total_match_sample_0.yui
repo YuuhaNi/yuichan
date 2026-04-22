@@ -1,0 +1,50 @@
+標準ライブラリを使う
+
+total_match = 入力 lst1, lst2 に対し {
+   count1 = 0
+   count2 = 0
+   
+   lst1の大きさ回くり返す{
+      i = 0
+      iを増やす
+      count1 = 和(count1, lst1[差(i, 1)]の大きさ)
+   }
+   
+   lst2の大きさ回くり返す{
+      j = 0
+      jを増やす
+      count2 = 和(count2, lst2[差(j, 1)]の大きさ)
+   }
+   
+   もしcount1がcount2より小さいならば{
+      lst1が答え
+   }
+   そうでなければ{
+      lst2が答え
+   }
+}
+標準ライブラリを使う
+
+total_match = 入力 lst1, lst2 に対し {
+   count1 = 0
+   count2 = 0
+   
+   lst1の大きさ回くり返す{
+      i = 0
+      iを増やす
+      count1 = 和(count1, lst1[差(i, 1)]の大きさ)
+   }
+   
+   lst2の大きさ回くり返す{
+      j = 0
+      jを増やす
+      count2 = 和(count2, lst2[差(j, 1)]の大きさ)
+   }
+   
+   もしcount1がcount2以下ならば{
+      lst1が答え
+   }
+   そうでなければ{
+      lst2が答え
+   }
+}

@@ -1,0 +1,28 @@
+標準ライブラリを使う
+
+sum_squares = 入力 lst に対し {
+   total = 0
+   n = lst の大きさ
+   i = 0
+   n 回くり返す {
+      element = lst[i]
+      
+      もし i が 3 の倍数ならば {
+         # インデックスが 3 の倍数 → 二乗
+         total = 和(total, 積(element, element))
+      }
+      そうでなければ {
+         もし i が 4 の倍数ならば {
+            # インデックスが 4 の倍数かつ 3 の倍数でない → 三乗
+            total = 和(total, 積(積(element, element), element))
+         }
+         そうでなければ {
+            # インデックスが 3 または 4 の倍数でない → そのまま加算
+            total = 和(total, element)
+         }
+      }
+      
+      i を増やす
+   }
+   total が答え
+}

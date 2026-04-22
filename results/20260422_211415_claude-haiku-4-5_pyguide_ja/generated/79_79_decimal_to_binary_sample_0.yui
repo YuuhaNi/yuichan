@@ -1,0 +1,32 @@
+標準ライブラリを使う
+
+decimal_to_binary = 入力 decimal に対し {
+   result = "db"
+   
+   もし decimal が 0 ならば {
+      result = "db0db"
+   } そうでなければ {
+      100回くり返す {
+         もし decimal が 0 ならば {
+            くり返しを抜ける
+         }
+         remainder = 剰余(decimal, 2)
+         result に 文字列化(remainder) を追加する
+         decimal = 商(decimal, 2)
+      }
+      
+      # 文字列を逆順にする
+      reversed_result = "db"
+      i = 差(result の大きさ, 1)
+      result の大きさ 回くり返す {
+         もし i が 0 より大きいならば {
+            reversed_result に result[i] を追加する
+            i を減らす
+         }
+      }
+      result = reversed_result
+   }
+   
+   result に "db" を追加する
+   result が答え
+}

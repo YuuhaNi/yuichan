@@ -1,0 +1,35 @@
+標準ライブラリを使う
+
+reverse_delete = 入力 s, c に対し {
+   result = ""
+   sの大きさを n とする
+   n回くり返す {
+      char = sの i 番目
+      skip = 0
+      cの大きさを m とする
+      m回くり返す {
+         もし char が c の j 番目 ならば {
+            skip = 1
+         }
+         j を増やす
+      }
+      もし skip が 0 ならば {
+         result = 結合(result, char)
+      }
+      i を増やす
+   }
+   
+   is_palindrome = 1
+   result の大きさを len とする
+   商(len, 2) 回くり返す {
+      left = result の k 番目
+      right_idx = 差(len, 和(k, 1))
+      right = result の right_idx 番目
+      もし left が right 以外 ならば {
+         is_palindrome = 0
+      }
+      k を増やす
+   }
+   
+   (result, is_palindrome)
+}

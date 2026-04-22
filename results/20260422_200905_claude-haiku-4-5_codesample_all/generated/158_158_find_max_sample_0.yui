@@ -1,0 +1,59 @@
+標準ライブラリを使う
+
+find_max = 入力 words に対し {
+   n = words の大きさ
+   もし n が 0 ならば {
+      ""が答え
+   }
+   
+   best = words[0]
+   best_count = 0
+   
+   # best の固有文字数を計算
+   i = 0
+   best の大きさ 回くり返す {
+      c = best[i]
+      もし c が best_count のいずれでもないならば {
+         best_count を増やす
+      }
+      i を増やす
+   }
+   
+   # 残りの単語を調べる
+   idx = 1
+   差(n, 1) 回くり返す {
+      word = words[idx]
+      
+      # word の固有文字数を計算
+      unique = ""
+      i = 0
+      word の大きさ 回くり返す {
+         c = word[i]
+         もし c が unique のいずれでもないならば {
+            unique に c を追加する
+         }
+         i を増やす
+      }
+      
+      word_count = unique の大きさ
+      
+      # word_count が best_count より大きいか、
+      # 同じで辞書順が小さいなら更新
+      もし word_count が best_count より大きいならば {
+         best = word
+         best_count = word_count
+      }
+      そうでなければ {
+         もし word_count が best_count ならば {
+            # 辞書順比較: word < best なら更新
+            もし word が best より小さいならば {
+               best = word
+            }
+         }
+      }
+      
+      idx を増やす
+   }
+   
+   best が答え
+}

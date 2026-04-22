@@ -1,0 +1,34 @@
+標準ライブラリを使う
+
+how_many_times = 入力 string, substring に対し {
+   もしsubstringの大きさが0ならば{
+      0が答え
+   }
+
+   count = 0
+   i = 0
+   limit = 和(stringの大きさ, 1)
+
+   limit回くり返す{
+      もし和(i, substringの大きさ)がstringの大きさより大きいならば{
+         くり返しを抜ける
+      }
+
+      ok = 真
+      j = 0
+      substringの大きさ回くり返す{
+         もしstring[和(i, j)]がsubstring[j]以外ならば{
+            ok = 偽
+            くり返しを抜ける
+         }
+         jを増やす
+      }
+
+      もしokが真ならば{
+         countを増やす
+      }
+      iを増やす
+   }
+
+   countが答え
+}

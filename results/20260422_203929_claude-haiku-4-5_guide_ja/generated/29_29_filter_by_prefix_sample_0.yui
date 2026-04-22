@@ -1,0 +1,28 @@
+標準ライブラリを使う
+
+filter_by_prefix = 入力 strings, prefix に対し {
+   result = []
+   i = 0
+   stringsの大きさ回くり返す{
+      s = strings[i]
+      prefixの大きさ回くり返す{
+         もしiがstringsの大きさ以上ならば{
+            くり返しを抜ける
+         }
+      }
+      match = 真
+      j = 0
+      prefixの大きさ回くり返す{
+         もしs[j]がprefix[j]以外ならば{
+            match = 偽
+            くり返しを抜ける
+         }
+         jを増やす
+      }
+      もしmatchが真ならば{
+         resultにsを追加する
+      }
+      iを増やす
+   }
+   resultが答え
+}

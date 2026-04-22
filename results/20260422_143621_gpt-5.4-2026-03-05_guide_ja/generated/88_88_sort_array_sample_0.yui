@@ -1,0 +1,50 @@
+標準ライブラリを使う
+
+sort_array = 入力 array に対し {
+   copied = []
+   i = 0
+   arrayの大きさ回くり返す{
+      copiedにarray[i]を追加する
+      iを増やす
+   }
+
+   もしcopiedの大きさが1以下ならば{
+      copiedが答え
+   }
+
+   first = copied[0]
+   last = copied[差(copiedの大きさ, 1)]
+   sum = 和(first, last)
+   odd = 剰余(sum, 2)
+
+   n = copiedの大きさ
+   i = 0
+   差(n, 1)回くり返す{
+      j = 0
+      差(差(n, 1), i)回くり返す{
+         left = copied[j]
+         right = copied[和(j, 1)]
+         swap = 偽
+
+         もしoddが1ならば{
+            もしleftがrightより大きいならば{
+               swap = 真
+            }
+         }そうでなければ{
+            もしleftがrightより小さいならば{
+               swap = 真
+            }
+         }
+
+         もしswapが真ならば{
+            temp = copied[j]
+            copied[j] = copied[和(j, 1)]
+            copied[和(j, 1)] = temp
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+
+   copiedが答え
+}

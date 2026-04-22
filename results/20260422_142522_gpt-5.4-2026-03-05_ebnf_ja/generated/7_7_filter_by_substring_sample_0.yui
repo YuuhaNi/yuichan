@@ -1,0 +1,14 @@
+標準ライブラリを使う
+
+filter_by_substring = 入力 strings, substring に対し {
+    result = []
+    i = 0
+    stringsの大きさ回 くり返す {
+        s = strings[i]
+        もし 含む(s, substring) が 真 ならば {
+            resultにsを追加する
+        }
+        iを増やす
+    }
+    resultが答え
+}

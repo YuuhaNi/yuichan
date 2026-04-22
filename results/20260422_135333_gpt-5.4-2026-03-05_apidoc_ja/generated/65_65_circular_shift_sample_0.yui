@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+circular_shift = 入力 x, shift に対し {
+    s = 文字列化(x)
+    n = 長さ(s)
+
+    もし shift > n なら {
+        result = ""
+        i = 差(n, 1)
+        の間 {
+            i >= 0
+        } {
+            result = result + 文字(i)(s)
+            i = 差(i, 1)
+        }
+        result
+    } そうでなければ {
+        k = 剰余(shift, n)
+        もし k == 0 なら {
+            s
+        } そうでなければ {
+            right = 部分文字列(s, 差(n, k), n)
+            left = 部分文字列(s, 0, 差(n, k))
+            right + left
+        }
+    }
+}

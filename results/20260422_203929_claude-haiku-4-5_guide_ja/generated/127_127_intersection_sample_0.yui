@@ -1,0 +1,51 @@
+標準ライブラリを使う
+
+is_prime = 入力nに対し{
+   もしnが2より小さいならば{
+      偽が答え
+   }
+   もしnが2ならば{
+      真が答え
+   }
+   i = 2
+   n回くり返す{
+      もしiがnより大きいならば{
+         くり返しを抜ける
+      }
+      もし剰余(n, i)が0ならば{
+         偽が答え
+      }
+      iを増やす
+   }
+   真が答え
+}
+
+intersection = 入力 interval1, interval2 に対し {
+   start1 = interval1[0]
+   end1 = interval1[1]
+   start2 = interval2[0]
+   end2 = interval2[1]
+   
+   # 交差部分の開始地点は2つの開始地点の最大値
+   intersection_start = 最大値(start1, start2)
+   
+   # 交差部分の終了地点は2つの終了地点の最小値
+   intersection_end = 最小値(end1, end2)
+   
+   # 交差しない場合
+   もしintersection_startがintersection_endより大きいならば{
+      "NO"が答え
+   }
+   
+   # 交差部分の長さを計算
+   length = 差(intersection_end, intersection_start)
+   lengthを増やす
+   
+   # 長さが素数かどうかを判定
+   もしis_prime(length)が真ならば{
+      "YES"が答え
+   }
+   そうでなければ{
+      "NO"が答え
+   }
+}

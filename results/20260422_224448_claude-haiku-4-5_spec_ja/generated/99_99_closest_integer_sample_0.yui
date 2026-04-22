@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+closest_integer = 入力 value に対し {
+   num = 小数化(value)
+   floor_num = 整数化(num)
+   
+   もし num が 0 以上 ならば {
+      もし 差(num, floor_num) が 0.5 以上 ならば {
+         floor_numを増やす
+      }
+   }
+   そうでなければ {
+      もし 差(floor_num, num) が 0.5 以上 ならば {
+         floor_numを減らす
+      }
+   }
+   
+   floor_num が答え
+}

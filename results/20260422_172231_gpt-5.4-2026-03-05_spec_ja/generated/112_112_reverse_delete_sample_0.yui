@@ -1,0 +1,31 @@
+標準ライブラリを使う
+
+reverse_delete = 入力 s, c に対し {
+   result = []
+   i = 0
+   sの大きさ回くり返す {
+      ch = s[i]
+      もしchがcのいずれでもないならば {
+         resultにchを追加する
+      }
+      iを増やす
+   }
+
+   palindrome = 真
+   left = 0
+   right = 差(resultの大きさ, 1)
+
+   resultの大きさ回くり返す {
+      もしleftがrightより大きいならば {
+         くり返しを抜ける
+      }
+      もしresult[left]がresult[right]以外ならば {
+         palindrome = 偽
+         くり返しを抜ける
+      }
+      leftを増やす
+      rightを減らす
+   }
+
+   [result, palindrome] が答え
+}

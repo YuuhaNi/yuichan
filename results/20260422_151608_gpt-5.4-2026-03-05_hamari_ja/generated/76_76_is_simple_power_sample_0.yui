@@ -1,0 +1,30 @@
+標準ライブラリを使う
+
+is_simple_power = 入力 x, n に対し {
+   もしxが1ならば{
+      trueが答え
+   }
+
+   もしnが1ならば{
+      falseが答え
+   }
+
+   cur=1
+   もしcurがxならば{
+      trueが答え
+   }
+
+   もしcurがxより小さいならば{
+      くり返す{
+         cur=積(cur,n)
+         もしcurがxならば{
+            trueが答え
+         }
+         もしcurがxより大きいならば{
+            falseが答え
+         }
+      }
+   }
+
+   falseが答え
+}

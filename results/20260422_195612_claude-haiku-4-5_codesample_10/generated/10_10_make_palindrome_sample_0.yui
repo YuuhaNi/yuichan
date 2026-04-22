@@ -1,0 +1,24 @@
+標準ライブラリを使う
+
+is_palindrome = 入力 string に対し {
+   n = string の大きさ
+   left = 0
+   right = 差(n, 1)
+   
+   n回くり返す {
+      もし left が right 以上ならば {
+         くり返しを抜ける
+      }
+      
+      もし string[left] が string[right] でないならば {
+         偽が答え
+      }
+      
+      left を増やす
+      right を減らす
+   }
+   
+   真が答え
+}
+
+# テスト: 基本的な回文

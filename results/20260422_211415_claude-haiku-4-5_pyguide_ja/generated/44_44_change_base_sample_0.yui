@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+change_base = 入力 x, base に対し {
+   result = ""
+   x回くり返す{
+      もしxが0ならば{
+         くり返しを抜ける
+      }
+      digit = 剰余(x, base)
+      result = 和(文字列化(digit), result)
+      x = 商(x, base)
+   }
+   もしresultが""ならば{
+      result = "0"
+   }
+   resultが答え
+}

@@ -1,0 +1,18 @@
+標準ライブラリを使う
+
+digitSum = 入力 s に対し {
+   total=0
+   i=0
+   n=sの長さ
+   n回くり返す{
+      ch=s[i]
+      code=ASCIIコード(ch)
+      もしcodeが65以上ならば{
+         もしcodeが90以下ならば{
+            total=和(total,code)
+         }
+      }
+      iを増やす
+   }
+   totalが答え
+}

@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+smallest_change = 入力 arr に対し {
+   n = arr の大きさ
+   changes = 0
+   
+   商(n, 2) 回くり返す {
+      left_idx = changes
+      right_idx = 差(差(n, 1), changes)
+      
+      もし arr[left_idx] が arr[right_idx] 以外ならば {
+         changes を増やす
+      }
+      
+      changes を増やす
+   }
+   
+   changes が答え
+}

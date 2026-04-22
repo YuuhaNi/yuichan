@@ -1,0 +1,22 @@
+標準ライブラリを使う
+
+right_angle_triangle = 入力 a, b, c に対し {
+   aa=積(a,a)
+   bb=積(b,b)
+   cc=積(c,c)
+
+   sum_ab=和(aa,bb)
+   sum_ac=和(aa,cc)
+   sum_bc=和(bb,cc)
+
+   もしsum_abがccならば{
+      Trueが答え
+   }
+   もしsum_acがbbならば{
+      Trueが答え
+   }
+   もしsum_bcがaaならば{
+      Trueが答え
+   }
+   Falseが答え
+}

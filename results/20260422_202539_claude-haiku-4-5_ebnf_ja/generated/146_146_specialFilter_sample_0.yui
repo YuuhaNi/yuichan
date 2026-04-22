@@ -1,0 +1,44 @@
+標準ライブラリを使う
+
+specialFilter = 入力 nums に対し {
+    count = 0
+    nums の大きさ 回 くり返す {
+        i = 0
+        もし i が nums の大きさ より小さい ならば {
+            num = nums[i]
+            もし num が 10 より大きい ならば {
+                num_str = 文字列に変換(num)
+                first_digit = 数値に変換(num_str[0])
+                last_digit = 数値に変換(num_str[num_str の大きさ])
+                もし 剰余(first_digit, 2) が 1 ならば {
+                    もし 剰余(last_digit, 2) が 1 ならば {
+                        count を増やす
+                    }
+                }
+            }
+            i を増やす
+        }
+    }
+    count が 答え
+}
+標準ライブラリを使う
+
+specialFilter = 入力 nums に対し {
+    count = 0
+    i = 0
+    nums の大きさ 回 くり返す {
+        num = nums[i]
+        もし num が 10 より大きい ならば {
+            s = 文字列に変換(絶対値(num))
+            first = 数値に変換(s[0])
+            last = 数値に変換(s[長さ(s)])
+            もし 剰余(first, 2) が 1 ならば {
+                もし 剰余(last, 2) が 1 ならば {
+                    count を増やす
+                }
+            }
+        }
+        i を増やす
+    }
+    count が 答え
+}

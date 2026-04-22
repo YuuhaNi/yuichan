@@ -1,0 +1,28 @@
+標準ライブラリを使う
+
+choose_num = 入力 x, y に対し {
+   もし x が y より大きい ならば {
+      -1 が答え
+   }
+   
+   もし y が x より小さい ならば {
+      -1 が答え
+   }
+   
+   candidate = y
+   
+   y回くり返す {
+      remainder = 剰余(candidate, 2)
+      もし remainder が 0 ならば {
+         candidate が答え
+      }
+      
+      もし candidate が x より小さい ならば {
+         くり返しを抜ける
+      }
+      
+      candidate を減らす
+   }
+   
+   -1 が答え
+}

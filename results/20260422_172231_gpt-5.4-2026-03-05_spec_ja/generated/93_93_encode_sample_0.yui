@@ -1,0 +1,59 @@
+標準ライブラリを使う
+
+encode = 入力 message に対し {
+   result = []
+   i = 0
+   vowels = "aeiouAEIOU"
+   changed = "cgkqsCGKQS"
+
+   messageの大きさ回くり返す {
+      ch = message[i]
+      replaced = 偽
+      j = 0
+
+      vowelsの大きさ回くり返す {
+         もし ch が vowels[j] ならば {
+            ch = changed[j]
+            replaced = 真
+            くり返しを抜ける
+         }
+         jを増やす
+      }
+
+      code = ch
+
+      もし replaced が 偽 ならば {
+         もし ch が 97以上 ならば {
+            もし ch が 122以下 ならば {
+               code = 差(ch, 32)
+            }
+         }
+         そうでなければ {
+            もし ch が 65以上 ならば {
+               もし ch が 90以下 ならば {
+                  code = 和(ch, 32)
+               }
+            }
+         }
+      }
+      そうでなければ {
+         もし ch が 97以上 ならば {
+            もし ch が 122以下 ならば {
+               code = 差(ch, 32)
+            }
+         }
+         そうでなければ {
+            もし ch が 65以上 ならば {
+               もし ch が 90以下 ならば {
+                  code = 和(ch, 32)
+               }
+            }
+         }
+      }
+
+      resultにcodeを追加する
+      iを増やす
+   }
+
+   result が答え
+}

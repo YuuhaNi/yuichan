@@ -1,0 +1,57 @@
+標準ライブラリを使う
+
+sort_array = 入力 array に対し {
+   n=arrayの大きさ
+   もしnが0ならば{
+      []が答え
+   }
+
+   # 元配列を壊さないようにコピーを作る
+   result=[]
+   i=0
+   n回くり返す{
+      resultにarray[i]を追加する
+      iを増やす
+   }
+
+   # 最初と最後の要素の和の奇偶で並び順を決める
+   first=array[0]
+   last=array[差(n,1)]
+   s=和(first,last)
+   asc=偽
+   もし剰余(s,2)が1ならば{
+      asc=真
+   }
+
+   # バブルソート
+   outer=0
+   n回くり返す{
+      inner=0
+      limit=差(差(n,1),outer)
+      limit回くり返す{
+         a=result[inner]
+         b=result[和(inner,1)]
+         swap=偽
+
+         もしascならば{
+            もしaがbより大きいならば{
+               swap=真
+            }
+         }
+         そうでなければ{
+            もしaがbより小さいならば{
+               swap=真
+            }
+         }
+
+         もしswapならば{
+            result[inner]=b
+            result[和(inner,1)]=a
+         }
+         innerを増やす
+      }
+      outerを増やす
+   }
+
+   resultが答え
+}

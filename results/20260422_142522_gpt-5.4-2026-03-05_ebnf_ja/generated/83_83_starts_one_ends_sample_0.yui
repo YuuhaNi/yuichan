@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+starts_one_ends = 入力 n に対し {
+    もし n が 1 ならば {
+        1 が 答え
+    }
+    total = 1
+    count = 18
+    もし n が 2 以上 ならば {
+        remain = 差(n, 2)
+        remain 回 くり返す {
+            count = 和(積(count, 10), 18)
+        }
+        total = 和(total, count)
+    }
+    total が 答え
+}

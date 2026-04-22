@@ -1,0 +1,40 @@
+標準ライブラリを使う
+
+solve = 入力 s に対し {
+   n=sの長さ
+   i=0
+   found=0
+   ans=""
+
+   n回くり返す{
+      ch=s[i]
+      lower=小文字化(ch)
+      upper=大文字化(ch)
+
+      もしlowerがupper以外ならば{
+         found=1
+         もしchがlowerならば{
+            ans=ansとupperを連結
+         }
+         そうでなければ{
+            ans=ansとlowerを連結
+         }
+      }
+      そうでなければ{
+         ans=ansとchを連結
+      }
+      iを増やす
+   }
+
+   もしfoundが1ならば{
+      ansが答え
+   }
+
+   rev=""
+   i=差(n,1)
+   n回くり返す{
+      rev=revとs[i]を連結
+      iを減らす
+   }
+   revが答え
+}

@@ -1,0 +1,43 @@
+標準ライブラリを使う
+
+count_nums = 入力 arr に対し {
+    count = 0
+    arrの大きさ回くり返す {
+        n = arr[count]
+        m = 絶対値(n)
+        sum = 0
+
+        もしnが0より小さいならば {
+            first = 真
+            1回くり返す {
+                digit = 剰余(m, 10)
+                m = 商(m, 10)
+                もしfirstが真ならば {
+                    sum = 差(sum, digit)
+                    first = 偽
+                }
+                そうでなければ {
+                    sum = 和(sum, digit)
+                }
+                もしmが0ならば {
+                    くり返しを抜ける
+                }
+            }
+        }
+        そうでなければ {
+            1回くり返す {
+                digit = 剰余(m, 10)
+                sum = 和(sum, digit)
+                m = 商(m, 10)
+                もしmが0ならば {
+                    くり返しを抜ける
+                }
+            }
+        }
+
+        もしsumが0より大きいならば {
+            countを増やす
+        }
+    }
+    count が答え
+}

@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+simplify = 入力 x, n に対し {
+   # x と n を "/" で分割して分子・分母を抽出
+   x_parts = xを"/"で分割する
+   x_num = x_parts[0]を整数に変換する
+   x_denom = x_parts[1]を整数に変換する
+   
+   n_parts = nを"/"で分割する
+   n_num = n_parts[0]を整数に変換する
+   n_denom = n_parts[1]を整数に変換する
+   
+   # x * n = (x_num * n_num) / (x_denom * n_denom)
+   result_num = 積(x_num, n_num)
+   result_denom = 積(x_denom, n_denom)
+   
+   # 結果が整数かどうかを判定
+   # result_num が result_denom で割り切れるかチェック
+   remainder = 剰余(result_num, result_denom)
+   
+   もし remainder が 0 ならば {
+      真
+   }
+   そうでなければ {
+      偽
+   }
+}

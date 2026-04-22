@@ -1,0 +1,29 @@
+標準ライブラリを使う
+
+right_angle_triangle = 入力 a, b, c に対し {
+   # 3辺を昇順にソートして、最長辺を斜辺とする
+   sides = [a, b, c]
+   sides = bubble_sort(sides)
+   
+   # ソート後: sides[0] <= sides[1] <= sides[2]
+   # sides[2] が斜辺 (最長辺)
+   x = sides[0]
+   y = sides[1]
+   z = sides[2]
+   
+   # ピタゴラスの定理: x^2 + y^2 = z^2 かどうかを確認
+   x2 = 積(x, x)
+   y2 = 積(y, y)
+   z2 = 積(z, z)
+   
+   sum_xy = 和(x2, y2)
+   
+   もし sum_xy が z2 ならば {
+      真が答え
+   }
+   そうでなければ {
+      偽が答え
+   }
+}
+
+# テスト

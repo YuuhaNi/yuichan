@@ -1,0 +1,25 @@
+標準ライブラリを使う
+
+get_closest_vowel = 入力 word に対し {
+  vowels = "aeiouAEIOU"
+  n = 長さ(word)
+
+  もし n < 3 なら {
+    戻る ""
+  }
+
+  i = n - 2
+  反復 (i >= 1) の間 {
+    c = word[i]
+    left = word[i - 1]
+    right = word[i + 1]
+
+    もし 含む(vowels, c) かつ (含む(vowels, left) == 偽) かつ (含む(vowels, right) == 偽) なら {
+      戻る c
+    }
+
+    i = i - 1
+  }
+
+  戻る ""
+}

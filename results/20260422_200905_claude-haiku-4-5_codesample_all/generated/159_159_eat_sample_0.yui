@@ -1,0 +1,15 @@
+標準ライブラリを使う
+
+eat = 入力 number, need, remaining に対し {
+   # 食べられるニンジンの数を計算する
+   # need と remaining の小さい方を食べる
+   can_eat = 最小値(need, remaining)
+   
+   # 食べた後の総数
+   total_eaten = 和(number, can_eat)
+   
+   # 残りのニンジン
+   left = 差(remaining, can_eat)
+   
+   [total_eaten, left]が答え
+}

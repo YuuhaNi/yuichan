@@ -1,0 +1,30 @@
+標準ライブラリを使う
+
+find_max = 入力 words に対し {
+    best = ""
+    best_count = 0
+    i = 0
+    wordsの大きさ回 くり返す {
+        word = words[i]
+        chars = {}
+        j = 0
+        wordの大きさ回 くり返す {
+            chars[word[j]] = 真
+            jを増やす
+        }
+        count = charsの大きさ
+        もし count が best_count より大きい ならば {
+            best = word
+            best_count = count
+        }
+        そうでなければ {
+            もし count が best_count ならば {
+                もし word が best より小さい ならば {
+                    best = word
+                }
+            }
+        }
+        iを増やす
+    }
+    best が 答え
+}

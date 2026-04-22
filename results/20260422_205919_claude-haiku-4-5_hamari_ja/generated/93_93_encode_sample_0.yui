@@ -1,0 +1,82 @@
+標準ライブラリを使う
+
+encode = 入力 message に対し {
+    result = ""
+    messageの大きさを size とする
+    size回くり返す {
+        i = 0
+        もし i が size より小さい ならば {
+            char = message[i]
+            
+            # 母音を2つ前の文字に置き換える
+            もし char が "a" ならば {
+                char = "Y"
+            }
+            そうでなければ もし char が "e" ならば {
+                char = "C"
+            }
+            そうでなければ もし char が "i" ならば {
+                char = "G"
+            }
+            そうでなければ もし char が "o" ならば {
+                char = "M"
+            }
+            そうでなければ もし char が "u" ならば {
+                char = "S"
+            }
+            そうでなければ もし char が "A" ならば {
+                char = "y"
+            }
+            そうでなければ もし char が "E" ならば {
+                char = "c"
+            }
+            そうでなければ もし char が "I" ならば {
+                char = "g"
+            }
+            そうでなければ もし char が "O" ならば {
+                char = "m"
+            }
+            そうでなければ もし char が "U" ならば {
+                char = "s"
+            }
+            
+            # 大文字と小文字を入れ替える
+            もし char が "Y" ならば {
+                result = 結合(result, "y")
+            }
+            そうでなければ もし char が "C" ならば {
+                result = 結合(result, "c")
+            }
+            そうでなければ もし char が "G" ならば {
+                result = 結合(result, "g")
+            }
+            そうでなければ もし char が "M" ならば {
+                result = 結合(result, "m")
+            }
+            そうでなければ もし char が "S" ならば {
+                result = 結合(result, "s")
+            }
+            そうでなければ もし char が "y" ならば {
+                result = 結合(result, "Y")
+            }
+            そうでなければ もし char が "c" ならば {
+                result = 結合(result, "C")
+            }
+            そうでなければ もし char が "g" ならば {
+                result = 結合(result, "G")
+            }
+            そうでなければ もし char が "m" ならば {
+                result = 結合(result, "M")
+            }
+            そうでなければ もし char が "s" ならば {
+                result = 結合(result, "S")
+            }
+            そうでなければ {
+                result = 結合(result, char)
+            }
+            
+            i を増やす
+        }
+    }
+    result が答え
+}

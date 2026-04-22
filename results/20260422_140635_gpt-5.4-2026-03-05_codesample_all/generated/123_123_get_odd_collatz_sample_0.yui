@@ -1,0 +1,28 @@
+標準ライブラリを使う
+
+get_odd_collatz = 入力 n に対し {
+   odds=[]
+   current=n
+
+   10000回くり返す{
+      # 奇数なら追加
+      もし剰余(current,2)が1ならば{
+         oddsにcurrentを追加する
+      }
+
+      # 1 に達したら終了
+      もしcurrentが1ならば{
+         くり返しを抜ける
+      }
+
+      # 次のコラッツ項
+      もし剰余(current,2)が0ならば{
+         current=商(current,2)
+      }
+      そうでなければ{
+         current=和(積(3,current),1)
+      }
+   }
+
+   bubble_sort(odds)が答え
+}

@@ -1,0 +1,40 @@
+標準ライブラリを使う
+
+histogram = 入力 test に対し {
+    counts = {}
+    max_count = 0
+    chars = testを空白で分割()
+    n = charsの大きさ
+
+    i = 0
+    n回 くり返す {
+        ch = chars[i]
+        もし chが""ならば {
+            何もしない
+        } そうでなければ {
+            もし counts[ch]が値なしならば {
+                counts[ch] = 1
+            } そうでなければ {
+                counts[ch]を増やす
+            }
+            もし counts[ch]がmax_countより大きいならば {
+                max_count = counts[ch]
+            }
+        }
+        iを増やす
+    }
+
+    result = {}
+    keys = countsのキー一覧()
+    m = keysの大きさ
+    j = 0
+    m回 くり返す {
+        key = keys[j]
+        もし counts[key]がmax_countならば {
+            result[key] = counts[key]
+        }
+        jを増やす
+    }
+
+    resultが答え
+}

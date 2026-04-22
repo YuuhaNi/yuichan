@@ -1,0 +1,42 @@
+標準ライブラリを使う
+
+string_sequence = 入力 n に対し {
+   result = ""
+   i = 0
+   n回くり返す {
+      もし i が 0 ならば {
+         result = 文字列化(i)
+      } そうでなければ {
+         result = 文字列化(和(result, " "))
+         result = 文字列化(和(result, 文字列化(i)))
+      }
+      i を増やす
+   }
+   n を増やす
+   n回くり返す {
+      もし i が n より小さい ならば {
+         result = 文字列化(和(result, " "))
+         result = 文字列化(和(result, 文字列化(i)))
+         i を増やす
+      } そうでなければ {
+         くり返しを抜ける
+      }
+   }
+   result が答え
+}
+標準ライブラリを使う
+
+string_sequence = 入力 n に対し {
+   result = ""
+   i = 0
+   n を増やす
+   n 回くり返す {
+      もし i が 0 ならば {
+         result = 文字列化(i)
+      } そうでなければ {
+         result = 和(result, " ", 文字列化(i))
+      }
+      i を増やす
+   }
+   result が答え
+}

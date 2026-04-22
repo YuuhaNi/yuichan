@@ -1,0 +1,103 @@
+標準ライブラリを使う
+
+file_name_check = 入力 file_name に対し {
+    dot_count = 0
+    digit_run = 0
+    i = 0
+
+    file_nameの大きさ回くり返す {
+        ch = file_name[i]
+
+        もしchが46ならば {
+            dot_countを増やす
+        }
+
+        もしchが48以上ならば {
+            もしchが57以下ならば {
+                digit_runを増やす
+                もしdigit_runが3以上ならば {
+                    "No"が答え
+                }
+            }
+            そうでなければ {
+                digit_run = 0
+            }
+        }
+        そうでなければ {
+            digit_run = 0
+        }
+
+        iを増やす
+    }
+
+    もしdot_countが1以外ならば {
+        "No"が答え
+    }
+
+    dot_index = -1
+    i = 0
+    file_nameの大きさ回くり返す {
+        もしfile_name[i]が46ならば {
+            dot_index = i
+        }
+        iを増やす
+    }
+
+    もしdot_indexが0ならば {
+        "No"が答え
+    }
+
+    もしdot_indexがfile_nameの大きさより小さいならば {
+        何もしない
+    }
+
+    もしdot_indexが差(file_nameの大きさ, 1)ならば {
+        "No"が答え
+    }
+
+    first = file_name[0]
+    is_lower = 偽
+    is_upper = 偽
+
+    もしfirstが97以上ならば {
+        もしfirstが122以下ならば {
+            is_lower = 真
+        }
+    }
+
+    もしfirstが65以上ならば {
+        もしfirstが90以下ならば {
+            is_upper = 真
+        }
+    }
+
+    もしis_lowerが偽ならば {
+        もしis_upperが偽ならば {
+            "No"が答え
+        }
+    }
+
+    ext = []
+    i = 差(dot_index, -1)
+    差(file_nameの大きさ, 差(dot_index, -1))回くり返す {
+        extにfile_name[i]を追加する
+        iを増やす
+    }
+
+    もしextが"txt"ならば {
+        "Yes"が答え
+    }
+    そうでなければ {
+        もしextが"exe"ならば {
+            "Yes"が答え
+        }
+        そうでなければ {
+            もしextが"dll"ならば {
+                "Yes"が答え
+            }
+            そうでなければ {
+                "No"が答え
+            }
+        }
+    }
+}

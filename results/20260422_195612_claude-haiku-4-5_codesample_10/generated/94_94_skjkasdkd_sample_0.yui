@@ -1,0 +1,54 @@
+標準ライブラリを使う
+
+# 素数判定関数
+is_prime = 入力 n に対し {
+   もし n が 2 より小さい ならば {
+      偽が答え
+   }
+   もし n が 2 と等しい ならば {
+      真が答え
+   }
+   もし n が 2 で割り切れる ならば {
+      偽が答え
+   }
+   i = 3
+   limit = 整数化(商(n, 2)) を増やす
+   limit 回 くり返す {
+      もし n が i で割り切れる ならば {
+         偽が答え
+      }
+      i = 和(i, 2)
+   }
+   真が答え
+}
+
+# 桁数の和を計算する関数
+digit_sum = 入力 n に対し {
+   s = 文字列化(n)
+   sum = 0
+   len = s の大きさ
+   i = 0
+   len 回 くり返す {
+      digit = 整数化(s[i])
+      sum = 和(sum, digit)
+      i を増やす
+   }
+   sum が答え
+}
+
+# メイン関数
+skjkasdkd = 入力 lst に対し {
+   max_prime = -1
+   n = lst の大きさ
+   i = 0
+   n 回 くり返す {
+      num = lst[i]
+      もし is_prime(num) ならば {
+         もし num が max_prime より大きい ならば {
+            max_prime = num
+         }
+      }
+      i を増やす
+   }
+   digit_sum(max_prime) が答え
+}

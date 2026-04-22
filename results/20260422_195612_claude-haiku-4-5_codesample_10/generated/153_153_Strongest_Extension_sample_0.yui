@@ -1,0 +1,50 @@
+標準ライブラリを使う
+
+Strongest_Extension = 入力 class_name, extensions に対し {
+   # 拡張子の強度を計算する補助関数
+   calc_strength = 入力 ext に対し {
+      cap = 0
+      sm = 0
+      n = ext の大きさ
+      i = 0
+      n 回くり返す {
+         c = ext[i]
+         # 大文字: A=65, Z=90
+         もし c が 65 以上ならば {
+            もし c が 90 以下ならば {
+               cap を増やす
+            }
+         }
+         # 小文字: a=97, z=122
+         もし c が 97 以上ならば {
+            もし c が 122 以下ならば {
+               sm を増やす
+            }
+         }
+         i を増やす
+      }
+      差(cap, sm) が答え
+   }
+
+   # 最も強い拡張子を見つける
+   strongest_ext = extensions[0]
+   strongest_strength = calc_strength(strongest_ext)
+   
+   n = extensions の大きさ
+   i = 1
+   n 回くり返す {
+      もし i が n 以上ならば {
+         くり返しを抜ける
+      }
+      ext = extensions[i]
+      strength = calc_strength(ext)
+      もし strength が strongest_strength より大きいならば {
+         strongest_ext = ext
+         strongest_strength = strength
+      }
+      i を増やす
+   }
+
+   # 結果を返す
+   "{class_name}.{strongest_ext}" が答え
+}

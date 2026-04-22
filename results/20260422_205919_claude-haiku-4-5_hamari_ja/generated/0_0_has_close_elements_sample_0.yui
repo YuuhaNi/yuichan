@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+has_close_elements = 入力 numbers, threshold に対し {
+   i = 0
+   numbersの大きさ回くり返す {
+      j = 和(i, 1)
+      numbersの大きさ回くり返す {
+         もし j が numbersの大きさ以上ならば {
+            くり返しを抜ける
+         }
+         
+         diff = 差(numbers[i], numbers[j])
+         もし diff が 0より小さいならば {
+            diff = 積(diff, -1)
+         }
+         
+         もし diff が threshold より小さいならば {
+            真
+         }
+         
+         j = 和(j, 1)
+      }
+      i = 和(i, 1)
+   }
+   
+   偽
+}

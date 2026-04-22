@@ -1,0 +1,32 @@
+標準ライブラリを使う
+
+encrypt = 入力 s に対し {
+   result = ""
+   n = s の大きさ
+   i = 0
+   n 回くり返す {
+      c = s[i]
+      nc = c
+      # 大文字 A..Z
+      もし c が 65 以上ならば {
+         もし c が 90 以下ならば {
+            offset = 差(c, 65)
+            shifted = 剰余(和(積(offset, 2), 2), 26)
+            nc = 和(shifted, 65)
+         }
+      }
+      # 小文字 a..z
+      もし c が 97 以上ならば {
+         もし c が 122 以下ならば {
+            offset = 差(c, 97)
+            shifted = 剰余(和(積(offset, 2), 2), 26)
+            nc = 和(shifted, 97)
+         }
+      }
+      result に nc を追加する
+      i を増やす
+   }
+   result が答え
+}
+
+# テスト

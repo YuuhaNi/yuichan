@@ -1,0 +1,53 @@
+標準ライブラリを使う
+
+parse_nested_parens = 入力 paren_string に対し {
+   # 空白で区切られたグループに分割する
+   groups = []
+   current_group = ""
+   i = 0
+   paren_stringの大きさ回くり返す{
+      char = paren_string[i]
+      もしchar が 32 ならば{
+         # 空白（文字コード32）を検出
+         もしcurrent_groupの大きさが0以外ならば{
+            groupsにcurrent_groupを追加する
+            current_group = ""
+         }
+      }そうでなければ{
+         current_groupにcharを追加する
+      }
+      iを増やす
+   }
+   # 最後のグループを追加
+   もしcurrent_groupの大きさが0以外ならば{
+      groupsにcurrent_groupを追加する
+   }
+
+   # 各グループの最大ネストレベルを計算
+   result = []
+   j = 0
+   groupsの大きさ回くり返す{
+      group = groups[j]
+      max_depth = 0
+      current_depth = 0
+      k = 0
+      groupの大きさ回くり返す{
+         char = group[k]
+         もしchar が 40 ならば{
+            # '(' （文字コード40）
+            current_depthを増やす
+            もしcurrent_depthがmax_depthより大きいならば{
+               max_depth = current_depth
+            }
+         }そうでなければ{
+            # ')' （文字コード41）
+            current_depthを減らす
+         }
+         kを増やす
+      }
+      resultにmax_depthを追加する
+      jを増やす
+   }
+
+   resultが答え
+}

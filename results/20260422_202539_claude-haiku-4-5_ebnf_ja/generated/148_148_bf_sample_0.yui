@@ -1,0 +1,49 @@
+標準ライブラリを使う
+
+bf = 入力 planet1, planet2 に対し {
+    planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
+    
+    index1 = 値なし
+    index2 = 値なし
+    
+    i = 0
+    8 回 くり返す {
+        もし planets[i] が planet1 ならば {
+            index1 = i
+        }
+        もし planets[i] が planet2 ならば {
+            index2 = i
+        }
+        i を増やす
+    }
+    
+    もし index1 が 値なし ならば {
+        [] が 答え
+    }
+    
+    もし index2 が 値なし ならば {
+        [] が 答え
+    }
+    
+    min_index = index1
+    max_index = index2
+    
+    もし index1 が index2 より大きい ならば {
+        min_index = index2
+        max_index = index1
+    }
+    
+    result = []
+    
+    i = 足す(min_index, 1)
+    max_index 回 くり返す {
+        もし i が max_index より小さい ならば {
+            result の末尾に planets[i] を追加する
+            i を増やす
+        } そうでなければ {
+            くり返しを抜ける
+        }
+    }
+    
+    result が 答え
+}

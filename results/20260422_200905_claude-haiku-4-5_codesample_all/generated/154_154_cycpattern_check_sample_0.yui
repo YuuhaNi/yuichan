@@ -1,0 +1,29 @@
+標準ライブラリを使う
+
+cycpattern_check = 入力 a, b に対し {
+   # b の長さを取得
+   blen = b の大きさ
+   
+   # b を回転させながら a に含まれるかチェック
+   i = 0
+   blen 回くり返す {
+      # i 文字目から始まる b の回転文字列を作る
+      rotated = ""
+      j = 0
+      blen 回くり返す {
+         idx = 剰余(和(i, j), blen)
+         rotated に b[idx] を追加する
+         j を増やす
+      }
+      
+      # rotated が a に含まれるかチェック
+      pos = find(a, rotated)
+      もし pos が 差(0, 1) 以外 ならば {
+         真 が答え
+      }
+      
+      i を増やす
+   }
+   
+   偽 が答え
+}

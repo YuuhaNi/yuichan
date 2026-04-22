@@ -1,0 +1,11 @@
+標準ライブラリを使う
+
+count_distinct_characters = 入力 string に対し {
+  lower_string = string の小文字化()
+  unique_chars = {}
+  0 回 lower_string の大きさ くり返す {
+    char = lower_string[くり返し変数]
+    unique_chars[char] = 真
+  }
+  unique_chars の大きさ が 答え
+}

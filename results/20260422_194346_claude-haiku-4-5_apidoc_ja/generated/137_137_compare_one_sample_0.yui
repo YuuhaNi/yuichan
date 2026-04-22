@@ -1,0 +1,25 @@
+標準ライブラリを使う
+
+compare_one = 入力 a, b に対し {
+    # aを数値に変換
+    a_str = 文字列化(a)
+    a_normalized = a_str を「,」で「.」に置換
+    a_num = 小数化(a_normalized)
+    
+    # bを数値に変換
+    b_str = 文字列化(b)
+    b_normalized = b_str を「,」で「.」に置換
+    b_num = 小数化(b_normalized)
+    
+    # 値が同じ場合はNoneを返す
+    もし a_num = b_num ならば {
+        値なし を返す
+    }
+    
+    # 大きい方を元の型で返す
+    もし a_num > b_num ならば {
+        a を返す
+    } そうでなければ {
+        b を返す
+    }
+}

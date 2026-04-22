@@ -1,0 +1,98 @@
+標準ライブラリを使う
+
+minPath = 入力 grid, k に対し {
+   N = gridの大きさ
+   
+   # グリッドから値の位置を取得する辞書を作成
+   posMap = {}
+   i = 0
+   N回くり返す {
+      j = 0
+      N回くり返す {
+         val = grid[i][j]
+         posMap[文字列化(val)] = [i, j]
+         jを増やす
+      }
+      iを増やす
+   }
+   
+   # BFS で最短経路を探索
+   # キュー: [現在位置[row,col], 訪問したセルの値のリスト]
+   queue = []
+   
+   # すべてのセルからスタート
+   i = 0
+   N回くり返す {
+      j = 0
+      N回くり返す {
+         val = grid[i][j]
+         path = [val]
+         queueに[i, j, path]を追加する
+         jを増やす
+      }
+      iを増やす
+   }
+   
+   result = 値なし
+   
+   queueの大きさが0以外の間 {
+      current = queue[0]
+      row = current[0]
+      col = current[1]
+      path = current[2]
+      
+      # キューの先頭を削除
+      queue = queue[1]
+      
+      # 長さkに達したかチェック
+      もしpathの大きさがkならば {
+         もしresultが値なしならば {
+            result = path
+         }
+         そうでなければ {
+            # 辞書順で比較
+            smaller = 偽
+            idx = 0
+            pathの大きさ回くり返す {
+               もしpath[idx]がresult[idx]より小さいならば {
+                  result = path
+                  smaller = 真
+                  くり返しを抜ける
+               }
+               そうでなければ {
+                  もしpath[idx]がresult[idx]以外ならば {
+                     くり返しを抜ける
+                  }
+               }
+               idxを増やす
+            }
+         }
+      }
+      そうでなければ {
+         # 隣接セルを探索（上下左右）
+         directions = [[0, 1], [0, -1], [1, 0], [-1, 0]]
+         d = 0
+         4回くり返す {
+            newRow = 和(row, directions[d][0])
+            newCol = 和(col, directions[d][1])
+            
+            # グリッド内かチェック
+            もしnewRowが0以上ならば {
+               もしnewRowがNより小さいならば {
+                  もしnewColが0以上ならば {
+                     もしnewColがNより小さいならば {
+                        val = grid[newRow][newCol]
+                        newPath = path
+                        newPathにvalを追加する
+                        queueに[newRow, newCol, newPath]を追加する
+                     }
+                  }
+               }
+            }
+            dを増やす
+         }
+      }
+   }
+   
+   result が答え
+}

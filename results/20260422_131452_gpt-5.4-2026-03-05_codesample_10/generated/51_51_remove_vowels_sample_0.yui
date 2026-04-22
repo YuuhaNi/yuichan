@@ -1,0 +1,16 @@
+標準ライブラリを使う
+
+remove_vowels = 入力 text に対し {
+   result=""
+   vowels=["a","e","i","o","u","A","E","I","O","U"]
+   n=textの大きさ
+   i=0
+   n回くり返す{
+      c=text[i]
+      もしcがvowelsのいずれでもないならば{
+         resultにcを追加する
+      }
+      iを増やす
+   }
+   resultが答え
+}

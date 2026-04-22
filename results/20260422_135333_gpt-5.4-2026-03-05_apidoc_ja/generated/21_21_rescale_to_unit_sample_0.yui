@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+rescale_to_unit = 入力 numbers に対し {
+  min_value = 最小値(numbers)
+  max_value = 最大値(numbers)
+  range = 差(max_value, min_value)
+
+  result = []
+  i = 0
+  反復 i < 長さ(numbers) の間 {
+    value = numbers[i]
+    normalized = 商(差(value, min_value), range)
+    result = result + [normalized]
+    i = 和(i, 1)
+  }
+  result
+}

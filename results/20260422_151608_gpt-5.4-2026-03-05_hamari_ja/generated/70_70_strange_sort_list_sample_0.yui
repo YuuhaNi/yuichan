@@ -1,0 +1,29 @@
+標準ライブラリを使う
+
+strange_sort_list = 入力 lst に対し {
+   n=lstの大きさ
+   もしnが0ならば{
+      []が答え
+   }
+
+   arr=lstをソートしたもの
+   result=[]
+   left=0
+   right=差(n,1)
+
+   くり返し{
+      もしleftがrightより大きいならば{
+         くり返しを抜ける
+      }
+
+      resultにarr[left]を追加する
+      leftを増やす
+
+      もしleftがright以下ならば{
+         resultにarr[right]を追加する
+         rightを減らす
+      }
+   }
+
+   resultが答え
+}

@@ -1,0 +1,18 @@
+標準ライブラリを使う
+
+how_many_times = 入力 string, substring に対し {
+    もし substring の大きさ が 0 ならば {
+        0 が 答え
+    }
+    count = 0
+    i = 0
+    string の大きさ が length ならば {
+        length - substring の大きさ + 1 回 くり返す {
+            もし string[i] から substring の大きさ 個 が substring ならば {
+                count を増やす
+            }
+            i を増やす
+        }
+    }
+    count が 答え
+}

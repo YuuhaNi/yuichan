@@ -1,0 +1,22 @@
+標準ライブラリを使う
+
+filter_by_prefix = 入力 strings, prefix に対し {
+   result = []
+   strings の大きさ を n とする
+   n 回くり返す {
+      s = strings[0]
+      strings から s を取り除く
+      
+      skip = 0
+      もし s の大きさが prefix の大きさより小さいならば {
+         skip = 1
+      }
+      
+      もし skip が 0 ならば {
+         もし s から 0 番目から prefix の大きさ 個取り出す が prefix ならば {
+            result に s を追加する
+         }
+      }
+   }
+   result が答え
+}

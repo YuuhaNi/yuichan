@@ -1,0 +1,31 @@
+標準ライブラリを使う
+
+search = 入力 lst に対し {
+   counts = {}
+   i = 0
+
+   lstの大きさ回くり返す{
+      x = lst[i]
+      もしxがcountsのいずれかならば{
+         counts[x] = 和(counts[x], 1)
+      }そうでなければ{
+         counts[x] = 1
+      }
+      iを増やす
+   }
+
+   ans = -1
+   i = 0
+
+   lstの大きさ回くり返す{
+      x = lst[i]
+      もしcounts[x]がx以上ならば{
+         もしxがansより大きいならば{
+            ans = x
+         }
+      }
+      iを増やす
+   }
+
+   ansが答え
+}

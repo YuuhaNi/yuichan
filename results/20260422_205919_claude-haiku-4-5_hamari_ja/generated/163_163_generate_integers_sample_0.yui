@@ -1,0 +1,43 @@
+標準ライブラリを使う
+
+generate_integers = 入力 a, b に対し {
+   # aとbの小さい方を min、大きい方を max とする
+   min = a
+   max = b
+   もしaがbより大きいならば {
+      min = b
+      max = a
+   }
+   
+   # 結果配列を初期化
+   result = []
+   
+   # min から max までループ
+   current = min
+   差_max_min = 差(max, min)
+   和_max_min = 和(max, min)
+   
+   もし差_max_min が 0 ならば {
+      # a == b の場合、aが偶数なら返す
+      remainder = 剰余(a, 2)
+      もし remainder が 0 ならば {
+         result に a を追加する
+      }
+   }
+   そうでなければ {
+      # min <= current <= max でループ
+      ループ {
+         remainder = 剰余(current, 2)
+         もし remainder が 0 ならば {
+            result に current を追加する
+         }
+         
+         current = 和(current, 1)
+         もし current がmax より大きいならば {
+            くり返しを抜ける
+         }
+      }
+   }
+   
+   result が答え
+}

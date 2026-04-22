@@ -1,0 +1,37 @@
+標準ライブラリを使う
+
+words_string = 入力 s に対し {
+   result = []
+   current = ""
+   i = 0
+   s の大きさ 回 くり返す {
+      c = s[i]
+      # カンマ (44) または空白 (32) で区切る
+      もし c が 44 ならば {
+         # カンマの場合、current に文字が溜まっていれば追加
+         もし current の大きさ が 0 より大きい ならば {
+            result に current を追加する
+            current = ""
+         }
+      }
+      そうでなければ {
+         もし c が 32 ならば {
+            # 空白の場合、current に文字が溜まっていれば追加
+            もし current の大きさ が 0 より大きい ならば {
+               result に current を追加する
+               current = ""
+            }
+         }
+         そうでなければ {
+            # カンマでも空白でもない文字を current に追加
+            current に c を追加する
+         }
+      }
+      i を増やす
+   }
+   # ループ終了後、残った current があれば追加
+   もし current の大きさ が 0 より大きい ならば {
+      result に current を追加する
+   }
+   result が答え
+}

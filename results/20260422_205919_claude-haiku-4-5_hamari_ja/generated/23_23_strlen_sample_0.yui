@@ -1,0 +1,5 @@
+標準ライブラリを使う
+
+strlen = 入力 string に対し {
+   string の大きさ
+}

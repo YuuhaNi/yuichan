@@ -1,0 +1,65 @@
+標準ライブラリを使う
+
+minPath = 入力 grid, k に対し {
+   n = gridの大きさ
+
+   pos = {}
+   i = 0
+   n回くり返す{
+      j = 0
+      n回くり返す{
+         v = grid[i][j]
+         key = 文字列化(v)
+         pos[key] = {"r": i, "c": j}
+         jを増やす
+      }
+      iを増やす
+   }
+
+   ans = []
+   cur = 1
+   ansにcurを追加する
+
+   もしkが1ならば{
+      ansが答え
+   }
+
+   rem = 差(k, 1)
+   rem回くり返す{
+      p = pos[文字列化(cur)]
+      r = p["r"]
+      c = p["c"]
+
+      best = 1000000000
+
+      もしrが0より大きいならば{
+         nv = grid[差(r,1)][c]
+         もしnvがbestより小さいならば{
+            best = nv
+         }
+      }
+      もしrが差(n,1)より小さいならば{
+         nv = grid[和(r,1)][c]
+         もしnvがbestより小さいならば{
+            best = nv
+         }
+      }
+      もしcが0より大きいならば{
+         nv = grid[r][差(c,1)]
+         もしnvがbestより小さいならば{
+            best = nv
+         }
+      }
+      もしcが差(n,1)より小さいならば{
+         nv = grid[r][和(c,1)]
+         もしnvがbestより小さいならば{
+            best = nv
+         }
+      }
+
+      ansにbestを追加する
+      cur = best
+   }
+
+   ansが答え
+}

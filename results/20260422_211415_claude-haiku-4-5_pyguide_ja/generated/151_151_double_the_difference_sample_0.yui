@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+double_the_difference = 入力 lst に対し {
+   result = 0
+   i = 0
+   lstの大きさ回くり返す {
+      num = lst[i]
+      もし整数判定(num)が真ならば {
+         もしnum が0より大きいならば {
+            remainder = 剰余(num, 2)
+            もしremainder が1ならば {
+               result = 和(result, 積(num, num))
+            }
+         }
+      }
+      iを増やす
+   }
+   resultが答え
+}

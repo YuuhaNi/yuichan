@@ -1,0 +1,31 @@
+標準ライブラリを使う
+
+count_nums = 入力 arr に対し {
+   result = 0
+   arr の大きさ 回くり返す {
+      i = 0
+      num = arr[i]
+      digit_sum = 0
+      
+      もし num が 0 以外 ならば {
+         もし num が 0 より小さい ならば {
+            digit_sum = -1
+            num = 絶対値(num)
+         }
+      }
+      
+      num が 0 以外 ならば {
+         num の大きさ 回くり返す {
+            digit_sum = 和(digit_sum, 剰余(num, 10))
+            num = 商(num, 10)
+         }
+      }
+      
+      もし digit_sum が 0 より大きい ならば {
+         result を増やす
+      }
+      
+      i を増やす
+   }
+   result が答え
+}

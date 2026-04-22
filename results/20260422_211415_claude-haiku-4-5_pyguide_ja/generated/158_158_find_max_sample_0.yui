@@ -1,0 +1,39 @@
+標準ライブラリを使う
+
+find_max = 入力 words に対し {
+   max_word = ""
+   max_unique = 0
+   
+   wordsの大きさ回くり返す {
+      i = 0
+      word = words[i]
+      
+      unique_chars = []
+      wordの大きさ回くり返す {
+         j = 0
+         char = word[j]
+         
+         もしcharがunique_charsのいずれでもないならば {
+            unique_charsにcharを追加する
+         }
+         jを増やす
+      }
+      
+      unique_count = unique_charsの大きさ
+      
+      もしunique_countがmax_uniqueより大きいならば {
+         max_unique = unique_count
+         max_word = word
+      }そうでなければ {
+         もしunique_countがmax_uniqueならば {
+            もしwordがmax_wordより小さいならば {
+               max_word = word
+            }
+         }
+      }
+      
+      iを増やす
+   }
+   
+   max_wordが答え
+}

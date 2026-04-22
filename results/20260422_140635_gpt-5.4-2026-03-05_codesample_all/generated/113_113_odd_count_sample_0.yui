@@ -1,0 +1,23 @@
+標準ライブラリを使う
+
+odd_count=入力lstに対し{
+   result=[]
+   n=lstの大きさ
+   i=0
+   n回くり返す{
+      s=lst[i]
+      count=0
+      j=0
+      sの大きさ回くり返す{
+         c=s[j]
+         もしcが"13579"のいずれかならば{
+            countを増やす
+         }
+         jを増やす
+      }
+      msg="the number of odd elements {count}n the str{count}ng {count} of the {count}nput."
+      resultにmsgを追加する
+      iを増やす
+   }
+   resultが答え
+}

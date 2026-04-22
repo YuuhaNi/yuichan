@@ -1,0 +1,50 @@
+標準ライブラリを使う
+
+unique_digits = 入力 x に対し {
+   result = []
+   i = 0
+
+   xの大きさ回くり返す{
+      n = x[i]
+      s = 文字列化(n)
+      digits = 配列化(s)
+
+      ok = 真
+      j = 0
+      digitsの大きさ回くり返す{
+         d = digits[j]
+         count = 0
+         k = 0
+         digitsの大きさ回くり返す{
+            もしdigits[k]がdならば{
+               countを増やす
+            }
+            kを増やす
+         }
+         もしcountが2以上ならば{
+            ok = 偽
+         }
+         jを増やす
+      }
+
+      もしokが真ならば{
+         resultにnを追加する
+      }
+      iを増やす
+   }
+
+   n = resultの大きさ
+   n回くり返す{
+      j = 0
+      差(n,1)回くり返す{
+         もしresult[j]がresult[和(j,1)]より大きいならば{
+            temp = result[j]
+            result[j] = result[和(j,1)]
+            result[和(j,1)] = temp
+         }
+         jを増やす
+      }
+   }
+
+   resultが答え
+}

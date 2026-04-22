@@ -1,0 +1,33 @@
+標準ライブラリを使う
+
+reverse_delete = 入力 s, c に対し {
+   filtered=""
+   i=0
+   n=sの大きさ
+
+   n回くり返す{
+      ch=s[i]
+      もしcにchが含まれるならば{
+      }
+      そうでなければ{
+         filtered=連結(filtered,ch)
+      }
+      iを増やす
+   }
+
+   rev=""
+   j=差(filteredの大きさ,1)
+   m=filteredの大きさ
+
+   m回くり返す{
+      rev=連結(rev,filtered[j])
+      jを減らす
+   }
+
+   is_palindrome=0
+   もしfilteredがrevならば{
+      is_palindrome=1
+   }
+
+   (filtered,is_palindrome)が答え
+}

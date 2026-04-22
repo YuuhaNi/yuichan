@@ -1,0 +1,18 @@
+標準ライブラリを使う
+
+flip_case = 入力 string に対し {
+  chars = 配列化(string)
+  result = ""
+
+  chars の各要素 code について {
+    もし code >= 97 かつ code <= 122 なら {
+      result = result + 文字列化([code - 32])
+    } そうでなく もし code >= 65 かつ code <= 90 なら {
+      result = result + 文字列化([code + 32])
+    } でなければ {
+      result = result + 文字列化([code])
+    }
+  }
+
+  result
+}

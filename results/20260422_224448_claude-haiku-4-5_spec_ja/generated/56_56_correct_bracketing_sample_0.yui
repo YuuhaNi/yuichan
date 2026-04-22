@@ -1,0 +1,24 @@
+標準ライブラリを使う
+
+correct_bracketing = 入力 brackets に対し {
+   count = 0
+   i = 0
+   brackets の大きさ 回くり返す {
+      もし brackets[i] が 60 ならば {
+         count を増やす
+      }
+      そうでなければ {
+         count を減らす
+      }
+      もし count が 0 より小さい ならば {
+         偽 が答え
+      }
+      i を増やす
+   }
+   もし count が 0 ならば {
+      真 が答え
+   }
+   そうでなければ {
+      偽 が答え
+   }
+}

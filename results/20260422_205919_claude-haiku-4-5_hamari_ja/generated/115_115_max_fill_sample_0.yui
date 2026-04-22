@@ -1,0 +1,33 @@
+標準ライブラリを使う
+
+max_fill = 入力 grid, capacity に対し {
+   # 各井戸の水の量を計算
+   well_count = gridの大きさ
+   buckets = 0
+   
+   well_idx = 0
+   well_count回くり返す {
+      # 現在の井戸の水の量を計算
+      well = grid[well_idx]
+      water = 0
+      
+      col_idx = 0
+      wellの大きさ回くり返す {
+         water = 和(water, well[col_idx])
+         col_idx = 和(col_idx, 1)
+      }
+      
+      # この井戸を空にするのに必要なバケツ回数を計算
+      もし water が 0 より大きい ならば {
+         # 必要なバケツ回数 = ceil(water / capacity)
+         # = (water + capacity - 1) / capacity (整数除算で天井関数を実現)
+         numerator = 和(water, 差(capacity, 1))
+         needed = 商(numerator, capacity)
+         buckets = 和(buckets, needed)
+      }
+      
+      well_idx = 和(well_idx, 1)
+   }
+   
+   buckets が答え
+}

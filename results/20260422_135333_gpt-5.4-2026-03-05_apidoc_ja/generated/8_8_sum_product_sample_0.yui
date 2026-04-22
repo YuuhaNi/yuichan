@@ -1,0 +1,5 @@
+標準ライブラリを使う
+
+sum_product = 入力 numbers に対し {
+    (和(numbers), 積(numbers))
+}

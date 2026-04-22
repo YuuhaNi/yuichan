@@ -1,0 +1,42 @@
+標準ライブラリを使う
+
+intersection = 入力 interval1, interval2 に対し {
+   start1 = interval1[0]
+   end1 = interval1[1]
+   start2 = interval2[0]
+   end2 = interval2[1]
+
+   left = 最大値(start1, start2)
+   right = 最小値(end1, end2)
+
+   もしleftがrightより大きいならば{
+      "NO"が答え
+   }
+
+   length = 和(差(right, left), 1)
+
+   もしlengthが2より小さいならば{
+      "NO"が答え
+   }
+
+   i = 2
+   is_prime = 真
+
+   length回くり返す{
+      もしiがlength以上ならば{
+         くり返しを抜ける
+      }
+      もし剰余(length, i)が0ならば{
+         is_prime = 偽
+         くり返しを抜ける
+      }
+      iを増やす
+   }
+
+   もしis_primeが真ならば{
+      "YES"が答え
+   }
+   そうでなければ{
+      "NO"が答え
+   }
+}

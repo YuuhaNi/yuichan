@@ -1,0 +1,44 @@
+標準ライブラリを使う
+
+is_prime = 入力 n に対し {
+   もしnが2より小さいならば {
+      偽 が答え
+   }
+   もしnが2ならば {
+      真 が答え
+   }
+   i = 2
+   もしnが積(i,i)以下ならば {
+      i回くり返す {
+         もしnが剰余(n,i)ならば {
+            真 が答え
+         }
+         iを増やす
+      }
+   }
+   偽 が答え
+}
+
+intersection = 入力 interval1, interval2 に対し {
+   start1 = interval1[0]
+   end1 = interval1[1]
+   start2 = interval2[0]
+   end2 = interval2[1]
+   
+   intersection_start = 最大値(start1, start2)
+   intersection_end = 最小値(end1, end2)
+   
+   もしintersection_startがintersection_endより大きいならば {
+      "NO" が答え
+   }
+   
+   length = 差(intersection_end, intersection_start)
+   lengthを増やす
+   
+   もしis_prime(length)が真ならば {
+      "YES" が答え
+   }
+   そうでなければ {
+      "NO" が答え
+   }
+}

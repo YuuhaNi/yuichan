@@ -1,0 +1,11 @@
+標準ライブラリを使う
+
+string_to_md5 = 入力 text に対し {
+   もし text が "" ならば {
+      値なし が答え
+   }
+   
+   # MD5ハッシュ計算（標準ライブラリのmd5関数を使用）
+   hash_result = md5(text)
+   hash_result が答え
+}

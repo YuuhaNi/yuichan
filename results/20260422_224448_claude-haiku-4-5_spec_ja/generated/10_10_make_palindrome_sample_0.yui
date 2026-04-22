@@ -1,0 +1,22 @@
+標準ライブラリを使う
+
+make_palindrome = 入力 string に対し {
+   reversed = []
+   i = 文字列化(string)の大きさ
+   iを減らす
+   {
+      もしiが0以上ならば {
+         reversedにstring[i]を追加する
+         iを減らす
+      }
+      そうでなければ {
+         くり返しを抜ける
+      }
+   }
+   もしstring == reversedならば {
+      真 が答え
+   }
+   そうでなければ {
+      偽 が答え
+   }
+}

@@ -1,0 +1,53 @@
+標準ライブラリを使う
+
+move_one_ball = 入力 arr に対し {
+   sz = arr の大きさ
+   
+   もし sz が 0 ならば {
+      真
+   }
+   
+   そうでなければ {
+      # 最大 sz 回のシフトを試す
+      shift_count = 0
+      found = 偽
+      
+      sz 回くり返す {
+         # 現在の配列がソート済みかチェック
+         is_sorted = 真
+         idx = 0
+         
+         差(sz, 1) 回くり返す {
+            もし arr[idx] が arr[和(idx, 1)] より大きい ならば {
+               is_sorted = 偽
+               くり返しを抜ける
+            }
+            idx = 和(idx, 1)
+         }
+         
+         もし is_sorted が 真 ならば {
+            found = 真
+            くり返しを抜ける
+         }
+         
+         # 右シフト操作を実行
+         last = arr[差(sz, 1)]
+         idx = 差(sz, 1)
+         
+         くり返しを抜ける前に {
+            もし idx が 0 より大きい ならば {
+               idx = 差(idx, 1)
+               arr[和(idx, 1)] = arr[idx]
+            }
+            そうでなければ {
+               くり返しを抜ける
+            }
+         }
+         
+         arr[0] = last
+         shift_count = 和(shift_count, 1)
+      }
+      
+      found
+   }
+}

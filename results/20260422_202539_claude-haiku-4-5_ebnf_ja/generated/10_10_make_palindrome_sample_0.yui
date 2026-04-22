@@ -1,0 +1,16 @@
+標準ライブラリを使う
+
+make_palindrome = 入力 string に対し {
+  reversed = ""
+  長さ = string の大きさ
+  長さ 回 くり返す {
+    長さ を減らす
+    reversed の末尾に string[長さ] を追加する
+  }
+  reversed が string ならば {
+    "回文です" が答え
+  }
+  そうでなければ {
+    "回文ではありません" が答え
+  }
+}

@@ -1,0 +1,15 @@
+標準ライブラリを使う
+
+hex_key=入力numに対し{
+   primes="2357BD"
+   count=0
+   i=0
+   numの大きさ回くり返す{
+      c=num[i]
+      もしcがprimesのいずれかならば{
+         countを増やす
+      }
+      iを増やす
+   }
+   countが答え
+}

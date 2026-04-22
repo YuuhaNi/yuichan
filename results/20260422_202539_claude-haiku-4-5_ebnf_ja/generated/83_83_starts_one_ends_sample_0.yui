@@ -1,0 +1,28 @@
+標準ライブラリを使う
+
+starts_one_ends = 入力 n に対し {
+  count = 0
+  min_val = 1
+  max_val = 1
+  (n - 1) 回 くり返す {
+    min_val = 積(min_val, 10)
+    max_val = 積(max_val, 10)
+  }
+  max_val = 差(max_val, 1)
+  
+  min_val 回 くり返す {
+    current = 和(min_val, count)
+    first_digit = 商(current, max_val)
+    last_digit = 剰余(current, 10)
+    
+    もし first_digit が 1 ならば {
+      count = 和(count, 1)
+    } そうでなければ {
+      もし last_digit が 1 ならば {
+        count = 和(count, 1)
+      }
+    }
+  }
+  
+  count が 答え
+}

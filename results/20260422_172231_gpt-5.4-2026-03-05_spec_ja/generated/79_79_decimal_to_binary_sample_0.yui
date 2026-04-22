@@ -1,0 +1,38 @@
+標準ライブラリを使う
+
+decimal_to_binary = 入力 decimal に対し {
+   もしdecimalが0ならば {
+      "db0db"が答え
+   }
+
+   bits = []
+   n = decimal
+
+   もしnが0より小さいならば {
+      n = -n
+   }
+
+   もしnが0より大きいならば {
+      1000回くり返す {
+         もしnが0ならば {
+            くり返しを抜ける
+         }
+         bitsに文字列化(剰余(n, 2))を追加する
+         n = 商(n, 2)
+      }
+   }
+
+   result = "db"
+   i = bitsの大きさ
+
+   1000回くり返す {
+      もしiが0ならば {
+         くり返しを抜ける
+      }
+      iを減らす
+      result = "{result}{bits[i]}"
+   }
+
+   result = "{result}db"
+   result が答え
+}

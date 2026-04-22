@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+int_to_mini_roman = 入力 number に対し {
+   # ローマ数字の値と対応する文字列を大きい順に並べたもの
+   values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+   numerals = ["m", "cm", "d", "cd", "c", "xc", "l", "xl", "x", "ix", "v", "iv", "i"]
+   
+   result = ""
+   num = number
+   i = 0
+   13回くり返す {
+      v = values[i]
+      n = numerals[i]
+      # num が v 以上の間、対応する文字列を追加して num から v を引く
+      くり返す {
+         もし num が v 以上ならば {
+            result に n を追加する
+            num = 差(num, v)
+         }
+         そうでなければ {
+            くり返しを抜ける
+         }
+      }
+      i を増やす
+   }
+   result が答え
+}

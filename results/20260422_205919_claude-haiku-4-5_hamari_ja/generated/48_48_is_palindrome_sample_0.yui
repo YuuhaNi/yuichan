@@ -1,0 +1,22 @@
+標準ライブラリを使う
+
+is_palindrome = 入力 text に対し {
+   len = text の大きさ
+   i = 0
+   もし len が 0 ならば {
+      真
+   }
+   そうでなければ {
+      match = 真
+      商(len, 2) 回くり返す {
+         left_char = text[i]
+         right_idx = 差(差(len, 1), i)
+         right_char = text[right_idx]
+         もし left_char が right_char 以外ならば {
+            match = 偽
+         }
+         i を増やす
+      }
+      match
+   }
+}

@@ -1,0 +1,23 @@
+標準ライブラリを使う
+
+minSubArraySum = 入力 nums に対し {
+    n=numsの大きさ
+    cur=nums[0]
+    best=nums[0]
+    i=1
+    差(n,1)回くり返す{
+        x=nums[i]
+        extend=和(cur,x)
+        もしextendがxより小さいならば{
+            cur=extend
+        }
+        そうでなければ{
+            cur=x
+        }
+        もしcurがbestより小さいならば{
+            best=cur
+        }
+        iを増やす
+    }
+    bestが答え
+}

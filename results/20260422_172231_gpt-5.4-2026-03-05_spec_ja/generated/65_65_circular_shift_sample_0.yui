@@ -1,0 +1,31 @@
+標準ライブラリを使う
+
+circular_shift = 入力 x, shift に対し {
+   s = 文字列化(x)
+   n = sの大きさ
+
+   もしshiftがnより大きいならば {
+      result = []
+      i = n
+      n回くり返す {
+         iを減らす
+         resultにs[i]を追加する
+      }
+      文字列化(result)が答え
+   }
+   そうでなければ {
+      k = 剰余(shift, n)
+      result = []
+      i = 差(n, k)
+      k回くり返す {
+         resultにs[i]を追加する
+         iを増やす
+      }
+      i = 0
+      差(n, k)回くり返す {
+         resultにs[i]を追加する
+         iを増やす
+      }
+      文字列化(result)が答え
+   }
+}

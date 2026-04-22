@@ -1,0 +1,74 @@
+標準ライブラリを使う
+
+strange_sort_list = 入力 lst に対し {
+   result = []
+   work = []
+
+   i = 0
+   lstの大きさ回くり返す {
+      workにlst[i]を追加する
+      iを増やす
+   }
+
+   もしworkの大きさが0ならば {
+      resultが答え
+   }
+
+   もしworkの大きさが1ならば {
+      resultにwork[0]を追加する
+      resultが答え
+   }
+
+   もしworkの大きさが2ならば {
+      もしwork[0]がwork[1]より大きいならば {
+         resultにwork[1]を追加する
+         resultにwork[0]を追加する
+      }
+      そうでなければ {
+         resultにwork[0]を追加する
+         resultにwork[1]を追加する
+      }
+      resultが答え
+   }
+
+   n = workの大きさ
+   p = 0
+   差(n, 1)回くり返す {
+      q = 0
+      差(差(n, 1), p)回くり返す {
+         もしwork[q]がwork[差(q, -1)]より大きいならば {
+            temp = work[q]
+            work[q] = work[差(q, -1)]
+            work[差(q, -1)] = temp
+         }
+         qを増やす
+      }
+      pを増やす
+   }
+
+   left = 0
+   right = 差(workの大きさ, 1)
+
+   もしleftがrightならば {
+      resultにwork[left]を追加する
+      resultが答え
+   }
+
+   もしleftがrightより小さいならば {
+      resultにwork[left]を追加する
+      leftを増やす
+   }
+
+   差(workの大きさ, 1)回くり返す {
+      もしleftがright以下ならば {
+         resultにwork[right]を追加する
+         rightを減らす
+      }
+      もしleftがright以下ならば {
+         resultにwork[left]を追加する
+         leftを増やす
+      }
+   }
+
+   resultが答え
+}

@@ -1,0 +1,51 @@
+標準ライブラリを使う
+
+sort_array = 入力 arr に対し {
+  count_ones = 入力 n に対し {
+    count = 0
+    もし n が 0 ならば {
+      0 が答え
+    }
+    もし n より小さい 0 ならば {
+      n = 差(0, n)
+    }
+    くり返す {
+      もし n が 0 ならば {
+        くり返しを抜ける
+      }
+      remainder = 剰余(n, 2)
+      もし remainder が 1 ならば {
+        count を増やす
+      }
+      n = 商(n, 2)
+    }
+    count が答え
+  }
+  
+  result = arr
+  length = arr の大きさ
+  i = 0
+  くり返す length 回 {
+    j = 0
+    くり返す 差(length, 1) 回 {
+      ones_j = count_ones(result[j])
+      ones_j_plus_1 = count_ones(result[和(j, 1)])
+      もし ones_j が ones_j_plus_1 ならば {
+        もし result[j] より大きい result[和(j, 1)] ならば {
+          temp = result[j]
+          result[j] = result[和(j, 1)]
+          result[和(j, 1)] = temp
+        }
+      }
+      もし ones_j より大きい ones_j_plus_1 ならば {
+        temp = result[j]
+        result[j] = result[和(j, 1)]
+        result[和(j, 1)] = temp
+      }
+      j を増やす
+    }
+    i を増やす
+  }
+  
+  result が答え
+}

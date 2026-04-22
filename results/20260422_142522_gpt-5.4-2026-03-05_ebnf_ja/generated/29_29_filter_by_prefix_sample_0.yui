@@ -1,0 +1,14 @@
+標準ライブラリを使う
+
+filter_by_prefix = 入力 strings, prefix に対し {
+    result = []
+    i = 0
+    stringsの大きさ回 くり返す {
+        s = strings[i]
+        もし s[0] が prefix[0] ならば {
+            resultの末尾に sを追加する
+        }
+        iを増やす
+    }
+    resultが答え
+}

@@ -1,0 +1,13 @@
+標準ライブラリを使う
+
+f = 入力 n に対し {
+   result = []
+   factorial = 1
+   i = 1
+   n回くり返す {
+      factorial = 積(factorial, i)
+      result に factorial を追加する
+      i = 和(i, 1)
+   }
+   result が答え
+}

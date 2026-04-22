@@ -1,0 +1,29 @@
+標準ライブラリを使う
+
+even_odd_count = 入力 num に対し {
+   # 負の数は絶対値に変換
+   n = 絶対値(num)
+   # 整数を文字列化して桁数を数える
+   s = 文字列化(n)
+   even_count = 0
+   odd_count = 0
+   i = 0
+   s の大きさ 回 くり返す {
+      # 各桁の数字を取り出す
+      digit_code = s[i]
+      # '0' のコードは 48、'1' のコードは 49 なので、48 を引いて数字を得る
+      digit = 差(digit_code, 48)
+      # 数字が偶数か奇数かで分類
+      remainder = 剰余(digit, 2)
+      もし remainder が 0 ならば {
+         even_count を増やす
+      }
+      そうでなければ {
+         odd_count を増やす
+      }
+      i を増やす
+   }
+   {"even": even_count, "odd": odd_count} が答え
+}
+
+# テスト

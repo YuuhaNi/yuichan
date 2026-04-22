@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+how_many_times = 入力 string, substring に対し {
+    もしsubstringが""ならば{
+        0が答え
+    }
+
+    count=0
+    i=0
+    n=stringの長さ
+    m=substringの長さ
+    limit=差(n,m)
+
+    もしlimitが0より小さいならば{
+        0が答え
+    }
+
+    和(limit,1)回くり返す{
+        part=stringのiから和(i,m)まで
+        もしpartがsubstringならば{
+            countを増やす
+        }
+        iを増やす
+    }
+
+    countが答え
+}

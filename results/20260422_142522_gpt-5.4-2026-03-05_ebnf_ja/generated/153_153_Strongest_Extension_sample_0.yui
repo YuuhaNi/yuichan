@@ -1,0 +1,37 @@
+標準ライブラリを使う
+
+Strongest_Extension = 入力 class_name, extensions に対し {
+    strongest = extensions[0]
+    strongest_score = 0
+
+    i = 0
+    extensionsの大きさ回 くり返す {
+        ext = extensions[i]
+        score = 0
+        j = 0
+        extの大きさ回 くり返す {
+            ch = ext[j]
+            もし chが"ABCDEFGHIJKLMNOPQRSTUVWXYZ"のいずれか ならば {
+                score = scoreを1に追加する
+            } そうでなければ {
+                もし chが"abcdefghijklmnopqrstuvwxyz"のいずれか ならば {
+                    score = score
+                    scoreを減らす
+                } そうでなければ {
+                    何もしない
+                }
+            }
+            jを増やす
+        }
+        もし strongest_scoreがscoreより小さい ならば {
+            strongest = ext
+            strongest_score = score
+        } そうでなければ {
+            何もしない
+        }
+        iを増やす
+    }
+
+    [class_name, ".", strongest]を「文字列結合」に追加する
+    「文字列結合」[0]が答え
+}

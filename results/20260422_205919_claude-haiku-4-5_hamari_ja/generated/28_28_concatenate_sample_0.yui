@@ -1,0 +1,11 @@
+標準ライブラリを使う
+
+concatenate = 入力 strings に対し {
+   result = ""
+   strings の大きさを n とする
+   0 から n より小さい間くり返す {
+      result = 文字列連結(result, strings[i])
+      i を増やす
+   }
+   result が答え
+}

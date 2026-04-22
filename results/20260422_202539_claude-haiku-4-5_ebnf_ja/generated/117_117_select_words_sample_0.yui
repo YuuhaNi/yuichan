@@ -1,0 +1,46 @@
+標準ライブラリを使う
+
+select_words = 入力 s, n に対し {
+    result = []
+    words = 分割(s, " ")
+    
+    words の大きさ 回 くり返す {
+        i = 現在のインデックス
+        word = words[i]
+        consonant_count = 0
+        
+        word の大きさ 回 くり返す {
+            j = 現在のインデックス
+            char = word[j]
+            char_lower = 小文字(char)
+            
+            もし char_lower が "a" ならば {
+                何もしない
+            } そうでなければ {
+                もし char_lower が "e" ならば {
+                    何もしない
+                } そうでなければ {
+                    もし char_lower が "i" ならば {
+                        何もしない
+                    } そうでなければ {
+                        もし char_lower が "o" ならば {
+                            何もしない
+                        } そうでなければ {
+                            もし char_lower が "u" ならば {
+                                何もしない
+                            } そうでなければ {
+                                consonant_count を増やす
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        もし consonant_count が n ならば {
+            result の末尾に word を追加する
+        }
+    }
+    
+    result が 答え
+}

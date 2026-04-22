@@ -1,0 +1,54 @@
+標準ライブラリを使う
+
+filter_integers = 入力 values に対し {
+   result = []
+   valuesの大きさ回くり返す{
+      i = 0
+      valuesの大きさ回くり返す{
+         もしiがvaluesの大きさより小さいならば{
+            もし整数判定(values[i])が真ならば{
+               resultにvalues[i]を追加する
+            }
+            iを増やす
+         }そうでなければ{
+            くり返しを抜ける
+         }
+      }
+      くり返しを抜ける
+   }
+   result が答え
+}
+標準ライブラリを使う
+
+filter_integers = 入力 values に対し {
+   result = []
+   n = valuesの大きさ
+   n回くり返す{
+      i = 0
+      n回くり返す{
+         もしiがnより小さいならば{
+            もし整数判定(values[i])が真ならば{
+               resultにvalues[i]を追加する
+            }
+            iを増やす
+         }そうでなければ{
+            くり返しを抜ける
+         }
+      }
+      くり返しを抜ける
+   }
+   result が答え
+}
+標準ライブラリを使う
+
+filter_integers = 入力 values に対し {
+   result = []
+   i = 0
+   valuesの大きさ回くり返す{
+      もし整数判定(values[i])が真ならば{
+         resultにvalues[i]を追加する
+      }
+      iを増やす
+   }
+   result が答え
+}

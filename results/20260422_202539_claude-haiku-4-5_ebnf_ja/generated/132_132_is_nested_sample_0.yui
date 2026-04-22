@@ -1,0 +1,25 @@
+標準ライブラリを使う
+
+is_nested = 入力 string に対し {
+    depth = 0
+    max_depth = 0
+    
+    0 回 string の大きさ くり返す {
+        char = string[0]
+        
+        もし char が "[" ならば {
+            depth を増やす
+            もし depth が max_depth より大きい ならば {
+                max_depth = depth
+            }
+        }
+        
+        もし char が "]" ならば {
+            depth を減らす
+        }
+        
+        string = string[1]
+    }
+    
+    max_depth が 1 より大きい が 答え
+}

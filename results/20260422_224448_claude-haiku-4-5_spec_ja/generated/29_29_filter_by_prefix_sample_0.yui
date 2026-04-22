@@ -1,0 +1,23 @@
+標準ライブラリを使う
+
+filter_by_prefix = 入力 strings, prefix に対し {
+   result = []
+   strings の大きさ 回くり返す {
+      i = 0
+      iを増やす
+      target = strings[i]
+      match = 真
+      prefix の大きさ 回くり返す {
+         j = 0
+         jを増やす
+         もし target[j] が prefix[j] 以外ならば {
+            match = 偽
+            くり返しを抜ける
+         }
+      }
+      もし match ならば {
+         result に target を追加する
+      }
+   }
+   result が答え
+}

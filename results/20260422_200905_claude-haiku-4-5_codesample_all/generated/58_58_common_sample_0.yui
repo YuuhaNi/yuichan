@@ -1,0 +1,21 @@
+標準ライブラリを使う
+
+common = 入力 l1, l2 に対し {
+   # l1 と l2 の共通要素を見つける
+   common_list = []
+   i = 0
+   l1の大きさ回くり返す {
+      x = l1[i]
+      # x が l2 に含まれており、かつまだ common_list に含まれていなければ追加
+      もし x が l2 のいずれか なら ば {
+         もし x が common_list のいずれでもない なら ば {
+            common_list に x を追加する
+         }
+      }
+      i を増やす
+   }
+   # ソートして返す
+   bubble_sort(common_list) が答え
+}
+
+# bubble_sort は標準ライブラリに含まれているので、そのまま使える

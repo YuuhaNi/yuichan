@@ -1,0 +1,33 @@
+標準ライブラリを使う
+
+separate_paren_groups = 入力 paren_string に対し {
+    result = []
+    current = ""
+    depth = 0
+    i = 0
+    
+    paren_string の大きさ 回 くり返す {
+        char = paren_string[i]
+        
+        もし char が " " ならば {
+            何もしない
+        } そうでなければ {
+            もし char が "(" ならば {
+                current に char を追加する
+                depth を増やす
+            } そうでなければ {
+                current に char を追加する
+                depth を減らす
+                
+                もし depth が 0 ならば {
+                    result の末尾に current を追加する
+                    current = ""
+                }
+            }
+        }
+        
+        i を増やす
+    }
+    
+    result が 答え
+}

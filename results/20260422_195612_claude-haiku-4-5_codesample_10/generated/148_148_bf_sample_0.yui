@@ -1,0 +1,55 @@
+標準ライブラリを使う
+
+bf = 入力 planet1, planet2 に対し {
+   planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
+   
+   # planet1 と planet2 のインデックスを探す
+   idx1 = -1
+   idx2 = -1
+   n = planetsの大きさ
+   i = 0
+   n回くり返す {
+      もし planets[i] が planet1 ならば {
+         idx1 = i
+      }
+      もし planets[i] が planet2 ならば {
+         idx2 = i
+      }
+      i を増やす
+   }
+   
+   # どちらかが見つからなかった場合は空の配列を返す
+   もし idx1 が -1 ならば {
+      []が答え
+   }
+   もし idx2 が -1 ならば {
+      []が答え
+   }
+   
+   # idx1 と idx2 が同じ場合は空の配列を返す
+   もし idx1 が idx2 ならば {
+      []が答え
+   }
+   
+   # idx1 > idx2 の場合は入れ替える
+   もし idx1 が idx2 より大きい ならば {
+      temp = idx1
+      idx1 = idx2
+      idx2 = temp
+   }
+   
+   # idx1 と idx2 の間の惑星を集める
+   result = []
+   i = 和(idx1, 1)
+   n回くり返す {
+      もし i が idx2 より小さい ならば {
+         result に planets[i] を追加する
+         i を増やす
+      }
+      そうでなければ {
+         くり返しを抜ける
+      }
+   }
+   
+   result が答え
+}

@@ -1,0 +1,28 @@
+標準ライブラリを使う
+
+specialFilter = 入力 nums に対し {
+    count = 0
+    i = 0
+    numsの大きさ回 くり返す {
+        n = nums[i]
+        s = 文字列(n)
+        もし s[0] が "-" ならば {
+            first = s[1]
+        } そうでなければ {
+            first = s[0]
+        }
+        last = s[sの大きさ]
+        gt10 = 大なり(n, 10)
+        firstOdd = 含む(["1", "3", "5", "7", "9"], first)
+        lastOdd = 含む(["1", "3", "5", "7", "9"], last)
+        もし gt10 が 真 ならば {
+            もし firstOdd が 真 ならば {
+                もし lastOdd が 真 ならば {
+                    countを増やす
+                }
+            }
+        }
+        iを増やす
+    }
+    countが答え
+}

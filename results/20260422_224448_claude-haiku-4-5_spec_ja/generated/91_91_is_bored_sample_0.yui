@@ -1,0 +1,61 @@
+標準ライブラリを使う
+
+is_bored = 入力 S に対し {
+   # 文を分割するための区切り文字
+   sentences = []
+   current = ""
+   
+   # 文字列を1文字ずつ処理
+   Sの大きさ回くり返す {
+      i = 0
+      もしiがSの大きさより小さいならば {
+         char = S[i]
+         
+         # 区切り文字かチェック
+         もしcharが46ならば {
+            # '.' の文字コード
+            sentencesにcurrentを追加する
+            current = ""
+         }
+         そうでなければ {
+            もしcharが63ならば {
+               # '?' の文字コード
+               sentencesにcurrentを追加する
+               current = ""
+            }
+            そうでなければ {
+               もしcharが33ならば {
+                  # '!' の文字コード
+                  sentencesにcurrentを追加する
+                  current = ""
+               }
+               そうでなければ {
+                  currentにcharを追加する
+               }
+            }
+         }
+         iを増やす
+      }
+   }
+   
+   # 最後の文を追加
+   もしcurrentが""以外ならば {
+      sentencesにcurrentを追加する
+   }
+   
+   # 退屈指数をカウント
+   count = 0
+   sentencesの大きさ回くり返す {
+      j = 0
+      もしjがsentencesの大きさより小さいならば {
+         sentence = sentences[j]
+         # 先頭の空白を除去して "I " で始まるかチェック
+         もしsentenceが"I "で始まるならば {
+            countを増やす
+         }
+         jを増やす
+      }
+   }
+   
+   count が答え
+}

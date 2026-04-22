@@ -1,0 +1,35 @@
+標準ライブラリを使う
+
+circular_shift = 入力 x, shift に対し {
+    s = 文字列(x)
+    n = sの大きさ
+    もし shift が n より大きい ならば {
+        rev = ""
+        i = n
+        n回 くり返す {
+            iを減らす
+            revの末尾に s[i] を追加する
+        }
+        revが答え
+    }
+    もし shift が n ならば {
+        sが答え
+    }
+    k = 剰余(shift, n)
+    もし k が 0 ならば {
+        sが答え
+    }
+    left_len = 差(n, k)
+    result = ""
+    i = left_len
+    k回 くり返す {
+        resultの末尾に s[i] を追加する
+        iを増やす
+    }
+    i = 0
+    left_len回 くり返す {
+        resultの末尾に s[i] を追加する
+        iを増やす
+    }
+    resultが答え
+}

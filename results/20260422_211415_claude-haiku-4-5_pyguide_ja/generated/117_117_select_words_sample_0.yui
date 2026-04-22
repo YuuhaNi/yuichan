@@ -1,0 +1,60 @@
+標準ライブラリを使う
+
+select_words = 入力 s, n に対し {
+   result = []
+   words = []
+   current_word = ""
+   
+   # 文字列を単語に分割
+   i = 0
+   sの大きさ回くり返す{
+      char = s[i]
+      もしchar が 32 ならば{
+         # スペース（文字コード32）
+         もしcurrent_wordの大きさ が 0 より大きいならば{
+            wordsにcurrent_wordを追加する
+            current_word = ""
+         }
+      }そうでなければ{
+         current_wordにcharを追加する
+      }
+      iを増やす
+   }
+   # 最後の単語を追加
+   もしcurrent_wordの大きさ が 0 より大きいならば{
+      wordsにcurrent_wordを追加する
+   }
+   
+   # 各単語の子音数をカウント
+   j = 0
+   wordsの大きさ回くり返す{
+      word = words[j]
+      consonant_count = 0
+      k = 0
+      wordの大きさ回くり返す{
+         c = word[k]
+         # 子音判定: a,e,i,o,u 以外の英文字
+         もしc が 97 ならば{ }
+         そうでなければ もしc が 101 ならば{ }
+         そうでなければ もしc が 105 ならば{ }
+         そうでなければ もしc が 111 ならば{ }
+         そうでなければ もしc が 117 ならば{ }
+         そうでなければ もしc が 65 ならば{ }
+         そうでなければ もしc が 69 ならば{ }
+         そうでなければ もしc が 73 ならば{ }
+         そうでなければ もしc が 79 ならば{ }
+         そうでなければ もしc が 85 ならば{ }
+         そうでなければ{
+            consonant_countを増やす
+         }
+         kを増やす
+      }
+      # 子音数がnと一致したら結果に追加
+      もしconsonant_countがnならば{
+         resultにwordを追加する
+      }
+      jを増やす
+   }
+   
+   resultが答え
+}

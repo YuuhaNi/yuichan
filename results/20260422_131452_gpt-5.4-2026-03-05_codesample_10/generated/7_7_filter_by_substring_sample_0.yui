@@ -1,0 +1,15 @@
+標準ライブラリを使う
+
+filter_by_substring = 入力 strings, substring に対し {
+   result=[]
+   n=stringsの大きさ
+   i=0
+   n回くり返す{
+      s=strings[i]
+      もしsがsubstringを含むならば{
+         resultにsを追加する
+      }
+      iを増やす
+   }
+   resultが答え
+}

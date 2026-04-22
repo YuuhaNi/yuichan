@@ -1,0 +1,49 @@
+標準ライブラリを使う
+
+fix_spaces = 入力 text に対し {
+   result = ""
+   i = 0
+   text_size = textの大きさ
+   
+   text_size回くり返す {
+      もし i が text_size 以上 ならば {
+         くり返しを抜ける
+      }
+      
+      char = text[i]
+      
+      もし char が 32 ならば {
+         # スペース文字（文字コード32）を検出
+         space_count = 1
+         j = 和(i, 1)
+         
+         # 連続したスペースをカウント
+         text_size回くり返す {
+            もし j が text_size 以上 ならば {
+               くり返しを抜ける
+            }
+            もし text[j] が 32 ならば {
+               space_countを増やす
+               jを増やす
+            } そうでなければ {
+               くり返しを抜ける
+            }
+         }
+         
+         # 連続したスペースの数に応じて置換
+         もし space_count が 1 ならば {
+            result = 和(result, "_")
+         } そうでなければ {
+            result = 和(result, "-")
+         }
+         
+         i = 和(i, space_count)
+      } そうでなければ {
+         # スペース以外の文字
+         result = 和(result, 配列化(char))
+         iを増やす
+      }
+   }
+   
+   resultが答え
+}

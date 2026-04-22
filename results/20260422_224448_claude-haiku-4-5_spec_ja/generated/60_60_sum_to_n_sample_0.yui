@@ -1,0 +1,10 @@
+標準ライブラリを使う
+
+sum_to_n = 入力 n に対し {
+   result = 0
+   n回くり返す {
+      result = 和(result, n)
+      nを減らす
+   }
+   result が答え
+}

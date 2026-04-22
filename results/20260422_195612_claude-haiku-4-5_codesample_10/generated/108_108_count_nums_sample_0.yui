@@ -1,0 +1,73 @@
+標準ライブラリを使う
+
+count_nums = 入力 arr に対し {
+   count = 0
+   n = arrの大きさ
+   i = 0
+   n回くり返す {
+      num = arr[i]
+      digit_sum = 0
+      
+      もし num が 0 より小さい ならば {
+         # 負の数の場合、最初の桁は負
+         digit_sum = num の 絶対値を整数化(商(num, 10))
+         digit_sum = 差(0, digit_sum)
+         num = 絶対値(num)
+         num = 剰余(num, 10)
+         digit_sum = 和(digit_sum, num)
+      } そうでなければ {
+         # 正の数の場合、各桁を足す
+         もし num が 0 ならば {
+            digit_sum = 0
+         } そうでなければ {
+            一時 = num
+            n回くり返す {
+               もし 一時 が 0 ならば {
+                  くり返しを抜ける
+               }
+               digit_sum = 和(digit_sum, 剰余(一時, 10))
+               一時 = 商(一時, 10)
+            }
+         }
+      }
+      
+      もし digit_sum が 0 より大きい ならば {
+         count を増やす
+      }
+      i を増やす
+   }
+   count が答え
+}
+標準ライブラリを使う
+
+count_nums = 入力 arr に対し {
+   count = 0
+   n = arrの大きさ
+   i = 0
+   n回くり返す {
+      num = arr[i]
+      digit_sum = 0
+      
+      # 負の数の場合、符号を最初の桁に含める
+      もし num が 0 より小さい ならば {
+         digit_sum = 差(0, 商(num, 10))
+         num = 剰余(num, 10)
+      }
+      
+      # 残りの桁を足す
+      num = 絶対値(num)
+      くり返す {
+         もし num が 0 ならば {
+            くり返しを抜ける
+         }
+         digit_sum = 和(digit_sum, 剰余(num, 10))
+         num = 商(num, 10)
+      }
+      
+      もし digit_sum が 0 より大きい ならば {
+         count を増やす
+      }
+      i を増やす
+   }
+   count が答え
+}

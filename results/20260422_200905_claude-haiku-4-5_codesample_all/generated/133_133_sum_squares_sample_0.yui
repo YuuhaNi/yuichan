@@ -1,0 +1,18 @@
+標準ライブラリを使う
+
+sum_squares = 入力 lst に対し {
+   total = 0
+   n = lst の大きさ
+   i = 0
+   n 回くり返す {
+      x = lst[i]
+      # 切り上げ（天井関数）
+      rounded = 天井(x)
+      # 二乗
+      squared = 積(rounded, rounded)
+      # 合計に加える
+      total = 和(total, squared)
+      i を増やす
+   }
+   total が答え
+}

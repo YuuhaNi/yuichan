@@ -1,0 +1,18 @@
+標準ライブラリを使う
+
+largest_divisor=入力nに対し{
+   result=1
+   i=2
+   limit=商(n,2)
+   和(limit,1)回くり返す{
+      もしiがlimitより大きいならば{
+         くり返しを抜ける
+      }
+      remainder=剰余(n,i)
+      もしreminderが0ならば{
+         result=i
+      }
+      iを増やす
+   }
+   resultが答え
+}

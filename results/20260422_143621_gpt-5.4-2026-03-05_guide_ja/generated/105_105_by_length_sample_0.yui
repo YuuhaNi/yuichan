@@ -1,0 +1,48 @@
+標準ライブラリを使う
+
+by_length = 入力 arr に対し {
+   nums = []
+   i = 0
+   arrの大きさ回くり返す{
+      x = arr[i]
+      もしxが1以上ならば{
+         もしxが9以下ならば{
+            numsにxを追加する
+         }
+      }
+      iを増やす
+   }
+
+   sorted = []
+   n = 1
+   9回くり返す{
+      i = 0
+      numsの大きさ回くり返す{
+         もしnums[i]がnならば{
+            sortedにnを追加する
+         }
+         iを増やす
+      }
+      nを増やす
+   }
+
+   result = []
+   i = 差(sortedの大きさ, 1)
+   sortedの大きさ回くり返す{
+      x = sorted[i]
+      name = ""
+      もしxが1ならば{ name = "One" }
+      もしxが2ならば{ name = "Two" }
+      もしxが3ならば{ name = "Three" }
+      もしxが4ならば{ name = "Four" }
+      もしxが5ならば{ name = "Five" }
+      もしxが6ならば{ name = "Six" }
+      もしxが7ならば{ name = "Seven" }
+      もしxが8ならば{ name = "Eight" }
+      もしxが9ならば{ name = "Nine" }
+      resultにnameを追加する
+      i = 差(i, 1)
+   }
+
+   resultが答え
+}

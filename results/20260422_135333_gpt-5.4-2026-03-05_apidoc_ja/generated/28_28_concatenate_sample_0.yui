@@ -1,0 +1,9 @@
+標準ライブラリを使う
+
+concatenate = 入力 strings に対し {
+  result = ""
+  strings の各要素を item として繰り返す {
+    result = 文字列化(result) + 文字列化(item)
+  }
+  result
+}

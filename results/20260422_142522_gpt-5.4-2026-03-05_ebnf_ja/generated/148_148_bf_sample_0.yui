@@ -1,0 +1,46 @@
+標準ライブラリを使う
+
+bf = 入力 planet1, planet2 に対し {
+  惑星一覧 = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
+  index1 = -1
+  index2 = -1
+  i = 0
+
+  惑星一覧の大きさ回 くり返す {
+    もし 惑星一覧[i] が planet1 ならば {
+      index1 = i
+    }
+    もし 惑星一覧[i] が planet2 ならば {
+      index2 = i
+    }
+    iを増やす
+  }
+
+  もし index1 が -1 ならば {
+    []が答え
+  }
+  もし index2 が -1 ならば {
+    []が答え
+  }
+
+  開始 = index1
+  終了 = index2
+
+  もし index1 が index2 より大きい ならば {
+    開始 = index2
+    終了 = index1
+  }
+
+  結果 = []
+  i = 開始
+  iを増やす
+
+  終了 が i より大きい ならば {
+    差(終了, i)回 くり返す {
+      結果に惑星一覧[i]を追加する
+      iを増やす
+    }
+  }
+
+  結果が答え
+}

@@ -1,0 +1,16 @@
+標準ライブラリを使う
+
+sum_product = 入力 numbers に対し {
+  sum = 0
+  product = 1
+  0 回 くり返す {
+    何もしない
+  }
+  i = 0
+  numbers の大きさ 回 くり返す {
+    sum = 和(sum, numbers[i])
+    product = 積(product, numbers[i])
+    i を増やす
+  }
+  配列(sum, product) が 答え
+}

@@ -1,0 +1,16 @@
+標準ライブラリを使う
+
+encrypt = 入力 s に対し {
+   result = ""
+   i = 0
+   sの大きさ回くり返す{
+      c = s[i]
+      shifted = 和(c, 4)
+      もしshiftedが122より大きいならば{
+         shifted = 差(shifted, 26)
+      }
+      resultにshiftedを追加する
+      iを増やす
+   }
+   resultが答え
+}

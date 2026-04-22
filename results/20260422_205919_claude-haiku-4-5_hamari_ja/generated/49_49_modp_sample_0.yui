@@ -1,0 +1,18 @@
+標準ライブラリを使う
+
+modp = 入力 n, p に対し {
+   result = 1
+   base = 2
+   
+   もし n が 0 ならば {
+      result
+   }
+   
+   そうでなければ {
+      n回くり返す {
+         result = 剰余(積(result, base), p)
+         base = 剰余(積(base, base), p)
+      }
+      result
+   }
+}

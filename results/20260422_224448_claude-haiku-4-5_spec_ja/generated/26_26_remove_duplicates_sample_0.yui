@@ -1,0 +1,31 @@
+標準ライブラリを使う
+
+remove_duplicates = 入力 numbers に対し {
+   result = []
+   count = {}
+   
+   # 最初のループ：各要素の出現回数をカウント
+   numbersの大きさ回くり返す {
+      i = 0
+      numbersの大きさ回くり返す {
+         もしnumbers[i]がcount["key"]ならば {
+            count["key"] = 和(count["key"], 1)
+         }
+         そうでなければ {
+            count["key"] = 1
+         }
+         iを増やす
+      }
+   }
+   
+   # 2番目のループ：出現回数が1の要素だけをresultに追加
+   i = 0
+   numbersの大きさ回くり返す {
+      もしcount[文字列化(numbers[i])]が1ならば {
+         resultにnumbers[i]を追加する
+      }
+      iを増やす
+   }
+   
+   result が答え
+}

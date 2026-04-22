@@ -1,0 +1,38 @@
+標準ライブラリを使う
+
+largest_smallest_integers = 入力 lst に対し {
+   largest_negative=None
+   smallest_positive=None
+   i=0
+   n=lstの大きさ
+
+   n回くり返す{
+      x=lst[i]
+
+      もしxが0より小さいならば{
+         もしlargest_negativeがNoneならば{
+            largest_negative=x
+         }
+         そうでなければ{
+            もしxがlargest_negativeより大きいならば{
+               largest_negative=x
+            }
+         }
+      }
+
+      もしxが0より大きいならば{
+         もしsmallest_positiveがNoneならば{
+            smallest_positive=x
+         }
+         そうでなければ{
+            もしxがsmallest_positiveより小さいならば{
+               smallest_positive=x
+            }
+         }
+      }
+
+      iを増やす
+   }
+
+   [largest_negative,smallest_positive]が答え
+}

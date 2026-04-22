@@ -1,0 +1,72 @@
+標準ライブラリを使う
+
+sort_numbers = 入力 numbers に対し {
+   # 数字を表す単語と対応する値のマッピング
+   words = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+   
+   # 入力文字列を空白で分割して単語の配列にする
+   # yui には split がないので、手動で分割する
+   input_words = []
+   current_word = ""
+   i = 0
+   numbers の大きさ 回 くり返す {
+      c = numbers[i]
+      もし c が 32 ならば {  # 32 は空白のコード
+         もし current_word の大きさ が 0 より大きい ならば {
+            input_words に current_word を追加する
+            current_word = ""
+         }
+      }
+      そうでなければ {
+         current_word に c を追加する
+      }
+      i を増やす
+   }
+   # 最後の単語を追加
+   もし current_word の大きさ が 0 より大きい ならば {
+      input_words に current_word を追加する
+   }
+   
+   # 各単語を数値に変換する
+   values = []
+   j = 0
+   input_words の大きさ 回 くり返す {
+      word = input_words[j]
+      k = 0
+      9 回 くり返す {
+         もし word が words[k] ならば {
+            values に k を追加する
+         }
+         k を増やす
+      }
+      j を増やす
+   }
+   
+   # values をバブルソートする
+   n = values の大きさ
+   n 回 くり返す {
+      idx = 0
+      差(n, 1) 回 くり返す {
+         next_idx = 和(idx, 1)
+         もし values[idx] が values[next_idx] より大きい ならば {
+            tmp = values[idx]
+            values[idx] = values[next_idx]
+            values[next_idx] = tmp
+         }
+         idx を増やす
+      }
+   }
+   
+   # ソート済みの数値を単語に戻して文字列を組み立てる
+   result = ""
+   m = 0
+   values の大きさ 回 くり返す {
+      もし m が 0 より大きい ならば {
+         result に 32 を追加する  # 空白を追加
+      }
+      result に words[values[m]] を追加する
+      m を増やす
+   }
+   
+   result が答え
+}

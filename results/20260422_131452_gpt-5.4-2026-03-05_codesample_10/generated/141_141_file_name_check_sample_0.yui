@@ -1,0 +1,79 @@
+標準ライブラリを使う
+
+file_name_check = 入力 file_name に対し {
+   n=file_nameの大きさ
+   dot_count=0
+   dot_pos=-1
+   digit_run=0
+   i=0
+
+   n回くり返す{
+      c=file_name[i]
+
+      もしcが46ならば{
+         dot_countを増やす
+         dot_pos=i
+         digit_run=0
+      }
+      そうでなければ{
+         もしcが48以上ならば{
+            もしcが57以下ならば{
+               digit_runを増やす
+               もしdigit_runが3以上ならば{
+                  "No"が答え
+               }
+            }
+            そうでなければ{
+               digit_run=0
+            }
+         }
+         そうでなければ{
+            digit_run=0
+         }
+      }
+      iを増やす
+   }
+
+   もしdot_countが1以外ならば{
+      "No"が答え
+   }
+
+   もしdot_posが0ならば{
+      "No"が答え
+   }
+
+   もしdot_posが差(n,1)ならば{
+      "No"が答え
+   }
+
+   first=file_name[0]
+   is_letter=偽
+   もしfirstが65以上ならば{
+      もしfirstが90以下ならば{
+         is_letter=真
+      }
+   }
+   もしfirstが97以上ならば{
+      もしfirstが122以下ならば{
+         is_letter=真
+      }
+   }
+   もしis_letterが偽ならば{
+      "No"が答え
+   }
+
+   ext=""
+   i=和(dot_pos,1)
+   remain=差(n,i)
+   remain回くり返す{
+      extにfile_name[i]を追加する
+      iを増やす
+   }
+
+   もしextが["txt","exe","dll"]のいずれかならば{
+      "Yes"が答え
+   }
+   そうでなければ{
+      "No"が答え
+   }
+}

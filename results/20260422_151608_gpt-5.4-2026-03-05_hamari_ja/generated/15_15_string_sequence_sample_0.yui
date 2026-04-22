@@ -1,0 +1,18 @@
+標準ライブラリを使う
+
+string_sequence = 入力 n に対し {
+   i=0
+   result=""
+   n1=和(n,1)
+   n1回くり返す{
+      もしiが0ならば{
+         result=文字列化(i)
+      }
+      そうでなければ{
+         result=連結(result," ")
+         result=連結(result,文字列化(i))
+      }
+      iを増やす
+   }
+   resultが答え
+}

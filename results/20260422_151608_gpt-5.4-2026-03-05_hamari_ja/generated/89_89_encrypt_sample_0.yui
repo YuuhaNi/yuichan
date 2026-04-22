@@ -1,0 +1,49 @@
+標準ライブラリを使う
+
+encrypt = 入力 s に対し {
+    lower="abcdefghijklmnopqrstuvwxyz"
+    upper="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    out=""
+    i=0
+    n=sの長さ
+
+    n回くり返す{
+        ch=s[i]
+        idx=0
+        found=0
+
+        26回くり返す{
+            もしfoundが0ならば{
+                もしlower[idx]がchならば{
+                    pos=idx
+                    found=1
+                }
+                そうでなければ{
+                    もしupper[idx]がchならば{
+                        pos=idx
+                        found=2
+                    }
+                }
+            }
+            idxを増やす
+        }
+
+        もしfoundが1ならば{
+            np=剰余(和(積(pos,2),2),26)
+            out=文字列結合(out, lower[np])
+        }
+        そうでなければ{
+            もしfoundが2ならば{
+                np=剰余(和(積(pos,2),2),26)
+                out=文字列結合(out, upper[np])
+            }
+            そうでなければ{
+                out=文字列結合(out, ch)
+            }
+        }
+
+        iを増やす
+    }
+
+    outが答え
+}

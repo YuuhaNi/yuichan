@@ -1,0 +1,32 @@
+標準ライブラリを使う
+
+rescale_to_unit = 入力 numbers に対し {
+    minv = numbers[0]
+    maxv = numbers[0]
+    i = 1
+    n = numbersの大きさ
+
+    差(n,1)回くり返す{
+        x = numbers[i]
+        もしxがminvより小さいならば{
+            minv = x
+        }
+        もしxがmaxvより大きいならば{
+            maxv = x
+        }
+        iを増やす
+    }
+
+    span = 差(maxv,minv)
+    res = []
+    i = 0
+
+    n回くり返す{
+        x = numbers[i]
+        y = 商(差(x,minv), 小数化(span))
+        resにyを追加する
+        iを増やす
+    }
+
+    resが答え
+}

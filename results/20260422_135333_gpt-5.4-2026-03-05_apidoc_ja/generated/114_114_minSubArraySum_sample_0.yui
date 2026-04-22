@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+minSubArraySum = 入力 nums に対し {
+  もし 長さ(nums) == 0 なら {
+    エラー("mismatch-argument")
+  }
+
+  現在 = nums[0]
+  最小 = nums[0]
+  i = 1
+
+  反復 i < 長さ(nums) の間 {
+    現在 = 最小値(nums[i], 和(現在, nums[i]))
+    最小 = 最小値(最小, 現在)
+    i = 和(i, 1)
+  }
+
+  戻る 最小
+}

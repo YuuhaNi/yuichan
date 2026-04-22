@@ -1,0 +1,60 @@
+標準ライブラリを使う
+
+do_algebra = 入力 operator, operand に対し {
+   values = [operand[0]]
+   i = 0
+   operatorの大きさ回くり返す {
+      op = operator[i]
+      next = operand[和(i, 1)]
+      もしopが"**"ならば {
+         base = values[差(valuesの大きさ, 1)]
+         exp = next
+         result = 1
+         exp回くり返す {
+            result = 積(result, base)
+         }
+         values[差(valuesの大きさ, 1)] = result
+      }
+      そうでなければ {
+         valuesにopを追加する
+         valuesにnextを追加する
+      }
+      iを増やす
+   }
+
+   pass_values = [values[0]]
+   pass_ops = []
+   i = 1
+   商(valuesの大きさ, 2)回くり返す {
+      op = values[i]
+      next = values[和(i, 1)]
+      もしopが"*"ならば {
+         pass_values[差(pass_valuesの大きさ, 1)] = 積(pass_values[差(pass_valuesの大きさ, 1)], next)
+      }
+      そうでなければ {
+         もしopが"//"ならば {
+            pass_values[差(pass_valuesの大きさ, 1)] = 商(pass_values[差(pass_valuesの大きさ, 1)], next)
+         }
+         そうでなければ {
+            pass_opsにopを追加する
+            pass_valuesにnextを追加する
+         }
+      }
+      i = 和(i, 2)
+   }
+
+   answer = pass_values[0]
+   i = 0
+   pass_opsの大きさ回くり返す {
+      op = pass_ops[i]
+      next = pass_values[和(i, 1)]
+      もしopが"+"ならば {
+         answer = 和(answer, next)
+      }
+      そうでなければ {
+         answer = 差(answer, next)
+      }
+      iを増やす
+   }
+   answer が答え
+}

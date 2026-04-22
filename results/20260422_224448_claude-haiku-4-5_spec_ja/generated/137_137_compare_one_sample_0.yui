@@ -1,0 +1,60 @@
+標準ライブラリを使う
+
+compare_one = 入力 a, b に対し {
+   # aを数値に変換
+   もしa が文字列判定(a) ならば {
+      a_str = a
+      a_str_normalized = ""
+      i = 0
+      a_strの大きさ回くり返す {
+         char = a_str[i]
+         もしchar が 44 ならば {
+            # カンマをピリオドに統一
+            a_str_normalized に 46 を追加する
+         }
+         そうでなければ {
+            a_str_normalized に char を追加する
+         }
+         i を増やす
+      }
+      a_num = 小数化(a_str_normalized)
+   }
+   そうでなければ {
+      a_num = a
+   }
+
+   # bを数値に変換
+   もしb が文字列判定(b) ならば {
+      b_str = b
+      b_str_normalized = ""
+      i = 0
+      b_strの大きさ回くり返す {
+         char = b_str[i]
+         もしchar が 44 ならば {
+            # カンマをピリオドに統一
+            b_str_normalized に 46 を追加する
+         }
+         そうでなければ {
+            b_str_normalized に char を追加する
+         }
+         i を増やす
+      }
+      b_num = 小数化(b_str_normalized)
+   }
+   そうでなければ {
+      b_num = b
+   }
+
+   # 値が同じかチェック
+   もしa_num が b_num ならば {
+      値なし が答え
+   }
+
+   # 大きい方を元の型で返す
+   もしa_num が b_num より大きい ならば {
+      a が答え
+   }
+   そうでなければ {
+      b が答え
+   }
+}

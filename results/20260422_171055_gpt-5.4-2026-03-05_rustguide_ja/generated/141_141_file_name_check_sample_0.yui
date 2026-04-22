@@ -1,0 +1,101 @@
+標準ライブラリを使う
+
+file_name_check = 入力 file_name に対し {
+   n = file_nameの大きさ
+   dot_count = 0
+   digit_run = 0
+   i = 0
+   dot_pos = 0
+
+   もしnが0ならば{
+      "No"が答え
+   }
+
+   n回くり返す{
+      c = file_name[i]
+
+      もしcが"."[0]ならば{
+         dot_countを増やす
+         dot_pos = i
+         digit_run = 0
+      }そうでなければ{
+         もしcが"0"[0]以上ならば{
+            もしcが"9"[0]以下ならば{
+               digit_runを増やす
+               もしdigit_runが3以上ならば{
+                  "No"が答え
+               }
+            }そうでなければ{
+               digit_run = 0
+            }
+         }そうでなければ{
+            digit_run = 0
+         }
+      }
+
+      iを増やす
+   }
+
+   もしdot_countが1以外ならば{
+      "No"が答え
+   }
+
+   もしdot_posが0ならば{
+      "No"が答え
+   }
+
+   first = file_name[0]
+   starts_with_letter = 偽
+
+   もしfirstが"a"[0]以上ならば{
+      もしfirstが"z"[0]以下ならば{
+         starts_with_letter = 真
+      }
+   }
+   もしstarts_with_letterが偽ならば{
+      もしfirstが"A"[0]以上ならば{
+         もしfirstが"Z"[0]以下ならば{
+            starts_with_letter = 真
+         }
+      }
+   }
+
+   もしstarts_with_letterが偽ならば{
+      "No"が答え
+   }
+
+   ext_len = 差(n, 和(dot_pos, 1))
+   もしext_lenが3以外ならば{
+      "No"が答え
+   }
+
+   e0 = file_name[和(dot_pos, 1)]
+   e1 = file_name[和(dot_pos, 2)]
+   e2 = file_name[和(dot_pos, 3)]
+
+   もしe0が"t"[0]ならば{
+      もしe1が"x"[0]ならば{
+         もしe2が"t"[0]ならば{
+            "Yes"が答え
+         }
+      }
+   }
+
+   もしe0が"e"[0]ならば{
+      もしe1が"x"[0]ならば{
+         もしe2が"e"[0]ならば{
+            "Yes"が答え
+         }
+      }
+   }
+
+   もしe0が"d"[0]ならば{
+      もしe1が"l"[0]ならば{
+         もしe2が"l"[0]ならば{
+            "Yes"が答え
+         }
+      }
+   }
+
+   "No"が答え
+}

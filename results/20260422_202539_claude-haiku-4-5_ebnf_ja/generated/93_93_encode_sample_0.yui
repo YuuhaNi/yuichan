@@ -1,0 +1,56 @@
+標準ライブラリを使う
+
+encode = 入力 message に対し {
+  result = ""
+  0 回 message の大きさ くり返す {
+    char = message[0]
+    
+    もし char が "a" ならば {
+      result の末尾 に "_" を追加する
+    }
+    そうでなければ もし char が "e" ならば {
+      result の末尾 に "c" を追加する
+    }
+    そうでなければ もし char が "i" ならば {
+      result の末尾 に "g" を追加する
+    }
+    そうでなければ もし char が "o" ならば {
+      result の末尾 に "m" を追加する
+    }
+    そうでなければ もし char が "u" ならば {
+      result の末尾 に "s" を追加する
+    }
+    そうでなければ もし char が "A" ならば {
+      result の末尾 に "_" を追加する
+    }
+    そうでなければ もし char が "E" ならば {
+      result の末尾 に "C" を追加する
+    }
+    そうでなければ もし char が "I" ならば {
+      result の末尾 に "G" を追加する
+    }
+    そうでなければ もし char が "O" ならば {
+      result の末尾 に "M" を追加する
+    }
+    そうでなければ もし char が "U" ならば {
+      result の末尾 に "S" を追加する
+    }
+    そうでなければ {
+      swapped = 大文字小文字反転(char)
+      result の末尾 に swapped を追加する
+    }
+    
+    message = message[1]
+  }
+  
+  result が 答え
+}
+
+大文字小文字反転 = 入力 c に対し {
+  もし c が 大文字(c) ならば {
+    小文字(c) が 答え
+  }
+  そうでなければ {
+    大文字(c) が 答え
+  }
+}

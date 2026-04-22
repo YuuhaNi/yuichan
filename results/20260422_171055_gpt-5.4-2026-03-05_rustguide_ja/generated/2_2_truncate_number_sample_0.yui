@@ -1,0 +1,5 @@
+標準ライブラリを使う
+
+truncate_number = 入力 number に対し {
+   差(number, 整数化(number))が答え
+}

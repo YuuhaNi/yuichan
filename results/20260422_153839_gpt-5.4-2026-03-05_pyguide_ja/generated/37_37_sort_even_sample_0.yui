@@ -1,0 +1,47 @@
+標準ライブラリを使う
+
+sort_even = 入力 l に対し {
+   evens = []
+   odds = []
+   i = 0
+
+   lの大きさ回くり返す{
+      もし剰余(i, 2)が0ならば{
+         evensにl[i]を追加する
+      }そうでなければ{
+         oddsにl[i]を追加する
+      }
+      iを増やす
+   }
+
+   n = evensの大きさ
+   n回くり返す{
+      j = 0
+      差(n, 1)回くり返す{
+         もしevens[j]がevens[和(j,1)]より大きいならば{
+            temp = evens[j]
+            evens[j] = evens[和(j,1)]
+            evens[和(j,1)] = temp
+         }
+         jを増やす
+      }
+   }
+
+   result = []
+   i = 0
+   e = 0
+   o = 0
+
+   lの大きさ回くり返す{
+      もし剰余(i, 2)が0ならば{
+         resultにevens[e]を追加する
+         eを増やす
+      }そうでなければ{
+         resultにodds[o]を追加する
+         oを増やす
+      }
+      iを増やす
+   }
+
+   resultが答え
+}

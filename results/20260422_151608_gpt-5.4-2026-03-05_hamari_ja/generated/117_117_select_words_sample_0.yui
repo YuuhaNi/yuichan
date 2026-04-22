@@ -1,0 +1,43 @@
+標準ライブラリを使う
+
+select_words = 入力 s, n に対し {
+   words=sを" "で分割する
+   result=[]
+   i=0
+   total=wordsの大きさ
+
+   total回くり返す{
+      word=words[i]
+      j=0
+      wlen=wordの大きさ
+      consonants=0
+
+      wlen回くり返す{
+         ch=word[j]
+         is_vowel=0
+
+         もしchが"a"のいずれかならば{ is_vowel=1 }
+         もしchが"e"のいずれかならば{ is_vowel=1 }
+         もしchが"i"のいずれかならば{ is_vowel=1 }
+         もしchが"o"のいずれかならば{ is_vowel=1 }
+         もしchが"u"のいずれかならば{ is_vowel=1 }
+         もしchが"A"のいずれかならば{ is_vowel=1 }
+         もしchが"E"のいずれかならば{ is_vowel=1 }
+         もしchが"I"のいずれかならば{ is_vowel=1 }
+         もしchが"O"のいずれかならば{ is_vowel=1 }
+         もしchが"U"のいずれかならば{ is_vowel=1 }
+
+         もしis_vowelが0ならば{
+            consonantsを増やす
+         }
+         jを増やす
+      }
+
+      もしconsonantsがnならば{
+         resultにwordを追加する
+      }
+      iを増やす
+   }
+
+   resultが答え
+}

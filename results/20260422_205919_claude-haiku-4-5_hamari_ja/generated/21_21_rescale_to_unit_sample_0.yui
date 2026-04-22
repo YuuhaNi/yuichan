@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+rescale_to_unit = 入力 numbers に対し {
+   min_val = numbers[0]
+   max_val = numbers[0]
+   
+   numbersの大きさ回くり返す {
+      current = numbers[iを増やす前の値]
+      もし current が min_val より小さい ならば {
+         min_val = current
+      }
+      もし current が max_val より大きい ならば {
+         max_val = current
+      }
+   }
+   
+   range = 差(max_val, min_val)
+   result = []
+   
+   numbersの大きさ回くり返す {
+      current = numbers[iを増やす前の値]
+      normalized = 商(小数化(差(current, min_val)), 小数化(range))
+      result に normalized を追加する
+   }
+   
+   result が答え
+}

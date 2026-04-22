@@ -1,0 +1,21 @@
+標準ライブラリを使う
+
+sort_numbers = 入力 numbers に対し {
+   words = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+   result = ""
+   i = 0
+
+   wordsの大きさ回くり返す{
+      もしwords[i]がnumbersのいずれかならば{
+         もしresultが""ならば{
+            result = words[i]
+         }
+         そうでなければ{
+            result = "{result} {words[i]}"
+         }
+      }
+      iを増やす
+   }
+
+   resultが答え
+}

@@ -1,0 +1,16 @@
+標準ライブラリを使う
+
+common = 入力 l1, l2 に対し {
+   result=[]
+   i=0
+   l1の大きさ回くり返す{
+      x=l1[i]
+      もしxがl2のいずれかならば{
+         もしxがresultのいずれでもないならば{
+            resultにxを追加する
+         }
+      }
+      iを増やす
+   }
+   bubble_sort(result)が答え
+}

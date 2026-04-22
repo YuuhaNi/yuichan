@@ -1,0 +1,36 @@
+標準ライブラリを使う
+
+count_up_to = 入力 n に対し {
+   result = []
+   # 2 から n-1 までの整数をチェック
+   candidate = 2
+   n回くり返す {
+      もし candidate が n 以上ならば {
+         くり返しを抜ける
+      }
+      # candidate が素数かどうかを判定
+      is_prime = 1
+      divisor = 2
+      # divisor * divisor > candidate なら素数
+      # (divisor が sqrt(candidate) を超えたら調べる必要がない)
+      divisor_sq = 積(divisor, divisor)
+      divisor_sq回くり返す {
+         もし divisor_sq が candidate より大きいならば {
+            くり返しを抜ける
+         }
+         remainder = 剰余(candidate, divisor)
+         もし remainder が 0 ならば {
+            is_prime = 0
+            くり返しを抜ける
+         }
+         divisor を増やす
+         divisor_sq = 積(divisor, divisor)
+      }
+      # 素数なら result に追加
+      もし is_prime が 1 ならば {
+         result に candidate を追加する
+      }
+      candidate を増やす
+   }
+   result が答え
+}

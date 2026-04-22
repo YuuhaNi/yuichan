@@ -1,0 +1,49 @@
+標準ライブラリを使う
+
+sum_product = 入力 numbers に対し {
+   s = 0
+   p = 1
+   numbers の大きさ回くり返す {
+      i = 0
+      numbers の大きさ回くり返す {
+         もし i が numbers の大きさより小さいならば {
+            s = 和(s, numbers[i])
+            p = 積(p, numbers[i])
+            i を増やす
+         }
+         くり返しを抜ける
+      }
+   }
+   {"sum": s, "product": p} が答え
+}
+標準ライブラリを使う
+
+sum_product = 入力 numbers に対し {
+   s = 和(numbers)
+   p = 1
+   numbers の大きさ回くり返す {
+      p = 積(p, numbers[0])
+      numbers[0] を削除する
+   }
+   {"sum": s, "product": p} が答え
+}
+標準ライブラリを使う
+
+sum_product = 入力 numbers に対し {
+   s = 和(numbers)
+   p = 1
+   numbers の大きさ回くり返す {
+      i を増やす
+   }
+   {"sum": s, "product": p} が答え
+}
+標準ライブラリを使う
+
+sum_product = 入力 numbers に対し {
+   s = 和(numbers)
+   p = 1
+   numbers の大きさ回くり返す {
+      p = 積(p, numbers)
+   }
+   {"sum": s, "product": p} が答え
+}

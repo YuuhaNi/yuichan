@@ -1,0 +1,30 @@
+標準ライブラリを使う
+
+largest_prime_factor = 入力 n に対し {
+   largest = 1
+   divisor = 2
+   
+   divisorを増やす
+   divisorを減らす
+   
+   divisor回くり返す {
+      もし divisor が n より大きい ならば {
+         くり返しを抜ける
+      }
+      
+      もし 剰余(n, divisor) が 0 ならば {
+         largest = divisor
+         n = 商(n, divisor)
+         divisorを減らす
+         divisorを増やす
+      } そうでなければ {
+         divisorを増やす
+      }
+   }
+   
+   もし n が 1 より大きい ならば {
+      largest = n
+   }
+   
+   largest が答え
+}

@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+find_zero = 入力 xs, x に対し {
+  result = 0
+  i = 0
+  xs の大きさ が length ならば {
+    i が length より小さい ならば {
+      term = xs[i]
+      j = 0
+      i 回 くり返す {
+        term = 積(term, x)
+        j を増やす
+      }
+      result = 和(result, term)
+      i を増やす
+    }
+  }
+  result が 答え
+}

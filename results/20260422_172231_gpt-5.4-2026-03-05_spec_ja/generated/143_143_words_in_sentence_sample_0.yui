@@ -1,0 +1,63 @@
+標準ライブラリを使う
+
+words_in_sentence = 入力 sentence に対し {
+    words = []
+    current = ""
+
+    sentenceの大きさ回くり返す {
+        i = wordsの大きさ
+        ch = sentence[i]
+
+        もし ch が 32 ならば {
+            もし currentの大きさ が 0 以外ならば {
+                wordsにcurrentを追加する
+                current = ""
+            }
+        }
+        そうでなければ {
+            currentにchを追加する
+        }
+    }
+
+    もし currentの大きさ が 0 以外ならば {
+        wordsにcurrentを追加する
+    }
+
+    result = ""
+    first = 真
+
+    wordsの大きさ回くり返す {
+        i = resultの大きさ
+        word = words[i]
+        n = wordの大きさ
+
+        is_prime = 真
+
+        もし n が 2 より小さいならば {
+            is_prime = 偽
+        }
+        そうでなければ {
+            d = 2
+            n回くり返す {
+                もし d が n より小さいならば {
+                    もし 剰余(n, d) が 0 ならば {
+                        is_prime = 偽
+                    }
+                    dを増やす
+                }
+            }
+        }
+
+        もし is_prime が 真 ならば {
+            もし first が 真 ならば {
+                result = word
+                first = 偽
+            }
+            そうでなければ {
+                result = "{result} {word}"
+            }
+        }
+    }
+
+    result が答え
+}

@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+below_zero = 入力 operations に対し {
+   balance=0
+   i=0
+   n=operationsの大きさ
+
+   n回くり返す{
+      balance=和(balance,operations[i])
+      もしbalanceが0以下ならば{
+         Trueが答え
+      }
+      iを増やす
+   }
+
+   Falseが答え
+}

@@ -1,0 +1,25 @@
+標準ライブラリを使う
+
+change_base = 入力 x, base に対し {
+   もしxが0ならば{
+      "0"が答え
+   }
+
+   digits=[]
+   n=x
+
+   nが0より大きい間くり返す{
+      r=剰余(n,base)
+      digitsに文字列化(r)を追加する
+      n=商(n,base)
+   }
+
+   result=""
+   i=差(digitsの大きさ,1)
+   iが0以上の間くり返す{
+      result=結合(result,digits[i])
+      iを減らす
+   }
+
+   resultが答え
+}

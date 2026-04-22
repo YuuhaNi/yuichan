@@ -1,0 +1,54 @@
+標準ライブラリを使う
+
+unique_digits = 入力 x に対し {
+   result = []
+   
+   xの大きさ回くり返す{
+      i = 0
+      num = x[i]
+      
+      # num の桁数を数える
+      digits = 配列化(文字列化(num))
+      digit_count = digitsの大きさ
+      
+      # 偶数桁がないかチェック
+      has_even_digit = 偽
+      j = 0
+      digit_count回くり返す{
+         digit_char = digits[j]
+         digit_val = 整数化(文字列化(digit_char))
+         
+         # digit_val が偶数かチェック
+         もし剰余(digit_val, 2)が0ならば{
+            has_even_digit = 真
+            くり返しを抜ける
+         }
+         jを増やす
+      }
+      
+      # 偶数桁がなければ result に追加
+      もしhas_even_digitが偽ならば{
+         resultにnumを追加する
+      }
+      
+      iを増やす
+   }
+   
+   # result をソート（バブルソート）
+   result_size = resultの大きさ
+   i = 0
+   result_size回くり返す{
+      j = 0
+      差(result_size, 1)回くり返す{
+         もしresult[j]がresult[差(j,1)]より大きいならば{
+            temp = result[j]
+            result[j] = result[差(j,1)]
+            result[差(j,1)] = temp
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+   
+   resultが答え
+}

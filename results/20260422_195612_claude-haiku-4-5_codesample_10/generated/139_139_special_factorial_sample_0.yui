@@ -1,0 +1,29 @@
+標準ライブラリを使う
+
+special_factorial = 入力 n に対し {
+   # 階乗を計算する補助関数
+   factorial = 入力 x に対し {
+      もし x が 0 以下 ならば {
+         1 が答え
+      }
+      そうでなければ {
+         result = 1
+         i = 1
+         x 回くり返す {
+            result = 積(result, i)
+            i を増やす
+         }
+         result が答え
+      }
+   }
+   
+   # ブラジリアン階乗の計算
+   result = 1
+   i = n
+   n 回くり返す {
+      fact = factorial(i)
+      result = 積(result, fact)
+      i を減らす
+   }
+   result が答え
+}

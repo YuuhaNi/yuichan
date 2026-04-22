@@ -1,0 +1,78 @@
+標準ライブラリを使う
+
+anti_shuffle = 入力 s に対し {
+   result = ""
+   n = sの大きさ
+   i = 0
+   current_word = ""
+   
+   n回くり返す {
+      c = s[i]
+      
+      # 空白の場合
+      もし c が 32 ならば {
+         # 現在の単語をソートして結果に追加
+         もし current_word が "" でないならば {
+            sorted_word = sort_word(current_word)
+            result に sorted_word を追加する
+         }
+         # 空白を追加
+         result に c を追加する
+         current_word = ""
+      }
+      そうでなければ {
+         # 単語に文字を追加
+         current_word に c を追加する
+      }
+      
+      i を増やす
+   }
+   
+   # 最後の単語を処理
+   もし current_word が "" でないならば {
+      sorted_word = sort_word(current_word)
+      result に sorted_word を追加する
+   }
+   
+   result が答え
+}
+
+# ヘルパー関数：単語の文字をASCII値でソートする
+sort_word = 入力 word に対し {
+   # 文字列を文字コード配列に変換
+   chars = []
+   n = word の大きさ
+   i = 0
+   n回くり返す {
+      chars に word[i] を追加する
+      i を増やす
+   }
+   
+   # バブルソート
+   n = chars の大きさ
+   i = 0
+   n回くり返す {
+      j = 0
+      差(n,1)回くり返す {
+         もし chars[j] が chars[和(j,1)] より大きいならば {
+            # スワップ
+            temp = chars[j]
+            chars[j] = chars[和(j,1)]
+            chars[和(j,1)] = temp
+         }
+         j を増やす
+      }
+      i を増やす
+   }
+   
+   # ソート済み文字コード配列を文字列に変換
+   result = ""
+   n = chars の大きさ
+   i = 0
+   n回くり返す {
+      result に chars[i] を追加する
+      i を増やす
+   }
+   
+   result が答え
+}

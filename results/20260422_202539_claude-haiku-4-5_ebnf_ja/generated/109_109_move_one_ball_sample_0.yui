@@ -1,0 +1,48 @@
+標準ライブラリを使う
+
+move_one_ball = 入力 arr に対し {
+  もし arr の大きさ が 0 ならば {
+    真 が 答え
+  }
+  
+  count = 0
+  もし arr の大きさ が 1 ならば {
+    真 が 答え
+  }
+  
+  0 回 くり返す {
+    is_sorted = 真
+    0 回 くり返す {
+      もし count が arr の大きさ ならば {
+        くり返しを抜ける
+      }
+      
+      もし arr[count] が arr[差 count 1] より大きい ならば {
+        is_sorted = 偽
+      }
+      
+      count を増やす
+    }
+    
+    もし is_sorted が 真 ならば {
+      真 が 答え
+    }
+    
+    last = arr[差 arr の大きさ 1]
+    i = 差 arr の大きさ 1
+    
+    0 回 くり返す {
+      もし i が 0 ならば {
+        くり返しを抜ける
+      }
+      
+      arr[i] = arr[差 i 1]
+      i を減らす
+    }
+    
+    arr[0] = last
+    count = 0
+  }
+  
+  偽 が 答え
+}

@@ -1,0 +1,36 @@
+標準ライブラリを使う
+
+even_odd_palindrome = 入力 n に対し {
+   even_count = 0
+   odd_count = 0
+   
+   i = 1
+   n加算回数回くり返す {
+      # iが回文数かどうかを判定
+      num_str = 文字列化(i)
+      is_palindrome = 真
+      
+      j = 0
+      num_strの大きさを2で商した値回くり返す {
+         もしnum_str[j]がnum_str[差(num_strの大きさ,1,j)]以外ならば {
+            is_palindrome = 偽
+            くり返しを抜ける
+         }
+         jを増やす
+      }
+      
+      # 回文数なら偶数/奇数をカウント
+      もしis_palindromeが真ならば {
+         もしiを2で剰余した値が0ならば {
+            even_countを増やす
+         }
+         そうでなければ {
+            odd_countを増やす
+         }
+      }
+      
+      iを増やす
+   }
+   
+   {"even": even_count, "odd": odd_count} が答え
+}

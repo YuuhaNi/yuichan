@@ -1,0 +1,34 @@
+標準ライブラリを使う
+
+move_one_ball = 入力 arr に対し {
+   n=arrの大きさ
+   もしnが0ならば{
+      Trueが答え
+   }
+
+   drops=0
+   i=0
+   limit=差(n,1)
+
+   limit回くり返す{
+      next=和(i,1)
+      もしarr[i]がarr[next]より大きいならば{
+         dropsを増やす
+      }
+      iを増やす
+   }
+
+   もしdropsが0ならば{
+      Trueが答え
+   }
+
+   もしdropsが1ならば{
+      last=arr[差(n,1)]
+      first=arr[0]
+      もしlastがfirstより小さいならば{
+         Trueが答え
+      }
+   }
+
+   Falseが答え
+}

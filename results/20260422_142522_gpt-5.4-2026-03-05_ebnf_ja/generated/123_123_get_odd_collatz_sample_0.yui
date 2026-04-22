@@ -1,0 +1,21 @@
+標準ライブラリを使う
+
+get_odd_collatz = 入力 n に対し {
+    odds = []
+    current = n
+    1回 くり返す {
+        もし 剰余(current, 2) が 1 ならば {
+            odds に current を追加する
+        }
+        もし current が 1 ならば {
+            くり返しを抜ける
+        }
+        もし 剰余(current, 2) が 0 ならば {
+            current = 商(current, 2)
+        } そうでなければ {
+            current = 和(積(current, 3), 1)
+        }
+    }
+    sorted = 昇順ソート(odds)
+    sorted が 答え
+}

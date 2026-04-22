@@ -1,0 +1,62 @@
+標準ライブラリを使う
+
+simplify = 入力 x, n に対し {
+   # xを分子/分母に分割
+   x_parts = "/"
+   x_index = 0
+   x_size = xの大きさ
+   x_numerator_str = ""
+   x_denominator_str = ""
+   
+   x_size回くり返す {
+      もしx[x_index]が"/"[0]ならば {
+         x_parts = "found"
+      } そうでなければ {
+         もしx_partsが"/"ならば {
+            x_numerator_str = 和(x_numerator_str, 文字列化(x[x_index]))
+         } そうでなければ {
+            x_denominator_str = 和(x_denominator_str, 文字列化(x[x_index]))
+         }
+      }
+      x_indexを増やす
+   }
+   
+   # nを分子/分母に分割
+   n_parts = "/"
+   n_index = 0
+   n_size = nの大きさ
+   n_numerator_str = ""
+   n_denominator_str = ""
+   
+   n_size回くり返す {
+      もしn[n_index]が"/"[0]ならば {
+         n_parts = "found"
+      } そうでなければ {
+         もしn_partsが"/"ならば {
+            n_numerator_str = 和(n_numerator_str, 文字列化(n[n_index]))
+         } そうでなければ {
+            n_denominator_str = 和(n_denominator_str, 文字列化(n[n_index]))
+         }
+      }
+      n_indexを増やす
+   }
+   
+   # 文字列を整数に変換
+   x_num = 整数化(x_numerator_str)
+   x_den = 整数化(x_denominator_str)
+   n_num = 整数化(n_numerator_str)
+   n_den = 整数化(n_denominator_str)
+   
+   # (x_num / x_den) * (n_num / n_den) = (x_num * n_num) / (x_den * n_den)
+   result_num = 積(x_num, n_num)
+   result_den = 積(x_den, n_den)
+   
+   # result_numがresult_denで割り切れるかチェック
+   remainder = 剰余(result_num, result_den)
+   
+   もしremainder が 0 ならば {
+      真が答え
+   } そうでなければ {
+      偽が答え
+   }
+}

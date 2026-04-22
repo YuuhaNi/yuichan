@@ -1,0 +1,33 @@
+標準ライブラリを使う
+
+starts_one_ends = 入力 n に対し {
+   count = 0
+   start = 1
+   i = 0
+   差(n, 1)回くり返す{
+      start = 積(start, 10)
+   }
+   end = 差(積(start, 10), 1)
+   
+   i = start
+   くり返す{
+      もし i が end より大きい ならば{
+         くり返しを抜ける
+      }
+      
+      first_digit = 商(i, start)
+      last_digit = 剰余(i, 10)
+      
+      もし first_digit が 1 ならば{
+         count を増やす
+      }そうでなければ{
+         もし last_digit が 1 ならば{
+            count を増やす
+         }
+      }
+      
+      i を増やす
+   }
+   
+   count が答え
+}

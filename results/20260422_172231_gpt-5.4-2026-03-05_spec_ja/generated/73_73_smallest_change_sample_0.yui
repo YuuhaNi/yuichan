@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+smallest_change = 入力 arr に対し {
+    changes = 0
+    i = 0
+    half = 商(arrの大きさ, 2)
+
+    half回くり返す {
+        j = 差(差(arrの大きさ, 1), i)
+        もし arr[i] が arr[j] 以外ならば {
+            changesを増やす
+        }
+        iを増やす
+    }
+
+    changes が答え
+}

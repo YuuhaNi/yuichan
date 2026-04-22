@@ -1,0 +1,46 @@
+標準ライブラリを使う
+
+remove_vowels = 入力 text に対し {
+   result=""
+   i=0
+   n=textの長さ
+   n回くり返す{
+      ch=text[i]
+      skip=0
+      もしchが"a"ならば{
+         skip=1
+      }
+      もしchが"e"ならば{
+         skip=1
+      }
+      もしchが"i"ならば{
+         skip=1
+      }
+      もしchが"o"ならば{
+         skip=1
+      }
+      もしchが"u"ならば{
+         skip=1
+      }
+      もしchが"A"ならば{
+         skip=1
+      }
+      もしchが"E"ならば{
+         skip=1
+      }
+      もしchが"I"ならば{
+         skip=1
+      }
+      もしchが"O"ならば{
+         skip=1
+      }
+      もしchが"U"ならば{
+         skip=1
+      }
+      もしskipが0ならば{
+         result=連結(result,ch)
+      }
+      iを増やす
+   }
+   resultが答え
+}

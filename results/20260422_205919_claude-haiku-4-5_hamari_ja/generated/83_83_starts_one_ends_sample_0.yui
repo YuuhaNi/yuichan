@@ -1,0 +1,36 @@
+標準ライブラリを使う
+
+starts_one_ends = 入力 n に対し {
+   # n 桁の最小値と最大値を計算
+   min_val = 商(10の累乗(差(n,1)), 1)  # 10^(n-1)
+   max_val = 差(10の累乗(n), 1)         # 10^n - 1
+   
+   count = 0
+   current = min_val
+   
+   # min_val から max_val まで反復
+   max_val回くり返す {
+      # 1 で始まるか 1 で終わるかをチェック
+      first_digit = 商(current, 10の累乗(差(n,1)))
+      last_digit = 剰余(current, 10)
+      
+      skip = 0
+      もしfirst_digitが1ならば {
+         countを増やす
+         skip = 1
+      }
+      もしskipが0ならば {
+         もしlast_digitが1ならば {
+            countを増やす
+         }
+      }
+      
+      currentを増やす
+      
+      もしcurrentがmax_valより大きいならば {
+         くり返しを抜ける
+      }
+   }
+   
+   count が答え
+}

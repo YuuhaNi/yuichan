@@ -1,0 +1,16 @@
+標準ライブラリを使う
+
+is_palindrome = 入力 text に対し {
+   n=textの長さ
+   i=0
+   half=商(n,2)
+   ok=True
+   half回くり返す{
+      j=差(差(n,1),i)
+      もしtext[i]がtext[j]以外ならば{
+         ok=False
+      }
+      iを増やす
+   }
+   okが答え
+}

@@ -1,0 +1,23 @@
+標準ライブラリを使う
+
+correct_bracketing = 入力 brackets に対し {
+    balance = 0
+    i = 0
+
+    反復(i < 長さ(brackets)) {
+        ch = brackets[i]
+
+        もし(ch == "(") {
+            balance = 和(balance, 1)
+        } 違えば {
+            balance = 差(balance, 1)
+            もし(balance < 0) {
+                戻る 偽
+            }
+        }
+
+        i = 和(i, 1)
+    }
+
+    戻る balance == 0
+}

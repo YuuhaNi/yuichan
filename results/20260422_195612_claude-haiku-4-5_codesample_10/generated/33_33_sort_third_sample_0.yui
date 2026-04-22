@@ -1,0 +1,34 @@
+標準ライブラリを使う
+
+sort_third = 入力 l に対し {
+   # インデックスが3で割り切れる要素を抽出
+   third_elements = []
+   n = l の大きさ
+   i = 0
+   n 回くり返す {
+      もし 剰余(i, 3) が 0 ならば {
+         third_elements に l[i] を追加する
+      }
+      i を増やす
+   }
+   
+   # third_elements をソート
+   sorted_third = 昇順ソート(third_elements)
+   
+   # 結果配列を構築
+   result = []
+   sorted_index = 0
+   i = 0
+   n 回くり返す {
+      もし 剰余(i, 3) が 0 ならば {
+         result に sorted_third[sorted_index] を追加する
+         sorted_index を増やす
+      }
+      そうでなければ {
+         result に l[i] を追加する
+      }
+      i を増やす
+   }
+   
+   result が答え
+}

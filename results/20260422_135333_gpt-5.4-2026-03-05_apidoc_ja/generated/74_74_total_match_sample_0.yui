@@ -1,0 +1,20 @@
+標準ライブラリを使う
+
+total_match = 入力 lst1, lst2 に対し {
+  len1 = 0
+  len2 = 0
+
+  それぞれ s が lst1 の間 {
+    len1 = 和(len1, 長さ(s))
+  }
+
+  それぞれ s が lst2 の間 {
+    len2 = 和(len2, 長さ(s))
+  }
+
+  もし len1 <= len2 なら {
+    lst1
+  } そうでなければ {
+    lst2
+  }
+}

@@ -1,0 +1,12 @@
+標準ライブラリを使う
+
+do_algebra = 入力 operator, operand に対し {
+   expr=文字列化(operand[0])
+   n=operatorの大きさ
+   i=0
+   n回くり返す{
+      expr="{expr}{operator[i]}{operand[和(i,1)]}"
+      iを増やす
+   }
+   整数化(expr)が答え
+}

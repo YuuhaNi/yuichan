@@ -1,0 +1,91 @@
+標準ライブラリを使う
+
+by_length = 入力 arr に対し {
+   # 空配列チェック
+   sz = arr の大きさ
+   もし sz が 0 ならば {
+      arr
+   }
+   そうでなければ {
+      # 1-9 の範囲のみをフィルタリング
+      filtered = []
+      i = 0
+      sz 回くり返す {
+         x = arr[i]
+         もし x が 1 以上ならば {
+            もし x が 9 以下ならば {
+               filtered に x を追加する
+            }
+         }
+         i を増やす
+      }
+      
+      # フィルタ後が空なら空配列を返す
+      filtered_sz = filtered の大きさ
+      もし filtered_sz が 0 ならば {
+         filtered
+      }
+      そうでなければ {
+         # ソート (バブルソート)
+         i = 0
+         filtered_sz 回くり返す {
+            j = 0
+            差(filtered_sz, 1) 回くり返す {
+               もし filtered[j] が filtered[和(j, 1)] より大きい ならば {
+                  temp = filtered[j]
+                  filtered[j] = filtered[和(j, 1)]
+                  filtered[和(j, 1)] = temp
+               }
+               j を増やす
+            }
+            i を増やす
+         }
+         
+         # 逆順にする
+         reversed = []
+         i = 差(filtered_sz, 1)
+         filtered_sz 回くり返す {
+            reversed に filtered[i] を追加する
+            i を減らす
+         }
+         
+         # 数字を名前に置き換える
+         result = []
+         i = 0
+         reversed_sz = reversed の大きさ
+         reversed_sz 回くり返す {
+            num = reversed[i]
+            もし num が 1 ならば {
+               result に "One" を追加する
+            }
+            そうでなければ もし num が 2 ならば {
+               result に "Two" を追加する
+            }
+            そうでなければ もし num が 3 ならば {
+               result に "Three" を追加する
+            }
+            そうでなければ もし num が 4 ならば {
+               result に "Four" を追加する
+            }
+            そうでなければ もし num が 5 ならば {
+               result に "Five" を追加する
+            }
+            そうでなければ もし num が 6 ならば {
+               result に "Six" を追加する
+            }
+            そうでなければ もし num が 7 ならば {
+               result に "Seven" を追加する
+            }
+            そうでなければ もし num が 8 ならば {
+               result に "Eight" を追加する
+            }
+            そうでなければ もし num が 9 ならば {
+               result に "Nine" を追加する
+            }
+            i を増やす
+         }
+         
+         result
+      }
+   }
+}

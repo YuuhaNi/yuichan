@@ -1,0 +1,98 @@
+標準ライブラリを使う
+
+minPath = 入力 grid, k に対し {
+    n = gridの大きさ
+    
+    # グリッドから値の位置を検索する辞書を作成
+    pos = 入力 v に対し { {} }
+    i = 0
+    n回くり返す {
+        j = 0
+        n回くり返す {
+            cell = grid[i][j]
+            pos[cell] = [i, j]
+            j を増やす
+        }
+        i を増やす
+    }
+    
+    # BFS で最短経路を探索
+    # キュー: [現在位置, 経路リスト]
+    queue = [[0, 0, [grid[0][0]]]]
+    visited = {}
+    
+    # 最小の経路を保持
+    minResult = 無し
+    
+    queue の大きさが 0 より大きい間 {
+        current = queue[0]
+        row = current[0]
+        col = current[1]
+        path = current[2]
+        
+        # キューから先頭を削除する処理
+        # (pop がないため、新しいキューを作成)
+        newQueue = []
+        idx = 1
+        queue の大きさ回くり返す {
+            skip = 0
+            もし idx が queue の大きさ より小さい ならば {
+                newQueue に queue[idx] を追加する
+                idx を増やす
+            }
+        }
+        queue = newQueue
+        
+        # 経路長が k に達した
+        もし path の大きさ が k ならば {
+            もし minResult が 無し ならば {
+                minResult = path
+            } そうでなければ {
+                # 辞書順比較
+                isSmaller = 0
+                pathIdx = 0
+                path の大きさ回くり返す {
+                    もし isSmaller が 0 ならば {
+                        もし path[pathIdx] が minResult[pathIdx] より小さい ならば {
+                            minResult = path
+                            isSmaller = 1
+                        }
+                    }
+                    pathIdx を増やす
+                }
+            }
+        } そうでなければ {
+            # 隣接セルを探索 (上下左右)
+            directions = [[差(0,1), 0], [1, 0], [0, 1], [差(0,1), 0]]
+            dirIdx = 0
+            4回くり返す {
+                dr = directions[dirIdx][0]
+                dc = directions[dirIdx][1]
+                newRow = 和(row, dr)
+                newCol = 和(col, dc)
+                
+                # 境界チェック
+                inBounds = 0
+                もし newRow が 0 以上 ならば {
+                    もし newRow が n より小さい ならば {
+                        もし newCol が 0 以上 ならば {
+                            もし newCol が n より小さい ならば {
+                                inBounds = 1
+                            }
+                        }
+                    }
+                }
+                
+                もし inBounds が 1 ならば {
+                    newPath = path
+                    newPath に grid[newRow][newCol] を追加する
+                    queue に [newRow, newCol, newPath] を追加する
+                }
+                
+                dirIdx を増やす
+            }
+        }
+    }
+    
+    minResult
+}

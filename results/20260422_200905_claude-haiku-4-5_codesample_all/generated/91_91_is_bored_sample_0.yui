@@ -1,0 +1,68 @@
+標準ライブラリを使う
+
+is_bored = 入力 S に対し {
+   # 文を '.' '?' '!' で分割する
+   # 各文について "I " で始まるかチェックして数える
+   
+   sentences = []
+   current = ""
+   i = 0
+   S の大きさ 回 くり返す {
+      c = S[i]
+      # 文の終わり文字か判定
+      もし c が '.' のいずれか ならば {
+         sentences に current を追加する
+         current = ""
+      }
+      そうでなければ {
+         もし c が '?' のいずれか ならば {
+            sentences に current を追加する
+            current = ""
+         }
+         そうでなければ {
+            もし c が '!' のいずれか ならば {
+               sentences に current を追加する
+               current = ""
+            }
+            そうでなければ {
+               current に c を追加する
+            }
+         }
+      }
+      i を増やす
+   }
+   # 最後の文が終わり文字なしの場合
+   もし current が "" 以外 ならば {
+      sentences に current を追加する
+   }
+   
+   # 各文について "I " で始まるかチェック
+   count = 0
+   j = 0
+   sentences の大きさ 回 くり返す {
+      sent = sentences[j]
+      # 前後の空白を除去するため、先頭から空白をスキップ
+      start = 0
+      sent の大きさ 回 くり返す {
+         もし sent[start] が ' ' 以外 ならば {
+            くり返しを抜ける
+         }
+         start を増やす
+      }
+      
+      # "I " で始まるかチェック (最低 2 文字必要)
+      もし sent の大きさ が 2 以上 ならば {
+         もし sent[start] が 'I' のいずれか ならば {
+            next = 和(start, 1)
+            もし next が sent の大きさ より小さい ならば {
+               もし sent[next] が ' ' のいずれか ならば {
+                  count を増やす
+               }
+            }
+         }
+      }
+      j を増やす
+   }
+   
+   count が答え
+}

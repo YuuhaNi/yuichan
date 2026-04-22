@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+starts_one_ends = 入力 n に対し {
+   もしnが1ならば{
+      1が答え
+   }
+
+   p = 1
+   i = 1
+   差(n,1)回くり返す{
+      p = 積(p, 10)
+   }
+
+   starts = p
+   ends = p
+   both = 1
+
+   差(和(starts, ends), both)が答え
+}

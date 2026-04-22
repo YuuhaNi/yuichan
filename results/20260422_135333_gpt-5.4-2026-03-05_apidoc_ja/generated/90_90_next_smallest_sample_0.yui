@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+next_smallest = 入力 lst に対し {
+  もし 配列判定(lst) が 偽 なら {
+    値なし
+  } でなければ {
+    もし 長さ(lst) < 2 なら {
+      値なし
+    } でなければ {
+      sorted = 並べ替え(lst)
+      smallest = sorted[0]
+      i = 1
+      次 = 値なし
+
+      繰り返し i < 長さ(sorted) の間 {
+        もし sorted[i] > smallest なら {
+          次 = sorted[i]
+          i = 長さ(sorted)
+        } でなければ {
+          i = 和(i, 1)
+        }
+      }
+
+      次
+    }
+  }
+}

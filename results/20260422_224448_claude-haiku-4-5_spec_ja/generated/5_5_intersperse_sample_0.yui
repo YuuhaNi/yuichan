@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+intersperse = 入力 numbers, delimeter に対し {
+   result = []
+   numbersの大きさを n とする
+   
+   もし n が 0 ならば {
+      result が答え
+   }
+   
+   result に numbers[0] を追加する
+   
+   1 から n より小さい まで くり返す {
+      result に delimeter を追加する
+      result に numbers[i] を追加する
+   }
+   
+   result が答え
+}

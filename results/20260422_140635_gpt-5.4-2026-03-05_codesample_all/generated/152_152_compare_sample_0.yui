@@ -1,0 +1,13 @@
+標準ライブラリを使う
+
+compare = 入力 game, guess に対し {
+   n=gameの大きさ
+   result=[]
+   i=0
+   n回くり返す{
+      d=絶対値(差(game[i],guess[i]))
+      resultにdを追加する
+      iを増やす
+   }
+   resultが答え
+}

@@ -1,0 +1,70 @@
+標準ライブラリを使う
+
+search = 入力 lst に対し {
+   result = -1
+   max_num = 0
+   
+   # lstの最大値を求める
+   max_num = 最大値(lst)
+   
+   # max_numから1まで逆順でチェック
+   max_num回くり返す {
+      num = 差(和(max_num, 1), max_num)
+      count = 0
+      
+      # numの出現回数をカウント
+      lstの大きさ回くり返す {
+         i = 0
+         lstの大きさ回くり返す {
+            もし lst[i] が num ならば {
+               countを増やす
+            }
+            iを増やす
+         }
+         くり返しを抜ける
+      }
+      
+      # numの値以上の頻度があるかチェック
+      もし count が num 以上 ならば {
+         result = num
+         くり返しを抜ける
+      }
+      
+      max_numを減らす
+   }
+   
+   result が答え
+}
+標準ライブラリを使う
+
+search = 入力 lst に対し {
+   result = -1
+   max_num = 最大値(lst)
+   
+   max_num回くり返す {
+      num = max_num
+      count = 0
+      
+      # numの出現回数をカウント
+      lstの大きさ回くり返す {
+         i = 0
+         lstの大きさ回くり返す {
+            もし lst[i] が num ならば {
+               countを増やす
+            }
+            iを増やす
+            くり返しを抜ける
+         }
+      }
+      
+      # 条件を満たしたら結果を更新して終了
+      もし count が num 以上 ならば {
+         result = num
+         くり返しを抜ける
+      }
+      
+      max_numを減らす
+   }
+   
+   result が答え
+}

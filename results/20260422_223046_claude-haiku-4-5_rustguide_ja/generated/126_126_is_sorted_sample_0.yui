@@ -1,0 +1,36 @@
+標準ライブラリを使う
+
+is_sorted = 入力 lst に対し {
+   もし lst の大きさ が 1 以下ならば {
+      真が答え
+   }
+   
+   i = 0
+   lst の大きさ を 1 で 差 した値回くり返す {
+      current = lst[i]
+      next = lst[差(i, 1)]
+      
+      もし current が next より大きいならば {
+         偽が答え
+      }
+      
+      もし current が next ならば {
+         もし i が 0 より大きいならば {
+            prev = lst[差(i, 1)]
+            もし prev が current ならば {
+               偽が答え
+            }
+         }
+         もし差(i, 2) が 0 以上ならば {
+            next_next = lst[和(i, 2)]
+            もし next が next_next ならば {
+               偽が答え
+            }
+         }
+      }
+      
+      i を増やす
+   }
+   
+   真が答え
+}

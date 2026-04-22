@@ -1,0 +1,31 @@
+標準ライブラリを使う
+
+reverse_delete = 入力 s, c に対し {
+   filtered=""
+   i=0
+   sの大きさ回くり返す{
+      ch=s[i]
+      もしchがcのいずれでもないならば{
+         filteredにchを追加する
+      }
+      iを増やす
+   }
+
+   ok=1
+   n=filteredの大きさ
+   half=商(n,2)
+   i=0
+   half回くり返す{
+      j=差(差(n,1),i)
+      もしfiltered[i]がfiltered[j]以外ならば{
+         ok=0
+      }
+      iを増やす
+   }
+
+   result=偽
+   もしokが1ならば{
+      result=真
+   }
+   [filtered,result]が答え
+}

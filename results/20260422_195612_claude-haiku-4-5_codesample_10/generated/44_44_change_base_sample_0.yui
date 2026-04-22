@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+change_base = 入力 x, base に対し {
+   もし x が 0 ならば {
+      "0" が答え
+   }
+   そうでなければ {
+      result = ""
+      n = x
+      n が 0 より大きい間 {
+         remainder = 剰余(n, base)
+         result = 文字列化(remainder) + result
+         n = 商(n, base)
+      }
+      result が答え
+   }
+}

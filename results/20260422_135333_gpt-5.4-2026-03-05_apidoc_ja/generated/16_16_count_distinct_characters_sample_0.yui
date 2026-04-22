@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+count_distinct_characters = 入力 string に対し {
+  chars = 配列化(string)
+  seen = {}
+  i = 0
+  distinct = 0
+
+  i < 長さ(chars) の間 {
+    code = chars[i]
+
+    code >= 65 かつ code <= 90 なら {
+      code = 和(code, 32)
+    }
+
+    key = 文字列化(code)
+
+    seen[key] == 値なし なら {
+      seen[key] = 真
+      distinct = 和(distinct, 1)
+    }
+
+    i = 和(i, 1)
+  }
+
+  distinct
+}

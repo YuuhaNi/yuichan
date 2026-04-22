@@ -1,0 +1,26 @@
+標準ライブラリを使う
+
+factorize = 入力 n に対し {
+   factors = []
+   divisor = 2
+   
+   # n が 1 になるまで因数分解を続ける
+   n回くり返す {
+      # divisor が n を割り切れなくなったら次の候補へ
+      もし剰余(n, divisor)が0でないならば {
+         divisor を増やす
+      }
+      そうでなければ {
+         # divisor で割り切れたら factors に追加して n を更新
+         factors に divisor を追加する
+         n = 商(n, divisor)
+         
+         # n が 1 になったら終了
+         もし n が 1 ならば {
+            くり返しを抜ける
+         }
+      }
+   }
+   
+   factors が答え
+}

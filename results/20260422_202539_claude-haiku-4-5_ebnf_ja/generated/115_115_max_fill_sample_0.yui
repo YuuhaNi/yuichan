@@ -1,0 +1,37 @@
+標準ライブラリを使う
+
+max_fill = 入力 grid, capacity に対し {
+    total_water = 0
+    grid の大きさ を i とし {
+        grid[i] の大きさ を j とし {
+            もし grid[i][j] が 1 ならば {
+                total_water を増やす
+            }
+        }
+    }
+    buckets_needed = 商(total_water, capacity)
+    もし 剰余(total_water, capacity) が 0 より大きい ならば {
+        buckets_needed を増やす
+    }
+    buckets_needed が 答え
+}
+標準ライブラリを使う
+
+max_fill = 入力 grid, capacity に対し {
+    total_water = 0
+    0 を i とし {
+        i が grid の大きさ より小さい {
+            0 を j とし {
+                j が grid[i] の大きさ より小さい {
+                    もし grid[i][j] が 1 ならば {
+                        total_water = 和(total_water, 1)
+                    }
+                    j = 和(j, 1)
+                }
+            }
+            i = 和(i, 1)
+        }
+    }
+    buckets = 商(和(total_water, 差(capacity, 1)), capacity)
+    buckets が 答え
+}

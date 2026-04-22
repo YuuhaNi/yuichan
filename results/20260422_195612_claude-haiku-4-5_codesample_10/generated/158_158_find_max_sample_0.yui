@@ -1,0 +1,68 @@
+標準ライブラリを使う
+
+find_max = 入力 words に対し {
+   もし words の大きさ が 0 ならば {
+      "" が答え
+   }
+   そうでなければ {
+      max_word = words[0]
+      max_unique = 0
+      
+      # 最初の単語のユニーク文字数を計算
+      i = 0
+      words[0] の大きさ 回くり返す {
+         c = words[0][i]
+         もし c が max_word のいずれかならば {
+            何もしない
+         }
+         i を増やす
+      }
+      
+      # ユニーク文字数を数える関数的な処理
+      unique_chars = []
+      i = 0
+      words[0] の大きさ 回くり返す {
+         c = words[0][i]
+         もし c が unique_chars のいずれでもないならば {
+            unique_chars に c を追加する
+         }
+         i を増やす
+      }
+      max_unique = unique_chars の大きさ
+      
+      # 全ての単語をチェック
+      i = 1
+      words の大きさ 回くり返す {
+         word = words[i]
+         
+         # この単語のユニーク文字数を計算
+         unique_chars = []
+         j = 0
+         word の大きさ 回くり返す {
+            c = word[j]
+            もし c が unique_chars のいずれでもないならば {
+               unique_chars に c を追加する
+            }
+            j を増やす
+         }
+         current_unique = unique_chars の大きさ
+         
+         # ユニーク文字数が多い、または同じ場合は辞書順で比較
+         もし current_unique が max_unique より大きいならば {
+            max_word = word
+            max_unique = current_unique
+         }
+         そうでなければ {
+            もし current_unique が max_unique と等しいならば {
+               もし word が max_word より小さいならば {
+                  max_word = word
+               }
+            }
+         }
+         
+         i を増やす
+      }
+      
+      max_word が答え
+   }
+}

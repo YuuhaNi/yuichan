@@ -1,0 +1,46 @@
+標準ライブラリを使う
+
+get_row = 入力 lst, x に対し {
+   result = []
+   row = 0
+   lstの大きさ回くり返す {
+      current_row = lst[row]
+      col = 0
+      current_rowの大きさ回くり返す {
+         もし current_row[col] が x ならば {
+            coordinate = {"row": row, "col": col}
+            resultに coordinate を追加する
+         }
+         col を増やす
+      }
+      row を増やす
+   }
+   
+   # 結果をソート: 行の昇順、同じ行内では列の降順
+   sorted_result = []
+   result_len = resultの大きさ
+   result_len回くり返す {
+      min_idx = 0
+      i = 0
+      result_lenの大きさ回くり返す {
+         もし i が result_len より小さい ならば {
+            current = result[i]
+            min_item = result[min_idx]
+            もし current["row"] が min_item["row"] より小さい ならば {
+               min_idx = i
+            } そうでなければ {
+               もし current["row"] が min_item["row"] ならば {
+                  もし current["col"] が min_item["col"] より大きい ならば {
+                     min_idx = i
+                  }
+               }
+            }
+         }
+         i を増やす
+      }
+      sorted_result に result[min_idx] を追加する
+      result[min_idx] = 値なし
+   }
+   
+   sorted_result が答え
+}

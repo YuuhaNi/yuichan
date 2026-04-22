@@ -1,0 +1,21 @@
+標準ライブラリを使う
+
+simplify = 入力 x, n に対し {
+    x_parts = 分割(x, "/")
+    n_parts = 分割(n, "/")
+
+    x_num = 整数化(x_parts[0])
+    x_den = 整数化(x_parts[1])
+    n_num = 整数化(n_parts[0])
+    n_den = 整数化(n_parts[1])
+
+    左 = 積(x_num, n_num)
+    右 = 積(x_den, n_den)
+    余り = 剰余(左, 右)
+
+    もし 余り が 0 ならば {
+        真 が 答え
+    } そうでなければ {
+        偽 が 答え
+    }
+}

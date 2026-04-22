@@ -1,0 +1,46 @@
+標準ライブラリを使う
+
+sort_even = 入力 l に対し {
+   n=lの大きさ
+   evens=[]
+   i=0
+   n回くり返す{
+      もし剰余(i,2)が0ならば{
+         evensにl[i]を追加する
+      }
+      iを増やす
+   }
+
+   m=evensの大きさ
+   i=0
+   m回くり返す{
+      j=0
+      lim=差(m,i)
+      limを減らす
+      lim回くり返す{
+         nj=和(j,1)
+         もしevens[j]がevens[nj]より大きいならば{
+            tmp=evens[j]
+            evens[j]=evens[nj]
+            evens[nj]=tmp
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+
+   ans=[]
+   ei=0
+   i=0
+   n回くり返す{
+      もし剰余(i,2)が0ならば{
+         ansにevens[ei]を追加する
+         eiを増やす
+      }
+      そうでなければ{
+         ansにl[i]を追加する
+      }
+      iを増やす
+   }
+   ansが答え
+}

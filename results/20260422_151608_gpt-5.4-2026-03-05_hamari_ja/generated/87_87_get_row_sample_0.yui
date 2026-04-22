@@ -1,0 +1,29 @@
+標準ライブラリを使う
+
+get_row = 入力 lst, x に対し {
+   result=[]
+   i=0
+   rows=lstの大きさ
+
+   rows回くり返す{
+      row=lst[i]
+      j=差(rowの大きさ,1)
+      skip=0
+
+      もしjが0より小さいならば{
+         skip=1
+      }
+
+      もしskipが0ならば{
+         和(j,1)回くり返す{
+            もしrow[j]がxならば{
+               resultに[i,j]を追加する
+            }
+            jを減らす
+         }
+      }
+      iを増やす
+   }
+
+   resultが答え
+}

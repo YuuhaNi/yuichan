@@ -1,0 +1,41 @@
+標準ライブラリを使う
+
+by_length=入力arrに対し{
+   sorted=bubble_sort(arr)
+   rev=reverse(sorted)
+   result=[]
+   n=revの大きさ
+   i=0
+   n回くり返す{
+      x=rev[i]
+      もしxが1ならば{
+         resultに"One"を追加する
+      }
+      もしxが2ならば{
+         resultに"Two"を追加する
+      }
+      もしxが3ならば{
+         resultに"Three"を追加する
+      }
+      もしxが4ならば{
+         resultに"Four"を追加する
+      }
+      もしxが5ならば{
+         resultに"Five"を追加する
+      }
+      もしxが6ならば{
+         resultに"Six"を追加する
+      }
+      もしxが7ならば{
+         resultに"Seven"を追加する
+      }
+      もしxが8ならば{
+         resultに"Eight"を追加する
+      }
+      もしxが9ならば{
+         resultに"Nine"を追加する
+      }
+      iを増やす
+   }
+   resultが答え
+}

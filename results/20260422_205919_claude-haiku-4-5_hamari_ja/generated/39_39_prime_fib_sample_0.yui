@@ -1,0 +1,53 @@
+標準ライブラリを使う
+
+prime_fib = 入力 n に対し {
+   count = 0
+   a = 1
+   b = 1
+   
+   100回くり返す {
+      c = 和(a, b)
+      a = b
+      b = c
+      
+      is_prime = 1
+      skip = 0
+      
+      もしcが2より小さいならば {
+         is_prime = 0
+      }
+      
+      もしis_primeが1ならば {
+         i = 2
+         もしcが2ならば {
+            is_prime = 1
+         }
+         そうでなければ {
+            もし剰余(c, 2)が0ならば {
+               is_prime = 0
+            }
+            そうでなければ {
+               limit = 商(小数化(c), 小数化(2))
+               limit = 和(limit, 1)
+               
+               i = 3
+               limit回くり返す {
+                  remainder = 剰余(c, i)
+                  もしremainder が 0 ならば {
+                     is_prime = 0
+                     くり返しを抜ける
+                  }
+                  i = 和(i, 2)
+               }
+            }
+         }
+      }
+      
+      もしis_primeが1ならば {
+         count = 和(count, 1)
+         もしcount が n ならば {
+            c が答え
+         }
+      }
+   }
+}

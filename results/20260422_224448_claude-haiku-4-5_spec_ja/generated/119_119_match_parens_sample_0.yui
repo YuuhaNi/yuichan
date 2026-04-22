@@ -1,0 +1,60 @@
+標準ライブラリを使う
+
+match_parens = 入力 lst に対し {
+   s1 = lst[0]
+   s2 = lst[1]
+   
+   # 2つの順序を試す
+   result1 = check_valid(s1, s2)
+   result2 = check_valid(s2, s1)
+   
+   もし result1 が 真 ならば {
+      "Yes" が答え
+   }
+   そうでなければ {
+      もし result2 が 真 ならば {
+         "Yes" が答え
+      }
+      そうでなければ {
+         "No" が答え
+      }
+   }
+}
+
+check_valid = 入力 a, b に対し {
+   combined = a
+   i = 0
+   b の大きさ 回くり返す {
+      combined に b[i] を追加する
+      i を増やす
+   }
+   
+   # バランスをチェック
+   balance = 0
+   j = 0
+   combined の大きさ 回くり返す {
+      char = combined[j]
+      もし char が 40 ならば {
+         # '(' は文字コード 40
+         balance を増やす
+      }
+      そうでなければ {
+         # ')' は文字コード 41
+         balance を減らす
+      }
+      
+      # balance が負になったら無効
+      もし balance が 0 より小さい ならば {
+         偽 が答え
+      }
+      j を増やす
+   }
+   
+   # 最後に balance が 0 なら有効
+   もし balance が 0 ならば {
+      真 が答え
+   }
+   そうでなければ {
+      偽 が答え
+   }
+}

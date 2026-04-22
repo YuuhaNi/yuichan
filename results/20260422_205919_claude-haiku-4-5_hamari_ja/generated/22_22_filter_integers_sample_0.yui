@@ -1,0 +1,15 @@
+標準ライブラリを使う
+
+filter_integers = 入力 values に対し {
+   result = []
+   valuesの大きさを size とする
+   0から size より小さい間くり返す {
+      item = values[i]
+      # item が整数型かどうかを判定
+      もし item が 整数 のいずれかならば {
+         result に item を追加する
+      }
+      i を増やす
+   }
+   result が答え
+}

@@ -1,0 +1,20 @@
+標準ライブラリを使う
+
+decimal_to_binary = 入力 decimal に対し {
+    binary = ""
+    
+    もし decimal == 0 {
+        binary = "0"
+    } そうでなければ {
+        一時 = decimal
+        
+        繰り返す 一時 > 0 {
+            remainder = 剰余(一時, 2)
+            binary = 文字列化(remainder) + binary
+            一時 = 商(一時, 2)
+        }
+    }
+    
+    結果 = "db" + binary + "db"
+    結果を返す
+}

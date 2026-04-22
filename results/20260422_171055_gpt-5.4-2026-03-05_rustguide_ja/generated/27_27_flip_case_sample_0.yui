@@ -1,0 +1,32 @@
+標準ライブラリを使う
+
+flip_case = 入力 string に対し {
+   i = 0
+   result = ""
+
+   stringの大きさ回くり返す{
+      code = string[i]
+
+      もしcodeが97以上ならば{
+         もしcodeが122以下ならば{
+            resultに差(code, 32)を追加する
+         }そうでなければ{
+            resultにcodeを追加する
+         }
+      }そうでなければ{
+         もしcodeが65以上ならば{
+            もしcodeが90以下ならば{
+               resultに和(code, 32)を追加する
+            }そうでなければ{
+               resultにcodeを追加する
+            }
+         }そうでなければ{
+            resultにcodeを追加する
+         }
+      }
+
+      iを増やす
+   }
+
+   resultが答え
+}

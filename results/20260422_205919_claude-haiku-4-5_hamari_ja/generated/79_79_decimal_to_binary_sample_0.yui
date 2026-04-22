@@ -1,0 +1,36 @@
+標準ライブラリを使う
+
+decimal_to_binary = 入力 decimal に対し {
+   result = ""
+   もし decimal が 0 ならば {
+      result = "db0db"
+   }
+   そうでなければ {
+      result = "db"
+      num = decimal
+      
+      # num が 0 より大きい間、2で割った余りを result に追加
+      num が 0 より大きい {
+         remainder = 剰余(num, 2)
+         もし remainder が 0 ならば {
+            result = 和(result, "0")
+         }
+         そうでなければ {
+            result = 和(result, "1")
+         }
+         num = 商(num, 2)
+      }
+      
+      # 結果を反転させる（最下位ビットが先に追加されたため）
+      result = 和(result, "db")
+      reversed_result = ""
+      i = 差(result の大きさ, 1)
+      i が 0 以上 {
+         reversed_result = 和(reversed_result, result[i])
+         i = 差(i, 1)
+      }
+      result = reversed_result
+   }
+   
+   result
+}

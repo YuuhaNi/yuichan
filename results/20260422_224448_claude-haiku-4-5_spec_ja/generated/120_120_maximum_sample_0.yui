@@ -1,0 +1,32 @@
+標準ライブラリを使う
+
+maximum = 入力 arr, k に対し {
+   # arrをソート（昇順）
+   sorted_arr = arr
+   i = 0
+   昇順ソート回数 = 配列化(arr)の大きさ
+   
+   昇順ソート回数回くり返す {
+      j = 0
+      差(配列化(arr)の大きさ, 1)回くり返す {
+         もしsorted_arr[j]がsorted_arr[和(j, 1)]より大きいならば {
+            temp = sorted_arr[j]
+            sorted_arr[j] = sorted_arr[和(j, 1)]
+            sorted_arr[和(j, 1)] = temp
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+   
+   # 大きい方からk個を取得
+   result = []
+   start_index = 差(配列化(sorted_arr)の大きさ, k)
+   i = 0
+   k回くり返す {
+      resultに sorted_arr[和(start_index, i)]を追加する
+      iを増やす
+   }
+   
+   result が答え
+}

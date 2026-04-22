@@ -1,0 +1,30 @@
+標準ライブラリを使う
+
+words_string = 入力 s に対し {
+   words = []
+   current_word = ""
+   i = 0
+   sの大きさ回くり返す{
+      char = s[i]
+      もし char が " "[0] ならば {
+         もし current_word の大きさ が 0 以外 ならば {
+            words に current_word を追加する
+            current_word = ""
+         }
+      } そうでなければ {
+         もし char が ",")[0] ならば {
+            もし current_word の大きさ が 0 以外 ならば {
+               words に current_word を追加する
+               current_word = ""
+            }
+         } そうでなければ {
+            current_word に char を追加する
+         }
+      }
+      i を増やす
+   }
+   もし current_word の大きさ が 0 以外 ならば {
+      words に current_word を追加する
+   }
+   words が答え
+}

@@ -1,0 +1,54 @@
+標準ライブラリを使う
+
+max_fill = 入力 grid, capacity に対し {
+   total_water = 0
+   row_index = 0
+   gridの大きさ回くり返す {
+      current_row = grid[row_index]
+      col_index = 0
+      current_rowの大きさ回くり返す {
+         もし current_row[col_index] が 1 ならば {
+            total_waterを増やす
+         }
+         col_indexを増やす
+      }
+      row_indexを増やす
+   }
+   
+   buckets_needed = 商(total_water, capacity)
+   remainder = 剰余(total_water, capacity)
+   もし remainder が 0 以外 ならば {
+      bucketsを増やす
+   }
+   
+   buckets_needed が答え
+}
+標準ライブラリを使う
+
+max_fill = 入力 grid, capacity に対し {
+   total_water = 0
+   row_index = 0
+   gridの大きさ回くり返す {
+      current_row = grid[row_index]
+      col_index = 0
+      current_rowの大きさ回くり返す {
+         もし current_row[col_index] が 1 ならば {
+            total_waterを増やす
+         }
+         col_indexを増やす
+      }
+      row_indexを増やす
+   }
+   
+   もし total_water が 0 ならば {
+      0が答え
+   }
+   
+   buckets_needed = 商(total_water, capacity)
+   remainder = 剰余(total_water, capacity)
+   もし remainder が 0 以外 ならば {
+      bucketsを増やす
+   }
+   
+   buckets_needed が答え
+}

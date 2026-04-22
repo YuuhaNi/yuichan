@@ -1,0 +1,21 @@
+標準ライブラリを使う
+
+parse_music = 入力 music_string に対し {
+  notes = music_string["split"](" ")
+  result = []
+  i = 0
+  notesの大きさ回 くり返す {
+    note = notes[i]
+    もし note が "o" ならば {
+      resultに4を追加する
+    } そうでなければ {
+      もし note が "o|" ならば {
+        resultに2を追加する
+      } そうでなければ {
+        resultに1を追加する
+      }
+    }
+    iを増やす
+  }
+  resultが答え
+}

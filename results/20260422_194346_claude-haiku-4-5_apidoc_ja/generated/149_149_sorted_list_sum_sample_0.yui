@@ -1,0 +1,41 @@
+標準ライブラリを使う
+
+sorted_list_sum = 入力 lst に対し {
+  # 奇数の長さを持つ文字列を削除
+  filtered = []
+  i = 0
+  繰り返す (i < 長さ(lst)) {
+    word = lst[i]
+    word_length = 長さ(word)
+    # 長さが偶数かどうかを判定（2で割った剰余が0）
+    もし (剰余(word_length, 2) == 0) {
+      filtered = 追加(filtered, word)
+    }
+    i = i + 1
+  }
+  
+  # バブルソート：長さで昇順、同じ長さならアルファベット順
+  n = 長さ(filtered)
+  i = 0
+  繰り返す (i < n) {
+    j = 0
+    繰り返す (j < n - i - 1) {
+      word1 = filtered[j]
+      word2 = filtered[j + 1]
+      len1 = 長さ(word1)
+      len2 = 長さ(word2)
+      
+      # 長さで比較、同じなら文字列で比較
+      もし (len1 > len2 || (len1 == len2 && word1 > word2)) {
+        # スワップ
+        temp = filtered[j]
+        filtered[j] = filtered[j + 1]
+        filtered[j + 1] = temp
+      }
+      j = j + 1
+    }
+    i = i + 1
+  }
+  
+  filtered を返す
+}

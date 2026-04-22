@@ -1,0 +1,47 @@
+標準ライブラリを使う
+
+bf = 入力 planet1, planet2 に対し {
+   planets = ("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
+   
+   idx1 = -1
+   idx2 = -1
+   
+   i = 0
+   8回くり返す {
+      もし planets[i] が planet1 ならば {
+         idx1 = i
+      }
+      もし planets[i] が planet2 ならば {
+         idx2 = i
+      }
+      i を増やす
+   }
+   
+   もし idx1 が -1 ならば {
+      ()
+   }
+   そうでなければ {
+      もし idx2 が -1 ならば {
+         ()
+      }
+      そうでなければ {
+         min_idx = idx1
+         max_idx = idx2
+         
+         もし idx1 が idx2 より大きい ならば {
+            min_idx = idx2
+            max_idx = idx1
+         }
+         
+         result = ()
+         j = 和(min_idx, 1)
+         
+         繰り返す j が max_idx より小さい 間 {
+            result に planets[j] を追加する
+            j を増やす
+         }
+         
+         result
+      }
+   }
+}

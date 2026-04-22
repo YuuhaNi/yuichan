@@ -1,0 +1,60 @@
+標準ライブラリを使う
+
+prod_signs = 入力 arr に対し {
+  arr の大きさ が 0 ならば {
+    値なし が 答え
+  }
+  
+  abs_sum = 0
+  sign_prod = 1
+  
+  arr の大きさ 回 くり返す {
+    i = 0
+    {
+      i が arr の大きさ より小さい ならば {
+        current = arr[i]
+        
+        もし current が 0 ならば {
+          sign_prod = 0
+        }
+        
+        もし current が 0 より小さい ならば {
+          abs_sum に current の負数を追加する
+          sign_prod を -1 に掛ける
+        } そうでなければ {
+          abs_sum に current を追加する
+        }
+        
+        i を増やす
+      }
+    }
+  }
+  
+  result = 和(abs_sum) * sign_prod
+  result が 答え
+}
+標準ライブラリを使う
+
+prod_signs = 入力 arr に対し {
+  もし arr の大きさ が 0 ならば {
+    値なし が 答え
+  }
+  
+  abs_sum = 0
+  sign_prod = 1
+  
+  arr の大きさ 回 くり返す {
+    current = arr[くり返し番号]
+    abs_sum に 絶対値(current) を追加する
+    
+    もし current が 0 ならば {
+      sign_prod = 0
+    } そうでなければ {
+      もし current が 0 より小さい ならば {
+        sign_prod を -1 に掛ける
+      }
+    }
+  }
+  
+  積(abs_sum, sign_prod) が 答え
+}

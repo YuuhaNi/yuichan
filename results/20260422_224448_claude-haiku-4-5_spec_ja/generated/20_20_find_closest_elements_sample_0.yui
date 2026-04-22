@@ -1,0 +1,38 @@
+標準ライブラリを使う
+
+find_closest_elements = 入力 numbers に対し {
+   min_diff = 値なし
+   result_a = 値なし
+   result_b = 値なし
+   
+   i = 0
+   numbersの大きさを減らす回くり返す {
+      j = 和(i, 1)
+      numbersの大きさを減らすより小さいまで繰り返す {
+         diff = 絶対値(差(numbers[i], numbers[j]))
+         
+         もしmin_diffが値なしならば {
+            min_diff = diff
+            result_a = numbers[i]
+            result_b = numbers[j]
+         }
+         そうでなければ {
+            もしdiffがmin_diffより小さいならば {
+               min_diff = diff
+               result_a = numbers[i]
+               result_b = numbers[j]
+            }
+         }
+         
+         jを増やす
+      }
+      iを増やす
+   }
+   
+   もし最小値(result_a, result_b)がresult_aならば {
+      [result_a, result_b] が答え
+   }
+   そうでなければ {
+      [result_b, result_a] が答え
+   }
+}

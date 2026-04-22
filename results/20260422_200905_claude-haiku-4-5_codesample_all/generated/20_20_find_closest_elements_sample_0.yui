@@ -1,0 +1,51 @@
+標準ライブラリを使う
+
+find_closest_elements = 入力 numbers に対し {
+   n = numbers の大きさ
+   
+   # 最小差分と対応する2つの要素を記録する
+   min_diff = 値なし
+   elem1 = 値なし
+   elem2 = 値なし
+   
+   # すべてのペアを比較する
+   i = 0
+   n 回くり返す {
+      j = 和(i, 1)
+      差(n, 1) 回くり返す {
+         もし j が n 以上 ならば {
+            くり返しを抜ける
+         }
+         
+         a = numbers[i]
+         b = numbers[j]
+         diff = 絶対値(差(a, b))
+         
+         # 初回または新しい最小差分が見つかった
+         もし min_diff が 値なし ならば {
+            min_diff = diff
+            elem1 = a
+            elem2 = b
+         }
+         そうでなければ {
+            もし diff が min_diff より小さい ならば {
+               min_diff = diff
+               elem1 = a
+               elem2 = b
+            }
+         }
+         
+         j を増やす
+      }
+      i を増やす
+   }
+   
+   # 小さい方を先に、大きい方を後に返す
+   もし elem1 が elem2 より大きい ならば {
+      tmp = elem1
+      elem1 = elem2
+      elem2 = tmp
+   }
+   
+   [elem1, elem2] が答え
+}

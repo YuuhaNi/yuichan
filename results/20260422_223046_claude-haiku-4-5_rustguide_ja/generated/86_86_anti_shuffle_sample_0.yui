@@ -1,0 +1,65 @@
+標準ライブラリを使う
+
+anti_shuffle = 入力 s に対し {
+   result = ""
+   i = 0
+   current_word = ""
+   
+   sの大きさ回くり返す {
+      char = s[i]
+      
+      もし char が 32 ならば {
+         # スペース（ASCII 32）の場合、現在の単語をソートして追加
+         もし current_word が "" 以外 ならば {
+            sorted = sort_word(current_word)
+            result = 和(result, sorted)
+         }
+         result = 和(result, " ")
+         current_word = ""
+      } そうでなければ {
+         # スペース以外の文字を current_word に追加
+         current_word = 和(current_word, char)
+      }
+      
+      iを増やす
+   }
+   
+   # 最後の単語を処理
+   もし current_word が "" 以外 ならば {
+      sorted = sort_word(current_word)
+      result = 和(result, sorted)
+   }
+   
+   result が答え
+}
+
+sort_word = 入力 word に対し {
+   # 単語の文字をASCII値でソート
+   chars = 配列化(word)
+   n = chars の大きさ
+   
+   # バブルソート
+   n回くり返す {
+      i = 0
+      差(n, 1)回くり返す {
+         もし chars[i] が chars[差(i, 1)]より大きいならば {
+            temp = chars[i]
+            chars[i] = chars[差(i, 1)]
+            chars[差(i, 1)] = temp
+         }
+         iを増やす
+      }
+   }
+   
+   # ソート済みの文字を文字列に戻す
+   sorted_str = ""
+   n回くり返す {
+      i = 0
+      n回くり返す {
+         sorted_str = 和(sorted_str, chars[i])
+         iを増やす
+      }
+   }
+   
+   sorted_str が答え
+}

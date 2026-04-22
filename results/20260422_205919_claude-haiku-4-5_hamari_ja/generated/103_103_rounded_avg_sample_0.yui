@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+rounded_avg = 入力 n, m に対し {
+   もしnがmより大きいならば{
+      -1
+   }
+   そうでなければ{
+      # 合計を計算: (n + m) * (m - n + 1) / 2
+      # ただし整数演算なので、小数化して計算
+      sum_n_to_m = 商(積(和(n, m), 和(差(m, n), 1)), 2)
+      
+      # 要素数: m - n + 1
+      count = 和(差(m, n), 1)
+      
+      # 平均を小数で計算
+      avg_float = 小数化(sum_n_to_m)
+      count_float = 小数化(count)
+      avg = 商(avg_float, count_float)
+      
+      # 最も近い整数に丸める (0.5以上で切り上げ)
+      rounded = 丸める(avg)
+      
+      # 2進数に変換
+      bin_str = 二進数文字列(rounded)
+      bin_str
+   }
+}

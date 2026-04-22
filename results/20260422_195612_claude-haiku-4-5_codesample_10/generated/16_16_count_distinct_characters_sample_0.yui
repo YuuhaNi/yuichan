@@ -1,0 +1,26 @@
+標準ライブラリを使う
+
+count_distinct_characters = 入力 string に対し {
+   # 小文字に統一
+   s = 小文字化(string)
+   
+   # 出現した文字を記録するオブジェクト
+   seen = {}
+   
+   # 文字列の各文字をループ
+   n = sの大きさ
+   i = 0
+   n回くり返す {
+      c = s[i]
+      seen[c] = 真
+      iを増やす
+   }
+   
+   # オブジェクトのキー数 = 異なる文字の数
+   count = 0
+   キーを seen から取り出し key として {
+      countを増やす
+   }
+   
+   countが答え
+}

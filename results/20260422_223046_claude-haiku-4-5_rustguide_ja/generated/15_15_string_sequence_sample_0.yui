@@ -1,0 +1,15 @@
+標準ライブラリを使う
+
+string_sequence = 入力 n に対し {
+   result = ""
+   i = 0
+   足す(n, 1)回くり返す{
+      もし i が 0 ならば {
+         result = 文字列化(i)
+      } そうでなければ {
+         result = 文字列化(result) + " " + 文字列化(i)
+      }
+      i を増やす
+   }
+   result が答え
+}

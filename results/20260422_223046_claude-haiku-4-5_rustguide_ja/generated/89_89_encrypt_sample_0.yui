@@ -1,0 +1,14 @@
+標準ライブラリを使う
+
+encrypt = 入力 s に対し {
+   result = ""
+   i = 0
+   sの大きさ回くり返す {
+      char_code = s[i]
+      # 文字位置を2倍して2つ下にシフト
+      new_code = 和(積(char_code, 2), 2)
+      resultにnew_codeを追加する
+      iを増やす
+   }
+   resultが答え
+}

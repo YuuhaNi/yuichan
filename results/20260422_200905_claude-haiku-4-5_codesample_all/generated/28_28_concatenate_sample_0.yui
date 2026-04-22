@@ -1,0 +1,12 @@
+標準ライブラリを使う
+
+concatenate=入力stringsに対し{
+   result=""
+   n=stringsの大きさ
+   i=0
+   n回くり返す{
+      resultにstrings[i]を追加する
+      iを増やす
+   }
+   resultが答え
+}

@@ -1,0 +1,97 @@
+標準ライブラリを使う
+
+int_to_mini_roman = 入力 number に対し {
+   result = ""
+   
+   # 1000の位
+   thousands = 商(number, 1000)
+   i = 0
+   thousands回くり返す {
+      result = 連結(result, "m")
+      i = 和(i, 1)
+   }
+   number = 剰余(number, 1000)
+   
+   # 900の位
+   もしnumberが900以上ならば {
+      result = 連結(result, "cm")
+      number = 差(number, 900)
+   }
+   
+   # 500の位
+   hundreds = 商(number, 500)
+   もしhundredsが0より大きいならば {
+      result = 連結(result, "d")
+      number = 差(number, 500)
+   }
+   
+   # 400の位
+   もしnumberが400以上ならば {
+      result = 連結(result, "cd")
+      number = 差(number, 400)
+   }
+   
+   # 100の位
+   hundreds = 商(number, 100)
+   i = 0
+   hundreds回くり返す {
+      result = 連結(result, "c")
+      i = 和(i, 1)
+   }
+   number = 剰余(number, 100)
+   
+   # 90の位
+   もしnumberが90以上ならば {
+      result = 連結(result, "xc")
+      number = 差(number, 90)
+   }
+   
+   # 50の位
+   tens = 商(number, 50)
+   もしtensが0より大きいならば {
+      result = 連結(result, "l")
+      number = 差(number, 50)
+   }
+   
+   # 40の位
+   もしnumberが40以上ならば {
+      result = 連結(result, "xl")
+      number = 差(number, 40)
+   }
+   
+   # 10の位
+   tens = 商(number, 10)
+   i = 0
+   tens回くり返す {
+      result = 連結(result, "x")
+      i = 和(i, 1)
+   }
+   number = 剰余(number, 10)
+   
+   # 9の位
+   もしnumberが9ならば {
+      result = 連結(result, "ix")
+      number = 0
+   }
+   
+   # 5の位
+   もしnumberが5以上ならば {
+      result = 連結(result, "v")
+      number = 差(number, 5)
+   }
+   
+   # 4の位
+   もしnumberが4ならば {
+      result = 連結(result, "iv")
+      number = 0
+   }
+   
+   # 1の位
+   i = 0
+   number回くり返す {
+      result = 連結(result, "i")
+      i = 和(i, 1)
+   }
+   
+   result が答え
+}

@@ -1,0 +1,78 @@
+標準ライブラリを使う
+
+minPath = 入力 grid, k に対し {
+   N = gridの大きさ
+
+   pos = {}
+   r = 0
+   N回くり返す{
+      c = 0
+      N回くり返す{
+         v = grid[r][c]
+         pos[文字列化(v)] = [r, c]
+         cを増やす
+      }
+      rを増やす
+   }
+
+   cur = [1]
+   もしkが1ならば{
+      curが答え
+   }
+
+   step = 1
+   差(k, 1)回くり返す{
+      best = 値なし
+      best_last = 0
+
+      cand1 = 0
+      cand2 = 0
+      last = cur[差(curの大きさ, 1)]
+
+      もしlastが1より大きいならば{
+         p1 = pos[文字列化(差(last, 1))]
+         p2 = pos[文字列化(last)]
+         dist1 = 和(絶対値(差(p1[0], p2[0])), 絶対値(差(p1[1], p2[1])))
+         もしdist1が1ならば{
+            cand1 = 差(last, 1)
+         }
+      }
+
+      もしlastが和(Nの大きさ,0)ならば{
+      }
+
+      limit = 積(N, N)
+      もしlastがlimitより小さいならば{
+         p3 = pos[文字列化(和(last, 1))]
+         p4 = pos[文字列化(last)]
+         dist2 = 和(絶対値(差(p3[0], p4[0])), 絶対値(差(p3[1], p4[1])))
+         もしdist2が1ならば{
+            cand2 = 和(last, 1)
+         }
+      }
+
+      もしcand1が0ならば{
+         best = cand2
+      }そうでなければ{
+         もしcand2が0ならば{
+            best = cand1
+         }そうでなければ{
+            もしcand1がcand2より小さいならば{
+               best = cand1
+            }そうでなければ{
+               best = cand2
+            }
+         }
+      }
+
+      もしbestが値なしならば{
+         curにlastを追加する
+      }そうでなければ{
+         curにbestを追加する
+      }
+
+      stepを増やす
+   }
+
+   curが答え
+}

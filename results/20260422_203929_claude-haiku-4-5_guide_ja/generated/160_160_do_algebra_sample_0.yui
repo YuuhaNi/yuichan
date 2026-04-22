@@ -1,0 +1,154 @@
+標準ライブラリを使う
+
+do_algebra = 入力 operator, operand に対し {
+   # 式を文字列として構築する
+   expr = 文字列化(operand[0])
+   i = 0
+   operatorの大きさ回くり返す{
+      op = operator[i]
+      next_operand = operand[差(i, 1)]
+      expr = 和(expr, op, 文字列化(next_operand))
+      iを増やす
+   }
+   
+   # 式を評価する（指数化を先に処理）
+   result = evaluate_expression(expr)
+   result が答え
+}
+
+evaluate_expression = 入力 expr に対し {
+   # 演算子と数値を分離してリストに変換
+   tokens = []
+   current_num = ""
+   i = 0
+   exprの大きさ回くり返す{
+      char = expr[i]
+      もし char が 43 ならば {
+         # '+'
+         もし current_num が "" 以外 ならば {
+            tokensに整数化(current_num)を追加する
+            current_num = ""
+         }
+         tokensに"+"を追加する
+      } そうでなければ もし char が 45 ならば {
+         # '-'
+         もし current_num が "" 以外 ならば {
+            tokensに整数化(current_num)を追加する
+            current_num = ""
+         }
+         tokensに"-"を追加する
+      } そうでなければ もし char が 42 ならば {
+         # '*'
+         もし current_num が "" 以外 ならば {
+            tokensに整数化(current_num)を追加する
+            current_num = ""
+         }
+         tokensに"*"を追加する
+      } そうでなければ {
+         current_numに文字列化(char)を追加する
+      }
+      iを増やす
+   }
+   もし current_num が "" 以外 ならば {
+      tokensに整数化(current_num)を追加する
+   }
+   
+   # 指数化を先に処理
+   i = 0
+   tokensの大きさ回くり返す{
+      もし i が tokensの大きさ 以上 ならば {
+         くり返しを抜ける
+      }
+      もし i が 0 以外 ならば {
+         もし tokens[i] が "**" ならば {
+            left = tokens[差(i, 1)]
+            right = tokens[和(i, 1)]
+            result = 積(left, left)
+            j = 1
+            rightを減らす
+            rightの大きさ回くり返す{
+               result = 積(result, left)
+               jを増やす
+            }
+            tokens[差(i, 1)] = result
+            # tokens から i と i+1 を削除
+            j = i
+            差(tokensの大きさ, 2)回くり返す{
+               もし j が tokensの大きさ より小さい ならば {
+                  tokens[j] = tokens[和(j, 2)]
+                  jを増やす
+               }
+            }
+         }
+      }
+      iを増やす
+   }
+   
+   # 乗算と除算を処理
+   i = 1
+   tokensの大きさ回くり返す{
+      もし i が tokensの大きさ 以上 ならば {
+         くり返しを抜ける
+      }
+      もし tokens[i] が "*" ならば {
+         left = tokens[差(i, 1)]
+         right = tokens[和(i, 1)]
+         tokens[差(i, 1)] = 積(left, right)
+         j = i
+         差(tokensの大きさ, 2)回くり返す{
+            もし j が tokensの大きさ より小さい ならば {
+               tokens[j] = tokens[和(j, 2)]
+               jを増やす
+            }
+         }
+      } そうでなければ もし tokens[i] が "//" ならば {
+         left = tokens[差(i, 1)]
+         right = tokens[和(i, 1)]
+         tokens[差(i, 1)] = 商(left, right)
+         j = i
+         差(tokensの大きさ, 2)回くり返す{
+            もし j が tokensの大きさ より小さい ならば {
+               tokens[j] = tokens[和(j, 2)]
+               jを増やす
+            }
+         }
+      } そうでなければ {
+         iを増やす
+      }
+   }
+   
+   # 加算と減算を処理
+   i = 1
+   tokensの大きさ回くり返す{
+      もし i が tokensの大きさ 以上 ならば {
+         くり返しを抜ける
+      }
+      もし tokens[i] が "+" ならば {
+         left = tokens[差(i, 1)]
+         right = tokens[和(i, 1)]
+         tokens[差(i, 1)] = 和(left, right)
+         j = i
+         差(tokensの大きさ, 2)回くり返す{
+            もし j が tokensの大きさ より小さい ならば {
+               tokens[j] = tokens[和(j, 2)]
+               jを増やす
+            }
+         }
+      } そうでなければ もし tokens[i] が "-" ならば {
+         left = tokens[差(i, 1)]
+         right = tokens[和(i, 1)]
+         tokens[差(i, 1)] = 差(left, right)
+         j = i
+         差(tokensの大きさ, 2)回くり返す{
+            もし j が tokensの大きさ より小さい ならば {
+               tokens[j] = tokens[和(j, 2)]
+               jを増やす
+            }
+         }
+      } そうでなければ {
+         iを増やす
+      }
+   }
+   
+   tokens[0] が答え
+}

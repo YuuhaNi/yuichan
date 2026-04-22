@@ -1,0 +1,40 @@
+標準ライブラリを使う
+
+search = 入力 lst に対し {
+  result = 値なし
+  i = 0
+  {
+    もし i が lst の大きさ ならば {
+      くり返しを抜ける
+    }
+    num = lst[i]
+    count = 0
+    j = 0
+    {
+      もし j が lst の大きさ ならば {
+        くり返しを抜ける
+      }
+      もし lst[j] が num ならば {
+        count を増やす
+      }
+      j を増やす
+    } くり返す
+    もし num が 0 より大きい ならば {
+      もし count が num 以上 ならば {
+        もし result が 値なし ならば {
+          result = num
+        } そうでなければ {
+          もし num が result より大きい ならば {
+            result = num
+          }
+        }
+      }
+    }
+    i を増やす
+  } くり返す
+  もし result が 値なし ならば {
+    -1 が答え
+  } そうでなければ {
+    result が答え
+  }
+}

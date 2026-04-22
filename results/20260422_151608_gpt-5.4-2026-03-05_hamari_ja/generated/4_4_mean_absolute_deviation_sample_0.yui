@@ -1,0 +1,26 @@
+標準ライブラリを使う
+
+mean_absolute_deviation = 入力 numbers に対し {
+    n = numbersの大きさ
+    total = 0.0
+    i = 0
+    n回くり返す{
+        total = 和(total, numbers[i])
+        iを増やす
+    }
+
+    mean = 商(total, 小数化(n))
+
+    dev_total = 0.0
+    i = 0
+    n回くり返す{
+        diff = 差(numbers[i], mean)
+        もしdiffが0より小さいならば{
+            diff = 差(0, diff)
+        }
+        dev_total = 和(dev_total, diff)
+        iを増やす
+    }
+
+    商(dev_total, 小数化(n))が答え
+}

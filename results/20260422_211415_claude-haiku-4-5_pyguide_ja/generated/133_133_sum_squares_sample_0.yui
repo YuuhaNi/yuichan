@@ -1,0 +1,18 @@
+標準ライブラリを使う
+
+sum_squares = 入力 lst に対し {
+   result = 0
+   i = 0
+   lstの大きさ回くり返す {
+      num = lst[i]
+      # 天井関数で切り上げ
+      ceiling = 整数化(num)
+      もしnum がceilingより大きいならば {
+         ceilingを増やす
+      }
+      # 二乗して合計に加える
+      result = 和(result, 積(ceiling, ceiling))
+      iを増やす
+   }
+   resultが答え
+}

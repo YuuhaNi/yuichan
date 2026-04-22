@@ -1,0 +1,20 @@
+標準ライブラリを使う
+
+sum_squares = 入力 lst に対し {
+   result = 0
+   i = 0
+   lstの大きさ回くり返す {
+      num = lst[i]
+      # 切り上げ（天井関数）: 小数部分があれば+1、なければそのまま
+      もしnum が 整数化(num) 以外ならば {
+         ceiling = 和(整数化(num), 1)
+      }
+      そうでなければ {
+         ceiling = 整数化(num)
+      }
+      # 二乗して合計に加える
+      result = 和(result, 積(ceiling, ceiling))
+      iを増やす
+   }
+   result が答え
+}

@@ -1,0 +1,28 @@
+標準ライブラリを使う
+
+words_in_sentence = 入力 sentence に対し {
+    words = sentence.split(" ")
+    result = []
+    各 word in words {
+        n = word.length()
+        もし n < 2 なら {
+        } 違えば {
+            is_prime = 真
+            i = 2
+            各 _ in word {
+                もし i * i > n なら {
+                    抜ける
+                }
+                もし 剰余(n, i) == 0 なら {
+                    is_prime = 偽
+                    抜ける
+                }
+                i = 和(i, 1)
+            }
+            もし is_prime なら {
+                result.push(word)
+            }
+        }
+    }
+    戻る result.join(" ")
+}

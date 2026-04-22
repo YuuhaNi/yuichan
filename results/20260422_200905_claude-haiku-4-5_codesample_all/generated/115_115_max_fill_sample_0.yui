@@ -1,0 +1,34 @@
+標準ライブラリを使う
+
+max_fill = 入力 grid, capacity に対し {
+   # 各井戸の水の量を計算する
+   num_wells = grid の大きさ
+   total_drops = 0
+   
+   i = 0
+   num_wells 回くり返す {
+      # i 番目の井戸の水の量を数える
+      well = grid[i]
+      water = 0
+      j = 0
+      well の大きさ 回くり返す {
+         water = 和(water, well[j])
+         j を増やす
+      }
+      
+      # この井戸を空にするのに必要なバケツの回数を計算する
+      # 水の量を容量で割って、切り上げする
+      # 切り上げは (water + capacity - 1) / capacity で実現できる
+      もし water が 0 より大きい ならば {
+         numerator = 和(差(water, 1), capacity)
+         drops = 商(numerator, capacity)
+         total_drops = 和(total_drops, drops)
+      }
+      
+      i を増やす
+   }
+   
+   total_drops が答え
+}
+
+# テスト例 1

@@ -1,0 +1,61 @@
+標準ライブラリを使う
+
+count_ones = 入力 n に対し {
+   もし n が 0 より小さいならば {
+      n = 差(0, n)
+   }
+   count = 0
+   n が 0 以上ならば {
+      もし 剰余(n, 2) が 1 ならば {
+         count を増やす
+      }
+      n = 商(n, 2)
+      もし n が 0 ならば {
+         くり返しを抜ける
+      }
+   }
+   count が答え
+}
+
+sort_array = 入力 arr に対し {
+   result = []
+   arr の大きさ回くり返す {
+      min_idx = 0
+      min_ones = count_ones(arr[0])
+      min_val = arr[0]
+      
+      i = 1
+      arr の大きさ回くり返す {
+         もし i が arr の大きさ以上ならば {
+            くり返しを抜ける
+         }
+         current_ones = count_ones(arr[i])
+         もし current_ones が min_ones より小さいならば {
+            min_idx = i
+            min_ones = current_ones
+            min_val = arr[i]
+         } そうでなければ {
+            もし current_ones が min_ones ならば {
+               もし arr[i] が min_val より小さいならば {
+                  min_idx = i
+                  min_val = arr[i]
+               }
+            }
+         }
+         i を増やす
+      }
+      
+      result に arr[min_idx] を追加する
+      
+      new_arr = []
+      j = 0
+      arr の大きさ回くり返す {
+         もし j が min_idx 以外ならば {
+            new_arr に arr[j] を追加する
+         }
+         j を増やす
+      }
+      arr = new_arr
+   }
+   result が答え
+}

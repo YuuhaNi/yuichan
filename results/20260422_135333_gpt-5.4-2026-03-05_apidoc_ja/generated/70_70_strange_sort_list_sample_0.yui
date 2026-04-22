@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+strange_sort_list = 入力 lst に対し {
+  result = []
+  left = 0
+  right = 長さ(lst) - 1
+
+  繰り返し (left <= right) の間 {
+    result = result + [lst[left]]
+    left = left + 1
+
+    もし (left <= right) なら {
+      result = result + [lst[right]]
+      right = right - 1
+    }
+  }
+
+  result
+}

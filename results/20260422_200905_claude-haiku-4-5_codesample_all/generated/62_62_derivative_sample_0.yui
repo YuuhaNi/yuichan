@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+derivative = 入力 xs に対し {
+   result = ""
+   n = xs の大きさ
+   もし n が 1 以下ならば {
+      result = []
+   }
+   そうでなければ {
+      result = []
+      i = 1
+      差(n, 1) 回くり返す {
+         coeff = 積(i, xs[i])
+         result に coeff を追加する
+         i を増やす
+      }
+   }
+   result が答え
+}

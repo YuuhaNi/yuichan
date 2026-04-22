@@ -1,0 +1,33 @@
+標準ライブラリを使う
+
+common = 入力 l1, l2 に対し {
+   result = []
+   i = 0
+   l1の大きさ回くり返す {
+      item = l1[i]
+      # l2に含まれているか確認
+      もしitemがl2のいずれかならば {
+         # resultに既に含まれていないか確認
+         もしitemがresultのいずれでもないならば {
+            resultにitemを追加する
+         }
+      }
+      iを増やす
+   }
+   # resultをソート（バブルソート）
+   n = resultの大きさ
+   j = 0
+   n回くり返す {
+      k = 0
+      差(n, 1)回くり返す {
+         もしresult[k]がresult[和(k, 1)]より大きいならば {
+            temp = result[k]
+            result[k] = result[和(k, 1)]
+            result[和(k, 1)] = temp
+         }
+         kを増やす
+      }
+      jを増やす
+   }
+   result が答え
+}

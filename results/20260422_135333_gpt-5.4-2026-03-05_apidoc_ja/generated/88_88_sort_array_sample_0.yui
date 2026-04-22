@@ -1,0 +1,41 @@
+標準ライブラリを使う
+
+sort_array = 入力 array に対し {
+    もし 最大値(配列化(array)) == 値なし なら {
+        戻る []
+    }
+
+    result = 配列化(array)
+    n = 長さ(result)
+
+    i = 0
+    その間 (i < n) {
+        j = 0
+        その間 (j < 差(n, 1)) {
+            a = result[j]
+            b = result[和(j, 1)]
+
+            もし a > b なら {
+                temp = result[j]
+                result[j] = result[和(j, 1)]
+                result[和(j, 1)] = temp
+            }
+            j = 和(j, 1)
+        }
+        i = 和(i, 1)
+    }
+
+    first_last_sum = 和(result[0], result[差(n, 1)])
+
+    もし 剰余(first_last_sum, 2) == 0 なら {
+        reversed = []
+        k = 差(n, 1)
+        その間 (k >= 0) {
+            reversed = 和(reversed, [result[k]])
+            k = 差(k, 1)
+        }
+        戻る reversed
+    }
+
+    戻る result
+}

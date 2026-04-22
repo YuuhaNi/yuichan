@@ -1,0 +1,41 @@
+標準ライブラリを使う
+
+unique = 入力 l に対し {
+   result = []
+   i = 0
+   lの大きさ回くり返す {
+      current = l[i]
+      found = 偽
+      j = 0
+      resultの大きさ回くり返す {
+         もし current が result[j] ならば {
+            found = 真
+         }
+         jを増やす
+      }
+      もし found が 偽 ならば {
+         result に current を追加する
+      }
+      iを増やす
+   }
+   
+   sorted = []
+   k = 0
+   resultの大きさ回くり返す {
+      min_val = result[0]
+      min_idx = 0
+      m = 0
+      resultの大きさ回くり返す {
+         もし result[m] が min_val より小さい ならば {
+            min_val = result[m]
+            min_idx = m
+         }
+         mを増やす
+      }
+      sorted に min_val を追加する
+      result[min_idx] = 最大値(result)
+      kを増やす
+   }
+   
+   sorted が答え
+}

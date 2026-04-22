@@ -1,0 +1,46 @@
+標準ライブラリを使う
+
+specialFilter = 入力 nums に対し {
+   count = 0
+   i = 0
+   numsの大きさ回くり返す{
+      n = nums[i]
+      もしnが10より大きいならば{
+         last = 剰余(n, 10)
+         first = n
+         firstの大きさ回くり返す{
+            もしfirstが10より小さいならば{
+               くり返しを抜ける
+            }
+            first = 商(first, 10)
+         }
+         もしlastが1ならば{
+            もしfirstが1ならば{
+               countを増やす
+            }
+         }
+         もしlastが3ならば{
+            もしfirstが3ならば{
+               countを増やす
+            }
+         }
+         もしlastが5ならば{
+            もしfirstが5ならば{
+               countを増やす
+            }
+         }
+         もしlastが7ならば{
+            もしfirstが7ならば{
+               countを増やす
+            }
+         }
+         もしlastが9ならば{
+            もしfirstが9ならば{
+               countを増やす
+            }
+         }
+      }
+      iを増やす
+   }
+   countが答え
+}

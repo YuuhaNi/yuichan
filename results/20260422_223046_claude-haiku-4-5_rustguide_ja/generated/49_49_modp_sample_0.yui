@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+modp = 入力 n, p に対し {
+   result = 1
+   base = 2
+   n回くり返す {
+      もしnが0ならば {
+         くり返しを抜ける
+      }
+      もし剰余(n, 2)が1ならば {
+         result = 剰余(積(result, base), p)
+      }
+      base = 剰余(積(base, base), p)
+      n = 商(n, 2)
+   }
+   resultが答え
+}

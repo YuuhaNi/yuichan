@@ -1,0 +1,34 @@
+標準ライブラリを使う
+
+filter_by_substring = 入力 strings, substring に対し {
+   result = []
+   i = 0
+   stringsの大きさ回くり返す{
+      current = strings[i]
+      j = 0
+      found = 偽
+      currentの大きさ回くり返す{
+         もしjがsubstringの大きさより大きいならば{
+            くり返しを抜ける
+         }
+         match = 真
+         k = 0
+         substringの大きさ回くり返す{
+            もしcurrent[和(j,k)]がsubstring[k]以外ならば{
+               match = 偽
+               くり返しを抜ける
+            }
+            kを増やす
+         }
+         もしmatchが真ならば{
+            found = 真
+            くり返しを抜ける
+         }
+         jを増やす
+      }
+      もしfoundが真ならば{
+         resultにcurrentを追加する
+      }
+      iを増やす
+   }
+}

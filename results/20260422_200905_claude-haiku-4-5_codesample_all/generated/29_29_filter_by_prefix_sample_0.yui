@@ -1,0 +1,18 @@
+標準ライブラリを使う
+
+filter_by_prefix = 入力 strings, prefix に対し {
+   result = []
+   n = strings の大きさ
+   i = 0
+   n 回くり返す {
+      s = strings[i]
+      # s が prefix で始まるかを調べる
+      # find() で位置 0 に prefix が見つかれば、s は prefix で始まる
+      pos = find(s, prefix)
+      もし pos が 0 ならば {
+         result に s を追加する
+      }
+      i を増やす
+   }
+   result が答え
+}

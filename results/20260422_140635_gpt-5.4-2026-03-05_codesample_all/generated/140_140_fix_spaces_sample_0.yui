@@ -1,0 +1,37 @@
+標準ライブラリを使う
+
+fix_spaces = 入力 text に対し {
+   result=""
+   n=textの大きさ
+   i=0
+
+   n回くり返す{
+      c=text[i]
+      もしcが32ならば{
+         count=0
+         もしiがnより小さいならば{
+            countを増やす
+         }
+         limit=差(n,i)
+         j=和(i,1)
+         差(limit,1)回くり返す{
+            もしtext[j]が32ならば{
+               countを増やす
+               jを増やす
+            }
+         }
+         もしcountが1ならば{
+            resultに95を追加する
+         }
+         そうでなければ{
+            resultに45を追加する
+         }
+         i=和(i,count)
+      }
+      そうでなければ{
+         resultにcを追加する
+         iを増やす
+      }
+   }
+   resultが答え
+}

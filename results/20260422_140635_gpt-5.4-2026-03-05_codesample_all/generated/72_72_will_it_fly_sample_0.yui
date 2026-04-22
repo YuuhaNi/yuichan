@@ -1,0 +1,26 @@
+標準ライブラリを使う
+
+will_it_fly=入力q,wに対し{
+   total=0
+   n=qの大きさ
+   i=0
+   balanced=1
+
+   n回くり返す{
+      total=和(total,q[i])
+
+      j=差(差(n,1),i)
+      もしq[i]がq[j]以外ならば{
+         balanced=0
+      }
+
+      iを増やす
+   }
+
+   もしbalancedが1ならば{
+      もしtotalがw以下ならば{
+         真が答え
+      }
+   }
+   偽が答え
+}

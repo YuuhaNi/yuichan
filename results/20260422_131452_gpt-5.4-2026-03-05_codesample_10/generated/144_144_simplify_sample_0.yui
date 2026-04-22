@@ -1,0 +1,28 @@
+標準ライブラリを使う
+
+simplify = 入力 x, n に対し {
+   # "a/b" を [a,b] に分解する
+   parse_frac = 入力 s に対し {
+      parts = sを"/"で分割
+      [整数化(parts[0]), 整数化(parts[1])]が答え
+   }
+
+   fx = parse_frac(x)
+   fn = parse_frac(n)
+
+   a = fx[0]
+   b = fx[1]
+   c = fn[0]
+   d = fn[1]
+
+   # x*n = (a*c)/(b*d) が整数 <=> (a*c) が (b*d) で割り切れる
+   num = 積(a, c)
+   den = 積(b, d)
+
+   もし剰余(num, den)が0ならば{
+      真が答え
+   }
+   そうでなければ{
+      偽が答え
+   }
+}

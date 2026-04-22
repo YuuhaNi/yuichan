@@ -1,0 +1,43 @@
+標準ライブラリを使う
+
+words_in_sentence = 入力 sentence に対し {
+    words = 文字列分割(sentence, " ")
+    result = []
+    i = 0
+    wordsの大きさ回 くり返す {
+        word = words[i]
+        n = wordの大きさ
+        is_prime = 偽
+
+        もし n が 2 以上 ならば {
+            is_prime = 真
+            d = 2
+            n回 くり返す {
+                もし d が n より小さい ならば {
+                    q = 商(n, d)
+                    もし 積(q, d) が n ならば {
+                        is_prime = 偽
+                    }
+                    dを増やす
+                }
+            }
+        }
+
+        もし is_prime が 真 ならば {
+            resultの末尾に wordを追加する
+        }
+        iを増やす
+    }
+
+    joined = ""
+    j = 0
+    resultの大きさ回 くり返す {
+        もし j が 0 より大きい ならば {
+            joined = 文字列連結(joined, " ")
+        }
+        joined = 文字列連結(joined, result[j])
+        jを増やす
+    }
+
+    joinedが答え
+}

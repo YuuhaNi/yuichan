@@ -1,0 +1,70 @@
+標準ライブラリを使う
+
+sort_numbers = 入力 numbers に対し {
+   # 数字の英単語を整数にマッピング
+   word_to_num = {"zero": 0, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8, "nine": 9}
+   num_to_word = {"0": "zero", "1": "one", "2": "two", "3": "three", "4": "four", "5": "five", "6": "six", "7": "seven", "8": "eight", "9": "nine"}
+   
+   # 入力文字列を単語に分割
+   words = []
+   current_word = ""
+   i = 0
+   numbersの大きさ回くり返す {
+      char = numbers[i]
+      もしcharが32ならば {
+         # スペース（文字コード32）で単語を区切る
+         もしcurrent_wordの大きさが0より大きいならば {
+            wordsにcurrent_wordを追加する
+            current_word = ""
+         }
+      } そうでなければ {
+         current_word = 和(current_word, 文字列化(char))
+      }
+      iを増やす
+   }
+   # 最後の単語を追加
+   もしcurrent_wordの大きさが0より大きいならば {
+      wordsにcurrent_wordを追加する
+   }
+   
+   # 単語を数値に変換
+   nums = []
+   j = 0
+   wordsの大きさ回くり返す {
+      word = words[j]
+      num = word_to_num[word]
+      numsにnumを追加する
+      jを増やす
+   }
+   
+   # バブルソート
+   n = numsの大きさ
+   n回くり返す {
+      k = 0
+      差(n, 1)回くり返す {
+         もしnums[k]がnums[差(k, 1)]より大きいならば {
+            # スワップ
+            temp = nums[k]
+            nums[k] = nums[差(k, 1)]
+            nums[差(k, 1)] = temp
+         }
+         kを増やす
+      }
+   }
+   
+   # ソート済みの数値を単語に変換して結合
+   result = ""
+   m = 0
+   numsの大きさ回くり返す {
+      num = nums[m]
+      word = num_to_word[文字列化(num)]
+      もしmが0ならば {
+         result = word
+      } そうでなければ {
+         result = 和(result, " ", word)
+      }
+      mを増やす
+   }
+   
+   resultが答え
+}

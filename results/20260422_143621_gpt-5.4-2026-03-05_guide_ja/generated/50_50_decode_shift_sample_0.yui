@@ -1,0 +1,31 @@
+標準ライブラリを使う
+
+decode_shift = 入力 s に対し {
+   result = ""
+   i = 0
+   sの大きさ回くり返す{
+      code = s[i]
+
+      もしcodeが65以上ならば{
+         もしcodeが90以下ならば{
+            code = 差(code, 5)
+            もしcodeが65より小さいならば{
+               code = 和(code, 26)
+            }
+         }
+      }
+
+      もしcodeが97以上ならば{
+         もしcodeが122以下ならば{
+            code = 差(code, 5)
+            もしcodeが97より小さいならば{
+               code = 和(code, 26)
+            }
+         }
+      }
+
+      resultにcodeを追加する
+      iを増やす
+   }
+   resultが答え
+}

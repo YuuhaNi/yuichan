@@ -1,0 +1,55 @@
+標準ライブラリを使う
+
+unique = 入力 l に対し {
+   seen=[]
+   result=[]
+   i=0
+   n=lの大きさ
+   n回くり返す{
+      x=l[i]
+      found=0
+      j=0
+      m=seenの大きさ
+      m回くり返す{
+         もしseen[j]がxならば{
+            found=1
+         }
+         jを増やす
+      }
+      もしfoundが0ならば{
+         seenにxを追加する
+         resultにxを追加する
+      }
+      iを増やす
+   }
+
+   sorted=[]
+   total=resultの大きさ
+   total回くり返す{
+      minIndex=0
+      minValue=result[0]
+      j=1
+      limit=resultの大きさ
+      k=差(limit,1)
+      k回くり返す{
+         もしresult[j]がminValueより小さいならば{
+            minValue=result[j]
+            minIndex=j
+         }
+         jを増やす
+      }
+      sortedにminValueを追加する
+
+      next=[]
+      j=0
+      limit=resultの大きさ
+      limit回くり返す{
+         もしjがminIndex以外ならば{
+            nextにresult[j]を追加する
+         }
+         jを増やす
+      }
+      result=next
+   }
+   sortedが答え
+}

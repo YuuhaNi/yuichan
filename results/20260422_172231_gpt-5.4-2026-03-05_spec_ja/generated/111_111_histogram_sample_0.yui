@@ -1,0 +1,63 @@
+標準ライブラリを使う
+
+histogram = 入力 test に対し {
+   counts = {}
+   token = ""
+   i = 0
+
+   もし testの大きさが0ならば {
+      {} が答え
+   }
+
+   testの大きさ回くり返す {
+      ch = test[i]
+      もし chが32ならば {
+         もし tokenの大きさが0以外ならば {
+            もし tokenがcountsのいずれかならば {
+               counts[token] = 和(counts[token], 1)
+            }
+            そうでなければ {
+               counts[token] = 1
+            }
+            token = ""
+         }
+      }
+      そうでなければ {
+         tokenにchを追加する
+      }
+      iを増やす
+   }
+
+   もし tokenの大きさが0以外ならば {
+      もし tokenがcountsのいずれかならば {
+         counts[token] = 和(counts[token], 1)
+      }
+      そうでなければ {
+         counts[token] = 1
+      }
+   }
+
+   max_count = 0
+   keys = 配列化(counts)
+   j = 0
+
+   keysの大きさ回くり返す {
+      k = keys[j]
+      もし counts[k]がmax_countより大きいならば {
+         max_count = counts[k]
+      }
+      jを増やす
+   }
+
+   result = {}
+   j = 0
+   keysの大きさ回くり返す {
+      k = keys[j]
+      もし counts[k]がmax_countならば {
+         result[k] = counts[k]
+      }
+      jを増やす
+   }
+
+   result が答え
+}

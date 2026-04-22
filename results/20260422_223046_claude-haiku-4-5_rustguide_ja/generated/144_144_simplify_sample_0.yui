@@ -1,0 +1,67 @@
+標準ライブラリを使う
+
+simplify = 入力 x, n に対し {
+   # x を分子/分母に分割
+   x_parts = x
+   x_slash = 0
+   i = 0
+   x_size = xの大きさ
+   x_size回くり返す {
+      もし x[i] が 47 ならば {
+         x_slash = i
+         くり返しを抜ける
+      }
+      iを増やす
+   }
+   x_numerator = 整数化(x[0])
+   j = 1
+   差(x_slash, 1)回くり返す {
+      x_numerator = 和(積(x_numerator, 10), 整数化(x[j]))
+      jを増やす
+   }
+   x_denominator = 整数化(x[差(x_slash, 1)])
+   k = 差(x_slash, 1)
+   k回くり返す {
+      kを減らす
+   }
+   差(x_size, 差(x_slash, 1))回くり返す {
+      x_denominator = 和(積(x_denominator, 10), 整数化(x[差(x_slash, 1)]))
+      x_slash = 差(x_slash, 1)
+   }
+
+   # n を分子/分母に分割
+   n_slash = 0
+   i = 0
+   n_size = nの大きさ
+   n_size回くり返す {
+      もし n[i] が 47 ならば {
+         n_slash = i
+         くり返しを抜ける
+      }
+      iを増やす
+   }
+   n_numerator = 整数化(n[0])
+   j = 1
+   差(n_slash, 1)回くり返す {
+      n_numerator = 和(積(n_numerator, 10), 整数化(n[j]))
+      jを増やす
+   }
+   n_denominator = 整数化(n[差(n_slash, 1)])
+   差(n_size, 差(n_slash, 1))回くり返す {
+      n_denominator = 和(積(n_denominator, 10), 整数化(n[差(n_slash, 1)]))
+      n_slash = 差(n_slash, 1)
+   }
+
+   # x * n = (x_numerator * n_numerator) / (x_denominator * n_denominator)
+   # これが整数になるには、分子が分母で割り切れる必要がある
+   result_numerator = 積(x_numerator, n_numerator)
+   result_denominator = 積(x_denominator, n_denominator)
+   
+   remainder = 剰余(result_numerator, result_denominator)
+   もし remainder が 0 ならば {
+      真が答え
+   }
+   そうでなければ {
+      偽が答え
+   }
+}

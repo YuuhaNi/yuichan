@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+correct_bracketing = 入力 brackets に対し {
+    count = 0
+    0 回 brackets の大きさ くり返す {
+        char = brackets[count]
+        もし char が "<" ならば {
+            open_count を増やす
+        }
+        もし char が ">" ならば {
+            もし open_count が 0 ならば {
+                偽 が 答え
+            }
+            open_count を減らす
+        }
+        count を増やす
+    }
+    open_count が 0 が 答え
+}

@@ -1,0 +1,16 @@
+標準ライブラリを使う
+
+add_elements = 入力 arr, k に対し {
+   i = 0
+   total = 0
+
+   k回くり返す{
+      x = arr[i]
+      もし絶対値(x)が100より小さいならば{
+         total = 和(total, x)
+      }
+      iを増やす
+   }
+
+   totalが答え
+}

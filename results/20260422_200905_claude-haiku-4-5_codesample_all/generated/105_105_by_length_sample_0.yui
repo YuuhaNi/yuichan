@@ -1,0 +1,76 @@
+標準ライブラリを使う
+
+by_length = 入力 arr に対し {
+   # === ステップ 1: 1〜9 の範囲内の数値だけをフィルタリング ===
+   filtered = []
+   n = arrの大きさ
+   i = 0
+   n回くり返す {
+      x = arr[i]
+      もし x が 1 以上ならば {
+         もし x が 9 以下ならば {
+            filtered に x を追加する
+         }
+      }
+      i を増やす
+   }
+
+   # === ステップ 2: フィルタリング後の配列が空なら空配列を返す ===
+   もし filtered の大きさ が 0 ならば {
+      []が答え
+   }
+
+   # === ステップ 3: ソート ===
+   sorted = bubble_sort(filtered)
+
+   # === ステップ 4: 逆順にする ===
+   reversed = reverse(sorted)
+
+   # === ステップ 5: 数字を名前に置き換える ===
+   names = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"]
+   result = []
+   m = reversed の大きさ
+   j = 0
+   m回くり返す {
+      num = reversed[j]
+      # num は 1〜9 なので、names[num-1] で対応する名前を取得
+      idx = 差(num, 1)
+      result に names[idx] を追加する
+      j を増やす
+   }
+
+   result が答え
+}
+
+# ヘルパー関数: バブルソート
+bubble_sort = 入力 A に対し {
+   n = A の大きさ
+   n回くり返す {
+      i = 0
+      差(n, 1)回くり返す {
+         j = 和(i, 1)
+         もし A[i] が A[j] より大きいならば {
+            tmp = A[i]
+            A[i] = A[j]
+            A[j] = tmp
+         }
+         i を増やす
+      }
+   }
+   A が答え
+}
+
+# ヘルパー関数: 配列を逆順にする
+reverse = 入力 A に対し {
+   n = A の大きさ
+   half = 商(n, 2)
+   i = 0
+   half回くり返す {
+      j = 差(差(n, 1), i)
+      tmp = A[i]
+      A[i] = A[j]
+      A[j] = tmp
+      i を増やす
+   }
+   A が答え
+}

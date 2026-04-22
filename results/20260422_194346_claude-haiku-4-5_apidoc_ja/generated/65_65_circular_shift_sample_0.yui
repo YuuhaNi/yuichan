@@ -1,0 +1,15 @@
+標準ライブラリを使う
+
+circular_shift = 入力 x, shift に対し {
+  文字列 s = 文字列化(絶対値(x))
+  整数 len = 長さ(s)
+  
+  もし shift > len なら {
+    戻す 反転(s)
+  }
+  
+  整数 effective_shift = 剰余(shift, len)
+  文字列 result = 部分文字列(s, 引く(len, effective_shift)) + 部分文字列(s, 0, 引く(len, effective_shift))
+  
+  戻す result
+}

@@ -1,0 +1,53 @@
+標準ライブラリを使う
+
+common = 入力 l1, l2 に対し {
+   result = []
+   seen = []
+   
+   l1の大きさを n1 とする
+   0 から n1 まで 1 ずつ増やしながら i とする {
+      x = l1[i]
+      
+      # x が l2 に含まれているか確認
+      found_in_l2 = 0
+      l2の大きさを n2 とする
+      0 から n2 まで 1 ずつ増やしながら j とする {
+         もし l2[j] が x ならば {
+            found_in_l2 = 1
+         }
+      }
+      
+      # x が l2 に含まれており、かつ seen に未登録なら result に追加
+      もし found_in_l2 が 1 ならば {
+         found_in_seen = 0
+         seenの大きさを ns とする
+         0 から ns まで 1 ずつ増やしながら k とする {
+            もし seen[k] が x ならば {
+               found_in_seen = 1
+            }
+         }
+         
+         もし found_in_seen が 0 ならば {
+            seenに x を追加する
+            resultに x を追加する
+         }
+      }
+   }
+   
+   # result をソート (昇順)
+   resultの大きさを len とする
+   0 から len まで 1 ずつ増やしながら i とする {
+      差(len, 1)を j とする
+      差(j, 1)を j_end とする
+      j から j_end まで 1 ずつ減らしながら j とする {
+         差(j, 1)を j_minus_1 とする
+         もし result[j] が result[j_minus_1] より小さい ならば {
+            temp = result[j]
+            result[j] = result[j_minus_1]
+            result[j_minus_1] = temp
+         }
+      }
+   }
+   
+   result が答え
+}

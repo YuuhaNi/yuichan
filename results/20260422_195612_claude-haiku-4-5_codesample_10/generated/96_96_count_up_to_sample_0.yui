@@ -1,0 +1,26 @@
+標準ライブラリを使う
+
+count_up_to = 入力 n に対し {
+   primes = []
+   candidate = 2
+   candidate が n より小さい間 {
+      is_prime = 真
+      i = 0
+      primes の大きさ 回くり返す {
+         p = primes[i]
+         もし p の積(p) が candidate より大きいならば {
+            くり返しを抜ける
+         }
+         もし 剰余(candidate, p) が 0 ならば {
+            is_prime = 偽
+            くり返しを抜ける
+         }
+         i を増やす
+      }
+      もし is_prime ならば {
+         primes に candidate を追加する
+      }
+      candidate を増やす
+   }
+   primes が答え
+}

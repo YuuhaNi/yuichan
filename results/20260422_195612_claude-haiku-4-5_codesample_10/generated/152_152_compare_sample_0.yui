@@ -1,0 +1,20 @@
+標準ライブラリを使う
+
+compare = 入力 game, guess に対し {
+   result = []
+   n = gameの大きさ
+   i = 0
+   n回くり返す {
+      g = game[i]
+      p = guess[i]
+      もし g が p と等しいならば {
+         resultに0を追加する
+      }
+      そうでなければ {
+         diff = 絶対値(差(g, p))
+         resultにdiffを追加する
+      }
+      i を増やす
+   }
+   result が答え
+}

@@ -1,0 +1,9 @@
+標準ライブラリを使う
+
+mean_absolute_deviation = 入力 numbers に対し {
+    平均値 = 商(和(numbers), 長さ(numbers))
+    偏差リスト = 写像 numbers に対し {
+        絶対値(値 - 平均値)
+    }
+    商(和(偏差リスト), 長さ(偏差リスト))
+}

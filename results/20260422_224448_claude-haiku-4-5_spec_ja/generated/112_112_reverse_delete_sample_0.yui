@@ -1,0 +1,34 @@
+標準ライブラリを使う
+
+reverse_delete = 入力 s, c に対し {
+   result = ""
+   i = 0
+   sの大きさ回くり返す {
+      char = s[i]
+      found = 偽
+      j = 0
+      cの大きさ回くり返す {
+         もしchar がc[j]ならば {
+            found = 真
+            くり返しを抜ける
+         }
+         jを増やす
+      }
+      もしfoundが偽ならば {
+         resultにcharを追加する
+      }
+      iを増やす
+   }
+   
+   is_palindrome = 真
+   k = 0
+   resultの大きさ回くり返す {
+      もしresult[k]がresult[差(resultの大きさ,1,k)]以外ならば {
+         is_palindrome = 偽
+         くり返しを抜ける
+      }
+      kを増やす
+   }
+   
+   [result, is_palindrome] が答え
+}

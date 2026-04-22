@@ -1,0 +1,34 @@
+標準ライブラリを使う
+
+total_match = 入力 lst1, lst2 に対し {
+   # lst1の全文字数を計算
+   count1 = 0
+   i = 0
+   lst1の大きさ回くり返す{
+      count1 = 和(count1, lst1[i]の大きさ)
+      iを増やす
+   }
+   
+   # lst2の全文字数を計算
+   count2 = 0
+   i = 0
+   lst2の大きさ回くり返す{
+      count2 = 和(count2, lst2[i]の大きさ)
+      iを増やす
+   }
+   
+   # count1がcount2より小さい場合はlst1を返す
+   もしcount1がcount2より小さいならば{
+      lst1が答え
+   }
+   # count2がcount1より小さい場合はlst2を返す
+   そうでなければ{
+      もしcount2がcount1より小さいならば{
+         lst2が答え
+      }
+      # 同じ場合はlst1を返す
+      そうでなければ{
+         lst1が答え
+      }
+   }
+}

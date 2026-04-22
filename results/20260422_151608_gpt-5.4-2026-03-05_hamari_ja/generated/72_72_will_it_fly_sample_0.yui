@@ -1,0 +1,39 @@
+標準ライブラリを使う
+
+will_it_fly = 入力 q, w に対し {
+    total=0
+    i=0
+    n=qの大きさ
+    ok=1
+
+    n回くり返す{
+        total=和(total,q[i])
+        iを増やす
+    }
+
+    left=0
+    right=差(n,1)
+
+    n回くり返す{
+        もしleftがrightより大きいならば{
+            くり返しを抜ける
+        }
+        もしq[left]がq[right]以外ならば{
+            ok=0
+        }
+        leftを増やす
+        rightを減らす
+    }
+
+    もしokが1ならば{
+        もしtotalがw以下ならば{
+            True
+        }
+        そうでなければ{
+            False
+        }
+    }
+    そうでなければ{
+        False
+    }
+}

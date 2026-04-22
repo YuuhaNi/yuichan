@@ -1,0 +1,36 @@
+標準ライブラリを使う
+
+maximum = 入力 arr, k に対し {
+   n=arrの大きさ
+   i=0
+   temp=[]
+   n回くり返す{
+      tempにarr[i]を追加する
+      iを増やす
+   }
+
+   i=0
+   n回くり返す{
+      j=0
+      lim=差(n,i)
+      差(lim,1)回くり返す{
+         nj=和(j,1)
+         もしtemp[j]がtemp[nj]より大きいならば{
+            x=temp[j]
+            temp[j]=temp[nj]
+            temp[nj]=x
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+
+   start=差(n,k)
+   ans=[]
+   i=start
+   k回くり返す{
+      ansにtemp[i]を追加する
+      iを増やす
+   }
+   ansが答え
+}

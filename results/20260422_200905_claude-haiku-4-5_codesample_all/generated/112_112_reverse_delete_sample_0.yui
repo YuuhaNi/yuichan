@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+reverse_delete = 入力 s, c に対し {
+   # ステップ 1: s から c に含まれる文字をすべて削除する
+   result = ""
+   i = 0
+   s の大きさ 回 くり返す {
+      ch = s[i]
+      もし ch が c のいずれでもない ならば {
+         result に ch を追加する
+      }
+      i を増やす
+   }
+   
+   # ステップ 2: result が回文かどうかをチェックする
+   # 回文判定: 文字列を反転して元の文字列と比較する
+   reversed = reverse(result)
+   is_palindrome = 偽
+   もし result が reversed ならば {
+      is_palindrome = 真
+   }
+   
+   # ステップ 3: 結果文字列と回文判定をオブジェクトで返す
+   {"result": result, "is_palindrome": is_palindrome} が答え
+}
+
+# テスト: s = "abcde", c = "ae" → ('bcd', False)

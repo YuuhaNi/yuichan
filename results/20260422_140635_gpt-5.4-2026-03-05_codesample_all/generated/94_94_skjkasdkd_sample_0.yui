@@ -1,0 +1,44 @@
+標準ライブラリを使う
+
+skjkasdkd = 入力 lst に対し {
+   # 素数判定
+   is_prime=入力nに対し{
+      もしnが2より小さいならば{
+         偽が答え
+      }
+      d=2
+      limit=平方根(n)
+      もしlimitがdより小さいならば{
+         真が答え
+      }
+      差(整数化(limit),1)回くり返す{
+         もし剰余(n,d)が0ならば{
+            偽が答え
+         }
+         dを増やす
+      }
+      真が答え
+   }
+
+   maxp=0
+   i=0
+   lstの大きさ回くり返す{
+      x=lst[i]
+      もしis_prime(x)ならば{
+         もしxがmaxpより大きいならば{
+            maxp=x
+         }
+      }
+      iを増やす
+   }
+
+   s=文字列化(maxp)
+   total=0
+   j=0
+   sの大きさ回くり返す{
+      digit=差(s[j],48)
+      total=和(total,digit)
+      jを増やす
+   }
+   totalが答え
+}

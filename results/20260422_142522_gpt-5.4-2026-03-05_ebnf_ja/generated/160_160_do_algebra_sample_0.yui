@@ -1,0 +1,43 @@
+標準ライブラリを使う
+
+do_algebra = 入力 operator, operand に対し {
+    values = [operand[0]]
+    i = 0
+    和(operatorの大きさ, 1)回 くり返す {
+        op = operator[i]
+        next = operand[和(i, 1)]
+        もし op が "**" ならば {
+            values[差(valuesの大きさ, 1)] = べき乗(values[差(valuesの大きさ, 1)], next)
+        } そうでなければ {
+            もし op が "*" ならば {
+                values[差(valuesの大きさ, 1)] = 積(values[差(valuesの大きさ, 1)], next)
+            } そうでなければ {
+                もし op が "//" ならば {
+                    values[差(valuesの大きさ, 1)] = 商(values[差(valuesの大きさ, 1)], next)
+                } そうでなければ {
+                    valuesに next を追加する
+                    valuesに op を追加する
+                }
+            }
+        }
+        iを増やす
+    }
+
+    result = values[0]
+    j = 1
+    valuesの大きさ回 くり返す {
+        もし j が valuesの大きさ より小さい ならば {
+            op = values[j]
+            num = values[和(j, 1)]
+            もし op が "+" ならば {
+                result = 和(result, num)
+            } そうでなければ {
+                result = 差(result, num)
+            }
+            j = 和(j, 2)
+        } そうでなければ {
+            くり返しを抜ける
+        }
+    }
+    result が 答え
+}

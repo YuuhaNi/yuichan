@@ -1,0 +1,90 @@
+標準ライブラリを使う
+
+cycpattern_check = 入力 a, b に対し {
+   # bの長さを取得
+   b_len = bの大きさ
+   
+   # bを2倍にした文字列を作成（回転パターンをすべて含む）
+   b_doubled = ""
+   i = 0
+   2回くり返す {
+      b_len回くり返す {
+         もし i が b_len より小さいならば {
+            b_doubled に b[i] を追加する
+         }
+         i を増やす
+      }
+      i = 0
+   }
+   
+   # aがb_doubledの部分文字列かチェック
+   a_len = a の大きさ
+   doubled_len = b_doubled の大きさ
+   
+   found = 偽
+   j = 0
+   doubled_len回くり返す {
+      # aの長さ分チェック
+      match = 真
+      k = 0
+      a_len回くり返す {
+         もし 差(j, k) が 0 より大きいならば {
+            もし a[k] が b_doubled[差(j, k)] 以外ならば {
+               match = 偽
+               くり返しを抜ける
+            }
+         } そうでなければ {
+            match = 偽
+            くり返しを抜ける
+         }
+         k を増やす
+      }
+      
+      もし match が 真 ならば {
+         found = 真
+         くり返しを抜ける
+      }
+      j を増やす
+   }
+   
+   found が答え
+}
+標準ライブラリを使う
+
+cycpattern_check = 入力 a, b に対し {
+   # bを2倍にして、すべての回転パターンを含む文字列を作成
+   b_len = b の大きさ
+   doubled = ""
+   
+   i = 0
+   積(b_len, 2) 回くり返す {
+      doubled に b[剰余(i, b_len)] を追加する
+      i を増やす
+   }
+   
+   # aがdoubledに含まれているかチェック
+   a_len = a の大きさ
+   doubled_len = doubled の大きさ
+   
+   found = 偽
+   j = 0
+   差(doubled_len, a_len) 回くり返す {
+      match = 真
+      k = 0
+      a_len回くり返す {
+         もし a[k] が doubled[和(j, k)] 以外ならば {
+            match = 偽
+            くり返しを抜ける
+         }
+         k を増やす
+      }
+      
+      もし match が 真 ならば {
+         found = 真
+         くり返しを抜ける
+      }
+      j を増やす
+   }
+   
+   found が答え
+}

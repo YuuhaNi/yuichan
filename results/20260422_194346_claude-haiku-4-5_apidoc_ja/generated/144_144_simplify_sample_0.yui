@@ -1,0 +1,23 @@
+標準ライブラリを使う
+
+simplify = 入力 x, n に対し {
+  # x と n を分数文字列から分子・分母に分解
+  x_parts = 文字列分割(x, "/")
+  n_parts = 文字列分割(n, "/")
+  
+  x_numerator = 整数化(x_parts[0])
+  x_denominator = 整数化(x_parts[1])
+  n_numerator = 整数化(n_parts[0])
+  n_denominator = 整数化(n_parts[1])
+  
+  # x * n = (x_numerator * n_numerator) / (x_denominator * n_denominator)
+  result_numerator = 積(x_numerator, n_numerator)
+  result_denominator = 積(x_denominator, n_denominator)
+  
+  # 結果が整数かどうかを判定
+  # 分子が分母で割り切れるかチェック
+  remainder = 剰余(result_numerator, result_denominator)
+  
+  # 余りが0なら整数
+  remainder == 0
+}

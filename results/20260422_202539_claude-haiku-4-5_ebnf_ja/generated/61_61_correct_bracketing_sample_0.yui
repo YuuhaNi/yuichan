@@ -1,0 +1,21 @@
+標準ライブラリを使う
+
+correct_bracketing = 入力 brackets に対し {
+    count = 0
+    brackets の大きさ 回 くり返す {
+        もし brackets[0] が "(" ならば {
+            count を増やす
+        }
+        もし brackets[0] が ")" ならば {
+            count を減らす
+        }
+        もし count が 0 より小さい ならば {
+            偽 が 答え
+        }
+        brackets = brackets[1]
+    }
+    もし count が 0 ならば {
+        真 が 答え
+    }
+    偽 が 答え
+}

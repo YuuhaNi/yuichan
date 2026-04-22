@@ -1,0 +1,26 @@
+標準ライブラリを使う
+
+flip_case = 入力 string に対し {
+   result = ""
+   stringの大きさ回くり返す {
+      char = string[i]
+      ascii_code = 文字コード(char)
+      
+      もし ascii_code が 65 以上ならば {
+         もし ascii_code が 90 以下ならば {
+            # 英大文字 (A-Z: 65-90)
+            result = 結合(result, 文字(和(ascii_code, 32)))
+         }
+      }
+      
+      もし ascii_code が 97 以上ならば {
+         もし ascii_code が 122 以下ならば {
+            # 英小文字 (a-z: 97-122)
+            result = 結合(result, 文字(差(ascii_code, 32)))
+         }
+      }
+      
+      iを増やす
+   }
+   result
+}

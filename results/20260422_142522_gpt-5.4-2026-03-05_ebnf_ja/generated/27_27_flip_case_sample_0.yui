@@ -1,0 +1,20 @@
+標準ライブラリを使う
+
+flip_case = 入力 string に対し {
+  result = ""
+  i = 0
+  stringの大きさ回くり返す {
+    ch = string[i]
+    もし ch が 小文字にする(ch) ならば {
+      resultの末尾に 大文字にする(ch) を追加する
+    } そうでなければ {
+      もし ch が 大文字にする(ch) ならば {
+        resultの末尾に 小文字にする(ch) を追加する
+      } そうでなければ {
+        resultの末尾に ch を追加する
+      }
+    }
+    iを増やす
+  }
+  resultが答え
+}

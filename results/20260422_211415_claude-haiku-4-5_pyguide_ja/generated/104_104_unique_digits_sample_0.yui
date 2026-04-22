@@ -1,0 +1,47 @@
+標準ライブラリを使う
+
+unique_digits = 入力 x に対し {
+   result = []
+   
+   xの大きさ回くり返す {
+      i = 0
+      num = x[i]
+      
+      # numの桁数を数える
+      digit_count = 0
+      temp = num
+      もしtempが0ならば {
+         digit_count = 1
+      } そうでなければ {
+         100回くり返す {
+            もしtempが0ならば {
+               くり返しを抜ける
+            }
+            digit_countを増やす
+            temp = 商(temp, 10)
+         }
+      }
+      
+      # 桁数が奇数ならば結果に追加
+      もし剰余(digit_count, 2)が1ならば {
+         resultにnumを追加する
+      }
+      
+      iを増やす
+   }
+   
+   # resultをソート（バブルソート）
+   resultの大きさ回くり返す {
+      j = 0
+      差(resultの大きさ, 1)回くり返す {
+         もしresult[j]がresult[差(j, 1)]より大きいならば {
+            temp = result[j]
+            result[j] = result[差(j, 1)]
+            result[差(j, 1)] = temp
+         }
+         jを増やす
+      }
+   }
+   
+   resultが答え
+}

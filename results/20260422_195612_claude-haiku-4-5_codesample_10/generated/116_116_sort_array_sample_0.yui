@@ -1,0 +1,59 @@
+標準ライブラリを使う
+
+# 2進数表現における"1"の個数をカウントする関数
+count_ones = 入力 n に対し {
+   count = 0
+   # 負の数の場合は絶対値を使う
+   もし n が 0 より小さい ならば {
+      n = 差(0, n)
+   }
+   # n が 0 になるまでビットをチェック
+   n回くり返す {
+      もし 剰余(n, 2) が 1 ならば {
+         count を増やす
+      }
+      n = 商(n, 2)
+      もし n が 0 ならば {
+         くり返しを抜ける
+      }
+   }
+   count が答え
+}
+
+# バブルソートで配列をソート
+sort_array = 入力 arr に対し {
+   result = arr
+   n = result の大きさ
+   i = 0
+   n 回くり返す {
+      j = 0
+      差(n, 1) 回くり返す {
+         a = result[j]
+         b = result[差(j, 1)]
+         ones_a = count_ones(a)
+         ones_b = count_ones(差(j, 1))
+         
+         # "1"の個数で比較
+         もし ones_a が ones_b より大きい ならば {
+            # スワップ
+            temp = result[j]
+            result[j] = result[差(j, 1)]
+            result[差(j, 1)] = temp
+         }
+         そうでなければ {
+            # "1"の個数が同じ場合は10進数で比較
+            もし ones_a が ones_b と等しい ならば {
+               もし a が b より大きい ならば {
+                  # スワップ
+                  temp = result[j]
+                  result[j] = result[差(j, 1)]
+                  result[差(j, 1)] = temp
+               }
+            }
+         }
+         j を増やす
+      }
+      i を増やす
+   }
+   result が答え
+}

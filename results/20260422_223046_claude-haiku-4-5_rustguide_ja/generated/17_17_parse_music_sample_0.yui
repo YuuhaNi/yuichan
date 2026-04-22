@@ -1,0 +1,105 @@
+標準ライブラリを使う
+
+parse_music = 入力 music_string に対し {
+   result = []
+   notes = 配列化(music_string)
+   i = 0
+   
+   notes の大きさ回くり返す {
+      もし i が notes の大きさ以上ならば {
+         くり返しを抜ける
+      }
+      
+      current_char = notes[i]
+      
+      # 全音符 o' の判定
+      もし current_char が "o"[0] ならば {
+         もし i を増やす前の値が notes の大きさより小さいならば {
+            i を増やす
+            もし i が notes の大きさより小さいならば {
+               next_char = notes[i]
+               もし next_char が "'"[0] ならば {
+                  result に 4 を追加する
+               }
+            }
+         }
+      }
+      
+      # 2分音符 o| の判定
+      もし current_char が "o"[0] ならば {
+         i を増やす
+         もし i が notes の大きさより小さいならば {
+            もし notes[i] が "|"[0] ならば {
+               result に 2 を追加する
+            }
+         }
+      }
+      
+      # 4分音符 .| の判定
+      もし current_char が "."[0] ならば {
+         i を増やす
+         もし i が notes の大きさより小さいならば {
+            もし notes[i] が "|"[0] ならば {
+               result に 1 を追加する
+            }
+         }
+      }
+      
+      i を増やす
+   }
+   
+   result が答え
+}
+標準ライブラリを使う
+
+parse_music = 入力 music_string に対し {
+   result = []
+   tokens = []
+   current = ""
+   
+   i = 0
+   music_string の大きさ回くり返す {
+      もし i が music_string の大きさ以上ならば {
+         くり返しを抜ける
+      }
+      
+      char = music_string[i]
+      もし char が " "[0] ならば {
+         もし current が "" 以外ならば {
+            tokens に current を追加する
+            current = ""
+         }
+      } そうでなければ {
+         current = 文字列化(char)
+      }
+      
+      i を増やす
+   }
+   
+   もし current が "" 以外ならば {
+      tokens に current を追加する
+   }
+   
+   tokens の大きさ回くり返す {
+      もし i が tokens の大きさ以上ならば {
+         くり返しを抜ける
+      }
+      
+      token = tokens[i]
+      もし token が "o'" ならば {
+         result に 4 を追加する
+      } そうでなければ {
+         もし token が "o|" ならば {
+            result に 2 を追加する
+         } そうでなければ {
+            もし token が ".|" ならば {
+               result に 1 を追加する
+            }
+         }
+      }
+      
+      i を増やす
+   }
+   
+   result が答え
+}

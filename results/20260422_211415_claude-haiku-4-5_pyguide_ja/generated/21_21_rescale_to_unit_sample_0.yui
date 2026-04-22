@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+rescale_to_unit = 入力 numbers に対し {
+   min_val = 最小値(numbers)
+   max_val = 最大値(numbers)
+   range_val = 差(max_val, min_val)
+   
+   result = []
+   i = 0
+   numbersの大きさ回くり返す{
+      normalized = 商(差(numbers[i], min_val), range_val)
+      resultに小数化(normalized)を追加する
+      iを増やす
+   }
+   
+   resultが答え
+}

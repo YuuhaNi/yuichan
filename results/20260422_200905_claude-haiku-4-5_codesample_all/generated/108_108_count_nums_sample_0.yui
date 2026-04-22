@@ -1,0 +1,40 @@
+標準ライブラリを使う
+
+count_nums = 入力 arr に対し {
+   count = 0
+   n = arr の大きさ
+   i = 0
+   n 回くり返す {
+      num = arr[i]
+      # 数値を文字列化して各桁を処理する
+      s = 文字列化(num)
+      digit_sum = 0
+      j = 0
+      s の大きさ 回くり返す {
+         c = s[j]
+         # 負号 '-' のコード値は 45
+         もし c が 45 ならば {
+            # 負号の場合、次の文字を負にする
+            j を増やす
+            もし j が s の大きさ より小さい ならば {
+               next_c = s[j]
+               # '0' のコード値は 48
+               digit = 差(next_c, 48)
+               digit_sum = 差(digit_sum, digit)
+            }
+         }
+         そう でなければ {
+            # 通常の数字
+            digit = 差(c, 48)
+            digit_sum = 和(digit_sum, digit)
+         }
+         j を増やす
+      }
+      # digit_sum > 0 なら count を増やす
+      もし digit_sum が 0 より大きい ならば {
+         count を増やす
+      }
+      i を増やす
+   }
+   count が答え
+}

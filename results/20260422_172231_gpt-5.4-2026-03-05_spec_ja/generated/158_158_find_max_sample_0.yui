@@ -1,0 +1,38 @@
+標準ライブラリを使う
+
+find_max = 入力 words に対し {
+   best = ""
+   best_count = -1
+
+   wordsの大きさ回くり返す {
+      i = 回数
+      word = words[i]
+
+      seen = []
+      count = 0
+
+      wordの大きさ回くり返す {
+         j = 回数
+         ch = word[j]
+
+         もしchがseenのいずれでもないならば {
+            seenにchを追加する
+            countを増やす
+         }
+      }
+
+      もしcountがbest_countより大きいならば {
+         best = word
+         best_count = count
+      }
+      そうでなければ {
+         もしcountがbest_countならば {
+            もしwordがbestより小さいならば {
+               best = word
+            }
+         }
+      }
+   }
+
+   best が答え
+}

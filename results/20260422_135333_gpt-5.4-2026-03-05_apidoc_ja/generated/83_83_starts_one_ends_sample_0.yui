@@ -1,0 +1,25 @@
+標準ライブラリを使う
+
+starts_one_ends = 入力 n に対し {
+  もし n が 1 なら {
+    返す 1
+  }
+
+  total = 和(平方根(0), 0)  # 0 を作る
+  i = 0
+
+  繰り返し i < n - 1 の間 {
+    total = 和(total, 9)
+    i = 和(i, 1)
+  }
+
+  overlap = 1
+  i = 0
+
+  繰り返し i < n - 2 の間 {
+    overlap = 積(overlap, 10)
+    i = 和(i, 1)
+  }
+
+  返す 差(和(積(2, total), 1), overlap)
+}

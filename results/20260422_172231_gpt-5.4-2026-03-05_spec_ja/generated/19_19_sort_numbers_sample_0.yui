@@ -1,0 +1,54 @@
+標準ライブラリを使う
+
+sort_numbers = 入力 numbers に対し {
+   words = ["zero","one","two","three","four","five","six","seven","eight","nine"]
+   result = []
+   current = ""
+   tokens = []
+
+   i = 0
+   numbersの大きさ回くり返す {
+      ch = numbers[i]
+      もしchが32ならば {
+         もしcurrentが""以外ならば {
+            tokensにcurrentを追加する
+            current = ""
+         }
+      }
+      そうでなければ {
+         currentにchを追加する
+      }
+      iを増やす
+   }
+
+   もしcurrentが""以外ならば {
+      tokensにcurrentを追加する
+   }
+
+   wi = 0
+   wordsの大きさ回くり返す {
+      w = words[wi]
+      ti = 0
+      tokensの大きさ回くり返す {
+         もしtokens[ti]がwならば {
+            resultにwを追加する
+         }
+         tiを増やす
+      }
+      wiを増やす
+   }
+
+   answer = ""
+   ri = 0
+   resultの大きさ回くり返す {
+      もしriが0ならば {
+         answer = result[ri]
+      }
+      そうでなければ {
+         answer = "{answer} {result[ri]}"
+      }
+      riを増やす
+   }
+
+   answer が答え
+}

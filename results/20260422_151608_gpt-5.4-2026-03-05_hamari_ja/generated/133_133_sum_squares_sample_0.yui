@@ -1,0 +1,14 @@
+標準ライブラリを使う
+
+sum_squares = 入力 lst に対し {
+   total=0
+   i=0
+   n=lstの大きさ
+   n回くり返す{
+      x=lst[i]
+      y=ceil(x)
+      total=和(total,積(y,y))
+      iを増やす
+   }
+   totalが答え
+}

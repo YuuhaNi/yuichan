@@ -1,0 +1,14 @@
+標準ライブラリを使う
+
+add_elements = 入力 arr, k に対し {
+    filtered = []
+    i = 0
+    繰り返す i < k の間 {
+        要素 = arr[i]
+        もし 絶対値(要素) <= 99 ならば {
+            filtered = filtered + [要素]
+        }
+        i = i + 1
+    }
+    和(filtered)
+}

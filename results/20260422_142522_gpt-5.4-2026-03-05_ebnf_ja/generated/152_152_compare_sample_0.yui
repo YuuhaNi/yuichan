@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+compare = 入力 game, guess に対し {
+    result = []
+    i = 0
+    gameの大きさ回 くり返す {
+        a = game[i]
+        b = guess[i]
+        もし a が b 以下 {
+            resultに差(b, a)を追加する
+        } そうでなければ {
+            resultに差(a, b)を追加する
+        }
+        iを増やす
+    }
+    resultが答え
+}

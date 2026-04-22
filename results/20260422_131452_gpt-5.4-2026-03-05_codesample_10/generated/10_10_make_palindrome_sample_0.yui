@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+make_palindrome = 入力 string に対し {
+   n=stringの大きさ
+   i=0
+   j=差(n,1)
+   くり返す{
+      もしiがj以上ならば{
+         真が答え
+      }
+      もしstring[i]がstring[j]以外ならば{
+         偽が答え
+      }
+      iを増やす
+      jを減らす
+   }
+}

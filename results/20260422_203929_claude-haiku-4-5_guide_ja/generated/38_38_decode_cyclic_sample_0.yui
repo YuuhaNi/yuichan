@@ -1,0 +1,31 @@
+標準ライブラリを使う
+
+decode_cyclic = 入力 s に対し {
+   result = ""
+   i = 0
+   sの大きさ回くり返す{
+      # 3文字ごとのグループ内での位置を計算
+      group_index = 商(i, 3)
+      pos_in_group = 差(i, 積(group_index, 3))
+      
+      # グループ内で循環させるため、位置をシフト
+      # 0→2, 1→0, 2→1 に変換
+      original_pos = 差(pos_in_group, 2)
+      もしoriginal_posが0より小さいならば{
+         original_posを増やす
+         original_posを増やす
+         original_posを増やす
+      }
+      
+      # 元の位置を計算
+      original_index = 和(積(group_index, 3), original_pos)
+      
+      # 文字を取得して結果に追加
+      もしoriginal_indexがsの大きさより小さいならば{
+         resultにs[original_index]を追加する
+      }
+      
+      iを増やす
+   }
+   resultが答え
+}

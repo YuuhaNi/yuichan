@@ -1,0 +1,36 @@
+標準ライブラリを使う
+
+search = 入力 lst に対し {
+    counts = {}
+    i = 0
+    lstの大きさ回 くり返す {
+        x = lst[i]
+        もし x が counts のいずれか ならば {
+            counts[x]を増やす
+        } そうでなければ {
+            counts[x] = 1
+        }
+        iを増やす
+    }
+
+    best = -1
+    i = 0
+    lstの大きさ回 くり返す {
+        x = lst[i]
+        もし x が counts のいずれか ならば {
+            c = counts[x]
+            もし c が x以上 ならば {
+                もし best が -1 ならば {
+                    best = x
+                } そうでなければ {
+                    もし best が xより小さい ならば {
+                        best = x
+                    }
+                }
+            }
+        }
+        iを増やす
+    }
+
+    bestが答え
+}

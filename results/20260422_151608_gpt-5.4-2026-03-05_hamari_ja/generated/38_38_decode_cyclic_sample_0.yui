@@ -1,0 +1,13 @@
+標準ライブラリを使う
+
+decode_cyclic = 入力 s に対し {
+    n=sの大きさ
+    result=""
+    i=0
+    n回くり返す{
+        j=剰余(和(i,3),n)
+        result=連結(result,s[j])
+        iを増やす
+    }
+    resultが答え
+}

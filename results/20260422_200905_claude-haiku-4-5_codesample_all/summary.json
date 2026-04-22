@@ -1,0 +1,20 @@
+{
+  "model": "claude-haiku-4-5",
+  "lang": "ja",
+  "template": "pro159/codesample_all.md",
+  "context": "pro159/codesample_all.md",
+  "temperature": 0.2,
+  "k": 1,
+  "total_problems": 164,
+  "passed_problems": 69,
+  "failed_problems": 95,
+  "pass_at_k": 42.07,
+  "confidence_interval_95": {
+    "lower": 34.78,
+    "upper": 49.73,
+    "method": "Wilson Score"
+  },
+  "timestamp": "20260422_200905",
+  "total_samples": 164,
+  "passed_samples": 69
+}

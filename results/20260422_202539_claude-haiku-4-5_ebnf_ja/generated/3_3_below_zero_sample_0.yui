@@ -1,0 +1,12 @@
+標準ライブラリを使う
+
+below_zero = 入力 operations に対し {
+  balance = 0
+  operations の大きさ 回 くり返す {
+    もし balance が 0 より小さい ならば {
+      真 が 答え
+    }
+    balance = 和(balance, operations[0])
+  }
+  偽 が 答え
+}

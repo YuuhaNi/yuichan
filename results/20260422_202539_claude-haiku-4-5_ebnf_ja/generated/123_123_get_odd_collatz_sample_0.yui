@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+get_odd_collatz = 入力 n に対し {
+    odd_list = []
+    current = n
+    
+    もし current が 1 ならば {
+        odd_list の末尾に 1 を追加する
+    } そうでなければ {
+        くり返す {
+            もし 剰余(current, 2) が 0 ならば {
+                current = 商(current, 2)
+            } そうでなければ {
+                odd_list の末尾に current を追加する
+                current = 和(積(current, 3), 1)
+            }
+            
+            もし current が 1 ならば {
+                odd_list の末尾に 1 を追加する
+                くり返しを抜ける
+            }
+        }
+    }
+    
+    sorted_list = ソート(odd_list)
+    sorted_list が 答え
+}

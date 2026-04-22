@@ -1,0 +1,26 @@
+標準ライブラリを使う
+
+decimal_to_binary = 入力 decimal に対し {
+   もしdecimalが0ならば{
+      "db0db"が答え
+   }
+
+   bits=""
+   n=decimal
+
+   1000回くり返す{
+      もしnが0ならば{
+         くり返しを抜ける
+      }
+      r=剰余(n,2)
+      もしrが0ならば{
+         bits=和("0",bits)
+      }
+      そうでなければ{
+         bits=和("1",bits)
+      }
+      n=商(n,2)
+   }
+
+   和(和("db",bits),"db")が答え
+}

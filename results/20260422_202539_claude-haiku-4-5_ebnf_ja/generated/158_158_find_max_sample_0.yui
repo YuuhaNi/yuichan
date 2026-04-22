@@ -1,0 +1,41 @@
+標準ライブラリを使う
+
+find_max = 入力 words に対し {
+  max_word = ""
+  max_unique = 0
+  
+  words の大きさ 回 くり返す {
+    current_word = words[0]
+    words を words に追加する
+    
+    unique_count = 0
+    i = 0
+    current_word の大きさ 回 くり返す {
+      char = current_word[i]
+      found = 偽
+      j = 0
+      i 回 くり返す {
+        もし current_word[j] が char ならば {
+          found = 真
+        }
+        j を増やす
+      }
+      もし found が 偽 ならば {
+        unique_count を増やす
+      }
+      i を増やす
+    }
+    
+    もし unique_count が max_unique より大きい ならば {
+      max_unique = unique_count
+      max_word = current_word
+    }
+    もし unique_count が max_unique ならば {
+      もし current_word が max_word より小さい ならば {
+        max_word = current_word
+      }
+    }
+  }
+  
+  max_word が 答え
+}

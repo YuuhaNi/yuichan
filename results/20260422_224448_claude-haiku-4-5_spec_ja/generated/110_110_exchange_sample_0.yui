@@ -1,0 +1,42 @@
+標準ライブラリを使う
+
+exchange = 入力 lst1, lst2 に対し {
+   # lst1とlst2の全要素を合わせたリスト
+   all_elements = []
+   i = 0
+   lst1の大きさ回くり返す {
+      all_elementsにlst1[i]を追加する
+      i を増やす
+   }
+   i = 0
+   lst2の大きさ回くり返す {
+      all_elementsにlst2[i]を追加する
+      i を増やす
+   }
+   
+   # lst1の大きさ分だけ偶数が必要
+   needed_even_count = 0
+   i = 0
+   lst1の大きさ回くり返す {
+      i を増やす
+   }
+   needed_even_count = lst1の大きさ
+   
+   # all_elementsの中で偶数の個数を数える
+   even_count = 0
+   i = 0
+   all_elementsの大きさ回くり返す {
+      もしall_elements[i]が剰余(all_elements[i], 2)以外ならば {
+         even_count を増やす
+      }
+      i を増やす
+   }
+   
+   # 偶数の個数がlst1の大きさ以上なら"YES"、そうでなければ"NO"
+   もしeven_countがneeded_even_count以上ならば {
+      "YES" が答え
+   }
+   そうでなければ {
+      "NO" が答え
+   }
+}

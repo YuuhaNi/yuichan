@@ -1,0 +1,45 @@
+標準ライブラリを使う
+
+anti_shuffle = 入力 s に対し {
+   result = ""
+   i = 0
+   s_len = sの大きさ
+   
+   s_len回くり返す {
+      もし i が s_len 以上 ならば {
+         くり返しを抜ける
+      }
+      
+      char = s[i]
+      もし char が " " ならば {
+         result = 結合(result, " ")
+         i を増やす
+      } そうでなければ {
+         word = ""
+         word_start = i
+         
+         もし i が s_len より小さい ならば {
+            もし s[i] が " " 以外 ならば {
+               word = 結合(word, s[i])
+               i を増やす
+            }
+         }
+         
+         差(s_len, word_start)回くり返す {
+            もし i が s_len 以上 ならば {
+               くり返しを抜ける
+            }
+            もし s[i] が " " ならば {
+               くり返しを抜ける
+            }
+            word = 結合(word, s[i])
+            i を増やす
+         }
+         
+         sorted_word = word を文字でソート
+         result = 結合(result, sorted_word)
+      }
+   }
+   
+   result が答え
+}

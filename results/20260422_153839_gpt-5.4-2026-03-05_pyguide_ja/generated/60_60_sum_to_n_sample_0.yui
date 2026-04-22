@@ -1,0 +1,11 @@
+標準ライブラリを使う
+
+sum_to_n = 入力 n に対し {
+   total = 0
+   i = 0
+   n回くり返す{
+      iを増やす
+      total = 和(total, i)
+   }
+   totalが答え
+}

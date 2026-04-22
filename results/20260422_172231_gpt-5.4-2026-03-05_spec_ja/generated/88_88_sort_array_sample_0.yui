@@ -1,0 +1,49 @@
+標準ライブラリを使う
+
+sort_array = 入力 array に対し {
+   copied = []
+   i = 0
+   arrayの大きさ回くり返す {
+      copiedにarray[i]を追加する
+      iを増やす
+   }
+
+   もしarrayの大きさが0ならば {
+      copiedが答え
+   }
+
+   first = copied[0]
+   last = copied[差(copiedの大きさ, 1)]
+   sum = 和(first, last)
+   is_odd = 剰余(sum, 2)
+
+   n = copiedの大きさ
+   outer = 0
+   差(n, 1)回くり返す {
+      inner = 0
+      差(差(n, 1), outer)回くり返す {
+         left = copied[inner]
+         right = copied[和(inner, 1)]
+
+         もしis_oddが1ならば {
+            もしleftがrightより大きいならば {
+               temp = copied[inner]
+               copied[inner] = copied[和(inner, 1)]
+               copied[和(inner, 1)] = temp
+            }
+         }
+         そうでなければ {
+            もしleftがrightより小さいならば {
+               temp = copied[inner]
+               copied[inner] = copied[和(inner, 1)]
+               copied[和(inner, 1)] = temp
+            }
+         }
+
+         innerを増やす
+      }
+      outerを増やす
+   }
+
+   copiedが答え
+}

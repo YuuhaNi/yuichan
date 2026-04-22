@@ -1,0 +1,45 @@
+標準ライブラリを使う
+
+histogram = 入力 test に対し {
+   もし test が "" ならば {
+      {} が答え
+   }
+   
+   words = test の大きさ
+   もし words が 0 ならば {
+      {} が答え
+   }
+   
+   counts = {}
+   i = 0
+   test の大きさ 回くり返す {
+      char = test[i]
+      もし counts[char] が 値なし ならば {
+         counts[char] = 1
+      }
+      そうでなければ {
+         counts[char] = 和(counts[char], 1)
+      }
+      i を増やす
+   }
+   
+   maxCount = 0
+   j = 0
+   counts の大きさ 回くり返す {
+      もし counts[j] が maxCount より大きい ならば {
+         maxCount = counts[j]
+      }
+      j を増やす
+   }
+   
+   result = {}
+   k = 0
+   counts の大きさ 回くり返す {
+      もし counts[k] が maxCount ならば {
+         result[k] = counts[k]
+      }
+      k を増やす
+   }
+   
+   result が答え
+}

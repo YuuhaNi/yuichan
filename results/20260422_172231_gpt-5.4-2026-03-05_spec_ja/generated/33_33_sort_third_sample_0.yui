@@ -1,0 +1,46 @@
+標準ライブラリを使う
+
+sort_third = 入力 l に対し {
+    result = []
+    thirds = []
+    i = 0
+
+    lの大きさ回くり返す {
+        もし剰余(i, 3)が0ならば {
+            thirdsにl[i]を追加する
+        }
+        iを増やす
+    }
+
+    n = thirdsの大きさ
+    a = 0
+    n回くり返す {
+        b = 0
+        差(n, 1)回くり返す {
+            もしbが差(n, a, 1)より小さいならば {
+                もしthirds[b]がthirds[差(b, -1)]より大きいならば {
+                    temp = thirds[b]
+                    thirds[b] = thirds[差(b, -1)]
+                    thirds[差(b, -1)] = temp
+                }
+            }
+            bを増やす
+        }
+        aを増やす
+    }
+
+    i = 0
+    j = 0
+    lの大きさ回くり返す {
+        もし剰余(i, 3)が0ならば {
+            resultにthirds[j]を追加する
+            jを増やす
+        }
+        そうでなければ {
+            resultにl[i]を追加する
+        }
+        iを増やす
+    }
+
+    result が答え
+}

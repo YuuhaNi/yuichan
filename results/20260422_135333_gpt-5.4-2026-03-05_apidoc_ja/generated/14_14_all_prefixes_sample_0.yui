@@ -1,0 +1,11 @@
+標準ライブラリを使う
+
+all_prefixes = 入力 string に対し {
+  prefixes = []
+  i = 1
+  繰り返す (i <= 配列化(string)の長さ) {
+    prefixes = prefixes に string[0 から i] を追加
+    i = 和(i, 1)
+  }
+  prefixes
+}

@@ -1,0 +1,18 @@
+標準ライブラリを使う
+
+rounded_avg = 入力 n, m に対し {
+   もしnがmより大きいならば{
+      -1が答え
+   }
+
+   total=和(n,m)
+   avg=商(total,2)
+   rem=剰余(total,2)
+
+   もしremが1ならば{
+      avgを増やす
+   }
+
+   bin=2進文字列(avg)
+   binが答え
+}

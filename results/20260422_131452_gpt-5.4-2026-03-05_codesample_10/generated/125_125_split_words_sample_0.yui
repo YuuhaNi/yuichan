@@ -1,0 +1,73 @@
+標準ライブラリを使う
+
+split_words=入力txtに対し{
+   n=txtの大きさ
+   i=0
+   has_space=偽
+   has_comma=偽
+
+   n回くり返す{
+      c=txt[i]
+      もしcが32ならば{
+         has_space=真
+      }
+      もしcが44ならば{
+         has_comma=真
+      }
+      iを増やす
+   }
+
+   もしhas_spaceならば{
+      parts=[]
+      current=""
+      i=0
+      n回くり返す{
+         c=txt[i]
+         もしcが32ならば{
+            partsにcurrentを追加する
+            current=""
+         }
+         そうでなければ{
+            currentにcを追加する
+         }
+         iを増やす
+      }
+      partsにcurrentを追加する
+      partsが答え
+   }
+
+   もしhas_commaならば{
+      parts=[]
+      current=""
+      i=0
+      n回くり返す{
+         c=txt[i]
+         もしcが44ならば{
+            partsにcurrentを追加する
+            current=""
+         }
+         そうでなければ{
+            currentにcを追加する
+         }
+         iを増やす
+      }
+      partsにcurrentを追加する
+      partsが答え
+   }
+
+   count=0
+   i=0
+   n回くり返す{
+      c=txt[i]
+      もしcが97以上ならば{
+         もしcが122以下ならば{
+            idx=差(c,97)
+            もし剰余(idx,2)が0ならば{
+               countを増やす
+            }
+         }
+      }
+      iを増やす
+   }
+   countが答え
+}

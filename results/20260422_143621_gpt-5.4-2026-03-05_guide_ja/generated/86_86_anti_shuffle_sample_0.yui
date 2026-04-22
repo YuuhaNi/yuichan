@@ -1,0 +1,61 @@
+標準ライブラリを使う
+
+anti_shuffle = 入力 s に対し {
+   words = []
+   current = ""
+   i = 0
+
+   sの大きさ回くり返す{
+      ch = s[i]
+      もしchが" "[0]ならば{
+         wordsにcurrentを追加する
+         current = ""
+      }そうでなければ{
+         currentにchを追加する
+      }
+      iを増やす
+   }
+   wordsにcurrentを追加する
+
+   result = ""
+   wi = 0
+   wordsの大きさ回くり返す{
+      word = words[wi]
+
+      chars = ""
+      j = 0
+      wordの大きさ回くり返す{
+         charsにword[j]を追加する
+         jを増やす
+      }
+
+      a = 0
+      charsの大きさ回くり返す{
+         b = 0
+         charsの大きさ回くり返す{
+            もしaがbより小さいならば{
+               もしchars[b]がchars[a]より大きいならば{
+                  temp = chars[a]
+                  chars[a] = chars[b]
+                  chars[b] = temp
+               }
+            }
+            bを増やす
+         }
+         aを増やす
+      }
+
+      k = 0
+      charsの大きさ回くり返す{
+         resultにchars[k]を追加する
+         kを増やす
+      }
+
+      もしwiが差(wordsの大きさ, 1)より小さいならば{
+         resultに" "[0]を追加する
+      }
+      wiを増やす
+   }
+
+   resultが答え
+}

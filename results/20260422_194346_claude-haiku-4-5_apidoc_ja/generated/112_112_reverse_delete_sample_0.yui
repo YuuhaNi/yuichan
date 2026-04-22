@@ -1,0 +1,37 @@
+標準ライブラリを使う
+
+reverse_delete = 入力 s, c に対し {
+  # sの各文字をループして、cに含まれない文字だけを集める
+  result = ""
+  i = 0
+  繰り返す (i < 文字列長(s)) {
+    char = 文字列取得(s, i)
+    # charがcに含まれているかチェック
+    含まれている = 偽
+    j = 0
+    繰り返す (j < 文字列長(c)) {
+      もし (文字列取得(c, j) = char) {
+        含まれている = 真
+      }
+      j = j + 1
+    }
+    # cに含まれていなければresultに追加
+    もし (含まれている = 偽) {
+      result = 文字列連結(result, char)
+    }
+    i = i + 1
+  }
+  
+  # resultが回文かどうかをチェック
+  is_palindrome = 真
+  k = 0
+  繰り返す (k < 商(文字列長(result), 2)) {
+    もし (文字列取得(result, k) ≠ 文字列取得(result, 文字列長(result) - 1 - k)) {
+      is_palindrome = 偽
+    }
+    k = k + 1
+  }
+  
+  # 結果のタプル（配列）を返す
+  [result, is_palindrome]
+}

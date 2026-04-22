@@ -1,0 +1,38 @@
+標準ライブラリを使う
+
+pluck=入力arrに対し{
+   n=arrの大きさ
+   もしnが0ならば{
+      []が答え
+   }
+
+   found=0
+   best_value=0
+   best_index=0
+   i=0
+
+   n回くり返す{
+      x=arr[i]
+      r=剰余(x,2)
+
+      もしrが0ならば{
+         もしfoundが0ならば{
+            found=1
+            best_value=x
+            best_index=i
+         }
+         そうでなければ{
+            もしxがbest_valueより小さいならば{
+               best_value=x
+               best_index=i
+            }
+         }
+      }
+      iを増やす
+   }
+
+   もしfoundが0ならば{
+      []が答え
+   }
+   [best_value,best_index]が答え
+}

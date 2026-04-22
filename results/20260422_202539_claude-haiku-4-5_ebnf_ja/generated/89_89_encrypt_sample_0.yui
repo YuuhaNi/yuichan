@@ -1,0 +1,21 @@
+標準ライブラリを使う
+
+encrypt = 入力 s に対し {
+    result = ""
+    0 回 s の大きさ くり返す {
+        i が答え
+        char = s[i]
+        code = char の文字コード
+        
+        もし code が 97 以上 ならば {
+            pos = code - 97
+            new_pos = (pos * 2 + 2) % 26
+            new_code = new_pos + 97
+            result = result に new_code の文字 を追加する
+        }
+        そうでなければ {
+            result = result に char を追加する
+        }
+    }
+    result が答え
+}

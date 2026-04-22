@@ -1,0 +1,78 @@
+標準ライブラリを使う
+
+histogram = 入力 test に対し {
+   counts = {}
+   token = ""
+   i = 0
+
+   testの大きさ回くり返す{
+      ch = test[i]
+
+      もしchが" "[0]ならば{
+         もしtokenが""以外ならば{
+            もしtokenがcountsのいずれかならば{
+               counts[token] = 和(counts[token], 1)
+            }そうでなければ{
+               counts[token] = 1
+            }
+            token = ""
+         }
+      }そうでなければ{
+         tokenにchを追加する
+      }
+      iを増やす
+   }
+
+   もしtokenが""以外ならば{
+      もしtokenがcountsのいずれかならば{
+         counts[token] = 和(counts[token], 1)
+      }そうでなければ{
+         counts[token] = 1
+      }
+   }
+
+   もしcountsの大きさが0ならば{
+      {}が答え
+   }
+
+   max_count = 0
+   result = {}
+
+   i = 0
+   testの大きさ回くり返す{
+      ch = test[i]
+
+      もしchが" "[0]ならば{
+         もしtokenが""以外ならば{
+            c = counts[token]
+            もしcがmax_countより大きいならば{
+               max_count = c
+               result = {}
+               result[token] = c
+            }そうでなければ{
+               もしcがmax_countならば{
+                  result[token] = c
+               }
+            }
+            token = ""
+         }
+      }そうでなければ{
+         tokenにchを追加する
+      }
+      iを増やす
+   }
+
+   もしtokenが""以外ならば{
+      c = counts[token]
+      もしcがmax_countより大きいならば{
+         result = {}
+         result[token] = c
+      }そうでなければ{
+         もしcがmax_countならば{
+            result[token] = c
+         }
+      }
+   }
+
+   resultが答え
+}

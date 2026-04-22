@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+how_many_times = 入力 string, substring に対し {
+  もし 文字列判定(substring) かつ 商(文字列化(substring)の長さ, 1) = 0 ならば {
+    0を返す
+  }
+  
+  count = 0
+  i = 0
+  
+  繰り返す i < 商(文字列化(string)の長さ, 1) - 商(文字列化(substring)の長さ, 1) 和 1 の間 {
+    もし string[i:i 和 商(文字列化(substring)の長さ, 1)] = substring ならば {
+      count = count 和 1
+    }
+    i = i 和 1
+  }
+  
+  countを返す
+}

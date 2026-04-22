@@ -1,0 +1,82 @@
+標準ライブラリを使う
+
+unique_digits = 入力 x に対し {
+   # 偶数桁を持たない要素をフィルタリング
+   filtered = []
+   n = xの大きさ
+   i = 0
+   n回くり返す {
+      num = x[i]
+      # 数値を文字列化して桁数を調べる
+      s = 文字列化(num)
+      digits = sの大きさ
+      # 桁数が偶数でないかチェック
+      もし 剰余(digits, 2) が 0 でないならば {
+         filteredにnumを追加する
+      }
+      iを増やす
+   }
+   
+   # ソート（バブルソート）
+   m = filteredの大きさ
+   i = 0
+   m回くり返す {
+      j = 0
+      差(m, 和(i, 1))回くり返す {
+         もし filtered[j] が filtered[和(j, 1)] より大きいならば {
+            # スワップ
+            temp = filtered[j]
+            filtered[j] = filtered[和(j, 1)]
+            filtered[和(j, 1)] = temp
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+   
+   filteredが答え
+}
+標準ライブラリを使う
+
+unique_digits = 入力 x に対し {
+   # 偶数の桁を持たない要素をフィルタリング
+   filtered = []
+   n = xの大きさ
+   i = 0
+   n回くり返す {
+      num = x[i]
+      s = 文字列化(num)
+      len = sの大きさ
+      has_even = 偽
+      j = 0
+      len回くり返す {
+         digit = 整数化(s[j])
+         もし 剰余(digit, 2) が 0 ならば {
+            has_even = 真
+         }
+         jを増やす
+      }
+      もし has_even が 偽 ならば {
+         filteredにnumを追加する
+      }
+      iを増やす
+   }
+   
+   # ソート（バブルソート）
+   m = filteredの大きさ
+   i = 0
+   m回くり返す {
+      j = 0
+      差(m, 和(i, 1))回くり返す {
+         もし filtered[j] が filtered[和(j, 1)] より大きいならば {
+            temp = filtered[j]
+            filtered[j] = filtered[和(j, 1)]
+            filtered[和(j, 1)] = temp
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+   
+   filteredが答え
+}

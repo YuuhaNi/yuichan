@@ -1,0 +1,28 @@
+標準ライブラリを使う
+
+prod_signs = 入力 arr に対し {
+   n=arrの大きさ
+   もしnが0ならば{
+      値なしが答え
+   }
+
+   total=0
+   sign=1
+   i=0
+   n回くり返す{
+      x=arr[i]
+      total=和(total,絶対値(x))
+
+      もしxが0ならば{
+         sign=0
+      }
+      そうでなければ{
+         もしxが0より小さいならば{
+            sign=差(0,sign)
+         }
+      }
+      iを増やす
+   }
+
+   積(total,sign)が答え
+}

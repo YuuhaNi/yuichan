@@ -1,0 +1,18 @@
+標準ライブラリを使う
+
+vowels_count=入力sに対し{
+   count=0
+   n=sの大きさ
+   i=0
+   vowels=["a","e","i","o","u","A","E","I","O","U"]
+   n回くり返す{
+      ch=s[i]
+      もしchがvowelsのいずれかならば{
+         countを増やす
+      }
+      iを増やす
+   }
+   countが答え
+}
+
+# テスト: 空文字列

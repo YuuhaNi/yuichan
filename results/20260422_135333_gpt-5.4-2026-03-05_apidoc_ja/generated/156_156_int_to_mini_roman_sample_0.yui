@@ -1,0 +1,18 @@
+標準ライブラリを使う
+
+int_to_mini_roman = 入力 number に対し {
+    result = ""
+    values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+    romans = ["m", "cm", "d", "cd", "c", "xc", "l", "xl", "x", "ix", "v", "iv", "i"]
+
+    i = 0
+    反復 (i < 13) {
+        反復 (number >= values[i]) {
+            result = result + romans[i]
+            number = 差(number, values[i])
+        }
+        i = 和(i, 1)
+    }
+
+    戻る result
+}

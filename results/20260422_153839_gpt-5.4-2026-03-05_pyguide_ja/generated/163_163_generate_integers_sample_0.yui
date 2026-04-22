@@ -1,0 +1,28 @@
+標準ライブラリを使う
+
+generate_integers = 入力 a, b に対し {
+   result = []
+   start = 最小値(a, b)
+   last = 最大値(a, b)
+   i = start
+
+   和(差(last, start), 1)回くり返す{
+      もし剰余(i, 2)が0ならば{
+         resultにiを追加する
+      }
+      iを増やす
+   }
+
+   もしresultの大きさが2以下ならば{
+      []が答え
+   }
+   そうでなければ{
+      trimmed = []
+      i = 1
+      差(resultの大きさ, 1)回くり返す{
+         trimmedにresult[i]を追加する
+         iを増やす
+      }
+      trimmedが答え
+   }
+}

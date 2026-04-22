@@ -1,0 +1,56 @@
+標準ライブラリを使う
+
+anti_shuffle = 入力 s に対し {
+   words = []
+   current = ""
+   i = 0
+
+   sの大きさ回くり返す{
+      もしs[i]が" "[0]ならば{
+         wordsにcurrentを追加する
+         wordsに" "を追加する
+         current = ""
+      }そうでなければ{
+         currentにs[i]を追加する
+      }
+      iを増やす
+   }
+   wordsにcurrentを追加する
+
+   result = []
+   wi = 0
+   wordsの大きさ回くり返す{
+      part = words[wi]
+
+      もしpartが" "ならば{
+         resultに" "[0]を追加する
+      }そうでなければ{
+         chars = 配列化(part)
+         n = charsの大きさ
+
+         a = 0
+         n回くり返す{
+            b = 0
+            差(n, 1)回くり返す{
+               もしchars[b]がchars[和(b,1)]より大きいならば{
+                  temp = chars[b]
+                  chars[b] = chars[和(b,1)]
+                  chars[和(b,1)] = temp
+               }
+               bを増やす
+            }
+            aを増やす
+         }
+
+         ci = 0
+         n回くり返す{
+            resultにchars[ci]を追加する
+            ciを増やす
+         }
+      }
+
+      wiを増やす
+   }
+
+   resultが答え
+}

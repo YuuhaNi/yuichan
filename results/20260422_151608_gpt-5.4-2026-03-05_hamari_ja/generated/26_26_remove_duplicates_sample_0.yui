@@ -1,0 +1,31 @@
+標準ライブラリを使う
+
+remove_duplicates = 入力 numbers に対し {
+    counts = {}
+    i = 0
+    n = numbersの大きさ
+
+    n回くり返す{
+        x = numbers[i]
+        もしxがcountsのいずれかならば{
+            counts[x] = 和(counts[x], 1)
+        }
+        そうでなければ{
+            counts[x] = 1
+        }
+        iを増やす
+    }
+
+    result = []
+    i = 0
+
+    n回くり返す{
+        x = numbers[i]
+        もしcounts[x]が1ならば{
+            resultにxを追加する
+        }
+        iを増やす
+    }
+
+    resultが答え
+}

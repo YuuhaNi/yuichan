@@ -1,0 +1,38 @@
+標準ライブラリを使う
+
+maximum = 入力 arr, k に対し {
+   result = []
+   
+   k回くり返す{
+      max_val = 最小値(arr)
+      max_idx = 0
+      i = 0
+      arrの大きさ回くり返す{
+         もしarr[i]がmax_valより大きいならば{
+            max_val = arr[i]
+            max_idx = i
+         }
+         iを増やす
+      }
+      resultにmax_valを追加する
+      arr[max_idx] = 最小値(arr)
+   }
+   
+   i = 0
+   resultの大きさ回くり返す{
+      j = 0
+      resultの大きさ回くり返す{
+         もしjが差(resultの大きさ, 1)より小さいならば{
+            もしresult[j]がresult[足す(j, 1)]より大きいならば{
+               temp = result[j]
+               result[j] = result[足す(j, 1)]
+               result[足す(j, 1)] = temp
+            }
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+   
+   resultが答え
+}

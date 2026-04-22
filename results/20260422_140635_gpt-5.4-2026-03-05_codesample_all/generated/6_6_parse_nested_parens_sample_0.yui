@@ -1,0 +1,53 @@
+標準ライブラリを使う
+
+parse_nested_parens = 入力 paren_string に対し {
+   groups=[]
+   current=""
+   i=0
+   n=paren_stringの大きさ
+
+   # 空白で区切って各グループを取り出す
+   n回くり返す{
+      c=paren_string[i]
+      もしcが32ならば{
+         もしcurrentが""以外ならば{
+            groupsにcurrentを追加する
+            current=""
+         }
+      }
+      そうでなければ{
+         currentにcを追加する
+      }
+      iを増やす
+   }
+   もしcurrentが""以外ならば{
+      groupsにcurrentを追加する
+   }
+
+   # 各グループの最大ネスト深さを求める
+   result=[]
+   gi=0
+   groupsの大きさ回くり返す{
+      s=groups[gi]
+      depth=0
+      best=0
+      j=0
+      sの大きさ回くり返す{
+         c=s[j]
+         もしcが40ならば{
+            depthを増やす
+            もしdepthがbestより大きいならば{
+               best=depth
+            }
+         }
+         もしcが41ならば{
+            depthを減らす
+         }
+         jを増やす
+      }
+      resultにbestを追加する
+      giを増やす
+   }
+
+   resultが答え
+}

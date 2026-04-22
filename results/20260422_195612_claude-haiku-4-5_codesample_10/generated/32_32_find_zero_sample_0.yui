@@ -1,0 +1,14 @@
+標準ライブラリを使う
+
+find_zero = 入力 xs, x に対し {
+   result = 0
+   power = 1
+   n = xs の大きさ
+   i = 0
+   n 回くり返す {
+      result = 和(result, 積(xs[i], power))
+      power = 積(power, x)
+      i を増やす
+   }
+   result が答え
+}

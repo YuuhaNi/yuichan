@@ -1,0 +1,20 @@
+標準ライブラリを使う
+
+count_distinct_characters = 入力 string に対し {
+   # 文字列を小文字に統一する
+   lower_string = 小文字化(string)
+   
+   # ユニークな文字を集める
+   unique = ""
+   i = 0
+   lower_string の大きさ 回くり返す {
+      c = lower_string[i]
+      もし c が unique のいずれでもないならば {
+         unique に c を追加する
+      }
+      i を増やす
+   }
+   
+   # ユニークな文字の個数を返す
+   unique の大きさ が答え
+}

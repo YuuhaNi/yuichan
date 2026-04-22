@@ -1,0 +1,109 @@
+標準ライブラリを使う
+
+file_name_check = 入力 file_name に対し {
+   # ドットの個数をカウント
+   dot_count = 0
+   n = file_name の大きさ
+   i = 0
+   n 回くり返す {
+      c = file_name[i]
+      もし c が 46 ならば {
+         dot_count を増やす
+      }
+      i を増やす
+   }
+   
+   # ドットがちょうど1つでなければ No
+   もし dot_count が 1 でないならば {
+      "No" が答え
+   }
+   
+   # ドットの位置を探す
+   dot_pos = 0
+   i = 0
+   n 回くり返す {
+      c = file_name[i]
+      もし c が 46 ならば {
+         dot_pos = i
+      }
+      i を増やす
+   }
+   
+   # ドットの前の部分（名前部分）を取得
+   name_part = ""
+   i = 0
+   dot_pos 回くり返す {
+      name_part に file_name[i] を追加する
+      i を増やす
+   }
+   
+   # ドットの後の部分（拡張子部分）を取得
+   ext_part = ""
+   i = 和(dot_pos, 1)
+   n 回くり返す {
+      もし i が n より小さいならば {
+         ext_part に file_name[i] を追加する
+      }
+      i を増やす
+   }
+   
+   # 名前部分が空でないかチェック
+   もし name_part の大きさ が 0 ならば {
+      "No" が答え
+   }
+   
+   # 名前部分の最初の文字が英文字かチェック
+   first_char = name_part[0]
+   もし first_char が 65 以上ならば {
+      もし first_char が 90 以下ならば {
+         何もしない
+      }
+      そうでなければ {
+         もし first_char が 97 以上ならば {
+            もし first_char が 122 以下ならば {
+               何もしない
+            }
+            そうでなければ {
+               "No" が答え
+            }
+         }
+         そうでなければ {
+            "No" が答え
+         }
+      }
+   }
+   そうでなければ {
+      "No" が答え
+   }
+   
+   # 名前部分に3桁以上の連続した数字がないかチェック
+   consecutive_digits = 0
+   i = 0
+   name_part の大きさ 回くり返す {
+      c = name_part[i]
+      もし c が 48 以上ならば {
+         もし c が 57 以下ならば {
+            consecutive_digits を増やす
+            もし consecutive_digits が 3 以上ならば {
+               "No" が答え
+            }
+         }
+         そうでなければ {
+            consecutive_digits = 0
+         }
+      }
+      そうでなければ {
+         consecutive_digits = 0
+      }
+      i を増やす
+   }
+   
+   # 拡張子が有効かチェック
+   valid_exts = ["txt", "exe", "dll"]
+   もし ext_part が valid_exts のいずれかならば {
+      "Yes" が答え
+   }
+   そうでなければ {
+      "No" が答え
+   }
+}

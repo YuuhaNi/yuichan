@@ -1,0 +1,14 @@
+標準ライブラリを使う
+
+eat = 入力 number, need, remaining に対し {
+   eaten = 0
+   もし remaining が need 以上ならば {
+      eaten = need
+      remaining = 差(remaining, need)
+   } そうでなければ {
+      eaten = remaining
+      remaining = 0
+   }
+   total = 和(number, eaten)
+   [total, remaining]が答え
+}

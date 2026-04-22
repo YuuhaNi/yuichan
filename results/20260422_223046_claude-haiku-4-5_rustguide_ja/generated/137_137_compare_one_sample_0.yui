@@ -1,0 +1,45 @@
+標準ライブラリを使う
+
+compare_one = 入力 a, b に対し {
+   # aを数値に変換
+   a_str = 文字列化(a)
+   a_normalized = a_str
+   # カンマをピリオドに統一
+   i = 0
+   a_str の大きさ 回くり返す {
+      もし a_str[i] が 44 ならば {
+         # 44はカンマの文字コード
+         a_normalized[i] = 46
+      }
+      i を増やす
+   }
+   
+   # bを数値に変換
+   b_str = 文字列化(b)
+   b_normalized = b_str
+   # カンマをピリオドに統一
+   i = 0
+   b_str の大きさ 回くり返す {
+      もし b_str[i] が 44 ならば {
+         b_normalized[i] = 46
+      }
+      i を増やす
+   }
+   
+   # 数値に変換
+   a_num = 小数化(a_normalized)
+   b_num = 小数化(b_normalized)
+   
+   # 値が同じ場合はNone
+   もし a_num が b_num ならば {
+      関数から抜ける
+   }
+   
+   # より大きい値を元の型で返す
+   もし a_num が b_num より大きい ならば {
+      a が答え
+   }
+   そうでなければ {
+      b が答え
+   }
+}

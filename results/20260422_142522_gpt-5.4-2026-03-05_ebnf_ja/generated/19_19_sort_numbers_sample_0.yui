@@ -1,0 +1,42 @@
+標準ライブラリを使う
+
+sort_numbers = 入力 numbers に対し {
+    mapping = {
+        "zero": 0,
+        "one": 1,
+        "two": 2,
+        "three": 3,
+        "four": 4,
+        "five": 5,
+        "six": 6,
+        "seven": 7,
+        "eight": 8,
+        "nine": 9
+    }
+    words = numbers(" ")
+    n = wordsの大きさ
+    i = 0
+    n回 くり返す {
+        j = 0
+        n回 くり返す {
+            もし words[i]が words[j]より小さい ならば {
+                temp = words[i]
+                words[i] = words[j]
+                words[j] = temp
+            }
+            jを増やす
+        }
+        iを増やす
+    }
+    result = ""
+    i = 0
+    n回 くり返す {
+        もし iが 0 ならば {
+            result = words[i]
+        } そうでなければ {
+            result = result + " " + words[i]
+        }
+        iを増やす
+    }
+    resultが答え
+}

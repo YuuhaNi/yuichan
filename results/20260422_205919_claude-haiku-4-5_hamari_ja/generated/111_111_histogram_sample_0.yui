@@ -1,0 +1,36 @@
+標準ライブラリを使う
+
+histogram = 入力 test に対し {
+   もし test が "" ならば {
+      {}
+   }
+   そうでなければ {
+      words = test を " " で分割する
+      counts = {}
+      
+      words の各要素 word に対し {
+         もし counts が word を持つ ならば {
+            counts[word] = 和(counts[word], 1)
+         }
+         そうでなければ {
+            counts[word] = 1
+         }
+      }
+      
+      max_count = 0
+      counts の各要素 word, count に対し {
+         もし count が max_count より大きい ならば {
+            max_count = count
+         }
+      }
+      
+      result = {}
+      counts の各要素 word, count に対し {
+         もし count が max_count ならば {
+            result[word] = count
+         }
+      }
+      
+      result
+   }
+}

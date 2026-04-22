@@ -1,0 +1,40 @@
+標準ライブラリを使う
+
+select_words = 入力 s, n に対し {
+   # 子音の定義
+   consonants = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"
+   
+   # 単語に分割
+   words = sを" "で分割する
+   
+   # 結果を格納する配列
+   result = []
+   
+   # 各単語を処理
+   i = 0
+   words_size = wordsの大きさ
+   i < words_size 回くり返す {
+      word = words[i]
+      
+      # 単語内の子音の数を数える
+      consonant_count = 0
+      j = 0
+      word_size = wordの大きさ
+      j < word_size 回くり返す {
+         char = word[j]
+         もし char が consonants のいずれか ならば {
+            consonant_count を増やす
+         }
+         j を増やす
+      }
+      
+      # 子音の数がちょうど n なら結果に追加
+      もし consonant_count が n に等しい ならば {
+         result に word を追加する
+      }
+      
+      i を増やす
+   }
+   
+   result が答え
+}

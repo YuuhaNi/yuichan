@@ -1,0 +1,66 @@
+標準ライブラリを使う
+
+prod_signs = 入力 arr に対し {
+   もし arrの大きさが0ならば {
+      値なしが答え
+   }
+   
+   abs_sum = 0
+   sign_prod = 1
+   
+   arr の大きさ回くり返す {
+      i = 0
+      arr の大きさ回くり返す {
+         もし i が arr の大きさより小さいならば {
+            num = arr[i]
+            abs_sum = 和(abs_sum, 絶対値(num))
+            
+            もし num が0より小さいならば {
+               sign_prod = 積(sign_prod, -1)
+            }
+            そうでなければ {
+               もし num が0ならば {
+                  sign_prod = 0
+               }
+            }
+            
+            i を増やす
+         }
+         そうでなければ {
+            くり返しを抜ける
+         }
+      }
+      くり返しを抜ける
+   }
+   
+   積(abs_sum, sign_prod) が答え
+}
+標準ライブラリを使う
+
+prod_signs = 入力 arr に対し {
+   もし arr の大きさが0ならば {
+      値なしが答え
+   }
+   
+   abs_sum = 0
+   sign_prod = 1
+   i = 0
+   
+   arr の大きさ回くり返す {
+      num = arr[i]
+      abs_sum = 和(abs_sum, 絶対値(num))
+      
+      もし num が0より小さいならば {
+         sign_prod = 積(sign_prod, -1)
+      }
+      そうでなければ {
+         もし num が0ならば {
+            sign_prod = 0
+         }
+      }
+      
+      i を増やす
+   }
+   
+   積(abs_sum, sign_prod) が答え
+}

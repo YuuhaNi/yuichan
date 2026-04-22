@@ -1,0 +1,38 @@
+標準ライブラリを使う
+
+starts_one_ends = 入力 n に対し {
+   # n 桁の正の整数の範囲を計算
+   # n 桁の最小値: 10^(n-1)
+   # n 桁の最大値: 10^n - 1
+   min_val = 10の(n-1)乗
+   max_val = 差(10のn乗, 1)
+   
+   count = 0
+   current = min_val
+   
+   # n 桁の全ての数をチェック
+   くり返す {
+      もし current が max_val より大きい ならば {
+         くり返しを抜ける
+      }
+      
+      # 文字列に変換して最初と最後の文字を確認
+      s = 文字列化(current)
+      first_char = s[0]
+      last_char = s[差(sの大きさ, 1)]
+      
+      # 1 で始まるか 1 で終わるかをチェック
+      もし first_char が "1" ならば {
+         count を増やす
+      }
+      そうでなければ {
+         もし last_char が "1" ならば {
+            count を増やす
+         }
+      }
+      
+      current を増やす
+   }
+   
+   count が答え
+}

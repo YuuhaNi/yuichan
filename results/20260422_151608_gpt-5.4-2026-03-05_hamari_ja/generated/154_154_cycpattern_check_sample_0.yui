@@ -1,0 +1,34 @@
+標準ライブラリを使う
+
+cycpattern_check = 入力 a, b に対し {
+   lb=bの長さ
+   la=aの長さ
+
+   もしlbが0ならば{
+      Trueが答え
+   }
+
+   もしlbがlaより大きいならば{
+      Falseが答え
+   }
+
+   bb=文字列連結(b,b)
+   i=0
+
+   lb回くり返す{
+      cand=""
+      j=0
+      lb回くり返す{
+         cand=文字列連結(cand,bb[和(i,j)])
+         jを増やす
+      }
+
+      もしaにcandが含まれるならば{
+         Trueが答え
+      }
+
+      iを増やす
+   }
+
+   Falseが答え
+}

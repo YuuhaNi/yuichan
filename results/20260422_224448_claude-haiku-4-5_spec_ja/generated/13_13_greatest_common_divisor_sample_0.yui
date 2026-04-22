@@ -1,0 +1,10 @@
+標準ライブラリを使う
+
+greatest_common_divisor = 入力 a, b に対し {
+   もしbが0ならば {
+      a が答え
+   }
+   そうでなければ {
+      greatest_common_divisor(b, 剰余(a, b)) が答え
+   }
+}

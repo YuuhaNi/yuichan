@@ -1,0 +1,40 @@
+標準ライブラリを使う
+
+how_many_times=入力string,substringに対し{
+   count=0
+   n=stringの大きさ
+   m=substringの大きさ
+   
+   # substring が空なら 0 を返す
+   もしmが0ならば{
+      0が答え
+   }
+   
+   # string が substring より短いなら 0 を返す
+   もしnがmより小さいならば{
+      0が答え
+   }
+   
+   # 走査範囲は 0..n-m
+   limit=和(差(n,m),1)
+   i=0
+   limit回くり返す{
+      # i から始まる m 文字が substring と一致するか調べる
+      match=1
+      j=0
+      m回くり返す{
+         ij=和(i,j)
+         cs=string[ij]
+         ct=substring[j]
+         もしcsがct以外ならば{
+            match=0
+         }
+         jを増やす
+      }
+      もしmatchが1ならば{
+         countを増やす
+      }
+      iを増やす
+   }
+   countが答え
+}

@@ -1,0 +1,81 @@
+標準ライブラリを使う
+
+split_words = 入力 txt に対し {
+   n = txtの大きさ
+   has_space = 偽
+   has_comma = 偽
+   i = 0
+
+   n回くり返す{
+      もしtxt[i]が" "[0]ならば{
+         has_space = 真
+      }
+      もしtxt[i]が","[0]ならば{
+         has_comma = 真
+      }
+      iを増やす
+   }
+
+   もしhas_spaceが真ならば{
+      result = []
+      current = ""
+      i = 0
+
+      n回くり返す{
+         もしtxt[i]が" "[0]ならば{
+            resultにcurrentを追加する
+            current = ""
+         }
+         そうでなければ{
+            currentにtxt[i]を追加する
+         }
+         iを増やす
+      }
+      resultにcurrentを追加する
+      resultが答え
+   }
+   そうでなければ{
+      もしhas_commaが真ならば{
+         result = []
+         current = ""
+         i = 0
+
+         n回くり返す{
+            もしtxt[i]が","[0]ならば{
+               resultにcurrentを追加する
+               current = ""
+            }
+            そうでなければ{
+               currentにtxt[i]を追加する
+            }
+            iを増やす
+         }
+         resultにcurrentを追加する
+         resultが答え
+      }
+      そうでなければ{
+         count = 0
+         i = 0
+
+         n回くり返す{
+            c = txt[i]
+            もしcが"b"[0]ならば{ countを増やす }
+            もしcが"d"[0]ならば{ countを増やす }
+            もしcが"f"[0]ならば{ countを増やす }
+            もしcが"h"[0]ならば{ countを増やす }
+            もしcが"j"[0]ならば{ countを増やす }
+            もしcが"l"[0]ならば{ countを増やす }
+            もしcが"n"[0]ならば{ countを増やす }
+            もしcが"p"[0]ならば{ countを増やす }
+            もしcが"r"[0]ならば{ countを増やす }
+            もしcが"t"[0]ならば{ countを増やす }
+            もしcが"v"[0]ならば{ countを増やす }
+            もしcが"x"[0]ならば{ countを増やす }
+            もしcが"z"[0]ならば{ countを増やす }
+            iを増やす
+         }
+
+         countが答え
+      }
+   }
+}

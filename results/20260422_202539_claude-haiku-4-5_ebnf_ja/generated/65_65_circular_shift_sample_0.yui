@@ -1,0 +1,26 @@
+標準ライブラリを使う
+
+circular_shift = 入力 x, shift に対し {
+  x_str = x が 文字列に変換 が 答え
+  digit_count = x_str の大きさ
+  
+  もし shift が digit_count より大きい ならば {
+    reversed = "" が 答え
+    digit_count 回 くり返す {
+      idx = 差(digit_count, 1) が 答え
+      reversed の末尾に x_str[idx] を追加する
+      digit_count を減らす
+    }
+    reversed が 答え
+  } そうでなければ {
+    shift_amount = 剰余(shift, digit_count) が 答え
+    shifted = "" が 答え
+    
+    start_idx = 差(digit_count, shift_amount) が 答え
+    digit_count 回 くり返す {
+      idx = 剰余(和(start_idx, i), digit_count) が 答え
+      shifted の末尾に x_str[idx] を追加する
+    }
+    shifted が 答え
+  }
+}

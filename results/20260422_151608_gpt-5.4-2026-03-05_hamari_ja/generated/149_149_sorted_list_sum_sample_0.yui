@@ -1,0 +1,52 @@
+標準ライブラリを使う
+
+sorted_list_sum = 入力 lst に対し {
+   evens=[]
+   i=0
+   n=lstの大きさ
+
+   n回くり返す{
+      s=lst[i]
+      len=sの大きさ
+      parity=剰余(len,2)
+      もしparityが0ならば{
+         evensにsを追加する
+      }
+      iを増やす
+   }
+
+   m=evensの大きさ
+   i=0
+   m回くり返す{
+      j=0
+      limit=差(m,和(i,1))
+      limit回くり返す{
+         a=evens[j]
+         b=evens[和(j,1)]
+         la=aの大きさ
+         lb=bの大きさ
+         swap=0
+
+         もしlaがlbより大きいならば{
+            swap=1
+         }
+         そうでなければ{
+            もしlaがlbならば{
+               もしaがbより大きいならば{
+                  swap=1
+               }
+            }
+         }
+
+         もしswapが1ならば{
+            tmp=evens[j]
+            evens[j]=evens[和(j,1)]
+            evens[和(j,1)]=tmp
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+
+   evensが答え
+}

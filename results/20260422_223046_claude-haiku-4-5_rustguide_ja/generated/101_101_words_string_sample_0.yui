@@ -1,0 +1,35 @@
+標準ライブラリを使う
+
+words_string = 入力 s に対し {
+   result = []
+   word = ""
+   i = 0
+   
+   s の大きさ回くり返す {
+      char = s[i]
+      
+      # カンマ（44）または空白（32）かチェック
+      もし char が 44 ならば {
+         もし word が "" 以外 ならば {
+            result に word を追加する
+            word = ""
+         }
+      } そうでなければ {
+         もし char が 32 ならば {
+            もし word が "" 以外 ならば {
+               result に word を追加する
+               word = ""
+            }
+         } そうでなければ {
+            word = 和(word, 文字列化(char))
+         }
+      }
+      
+      i を増やす
+   }
+   
+   # 最後の単語を追加
+   もし word が "" 以外 ならば {
+      result に word を追加する
+   }
+}

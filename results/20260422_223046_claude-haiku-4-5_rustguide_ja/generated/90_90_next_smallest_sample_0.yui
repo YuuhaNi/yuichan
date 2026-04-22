@@ -1,0 +1,25 @@
+標準ライブラリを使う
+
+next_smallest = 入力 lst に対し {
+   もし lst の大きさ が 2 より小さい ならば {
+      関数から抜ける
+   }
+   
+   min_val = 最小値(lst)
+   second_min = 値なし
+   i = 0
+   lst の大きさ 回くり返す {
+      もし lst[i] が min_val より大きい ならば {
+         もし second_min が 値なし ならば {
+            second_min = lst[i]
+         } そうでなければ {
+            もし lst[i] が second_min より小さい ならば {
+               second_min = lst[i]
+            }
+         }
+      }
+      i を増やす
+   }
+   
+   second_min が答え
+}

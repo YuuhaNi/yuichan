@@ -1,0 +1,15 @@
+標準ライブラリを使う
+
+flip_case = 入力 string に対し {
+    result = ""
+    0 から string の大きさ まで くり返す {
+        char = string[i]
+        もし char が "a" より大きい ならば {
+            result の末尾に 大文字(char) を追加する
+        }
+        そうでなければ {
+            result の末尾に 小文字(char) を追加する
+        }
+    }
+    result が 答え
+}

@@ -1,0 +1,56 @@
+標準ライブラリを使う
+
+order_by_points = 入力 nums に対し {
+   # 桁の合計を計算する補助関数
+   digit_sum = 入力 n に対し {
+      もしnが0ならば {
+         0 が答え
+      }
+      そうでなければ {
+         n = 絶対値(n)
+         sum = 0
+         nの大きさを i とし {
+            もしiが0以外ならば {
+               sum = 和(sum, 剰余(n, 10))
+               n = 商(n, 10)
+            }
+         }
+         sum が答え
+      }
+   }
+   
+   # インデックス付きで要素を保持する配列を作成
+   indexed = []
+   nums の大きさを i とし {
+      indexed にオブジェクト{"value": nums[i], "index": i} を追加する
+   }
+   
+   # バブルソートで安定ソート（桁の合計で昇順、同じなら元の位置順）
+   indexed の大きさを n とし {
+      n回くり返す {
+         n - 1回くり返す {
+            j = 0
+            もしjが indexed の大きさより小さいならば {
+               sum_j = digit_sum(indexed[j]["value"])
+               sum_j_plus_1 = digit_sum(indexed[j + 1]["value"])
+               
+               もしsum_jがsum_j_plus_1より大きいならば {
+                  # スワップ
+                  temp = indexed[j]
+                  indexed[j] = indexed[j + 1]
+                  indexed[j + 1] = temp
+               }
+               jを増やす
+            }
+         }
+      }
+   }
+   
+   # 結果配列を作成
+   result = []
+   indexed の大きさを i とし {
+      result に indexed[i]["value"] を追加する
+   }
+   
+   result が答え
+}

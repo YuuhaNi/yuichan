@@ -1,0 +1,79 @@
+標準ライブラリを使う
+
+int_to_mini_roman = 入力 number に対し {
+   result = ""
+   
+   # 1000の位
+   thousands = 商(number, 1000)
+   thousands回くり返す{
+      resultに"m"を追加する
+   }
+   number = 剰余(number, 1000)
+   
+   # 100の位
+   hundreds = 商(number, 100)
+   もしhundredsが9ならば{
+      resultに"cm"を追加する
+   }そうでなければ{
+      もしhundredsが5以上ならば{
+         resultに"d"を追加する
+         差(hundreds, 5)回くり返す{
+            resultに"c"を追加する
+         }
+      }そうでなければ{
+         もしhundredsが4ならば{
+            resultに"cd"を追加する
+         }そうでなければ{
+            hundreds回くり返す{
+               resultに"c"を追加する
+            }
+         }
+      }
+   }
+   number = 剰余(number, 100)
+   
+   # 10の位
+   tens = 商(number, 10)
+   もしtensが9ならば{
+      resultに"xc"を追加する
+   }そうでなければ{
+      もしtensが5以上ならば{
+         resultに"l"を追加する
+         差(tens, 5)回くり返す{
+            resultに"x"を追加する
+         }
+      }そうでなければ{
+         もしtensが4ならば{
+            resultに"xl"を追加する
+         }そうでなければ{
+            tens回くり返す{
+               resultに"x"を追加する
+            }
+         }
+      }
+   }
+   number = 剰余(number, 10)
+   
+   # 1の位
+   ones = number
+   もしonesが9ならば{
+      resultに"ix"を追加する
+   }そうでなければ{
+      もしonesが5以上ならば{
+         resultに"v"を追加する
+         差(ones, 5)回くり返す{
+            resultに"i"を追加する
+         }
+      }そうでなければ{
+         もしonesが4ならば{
+            resultに"iv"を追加する
+         }そうでなければ{
+            ones回くり返す{
+               resultに"i"を追加する
+            }
+         }
+      }
+   }
+   
+   resultが答え
+}

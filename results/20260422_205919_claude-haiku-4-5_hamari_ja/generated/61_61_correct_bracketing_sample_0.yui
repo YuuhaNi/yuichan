@@ -1,0 +1,24 @@
+標準ライブラリを使う
+
+correct_bracketing = 入力 brackets に対し {
+   count = 0
+   bracketsの長さ回くり返す {
+      char = brackets[count]
+      もし char が "(" ならば {
+         depth を増やす
+      }
+      もし char が ")" ならば {
+         depth を減らす
+      }
+      もし depth が 0 より小さい ならば {
+         偽
+      }
+      count を増やす
+   }
+   もし depth が 0 ならば {
+      真
+   }
+   そうでなければ {
+      偽
+   }
+}

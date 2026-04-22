@@ -1,0 +1,24 @@
+標準ライブラリを使う
+
+even_odd_count = 入力 num に対し {
+   num = 絶対値(num)
+   num_str = 文字列化(num)
+   len = num_str の大きさ
+   even_count = 0
+   odd_count = 0
+   
+   len回くり返す {
+      i = 反復変数
+      digit_char = num_str[i]
+      digit = 数値化(digit_char)
+      
+      もし剰余(digit, 2)が0ならば {
+         even_count = 和(even_count, 1)
+      }
+      そうでなければ {
+         odd_count = 和(odd_count, 1)
+      }
+   }
+   
+   [even_count, odd_count]
+}

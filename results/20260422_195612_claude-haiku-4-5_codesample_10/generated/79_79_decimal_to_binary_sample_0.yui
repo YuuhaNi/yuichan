@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+decimal_to_binary = 入力 decimal に対し {
+   result = "db"
+   もし decimal が 0 ならば {
+      result = "db0db"
+   }
+   そうでなければ {
+      binary = ""
+      n = decimal
+      n が 0 より大きい間くり返す {
+         remainder = 剰余(n, 2)
+         binary = 文字列化(remainder) + binary
+         n = 商(n, 2)
+      }
+      result = result + binary + "db"
+   }
+   result が答え
+}

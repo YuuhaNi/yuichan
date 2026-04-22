@@ -1,0 +1,47 @@
+標準ライブラリを使う
+
+bf = 入力 planet1, planet2 に対し {
+   planets=["Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune"]
+
+   i1=-1
+   i2=-1
+
+   n=planetsの大きさ
+   i=0
+   n回くり返す{
+      p=planets[i]
+      もしpがplanet1ならば{
+         i1=i
+      }
+      もしpがplanet2ならば{
+         i2=i
+      }
+      iを増やす
+   }
+
+   もしi1が-1ならば{
+      []が答え
+   }
+   もしi2が-1ならば{
+      []が答え
+   }
+
+   start=i1
+   stop=i2
+   もしstartがstopより大きいならば{
+      tmp=start
+      start=stop
+      stop=tmp
+   }
+
+   result=[]
+   i=和(start,1)
+   count=差(stop,start)
+   countを減らす
+   count回くり返す{
+      resultにplanets[i]を追加する
+      iを増やす
+   }
+
+   resultが答え
+}

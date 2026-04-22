@@ -1,0 +1,44 @@
+標準ライブラリを使う
+
+match_parens = 入力 lst に対し {
+    s1 = lst[0]
+    s2 = lst[1]
+    
+    # 2つの順序を試す: s1+s2 と s2+s1
+    combined1 = s1 + s2
+    combined2 = s2 + s1
+    
+    # 括弧がバランスしているかチェックする関数
+    is_good = 入力 s に対し {
+        balance = 0
+        i = 0
+        
+        # 文字列の各文字をチェック
+        繰り返す i < 文字列長(s) {
+            char = 文字列取得(s, i)
+            
+            もし char == '(' ならば {
+                balance = balance + 1
+            } そうでなければ {
+                balance = balance - 1
+            }
+            
+            # バランスが負になったら不良
+            もし balance < 0 ならば {
+                戻す 偽
+            }
+            
+            i = i + 1
+        }
+        
+        # 最終的にバランスが0なら良い
+        戻す balance == 0
+    }
+    
+    # どちらかの組み合わせが良いかチェック
+    もし is_good(combined1) || is_good(combined2) ならば {
+        戻す 'Yes'
+    } そうでなければ {
+        戻す 'No'
+    }
+}

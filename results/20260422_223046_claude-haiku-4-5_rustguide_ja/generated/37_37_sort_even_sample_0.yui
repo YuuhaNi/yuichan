@@ -1,0 +1,45 @@
+標準ライブラリを使う
+
+sort_even = 入力 l に対し {
+   even = []
+   odd = []
+   i = 0
+   lの大きさ回くり返す {
+      もしiが偶数ならば {
+         evenにl[i]を追加する
+      } そうでなければ {
+         oddにl[i]を追加する
+      }
+      iを増やす
+   }
+   
+   # even をソート（バブルソート）
+   n = evenの大きさ
+   n回くり返す {
+      j = 0
+      差(n, 1)回くり返す {
+         もしeven[j]がeven[和(j, 1)]より大きいならば {
+            tmp = even[j]
+            even[j] = even[和(j, 1)]
+            even[和(j, 1)] = tmp
+         }
+         jを増やす
+      }
+   }
+   
+   # even と odd をマージして結果を作る
+   result = []
+   i = 0
+   lの大きさ回くり返す {
+      もしiが偶数ならば {
+         even_idx = 商(i, 2)
+         resultにeven[even_idx]を追加する
+      } そうでなければ {
+         odd_idx = 商(i, 2)
+         resultにodd[odd_idx]を追加する
+      }
+      iを増やす
+   }
+   
+   resultが答え
+}

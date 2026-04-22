@@ -1,0 +1,57 @@
+標準ライブラリを使う
+
+sorted_list_sum = 入力 lst に対し {
+   # ステップ 1: 奇数の長さを持つ文字列を削除する
+   filtered = []
+   i = 0
+   lst の大きさ 回 くり返す {
+      s = lst[i]
+      len = s の大きさ
+      # 長さが偶数かどうかを調べる (剰余が 0 なら偶数)
+      remainder = 剰余(len, 2)
+      もし remainder が 0 ならば {
+         filtered に s を追加する
+      }
+      i を増やす
+   }
+
+   # ステップ 2: フィルタリング後のリストをソートする
+   # 長さで昇順、同じ長さならアルファベット順
+   n = filtered の大きさ
+   
+   # バブルソート: 長さで比較し、同じ長さならアルファベット順で比較
+   n 回 くり返す {
+      j = 0
+      差(n, 1) 回 くり返す {
+         k = 和(j, 1)
+         s1 = filtered[j]
+         s2 = filtered[k]
+         len1 = s1 の大きさ
+         len2 = s2 の大きさ
+         
+         # 長さで比較
+         もし len1 が len2 より大きい ならば {
+            # 入れ替える
+            tmp = filtered[j]
+            filtered[j] = filtered[k]
+            filtered[k] = tmp
+         }
+         そうでなければ {
+            # 長さが同じ場合、アルファベット順で比較
+            もし len1 が len2 ならば {
+               もし s1 が s2 より大きい ならば {
+                  # 入れ替える
+                  tmp = filtered[j]
+                  filtered[j] = filtered[k]
+                  filtered[k] = tmp
+               }
+            }
+         }
+         j を増やす
+      }
+   }
+
+   filtered が答え
+}
+
+# テスト

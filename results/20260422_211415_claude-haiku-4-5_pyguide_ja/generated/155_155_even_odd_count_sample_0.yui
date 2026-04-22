@@ -1,0 +1,35 @@
+標準ライブラリを使う
+
+even_odd_count = 入力 num に対し {
+   num = 絶対値(num)
+   s = 文字列化(num)
+   even = 0
+   odd = 0
+   i = 0
+   sの大きさ回くり返す{
+      digit = 整数化(s[i])
+      もしdigitが0ならば{
+         evenを増やす
+      }そうでなければ{
+         もしdigitが2ならば{
+            evenを増やす
+         }そうでなければ{
+            もしdigitが4ならば{
+               evenを増やす
+            }そうでなければ{
+               もしdigitが6ならば{
+                  evenを増やす
+               }そうでなければ{
+                  もしdigitが8ならば{
+                     evenを増やす
+                  }そうでなければ{
+                     oddを増やす
+                  }
+               }
+            }
+         }
+      }
+      iを増やす
+   }
+   {"even": even, "odd": odd}が答え
+}

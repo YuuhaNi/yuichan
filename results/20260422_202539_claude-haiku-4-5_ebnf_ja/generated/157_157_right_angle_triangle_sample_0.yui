@@ -1,0 +1,21 @@
+標準ライブラリを使う
+
+right_angle_triangle = 入力 a, b, c に対し {
+  a_sq = 積(a, a)
+  b_sq = 積(b, b)
+  c_sq = 積(c, c)
+  
+  もし a_sq が 和(b_sq, c_sq) ならば {
+    真 が 答え
+  }
+  
+  もし b_sq が 和(a_sq, c_sq) ならば {
+    真 が 答え
+  }
+  
+  もし c_sq が 和(a_sq, b_sq) ならば {
+    真 が 答え
+  }
+  
+  偽 が 答え
+}

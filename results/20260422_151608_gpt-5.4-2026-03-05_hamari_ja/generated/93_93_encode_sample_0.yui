@@ -1,0 +1,77 @@
+標準ライブラリを使う
+
+encode = 入力 message に対し {
+    result=""
+    i=0
+    n=messageの大きさ
+
+    n回くり返す{
+        ch=message[i]
+
+        もしchが"a"ならば{
+            result=連結(result,"C")
+        }
+        そうでなければ{
+            もしchが"e"ならば{
+                result=連結(result,"G")
+            }
+            そうでなければ{
+                もしchが"i"ならば{
+                    result=連結(result,"K")
+                }
+                そうでなければ{
+                    もしchが"o"ならば{
+                        result=連結(result,"M")
+                    }
+                    そうでなければ{
+                        もしchが"u"ならば{
+                            result=連結(result,"W")
+                        }
+                        そうでなければ{
+                            もしchが"A"ならば{
+                                result=連結(result,"c")
+                            }
+                            そうでなければ{
+                                もしchが"E"ならば{
+                                    result=連結(result,"g")
+                                }
+                                そうでなければ{
+                                    もしchが"I"ならば{
+                                        result=連結(result,"k")
+                                    }
+                                    そうでなければ{
+                                        もしchが"O"ならば{
+                                            result=連結(result,"m")
+                                        }
+                                        そうでなければ{
+                                            もしchが"U"ならば{
+                                                result=連結(result,"w")
+                                            }
+                                            そうでなければ{
+                                                もしchが"b"のいずれか["b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z"]ならば{
+                                                    result=連結(result,大文字化(ch))
+                                                }
+                                                そうでなければ{
+                                                    もしchが"B"のいずれか["B","C","D","F","G","H","J","K","L","M","N","P","Q","R","S","T","V","W","X","Y","Z"]ならば{
+                                                        result=連結(result,小文字化(ch))
+                                                    }
+                                                    そうでなければ{
+                                                        result=連結(result,ch)
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        iを増やす
+    }
+
+    resultが答え
+}

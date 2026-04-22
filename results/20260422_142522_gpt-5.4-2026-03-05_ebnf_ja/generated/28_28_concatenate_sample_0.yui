@@ -1,0 +1,9 @@
+標準ライブラリを使う
+
+concatenate = 入力 strings に対し {
+    result = ""
+    stringsの大きさ回 くり返す {
+        result = 連結(result, strings[回数 - 1])
+    }
+    resultが答え
+}

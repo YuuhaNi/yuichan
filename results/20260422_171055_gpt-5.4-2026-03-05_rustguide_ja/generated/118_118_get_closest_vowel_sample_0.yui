@@ -1,0 +1,71 @@
+標準ライブラリを使う
+
+get_closest_vowel = 入力 word に対し {
+   n = wordの大きさ
+
+   もしnが3より小さいならば{
+      ""が答え
+   }
+
+   i = 差(n, 2)
+
+   n回くり返す{
+      もしiが0以下ならば{
+         くり返しを抜ける
+      }
+
+      c = word[i]
+      left = word[差(i,1)]
+      right = word[和(i,1)]
+
+      is_vowel = 偽
+      もしcが"a"[0]ならば{ is_vowel = 真 }
+      もしcが"e"[0]ならば{ is_vowel = 真 }
+      もしcが"i"[0]ならば{ is_vowel = 真 }
+      もしcが"o"[0]ならば{ is_vowel = 真 }
+      もしcが"u"[0]ならば{ is_vowel = 真 }
+      もしcが"A"[0]ならば{ is_vowel = 真 }
+      もしcが"E"[0]ならば{ is_vowel = 真 }
+      もしcが"I"[0]ならば{ is_vowel = 真 }
+      もしcが"O"[0]ならば{ is_vowel = 真 }
+      もしcが"U"[0]ならば{ is_vowel = 真 }
+
+      left_vowel = 偽
+      もしleftが"a"[0]ならば{ left_vowel = 真 }
+      もしleftが"e"[0]ならば{ left_vowel = 真 }
+      もしleftが"i"[0]ならば{ left_vowel = 真 }
+      もしleftが"o"[0]ならば{ left_vowel = 真 }
+      もしleftが"u"[0]ならば{ left_vowel = 真 }
+      もしleftが"A"[0]ならば{ left_vowel = 真 }
+      もしleftが"E"[0]ならば{ left_vowel = 真 }
+      もしleftが"I"[0]ならば{ left_vowel = 真 }
+      もしleftが"O"[0]ならば{ left_vowel = 真 }
+      もしleftが"U"[0]ならば{ left_vowel = 真 }
+
+      right_vowel = 偽
+      もしrightが"a"[0]ならば{ right_vowel = 真 }
+      もしrightが"e"[0]ならば{ right_vowel = 真 }
+      もしrightが"i"[0]ならば{ right_vowel = 真 }
+      もしrightが"o"[0]ならば{ right_vowel = 真 }
+      もしrightが"u"[0]ならば{ right_vowel = 真 }
+      もしrightが"A"[0]ならば{ right_vowel = 真 }
+      もしrightが"E"[0]ならば{ right_vowel = 真 }
+      もしrightが"I"[0]ならば{ right_vowel = 真 }
+      もしrightが"O"[0]ならば{ right_vowel = 真 }
+      もしrightが"U"[0]ならば{ right_vowel = 真 }
+
+      もしis_vowelが真ならば{
+         もしleft_vowelが偽ならば{
+            もしright_vowelが偽ならば{
+               result = ""
+               resultにcを追加する
+               resultが答え
+            }
+         }
+      }
+
+      i = 差(i, 1)
+   }
+
+   ""が答え
+}

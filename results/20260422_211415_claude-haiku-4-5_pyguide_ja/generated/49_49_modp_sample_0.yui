@@ -1,0 +1,13 @@
+標準ライブラリを使う
+
+modp = 入力 n, p に対し {
+   result = 1
+   base = 2
+   n回くり返す{
+      もしresultがpより大きいならば{
+         result = 剰余(result, p)
+      }
+      result = 剰余(積(result, base), p)
+   }
+   resultが答え
+}

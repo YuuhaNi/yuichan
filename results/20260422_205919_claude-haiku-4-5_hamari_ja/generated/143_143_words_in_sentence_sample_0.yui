@@ -1,0 +1,52 @@
+標準ライブラリを使う
+
+words_in_sentence = 入力 sentence に対し {
+    # 素数判定関数
+    is_prime = 入力 n に対し {
+        もし n が 2 より小さい ならば {
+            偽
+        }
+        そうでなければ {
+            is_p = 真
+            i = 2
+            もし n が 2 ならば {
+                真
+            }
+            そうでなければ {
+                n_sqrt = 商(n, 1)
+                n_sqrt回くり返す {
+                    もし 剰余(n, i) が 0 ならば {
+                        is_p = 偽
+                        くり返しを抜ける
+                    }
+                    i を増やす
+                }
+                is_p
+            }
+        }
+    }
+    
+    # 単語を空白で分割
+    words = sentence を " " で分割する
+    
+    # 素数長の単語をフィルタリング
+    result = ""
+    idx = 0
+    words の大きさ回くり返す {
+        word = words[idx]
+        word_len = word の大きさ
+        
+        もし is_prime(word_len) が 真 ならば {
+            もし result が "" ならば {
+                result = word
+            }
+            そうでなければ {
+                result = 和(result, " ")
+                result = 和(result, word)
+            }
+        }
+        idx を増やす
+    }
+    
+    result
+}

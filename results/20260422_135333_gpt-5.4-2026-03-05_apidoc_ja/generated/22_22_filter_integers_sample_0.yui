@@ -1,0 +1,11 @@
+標準ライブラリを使う
+
+filter_integers = 入力 values に対し {
+  result = []
+  values の各要素を item として繰り返す {
+    もし 整数判定(item) なら {
+      result = result + [item]
+    }
+  }
+  result
+}

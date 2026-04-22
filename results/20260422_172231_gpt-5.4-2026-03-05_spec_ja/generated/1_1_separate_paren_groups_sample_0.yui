@@ -1,0 +1,43 @@
+標準ライブラリを使う
+
+separate_paren_groups = 入力 paren_string に対し {
+   groups = []
+   current = ""
+   depth = 0
+   i = 0
+
+   paren_stringの大きさ回くり返す {
+      ch = paren_string[i]
+
+      もしchが32ならば {
+         何もしない
+      }
+      そうでなければ {
+         current = "{current}{文字列化(ch)}"
+
+         もしchが40ならば {
+            depthを増やす
+         }
+         そうでなければ {
+            もしchが41ならば {
+               depthを減らす
+
+               もしdepthが0ならば {
+                  groupsにcurrentを追加する
+                  current = ""
+               }
+               そうでなければ {
+                  何もしない
+               }
+            }
+            そうでなければ {
+               何もしない
+            }
+         }
+      }
+
+      iを増やす
+   }
+
+   groups が答え
+}

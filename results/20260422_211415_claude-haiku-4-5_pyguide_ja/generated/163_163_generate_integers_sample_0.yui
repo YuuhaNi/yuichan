@@ -1,0 +1,26 @@
+標準ライブラリを使う
+
+generate_integers = 入力 a, b に対し {
+   result = []
+   
+   # aとbの小さい方と大きい方を決める
+   min_val = 最小値(a, b)
+   max_val = 最大値(a, b)
+   
+   # min_valからmax_valまでループ
+   i = min_val
+   100回くり返す {
+      もしiがmax_valより大きいならば {
+         くり返しを抜ける
+      }
+      
+      # iが偶数かどうか判定（剰余が0なら偶数）
+      もし剰余(i, 2)が0ならば {
+         resultにiを追加する
+      }
+      
+      iを増やす
+   }
+   
+   result
+}

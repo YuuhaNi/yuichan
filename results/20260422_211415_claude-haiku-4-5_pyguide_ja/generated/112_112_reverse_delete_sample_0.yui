@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+reverse_delete = 入力 s, c に対し {
+   result = ""
+   i = 0
+   sの大きさ回くり返す{
+      char = s[i]
+      もしcharがcのいずれでもないならば{
+         resultにcharを追加する
+      }
+      iを増やす
+   }
+   
+   is_palindrome = 真
+   j = 0
+   resultの大きさ回くり返す{
+      もしj が 商(resultの大きさ, 2) 以上ならば{
+         くり返しを抜ける
+      }
+      もし result[j] が result[差(resultの大きさ, 足す(j, 1))] 以外ならば{
+         is_palindrome = 偽
+         くり返しを抜ける
+      }
+      jを増やす
+   }
+   
+}

@@ -1,0 +1,90 @@
+標準ライブラリを使う
+
+anti_shuffle = 入力 s に対し {
+   result = ""
+   word = ""
+   i = 0
+
+   sの大きさ回くり返す{
+      c = s[i]
+
+      もしcが" "[0]ならば{
+         もしwordの大きさが0より大きいならば{
+            sorted = ""
+            n = wordの大きさ
+
+            n回くり返す{
+               min_index = 0
+               j = 1
+               j回くり返す{
+               }
+               remain = n
+               k = 1
+               差(n,1)回くり返す{
+                  もしword[k]がword[min_index]より小さいならば{
+                     min_index = k
+                  }
+                  kを増やす
+               }
+               sortedにword[min_index]を追加する
+
+               new_word = ""
+               k = 0
+               n回くり返す{
+                  もしkがmin_index以外ならば{
+                     new_wordにword[k]を追加する
+                  }
+                  kを増やす
+               }
+               word = new_word
+               n = wordの大きさ
+            }
+
+            result = "{result}{sorted}"
+            word = ""
+         }
+         resultにcを追加する
+      }
+      そうでなければ{
+         wordにcを追加する
+      }
+      iを増やす
+   }
+
+   もしwordの大きさが0より大きいならば{
+      sorted = ""
+      n = wordの大きさ
+
+      n回くり返す{
+         min_index = 0
+         差(n,1)回くり返す{
+            # 比較用の走査
+         }
+
+         k = 1
+         差(n,1)回くり返す{
+            もしword[k]がword[min_index]より小さいならば{
+               min_index = k
+            }
+            kを増やす
+         }
+
+         sortedにword[min_index]を追加する
+
+         new_word = ""
+         k = 0
+         n回くり返す{
+            もしkがmin_index以外ならば{
+               new_wordにword[k]を追加する
+            }
+            kを増やす
+         }
+         word = new_word
+         n = wordの大きさ
+      }
+
+      result = "{result}{sorted}"
+   }
+
+   resultが答え
+}

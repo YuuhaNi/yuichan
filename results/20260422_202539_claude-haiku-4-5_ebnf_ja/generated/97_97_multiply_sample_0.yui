@@ -1,0 +1,7 @@
+標準ライブラリを使う
+
+multiply = 入力 a, b に対し {
+  a_ones = a の剰余 10
+  b_ones = b の剰余 10
+  a_ones と b_ones の積が答え
+}

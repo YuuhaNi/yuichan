@@ -1,0 +1,35 @@
+標準ライブラリを使う
+
+bf = 入力 planet1, planet2 に対し {
+    惑星リスト = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
+    
+    index1 = 値なし
+    index2 = 値なし
+    
+    i = 0
+    i < 長さ(惑星リスト) の間 {
+        もし 惑星リスト[i] == planet1 ならば {
+            index1 = i
+        }
+        もし 惑星リスト[i] == planet2 ならば {
+            index2 = i
+        }
+        i = i + 1
+    }
+    
+    もし index1 == 値なし または index2 == 値なし ならば {
+        ()を返す
+    }
+    
+    最小 = 最小値(index1, index2)
+    最大 = 最大値(index1, index2)
+    
+    結果 = []
+    j = 最小 + 1
+    j < 最大 の間 {
+        結果 = 結果 + [惑星リスト[j]]
+        j = j + 1
+    }
+    
+    結果を返す
+}

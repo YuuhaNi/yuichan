@@ -1,0 +1,32 @@
+標準ライブラリを使う
+
+specialFilter = 入力 nums に対し {
+    count = 0
+    i = 0
+    numsの大きさ回くり返す {
+        n = nums[i]
+        もし n が 10 より大きいならば {
+            last = 剰余(n, 10)
+            first = n
+            もし last が 0 より小さいならば {
+                last = 差(0, last)
+            }
+            くり返し {
+                もし first が -10 より大きいならば {
+                    くり返しを抜ける
+                }
+                first = 商(first, 10)
+            }
+            もし first が 0 より小さいならば {
+                first = 差(0, first)
+            }
+            もし 剰余(first, 2) が 1 ならば {
+                もし 剰余(last, 2) が 1 ならば {
+                    countを増やす
+                }
+            }
+        }
+        iを増やす
+    }
+    count が答え
+}

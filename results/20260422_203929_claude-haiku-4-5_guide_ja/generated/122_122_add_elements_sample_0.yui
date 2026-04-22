@@ -1,0 +1,30 @@
+標準ライブラリを使う
+
+add_elements = 入力 arr, k に対し {
+   sum = 0
+   i = 0
+   k回くり返す{
+      num = arr[i]
+      もしnum が100より小さいならば{
+         sumを増やす
+         sumを増やす
+         sum = 和(sum, num)
+      }
+      iを増やす
+   }
+   sumが答え
+}
+標準ライブラリを使う
+
+add_elements = 入力 arr, k に対し {
+   sum = 0
+   i = 0
+   k回くり返す{
+      num = arr[i]
+      もしnum が100より小さいならば{
+         sum = 和(sum, num)
+      }
+      iを増やす
+   }
+   sumが答え
+}

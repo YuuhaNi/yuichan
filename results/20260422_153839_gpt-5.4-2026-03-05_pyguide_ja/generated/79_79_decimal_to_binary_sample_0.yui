@@ -1,0 +1,36 @@
+標準ライブラリを使う
+
+decimal_to_binary = 入力 decimal に対し {
+   もしdecimalが0ならば{
+      "db0db"が答え
+   }
+
+   digits = []
+   n = decimal
+
+   n回くり返す{
+      もしnが0ならば{
+         くり返しを抜ける
+      }
+
+      bit = 剰余(n, 2)
+      もしbitが0ならば{
+         digitsに"0"[0]を追加する
+      }そうでなければ{
+         digitsに"1"[0]を追加する
+      }
+      n = 商(n, 2)
+   }
+
+   result = "db"
+   i = digitsの大きさ
+
+   i回くり返す{
+      i = 差(i, 1)
+      resultにdigits[i]を追加する
+   }
+
+   resultに"d"[0]を追加する
+   resultに"b"[0]を追加する
+   resultが答え
+}

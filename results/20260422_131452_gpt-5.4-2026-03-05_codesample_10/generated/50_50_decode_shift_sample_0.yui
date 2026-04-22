@@ -1,0 +1,30 @@
+標準ライブラリを使う
+
+decode_shift = 入力 s に対し {
+   result=""
+   n=sの大きさ
+   i=0
+   n回くり返す{
+      c=s[i]
+      nc=c
+      # 大文字 A..Z
+      もしcが65以上ならば{
+         もしcが90以下ならば{
+            offset=差(c,65)
+            shifted=剰余(和(offset,5),26)
+            nc=和(shifted,65)
+         }
+      }
+      # 小文字 a..z
+      もしcが97以上ならば{
+         もしcが122以下ならば{
+            offset=差(c,97)
+            shifted=剰余(和(offset,5),26)
+            nc=和(shifted,97)
+         }
+      }
+      resultにncを追加する
+      iを増やす
+   }
+   resultが答え
+}

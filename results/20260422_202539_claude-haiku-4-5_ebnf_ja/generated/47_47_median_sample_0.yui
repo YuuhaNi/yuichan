@@ -1,0 +1,13 @@
+標準ライブラリを使う
+
+median = 入力 l に対し {
+  sorted_l = 並び替える(l)
+  n = sorted_l の大きさ
+  mid = 商(n, 2)
+  
+  もし 剰余(n, 2) が 0 以外 ならば {
+    sorted_l[mid] が 答え
+  } そうでなければ {
+    和(sorted_l[剰余(n, 2)], sorted_l[差(mid, 1)]) が 答え
+  }
+}

@@ -1,0 +1,9 @@
+標準ライブラリを使う
+
+change_base = 入力 x, base に対し {
+    もし x < base なら {
+        戻す 文字列化(x)
+    } そうでなければ {
+        戻す change_base(商(x, base), base) + 文字列化(剰余(x, base))
+    }
+}

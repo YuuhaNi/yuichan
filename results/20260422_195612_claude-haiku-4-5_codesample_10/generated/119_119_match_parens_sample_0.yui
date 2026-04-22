@@ -1,0 +1,52 @@
+標準ライブラリを使う
+
+match_parens = 入力 lst に対し {
+   # 括弧がバランスしているかを判定する補助関数
+   is_balanced = 入力 s に対し {
+      balance = 0
+      n = s の大きさ
+      i = 0
+      n 回くり返す {
+         c = s[i]
+         もし c が '(' ならば {
+            balance を増やす
+         }
+         そうでなければ {
+            balance を減らす
+         }
+         # balance が負になったら、閉じ括弧が多すぎる
+         もし balance が 0 より小さい ならば {
+            偽 が答え
+         }
+         i を増やす
+      }
+      # 最後に balance が 0 なら良い文字列
+      もし balance が 0 ならば {
+         真 が答え
+      }
+      そうでなければ {
+         偽 が答え
+      }
+   }
+   
+   # 2つの文字列を取得
+   s1 = lst[0]
+   s2 = lst[1]
+   
+   # パターン1: s1 + s2 の順で結合
+   combined1 = s1
+   combined1 に s2 を追加する
+   もし is_balanced(combined1) ならば {
+      "Yes" が答え
+   }
+   
+   # パターン2: s2 + s1 の順で結合
+   combined2 = s2
+   combined2 に s1 を追加する
+   もし is_balanced(combined2) ならば {
+      "Yes" が答え
+   }
+   
+   # どちらのパターンでも良い文字列にならない
+   "No" が答え
+}

@@ -1,0 +1,28 @@
+標準ライブラリを使う
+
+parse_nested_parens = 入力 paren_string に対し {
+    groups = paren_string.split(" ")
+    result = []
+
+    groups.forEach(入力 group に対し {
+        depth = 0
+        max_depth = 0
+
+        group.split("").forEach(入力 ch に対し {
+            もし ch == "(" なら {
+                depth = 和(depth, 1)
+                もし depth > max_depth なら {
+                    max_depth = depth
+                }
+            } 違えば {
+                もし ch == ")" なら {
+                    depth = 差(depth, 1)
+                }
+            }
+        })
+
+        result.push(max_depth)
+    })
+
+    result
+}

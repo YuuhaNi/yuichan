@@ -1,0 +1,73 @@
+標準ライブラリを使う
+
+fruit_distribution = 入力 s, n に対し {
+   # 文字列 s から "5 apples and 6 oranges" の形で数字を抽出する
+   # 戦略: 文字列を走査して、数字の連続を見つけて整数に変換する
+   
+   apples = 0
+   oranges = 0
+   current_num = ""
+   count = 0  # 見つけた数字の個数 (1 番目がリンゴ、2 番目がオレンジ)
+   
+   i = 0
+   s の大きさ 回 くり返す {
+      c = s[i]
+      # 文字コードで '0'=48, '9'=57 の範囲が数字
+      もし c が 48 以上 ならば {
+         もし c が 57 以下 ならば {
+            # 数字なので current_num に追加
+            current_num に c を追加する
+         }
+         そうでなければ {
+            # 数字でなくなった → current_num に溜まった数字を処理
+            もし current_num の大きさ が 0 より大きい ならば {
+               num = 整数化(current_num)
+               count を増やす
+               もし count が 1 ならば {
+                  apples = num
+               }
+               そうでなければ {
+                  もし count が 2 ならば {
+                     oranges = num
+                  }
+               }
+               current_num = ""
+            }
+         }
+      }
+      そうでなければ {
+         # 数字でなくなった → current_num に溜まった数字を処理
+         もし current_num の大きさ が 0 より大きい ならば {
+            num = 整数化(current_num)
+            count を増やす
+            もし count が 1 ならば {
+               apples = num
+            }
+            そうでなければ {
+               もし count が 2 ならば {
+                  oranges = num
+               }
+            }
+            current_num = ""
+         }
+      }
+      i を増やす
+   }
+   
+   # ループ終了後、最後に溜まった数字を処理
+   もし current_num の大きさ が 0 より大きい ならば {
+      num = 整数化(current_num)
+      count を増やす
+      もし count が 1 ならば {
+         apples = num
+      }
+      そうでなければ {
+         もし count が 2 ならば {
+            oranges = num
+         }
+      }
+   }
+   
+   # マンゴーの数 = 総数 - リンゴ - オレンジ
+   差(差(n, apples), oranges) が答え
+}

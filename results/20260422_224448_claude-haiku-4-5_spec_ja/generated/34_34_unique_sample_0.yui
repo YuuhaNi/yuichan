@@ -1,0 +1,45 @@
+標準ライブラリを使う
+
+unique = 入力 l に対し {
+   result = []
+   i = 0
+   l の大きさ 回くり返す {
+      current = l[i]
+      found = 偽
+      j = 0
+      result の大きさ 回くり返す {
+         もし current が result[j] ならば {
+            found = 真
+         }
+         j を増やす
+      }
+      もし found が 偽 ならば {
+         result に current を追加する
+      }
+      i を増やす
+   }
+   sorted_result = []
+   result の大きさ 回くり返す {
+      min_val = 値なし
+      min_idx = 0
+      k = 0
+      result の大きさ 回くり返す {
+         もし result[k] が 値なし 以外 ならば {
+            もし min_val が 値なし ならば {
+               min_val = result[k]
+               min_idx = k
+            }
+            そうでなければ {
+               もし result[k] が min_val より小さい ならば {
+                  min_val = result[k]
+                  min_idx = k
+               }
+            }
+         }
+         k を増やす
+      }
+      sorted_result に min_val を追加する
+      result[min_idx] = 値なし
+   }
+   sorted_result が答え
+}

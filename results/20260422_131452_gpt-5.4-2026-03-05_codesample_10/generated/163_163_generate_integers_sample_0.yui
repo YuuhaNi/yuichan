@@ -1,0 +1,23 @@
+標準ライブラリを使う
+
+generate_integers = 入力 a, b に対し {
+   lo=a
+   hi=b
+   もしloがhiより大きいならば{
+      lo=b
+      hi=a
+   }
+
+   result=[]
+   i=lo
+   diff=差(hi,lo)
+
+   和(diff,1)回くり返す{
+      もし剰余(i,2)が0ならば{
+         resultにiを追加する
+      }
+      iを増やす
+   }
+
+   resultが答え
+}

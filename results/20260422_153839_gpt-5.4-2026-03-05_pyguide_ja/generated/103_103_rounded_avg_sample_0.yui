@@ -1,0 +1,39 @@
+標準ライブラリを使う
+
+rounded_avg = 入力 n, m に対し {
+   もしnがmより大きいならば{
+      -1が答え
+   }
+
+   total = 和(n, m)
+   avg = 商(total, 2)
+   rem = 剰余(total, 2)
+
+   もしremが1ならば{
+      avgを増やす
+   }
+
+   bits = []
+   x = avg
+
+   もしxが0ならば{
+      "0b0"が答え
+   }
+
+   100回くり返す{
+      もしxが0ならば{
+         くり返しを抜ける
+      }
+      bitsに剰余(x, 2)を追加する
+      x = 商(x, 2)
+   }
+
+   result = "0b"
+   i = 差(bitsの大きさ, 1)
+   bitsの大きさ回くり返す{
+      result = "{result}{bits[i]}"
+      i = 差(i, 1)
+   }
+
+   resultが答え
+}

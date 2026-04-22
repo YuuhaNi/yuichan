@@ -1,0 +1,36 @@
+標準ライブラリを使う
+
+prod_signs=入力arrに対し{
+   n=arrの大きさ
+   もしnが0ならば{
+      値なしが答え
+   }
+   
+   # 絶対値の合計を計算
+   sum_abs=0
+   i=0
+   n回くり返す{
+      x=arr[i]
+      sum_abs=和(sum_abs,絶対値(x))
+      iを増やす
+   }
+   
+   # 符号の積を計算
+   prod_sign=1
+   i=0
+   n回くり返す{
+      x=arr[i]
+      もしxが0ならば{
+         prod_sign=0
+      }
+      そうでなければ{
+         もしxが0より小さいならば{
+            prod_sign=積(prod_sign,差(0,1))
+         }
+      }
+      iを増やす
+   }
+   
+   # 結果を返す
+   積(sum_abs,prod_sign)が答え
+}

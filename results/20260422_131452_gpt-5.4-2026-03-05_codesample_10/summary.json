@@ -1,0 +1,20 @@
+{
+  "model": "gpt-5.4-2026-03-05",
+  "lang": "ja",
+  "template": "pro159/codesample_10.md",
+  "context": "pro159/codesample_10.md",
+  "temperature": 0.2,
+  "k": 1,
+  "total_problems": 164,
+  "passed_problems": 59,
+  "failed_problems": 105,
+  "pass_at_k": 35.98,
+  "confidence_interval_95": {
+    "lower": 29.03,
+    "upper": 43.56,
+    "method": "Wilson Score"
+  },
+  "timestamp": "20260422_131452",
+  "total_samples": 164,
+  "passed_samples": 59
+}

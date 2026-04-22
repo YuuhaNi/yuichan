@@ -1,0 +1,40 @@
+標準ライブラリを使う
+
+flip_case = 入力 string に対し {
+   result = ""
+   stringの大きさ回くり返す {
+      char_code = string[0]
+      char = 文字列化([char_code])
+      
+      # 大文字（A-Z: 65-90）か小文字（a-z: 97-122）か判定
+      もしchar_codeが65以上ならば {
+         もしchar_codeが90以下ならば {
+            # 大文字 → 小文字に変換（+32）
+            resultに和(char_code, 32)を追加する
+         }
+         そうでなければ {
+            もしchar_codeが97以上ならば {
+               もしchar_codeが122以下ならば {
+                  # 小文字 → 大文字に変換（-32）
+                  resultに差(char_code, 32)を追加する
+               }
+               そうでなければ {
+                  # その他の文字はそのまま
+                  resultにchar_codeを追加する
+               }
+            }
+            そうでなければ {
+               # その他の文字はそのまま
+               resultにchar_codeを追加する
+            }
+         }
+      }
+      そうでなければ {
+         # その他の文字はそのまま
+         resultにchar_codeを追加する
+      }
+      
+      string = [string[1]]
+   }
+   結果 が答え
+}

@@ -1,0 +1,26 @@
+標準ライブラリを使う
+
+is_multiply_prime = 入力 a に対し {
+  count = 0
+  divisor = 2
+  temp = a
+  
+  もし a が 1 ならば {
+    偽 が 答え
+  }
+  
+  divisor 回 くり返す {
+    もし temp が divisor で割り切れるか ならば {
+      temp = temp を divisor で割った商
+      count を増やす
+      divisor を減らす
+    }
+    divisor を増やす
+  }
+  
+  もし count が 3 ならば {
+    真 が 答え
+  } そうでなければ {
+    偽 が 答え
+  }
+}

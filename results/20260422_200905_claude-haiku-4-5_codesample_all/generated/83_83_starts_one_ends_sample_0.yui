@@ -1,0 +1,67 @@
+標準ライブラリを使う
+
+starts_one_ends = 入力 n に対し {
+   # n 桁の最小値: 10^(n-1)
+   # n 桁の最大値: 10^n - 1
+   min_val = 積(10, 商(積(10, 差(n, 1)), 10))
+   max_val = 差(積(10, n), 1)
+   
+   # より簡潔に: min_val = lshift(1, n-1) のような形だが、
+   # ここでは基本演算で実装する
+   min_val = 1
+   i = 0
+   差(n, 1)回くり返す {
+      min_val = 積(min_val, 10)
+      iを増やす
+   }
+   
+   max_val = 1
+   i = 0
+   n回くり返す {
+      max_val = 積(max_val, 10)
+      iを増やす
+   }
+   max_val = 差(max_val, 1)
+   
+   count = 0
+   num = min_val
+   
+   # min_val から max_val まで走査
+   limit = 和(差(max_val, min_val), 1)
+   i = 0
+   limit回くり返す {
+      もしiが1000000より大きいならば {
+         くり返しを抜ける
+      }
+      
+      # num の最初の桁が 1 か最後の桁が 1 かを調べる
+      # 最後の桁: num % 10
+      last_digit = 剰余(num, 10)
+      
+      # 最初の桁: num を 10 で割り続けて 1 桁になるまで
+      temp = num
+      first_digit = temp
+      1000回くり返す {
+         もしtempが10より小さいならば {
+            first_digit = temp
+            くり返しを抜ける
+         }
+         temp = 商(temp, 10)
+      }
+      
+      # 1 で始まるか 1 で終わるかをチェック
+      もしfirst_digitが1ならば {
+         countを増やす
+      }
+      そうでなければ {
+         もしlast_digitが1ならば {
+            countを増やす
+         }
+      }
+      
+      num = 和(num, 1)
+      iを増やす
+   }
+   
+   countが答え
+}

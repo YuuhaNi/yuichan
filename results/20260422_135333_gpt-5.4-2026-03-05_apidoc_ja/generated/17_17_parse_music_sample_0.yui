@@ -1,0 +1,18 @@
+標準ライブラリを使う
+
+parse_music = 入力 music_string に対し {
+    notes = music_string.split(" ")
+    result = []
+
+    notes.each(入力 note に対し {
+        もし note == "o" なら {
+            result.push(4)
+        } 違えば もし note == "o|" なら {
+            result.push(2)
+        } 違えば {
+            result.push(1)
+        }
+    })
+
+    result
+}

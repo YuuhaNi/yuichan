@@ -1,0 +1,48 @@
+標準ライブラリを使う
+
+bf = 入力 planet1, planet2 に対し {
+   planets=["Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune"]
+   i=0
+   idx1=差(0,1)
+   idx2=差(0,1)
+
+   8回くり返す{
+      name=planets[i]
+      もしnameがplanet1ならば{
+         idx1=i
+      }
+      もしnameがplanet2ならば{
+         idx2=i
+      }
+      iを増やす
+   }
+
+   neg1=差(0,1)
+   もしidx1がneg1ならば{
+      ()
+   }
+   そうでなければ{
+      もしidx2がneg1ならば{
+         ()
+      }
+      そうでなければ{
+         start=idx1
+         goal=idx2
+         もしidx1がidx2より大きいならば{
+            start=idx2
+            goal=idx1
+         }
+
+         result=[]
+         j=和(start,1)
+         n=goal
+         n回くり返す{
+            もしjがgoalより小さいならば{
+               resultにplanets[j]を追加する
+            }
+            jを増やす
+         }
+         タプル化(result)
+      }
+   }
+}

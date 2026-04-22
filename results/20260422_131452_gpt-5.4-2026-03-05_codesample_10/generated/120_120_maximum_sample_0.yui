@@ -1,0 +1,36 @@
+標準ライブラリを使う
+
+maximum = 入力 arr, k に対し {
+   n=arrの大きさ
+   result=[]
+   もしkが0ならば{
+      resultが答え
+   }
+
+   # まず arr 全体を昇順ソートする（単純選択法）
+   i=0
+   n回くり返す{
+      min_idx=i
+      j=和(i,1)
+      rest=差(n,和(i,1))
+      rest回くり返す{
+         もしarr[j]がarr[min_idx]より小さいならば{
+            min_idx=j
+         }
+         jを増やす
+      }
+      tmp=arr[i]
+      arr[i]=arr[min_idx]
+      arr[min_idx]=tmp
+      iを増やす
+   }
+
+   # 後ろから大きい方 k 個を取り出す
+   start=差(n,k)
+   i=start
+   k回くり返す{
+      resultにarr[i]を追加する
+      iを増やす
+   }
+   resultが答え
+}

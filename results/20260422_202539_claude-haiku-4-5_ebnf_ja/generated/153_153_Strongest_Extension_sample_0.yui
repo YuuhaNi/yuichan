@@ -1,0 +1,62 @@
+標準ライブラリを使う
+
+Strongest_Extension = 入力 class_name, extensions に対し {
+    max_strength = 値なし
+    strongest_ext = 値なし
+    
+    0 回 くり返す {
+        idx = 0
+        idx が extensions の大きさ より小さい {
+            ext = extensions[idx]
+            
+            cap_count = 0
+            sm_count = 0
+            
+            0 回 くり返す {
+                char_idx = 0
+                char_idx が ext の大きさ より小さい {
+                    char = ext[char_idx]
+                    
+                    もし char が "A" ならば {
+                        cap_count を増やす
+                    }
+                    
+                    char_idx を増やす
+                }
+            }
+            
+            0 回 くり返す {
+                char_idx = 0
+                char_idx が ext の大きさ より小さい {
+                    char = ext[char_idx]
+                    
+                    もし char が "a" ならば {
+                        sm_count を増やす
+                    }
+                    
+                    char_idx を増やす
+                }
+            }
+            
+            strength = 差(cap_count, sm_count)
+            
+            もし max_strength が 値なし ならば {
+                max_strength = strength
+                strongest_ext = ext
+            } そうでなければ {
+                もし strength が max_strength より大きい ならば {
+                    max_strength = strength
+                    strongest_ext = ext
+                }
+            }
+            
+            idx を増やす
+        }
+    }
+    
+    result = class_name
+    result に "." を追加する
+    result に strongest_ext を追加する
+    
+    result が 答え
+}

@@ -1,0 +1,52 @@
+標準ライブラリを使う
+
+strange_sort_list = 入力 lst に対し {
+   result = []
+   sorted = []
+   
+   # lstをコピーして、ソート用の配列を作る
+   i = 0
+   lstの大きさ回くり返す {
+      sortedにlst[i]を追加する
+      iを増やす
+   }
+   
+   # バブルソートで昇順にソート
+   n = sortedの大きさ
+   n回くり返す {
+      j = 0
+      差(n, 1)回くり返す {
+         もしsorted[j]がsorted[和(j, 1)]より大きいならば {
+            temp = sorted[j]
+            sorted[j] = sorted[差(和(j, 1), 0)]
+            sorted[差(和(j, 1), 0)] = temp
+         }
+         jを増やす
+      }
+   }
+   
+   # 奇妙なソート: 最小値、最大値、最小値、最大値...
+   left = 0
+   right = 差(sortedの大きさ, 1)
+   turn = 0
+   
+   sortedの大きさ回くり返す {
+      もしleftがrightより大きいならば {
+         くり返しを抜ける
+      }
+      
+      もしturnが0ならば {
+         # 最小値を追加
+         resultにsorted[left]を追加する
+         leftを増やす
+         turn = 1
+      } そうでなければ {
+         # 最大値を追加
+         resultにsorted[right]を追加する
+         rightを減らす
+         turn = 0
+      }
+   }
+   
+   resultが答え
+}

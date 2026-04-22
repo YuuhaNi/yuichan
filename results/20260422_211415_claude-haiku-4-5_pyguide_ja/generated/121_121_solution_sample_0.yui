@@ -1,0 +1,16 @@
+標準ライブラリを使う
+
+solution = 入力 lst に対し {
+   sum = 0
+   i = 0
+   lstの大きさ回くり返す {
+      もし i が 2 の倍数ならば {
+         element = lst[i]
+         もし 剰余(element, 2) が 1 ならば {
+            sum = 和(sum, element)
+         }
+      }
+      i を増やす
+   }
+   sum が答え
+}

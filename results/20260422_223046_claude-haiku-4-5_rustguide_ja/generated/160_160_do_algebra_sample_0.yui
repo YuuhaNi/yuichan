@@ -1,0 +1,136 @@
+標準ライブラリを使う
+
+do_algebra = 入力 operator, operand に対し {
+   # 式を文字列として構築する
+   expr = 文字列化(operand[0])
+   i = 0
+   operandの大きさ回くり返す {
+      もし i が operandの大きさより小さいならば {
+         もし i が 0 ならば {
+            くり返しを抜ける
+         }
+         op = operator[差(i, 1)]
+         expr = "{expr} {op} {operand[i]}"
+      }
+      i を増やす
+   }
+   
+   # 式を評価する（演算子の優先度を考慮）
+   # 指数化 ** を先に処理
+   expr = 指数処理(expr, operator, operand)
+   # 乗算と除算を処理
+   expr = 乗除処理(expr, operator, operand)
+   # 加算と減算を処理
+   expr = 加減処理(expr, operator, operand)
+   
+   expr が答え
+}
+
+指数処理 = 入力 expr, operator, operand に対し {
+   i = 0
+   operatorの大きさ回くり返す {
+      もし i が operatorの大きさより小さいならば {
+         もし operator[i] が "**" ならば {
+            result = 累乗(operand[i], operand[差(i, 1)])
+            operand[i] = result
+            # operatorとoperandを更新
+         }
+      }
+      i を増やす
+   }
+   expr が答え
+}
+
+乗除処理 = 入力 expr, operator, operand に対し {
+   i = 0
+   operatorの大きさ回くり返す {
+      もし i が operatorの大きさより小さいならば {
+         op = operator[i]
+         もし op が "*" ならば {
+            result = 積(operand[i], operand[差(i, 1)])
+            operand[i] = result
+         }
+         そうでなければ {
+            もし op が "//" ならば {
+               result = 商(operand[i], operand[差(i, 1)])
+               operand[i] = result
+            }
+         }
+      }
+      i を増やす
+   }
+   expr が答え
+}
+
+加減処理 = 入力 expr, operator, operand に対し {
+   result = operand[0]
+   i = 0
+   operatorの大きさ回くり返す {
+      もし i が operatorの大きさより小さいならば {
+         op = operator[i]
+         もし op が "+" ならば {
+            result = 和(result, operand[差(i, 1)])
+         }
+         そうでなければ {
+            もし op が "-" ならば {
+               result = 差(result, operand[差(i, 1)])
+            }
+         }
+      }
+      i を増やす
+   }
+   result が答え
+}
+標準ライブラリを使う
+
+do_algebra = 入力 operator, operand に対し {
+   # operandのコピーを作成
+   nums = operand
+   ops = operator
+   
+   # ** を処理
+   i = 0
+   opsの大きさ回くり返す {
+      もし i が opsの大きさより小さいならば {
+         もし ops[i] が "**" ならば {
+            nums[i] = 累乗(nums[i], nums[差(i, 1)])
+         }
+      }
+      i を増やす
+   }
+   
+   # * と // を処理
+   i = 0
+   opsの大きさ回くり返す {
+      もし i が opsの大きさより小さいならば {
+         もし ops[i] が "*" ならば {
+            nums[i] = 積(nums[i], nums[差(i, 1)])
+         }
+         そうでなければ {
+            もし ops[i] が "//" ならば {
+               nums[i] = 商(nums[i], nums[差(i, 1)])
+            }
+         }
+      }
+      i を増やす
+   }
+   
+   # + と - を処理
+   result = nums[0]
+   i = 0
+   opsの大きさ回くり返す {
+      もし i が opsの大きさより小さいならば {
+         もし ops[i] が "+" ならば {
+            result = 和(result, nums[差(i, 1)])
+         }
+         そうでなければ {
+            もし ops[i] が "-" ならば {
+               result = 差(result, nums[差(i, 1)])
+            }
+         }
+      }
+      i を増やす
+   }
+   
+   result が答え
+}

@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+change_base = 入力 x, base に対し {
+    もし x == 0 なら {
+        返す "0"
+    }
+    
+    result = ""
+    
+    繰り返す x > 0 の間 {
+        remainder = 剰余(x, base)
+        result = 文字列化(remainder) + result
+        x = 商(x, base)
+    }
+    
+    返す result
+}

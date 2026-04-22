@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+remove_duplicates=入力numbersに対し{
+   result=[]
+   n=numbersの大きさ
+   i=0
+   n回くり返す{
+      x=numbers[i]
+      count=0
+      # x が numbers 全体に何回出現するかを数える
+      j=0
+      n回くり返す{
+         もしnumbers[j]がxならば{
+            countを増やす
+         }
+         jを増やす
+      }
+      # count が 1 (1 回だけ出現) なら result に追加
+      もしcountが1ならば{
+         resultにxを追加する
+      }
+      iを増やす
+   }
+   resultが答え
+}
+
+# テスト: 複数回出現する要素を削除

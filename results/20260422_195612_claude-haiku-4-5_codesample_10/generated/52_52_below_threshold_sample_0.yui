@@ -1,0 +1,15 @@
+標準ライブラリを使う
+
+below_threshold = 入力 l, t に対し {
+   result = 真
+   n = lの大きさ
+   i = 0
+   n回くり返す {
+      もし l[i] が t より大きいならば {
+         result = 偽
+         くり返しを抜ける
+      }
+      i を増やす
+   }
+   result が答え
+}

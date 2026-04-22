@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+max_fill = 入力 grid, capacity に対し {
+   drops = 0
+   i = 0
+
+   gridの大きさ回くり返す{
+      row = grid[i]
+      water = 0
+      j = 0
+
+      rowの大きさ回くり返す{
+         もしrow[j]が1ならば{
+            waterを増やす
+         }
+         jを増やす
+      }
+
+      もしwaterが0以外ならば{
+         drops = 和(drops, 商(差(和(water, capacity), 1), capacity))
+      }
+
+      iを増やす
+   }
+
+   dropsが答え
+}

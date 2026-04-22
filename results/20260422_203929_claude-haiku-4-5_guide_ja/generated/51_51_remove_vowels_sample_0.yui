@@ -1,0 +1,32 @@
+標準ライブラリを使う
+
+remove_vowels = 入力 text に対し {
+   result = ""
+   i = 0
+   textの大きさ回くり返す{
+      char = text[i]
+      もしcharが"a"以外ならば{
+         もしcharが"e"以外ならば{
+            もしcharが"i"以外ならば{
+               もしcharが"o"以外ならば{
+                  もしcharが"u"以外ならば{
+                     もしcharが"A"以外ならば{
+                        もしcharが"E"以外ならば{
+                           もしcharが"I"以外ならば{
+                              もしcharが"O"以外ならば{
+                                 もしcharが"U"以外ならば{
+                                    resultにcharを追加する
+                                 }
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+      iを増やす
+   }
+   resultが答え
+}

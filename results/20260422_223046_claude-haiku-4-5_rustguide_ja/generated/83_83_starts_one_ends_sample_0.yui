@@ -1,0 +1,40 @@
+標準ライブラリを使う
+
+starts_one_ends = 入力 n に対し {
+   # n桁の最小値（1で始まる）と最大値を計算
+   min_val = 1
+   n回くり返す {
+      minを増やす
+      min_val = 積(min_val, 10)
+   }
+   min_val = 商(min_val, 10)
+   
+   max_val = 差(min_val, 1)
+   max_val = 積(max_val, 10)
+   
+   count = 0
+   i = min_val
+   
+   # min_valからmax_valまでループ
+   max_val回くり返す {
+      # iが1で始まるか1で終わるかチェック
+      s = 文字列化(i)
+      first = s[0]
+      last = s[差(sの大きさ, 1)]
+      
+      もしfirstが49ならば {
+         countを増やす
+      } そうでなければ {
+         もしlastが49ならば {
+            countを増やす
+         }
+      }
+      
+      iを増やす
+      もしiがmax_valより大きいならば {
+         くり返しを抜ける
+      }
+   }
+   
+   countが答え
+}

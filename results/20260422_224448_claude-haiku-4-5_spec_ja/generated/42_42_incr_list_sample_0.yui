@@ -1,0 +1,10 @@
+標準ライブラリを使う
+
+incr_list = 入力 l に対し {
+   result = []
+   lの大きさ回くり返す {
+      i = result の大きさ
+      resultに和(l[i], 1)を追加する
+   }
+   result が答え
+}

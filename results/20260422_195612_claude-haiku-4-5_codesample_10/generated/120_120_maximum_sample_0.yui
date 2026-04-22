@@ -1,0 +1,36 @@
+標準ライブラリを使う
+
+maximum = 入力 arr, k に対し {
+   # arr をソートする（昇順）
+   sorted_arr = arr
+   n = sorted_arrの大きさ
+   
+   # バブルソート
+   i = 0
+   n回くり返す {
+      j = 0
+      差(n, 1)回くり返す {
+         もし sorted_arr[j] が sorted_arr[差(j, 1)]より大きいならば {
+            # スワップ
+            temp = sorted_arr[j]
+            sorted_arr[j] = sorted_arr[差(j, 1)]
+            sorted_arr[差(j, 1)] = temp
+         }
+         j を増やす
+      }
+      i を増やす
+   }
+   
+   # 大きい方から k 個を取り出す
+   result = []
+   start = 差(n, k)
+   i = start
+   n回くり返す {
+      もし i が n より小さいならば {
+         result に sorted_arr[i] を追加する
+         i を増やす
+      }
+   }
+   
+   result が答え
+}

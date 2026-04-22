@@ -1,0 +1,51 @@
+標準ライブラリを使う
+
+select_words = 入力 s, n に対し {
+   words=[]
+   current=""
+   i=0
+   sの大きさ回くり返す{
+      c=s[i]
+      もしcが32ならば{
+         wordsにcurrentを追加する
+         current=""
+      }
+      そうでなければ{
+         currentにcを追加する
+      }
+      iを増やす
+   }
+   wordsにcurrentを追加する
+
+   result=[]
+   wi=0
+   wordsの大きさ回くり返す{
+      w=words[wi]
+      consonants=0
+      j=0
+      wの大きさ回くり返す{
+         ch=w[j]
+         is_vowel=0
+         もしchが97ならば{ is_vowel=1 }   # a
+         もしchが101ならば{ is_vowel=1 }  # e
+         もしchが105ならば{ is_vowel=1 }  # i
+         もしchが111ならば{ is_vowel=1 }  # o
+         もしchが117ならば{ is_vowel=1 }  # u
+         もしchが65ならば{ is_vowel=1 }   # A
+         もしchが69ならば{ is_vowel=1 }   # E
+         もしchが73ならば{ is_vowel=1 }   # I
+         もしchが79ならば{ is_vowel=1 }   # O
+         もしchが85ならば{ is_vowel=1 }   # U
+
+         もしis_vowelが0ならば{
+            consonantsを増やす
+         }
+         jを増やす
+      }
+      もしconsonantsがnならば{
+         resultにwを追加する
+      }
+      wiを増やす
+   }
+   resultが答え
+}

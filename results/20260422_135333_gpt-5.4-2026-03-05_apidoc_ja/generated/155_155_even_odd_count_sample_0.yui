@@ -1,0 +1,23 @@
+標準ライブラリを使う
+
+even_odd_count = 入力 num に対し {
+    s = 文字列化(絶対値(num))
+    even = 0
+    odd = 0
+    i = 0
+
+    もし i < 長さ(s) の間 {
+        ch = s[i]
+        digit = 整数化(ch)
+
+        もし 剰余(digit, 2) == 0 なら {
+            even = 和(even, 1)
+        } 違えば {
+            odd = 和(odd, 1)
+        }
+
+        i = 和(i, 1)
+    }
+
+    [even, odd]
+}

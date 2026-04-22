@@ -1,0 +1,41 @@
+標準ライブラリを使う
+
+next_smallest = 入力 lst に対し {
+   n=lstの大きさ
+   もしnが2より小さいならば{
+      Noneが答え
+   }
+
+   smallest=None
+   second=None
+   i=0
+   n回くり返す{
+      x=lst[i]
+
+      もしsmallestがNoneならば{
+         smallest=x
+      }
+      そうでなければ{
+         もしxがsmallestより小さいならば{
+            second=smallest
+            smallest=x
+         }
+         そうでなければ{
+            もしxがsmallest以外ならば{
+               もしsecondがNoneならば{
+                  second=x
+               }
+               そうでなければ{
+                  もしxがsecondより小さいならば{
+                     second=x
+                  }
+               }
+            }
+         }
+      }
+
+      iを増やす
+   }
+
+   secondが答え
+}

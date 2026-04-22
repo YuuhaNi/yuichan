@@ -1,0 +1,8 @@
+標準ライブラリを使う
+
+fruit_distribution = 入力 s, n に対し {
+   parts=sを" "で分割
+   apples=整数化(parts[0])
+   oranges=整数化(parts[3])
+   差(差(n,apples),oranges)が答え
+}

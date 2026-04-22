@@ -1,0 +1,21 @@
+標準ライブラリを使う
+
+even_odd_count = 入力 num に対し {
+    n = 絶対値(num)
+    digits = 文字列化(n)
+    even = 0
+    odd = 0
+    i = 0
+    digitsの大きさ回くり返す {
+        ch = digits[i]
+        d = 差(ch, 48)
+        もし剰余(d, 2)が0ならば {
+            evenを増やす
+        }
+        そうでなければ {
+            oddを増やす
+        }
+        iを増やす
+    }
+    [even, odd] が答え
+}

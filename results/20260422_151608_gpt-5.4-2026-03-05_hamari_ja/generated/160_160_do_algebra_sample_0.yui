@@ -1,0 +1,93 @@
+標準ライブラリを使う
+
+do_algebra = 入力 operator, operand に対し {
+   values=operandを反転したもの
+   ops=operatorを反転したもの
+
+   5回くり返す{
+      target=""
+      idx=0
+      n=opsの大きさ
+
+      n回くり返す{
+         op=ops[idx]
+         もしtargetが""ならば{
+            もしopが"**"ならば{
+               target="**"
+            }
+            そうでなければ{
+               もしopが"*"ならば{
+                  target="*"
+               }
+               そうでなければ{
+                  もしopが"//"ならば{
+                     target="//"
+                  }
+                  そうでなければ{
+                     もしopが"+"ならば{
+                        target="+"
+                     }
+                     そうでなければ{
+                        もしopが"-"ならば{
+                           target="-"
+                        }
+                     }
+                  }
+               }
+            }
+         }
+         idxを増やす
+      }
+
+      もしtargetが""ならば{
+      }
+      そうでなければ{
+         newValues=[]
+         newOps=[]
+         acc=values[0]
+         i=0
+         m=opsの大きさ
+
+         m回くり返す{
+            op=ops[i]
+            right=values[和(i,1)]
+
+            もしopがtargetならば{
+               もしtargetが"**"ならば{
+                  acc=累乗(acc,right)
+               }
+               そうでなければ{
+                  もしtargetが"*"ならば{
+                     acc=積(acc,right)
+                  }
+                  そうでなければ{
+                     もしtargetが"//"ならば{
+                        acc=商(acc,right)
+                     }
+                     そうでなければ{
+                        もしtargetが"+"ならば{
+                           acc=和(acc,right)
+                        }
+                        そうでなければ{
+                           acc=差(acc,right)
+                        }
+                     }
+                  }
+               }
+            }
+            そうでなければ{
+               newValuesにaccを追加する
+               newOpsにopを追加する
+               acc=right
+            }
+            iを増やす
+         }
+
+         newValuesにaccを追加する
+         values=newValues
+         ops=newOps
+      }
+   }
+
+   values[0]が答え
+}

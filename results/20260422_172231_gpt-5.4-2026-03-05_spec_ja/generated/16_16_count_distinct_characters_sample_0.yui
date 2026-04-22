@@ -1,0 +1,34 @@
+標準ライブラリを使う
+
+count_distinct_characters = 入力 string に対し {
+  seen = []
+  i = 0
+  string = 文字列化(string)
+
+  stringの大きさ回くり返す {
+    c = string[i]
+
+    もしcが65以上ならば {
+      もしcが90以下ならば {
+        c = 和(c, 32)
+      }
+    }
+
+    found = 偽
+    j = 0
+    seenの大きさ回くり返す {
+      もしseen[j]がcならば {
+        found = 真
+      }
+      jを増やす
+    }
+
+    もしfoundが偽ならば {
+      seenにcを追加する
+    }
+
+    iを増やす
+  }
+
+  seenの大きさが答え
+}

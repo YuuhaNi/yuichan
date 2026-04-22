@@ -1,0 +1,49 @@
+標準ライブラリを使う
+
+iscube = 入力 a に対し {
+   # a が 0 の場合
+   もし a が 0 ならば {
+      真が答え
+   }
+
+   # a の絶対値の立方根を求める
+   abs_a = 絶対値(a)
+   cube_root = 整数化(平方根(平方根(積(abs_a, 積(abs_a, abs_a)))))
+   
+   # cube_root の 3 乗が abs_a と等しいか確認
+   # 負の数の場合も考慮して、-cube_root も試す
+   result = 偽
+   
+   もし 積(積(cube_root, cube_root), cube_root) が abs_a ならば {
+      result = 真
+   }
+   そうでなければ {
+      neg_cube_root = 差(0, cube_root)
+      もし 積(積(neg_cube_root, neg_cube_root), neg_cube_root) が a ならば {
+         result = 真
+      }
+   }
+   
+   result が答え
+}
+標準ライブラリを使う
+
+iscube = 入力 a に対し {
+   # a が負の場合、その立方根も負になることを考慮
+   もし a が 0 より小さい ならば {
+      abs_a = 絶対値(a)
+      cube_root = 整数化(平方根(平方根(積(abs_a, 積(abs_a, abs_a)))))
+      neg_root = 差(0, cube_root)
+      もし 積(積(neg_root, neg_root), neg_root) が a ならば {
+         真が答え
+      }
+      偽が答え
+   }
+   そうでなければ {
+      cube_root = 整数化(平方根(平方根(積(a, 積(a, a)))))
+      もし 積(積(cube_root, cube_root), cube_root) が a ならば {
+         真が答え
+      }
+      偽が答え
+   }
+}

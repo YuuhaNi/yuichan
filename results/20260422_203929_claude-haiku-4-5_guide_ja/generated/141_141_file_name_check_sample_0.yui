@@ -1,0 +1,93 @@
+標準ライブラリを使う
+
+file_name_check = 入力 file_name に対し {
+   # ドットの個数をカウント
+   dot_count = 0
+   dot_index = 0
+   i = 0
+   file_name の大きさ 回くり返す {
+      もし file_name[i] が "."[0] ならば {
+         dot_count を増やす
+         dot_index = i
+      }
+      i を増やす
+   }
+   
+   # ドットがちょうど1つでなければ No
+   もし dot_count が 1 以外 ならば {
+      "No" が答え
+   }
+   
+   # ドットの前の部分を取得
+   name_part = 0
+   i = 0
+   dot_index 回くり返す {
+      name_part に file_name[i] を追加する
+      i を増やす
+   }
+   
+   # ドットの後の部分を取得
+   ext_part = 0
+   i = 和(dot_index, 1)
+   file_name の大きさ 回くり返す {
+      もし i が file_name の大きさ 以上 ならば {
+         くり返しを抜ける
+      }
+      ext_part に file_name[i] を追加する
+      i を増やす
+   }
+   
+   # name_part が空でないか確認
+   もし name_part の大きさ が 0 ならば {
+      "No" が答え
+   }
+   
+   # name_part の最初の文字が英文字か確認
+   first_char = name_part[0]
+   is_alpha = 偽
+   もし 和(first_char, 差(97)) が 26 より小さい ならば {
+      is_alpha = 真
+   }
+   もし 和(first_char, 差(65)) が 26 より小さい ならば {
+      is_alpha = 真
+   }
+   もし is_alpha が 偽 ならば {
+      "No" が答え
+   }
+   
+   # name_part に3桁以上連続した数字がないか確認
+   consecutive_digits = 0
+   i = 0
+   name_part の大きさ 回くり返す {
+      char = name_part[i]
+      もし 和(char, 差(48)) が 10 より小さい ならば {
+         consecutive_digits を増やす
+         もし consecutive_digits が 3 以上 ならば {
+            "No" が答え
+         }
+      }
+      そうでなければ {
+         consecutive_digits = 0
+      }
+      i を増やす
+   }
+   
+   # ext_part が有効な拡張子か確認
+   ext_str = 文字列化(ext_part)
+   valid_ext = 偽
+   もし ext_str が "txt" ならば {
+      valid_ext = 真
+   }
+   もし ext_str が "exe" ならば {
+      valid_ext = 真
+   }
+   もし ext_str が "dll" ならば {
+      valid_ext = 真
+   }
+   
+   もし valid_ext が 偽 ならば {
+      "No" が答え
+   }
+   
+   "Yes" が答え
+}

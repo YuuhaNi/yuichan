@@ -1,0 +1,54 @@
+標準ライブラリを使う
+
+get_odd_collatz = 入力 n に対し {
+   result = []
+   current = n
+
+   もし剰余(current, 2)が1ならば{
+      resultにcurrentを追加する
+   }
+
+   n回くり返す{
+      もしcurrentが1ならば{
+         くり返しを抜ける
+      }
+
+      もし剰余(current, 2)が0ならば{
+         current = 商(current, 2)
+      }そうでなければ{
+         current = 和(積(current, 3), 1)
+      }
+
+      もし剰余(current, 2)が1ならば{
+         already = 0
+         i = 0
+         resultの大きさ回くり返す{
+            もしresult[i]がcurrentならば{
+               already = 1
+               くり返しを抜ける
+            }
+            iを増やす
+         }
+         もしalreadyが0ならば{
+            resultにcurrentを追加する
+         }
+      }
+   }
+
+   i = 0
+   resultの大きさ回くり返す{
+      j = 0
+      limit = 差(resultの大きさ, 1)
+      limit回くり返す{
+         もしresult[j]がresult[和(j, 1)]より大きいならば{
+            temp = result[j]
+            result[j] = result[和(j, 1)]
+            result[和(j, 1)] = temp
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+
+   resultが答え
+}

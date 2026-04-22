@@ -1,0 +1,26 @@
+標準ライブラリを使う
+
+mean_absolute_deviation = 入力 numbers に対し {
+    total = 0.0
+    count = numbersの大きさ
+    count回くり返す {
+        i = totalの大きさ  # ダミーでは使えないので後で上書き
+    }
+
+    i = 0
+    count回くり返す {
+        total = 和(total, numbers[i])
+        iを増やす
+    }
+
+    mean = 商(total, count)
+
+    deviation_total = 0.0
+    i = 0
+    count回くり返す {
+        deviation_total = 和(deviation_total, 絶対値(差(numbers[i], mean)))
+        iを増やす
+    }
+
+    商(deviation_total, count) が答え
+}

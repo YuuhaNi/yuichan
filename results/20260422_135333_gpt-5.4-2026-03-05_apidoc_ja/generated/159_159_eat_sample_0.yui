@@ -1,0 +1,6 @@
+標準ライブラリを使う
+
+eat = 入力 number, need, remaining に対し {
+  食べる = 最小値(need, remaining)
+  [和(number, 食べる), 差(remaining, 食べる)]
+}

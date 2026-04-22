@@ -1,0 +1,75 @@
+標準ライブラリを使う
+
+get_row = 入力 lst, x に対し {
+   result = []
+   row = 0
+   lstの大きさ回くり返す {
+      current_row = lst[row]
+      col = 0
+      current_rowの大きさ回くり返す {
+         element = current_row[col]
+         もしelementがxならば {
+            result に [row, col] を追加する
+         }
+         colを増やす
+      }
+      rowを増やす
+   }
+   
+   # 結果を行の昇順、同じ行内では列の降順でソート
+   # 行でソート（昇順）
+   i = 0
+   resultの大きさ回くり返す {
+      j = 和(i, 1)
+      resultの大きさ回くり返す {
+         skip = 0
+         もしjがresultの大きさ以上ならば {
+            skip = 1
+         }
+         もしskipが0ならば {
+            pair_i = result[i]
+            pair_j = result[j]
+            row_i = pair_i[0]
+            row_j = pair_j[0]
+            もしrow_jがrow_iより小さいならば {
+               temp = result[i]
+               result[i] = result[j]
+               result[j] = temp
+            }
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+   
+   # 同じ行内で列の降順でソート
+   i = 0
+   resultの大きさ回くり返す {
+      j = 和(i, 1)
+      resultの大きさ回くり返す {
+         skip = 0
+         もしjがresultの大きさ以上ならば {
+            skip = 1
+         }
+         もしskipが0ならば {
+            pair_i = result[i]
+            pair_j = result[j]
+            row_i = pair_i[0]
+            row_j = pair_j[0]
+            col_i = pair_i[1]
+            col_j = pair_j[1]
+            もしrow_iがrow_jならば {
+               もしcol_jがcol_iより大きいならば {
+                  temp = result[i]
+                  result[i] = result[j]
+                  result[j] = temp
+               }
+            }
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+   
+   result が答え
+}

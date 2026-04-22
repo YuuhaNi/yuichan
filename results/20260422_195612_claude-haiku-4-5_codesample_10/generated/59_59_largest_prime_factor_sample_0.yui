@@ -1,0 +1,33 @@
+標準ライブラリを使う
+
+largest_prime_factor = 入力 n に対し {
+   largest = 1
+   divisor = 2
+   
+   # divisor * divisor <= n の間、割り切れるかチェック
+   {
+      もし積(divisor, divisor)がnより大きいならば {
+         くり返しを抜ける
+      }
+      
+      # n が divisor で割り切れる間、割り続ける
+      {
+         もし剰余(n, divisor)が0ならば {
+            largest = divisor
+            n = 商(n, divisor)
+         }
+         そうでなければ {
+            くり返しを抜ける
+         }
+      }
+      
+      divisor を増やす
+   }
+   
+   # ループ終了後、n > 1 なら n 自体が素因数
+   もし n が 1 より大きいならば {
+      largest = n
+   }
+   
+   largest が答え
+}

@@ -1,0 +1,12 @@
+標準ライブラリを使う
+
+make_a_pile = 入力 n に対し {
+   result = []
+   current = n
+   i = 0
+   n回くり返す{
+      resultにcurrentを追加する
+      current = 和(current, 2)
+   }
+   resultが答え
+}

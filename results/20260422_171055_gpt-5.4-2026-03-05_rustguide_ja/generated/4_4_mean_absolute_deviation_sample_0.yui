@@ -1,0 +1,21 @@
+標準ライブラリを使う
+
+mean_absolute_deviation = 入力 numbers に対し {
+   sum = 0.0
+   i = 0
+   numbersの大きさ回くり返す{
+      sum = 和(sum, numbers[i])
+      iを増やす
+   }
+
+   mean = 商(sum, 小数化(numbersの大きさ))
+
+   total = 0.0
+   i = 0
+   numbersの大きさ回くり返す{
+      total = 和(total, 絶対値(差(numbers[i], mean)))
+      iを増やす
+   }
+
+   商(total, 小数化(numbersの大きさ))が答え
+}

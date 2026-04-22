@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+has_close_elements = 入力 numbers, threshold に対し {
+  i = 0
+  もし i < 配列長(numbers) なら {
+    i = 0
+    反復 i < 配列長(numbers) の間 {
+      j = i + 1
+      反復 j < 配列長(numbers) の間 {
+        もし 絶対値(差(numbers[i], numbers[j])) < threshold なら {
+          戻る 真
+        }
+        j = j + 1
+      }
+      i = i + 1
+    }
+  }
+  戻る 偽
+}

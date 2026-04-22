@@ -1,0 +1,45 @@
+標準ライブラリを使う
+
+specialFilter = 入力 nums に対し {
+   count = 0
+   numsの大きさ回くり返す {
+      i = 反復変数
+      num = nums[i]
+      
+      もし num が 10 より大きい ならば {
+         # 最初の桁を取得（絶対値を文字列化して最初の文字）
+         absNum = num
+         もし num が 0 より小さい ならば {
+            absNum = 差(0, num)
+         }
+         
+         # 最後の桁：剰余で取得
+         lastDigit = 剰余(absNum, 10)
+         
+         # 最初の桁：10で割り続けて取得
+         firstDigit = absNum
+         loopFlag = 1
+         もし loopFlag が 1 ならば {
+            もし firstDigit が 10 以上 ならば {
+               firstDigit = 商(firstDigit, 10)
+               loopFlag = 1
+            }
+            そうでなければ {
+               loopFlag = 0
+            }
+         }
+         
+         # 最初と最後の桁が両方奇数か判定
+         firstIsOdd = 剰余(firstDigit, 2)
+         lastIsOdd = 剰余(lastDigit, 2)
+         
+         もし firstIsOdd が 0 以外 ならば {
+            もし lastIsOdd が 0 以外 ならば {
+               count = 和(count, 1)
+            }
+         }
+      }
+   }
+   
+   count が答え
+}

@@ -1,0 +1,30 @@
+標準ライブラリを使う
+
+is_nested = 入力 string に対し {
+   depth = 0
+   max_depth = 0
+   i = 0
+   
+   string の大きさ 回くり返す {
+      char = string[i]
+      
+      もし char が 91 ならば {
+         depth を増やす
+         もし depth が max_depth より大きい ならば {
+            max_depth = depth
+         }
+      }
+      そうでなければ {
+         depth を減らす
+      }
+      
+      i を増やす
+   }
+   
+   max_depth が 2 以上 ならば {
+      真 が答え
+   }
+   そうでなければ {
+      偽 が答え
+   }
+}

@@ -1,0 +1,34 @@
+標準ライブラリを使う
+
+count_up_to = 入力 n に対し {
+   result = []
+   candidate = 2
+
+   n回くり返す{
+      もしcandidateがn以上ならば{
+         くり返しを抜ける
+      }
+
+      is_prime = 真
+      divisor = 2
+
+      candidate回くり返す{
+         もしdivisorがcandidate以上ならば{
+            くり返しを抜ける
+         }
+         もし剰余(candidate, divisor)が0ならば{
+            is_prime = 偽
+            くり返しを抜ける
+         }
+         divisorを増やす
+      }
+
+      もしis_primeが真ならば{
+         resultにcandidateを追加する
+      }
+
+      candidateを増やす
+   }
+
+   resultが答え
+}

@@ -1,0 +1,23 @@
+標準ライブラリを使う
+
+filter_by_prefix = 入力 strings, prefix に対し {
+   result = []
+   n = stringsの大きさ
+   i = 0
+   n回くり返す {
+      s = strings[i]
+      # 文字列 s が prefix で始まるかを調べる
+      # 部分文字列を取り出して比較する方法を使う
+      prefix_len = prefixの大きさ
+      s_len = sの大きさ
+      もし s_len が prefix_len 以上ならば {
+         # s の最初の prefix_len 文字を取り出す
+         head = s[0, prefix_len]
+         もし head が prefix と同じならば {
+            resultに s を追加する
+         }
+      }
+      i を増やす
+   }
+   result が答え
+}

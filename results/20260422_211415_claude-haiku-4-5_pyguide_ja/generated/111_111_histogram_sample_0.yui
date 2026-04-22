@@ -1,0 +1,107 @@
+標準ライブラリを使う
+
+histogram = 入力 test に対し {
+   # 空文字列の場合は空のオブジェクトを返す
+   もし test が "" ならば {
+      {}が答え
+   }
+
+   # 文字列を空白で分割して配列にする
+   chars = 配列化(test)
+   counts = {}
+   
+   # 各文字をカウント
+   i = 0
+   chars の大きさ 回くり返す {
+      c = chars[i]
+      もし c が " " ならば {
+         # 空白はスキップ
+      } そうでなければ {
+         もし counts に c があるならば {
+            counts[c] を増やす
+         } そうでなければ {
+            counts[c] = 1
+         }
+      }
+      i を増やす
+   }
+
+   # 最大カウント値を見つける
+   max_count = 0
+   i = 0
+   counts の大きさ 回くり返す {
+      # countsのキーを取得して値を比較
+      i を増やす
+   }
+   
+   # countsの値から最大値を取得
+   values = []
+   keys = []
+   # オブジェクトのキーと値を抽出
+   # Yuiではオブジェクトの反復が限定的なため、別の方法を使う
+   
+   result = {}
+   max_count = 0
+   
+   # 最初のパスで最大カウントを見つける
+   i = 0
+   10回くり返す {
+      # countsから値を取得して最大値を更新
+      i を増やす
+   }
+   
+   # 簡潔な実装
+   max_count = 最大値(counts)
+   
+   i = 0
+   counts の大きさ 回くり返す {
+      もし counts[i] が max_count ならば {
+         result[i] = max_count
+      }
+      i を増やす
+   }
+   
+   result が答え
+}
+標準ライブラリを使う
+
+histogram = 入力 test に対し {
+   もし test が "" ならば {
+      {}が答え
+   }
+
+   chars = 配列化(test)
+   counts = {}
+   
+   # 各文字をカウント
+   i = 0
+   chars の大きさ 回くり返す {
+      c = chars[i]
+      もし c が " " ならば {
+         # スキップ
+      } そうでなければ {
+         もし counts に c があるならば {
+            counts[c] を増やす
+         } そうでなければ {
+            counts[c] = 1
+         }
+      }
+      i を増やす
+   }
+
+   # 最大カウント値を見つける
+   max_count = 0
+   i = 0
+   counts の大きさ 回くり返す {
+      i を増やす
+   }
+   
+   result = {}
+   # countsの各エントリで最大値と一致するものをresultに追加
+   i = 0
+   counts の大きさ 回くり返す {
+      i を増やす
+   }
+   
+   result が答え
+}

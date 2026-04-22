@@ -1,0 +1,46 @@
+標準ライブラリを使う
+
+get_closest_vowel = 入力 word に対し {
+   vowels = "aeiouAEIOU"
+   n = wordの大きさ
+   
+   もしnが2以下ならば{
+      ""が答え
+   }
+   
+   i = 差(n, 2)
+   closest_vowel = ""
+   closest_distance = 値なし
+   
+   i回くり返す{
+      iを減らす
+      もしiが0ならば{
+         くり返しを抜ける
+      }
+      
+      char = word[i]
+      もしcharがvowelsのいずれかならば{
+         left_char = word[差(i, 1)]
+         right_char = word[和(i, 1)]
+         
+         left_is_consonant = 0
+         right_is_consonant = 0
+         
+         もしleft_charがvowelsのいずれでもないならば{
+            left_is_consonant = 1
+         }
+         もしright_charがvowelsのいずれでもないならば{
+            right_is_consonant = 1
+         }
+         
+         もしleft_is_consonantが1ならば{
+            もしright_is_consonantが1ならば{
+               closest_vowel = char
+               くり返しを抜ける
+            }
+         }
+      }
+   }
+   
+   closest_vowelが答え
+}

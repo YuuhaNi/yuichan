@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+special_factorial = 入力 n に対し {
+  result = 1
+  i = n
+  n 回 くり返す {
+    もし i が 0 より大きい ならば {
+      factorial = 1
+      j = 1
+      i 回 くり返す {
+        factorial = 積(factorial, j)
+        j を増やす
+      }
+      result = 積(result, factorial)
+      i を減らす
+    }
+  }
+  result が 答え
+}

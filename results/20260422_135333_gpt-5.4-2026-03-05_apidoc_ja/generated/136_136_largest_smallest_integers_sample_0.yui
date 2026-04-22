@@ -1,0 +1,20 @@
+標準ライブラリを使う
+
+largest_smallest_integers = 入力 lst に対し {
+    largest_negative = 値なし
+    smallest_positive = 値なし
+
+    それぞれ x を lst について {
+        もし x < 0 なら {
+            もし largest_negative == 値なし または x > largest_negative なら {
+                largest_negative = x
+            }
+        } 違えば もし x > 0 なら {
+            もし smallest_positive == 値なし または x < smallest_positive なら {
+                smallest_positive = x
+            }
+        }
+    }
+
+    (largest_negative, smallest_positive)
+}

@@ -1,0 +1,61 @@
+標準ライブラリを使う
+
+specialFilter = 入力 nums に対し {
+   count = 0
+   i = 0
+   numsの大きさ回くり返す {
+      num = nums[i]
+      もしnumが10より大きいならば {
+         first_digit = 剰余(絶対値(num), 10)
+         last_digit = 商(絶対値(num), 10)
+         last_digit = 剰余(last_digit, 10)
+         もしfirst_digitが1ならば {
+            もしlast_digitが1ならば { countを増やす }
+         }
+         そうでなければ {
+            もしfirst_digitが3ならば {
+               もしlast_digitが1ならば { countを増やす }
+            }
+            そうでなければ {
+               もしfirst_digitが5ならば {
+                  もしlast_digitが1ならば { countを増やす }
+               }
+               そうでなければ {
+                  もしfirst_digitが7ならば {
+                     もしlast_digitが1ならば { countを増やす }
+                  }
+                  そうでなければ {
+                     もしfirst_digitが9ならば {
+                        もしlast_digitが1ならば { countを増やす }
+                     }
+                  }
+               }
+            }
+         }
+      }
+      iを増やす
+   }
+   countが答え
+}
+標準ライブラリを使う
+
+specialFilter = 入力 nums に対し {
+   count = 0
+   i = 0
+   numsの大きさ回くり返す {
+      num = nums[i]
+      もしnumが10より大きいならば {
+         abs_num = 絶対値(num)
+         first_digit = 剰余(abs_num, 10)
+         last_digit = 剰余(商(abs_num, 10), 10)
+         odd_digits = [1, 3, 5, 7, 9]
+         もしfirst_digitがodd_digitsのいずれかならば {
+            もしlast_digitがodd_digitsのいずれかならば {
+               countを増やす
+            }
+         }
+      }
+      iを増やす
+   }
+   countが答え
+}

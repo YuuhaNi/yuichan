@@ -1,0 +1,8 @@
+標準ライブラリを使う
+
+eat = 入力 number, need, remaining に対し {
+    食べた量 = 最小値(need, remaining)
+    合計 = 和(number, 食べた量)
+    残り = 差(remaining, 食べた量)
+    [合計, 残り]
+}

@@ -1,0 +1,28 @@
+標準ライブラリを使う
+
+fix_spaces = 入力 text に対し {
+    result = ""
+    i = 0
+
+    もし i < 長さ(text) なら {
+        その間 i < 長さ(text) {
+            もし text[i] == " " なら {
+                count = 0
+                その間 i < 長さ(text) かつ text[i] == " " {
+                    count = 和(count, 1)
+                    i = 和(i, 1)
+                }
+                もし count == 1 なら {
+                    result = result + "_"
+                } それ以外なら {
+                    result = result + "-"
+                }
+            } それ以外なら {
+                result = result + text[i]
+                i = 和(i, 1)
+            }
+        }
+    }
+
+    result
+}

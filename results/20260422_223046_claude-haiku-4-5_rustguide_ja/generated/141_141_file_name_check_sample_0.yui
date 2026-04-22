@@ -1,0 +1,117 @@
+標準ライブラリを使う
+
+file_name_check = 入力 file_name に対し {
+   # ドットの個数をチェック
+   dot_count = 0
+   i = 0
+   file_name の大きさ 回くり返す {
+      もし file_name[i] が 46 ならば {
+         dot_count を増やす
+      }
+      i を増やす
+   }
+   
+   # ドットが1つでなければNo
+   もし dot_count が 1 以外 ならば {
+      "No" が答え
+   }
+   
+   # ドットの位置を探す
+   dot_pos = 0
+   i = 0
+   file_name の大きさ 回くり返す {
+      もし file_name[i] が 46 ならば {
+         dot_pos = i
+         くり返しを抜ける
+      }
+      i を増やす
+   }
+   
+   # ドットの前の部分（名前部分）
+   name_part = ""
+   i = 0
+   dot_pos 回くり返す {
+      name_part に file_name[i] を追加する
+      i を増やす
+   }
+   
+   # 名前部分が空でないかチェック
+   もし name_part の大きさ が 0 ならば {
+      "No" が答え
+   }
+   
+   # 名前部分が英文字で始まるかチェック
+   first_char = name_part[0]
+   # 'A' = 65, 'Z' = 90, 'a' = 97, 'z' = 122
+   is_upper = 0
+   is_lower = 0
+   もし first_char が 65 以上 ならば {
+      もし first_char が 90 以下 ならば {
+         is_upper = 1
+      }
+   }
+   もし first_char が 97 以上 ならば {
+      もし first_char が 122 以下 ならば {
+         is_lower = 1
+      }
+   }
+   
+   もし is_upper が 0 ならば {
+      もし is_lower が 0 ならば {
+         "No" が答え
+      }
+   }
+   
+   # 3桁以上の連続した数字をチェック
+   consecutive_digits = 0
+   i = 0
+   name_part の大きさ 回くり返す {
+      char_code = name_part[i]
+      # '0' = 48, '9' = 57
+      もし char_code が 48 以上 ならば {
+         もし char_code が 57 以下 ならば {
+            consecutive_digits を増やす
+            もし consecutive_digits が 3 以上 ならば {
+               "No" が答え
+            }
+         } そうでなければ {
+            consecutive_digits = 0
+         }
+      } そうでなければ {
+         consecutive_digits = 0
+      }
+      i を増やす
+   }
+   
+   # ドットの後の部分（拡張子）
+   ext_part = ""
+   i = 差(dot_pos, 1)
+   i を増やす
+   file_name の大きさ 回くり返す {
+      もし i が file_name の大きさ より小さい ならば {
+         ext_part に file_name[i] を追加する
+         i を増やす
+      } そうでなければ {
+         くり返しを抜ける
+      }
+   }
+   
+   # 拡張子が有効かチェック
+   is_valid_ext = 0
+   もし ext_part が "txt" ならば {
+      is_valid_ext = 1
+   }
+   もし ext_part が "exe" ならば {
+      is_valid_ext = 1
+   }
+   もし ext_part が "dll" ならば {
+      is_valid_ext = 1
+   }
+   
+   もし is_valid_ext が 0 ならば {
+      "No" が答え
+   }
+   
+   # すべての条件を満たした
+   "Yes" が答え
+}

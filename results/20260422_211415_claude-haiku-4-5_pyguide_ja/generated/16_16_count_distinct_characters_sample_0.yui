@@ -1,0 +1,28 @@
+標準ライブラリを使う
+
+count_distinct_characters = 入力 string に対し {
+   distinct = []
+   i = 0
+   stringの大きさ回くり返す{
+      char = string[i]
+      lower_char = 文字列化(char)
+      
+      found = 偽
+      j = 0
+      distinctの大きさ回くり返す{
+         もしdistinct[j]がlower_charならば{
+            found = 真
+            くり返しを抜ける
+         }
+         jを増やす
+      }
+      
+      もしfoundが偽ならば{
+         distinctにlower_charを追加する
+      }
+      
+      iを増やす
+   }
+   
+   distinctの大きさが答え
+}

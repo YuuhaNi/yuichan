@@ -1,0 +1,56 @@
+標準ライブラリを使う
+
+get_row = 入力 lst, x に対し {
+   result = []
+   row = 0
+   lstの大きさ回くり返す{
+      current_row = lst[row]
+      col = 0
+      current_rowの大きさ回くり返す{
+         もしcurrent_row[col]がxならば{
+            coord = {"row": row, "col": col}
+            resultにcoordを追加する
+         }
+         colを増やす
+      }
+      rowを増やす
+   }
+   
+   # ソート: 行の昇順、同じ行内では列の降順
+   i = 0
+   resultの大きさ回くり返す{
+      j = 0
+      差(resultの大きさ, 1)回くり返す{
+         current = result[j]
+         next = result[差(j, 1)]
+         
+         # 行で比較
+         もしcurrent["row"]がnext["row"]より大きいならば{
+            result[j] = next
+            result[差(j, 1)] = current
+         }そうでなければ{
+            # 同じ行の場合、列で比較（降順）
+            もしcurrent["row"]がnext["row"]ならば{
+               もしcurrent["col"]がnext["col"]より小さいならば{
+                  result[j] = next
+                  result[差(j, 1)] = current
+               }
+            }
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+   
+   # オブジェクトをタプル形式のリストに変換
+   final_result = []
+   i = 0
+   resultの大きさ回くり返す{
+      item = result[i]
+      tuple = [item["row"], item["col"]]
+      final_resultにtupleを追加する
+      iを増やす
+   }
+   
+   final_resultが答え
+}

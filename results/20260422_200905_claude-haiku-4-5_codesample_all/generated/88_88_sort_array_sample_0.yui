@@ -1,0 +1,63 @@
+標準ライブラリを使う
+
+sort_array = 入力 array に対し {
+   # 空配列の場合はそのまま返す
+   n = array の大きさ
+   もし n が 0 ならば {
+      array が答え
+   }
+   
+   # 配列のコピーを作成
+   copy = []
+   i = 0
+   n 回くり返す {
+      copy に array[i] を追加する
+      i を増やす
+   }
+   
+   # 最初の要素と最後の要素の和を計算
+   first = copy[0]
+   last = copy[差(n, 1)]
+   sum = 和(first, last)
+   
+   # 和が奇数か偶数かで判定
+   parity = 剰余(sum, 2)
+   
+   # バブルソートで昇順にソート
+   n 回くり返す {
+      i = 0
+      差(n, 1) 回くり返す {
+         j = 和(i, 1)
+         もし copy[i] が copy[j] より大きい ならば {
+            tmp = copy[i]
+            copy[i] = copy[j]
+            copy[j] = tmp
+         }
+         i を増やす
+      }
+   }
+   
+   # 和が偶数なら降順に反転
+   もし parity が 0 ならば {
+      copy = reverse(copy)
+   }
+   
+   copy が答え
+}
+
+# 配列を反転するヘルパー関数
+reverse = 入力 A に対し {
+   n = A の大きさ
+   half = 商(n, 2)
+   i = 0
+   half 回くり返す {
+      j = 差(差(n, 1), i)
+      tmp = A[i]
+      A[i] = A[j]
+      A[j] = tmp
+      i を増やす
+   }
+   A が答え
+}
+
+# テスト

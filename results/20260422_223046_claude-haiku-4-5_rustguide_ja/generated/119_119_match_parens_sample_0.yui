@@ -1,0 +1,66 @@
+標準ライブラリを使う
+
+match_parens = 入力 lst に対し {
+   # 2つの文字列を取得
+   s1 = lst[0]
+   s2 = lst[1]
+   
+   # パターン1: s1 + s2 の順序でチェック
+   result1 = 0
+   combined1 = s1
+   i = 0
+   s2の大きさ回くり返す {
+      combinedに s2[i] を追加する
+      iを増やす
+   }
+   
+   # combined1 がバランスしているかチェック
+   balance = 0
+   j = 0
+   combined1の大きさ回くり返す {
+      char = combined1[j]
+      もし char が "("[0] ならば {
+         balance を増やす
+      } そうでなければ {
+         balance を減らす
+      }
+      もし balance が 0 より小さいならば {
+         くり返しを抜ける
+      }
+      j を増やす
+   }
+   
+   もし balance が 0 ならば {
+      "Yes" が答え
+   }
+   
+   # パターン2: s2 + s1 の順序でチェック
+   combined2 = s2
+   i = 0
+   s1の大きさ回くり返す {
+      combined2 に s1[i] を追加する
+      i を増やす
+   }
+   
+   # combined2 がバランスしているかチェック
+   balance = 0
+   j = 0
+   combined2の大きさ回くり返す {
+      char = combined2[j]
+      もし char が "("[0] ならば {
+         balance を増やす
+      } そうでなければ {
+         balance を減らす
+      }
+      もし balance が 0 より小さいならば {
+         くり返しを抜ける
+      }
+      j を増やす
+   }
+   
+   もし balance が 0 ならば {
+      "Yes" が答え
+   }
+   
+   "No" が答え
+}

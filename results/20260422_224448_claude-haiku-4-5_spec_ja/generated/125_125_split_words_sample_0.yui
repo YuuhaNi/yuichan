@@ -1,0 +1,76 @@
+標準ライブラリを使う
+
+split_words = 入力 txt に対し {
+   # 空白で分割できるか確認
+   もし " " が txt のいずれか ならば {
+      # 空白で分割して返す
+      result = []
+      current = ""
+      i = 0
+      txt の大きさ 回くり返す {
+         char_code = txt[i]
+         もし char_code が 32 ならば {
+            # 空白（ASCII 32）を検出
+            もし current の大きさ が 0 以外 ならば {
+               result に current を追加する
+               current = ""
+            }
+         }
+         そうでなければ {
+            current に char_code を追加する
+         }
+         i を増やす
+      }
+      もし current の大きさ が 0 以外 ならば {
+         result に current を追加する
+      }
+      result が答え
+   }
+   そうでなければ {
+      # カンマで分割できるか確認
+      もし "," が txt のいずれか ならば {
+         result = []
+         current = ""
+         i = 0
+         txt の大きさ 回くり返す {
+            char_code = txt[i]
+            もし char_code が 44 ならば {
+               # カンマ（ASCII 44）を検出
+               もし current の大きさ が 0 以外 ならば {
+                  result に current を追加する
+                  current = ""
+               }
+            }
+            そうでなければ {
+               current に char_code を追加する
+            }
+            i を増やす
+         }
+         もし current の大きさ が 0 以外 ならば {
+            result に current を追加する
+         }
+         result が答え
+      }
+      そうでなければ {
+         # 奇数順の小文字の数を数える
+         count = 0
+         i = 0
+         txt の大きさ 回くり返す {
+            char_code = txt[i]
+            # 小文字 a-z は ASCII 97-122
+            もし char_code が 97 以上 ならば {
+               もし char_code が 122 以下 ならば {
+                  # 小文字の位置を計算（a=0, b=1, ..., z=25）
+                  pos = 差(char_code, 97)
+                  # 奇数順（1, 3, 5, ...）かチェック
+                  もし 剰余(pos, 2) が 1 ならば {
+                     count を増やす
+                  }
+               }
+            }
+            i を増やす
+         }
+         count が答え
+      }
+   }
+}

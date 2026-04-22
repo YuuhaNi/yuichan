@@ -1,0 +1,24 @@
+標準ライブラリを使う
+
+concatenate = 入力 strings に対し {
+  もし 配列判定(strings) が 偽 ならば {
+    エラー("mismatch-argument")
+  }
+  
+  結果 = ""
+  
+  strings の各要素 s について {
+    結果 = 結果 + s
+  }
+  
+  結果を返す
+}
+標準ライブラリを使う
+
+concatenate = 入力 strings に対し {
+  結果 = ""
+  strings の各要素 s について {
+    結果 = 結果 + s
+  }
+  結果を返す
+}

@@ -1,0 +1,32 @@
+標準ライブラリを使う
+
+sort_third = 入力 l に対し {
+   result=[]
+   thirds=[]
+   n=lの大きさ
+   i=0
+
+   n回くり返す{
+      もし剰余(i,3)が0ならば{
+         thirdsにl[i]を追加する
+      }
+      iを増やす
+   }
+
+   thirds=ソート(thirds)
+
+   ti=0
+   i=0
+   n回くり返す{
+      もし剰余(i,3)が0ならば{
+         resultにthirds[ti]を追加する
+         tiを増やす
+      }
+      そうでなければ{
+         resultにl[i]を追加する
+      }
+      iを増やす
+   }
+
+   resultが答え
+}

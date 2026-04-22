@@ -1,0 +1,23 @@
+標準ライブラリを使う
+
+simplify = 入力 x, n に対し {
+  x_parts = x を分割する("/" , 1)
+  x_num = x_parts[0] を整数に変換する
+  x_den = x_parts[1] を整数に変換する
+  
+  n_parts = n を分割する("/" , 1)
+  n_num = n_parts[0] を整数に変換する
+  n_den = n_parts[1] を整数に変換する
+  
+  result_num = 積(x_num, n_num)
+  result_den = 積(x_den, n_den)
+  
+  余り = 剰余(result_num, result_den)
+  
+  もし 余り が 0 ならば {
+    真 が 答え
+  }
+  そうでなければ {
+    偽 が 答え
+  }
+}

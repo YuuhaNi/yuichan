@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+decode_cyclic = 入力 s に対し {
+   result = ""
+   i = 0
+   sの大きさ回くり返す {
+      chunk_index = 商(i, 3)
+      pos_in_chunk = 剰余(i, 3)
+      original_pos = 積(chunk_index, 3)
+      original_pos = 和(original_pos, 差(2, pos_in_chunk))
+      もしoriginal_posがsの大きさより小さいならば {
+         resultにs[original_pos]を追加する
+      }
+      iを増やす
+   }
+   result が答え
+}

@@ -1,0 +1,14 @@
+標準ライブラリを使う
+
+vowels_count = 入力 s に対し {
+  count = 0
+  i = 0
+  繰り返す (i < 文字列長(s)) {
+    char = 文字列取得(s, i)
+    もし (char == "a" または char == "e" または char == "i" または char == "o" または char == "u" または char == "A" または char == "E" または char == "I" または char == "O" または char == "U") {
+      count = count + 1
+    }
+    i = i + 1
+  }
+  count を返す
+}

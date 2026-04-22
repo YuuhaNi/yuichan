@@ -1,0 +1,20 @@
+標準ライブラリを使う
+
+double_the_difference = 入力 lst に対し {
+   total = 0
+   i = 0
+
+   lstの大きさ回くり返す{
+      x = lst[i]
+      もし整数判定(x)が真ならば{
+         もしxが0より大きいならば{
+            もし剰余(x, 2)が1ならば{
+               total = 和(total, 積(x, x))
+            }
+         }
+      }
+      iを増やす
+   }
+
+   totalが答え
+}

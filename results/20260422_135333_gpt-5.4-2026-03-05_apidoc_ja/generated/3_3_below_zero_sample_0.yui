@@ -1,0 +1,12 @@
+標準ライブラリを使う
+
+below_zero = 入力 operations に対し {
+    balance = 0
+    operations の各値 op について {
+        balance = 和(balance, op)
+        もし balance <= 0 なら {
+            戻る 真
+        }
+    }
+    戻る 偽
+}

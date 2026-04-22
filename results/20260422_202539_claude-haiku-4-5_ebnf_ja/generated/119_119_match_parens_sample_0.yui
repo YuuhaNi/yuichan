@@ -1,0 +1,56 @@
+標準ライブラリを使う
+
+match_parens = 入力 lst に対し {
+    s1 = lst[0]
+    s2 = lst[1]
+    
+    # 2つの順序を試す
+    combined1 = s1
+    combined1 の末尾に s2 を追加する
+    
+    combined2 = s2
+    combined2 の末尾に s1 を追加する
+    
+    # combined1 が良い括弧かチェック
+    もし is_valid(combined1) が 真 ならば {
+        "Yes" が 答え
+    }
+    
+    # combined2 が良い括弧かチェック
+    もし is_valid(combined2) が 真 ならば {
+        "Yes" が 答え
+    }
+    
+    "No" が 答え
+}
+
+is_valid = 入力 s に対し {
+    balance = 0
+    i = 0
+    
+    s の大きさ 回 くり返す {
+        char = s[i]
+        
+        もし char が "(" ならば {
+            balance を増やす
+        }
+        
+        もし char が ")" ならば {
+            balance を減らす
+        }
+        
+        # balance が負になったら無効
+        もし balance が 0 より小さい ならば {
+            偽 が 答え
+        }
+        
+        i を増やす
+    }
+    
+    # 最終的に balance が 0 なら有効
+    もし balance が 0 ならば {
+        真 が 答え
+    }
+    
+    偽 が 答え
+}

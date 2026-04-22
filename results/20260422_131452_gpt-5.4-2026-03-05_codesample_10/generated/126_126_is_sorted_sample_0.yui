@@ -1,0 +1,29 @@
+標準ライブラリを使う
+
+is_sorted=入力lstに対し{
+   n=lstの大きさ
+   もしnが1以下ならば{
+      真が答え
+   }
+
+   dup_count=0
+   i=1
+   差(n,1)回くり返す{
+      prev=lst[差(i,1)]
+      curr=lst[i]
+
+      もしcurrがprevより小さいならば{
+         偽が答え
+      }
+
+      もしcurrがprevならば{
+         dup_countを増やす
+         もしdup_countが2以上ならば{
+            偽が答え
+         }
+      }
+
+      iを増やす
+   }
+   真が答え
+}

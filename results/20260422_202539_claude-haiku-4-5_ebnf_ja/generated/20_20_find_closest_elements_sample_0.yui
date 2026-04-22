@@ -1,0 +1,33 @@
+標準ライブラリを使う
+
+find_closest_elements = 入力 numbers に対し {
+  最小差 = 値なし
+  結果 = 値なし
+  
+  i = 0
+  i < 長さ(numbers) - 1 回 くり返す {
+    j = 足す(i, 1)
+    j < 長さ(numbers) 回 くり返す {
+      差 = 絶対値(引く(numbers[i], numbers[j]))
+      
+      もし 最小差 が 値なし ならば {
+        最小差 = 差
+        小さい方 = 最小値(numbers[i], numbers[j])
+        大きい方 = 最大値(numbers[i], numbers[j])
+        結果 = [小さい方, 大きい方]
+      } そうでなければ {
+        もし 差 が 最小差 より小さい ならば {
+          最小差 = 差
+          小さい方 = 最小値(numbers[i], numbers[j])
+          大きい方 = 最大値(numbers[i], numbers[j])
+          結果 = [小さい方, 大きい方]
+        }
+      }
+      
+      j を増やす
+    }
+    i を増やす
+  }
+  
+  結果 が 答え
+}

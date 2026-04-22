@@ -1,0 +1,36 @@
+標準ライブラリを使う
+
+next_smallest = 入力 lst に対し {
+   # リストのサイズが2未満なら値なしを返す
+   もし lst の大きさ が 2 より小さい ならば {
+      値なし が答え
+   }
+   
+   # 最小値を見つける
+   min_val = lst[0]
+   i = 0
+   lst の大きさ 回くり返す {
+      もし lst[i] が min_val より小さい ならば {
+         min_val = lst[i]
+      }
+      i を増やす
+   }
+   
+   # 2番目に小さい値を見つける
+   next_min = 値なし
+   i = 0
+   lst の大きさ 回くり返す {
+      もし lst[i] が min_val より大きい ならば {
+         もし next_min が 値なし ならば {
+            next_min = lst[i]
+         } そうでなければ {
+            もし lst[i] が next_min より小さい ならば {
+               next_min = lst[i]
+            }
+         }
+      }
+      i を増やす
+   }
+   
+   next_min が答え
+}

@@ -1,0 +1,48 @@
+標準ライブラリを使う
+
+order_by_points = 入力 nums に対し {
+   # 各要素の桁の合計を計算する関数
+   digit_sum = 入力 n に対し {
+      # 負の数は絶対値にする
+      n = 絶対値(n)
+      sum = 0
+      
+      # 各桁を足す
+      10回くり返す {
+         sum = 和(sum, 剰余(n, 10))
+         n = 商(n, 10)
+         もしnが0ならば {
+            くり返しを抜ける
+         }
+      }
+      sumが答え
+   }
+   
+   # バブルソート（安定ソート）で元の位置を保持
+   result = []
+   i = 0
+   numsの大きさ回くり返す {
+      resultにnums[i]を追加する
+      iを増やす
+   }
+   
+   # バブルソート
+   n = resultの大きさ
+   n回くり返す {
+      i = 0
+      差(n, 1)回くり返す {
+         sum1 = digit_sum(result[i])
+         sum2 = digit_sum(result[和(i, 1)])
+         
+         もしsum1がsum2より大きいならば {
+            # スワップ
+            temp = result[i]
+            result[i] = result[和(i, 1)]
+            result[和(i, 1)] = temp
+         }
+         iを増やす
+      }
+   }
+   
+   resultが答え
+}

@@ -1,0 +1,108 @@
+標準ライブラリを使う
+
+file_name_check = 入力 file_name に対し {
+   # ドットの個数をカウント
+   dot_count = 0
+   dot_index = -1
+   i = 0
+   file_name の大きさ 回くり返す {
+      もし file_name[i] が "."[0] ならば {
+         dot_count を増やす
+         dot_index = i
+      }
+      i を増やす
+   }
+   
+   # ドットがちょうど1つでなければNo
+   もし dot_count が 1 以外 ならば {
+      "No" が答え
+   }
+   
+   # ドットの前の部分を取得
+   name_part = ""
+   i = 0
+   dot_index 回くり返す {
+      name_part に file_name[i] を追加する
+      i を増やす
+   }
+   
+   # ドットの後の部分を取得
+   ext_part = ""
+   i = dot_index を増やす
+   file_name の大きさ 回くり返す {
+      もし i が file_name の大きさ より小さい ならば {
+         ext_part に file_name[i] を追加する
+         i を増やす
+      }
+   }
+   
+   # name_part が空でないかチェック
+   もし name_part の大きさ が 0 ならば {
+      "No" が答え
+   }
+   
+   # name_part の最初の文字が英文字かチェック
+   first_char = name_part[0]
+   is_alpha = 偽
+   もし first_char が 97 以上 ならば {
+      もし first_char が 122 以下 ならば {
+         is_alpha = 真
+      }
+   }
+   そうでなければ {
+      もし first_char が 65 以上 ならば {
+         もし first_char が 90 以下 ならば {
+            is_alpha = 真
+         }
+      }
+   }
+   
+   もし is_alpha が 偽 ならば {
+      "No" が答え
+   }
+   
+   # name_part に3桁以上の連続した数字がないかチェック
+   digit_count = 0
+   i = 0
+   name_part の大きさ 回くり返す {
+      char = name_part[i]
+      もし char が 48 以上 ならば {
+         もし char が 57 以下 ならば {
+            digit_count を増やす
+            もし digit_count が 3 ならば {
+               "No" が答え
+            }
+         }
+         そうでなければ {
+            digit_count = 0
+         }
+      }
+      そうでなければ {
+         digit_count = 0
+      }
+      i を増やす
+   }
+   
+   # ext_part が有効な拡張子かチェック
+   valid_ext = 偽
+   もし ext_part が "txt" ならば {
+      valid_ext = 真
+   }
+   そうでなければ {
+      もし ext_part が "exe" ならば {
+         valid_ext = 真
+      }
+      そうでなければ {
+         もし ext_part が "dll" ならば {
+            valid_ext = 真
+         }
+      }
+   }
+   
+   もし valid_ext が 真 ならば {
+      "Yes" が答え
+   }
+   そうでなければ {
+      "No" が答え
+   }
+}

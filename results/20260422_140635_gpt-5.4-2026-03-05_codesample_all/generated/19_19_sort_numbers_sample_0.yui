@@ -1,0 +1,59 @@
+標準ライブラリを使う
+
+sort_numbers = 入力 numbers に対し {
+   words=["zero","one","two","three","four","five","six","seven","eight","nine"]
+   counts=[0,0,0,0,0,0,0,0,0,0]
+
+   current=""
+   i=0
+   n=numbersの大きさ
+
+   和(n,1)回くり返す{
+      end=0
+      もしiがn以上ならば{
+         end=1
+         c=32
+      }
+      そうでなければ{
+         c=numbers[i]
+      }
+
+      もしcが32ならば{
+         j=0
+         10回くり返す{
+            もしcurrentがwords[j]ならば{
+               counts[j]を増やす
+            }
+            jを増やす
+         }
+         current=""
+      }
+      そうでなければ{
+         currentにcを追加する
+      }
+
+      もしendが0ならば{
+         iを増やす
+      }
+   }
+
+   result=""
+   first=1
+   j=0
+   10回くり返す{
+      counts[j]回くり返す{
+         もしfirstが0ならば{
+            resultに32を追加する
+         }
+         k=0
+         words[j]の大きさ回くり返す{
+            resultにwords[j][k]を追加する
+            kを増やす
+         }
+         first=0
+      }
+      jを増やす
+   }
+
+   resultが答え
+}

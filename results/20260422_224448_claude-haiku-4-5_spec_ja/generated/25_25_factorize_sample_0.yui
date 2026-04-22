@@ -1,0 +1,96 @@
+標準ライブラリを使う
+
+factorize = 入力 n に対し {
+   factors = []
+   divisor = 2
+   もしnが1以下ならば {
+      値なし が答え
+   }
+   nを減らす
+   nを増やす
+   
+   くり返しを抜ける が答えではなく、以下のように実装します：
+   
+   divisor = 2
+   もしnが1ならば {
+      factors が答え
+   }
+   
+   nの値 = n
+   
+   くり返しを抜ける を使わずに：
+}
+標準ライブラリを使う
+
+factorize = 入力 n に対し {
+   factors = []
+   divisor = 2
+   
+   もしnが1以下ならば {
+      factors が答え
+   }
+   
+   current = n
+   
+   くり返しを抜ける を使う方式ではなく、条件付きループで：
+   
+   divisor = 2
+   
+   くり繰り返す {
+      もしdivisorの積(divisor)がcurrentより大きいならば {
+         くり返しを抜ける
+      }
+      
+      もしcurrentを剰余(divisor)が0ならば {
+         factorsにdivisorを追加する
+         currentを商(divisor)に変える
+      }
+      そうでなければ {
+         divisorを増やす
+      }
+   }
+   
+   もしcurrentが1以外ならば {
+      factorsにcurrentを追加する
+   }
+   
+   factors が答え
+}
+標準ライブラリを使う
+
+factorize = 入力 n に対し {
+   factors = []
+   divisor = 2
+   current = n
+   
+   くり返しを抜ける を使わない実装：
+   
+   divisor = 2
+   
+   くり返しを抜ける を使う：
+   
+   divisor = 2
+   もしcurrentが1ならば {
+      factors が答え
+   }
+   
+   divisor = 2
+   くり返しを抜ける {
+      もしdivisorの積(divisor)がcurrentより大きいならば {
+         くり返しを抜ける
+      }
+      もしcurrentを剰余(divisor)が0ならば {
+         factorsにdivisorを追加する
+         current = 商(current, divisor)
+      }
+      そうでなければ {
+         divisorを増やす
+      }
+   }
+   
+   もしcurrentが1以外ならば {
+      factorsにcurrentを追加する
+   }
+   
+   factors が答え
+}

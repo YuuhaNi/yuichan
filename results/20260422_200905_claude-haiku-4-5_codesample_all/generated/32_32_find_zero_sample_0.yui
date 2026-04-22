@@ -1,0 +1,23 @@
+標準ライブラリを使う
+
+poly_eval = 入力 xs, x に対し {
+   result = 0
+   n = xs の大きさ
+   i = 0
+   n 回くり返す {
+      # x^i を計算する
+      power = 1
+      j = 0
+      i 回くり返す {
+         power = 積(power, x)
+         j を増やす
+      }
+      # xs[i] * x^i を加算
+      term = 積(xs[i], power)
+      result = 和(result, term)
+      i を増やす
+   }
+   result が答え
+}
+
+# テスト: xs = [1, 2, 3], x = 2 → 1 + 2*2 + 3*4 = 17

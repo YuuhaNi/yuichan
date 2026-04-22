@@ -1,0 +1,40 @@
+標準ライブラリを使う
+
+match_parens = 入力 lst に対し {
+   a = lst[0]
+   b = lst[1]
+
+   check = 入力 s に対し {
+      bal = 0
+      i = 0
+      sの大きさ回くり返す{
+         もしs[i]が"("[0]ならば{
+            balを増やす
+         }そうでなければ{
+            bal = 差(bal, 1)
+         }
+         もしbalが0より小さいならば{
+            "No"が答え
+         }
+         iを増やす
+      }
+      もしbalが0ならば{
+         "Yes"が答え
+      }
+      "No"が答え
+   }
+
+   first = "{a}{b}"
+   ans1 = check(first)
+   もしans1が"Yes"ならば{
+      "Yes"が答え
+   }
+
+   second = "{b}{a}"
+   ans2 = check(second)
+   もしans2が"Yes"ならば{
+      "Yes"が答え
+   }
+
+   "No"が答え
+}

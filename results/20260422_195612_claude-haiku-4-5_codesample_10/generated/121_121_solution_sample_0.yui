@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+solution = 入力 lst に対し {
+   total = 0
+   n = lst の大きさ
+   i = 0
+   n 回くり返す {
+      もし i が偶数ならば {
+         x = lst[i]
+         もし x が奇数ならば {
+            total = 和(total, x)
+         }
+      }
+      i を増やす
+   }
+   total が答え
+}

@@ -1,0 +1,84 @@
+標準ライブラリを使う
+
+sort_numbers = 入力 numbers に対し {
+   # 数字を数値にマップする辞書
+   word_to_num = {
+      "zero": 0,
+      "one": 1,
+      "two": 2,
+      "three": 3,
+      "four": 4,
+      "five": 5,
+      "six": 6,
+      "seven": 7,
+      "eight": 8,
+      "nine": 9
+   }
+   
+   # 数値を単語にマップする辞書
+   num_to_word = {
+      0: "zero",
+      1: "one",
+      2: "two",
+      3: "three",
+      4: "four",
+      5: "five",
+      6: "six",
+      7: "seven",
+      8: "eight",
+      9: "nine"
+   }
+   
+   # 空文字列の場合は空文字列を返す
+   もし numbers が "" ならば {
+      ""が答え
+   }
+   
+   # 空白で分割して単語の配列にする
+   words = numbers を " " で分割する
+   
+   # 単語を数値に変換
+   nums = []
+   n = words の大きさ
+   i = 0
+   n 回くり返す {
+      word = words[i]
+      num = word_to_num[word]
+      nums に num を追加する
+      i を増やす
+   }
+   
+   # バブルソートで昇順にソート
+   m = nums の大きさ
+   i = 0
+   m 回くり返す {
+      j = 0
+      差(m, 1) 回くり返す {
+         もし nums[j] が nums[差(j, -1)] より大きい ならば {
+            # スワップ
+            temp = nums[j]
+            nums[j] = nums[差(j, -1)]
+            nums[差(j, -1)] = temp
+         }
+         j を増やす
+      }
+      i を増やす
+   }
+   
+   # ソート済みの数値を単語に変換して結合
+   result = ""
+   k = 0
+   m 回くり返す {
+      num = nums[k]
+      word = num_to_word[num]
+      もし k が 0 ならば {
+         result = word
+      }
+      そうでなければ {
+         result = "{result} {word}"
+      }
+      k を増やす
+   }
+   
+   result が答え
+}

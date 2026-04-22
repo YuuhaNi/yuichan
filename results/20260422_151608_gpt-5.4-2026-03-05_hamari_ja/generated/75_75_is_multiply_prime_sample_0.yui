@@ -1,0 +1,66 @@
+標準ライブラリを使う
+
+is_multiply_prime = 入力 a に対し {
+   もしaが8より小さいならば{
+      falseが答え
+   }
+
+   i=2
+   a回くり返す{
+      もしiがa以下ならば{
+         もし剰余(a,i)が0ならば{
+            ai=商(a,i)
+
+            j=2
+            ai回くり返す{
+               もしjがai以下ならば{
+                  もし剰余(ai,j)が0ならば{
+                     q=商(ai,j)
+                     もしqが2以上ならば{
+                        k=2
+                        i_prime=true
+                        j_prime=true
+                        q_prime=true
+
+                        差(i,2)回くり返す{
+                           もし剰余(i,k)が0ならば{
+                              i_prime=false
+                           }
+                           kを増やす
+                        }
+
+                        k=2
+                        差(j,2)回くり返す{
+                           もし剰余(j,k)が0ならば{
+                              j_prime=false
+                           }
+                           kを増やす
+                        }
+
+                        k=2
+                        差(q,2)回くり返す{
+                           もし剰余(q,k)が0ならば{
+                              q_prime=false
+                           }
+                           kを増やす
+                        }
+
+                        もしi_primeがtrueならば{
+                           もしj_primeがtrueならば{
+                              もしq_primeがtrueならば{
+                                 trueが答え
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
+               jを増やす
+            }
+         }
+      }
+      iを増やす
+   }
+
+   falseが答え
+}

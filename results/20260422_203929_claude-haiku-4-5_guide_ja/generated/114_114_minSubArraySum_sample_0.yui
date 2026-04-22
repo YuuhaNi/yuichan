@@ -1,0 +1,22 @@
+標準ライブラリを使う
+
+minSubArraySum = 入力 nums に対し {
+   min_sum = nums[0]
+   current_sum = nums[0]
+   i = 1
+   numsの大きさ回くり返す{
+      もし i が numsの大きさ以上ならば{
+         くり返しを抜ける
+      }
+      もし current_sum が 0 より大きいならば{
+         current_sum = nums[i]
+      }そうでなければ{
+         current_sum = 和(current_sum, nums[i])
+      }
+      もし current_sum が min_sum より小さいならば{
+         min_sum = current_sum
+      }
+      i を増やす
+   }
+   min_sum が答え
+}

@@ -1,0 +1,24 @@
+標準ライブラリを使う
+
+factorize = 入力 n に対し {
+   factors = []
+   divisor = 2
+   
+   もし n が 1 ならば {
+      factors
+   }
+   
+   そうでなければ {
+      n が 1 より大きい 間 {
+         remainder = 剰余(n, divisor)
+         もし remainder が 0 ならば {
+            factors に divisor を追加する
+            n = 商(n, divisor)
+         }
+         そうでなければ {
+            divisor を増やす
+         }
+      }
+      factors
+   }
+}

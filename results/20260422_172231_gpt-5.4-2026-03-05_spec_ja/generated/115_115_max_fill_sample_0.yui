@@ -1,0 +1,13 @@
+標準ライブラリを使う
+
+max_fill = 入力 grid, capacity に対し {
+    total = 0
+    i = 0
+    gridの大きさ回くり返す {
+        row = grid[i]
+        water = 和(row)
+        total = 和(total, 商(和(water, 差(capacity, 1)), capacity))
+        iを増やす
+    }
+    total が答え
+}

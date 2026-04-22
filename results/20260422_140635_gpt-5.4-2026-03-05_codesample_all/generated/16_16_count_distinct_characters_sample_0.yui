@@ -1,0 +1,22 @@
+標準ライブラリを使う
+
+count_distinct_characters = 入力 string に対し {
+   seen=""
+   i=0
+   stringの大きさ回くり返す{
+      c=string[i]
+
+      # 大文字 A..Z は小文字にそろえる
+      もしcが65以上ならば{
+         もしcが90以下ならば{
+            c=和(c,32)
+         }
+      }
+
+      もしcがseenのいずれでもないならば{
+         seenにcを追加する
+      }
+      iを増やす
+   }
+   seenの大きさが答え
+}

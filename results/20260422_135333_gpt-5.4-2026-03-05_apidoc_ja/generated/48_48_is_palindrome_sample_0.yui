@@ -1,0 +1,11 @@
+標準ライブラリを使う
+
+is_palindrome = 入力 text に対し {
+    もし text == '' なら {
+        真
+    } でなければ もし text[0] == text[長さ(text) - 1] なら {
+        is_palindrome(text[1 から 長さ(text) - 1 まで])
+    } でなければ {
+        偽
+    }
+}

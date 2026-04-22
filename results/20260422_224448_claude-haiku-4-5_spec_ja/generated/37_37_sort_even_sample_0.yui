@@ -1,0 +1,34 @@
+標準ライブラリを使う
+
+sort_even = 入力 l に対し {
+   even_elements = []
+   odd_elements = []
+   i = 0
+   l の大きさ 回くり返す {
+      もし i が 0 以外ならば {
+         もし 剰余(i, 2) が 0 以外ならば {
+            odd_elements に l[i] を追加する
+         }
+         そうでなければ {
+            even_elements に l[i] を追加する
+         }
+      }
+      そうでなければ {
+         even_elements に l[i] を追加する
+      }
+      i を増やす
+   }
+   even_elements をソートする
+   result = []
+   i = 0
+   l の大きさ 回くり返す {
+      もし 剰余(i, 2) が 0 ならば {
+         result に even_elements[i の商(2)] を追加する
+      }
+      そうでなければ {
+         result に l[i] を追加する
+      }
+      i を増やす
+   }
+   result が答え
+}

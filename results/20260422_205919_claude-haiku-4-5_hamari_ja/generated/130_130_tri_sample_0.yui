@@ -1,0 +1,37 @@
+標準ライブラリを使う
+
+tri = 入力 n に対し {
+   result = []
+   i = 0
+   もし n が 0 以上 ならば {
+      n加算1 = 和(n, 1)
+      n加算1回くり返す {
+         もし i が 1 ならば {
+            result に 3 を追加する
+         } そうでなければ {
+            もし i が偶数 ならば {
+               val = 和(1, 商(i, 2))
+               result に val を追加する
+            } そうでなければ {
+               i減算1 = 差(i, 1)
+               i減算2 = 差(i, 2)
+               i加算1 = 和(i, 1)
+               tri_i_minus_1 = result[i減算1]
+               tri_i_minus_2 = result[i減算2]
+               tri_i_plus_1_val = 0
+               もし i加算1 が 1 ならば {
+                  tri_i_plus_1_val = 3
+               } そうでなければ {
+                  もし i加算1 が偶数 ならば {
+                     tri_i_plus_1_val = 和(1, 商(i加算1, 2))
+                  }
+               }
+               val = 和(tri_i_minus_1, 和(tri_i_minus_2, tri_i_plus_1_val))
+               result に val を追加する
+            }
+         }
+         i を増やす
+      }
+   }
+   result が答え
+}

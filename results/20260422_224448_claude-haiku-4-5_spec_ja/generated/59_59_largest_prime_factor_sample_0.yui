@@ -1,0 +1,71 @@
+標準ライブラリを使う
+
+largest_prime_factor = 入力 n に対し {
+   largest = 1
+   
+   # 2で割り切れる限り割る
+   もしn が 0以外ならば {
+      もしn が 2で割った剰余が0ならば {
+         largest = 2
+         n = 商(n, 2)
+         くり返しを抜ける
+      }
+   }
+   
+   # 奇数の因数をチェック
+   divisor = 3
+   くり返しを抜ける
+   
+   divisor = 3
+   もしn が 1より大きいならば {
+      積(divisor, divisor)がn以下ならば {
+         もしn が divisorで割った剰余が0ならば {
+            largest = divisor
+            n = 商(n, divisor)
+         }
+         そうでなければ {
+            divisorを増やす
+            divisorを増やす
+         }
+      }
+   }
+   
+   # 残りがあれば、それが最大の素因数
+   もしn が 1より大きいならば {
+      largest = n
+   }
+   
+   largest が答え
+}
+標準ライブラリを使う
+
+largest_prime_factor = 入力 n に対し {
+   largest = 1
+   divisor = 2
+   
+   もしn が divisorで割った剰余が0ならば {
+      largest = divisor
+      n = 商(n, divisor)
+      くり返しを抜ける
+   }
+   
+   divisor = 3
+   もしn が 1より大きいならば {
+      積(divisor, divisor)がn以下ならば {
+         もしn が divisorで割った剰余が0ならば {
+            largest = divisor
+            n = 商(n, divisor)
+         }
+         そうでなければ {
+            divisorを増やす
+            divisorを増やす
+         }
+      }
+   }
+   
+   もしn が 1より大きいならば {
+      largest = n
+   }
+   
+   largest が答え
+}

@@ -1,0 +1,108 @@
+標準ライブラリを使う
+
+# 素数判定関数
+is_prime = 入力 n に対し {
+   もし n が 2 より小さい ならば {
+      偽が答え
+   }
+   もし n が 2 に等しい ならば {
+      真が答え
+   }
+   もし n が 2 で割り切れる ならば {
+      偽が答え
+   }
+   i = 3
+   limit = 整数化(商(n, 2))
+   limit回くり返す {
+      もし n が i で割り切れる ならば {
+         偽が答え
+      }
+      i = 和(i, 2)
+   }
+   真が答え
+}
+
+intersection = 入力 interval1, interval2 に対し {
+   # 各区間を取り出す
+   start1 = interval1[0]
+   end1 = interval1[1]
+   start2 = interval2[0]
+   end2 = interval2[1]
+   
+   # 交差部分の開始地点は両方の start の最大値
+   intersection_start = 最大値(start1, start2)
+   
+   # 交差部分の終了地点は両方の end の最小値
+   intersection_end = 最小値(end1, end2)
+   
+   # 交差部分が存在するかチェック
+   もし intersection_start が intersection_end より大きい ならば {
+      "NO" が答え
+   }
+   
+   # 交差部分の長さを計算
+   length = 差(intersection_end, intersection_start)
+   和(length, 1)を増やす
+   
+   # 長さが素数かチェック
+   もし is_prime(length) ならば {
+      "YES" が答え
+   }
+   そうでなければ {
+      "NO" が答え
+   }
+}
+標準ライブラリを使う
+
+# 素数判定関数
+is_prime = 入力 n に対し {
+   もし n が 2 より小さい ならば {
+      偽が答え
+   }
+   もし n が 2 に等しい ならば {
+      真が答え
+   }
+   もし 剰余(n, 2) が 0 に等しい ならば {
+      偽が答え
+   }
+   i = 3
+   i_max = 積(i, i)
+   真が答え の代わりに {
+      もし i_max が n より大きい ならば {
+         くり返しを抜ける
+      }
+      もし 剰余(n, i) が 0 に等しい ならば {
+         偽が答え
+      }
+      i = 和(i, 2)
+      i_max = 積(i, i)
+   }
+   真が答え
+}
+
+intersection = 入力 interval1, interval2 に対し {
+   start1 = interval1[0]
+   end1 = interval1[1]
+   start2 = interval2[0]
+   end2 = interval2[1]
+   
+   # 交差部分の開始と終了を計算
+   intersection_start = 最大値(start1, start2)
+   intersection_end = 最小値(end1, end2)
+   
+   # 交差部分が存在しないかチェック
+   もし intersection_start が intersection_end より大きい ならば {
+      "NO" が答え
+   }
+   
+   # 交差部分の長さ（両端を含む閉区間なので +1）
+   length = 和(差(intersection_end, intersection_start), 1)
+   
+   # 長さが素数かチェック
+   もし is_prime(length) ならば {
+      "YES" が答え
+   }
+   そうでなければ {
+      "NO" が答え
+   }
+}

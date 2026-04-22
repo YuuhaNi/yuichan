@@ -1,0 +1,20 @@
+標準ライブラリを使う
+
+is_bored = 入力 S に対し {
+   count = 0
+   sentences = S を "." で分割する
+   sentences_q = sentences を "?" で分割する
+   sentences_all = sentences_q を "!" で分割する
+   
+   sentences_all の大きさ 回くり返す {
+      sentence = sentences_all[i]
+      sentence = sentence を先頭の空白で削除する
+      
+      もし sentence が "I " で始まるならば {
+         count を増やす
+      }
+      i を増やす
+   }
+   
+   count が答え
+}

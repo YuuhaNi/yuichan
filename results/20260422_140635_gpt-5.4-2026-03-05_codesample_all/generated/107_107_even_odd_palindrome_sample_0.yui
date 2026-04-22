@@ -1,0 +1,21 @@
+標準ライブラリを使う
+
+even_odd_palindrome=入力nに対し{
+   even=0
+   odd=0
+   i=1
+   n回くり返す{
+      s=文字列化(i)
+      rs=reverse(s)
+      もしsがrsならば{
+         もし剰余(i,2)が0ならば{
+            evenを増やす
+         }
+         そうでなければ{
+            oddを増やす
+         }
+      }
+      iを増やす
+   }
+   [even,odd]が答え
+}

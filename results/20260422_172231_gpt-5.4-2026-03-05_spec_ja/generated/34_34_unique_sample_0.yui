@@ -1,0 +1,45 @@
+標準ライブラリを使う
+
+unique = 入力 l に対し {
+  result = []
+  もしlの大きさが0ならば {
+    result が答え
+  }
+
+  i = 0
+  lの大きさ回くり返す {
+    x = l[i]
+    found = 偽
+
+    j = 0
+    resultの大きさ回くり返す {
+      もしresult[j]がxならば {
+        found = 真
+      }
+      jを増やす
+    }
+
+    もしfoundが偽ならば {
+      resultにxを追加する
+    }
+    iを増やす
+  }
+
+  n = resultの大きさ
+  a = 0
+  n回くり返す {
+    b = 0
+    差(n, 1)回くり返す {
+      もしresult[b]がresult[差(n, a)]より大きいならば {
+        temp = result[b]
+        result[b] = result[差(n, a)]
+        result[差(n, a)] = temp
+      }
+      bを増やす
+    }
+    aを増やす
+    nを減らす
+  }
+
+  result が答え
+}

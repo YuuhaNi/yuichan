@@ -1,0 +1,87 @@
+標準ライブラリを使う
+
+get_row = 入力 lst, x に対し {
+   result = []
+   row = 0
+   lstの大きさ回くり返す {
+      current_row = lst[row]
+      col = 0
+      current_rowの大きさ回くり返す {
+         もし current_row[col] が x ならば {
+            result に [row, col] を追加する
+         }
+         col を増やす
+      }
+      row を増やす
+   }
+   
+   # 結果をソート: 行の昇順、同じ行内では列の降順
+   sorted_result = []
+   current_row_num = 0
+   result の大きさ回くり返す {
+      もし sorted_result の大きさ が 0 ならば {
+         sorted_result に result[0] を追加する
+      } そうでなければ {
+         i = 0
+         result の大きさ回くり返す {
+            もし i が sorted_result の大きさ ならば {
+               くり返しを抜ける
+            }
+            current = result[i]
+            current_row_num = current[0]
+            
+            # 行が異なる場合、行の昇順でソート
+            もし current_row_num が sorted_result[最大値(0, 差(sorted_resultの大きさ, 1))] の 0 より大きい ならば {
+               sorted_result に current を追加する
+            }
+            i を増やす
+         }
+      }
+   }
+   
+   # より簡潔な実装
+   result
+}
+標準ライブラリを使う
+
+get_row = 入力 lst, x に対し {
+   result = []
+   row = 0
+   lst の大きさ回くり返す {
+      current_row = lst[row]
+      col = 0
+      current_row の大きさ回くり返す {
+         もし current_row[col] が x ならば {
+            result に [row, col] を追加する
+         }
+         col を増やす
+      }
+      row を増やす
+   }
+   
+   # 行の昇順、列の降順でソート（手動実装）
+   sorted_result = []
+   result の大きさ回くり返す {
+      i = 0
+      min_idx = 0
+      result の大きさ回くり返す {
+         もし i が result の大きさ ならば {
+            くり返しを抜ける
+         }
+         もし result[i][0] が result[min_idx][0] より小さい ならば {
+            min_idx = i
+         } そうでなければ {
+            もし result[i][0] が result[min_idx][0] ならば {
+               もし result[i][1] が result[min_idx][1] より大きい ならば {
+                  min_idx = i
+               }
+            }
+         }
+         i を増やす
+      }
+      sorted_result に result[min_idx] を追加する
+      result[min_idx] = [最大値(lst の大きさ, 最大値(lstの大きさ回くり返す{lstの大きさ})), -1]
+   }
+   
+   sorted_result
+}

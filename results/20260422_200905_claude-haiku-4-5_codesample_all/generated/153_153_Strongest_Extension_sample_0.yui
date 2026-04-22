@@ -1,0 +1,67 @@
+標準ライブラリを使う
+
+Strongest_Extension = 入力 class_name, extensions に対し {
+   # 最初の拡張子を暫定の最強とする
+   best_ext = extensions[0]
+   
+   # best_ext の強度を計算
+   best_strength = 0
+   i = 0
+   best_ext の大きさ 回 くり返す {
+      c = best_ext[i]
+      # 大文字 A..Z (65..90)
+      もし c が 65 以上 ならば {
+         もし c が 90 以下 ならば {
+            best_strength を増やす
+         }
+      }
+      # 小文字 a..z (97..122)
+      もし c が 97 以上 ならば {
+         もし c が 122 以下 ならば {
+            best_strength を減らす
+         }
+      }
+      i を増やす
+   }
+   
+   # 残りの拡張子を調べる
+   j = 1
+   extensions の大きさ 回 くり返す {
+      もし j が extensions の大きさ 以上 ならば {
+         くり返しを抜ける
+      }
+      
+      ext = extensions[j]
+      
+      # ext の強度を計算
+      strength = 0
+      k = 0
+      ext の大きさ 回 くり返す {
+         c = ext[k]
+         # 大文字 A..Z (65..90)
+         もし c が 65 以上 ならば {
+            もし c が 90 以下 ならば {
+               strength を増やす
+            }
+         }
+         # 小文字 a..z (97..122)
+         もし c が 97 以上 ならば {
+            もし c が 122 以下 ならば {
+               strength を減らす
+            }
+         }
+         k を増やす
+      }
+      
+      # 強度が best_strength より大きければ更新
+      もし strength が best_strength より大きい ならば {
+         best_ext = ext
+         best_strength = strength
+      }
+      
+      j を増やす
+   }
+   
+   # "ClassName.ExtensionName" の形式で返す
+   "{class_name}.{best_ext}" が答え
+}

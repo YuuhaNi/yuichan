@@ -1,0 +1,68 @@
+標準ライブラリを使う
+
+max_fill = 入力 grid, capacity に対し {
+   total_water = 0
+   
+   gridの大きさ回くり返す {
+      i = 0
+      row_index = 0
+      gridの大きさ回くり返す {
+         もしrow_indexがgridの大きさより小さいならば {
+            row = grid[row_index]
+            rowの大きさ回くり返す {
+               もしiがrowの大きさより小さいならば {
+                  total_water = 和(total_water, row[i])
+                  iを増やす
+               }
+            }
+            row_indexを増やす
+            i = 0
+         }
+      }
+   }
+   
+   buckets = 0
+   remaining = total_water
+   
+   total_waterを増やす回くり返す {
+      もしremainingが0ならば {
+         くり返しを抜ける
+      }
+      もしremainingがcapacity以下ならば {
+         bucketsを増やす
+         remaining = 0
+      } そうでなければ {
+         bucketsを増やす
+         remaining = 差(remaining, capacity)
+      }
+   }
+   
+   bucketsが答え
+}
+標準ライブラリを使う
+
+max_fill = 入力 grid, capacity に対し {
+   total_water = 0
+   
+   gridの大きさ回くり返す {
+      row_index = 0
+      gridの大きさ回くり返す {
+         もしrow_indexがgridの大きさより小さいならば {
+            row = grid[row_index]
+            rowの大きさ回くり返す {
+               i = 0
+               rowの大きさ回くり返す {
+                  もしiがrowの大きさより小さいならば {
+                     total_water = 和(total_water, row[i])
+                     iを増やす
+                  }
+               }
+            }
+            row_indexを増やす
+         }
+      }
+   }
+   
+   buckets = 商(和(total_water, 差(capacity, 1)), capacity)
+   bucketsが答え
+}

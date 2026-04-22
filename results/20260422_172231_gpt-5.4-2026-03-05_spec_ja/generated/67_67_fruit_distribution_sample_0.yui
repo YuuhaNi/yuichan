@@ -1,0 +1,37 @@
+標準ライブラリを使う
+
+fruit_distribution = 入力 s, n に対し {
+  parts = 配列化(s)
+  num = []
+  nums = []
+
+  i = 0
+  sの大きさ回くり返す {
+    c = parts[i]
+
+    もしcが32のいずれでもないならば {
+      numにcを追加する
+    }
+    そうでなければ {
+      もしnumの大きさが0より大きいならば {
+        token = 文字列化(num)
+        もし整数判定(整数化(token))ならば {
+          numsに整数化(token)を追加する
+        }
+        num = []
+      }
+    }
+
+    iを増やす
+  }
+
+  もしnumの大きさが0より大きいならば {
+    token = 文字列化(num)
+    もし整数判定(整数化(token))ならば {
+      numsに整数化(token)を追加する
+    }
+  }
+
+  mangoes = 差(n, nums[0], nums[1])
+  mangoes が答え
+}

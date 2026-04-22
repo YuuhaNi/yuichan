@@ -1,0 +1,23 @@
+標準ライブラリを使う
+
+vowels_count = 入力 s に対し {
+  count = 0
+  i = 0
+
+  繰り返し(i < 長さ(s)) {
+    ch = s[i]
+    もし(ch == "a" または ch == "e" または ch == "i" または ch == "o" または ch == "u" または ch == "A" または ch == "E" または ch == "I" または ch == "O" または ch == "U") {
+      count = 和(count, 1)
+    }
+    i = 和(i, 1)
+  }
+
+  count
+}
+
+表示(vowels_count("hello"))
+表示(vowels_count("AEIOU"))
+表示(vowels_count("xyz"))
+表示(vowels_count(""))
+表示(vowels_count("Yui Language"))
+表示(vowels_count("abcdefghijklmnopqrstuvwxyz"))

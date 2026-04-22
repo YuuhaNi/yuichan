@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+how_many_times = 入力 string, substring に対し {
+   もし substring が "" ならば {
+      0
+   }
+   そうでなければ {
+      count = 0
+      sub_len = substring の大きさ
+      string_len = string の大きさ
+      差(string_len, sub_len) を 1 増やしたもの 回くり返す {
+         i = 0
+         found = 1
+         sub_len 回くり返す {
+            もし string[和(i, i)] が substring[i] 以外ならば {
+               found = 0
+            }
+            i を増やす
+         }
+         もし found が 1 ならば {
+            count を増やす
+         }
+         i を増やす
+      }
+      count
+   }
+}

@@ -1,0 +1,11 @@
+標準ライブラリを使う
+
+modp = 入力 n, p に対し {
+   result = 1
+   base = 2
+   n回くり返す {
+      result = 剰余(積(result, base), p)
+      base = 剰余(積(base, base), p)
+   }
+   resultが答え
+}

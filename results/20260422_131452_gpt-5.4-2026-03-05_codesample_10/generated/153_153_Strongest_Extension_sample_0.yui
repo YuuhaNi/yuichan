@@ -1,0 +1,54 @@
+標準ライブラリを使う
+
+Strongest_Extension=入力class_name,extensionsに対し{
+   best_ext=extensions[0]
+   best_score=0
+
+   n=best_extの大きさ
+   i=0
+   n回くり返す{
+      c=best_ext[i]
+      もしcが65以上ならば{
+         もしcが90以下ならば{
+            best_scoreを増やす
+         }
+      }
+      もしcが97以上ならば{
+         もしcが122以下ならば{
+            best_scoreを減らす
+         }
+      }
+      iを増やす
+   }
+
+   m=extensionsの大きさ
+   j=1
+   k=差(m,1)
+   k回くり返す{
+      ext=extensions[j]
+      score=0
+      n=extの大きさ
+      i=0
+      n回くり返す{
+         c=ext[i]
+         もしcが65以上ならば{
+            もしcが90以下ならば{
+               scoreを増やす
+            }
+         }
+         もしcが97以上ならば{
+            もしcが122以下ならば{
+               scoreを減らす
+            }
+         }
+         iを増やす
+      }
+      もしscoreがbest_scoreより大きいならば{
+         best_score=score
+         best_ext=ext
+      }
+      jを増やす
+   }
+
+   "{class_name}.{best_ext}"が答え
+}

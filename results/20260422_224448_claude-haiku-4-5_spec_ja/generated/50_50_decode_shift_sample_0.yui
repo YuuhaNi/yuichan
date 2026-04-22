@@ -1,0 +1,11 @@
+標準ライブラリを使う
+
+decode_shift = 入力 s に対し {
+   result = ""
+   sの大きさ回くり返す {
+      char_code = s[0]
+      shifted_code = 差(char_code, 5)
+      resultにshifted_codeを追加する
+   }
+   result が答え
+}

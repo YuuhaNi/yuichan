@@ -1,0 +1,114 @@
+標準ライブラリを使う
+
+minPath = 入力 grid, k に対し {
+   n = gridの大きさ
+   
+   # グリッドから値と位置のマッピングを作成
+   valueToPos = {}
+   i = 0
+   n回くり返す {
+      j = 0
+      n回くり返す {
+         val = grid[i][j]
+         valueToPos[文字列化(val)] = [i, j]
+         jを増やす
+      }
+      iを増やす
+   }
+   
+   # 最小経路を保存する変数
+   minPathResult = 値なし
+   
+   # すべてのセルから開始
+   startI = 0
+   n回くり返す {
+      startJ = 0
+      n回くり返す {
+         # BFS/DFSで長さkの経路を探索
+         queue = [[startI, startJ, [grid[startI][startJ]]]]
+         queueIdx = 0
+         
+         queueの大きさ回くり返す {
+            もしqueueIdxがqueueの大きさ以上ならば {
+               くり返しを抜ける
+            }
+            
+            current = queue[queueIdx]
+            queueIdxを増やす
+            
+            row = current[0]
+            col = current[1]
+            path = current[2]
+            
+            もしpathの大きさがkならば {
+               もしminPathResultが値なしならば {
+                  minPathResult = path
+               } そうでなければ {
+                  # 辞書順比較
+                  isSmaller = 偽
+                  pathIdx = 0
+                  pathの大きさ回くり返す {
+                     もしpathIdxがpathの大きさ以上ならば {
+                        くり返しを抜ける
+                     }
+                     もしpath[pathIdx]がminPathResult[pathIdx]より小さいならば {
+                        isSmaller = 真
+                        くり返しを抜ける
+                     }
+                     もしpath[pathIdx]がminPathResult[pathIdx]より大きいならば {
+                        くり返しを抜ける
+                     }
+                     pathIdxを増やす
+                  }
+                  もしisSmallerが真ならば {
+                     minPathResult = path
+                  }
+               }
+            } そうでなければ {
+               # 隣接セルを探索（上下左右）
+               # 上
+               もしrowが0より大きいならば {
+                  newRow = 差(row, 1)
+                  newCol = col
+                  newVal = grid[newRow][newCol]
+                  newPath = path
+                  newPathにnewValを追加する
+                  queueに[newRow, newCol, newPath]を追加する
+               }
+               # 下
+               もしrowが差(n, 1)より小さいならば {
+                  newRow = 和(row, 1)
+                  newCol = col
+                  newVal = grid[newRow][newCol]
+                  newPath = path
+                  newPathにnewValを追加する
+                  queueに[newRow, newCol, newPath]を追加する
+               }
+               # 左
+               もしcolが0より大きいならば {
+                  newRow = row
+                  newCol = 差(col, 1)
+                  newVal = grid[newRow][newCol]
+                  newPath = path
+                  newPathにnewValを追加する
+                  queueに[newRow, newCol, newPath]を追加する
+               }
+               # 右
+               もしcolが差(n, 1)より小さいならば {
+                  newRow = row
+                  newCol = 和(col, 1)
+                  newVal = grid[newRow][newCol]
+                  newPath = path
+                  newPathにnewValを追加する
+                  queueに[newRow, newCol, newPath]を追加する
+               }
+            }
+         }
+         
+         startJを増やす
+      }
+      startIを増やす
+   }
+   
+   minPathResultが答え
+}

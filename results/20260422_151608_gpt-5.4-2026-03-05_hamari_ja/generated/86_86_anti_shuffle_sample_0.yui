@@ -1,0 +1,39 @@
+標準ライブラリを使う
+
+anti_shuffle = 入力 s に対し {
+   words=sを" "で分割する
+   out=[]
+   i=0
+   n=wordsの大きさ
+   n回くり返す{
+      w=words[i]
+      chars=[]
+      j=0
+      m=wの大きさ
+      m回くり返す{
+         charsにw[j]を追加する
+         jを増やす
+      }
+      charsを並べ替える
+      sorted=""
+      j=0
+      m回くり返す{
+         sorted=sortedとchars[j]を連結したもの
+         jを増やす
+      }
+      outにsortedを追加する
+      iを増やす
+   }
+   result=""
+   i=0
+   n回くり返す{
+      もしiが0ならば{
+         result=out[i]
+      }
+      そうでなければ{
+         result=resultと" "とout[i]を連結したもの
+      }
+      iを増やす
+   }
+   resultが答え
+}

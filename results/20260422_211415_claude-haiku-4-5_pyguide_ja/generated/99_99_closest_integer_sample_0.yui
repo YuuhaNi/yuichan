@@ -1,0 +1,25 @@
+標準ライブラリを使う
+
+closest_integer = 入力 value に対し {
+   num = 小数化(value)
+   floor_num = 整数化(num)
+   
+   もし num が 0 以上ならば {
+      diff = 差(num, 小数化(floor_num))
+      もし diff が 0.5 以上ならば {
+         答え = 和(floor_num, 1)
+      } そうでなければ {
+         答え = floor_num
+      }
+   } そうでなければ {
+      ceil_num = 差(floor_num, 1)
+      diff = 差(小数化(ceil_num), num)
+      もし diff が 0.5 以上ならば {
+         答え = 差(floor_num, 1)
+      } そうでなければ {
+         答え = floor_num
+      }
+   }
+   
+   答えが答え
+}

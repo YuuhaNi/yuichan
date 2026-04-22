@@ -1,0 +1,52 @@
+標準ライブラリを使う
+
+digits = 入力 n に対し {
+   s = 文字列化(n)
+   result = 1
+   found = 偽
+   sの大きさ回くり返す {
+      i = 0
+      sの大きさ回くり返す {
+         digit = s[i]
+         もしdigitが"1"ならば {
+            resultを増やす
+            found = 真
+         }
+         そうでなければ {
+            もしdigitが"3"ならば {
+               result = 積(result, 3)
+               found = 真
+            }
+            そうでなければ {
+               もしdigitが"5"ならば {
+                  result = 積(result, 5)
+                  found = 真
+               }
+               そうでなければ {
+                  もしdigitが"7"ならば {
+                     result = 積(result, 7)
+                     found = 真
+                  }
+                  そうでなければ {
+                     もしdigitが"9"ならば {
+                        result = 積(result, 9)
+                        found = 真
+                     }
+                  }
+               }
+            }
+         }
+         iを増やす
+         もしiがsの大きさならば {
+            くり返しを抜ける
+         }
+      }
+      くり返しを抜ける
+   }
+   もしfoundが偽ならば {
+      0が答え
+   }
+   そうでなければ {
+      resultが答え
+   }
+}

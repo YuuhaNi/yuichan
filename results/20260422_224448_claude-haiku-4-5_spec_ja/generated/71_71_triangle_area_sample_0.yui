@@ -1,0 +1,74 @@
+標準ライブラリを使う
+
+triangle_area = 入力 a, b, c に対し {
+   もしaがbより大きいならば {
+      もしbがcより大きいならば {
+         # a > b > c の場合、a < b + c をチェック
+         もしaがb,cの和より小さいならば {
+            # 有効な三角形
+            s = 和(a, b, c)を2で割った値
+            s_minus_a = 差(s, a)
+            s_minus_b = 差(s, b)
+            s_minus_c = 差(s, c)
+            area_squared = 積(s, s_minus_a, s_minus_b, s_minus_c)
+            area = 平方根(area_squared)
+            # 小数点以下2桁で四捨五入
+            rounded = 整数化(積(area, 100)を足す(0.5))を2で割った値
+            rounded が答え
+         }
+         そうでなければ {
+            -1 が答え
+         }
+      }
+      そうでなければ {
+         # a > c >= b の場合、c < a + b をチェック
+         もしcがa,bの和より小さいならば {
+            s = 和(a, b, c)を2で割った値
+            s_minus_a = 差(s, a)
+            s_minus_b = 差(s, b)
+            s_minus_c = 差(s, c)
+            area_squared = 積(s, s_minus_a, s_minus_b, s_minus_c)
+            area = 平方根(area_squared)
+            rounded = 整数化(積(area, 100)を足す(0.5))を2で割った値
+            rounded が答え
+         }
+         そうでなければ {
+            -1 が答え
+         }
+      }
+   }
+   そうでなければ {
+      もしbがcより大きいならば {
+         # b > c >= a の場合、b < a + c をチェック
+         もしbがa,cの和より小さいならば {
+            s = 和(a, b, c)を2で割った値
+            s_minus_a = 差(s, a)
+            s_minus_b = 差(s, b)
+            s_minus_c = 差(s, c)
+            area_squared = 積(s, s_minus_a, s_minus_b, s_minus_c)
+            area = 平方根(area_squared)
+            rounded = 整数化(積(area, 100)を足す(0.5))を2で割った値
+            rounded が答え
+         }
+         そうでなければ {
+            -1 が答え
+         }
+      }
+      そうでなければ {
+         # c >= b >= a の場合、c < a + b をチェック
+         もしcがa,bの和より小さいならば {
+            s = 和(a, b, c)を2で割った値
+            s_minus_a = 差(s, a)
+            s_minus_b = 差(s, b)
+            s_minus_c = 差(s, c)
+            area_squared = 積(s, s_minus_a, s_minus_b, s_minus_c)
+            area = 平方根(area_squared)
+            rounded = 整数化(積(area, 100)を足す(0.5))を2で割った値
+            rounded が答え
+         }
+         そうでなければ {
+            -1 が答え
+         }
+      }
+   }
+}

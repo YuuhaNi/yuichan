@@ -1,0 +1,13 @@
+標準ライブラリを使う
+
+can_arrange = 入力 arr に対し {
+   result = -1
+   i = 1
+   arrの大きさ回くり返す {
+      もしarr[i]がarr[差(i,1)]以下ならば {
+         result = i
+      }
+      iを増やす
+   }
+   result が答え
+}

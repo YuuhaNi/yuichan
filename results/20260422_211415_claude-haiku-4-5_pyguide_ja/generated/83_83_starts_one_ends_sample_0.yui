@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+starts_one_ends = 入力 n に対し {
+   count = 0
+   start = 1
+   end = 0
+   n回くり返す {
+      start = 積(start, 10)
+   }
+   start = 差(start, 1)
+   
+   start回くり返す {
+      end を増やす
+      first_digit = 商(end, start)
+      last_digit = 剰余(end, 10)
+      
+      もし first_digit が 1 ならば {
+         count を増やす
+      } そうでなければ {
+         もし last_digit が 1 ならば {
+            count を増やす
+         }
+      }
+   }
+   
+   count が答え
+}

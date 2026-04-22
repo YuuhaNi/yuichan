@@ -1,0 +1,24 @@
+標準ライブラリを使う
+
+maximum = 入力 arr, k に対し {
+    result = []
+    n = arrの大きさ
+    i = 0
+    k回 くり返す {
+        maxIndex = i
+        j = i
+        remaining = 差(n, i)
+        remaining回 くり返す {
+            もし arr[j]がarr[maxIndex]より大きいならば {
+                maxIndex = j
+            }
+            jを増やす
+        }
+        temp = arr[i]
+        arr[i] = arr[maxIndex]
+        arr[maxIndex] = temp
+        resultにarr[i]を追加する
+        iを増やす
+    }
+    並べ替え(result)が答え
+}

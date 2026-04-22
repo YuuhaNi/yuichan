@@ -1,0 +1,130 @@
+標準ライブラリを使う
+
+minPath = 入力 grid, k に対し {
+   n = grid の大きさ
+   
+   # グリッド内の各値の位置を記録するマップを作成
+   pos_map = {}
+   i = 0
+   n 回くり返す {
+      j = 0
+      n 回くり返す {
+         val = grid[i][j]
+         pos_map[文字列化(val)] = [i, j]
+         j を増やす
+      }
+      i を増やす
+   }
+   
+   # BFS で長さ k の最短経路を探す
+   # 状態: [現在行, 現在列, 訪問したセルの値のリスト]
+   queue = []
+   
+   # すべてのセルからスタート
+   i = 0
+   n 回くり返す {
+      j = 0
+      n 回くり返す {
+         val = grid[i][j]
+         queue に [i, j, [val]] を追加する
+         j を増やす
+      }
+      i を増やす
+   }
+   
+   best_path = 値なし
+   
+   # BFS ループ
+   limit = 積(n, n)
+   limit = 積(limit, k)
+   loop_count = 0
+   
+   limit 回くり返す {
+      もし queue の大きさ が 0 ならば {
+         くり返しを抜ける
+      }
+      
+      state = queue[0]
+      # queue から先頭を削除する代わりに、インデックスで管理
+      
+      row = state[0]
+      col = state[1]
+      path = state[2]
+      path_len = path の大きさ
+      
+      # 長さ k に達した
+      もし path_len が k ならば {
+         もし best_path が 値なし ならば {
+            best_path = path
+         }
+         そうでなければ {
+            # 辞書順比較
+            is_smaller = 0
+            idx = 0
+            path_len 回くり返す {
+               もし path[idx] が best_path[idx] より小さい ならば {
+                  is_smaller = 1
+                  くり返しを抜ける
+               }
+               もし path[idx] が best_path[idx] より大きい ならば {
+                  くり返しを抜ける
+               }
+               idx を増やす
+            }
+            もし is_smaller が 1 ならば {
+               best_path = path
+            }
+         }
+      }
+      
+      # 長さ k に達していなければ隣接セルを探索
+      もし path_len が k より小さい ならば {
+         # 上下左右の隣接セルをチェック
+         directions = [[差(0, 1), 0], [1, 0], [0, 1], [差(0, 1), 0]]
+         d = 0
+         4 回くり返す {
+            dr = directions[d][0]
+            dc = directions[d][1]
+            new_row = 和(row, dr)
+            new_col = 和(col, dc)
+            
+            # グリッド内かチェック
+            もし new_row が 0 以上 ならば {
+               もし new_row が n より小さい ならば {
+                  もし new_col が 0 以上 ならば {
+                     もし new_col が n より小さい ならば {
+                        new_val = grid[new_row][new_col]
+                        new_path = []
+                        idx = 0
+                        path_len 回くり返す {
+                           new_path に path[idx] を追加する
+                           idx を増やす
+                        }
+                        new_path に new_val を追加する
+                        queue に [new_row, new_col, new_path] を追加する
+                     }
+                  }
+               }
+            }
+            d を増やす
+         }
+      }
+      
+      # queue から処理済みの要素を削除する処理
+      # (簡略化のため、新しい queue を作成)
+      new_queue = []
+      idx = 1
+      queue の大きさ 回くり返す {
+         もし idx が queue の大きさ より小さい ならば {
+            new_queue に queue[idx] を追加する
+            idx を増やす
+         }
+         idx を増やす
+      }
+      queue = new_queue
+      
+      loop_count を増やす
+   }
+   
+   best_path が答え
+}

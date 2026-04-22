@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+remove_duplicates = 入力 numbers に対し {
+    counts = {}
+    i = 0
+    ながら(i < 長さ(numbers)) {
+        x = numbers[i]
+        もし(オブジェクト判定(counts[x])) {
+            counts[x] = 和(counts[x], 1)
+        } 違えば {
+            counts[x] = 1
+        }
+        i = 和(i, 1)
+    }
+
+    result = []
+    i = 0
+    ながら(i < 長さ(numbers)) {
+        x = numbers[i]
+        もし(counts[x] == 1) {
+            result = result + [x]
+        }
+        i = 和(i, 1)
+    }
+
+    result
+}

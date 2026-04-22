@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+circular_shift = 入力 x, shift に対し {
+   s = 文字列化(x)
+   n = sの大きさ
+   
+   もし shift が n より大きい ならば {
+      # 桁を反転して返す
+      result = ""
+      i = 0
+      n回くり返す {
+         result に s[差(差(n, 1), i)] を追加する
+         i を増やす
+      }
+      result が答え
+   }
+   
+   # 循環シフト
+   shifted = ""
+   i = 0
+   n回くり返す {
+      idx = 剰余(和(i, shift), n)
+      shifted に s[idx] を追加する
+      i を増やす
+   }
+   shifted が答え
+}

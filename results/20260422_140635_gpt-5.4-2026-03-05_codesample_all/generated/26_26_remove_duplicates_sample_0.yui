@@ -1,0 +1,23 @@
+標準ライブラリを使う
+
+remove_duplicates = 入力 numbers に対し {
+   result=[]
+   n=numbersの大きさ
+   i=0
+   n回くり返す{
+      x=numbers[i]
+      count=0
+      j=0
+      n回くり返す{
+         もしnumbers[j]がxならば{
+            countを増やす
+         }
+         jを増やす
+      }
+      もしcountが1ならば{
+         resultにxを追加する
+      }
+      iを増やす
+   }
+   resultが答え
+}

@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+decimal_to_binary = 入力 decimal に対し {
+   もしdecimalが0ならば{
+      "db0db"が答え
+   }
+
+   digits=[]
+   n=decimal
+
+   1000回くり返す{
+      もしnが0ならば{
+         くり返しを抜ける
+      }
+      digitsに文字列化(剰余(n,2))を追加する
+      n=商(n,2)
+   }
+
+   result="db"
+   i=差(digitsの大きさ,1)
+   digitsの大きさ回くり返す{
+      result="{result}{digits[i]}"
+      iを減らす
+   }
+   result="{result}db"
+   resultが答え
+}

@@ -1,0 +1,22 @@
+標準ライブラリを使う
+
+minSubArraySum = 入力 nums に対し {
+   n = nums の大きさ
+   # 最初の要素を暫定の最小値にする
+   min_sum = nums[0]
+   # Kadane のアルゴリズムの最小値版
+   # current_sum は「現在位置で終わる部分配列の最小和」
+   current_sum = nums[0]
+   i = 1
+   差(n, 1) 回くり返す {
+      # 現在の要素だけか、前の部分配列に追加するか、どちらが小さいか
+      x = nums[i]
+      current_sum = 最小値(x, 和(current_sum, x))
+      # 全体の最小値を更新
+      もし current_sum が min_sum より小さいならば {
+         min_sum = current_sum
+      }
+      i を増やす
+   }
+   min_sum が答え
+}

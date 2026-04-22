@@ -1,0 +1,46 @@
+標準ライブラリを使う
+
+check_if_last_char_is_a_letter = 入力 txt に対し {
+   # 空文字列チェック
+   もし txt の大きさ が 0 ならば {
+      偽
+   }
+   
+   # 最後の文字を取得
+   last_index = 差(txt の大きさ, 1)
+   last_char = txt[last_index]
+   
+   # 最後の文字がスペースかチェック
+   もし last_char が " " ならば {
+      偽
+   }
+   
+   # 最後から2番目の文字がスペースかチェック
+   もし last_index が 0 ならば {
+      # 1文字のみで、スペースでない場合はアルファベットかチェック
+      もし last_char が "a" 以上 かつ last_char が "z" 以下 ならば {
+         真
+      }
+      もし last_char が "A" 以上 かつ last_char が "Z" 以下 ならば {
+         真
+      }
+      偽
+   }
+   
+   prev_index = 差(last_index, 1)
+   prev_char = txt[prev_index]
+   
+   # 最後から2番目がスペースなら、最後の文字がアルファベットかチェック
+   もし prev_char が " " ならば {
+      もし last_char が "a" 以上 かつ last_char が "z" 以下 ならば {
+         真
+      }
+      もし last_char が "A" 以上 かつ last_char が "Z" 以下 ならば {
+         真
+      }
+      偽
+   }
+   
+   # 最後から2番目がスペースでない場合は、単語の一部なのでFalse
+   偽
+}

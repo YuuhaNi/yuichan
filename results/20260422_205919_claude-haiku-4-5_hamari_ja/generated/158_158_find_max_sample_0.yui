@@ -1,0 +1,50 @@
+標準ライブラリを使う
+
+find_max = 入力 words に対し {
+   もし words の大きさが 0 ならば {
+      ""
+   }
+   そうでなければ {
+      max_word = words[0]
+      max_unique = 0
+      
+      words の大きさ 回くり返す {
+         current_word = words[i]
+         unique_count = 0
+         checked = []
+         
+         current_word の大きさ 回くり返す {
+            char = current_word[j]
+            is_new = 1
+            
+            checked の大きさ 回くり返す {
+               もし char が checked[k] ならば {
+                  is_new = 0
+               }
+               k を増やす
+            }
+            
+            もし is_new が 1 ならば {
+               checked に char を追加する
+               unique_count を増やす
+            }
+            j を増やす
+         }
+         
+         もし unique_count が max_unique より大きい ならば {
+            max_word = current_word
+            max_unique = unique_count
+         }
+         そうでなければ {
+            もし unique_count が max_unique ならば {
+               もし current_word が max_word より小さい ならば {
+                  max_word = current_word
+               }
+            }
+         }
+         i を増やす
+      }
+      
+      max_word
+   }
+}

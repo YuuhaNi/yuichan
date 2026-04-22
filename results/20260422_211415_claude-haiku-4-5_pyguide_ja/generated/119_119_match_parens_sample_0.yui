@@ -1,0 +1,77 @@
+標準ライブラリを使う
+
+match_parens = 入力 lst に対し {
+   s1 = lst[0]
+   s2 = lst[1]
+   
+   # パターン1: s1 + s2 の順序でチェック
+   result1 = 真
+   balance = 0
+   len1 = s1の大きさ
+   len2 = s2の大きさ
+   total = 和(len1, len2)
+   
+   i = 0
+   total回くり返す {
+      もし i が len1 より小さいならば {
+         c = s1[i]
+      } そうでなければ {
+         idx = 差(i, len1)
+         c = s2[idx]
+      }
+      
+      もし c が "("[0] ならば {
+         balanceを増やす
+      } そうでなければ {
+         balanceを減らす
+      }
+      
+      もし balance が 0 より小さいならば {
+         result1 = 偽
+         くり返しを抜ける
+      }
+      
+      iを増やす
+   }
+   
+   もし result1 が 真 ならば {
+      もし balance が 0 ならば {
+         "Yes"が答え
+      }
+   }
+   
+   # パターン2: s2 + s1 の順序でチェック
+   result2 = 真
+   balance = 0
+   
+   i = 0
+   total回くり返す {
+      もし i が len2 より小さいならば {
+         c = s2[i]
+      } そうでなければ {
+         idx = 差(i, len2)
+         c = s1[idx]
+      }
+      
+      もし c が "("[0] ならば {
+         balanceを増やす
+      } そうでなければ {
+         balanceを減らす
+      }
+      
+      もし balance が 0 より小さいならば {
+         result2 = 偽
+         くり返しを抜ける
+      }
+      
+      iを増やす
+   }
+   
+   もし result2 が 真 ならば {
+      もし balance が 0 ならば {
+         "Yes"が答え
+      }
+   }
+   
+   "No"が答え
+}

@@ -1,0 +1,9 @@
+標準ライブラリを使う
+
+sum_to_n = 入力 n に対し {
+   result = 0
+   n回くり返す {
+      resultを増やす
+   }
+   resultが答え
+}

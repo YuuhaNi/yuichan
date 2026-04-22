@@ -1,0 +1,9 @@
+標準ライブラリを使う
+
+eat = 入力 number, need, remaining に対し {
+    もし remaining が need 以上 ならば {
+        [和(number, need), 差(remaining, need)] が 答え
+    } そうでなければ {
+        [和(number, remaining), 0] が 答え
+    }
+}

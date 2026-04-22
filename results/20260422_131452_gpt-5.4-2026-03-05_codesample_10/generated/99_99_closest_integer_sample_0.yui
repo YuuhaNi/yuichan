@@ -1,0 +1,25 @@
+標準ライブラリを使う
+
+closest_integer = 入力 value に対し {
+   x=小数化(value)
+   base=整数化(x)
+
+   もしxが0以上ならば{
+      diff=差(x,base)
+      もしdiffが0.5以上ならば{
+         和(base,1)が答え
+      }
+      そうでなければ{
+         baseが答え
+      }
+   }
+   そうでなければ{
+      diff=差(base,x)
+      もしdiffが0.5以上ならば{
+         差(base,1)が答え
+      }
+      そうでなければ{
+         baseが答え
+      }
+   }
+}

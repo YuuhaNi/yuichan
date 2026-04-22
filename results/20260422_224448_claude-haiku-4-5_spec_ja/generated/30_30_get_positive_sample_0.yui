@@ -1,0 +1,26 @@
+標準ライブラリを使う
+
+get_positive = 入力 l に対し {
+   result = []
+   l の大きさ 回くり返す {
+      i = 0
+      もし l[i] が 0 より大きい ならば {
+         result に l[i] を追加する
+      }
+      i を増やす
+   }
+   result が答え
+}
+標準ライブラリを使う
+
+get_positive = 入力 l に対し {
+   result = []
+   i = 0
+   l の大きさ 回くり返す {
+      もし l[i] が 0 より大きい ならば {
+         result に l[i] を追加する
+      }
+      i を増やす
+   }
+   result が答え
+}

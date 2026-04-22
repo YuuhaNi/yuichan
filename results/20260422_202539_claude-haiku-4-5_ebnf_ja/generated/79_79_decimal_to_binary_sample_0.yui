@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+decimal_to_binary = 入力 decimal に対し {
+    binary = ""
+    もし decimal が 0 ならば {
+        binary = "0"
+    } そうでなければ {
+        くり返す_flag = 真
+        もし decimal が 0 より大きい ならば {
+            remainder = 剰余(decimal, 2)
+            binary = 連結(文字列化(remainder), binary)
+            decimal = 商(decimal, 2)
+        } そうでなければ {
+            くり返す_flag = 偽
+        }
+    }
+    result = 連結("db", 連結(binary, "db"))
+    result が 答え
+}

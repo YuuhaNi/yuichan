@@ -1,0 +1,58 @@
+標準ライブラリを使う
+
+below_zero = 入力 operations に対し {
+   balance = 0
+   operationsの大きさ回くり返す {
+      i = 0
+      operationsの大きさ回くり返す {
+         もしiが0ならば {
+            balance = 和(balance, operations[i])
+         }
+         もしbalanceが0以下ならば {
+            真 が答え
+         }
+         iを増やす
+      }
+   }
+   偽 が答え
+}
+標準ライブラリを使う
+
+below_zero = 入力 operations に対し {
+   balance = 0
+   operationsの大きさ回くり返す {
+      balance = 和(balance, operations[0])
+      もしbalanceが0以下ならば {
+         真 が答え
+      }
+   }
+   偽 が答え
+}
+標準ライブラリを使う
+
+below_zero = 入力 operations に対し {
+   balance = 0
+   operationsの大きさ回くり返す {
+      i = 0
+      もしiがoperationsの大きさより小さいならば {
+         balance = 和(balance, operations[i])
+         もしbalanceが0以下ならば {
+            真 が答え
+         }
+         iを増やす
+      }
+   }
+   偽 が答え
+}
+標準ライブラリを使う
+
+below_zero = 入力 operations に対し {
+   balance = 0
+   operationsの大きさ回くり返す {
+      balance = 和(balance, operations[0])
+      もしbalanceが0以下ならば {
+         真 が答え
+      }
+   }
+   偽 が答え
+}

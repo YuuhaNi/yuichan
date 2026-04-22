@@ -1,0 +1,11 @@
+標準ライブラリを使う
+
+do_algebra = 入力 operator, operand に対し {
+    式 = 文字列化(operand[0])
+    
+    繰り返す i を 0 から 長さ(operator) - 1 まで {
+        式 = 式 + operator[i] + 文字列化(operand[i + 1])
+    }
+    
+    評価(式)
+}

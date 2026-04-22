@@ -1,0 +1,23 @@
+標準ライブラリを使う
+
+intersperse = 入力 numbers, delimeter に対し {
+   result = []
+   sz = numbersの大きさ
+   
+   もし sz が 0 ならば {
+      result
+   }
+   そうでなければ {
+      i = 0
+      sz回くり返す {
+         resultに numbers[i] を追加する
+         
+         もし i が 差(sz, 1) より小さい ならば {
+            resultに delimeter を追加する
+         }
+         
+         i = 和(i, 1)
+      }
+      result
+   }
+}

@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+maximum = 入力 arr, k に対し {
+    n = arr の長さ
+    もし k == 0 なら {
+        []
+    } でなければ {
+        result = []
+        count = 0
+
+        反復 (i = 1000; i >= -1000; i = 差(i, 1)) {
+            j = 0
+            反復 (j < n) {
+                もし arr[j] == i なら {
+                    result = result に i を追加
+                    count = 和(count, 1)
+                    もし count == k なら {
+                        戻る result
+                    }
+                }
+                j = 和(j, 1)
+            }
+        }
+
+        result
+    }
+}

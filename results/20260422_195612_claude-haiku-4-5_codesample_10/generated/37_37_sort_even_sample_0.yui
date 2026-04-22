@@ -1,0 +1,34 @@
+標準ライブラリを使う
+
+sort_even = 入力 l に対し {
+   # 偶数インデックスの要素を抽出
+   even_elements = []
+   n = lの大きさ
+   i = 0
+   n回くり返す {
+      もし剰余(i, 2)が0ならば {
+         even_elementsにl[i]を追加する
+      }
+      iを増やす
+   }
+   
+   # 偶数インデックスの要素をソート
+   sorted_even = ソート(even_elements)
+   
+   # 結果を構築
+   result = []
+   even_idx = 0
+   i = 0
+   n回くり返す {
+      もし剰余(i, 2)が0ならば {
+         resultにsorted_even[even_idx]を追加する
+         even_idxを増やす
+      }
+      そうでなければ {
+         resultにl[i]を追加する
+      }
+      iを増やす
+   }
+   
+   resultが答え
+}

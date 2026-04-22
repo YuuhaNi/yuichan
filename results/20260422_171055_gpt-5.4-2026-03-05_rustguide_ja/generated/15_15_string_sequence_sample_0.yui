@@ -1,0 +1,14 @@
+標準ライブラリを使う
+
+string_sequence = 入力 n に対し {
+   result = ""
+   i = 0
+
+   n回くり返す{
+      result = "{result}{i} "
+      iを増やす
+   }
+
+   result = "{result}{i}"
+   resultが答え
+}

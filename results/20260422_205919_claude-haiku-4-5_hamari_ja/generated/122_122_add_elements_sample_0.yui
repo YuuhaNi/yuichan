@@ -1,0 +1,14 @@
+標準ライブラリを使う
+
+add_elements = 入力 arr, k に対し {
+   result = 0
+   i = 0
+   k回くり返す {
+      element = arr[i]
+      もし element が 100 より小さい ならば {
+         result = 和(result, element)
+      }
+      i = 和(i, 1)
+   }
+   result が答え
+}

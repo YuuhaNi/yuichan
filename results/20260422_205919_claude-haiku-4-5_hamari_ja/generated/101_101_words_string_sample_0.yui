@@ -1,0 +1,34 @@
+標準ライブラリを使う
+
+words_string = 入力 s に対し {
+   result = []
+   word = ""
+   i = 0
+   sz = sの大きさ
+   
+   sz回くり返す {
+      char = s[i]
+      
+      もし char が "," ならば {
+         もし word の大きさ が 0 より大きい ならば {
+            result に word を追加する
+            word = ""
+         }
+      } そうでなければ もし char が " " ならば {
+         もし word の大きさ が 0 より大きい ならば {
+            result に word を追加する
+            word = ""
+         }
+      } そうでなければ {
+         word = 連結(word, char)
+      }
+      
+      i = 和(i, 1)
+   }
+   
+   もし word の大きさ が 0 より大きい ならば {
+      result に word を追加する
+   }
+   
+   result が答え
+}

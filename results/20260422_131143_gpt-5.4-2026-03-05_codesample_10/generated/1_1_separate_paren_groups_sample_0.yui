@@ -1,0 +1,32 @@
+標準ライブラリを使う
+
+separate_paren_groups=入力paren_stringに対し{
+   groups=[]
+   current=""
+   depth=0
+   n=paren_stringの大きさ
+   i=0
+
+   n回くり返す{
+      c=paren_string[i]
+
+      もしcが40ならば{
+         current="{current}("
+         depthを増やす
+      }
+      そうでなければ{
+         もしcが41ならば{
+            current="{current})"
+            depthを減らす
+            もしdepthが0ならば{
+               groupsにcurrentを追加する
+               current=""
+            }
+         }
+      }
+
+      iを増やす
+   }
+
+   groupsが答え
+}

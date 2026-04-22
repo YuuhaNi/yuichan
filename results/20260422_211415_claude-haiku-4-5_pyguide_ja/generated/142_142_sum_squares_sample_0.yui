@@ -1,0 +1,24 @@
+標準ライブラリを使う
+
+sum_squares = 入力 lst に対し {
+   total = 0
+   i = 0
+   lstの大きさ回くり返す {
+      remainder3 = 剰余(i, 3)
+      remainder4 = 剰余(i, 4)
+      
+      もしremainder3が0ならば {
+         total = 和(total, 積(lst[i], lst[i]))
+      } そうでなければ {
+         もしremainder4が0ならば {
+            total = 和(total, 積(積(lst[i], lst[i]), lst[i]))
+         } そうでなければ {
+            total = 和(total, lst[i])
+         }
+      }
+      
+      iを増やす
+   }
+   
+   totalが答え
+}

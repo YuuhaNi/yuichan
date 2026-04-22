@@ -1,0 +1,15 @@
+標準ライブラリを使う
+
+f = 入力 n に対し {
+   result = []
+   i = 0
+   fact = 1
+
+   n回くり返す{
+      iを増やす
+      fact = 積(fact, i)
+      resultにfactを追加する
+   }
+
+   resultが答え
+}

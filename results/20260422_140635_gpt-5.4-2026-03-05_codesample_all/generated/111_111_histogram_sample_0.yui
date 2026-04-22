@@ -1,0 +1,63 @@
+標準ライブラリを使う
+
+histogram = 入力 test に対し {
+   もしtestの大きさが0ならば{
+      {}が答え
+   }
+
+   counts={}
+   token=""
+   i=0
+   n=testの大きさ
+
+   n回くり返す{
+      c=test[i]
+      もしcが32ならば{
+         もしtokenの大きさが0より大きいならば{
+            もしtokenがcountsのいずれかならば{
+               counts[token]を増やす
+            }
+            そうでなければ{
+               counts[token]=1
+            }
+            token=""
+         }
+      }
+      そうでなければ{
+         tokenにcを追加する
+      }
+      iを増やす
+   }
+
+   もしtokenの大きさが0より大きいならば{
+      もしtokenがcountsのいずれかならば{
+         counts[token]を増やす
+      }
+      そうでなければ{
+         counts[token]=1
+      }
+   }
+
+   best=0
+   result={}
+   letters=countsのキー列
+   m=lettersの大きさ
+   j=0
+   m回くり返す{
+      ch=letters[j]
+      cnt=counts[ch]
+      もしcntがbestより大きいならば{
+         best=cnt
+         result={}
+         result[ch]=cnt
+      }
+      そうでなければ{
+         もしcntがbestならば{
+            result[ch]=cnt
+         }
+      }
+      jを増やす
+   }
+
+   resultが答え
+}

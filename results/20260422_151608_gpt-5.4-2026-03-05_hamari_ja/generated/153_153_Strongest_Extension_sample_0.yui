@@ -1,0 +1,42 @@
+標準ライブラリを使う
+
+Strongest_Extension = 入力 class_name, extensions に対し {
+   best_name=extensions[0]
+   best_score=差(0,1000000)
+
+   i=0
+   n=extensionsの大きさ
+   n回くり返す{
+      ext=extensions[i]
+
+      upper=0
+      lower=0
+      j=0
+      m=extの長さ
+      m回くり返す{
+         ch=ext[j]
+         もしchが"ABCDEFGHIJKLMNOPQRSTUVWXYZ"のいずれかならば{
+            upperを増やす
+         }
+         そうでなければ{
+            もしchが"abcdefghijklmnopqrstuvwxyz"のいずれかならば{
+               lowerを増やす
+            }
+         }
+         jを増やす
+      }
+
+      score=差(upper,lower)
+      もしscoreがbest_scoreより大きいならば{
+         best_score=score
+         best_name=ext
+      }
+
+      iを増やす
+   }
+
+   result=class_name
+   resultに"."を追加する
+   resultにbest_nameを追加する
+   resultが答え
+}

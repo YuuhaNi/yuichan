@@ -1,0 +1,136 @@
+標準ライブラリを使う
+
+minPath = 入力 grid, k に対し {
+   n = gridの大きさ
+   
+   # グリッドから値の位置を探す関数
+   findPos = 入力 val に対し {
+      i = 0
+      n回くり返す {
+         j = 0
+         n回くり返す {
+            もし grid[i][j] が val ならば {
+               pos = {"row": i, "col": j}
+               pos が答え
+            }
+            j を増やす
+         }
+         i を増やす
+      }
+   }
+   
+   # 隣接セルを取得する関数
+   getNeighbors = 入力 row, col に対し {
+      neighbors = []
+      # 上
+      もし row が 0 より大きい ならば {
+         neighbors に {"row": 差(row, 1), "col": col} を追加する
+      }
+      # 下
+      もし row が 差(n, 1) より小さい ならば {
+         neighbors に {"row": 和(row, 1), "col": col} を追加する
+      }
+      # 左
+      もし col が 0 より大きい ならば {
+         neighbors に {"row": row, "col": 差(col, 1)} を追加する
+      }
+      # 右
+      もし col が 差(n, 1) より小さい ならば {
+         neighbors に {"row": row, "col": 和(col, 1)} を追加する
+      }
+      neighbors が答え
+   }
+   
+   # 経路を比較する関数
+   isSmaller = 入力 pathA, pathB に対し {
+      i = 0
+      k回くり返す {
+         もし pathA[i] が pathB[i] より小さい ならば {
+            真 が答え
+         }
+         もし pathA[i] が pathB[i] より大きい ならば {
+            偽 が答え
+         }
+         i を増やす
+      }
+      偽 が答え
+   }
+   
+   # BFS で長さ k の最短経路を探索
+   bestPath = 値なし
+   
+   # すべてのスタート位置から探索
+   startVal = 1
+   積(n, n)回くり返す {
+      もし startVal が 積(n, n) より大きい ならば {
+         くり返しを抜ける
+      }
+      
+      startPos = findPos(startVal)
+      
+      # キュー: [row, col, path]
+      queue = []
+      queue に [startPos["row"], startPos["col"], [startVal]] を追加する
+      
+      queue の大きさ回くり返す {
+         もし queue の大きさ が 0 ならば {
+            くり返しを抜ける
+         }
+         
+         current = queue[0]
+         row = current[0]
+         col = current[1]
+         path = current[2]
+         
+         # キューから削除（先頭を除いた部分を新しいキューにする）
+         newQueue = []
+         i = 1
+         queue の大きさ回くり返す {
+            もし i が queue の大きさ 以上 ならば {
+               くり返しを抜ける
+            }
+            newQueue に queue[i] を追加する
+            i を増やす
+         }
+         queue = newQueue
+         
+         # 経路の長さが k に達した
+         もし path の大きさ が k ならば {
+            もし bestPath が 値なし ならば {
+               bestPath = path
+            } そうでなければ {
+               もし isSmaller(path, bestPath) ならば {
+                  bestPath = path
+               }
+            }
+         } そうでなければ {
+            # 隣接セルを探索
+            neighbors = getNeighbors(row, col)
+            i = 0
+            neighbors の大きさ回くり返す {
+               もし i が neighbors の大きさ 以上 ならば {
+                  くり返しを抜ける
+               }
+               nextRow = neighbors[i]["row"]
+               nextCol = neighbors[i]["col"]
+               nextVal = grid[nextRow][nextCol]
+               
+               newPath = []
+               j = 0
+               path の大きさ回くり返す {
+                  newPath に path[j] を追加する
+                  j を増やす
+               }
+               newPath に nextVal を追加する
+               
+               queue に [nextRow, nextCol, newPath] を追加する
+               i を増やす
+            }
+         }
+      }
+      
+      startVal を増やす
+   }
+   
+   bestPath が答え
+}

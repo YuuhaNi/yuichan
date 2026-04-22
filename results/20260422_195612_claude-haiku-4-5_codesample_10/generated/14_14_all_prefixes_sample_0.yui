@@ -1,0 +1,13 @@
+標準ライブラリを使う
+
+all_prefixes = 入力 string に対し {
+   result = []
+   n = stringの大きさ
+   i = 1
+   n回くり返す {
+      prefix = string の 0 から i までの部分文字列
+      result に prefix を追加する
+      i を増やす
+   }
+   result が答え
+}

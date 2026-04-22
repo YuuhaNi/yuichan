@@ -1,0 +1,30 @@
+標準ライブラリを使う
+
+odd_count = 入力 lst に対し {
+    result = []
+    0 回くり返す {
+        何もしない
+    }
+    i = 0
+    長さ(lst) 回 くり返す {
+        str = インデックス(lst, i)
+        odd_num = 0
+        0 回 くり返す {
+            何もしない
+        }
+        j = 0
+        長さ(str) 回 くり返す {
+            char = インデックス(str, j)
+            num = 数値変換(char)
+            もし 剰余(num, 2) が 1 ならば {
+                odd_num を増やす
+            }
+            j を増やす
+        }
+        template = "the number of odd elements in the string i of the input."
+        output = 置換(template, "i", 文字列変換(odd_num))
+        result の末尾に output を追加する
+        i を増やす
+    }
+    result が 答え
+}

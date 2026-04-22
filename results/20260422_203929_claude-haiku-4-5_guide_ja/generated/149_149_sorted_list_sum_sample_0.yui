@@ -1,0 +1,52 @@
+標準ライブラリを使う
+
+sorted_list_sum = 入力 lst に対し {
+   # 奇数の長さを持つ文字列を削除する
+   filtered = []
+   i = 0
+   lstの大きさ回くり返す {
+      word = lst[i]
+      len = wordの大きさ
+      # 長さが偶数かどうかを判定（2で割った剰余が0なら偶数）
+      remainder = 剰余(len, 2)
+      もしreminderが0ならば {
+         filteredにwordを追加する
+      }
+      iを増やす
+   }
+
+   # バブルソートで長さ昇順、同じ長さならアルファベット順に並べ替える
+   j = 0
+   filteredの大きさ回くり返す {
+      k = 0
+      差(filteredの大きさ, 1)回くり返す {
+         word1 = filtered[k]
+         word2 = filtered[和(k, 1)]
+         len1 = word1の大きさ
+         len2 = word2の大きさ
+         
+         # 長さで比較
+         もしlen1がlen2より大きいならば {
+            # スワップ
+            temp = filtered[k]
+            filtered[k] = filtered[和(k, 1)]
+            filtered[和(k, 1)] = temp
+         }
+         そうでなければ {
+            # 長さが同じ場合、アルファベット順で比較
+            もしlen1がlen2ならば {
+               もしword1がword2より大きいならば {
+                  # スワップ
+                  temp = filtered[k]
+                  filtered[k] = filtered[和(k, 1)]
+                  filtered[和(k, 1)] = temp
+               }
+            }
+         }
+         kを増やす
+      }
+      jを増やす
+   }
+
+   filteredが答え
+}

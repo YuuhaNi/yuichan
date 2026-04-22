@@ -1,0 +1,40 @@
+標準ライブラリを使う
+
+count_nums = 入力 arr に対し {
+   count = 0
+   i = 0
+   arrの大きさ回くり返す {
+      num = arr[i]
+      digit_sum = 0
+      
+      もし num が 0 ならば {
+         # 0 の場合、桁の合計は 0 なのでカウントしない
+         digit_sum = 0
+      } そうでなければ {
+         もし num が 0 より小さい ならば {
+            # 負の数の場合、符号付き桁を処理
+            digit_sum = num
+            num = 商(num, 10)
+            num回くり返す {
+               digit_sum = 和(digit_sum, 剰余(num, 10))
+               num = 商(num, 10)
+            }
+         } そうでなければ {
+            # 正の数の場合
+            digit_sum = 0
+            num回くり返す {
+               digit_sum = 和(digit_sum, 剰余(num, 10))
+               num = 商(num, 10)
+            }
+         }
+      }
+      
+      もし digit_sum が 0 より大きい ならば {
+         count = 和(count, 1)
+      }
+      
+      i = 和(i, 1)
+   }
+   
+   count が答え
+}

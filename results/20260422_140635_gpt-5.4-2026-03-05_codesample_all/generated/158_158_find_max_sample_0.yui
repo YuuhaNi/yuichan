@@ -1,0 +1,28 @@
+標準ライブラリを使う
+
+find_max = 入力 words に対し {
+   best=words[0]
+   best_count=unique_chars(best)の大きさ
+
+   n=wordsの大きさ
+   i=1
+   差(n,1)回くり返す{
+      w=words[i]
+      count=unique_chars(w)の大きさ
+
+      もしcountがbest_countより大きいならば{
+         best=w
+         best_count=count
+      }
+      そうでなければ{
+         もしcountがbest_countならば{
+            もしwがbestより小さいならば{
+               best=w
+               best_count=count
+            }
+         }
+      }
+      iを増やす
+   }
+   bestが答え
+}

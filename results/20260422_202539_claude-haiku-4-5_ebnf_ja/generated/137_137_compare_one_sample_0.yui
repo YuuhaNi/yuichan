@@ -1,0 +1,46 @@
+標準ライブラリを使う
+
+compare_one = 入力 a, b に対し {
+    a_num = 値なし
+    b_num = 値なし
+    
+    もし a が 整数 ならば {
+        a_num = a
+    }
+    そうでなければ {
+        もし a が 浮動小数点数 ならば {
+            a_num = a
+        }
+        そうでなければ {
+            a_str = a
+            a_str_normalized = a_str を "," で "." に置換する
+            a_num = a_str_normalized を 浮動小数点数 に変換する
+        }
+    }
+    
+    もし b が 整数 ならば {
+        b_num = b
+    }
+    そうでなければ {
+        もし b が 浮動小数点数 ならば {
+            b_num = b
+        }
+        そうでなければ {
+            b_str = b
+            b_str_normalized = b_str を "," で "." に置換する
+            b_num = b_str_normalized を 浮動小数点数 に変換する
+        }
+    }
+    
+    もし a_num が b_num より大きい ならば {
+        a が答え
+    }
+    そうでなければ {
+        もし b_num が a_num より大きい ならば {
+            b が答え
+        }
+        そうでなければ {
+            値なし が答え
+        }
+    }
+}

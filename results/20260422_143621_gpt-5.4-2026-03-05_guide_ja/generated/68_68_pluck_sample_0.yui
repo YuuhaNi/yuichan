@@ -1,0 +1,35 @@
+標準ライブラリを使う
+
+pluck = 入力 arr に対し {
+   もしarrの大きさが0ならば{
+      []が答え
+   }
+
+   i = 0
+   found = 偽
+   best_value = 0
+   best_index = 0
+
+   arrの大きさ回くり返す{
+      v = arr[i]
+      もし剰余(v, 2)が0ならば{
+         もしfoundが偽ならば{
+            found = 真
+            best_value = v
+            best_index = i
+         }そうでなければ{
+            もしvがbest_valueより小さいならば{
+               best_value = v
+               best_index = i
+            }
+         }
+      }
+      iを増やす
+   }
+
+   もしfoundが偽ならば{
+      []が答え
+   }
+
+   [best_value, best_index]が答え
+}

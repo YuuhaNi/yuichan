@@ -1,0 +1,24 @@
+標準ライブラリを使う
+
+find_closest_elements = 入力 numbers に対し {
+    最小差 = 絶対値(差(numbers[1], numbers[0]))
+    小さい方 = 最小値(numbers[0], numbers[1])
+    大きい方 = 最大値(numbers[0], numbers[1])
+
+    i = 0
+    numbersの大きさ回くり返す {
+        j = i
+        jを増やす
+        もしjがnumbersの大きさより小さいならば {
+            差の値 = 絶対値(差(numbers[j], numbers[i]))
+            もし差の値が最小差より小さいならば {
+                最小差 = 差の値
+                小さい方 = 最小値(numbers[i], numbers[j])
+                大きい方 = 最大値(numbers[i], numbers[j])
+            }
+        }
+        iを増やす
+    }
+
+    [小さい方, 大きい方] が答え
+}

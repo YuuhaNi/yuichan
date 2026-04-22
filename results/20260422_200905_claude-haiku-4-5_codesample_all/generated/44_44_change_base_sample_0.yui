@@ -1,0 +1,15 @@
+標準ライブラリを使う
+
+change_base = 入力 x, base に対し {
+   もし x が 0 ならば {
+      "0" が答え
+   }
+   result = ""
+   n = x
+   n が 0 より大きい 回くり返す {
+      digit = 剰余(n, base)
+      result に 文字列化(digit) を追加する
+      n = 商(n, base)
+   }
+   reverse(配列化(result)) が答え
+}

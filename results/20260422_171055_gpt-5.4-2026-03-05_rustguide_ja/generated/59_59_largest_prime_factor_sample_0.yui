@@ -1,0 +1,22 @@
+標準ライブラリを使う
+
+largest_prime_factor = 入力 n に対し {
+   factor = 2
+   largest = 1
+
+   n回くり返す{
+      もしnが1ならば{
+         くり返しを抜ける
+      }
+
+      もし剰余(n, factor)が0ならば{
+         largest = factor
+         n = 商(n, factor)
+      }
+      そうでなければ{
+         factorを増やす
+      }
+   }
+
+   largestが答え
+}

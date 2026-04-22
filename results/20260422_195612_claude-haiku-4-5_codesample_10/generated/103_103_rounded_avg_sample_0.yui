@@ -1,0 +1,53 @@
+標準ライブラリを使う
+
+rounded_avg = 入力 n, m に対し {
+   もし n が m より大きい ならば {
+      -1 が答え
+   }
+   そうでなければ {
+      # n から m までの整数の合計を計算
+      total = 0
+      i = n
+      くり返す {
+         もし i が m より大きい ならば {
+            くり返しを抜ける
+         }
+         total = 和(total, i)
+         i を増やす
+      }
+      
+      # 個数を計算 (m - n + 1)
+      count = 和(差(m, n), 1)
+      
+      # 平均を計算
+      avg = 商(total, count)
+      
+      # 余りで四捨五入判定
+      remainder = 剰余(total, count)
+      doubled_remainder = 積(remainder, 2)
+      
+      もし doubled_remainder が count 以上 ならば {
+         avg = 和(avg, 1)
+      }
+      
+      # 2進数に変換
+      binary = ""
+      もし avg が 0 ならば {
+         binary = "0b0"
+      }
+      そうでなければ {
+         temp = avg
+         くり返す {
+            もし temp が 0 ならば {
+               くり返しを抜ける
+            }
+            bit = 剰余(temp, 2)
+            binary = 文字列化(bit) + binary
+            temp = 商(temp, 2)
+         }
+         binary = "0b" + binary
+      }
+      
+      binary が答え
+   }
+}

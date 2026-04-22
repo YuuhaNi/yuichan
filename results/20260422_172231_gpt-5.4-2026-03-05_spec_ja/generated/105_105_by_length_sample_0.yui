@@ -1,0 +1,86 @@
+標準ライブラリを使う
+
+by_length = 入力 arr に対し {
+   counts = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+   arrの大きさ回くり返す {
+      i = くり返し
+      x = arr[i]
+
+      もしxが1ならば {
+         counts[0] = 和(counts[0], 1)
+      }
+      そうでなければ {
+         もしxが2ならば {
+            counts[1] = 和(counts[1], 1)
+         }
+         そうでなければ {
+            もしxが3ならば {
+               counts[2] = 和(counts[2], 1)
+            }
+            そうでなければ {
+               もしxが4ならば {
+                  counts[3] = 和(counts[3], 1)
+               }
+               そうでなければ {
+                  もしxが5ならば {
+                     counts[4] = 和(counts[4], 1)
+                  }
+                  そうでなければ {
+                     もしxが6ならば {
+                        counts[5] = 和(counts[5], 1)
+                     }
+                     そうでなければ {
+                        もしxが7ならば {
+                           counts[6] = 和(counts[6], 1)
+                        }
+                        そうでなければ {
+                           もしxが8ならば {
+                              counts[7] = 和(counts[7], 1)
+                           }
+                           そうでなければ {
+                              もしxが9ならば {
+                                 counts[8] = 和(counts[8], 1)
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+
+   result = []
+
+   counts[8]回くり返す {
+      resultに"Nine"を追加する
+   }
+   counts[7]回くり返す {
+      resultに"Eight"を追加する
+   }
+   counts[6]回くり返す {
+      resultに"Seven"を追加する
+   }
+   counts[5]回くり返す {
+      resultに"Six"を追加する
+   }
+   counts[4]回くり返す {
+      resultに"Five"を追加する
+   }
+   counts[3]回くり返す {
+      resultに"Four"を追加する
+   }
+   counts[2]回くり返す {
+      resultに"Three"を追加する
+   }
+   counts[1]回くり返す {
+      resultに"Two"を追加する
+   }
+   counts[0]回くり返す {
+      resultに"One"を追加する
+   }
+
+   result が答え
+}

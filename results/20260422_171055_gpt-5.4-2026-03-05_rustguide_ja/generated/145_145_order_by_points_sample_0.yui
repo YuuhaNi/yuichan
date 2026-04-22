@@ -1,0 +1,52 @@
+標準ライブラリを使う
+
+order_by_points = 入力 nums に対し {
+   digit_sum = 入力nに対し{
+      s = 0
+      a = 絶対値(n)
+
+      もしaが0ならば{
+         0が答え
+      }
+
+      a回くり返す{
+         もしaが0ならば{
+            くり返しを抜ける
+         }
+         s = 和(s, 剰余(a, 10))
+         a = 商(a, 10)
+      }
+      sが答え
+   }
+
+   result = []
+   i = 0
+   numsの大きさ回くり返す{
+      resultにnums[i]を追加する
+      iを増やす
+   }
+
+   n = resultの大きさ
+   i = 0
+   n回くり返す{
+      j = 0
+      差(n, 1)回くり返す{
+         もしjが差(n, 和(i, 1))以下ならば{
+            a = result[j]
+            b = result[和(j, 1)]
+            sa = digit_sum(a)
+            sb = digit_sum(b)
+
+            もしsaがsbより大きいならば{
+               temp = result[j]
+               result[j] = result[和(j, 1)]
+               result[和(j, 1)] = temp
+            }
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+
+   resultが答え
+}

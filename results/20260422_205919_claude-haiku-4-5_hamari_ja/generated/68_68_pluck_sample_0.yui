@@ -1,0 +1,38 @@
+標準ライブラリを使う
+
+pluck = 入力 arr に対し {
+   arrの大きさを size とする
+   もし size が 0 ならば {
+      []
+   }
+   そうでなければ {
+      min_even = -1
+      min_index = -1
+      
+      size 回くり返す {
+         current = arr[i]
+         remainder = 剰余(current, 2)
+         
+         もし remainder が 0 ならば {
+            もし min_even が -1 ならば {
+               min_even = current
+               min_index = i
+            }
+            そうでなければ {
+               もし current が min_even より小さい ならば {
+                  min_even = current
+                  min_index = i
+               }
+            }
+         }
+         i を増やす
+      }
+      
+      もし min_even が -1 ならば {
+         []
+      }
+      そうでなければ {
+         [min_even, min_index]
+      }
+   }
+}

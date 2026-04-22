@@ -1,0 +1,15 @@
+標準ライブラリを使う
+
+special_factorial = 入力 n に対し {
+   result = 1
+   current = 1
+   i = 0
+
+   n回くり返す{
+      iを増やす
+      current = 積(current, i)
+      result = 積(result, current)
+   }
+
+   resultが答え
+}

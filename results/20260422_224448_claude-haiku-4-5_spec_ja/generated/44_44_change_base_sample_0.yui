@@ -1,0 +1,43 @@
+標準ライブラリを使う
+
+change_base = 入力 x, base に対し {
+   result = ""
+   もし x が 0 ならば {
+      "0" が答え
+   }
+   N回くり返す {
+      もし x が 0 ならば {
+         くり返しを抜ける
+      }
+      digit = 剰余(x, base)
+      result に 文字列化(digit) を追加する
+      x = 商(x, base)
+   }
+   reversed = ""
+   resultの大きさ回くり返す {
+      reversed に result[差(resultの大きさ, 1)] を追加する
+      result = result
+   }
+   result が答え
+}
+標準ライブラリを使う
+
+change_base = 入力 x, base に対し {
+   もし x が 0 ならば {
+      "0" が答え
+   }
+   result = ""
+   100回くり返す {
+      もし x が 0 ならば {
+         くり返しを抜ける
+      }
+      result に 文字列化(剰余(x, base)) を追加する
+      x = 商(x, base)
+   }
+   # 逆順にして返す
+   reversed = ""
+   resultの大きさ回くり返す {
+      reversed に result[差(resultの大きさ, 1)] を追加する
+   }
+   reversed が答え
+}

@@ -1,0 +1,33 @@
+標準ライブラリを使う
+
+is_nested = 入力 string に対し {
+    depth = 0
+    nested = 偽
+
+    stringの大きさ回くり返す {
+        i = 回数
+        ch = string[i]
+
+        もし ch が 91 ならば {
+            depthを増やす
+            もし depth が 2 以上ならば {
+                nested = 真
+            }
+        }
+        そうでなければ {
+            もし ch が 93 ならば {
+                もし depth が 0 ならば {
+                    偽 が答え
+                }
+                depthを減らす
+            }
+        }
+    }
+
+    もし depth が 0 ならば {
+        nested が答え
+    }
+    そうでなければ {
+        偽 が答え
+    }
+}

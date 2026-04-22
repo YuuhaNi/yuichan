@@ -1,0 +1,31 @@
+標準ライブラリを使う
+
+string_xor = 入力 a, b に対し {
+   result = ""
+   n = a の大きさ
+   i = 0
+   n 回くり返す {
+      ca = a[i]
+      cb = b[i]
+      # '0' のコードは 48、'1' のコードは 49
+      # XOR: 片方だけ 1 なら 1
+      bit_a = 差(ca, 48)
+      bit_b = 差(cb, 48)
+      sum = 0
+      もし bit_a が 1 ならば {
+         sum を増やす
+      }
+      もし bit_b が 1 ならば {
+         sum を増やす
+      }
+      xor_bit = 0
+      もし sum が 1 ならば {
+         xor_bit = 1
+      }
+      # 結果を文字コードに変換して追加
+      result_code = 和(xor_bit, 48)
+      result に result_code を追加する
+      i を増やす
+   }
+   result が答え
+}

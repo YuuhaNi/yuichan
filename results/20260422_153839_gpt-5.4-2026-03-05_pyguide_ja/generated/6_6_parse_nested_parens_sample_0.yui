@@ -1,0 +1,34 @@
+標準ライブラリを使う
+
+parse_nested_parens = 入力 paren_string に対し {
+   result = []
+   depth = 0
+   max_depth = 0
+   i = 0
+
+   paren_stringの大きさ回くり返す{
+      ch = paren_string[i]
+
+      もしchが"("[0]ならば{
+         depthを増やす
+         もしdepthがmax_depthより大きいならば{
+            max_depth = depth
+         }
+      }そうでなければ{
+         もしchが")"[0]ならば{
+            depthを減らす
+         }そうでなければ{
+            もしchが" "[0]ならば{
+               resultにmax_depthを追加する
+               depth = 0
+               max_depth = 0
+            }
+         }
+      }
+
+      iを増やす
+   }
+
+   resultにmax_depthを追加する
+   resultが答え
+}

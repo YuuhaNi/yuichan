@@ -1,0 +1,26 @@
+標準ライブラリを使う
+
+filter_integers = 入力 values に対し {
+   result = []
+   values の大きさ 回くり返す {
+      i = 0
+      もし i が values の大きさ より小さい ならば {
+         もし 整数判定(values[i]) が 真 ならば {
+            result に values[i] を追加する
+         }
+         i を増やす
+      }
+   }
+   result が答え
+}
+標準ライブラリを使う
+
+filter_integers = 入力 values に対し {
+   result = []
+   values の大きさ 回くり返す {
+      もし 整数判定(values[i]) が 真 ならば {
+         result に values[i] を追加する
+      }
+   }
+   result が答え
+}

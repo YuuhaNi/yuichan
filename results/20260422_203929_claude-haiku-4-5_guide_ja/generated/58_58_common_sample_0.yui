@@ -1,0 +1,40 @@
+標準ライブラリを使う
+
+common = 入力 l1, l2 に対し {
+   # 共通要素を格納する配列
+   result = []
+   
+   # l1 の各要素をチェック
+   i = 0
+   l1の大きさ回くり返す {
+      current = l1[i]
+      
+      # l2 に current が含まれているか確認
+      もし current が l2 のいずれか ならば {
+         # result にまだ current が含まれていないか確認
+         もし current が result のいずれでもない ならば {
+            result に current を追加する
+         }
+      }
+      
+      i を増やす
+   }
+   
+   # result をソート（バブルソート）
+   j = 0
+   result の大きさ 回くり返す {
+      k = 0
+      差(result の大きさ, 1) 回くり返す {
+         もし result[k] が result[差(k, -1)] より大きい ならば {
+            # スワップ
+            temp = result[k]
+            result[k] = result[差(k, -1)]
+            result[差(k, -1)] = temp
+         }
+         k を増やす
+      }
+      j を増やす
+   }
+   
+   result が答え
+}

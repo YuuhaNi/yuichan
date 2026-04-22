@@ -1,0 +1,59 @@
+標準ライブラリを使う
+
+order_by_points = 入力 nums に対し {
+   n=numsの大きさ
+   i=0
+   pairs=[]
+
+   n回くり返す{
+      x=nums[i]
+      s=文字列化(x)
+      j=0
+      total=0
+      sの大きさ回くり返す{
+         c=s[j]
+         もしcが45以外ならば{
+            total=和(total,差(c,48))
+         }
+         jを増やす
+      }
+      pairsに{"sum":total,"index":i,"value":x}を追加する
+      iを増やす
+   }
+
+   m=pairsの大きさ
+   m回くり返す{
+      i=0
+      limit=差(m,1)
+      limit回くり返す{
+         j=和(i,1)
+         left=pairs[i]
+         right=pairs[j]
+         swap=0
+
+         もしleft["sum"]がright["sum"]より大きいならば{
+            swap=1
+         }
+         もしleft["sum"]がright["sum"]ならば{
+            もしleft["index"]がright["index"]より大きいならば{
+               swap=1
+            }
+         }
+
+         もしswapが1ならば{
+            tmp=pairs[i]
+            pairs[i]=pairs[j]
+            pairs[j]=tmp
+         }
+         iを増やす
+      }
+   }
+
+   result=[]
+   i=0
+   m回くり返す{
+      resultにpairs[i]["value"]を追加する
+      iを増やす
+   }
+   resultが答え
+}

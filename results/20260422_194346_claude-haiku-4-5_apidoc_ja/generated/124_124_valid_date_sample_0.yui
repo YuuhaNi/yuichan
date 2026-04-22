@@ -1,0 +1,47 @@
+標準ライブラリを使う
+
+valid_date = 入力 date に対し {
+  もし 文字列判定(date) でなければ {
+    偽を返す
+  }
+  
+  もし date が空 ならば {
+    偽を返す
+  }
+  
+  parts = date を "-" で分割
+  
+  もし 配列判定(parts) でなければ {
+    偽を返す
+  }
+  
+  もし parts の長さ が 3 でなければ {
+    偽を返す
+  }
+  
+  month_str = parts[0]
+  day_str = parts[1]
+  year_str = parts[2]
+  
+  month = 整数化(month_str)
+  day = 整数化(day_str)
+  year = 整数化(year_str)
+  
+  もし month が 1 未満 または month が 12 より大きい ならば {
+    偽を返す
+  }
+  
+  max_day = 31
+  
+  もし month が 4 または month が 6 または month が 9 または month が 11 ならば {
+    max_day = 30
+  } そうでなく もし month が 2 ならば {
+    max_day = 29
+  }
+  
+  もし day が 1 未満 または day が max_day より大きい ならば {
+    偽を返す
+  }
+  
+  真を返す
+}

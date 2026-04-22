@@ -1,0 +1,61 @@
+標準ライブラリを使う
+
+split_words = 入力 txt に対し {
+   parts=txtを" "で分割したもの
+   もしpartsの大きさが1より大きいならば{
+      partsが答え
+   }
+
+   parts=txtを","で分割したもの
+   もしpartsの大きさが1より大きいならば{
+      partsが答え
+   }
+
+   odd_count=0
+   i=0
+   n=txtの大きさ
+   n回くり返す{
+      ch=txt[i]
+      もしchが"a"ならば{
+         odd_countを増やす
+      }
+      もしchが"c"ならば{
+         odd_countを増やす
+      }
+      もしchが"e"ならば{
+         odd_countを増やす
+      }
+      もしchが"g"ならば{
+         odd_countを増やす
+      }
+      もしchが"i"ならば{
+         odd_countを増やす
+      }
+      もしchが"k"ならば{
+         odd_countを増やす
+      }
+      もしchが"m"ならば{
+         odd_countを増やす
+      }
+      もしchが"o"ならば{
+         odd_countを増やす
+      }
+      もしchが"q"ならば{
+         odd_countを増やす
+      }
+      もしchが"s"ならば{
+         odd_countを増やす
+      }
+      もしchが"u"ならば{
+         odd_countを増やす
+      }
+      もしchが"w"ならば{
+         odd_countを増やす
+      }
+      もしchが"y"ならば{
+         odd_countを増やす
+      }
+      iを増やす
+   }
+   odd_countが答え
+}

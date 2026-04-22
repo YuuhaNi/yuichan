@@ -1,0 +1,29 @@
+標準ライブラリを使う
+
+rescale_to_unit = 入力 numbers に対し {
+   n=numbersの大きさ
+   lo=numbers[0]
+   hi=numbers[0]
+   i=0
+   n回くり返す{
+      x=numbers[i]
+      もしxがloより小さいならば{
+         lo=x
+      }
+      もしxがhiより大きいならば{
+         hi=x
+      }
+      iを増やす
+   }
+
+   span=差(hi,lo)
+   result=[]
+   i=0
+   n回くり返す{
+      x=numbers[i]
+      y=商(差(x,lo),span)
+      resultにyを追加する
+      iを増やす
+   }
+   resultが答え
+}

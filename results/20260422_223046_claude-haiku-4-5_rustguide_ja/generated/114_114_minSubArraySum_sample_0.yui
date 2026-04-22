@@ -1,0 +1,14 @@
+標準ライブラリを使う
+
+minSubArraySum = 入力 nums に対し {
+   min_sum = nums[0]
+   current_sum = nums[0]
+   i = 1
+   numsの大きさを n とする
+   差(n, 1)回くり返す {
+      current_sum = 最小値(nums[i], 和(current_sum, nums[i]))
+      min_sum = 最小値(min_sum, current_sum)
+      iを増やす
+   }
+   min_sumが答え
+}

@@ -1,0 +1,43 @@
+標準ライブラリを使う
+
+get_row = 入力 lst, x に対し {
+   result = []
+   row = 0
+   lst の大きさ 回くり返す {
+      col = 0
+      lst[row] の大きさ 回くり返す {
+         もし lst[row][col] が x ならば {
+            result に [row, col] を追加する
+         }
+         col を増やす
+      }
+      row を増やす
+   }
+   
+   # 結果をソート：まず行の昇順、次に同じ行内で列の降順
+   sorted_result = []
+   current_row = 0
+   result の大きさ 回くり返す {
+      max_col = -1
+      max_idx = -1
+      i = 0
+      result の大きさ 回くり返す {
+         もし result[i][0] が current_row ならば {
+            もし result[i][1] が max_col より大きい ならば {
+               max_col = result[i][1]
+               max_idx = i
+            }
+         }
+         i を増やす
+      }
+      もし max_idx が -1 以外 ならば {
+         sorted_result に result[max_idx] を追加する
+         result[max_idx] = 値なし
+      }
+      そうでなければ {
+         current_row を増やす
+      }
+   }
+   
+   sorted_result が答え
+}

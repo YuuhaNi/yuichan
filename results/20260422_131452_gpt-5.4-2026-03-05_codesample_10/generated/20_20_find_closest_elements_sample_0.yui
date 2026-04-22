@@ -1,0 +1,26 @@
+標準ライブラリを使う
+
+find_closest_elements = 入力 numbers に対し {
+   sorted=並べ替え(numbers)
+   n=sortedの大きさ
+
+   best_a=sorted[0]
+   best_b=sorted[1]
+   best_diff=差(best_b,best_a)
+
+   i=1
+   diff_count=差(n,1)
+   diff_count回くり返す{
+      a=sorted[差(i,1)]
+      b=sorted[i]
+      d=差(b,a)
+      もしdがbest_diffより小さいならば{
+         best_diff=d
+         best_a=a
+         best_b=b
+      }
+      iを増やす
+   }
+
+   [best_a,best_b]が答え
+}

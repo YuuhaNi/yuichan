@@ -1,0 +1,53 @@
+標準ライブラリを使う
+
+sorted_list_sum = 入力 lst に対し {
+   # 奇数長の文字列を削除し、偶数長のみを残す
+   filtered = []
+   lst の大きさを n とする
+   n 回くり返す {
+      i = 0
+      もし i が n より小さい ならば {
+         str = lst[i]
+         len = str の大きさ
+         remainder = 剰余(len, 2)
+         もし remainder が 0 ならば {
+            filtered に str を追加する
+         }
+         i を増やす
+      }
+   }
+   
+   # バブルソート: 長さで昇順、同じ長さならアルファベット順
+   filtered の大きさを size とする
+   size 回くり返す {
+      j = 0
+      差(size, 1) 回くり返す {
+         str1 = filtered[j]
+         str2 = filtered[和(j, 1)]
+         len1 = str1 の大きさ
+         len2 = str2 の大きさ
+         
+         swap = 0
+         もし len1 が len2 より大きい ならば {
+            swap = 1
+         }
+         そうでなければ {
+            もし len1 が len2 ならば {
+               もし str1 が str2 より大きい ならば {
+                  swap = 1
+               }
+            }
+         }
+         
+         もし swap が 1 ならば {
+            temp = filtered[j]
+            filtered[j] = filtered[和(j, 1)]
+            filtered[和(j, 1)] = temp
+         }
+         
+         j を増やす
+      }
+   }
+   
+   filtered が答え
+}

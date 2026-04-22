@@ -1,0 +1,23 @@
+標準ライブラリを使う
+
+closest_integer = 入力 value に対し {
+    parts = value.split(".")
+    もし partsの大きさ が 1 ならば {
+        to_int(value) が 答え
+    }
+    int_part = to_int(parts[0])
+    frac = parts[1]
+    first = to_int(frac[0])
+
+    もし int_part が 0 より小さい ならば {
+        もし first が 5 以上 ならば {
+            差(int_part, 1) が 答え
+        }
+        int_part が 答え
+    }
+
+    もし first が 5 以上 ならば {
+        和(int_part, 1) が 答え
+    }
+    int_part が 答え
+}

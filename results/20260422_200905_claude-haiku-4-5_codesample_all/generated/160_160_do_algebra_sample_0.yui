@@ -1,0 +1,50 @@
+標準ライブラリを使う
+
+do_algebra = 入力 operator, operand に対し {
+   # 最初のオペランドを結果として初期化
+   result = operand[0]
+   
+   # 演算子の個数分ループ
+   n = operator の大きさ
+   i = 0
+   n 回くり返す {
+      op = operator[i]
+      nextval = operand[和(i,1)]
+      
+      # 演算子に応じて計算を実行
+      もし op が "+" ならば {
+         result = 和(result, nextval)
+      }
+      そうでなければ {
+         もし op が "-" ならば {
+            result = 差(result, nextval)
+         }
+         そうでなければ {
+            もし op が "*" ならば {
+               result = 積(result, nextval)
+            }
+            そうでなければ {
+               もし op が "//" ならば {
+                  result = 商(result, nextval)
+               }
+               そうでなければ {
+                  もし op が "**" ならば {
+                     # べき乗: nextval 回、result を result 倍する
+                     power = 1
+                     j = 0
+                     nextval 回くり返す {
+                        power = 積(power, result)
+                        j を増やす
+                     }
+                     result = power
+                  }
+               }
+            }
+         }
+      }
+      
+      i を増やす
+   }
+   
+   result が答え
+}

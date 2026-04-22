@@ -1,0 +1,55 @@
+標準ライブラリを使う
+
+sorted_list_sum = 入力 lst に対し {
+    filtered = []
+    i = 0
+    くり返す {
+        もし i が lst の大きさ より小さい ならば {
+            item = lst[i]
+            length = item の大きさ
+            もし length が 2 で割った余り が 0 ならば {
+                filtered の末尾 に item を追加する
+            }
+            i を増やす
+        } そうでなければ {
+            くり返しを抜ける
+        }
+    }
+    
+    sorted = filtered
+    j = 0
+    くり返す {
+        もし j が filtered の大きさ より小さい ならば {
+            k = j
+            くり返す {
+                もし k が 差(filtered の大きさ, 1) より小さい ならば {
+                    current = filtered[k]
+                    next = filtered[和(k, 1)]
+                    current_len = current の大きさ
+                    next_len = next の大きさ
+                    もし current_len が next_len より大きい ならば {
+                        temp = filtered[k]
+                        filtered[k] = filtered[和(k, 1)]
+                        filtered[和(k, 1)] = temp
+                    } そうでなければ {
+                        もし current_len が next_len が 0 ならば {
+                            もし current が next より大きい ならば {
+                                temp = filtered[k]
+                                filtered[k] = filtered[和(k, 1)]
+                                filtered[和(k, 1)] = temp
+                            }
+                        }
+                    }
+                    k を増やす
+                } そうでなければ {
+                    くり返しを抜ける
+                }
+            }
+            j を増やす
+        } そうでなければ {
+            くり返しを抜ける
+        }
+    }
+    
+    filtered が 答え
+}

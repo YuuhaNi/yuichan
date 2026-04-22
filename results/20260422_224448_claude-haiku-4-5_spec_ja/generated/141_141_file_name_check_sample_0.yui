@@ -1,0 +1,108 @@
+標準ライブラリを使う
+
+file_name_check = 入力 file_name に対し {
+   # ドットの個数をチェック
+   dot_count = 0
+   dot_index = 値なし
+   
+   i = 0
+   file_name の大きさ 回くり返す {
+      もし file_name[i] が 46 ならば {
+         dot_count を増やす
+         dot_index = i
+      }
+      i を増やす
+   }
+   
+   # ドットがちょうど1つでなければNo
+   もし dot_count が 1 以外 ならば {
+      "No" が答え
+   }
+   
+   # ドットの前後に分割
+   name_part = []
+   ext_part = []
+   
+   i = 0
+   file_name の大きさ 回くり返す {
+      もし i が dot_index より小さい ならば {
+         name_part に file_name[i] を追加する
+      }
+      そうでなければ {
+         もし i が dot_index より大きい ならば {
+            ext_part に file_name[i] を追加する
+         }
+      }
+      i を増やす
+   }
+   
+   # name_partが空でないかチェック
+   もし name_part の大きさ が 0 ならば {
+      "No" が答え
+   }
+   
+   # name_partの最初の文字が英文字かチェック
+   first_char = name_part[0]
+   もし first_char が 97 より小さい ならば {
+      # 'a' (97) より小さい
+      もし first_char が 65 より小さい ならば {
+         # 'A' (65) より小さい
+         "No" が答え
+      }
+      そうでなければ {
+         もし first_char が 90 より大きい ならば {
+            # 'Z' (90) より大きい
+            "No" が答え
+         }
+      }
+   }
+   そうでなければ {
+      もし first_char が 122 より大きい ならば {
+         # 'z' (122) より大きい
+         "No" が答え
+      }
+   }
+   
+   # name_partに3桁以上の連続した数字がないかチェック
+   consecutive_digits = 0
+   i = 0
+   name_part の大きさ 回くり返す {
+      char = name_part[i]
+      もし char が 48 以上 ならば {
+         もし char が 57 以下 ならば {
+            consecutive_digits を増やす
+            もし consecutive_digits が 3 以上 ならば {
+               "No" が答え
+            }
+         }
+         そうでなければ {
+            consecutive_digits = 0
+         }
+      }
+      そうでなければ {
+         consecutive_digits = 0
+      }
+      i を増やす
+   }
+   
+   # ext_partを文字列に変換
+   ext_str = 文字列化(ext_part)
+   
+   # 拡張子をチェック
+   もし ext_str が "txt" ならば {
+      "Yes" が答え
+   }
+   そうでなければ {
+      もし ext_str が "exe" ならば {
+         "Yes" が答え
+      }
+      そうでなければ {
+         もし ext_str が "dll" ならば {
+            "Yes" が答え
+         }
+         そうでなければ {
+            "No" が答え
+         }
+      }
+   }
+}

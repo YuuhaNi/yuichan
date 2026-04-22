@@ -1,0 +1,54 @@
+標準ライブラリを使う
+
+match_parens = 入力 lst に対し {
+   s1 = lst[0]
+   s2 = lst[1]
+
+   check = 入力 s に対し {
+      bal = 0
+      min_bal = 0
+      i = 0
+      sの大きさ回くり返す{
+         もしs[i]が"("[0]ならば{
+            balを増やす
+         }そうでなければ{
+            bal = 差(bal, 1)
+         }
+         もしbalがmin_balより小さいならば{
+            min_bal = bal
+         }
+         iを増やす
+      }
+      result = {"sum": bal, "min": min_bal}
+      resultが答え
+   }
+
+   a = check(s1)
+   b = check(s2)
+
+   ok = 偽
+
+   もしa["min"]が0以上ならば{
+      もし和(a["sum"], b["min"])が0以上ならば{
+         もし和(a["sum"], b["sum"])が0ならば{
+            ok = 真
+         }
+      }
+   }
+
+   もしokが偽ならば{
+      もしb["min"]が0以上ならば{
+         もし和(b["sum"], a["min"])が0以上ならば{
+            もし和(b["sum"], a["sum"])が0ならば{
+               ok = 真
+            }
+         }
+      }
+   }
+
+   もしokが真ならば{
+      "Yes"が答え
+   }そうでなければ{
+      "No"が答え
+   }
+}

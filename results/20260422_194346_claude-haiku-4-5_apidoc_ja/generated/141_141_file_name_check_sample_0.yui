@@ -1,0 +1,59 @@
+標準ライブラリを使う
+
+file_name_check = 入力 file_name に対し {
+    # ドットの個数をチェック
+    dot_count = 0
+    dot_index = 値なし
+    
+    i = 0
+    ループ i < 文字列長(file_name) {
+        もし 文字列取得(file_name, i) = "." {
+            dot_count = dot_count + 1
+            dot_index = i
+        }
+        i = i + 1
+    }
+    
+    # ドットがちょうど1つでなければNo
+    もし dot_count ≠ 1 {
+        戻す "No"
+    }
+    
+    # ドットの前後を分割
+    name_part = 文字列部分(file_name, 0, dot_index)
+    ext_part = 文字列部分(file_name, dot_index + 1, 文字列長(file_name))
+    
+    # name_partが空でないかチェック
+    もし 文字列長(name_part) = 0 {
+        戻す "No"
+    }
+    
+    # name_partの最初の文字が英文字かチェック
+    first_char = 文字列取得(name_part, 0)
+    もし ¬((first_char ≥ "a" ∧ first_char ≤ "z") ∨ (first_char ≥ "A" ∧ first_char ≤ "Z")) {
+        戻す "No"
+    }
+    
+    # name_partに3桁以上の連続した数字がないかチェック
+    consecutive_digits = 0
+    i = 0
+    ループ i < 文字列長(name_part) {
+        char = 文字列取得(name_part, i)
+        もし char ≥ "0" ∧ char ≤ "9" {
+            consecutive_digits = consecutive_digits + 1
+            もし consecutive_digits ≥ 3 {
+                戻す "No"
+            }
+        } そうでなければ {
+            consecutive_digits = 0
+        }
+        i = i + 1
+    }
+    
+    # ext_partが有効な拡張子かチェック
+    もし ext_part = "txt" ∨ ext_part = "exe" ∨ ext_part = "dll" {
+        戻す "Yes"
+    } そうでなければ {
+        戻す "No"
+    }
+}

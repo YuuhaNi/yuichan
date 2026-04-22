@@ -1,0 +1,61 @@
+標準ライブラリを使う
+
+file_name_check = 入力 file_name に対し {
+    parts = 文字列分割(file_name, ".")
+    もし partsの大きさ が 2 ならば {
+        name = parts[0]
+        ext = parts[1]
+
+        もし nameの大きさ が 0 ならば {
+            "No" が 答え
+        }
+
+        first = name[0]
+        is_lower = 含むか("abcdefghijklmnopqrstuvwxyz", first)
+        is_upper = 含むか("ABCDEFGHIJKLMNOPQRSTUVWXYZ", first)
+        もし is_lower が 真 のいずれか ならば {
+            何もしない
+        } そうでなければ {
+            もし is_upper が 真 のいずれか ならば {
+                何もしない
+            } そうでなければ {
+                "No" が 答え
+            }
+        }
+
+        valid_ext = 偽
+        もし ext が "txt" ならば {
+            valid_ext = 真
+        } そうでなければ {
+            もし ext が "exe" ならば {
+                valid_ext = 真
+            } そうでなければ {
+                もし ext が "dll" ならば {
+                    valid_ext = 真
+                }
+            }
+        }
+
+        もし valid_ext が 偽 ならば {
+            "No" が 答え
+        }
+
+        digit_count = 0
+        i = 0
+        nameの大きさ 回 くり返す {
+            ch = name[i]
+            もし 含むか("0123456789", ch) が 真 ならば {
+                digit_countを増やす
+            }
+            iを増やす
+        }
+
+        もし digit_count が 3 以上 ならば {
+            "No" が 答え
+        }
+
+        "Yes" が 答え
+    } そうでなければ {
+        "No" が 答え
+    }
+}

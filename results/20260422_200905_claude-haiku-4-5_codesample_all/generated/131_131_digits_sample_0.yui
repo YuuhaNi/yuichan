@@ -1,0 +1,24 @@
+標準ライブラリを使う
+
+digits = 入力 n に対し {
+   s = 文字列化(n)
+   product = 1
+   found = 0
+   i = 0
+   s の大きさ 回 くり返す {
+      c = s[i]
+      digit = 差(c, 48)
+      parity = 剰余(digit, 2)
+      もし parity が 1 ならば {
+         product = 積(product, digit)
+         found = 1
+      }
+      i を増やす
+   }
+   もし found が 0 ならば {
+      0 が答え
+   }
+   そうでなければ {
+      product が答え
+   }
+}

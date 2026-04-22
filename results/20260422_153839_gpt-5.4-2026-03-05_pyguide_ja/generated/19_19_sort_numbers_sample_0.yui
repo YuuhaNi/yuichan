@@ -1,0 +1,57 @@
+標準ライブラリを使う
+
+sort_numbers = 入力 numbers に対し {
+   words = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+   counts = [0,0,0,0,0,0,0,0,0,0]
+
+   token = ""
+   i = 0
+   numbersの大きさ回くり返す{
+      c = numbers[i]
+
+      もしcが" "[0]ならば{
+         j = 0
+         10回くり返す{
+            もしtokenがwords[j]ならば{
+               counts[j]を増やす
+               くり返しを抜ける
+            }
+            jを増やす
+         }
+         token = ""
+      }そうでなければ{
+         tokenにcを追加する
+      }
+
+      iを増やす
+   }
+
+   もしtokenが""ならば{
+   }そうでなければ{
+      j = 0
+      10回くり返す{
+         もしtokenがwords[j]ならば{
+            counts[j]を増やす
+            くり返しを抜ける
+         }
+         jを増やす
+      }
+   }
+
+   result = ""
+   first = 真
+   j = 0
+   10回くり返す{
+      counts[j]回くり返す{
+         もしfirstが真ならば{
+            result = words[j]
+            first = 偽
+         }そうでなければ{
+            result = "{result} {words[j]}"
+         }
+      }
+      jを増やす
+   }
+
+   resultが答え
+}

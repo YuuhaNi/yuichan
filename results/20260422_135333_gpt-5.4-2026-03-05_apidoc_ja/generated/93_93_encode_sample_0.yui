@@ -1,0 +1,43 @@
+標準ライブラリを使う
+
+encode = 入力 message に対し {
+    result = ""
+    i = 0
+
+    反復 i < 長さ(message) の間 {
+        ch = message[i]
+        code = 整数化(ch)
+
+        もし ch == "a" なら {
+            result = result + "c"
+        } 違えば もし ch == "e" なら {
+            result = result + "g"
+        } 違えば もし ch == "i" なら {
+            result = result + "k"
+        } 違えば もし ch == "o" なら {
+            result = result + "q"
+        } 違えば もし ch == "u" なら {
+            result = result + "w"
+        } 違えば もし ch == "A" なら {
+            result = result + "C"
+        } 違えば もし ch == "E" なら {
+            result = result + "G"
+        } 違えば もし ch == "I" なら {
+            result = result + "K"
+        } 違えば もし ch == "O" なら {
+            result = result + "Q"
+        } 違えば もし ch == "U" なら {
+            result = result + "W"
+        } 違えば もし code >= 97 かつ code <= 122 なら {
+            result = result + 文字列化(配列化([code - 32])[0])
+        } 違えば もし code >= 65 かつ code <= 90 なら {
+            result = result + 文字列化(配列化([code + 32])[0])
+        } 違えば {
+            result = result + ch
+        }
+
+        i = i + 1
+    }
+
+    result
+}

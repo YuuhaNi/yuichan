@@ -1,0 +1,65 @@
+標準ライブラリを使う
+
+order_by_points = 入力 nums に対し {
+   # 各整数の「桁の合計」を求める補助関数
+   digit_sum = 入力 x に対し {
+      n=x
+      もしnが0より小さいならば{
+         n=差(0,n)
+      }
+
+      もしnが0ならば{
+         0が答え
+      }
+
+      total=0
+      1000回くり返す{
+         もしnが0ならば{
+            くり返しを抜ける
+         }
+         total=和(total,剰余(n,10))
+         n=商(n,10)
+      }
+      totalが答え
+   }
+
+   n=numsの大きさ
+   result=[]
+
+   # 安定ソート: 毎回、未使用の中から
+   # 桁の合計が最小の要素を先頭から探して 1 つ選ぶ
+   used=[]
+   i=0
+   n回くり返す{
+      usedに偽を追加する
+      iを増やす
+   }
+
+   n回くり返す{
+      best_index=-1
+      best_sum=0
+
+      j=0
+      n回くり返す{
+         もしused[j]が偽ならば{
+            s=digit_sum(nums[j])
+            もしbest_indexが-1ならば{
+               best_index=j
+               best_sum=s
+            }
+            そうでなければ{
+               もしsがbest_sumより小さいならば{
+                  best_index=j
+                  best_sum=s
+               }
+            }
+         }
+         jを増やす
+      }
+
+      resultにnums[best_index]を追加する
+      used[best_index]=真
+   }
+
+   resultが答え
+}

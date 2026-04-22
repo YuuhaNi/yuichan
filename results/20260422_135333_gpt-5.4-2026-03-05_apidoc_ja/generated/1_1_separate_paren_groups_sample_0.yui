@@ -1,0 +1,34 @@
+標準ライブラリを使う
+
+separate_paren_groups = 入力 paren_string に対し {
+    cleaned = ""
+    current = ""
+    depth = 0
+    result = []
+
+    反復 (i = 0; i < 長さ(paren_string); i = 和(i, 1)) {
+        ch = paren_string[i]
+
+        もし ch != " " なら {
+            cleaned = 文字列連結(cleaned, ch)
+        }
+    }
+
+    反復 (i = 0; i < 長さ(cleaned); i = 和(i, 1)) {
+        ch = cleaned[i]
+        current = 文字列連結(current, ch)
+
+        もし ch == "(" なら {
+            depth = 和(depth, 1)
+        } 違えば もし ch == ")" なら {
+            depth = 差(depth, 1)
+
+            もし depth == 0 なら {
+                result = 配列追加(result, current)
+                current = ""
+            }
+        }
+    }
+
+    result
+}

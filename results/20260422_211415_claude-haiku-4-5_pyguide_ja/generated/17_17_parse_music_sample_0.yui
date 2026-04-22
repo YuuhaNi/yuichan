@@ -1,0 +1,40 @@
+標準ライブラリを使う
+
+parse_music = 入力 music_string に対し {
+   result = []
+   notes = 配列化(music_string)
+   i = 0
+   notesの大きさ回くり返す{
+      もしiがnotesの大きさ以上ならば{
+         くり返しを抜ける
+      }
+      current = notes[i]
+      
+      もしcurrentが"o"ならば{
+         もしiが差(notesの大きさ, 1)より小さいならば{
+            next = notes[和(i, 1)]
+            もしnextが"'"ならば{
+               resultに4を追加する
+               i = 和(i, 2)
+            }そうでなければ{
+               もしnextが"|"ならば{
+                  resultに2を追加する
+                  i = 和(i, 2)
+               }そうでなければ{
+                  iを増やす
+               }
+            }
+         }そうでなければ{
+            iを増やす
+         }
+      }そうでなければ{
+         もしcurrentが"."ならば{
+            resultに1を追加する
+            iを増やす
+         }そうでなければ{
+            iを増やす
+         }
+      }
+   }
+   result
+}

@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+rescale_to_unit = 入力 numbers に対し {
+   n = numbersの大きさ
+   min = 最小値(numbers)
+   max = 最大値(numbers)
+   result = []
+   i = 0
+
+   n回くり返す{
+      value = 商(差(numbers[i], min), 差(max, min))
+      resultにvalueを追加する
+      iを増やす
+   }
+
+   resultが答え
+}

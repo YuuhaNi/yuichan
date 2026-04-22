@@ -1,0 +1,34 @@
+標準ライブラリを使う
+
+closest_integer = 入力 value に対し {
+   num = 小数化(value)
+   
+   # num が正の数か負の数かで処理を分ける
+   もし num が 0 以上 ならば {
+      # 正の数: 小数部分を取り出す
+      floor_val = 整数化(num)
+      decimal_part = 差(num, floor_val)
+      
+      # 小数部分が 0.5 以上なら切り上げ、未満なら切り捨て
+      もし decimal_part が 0.5 以上 ならば {
+         和(floor_val, 1) が答え
+      }
+      そうでなければ {
+         floor_val が答え
+      }
+   }
+   そうでなければ {
+      # 負の数: 絶対値で処理してから符号を戻す
+      abs_num = 積(num, -1)
+      floor_val = 整数化(abs_num)
+      decimal_part = 差(abs_num, floor_val)
+      
+      # 小数部分が 0.5 以上なら切り上げ（絶対値として）、未満なら切り捨て
+      もし decimal_part が 0.5 以上 ならば {
+         積(和(floor_val, 1), -1) が答え
+      }
+      そうでなければ {
+         積(floor_val, -1) が答え
+      }
+   }
+}

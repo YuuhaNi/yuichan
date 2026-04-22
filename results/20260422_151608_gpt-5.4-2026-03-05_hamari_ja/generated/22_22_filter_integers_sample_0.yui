@@ -1,0 +1,15 @@
+標準ライブラリを使う
+
+filter_integers = 入力 values に対し {
+   result=[]
+   i=0
+   n=valuesの大きさ
+   n回くり返す{
+      x=values[i]
+      もしxの型が「整数」ならば{
+         resultにxを追加する
+      }
+      iを増やす
+   }
+   resultが答え
+}

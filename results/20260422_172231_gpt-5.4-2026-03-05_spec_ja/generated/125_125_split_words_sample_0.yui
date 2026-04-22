@@ -1,0 +1,77 @@
+標準ライブラリを使う
+
+split_words = 入力 txt に対し {
+  i = 0
+  has_space = 偽
+  has_comma = 偽
+
+  txtの大きさ回くり返す {
+    ch = txt[i]
+    もし ch が 32 ならば {
+      has_space = 真
+    }
+    もし ch が 44 ならば {
+      has_comma = 真
+    }
+    iを増やす
+  }
+
+  もし has_space が 真 ならば {
+    result = []
+    current = []
+    i = 0
+
+    txtの大きさ回くり返す {
+      ch = txt[i]
+      もし ch が 32 ならば {
+        resultに文字列化(current)を追加する
+        current = []
+      }
+      そうでなければ {
+        currentにchを追加する
+      }
+      iを増やす
+    }
+    resultに文字列化(current)を追加する
+    result が答え
+  }
+  そうでなければ {
+    もし has_comma が 真 ならば {
+      result = []
+      current = []
+      i = 0
+
+      txtの大きさ回くり返す {
+        ch = txt[i]
+        もし ch が 44 ならば {
+          resultに文字列化(current)を追加する
+          current = []
+        }
+        そうでなければ {
+          currentにchを追加する
+        }
+        iを増やす
+      }
+      resultに文字列化(current)を追加する
+      result が答え
+    }
+    そうでなければ {
+      count = 0
+      i = 0
+
+      txtの大きさ回くり返す {
+        ch = txt[i]
+        もし ch が 97 以上 ならば {
+          もし ch が 122 以下 ならば {
+            idx = 差(ch, 97)
+            もし 剰余(idx, 2) が 0 ならば {
+              countを増やす
+            }
+          }
+        }
+        iを増やす
+      }
+      count が答え
+    }
+  }
+}

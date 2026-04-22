@@ -1,0 +1,16 @@
+標準ライブラリを使う
+
+intersperse = 入力 numbers, delimeter に対し {
+   result = []
+   i = 0
+
+   numbersの大きさ回くり返す{
+      resultにnumbers[i]を追加する
+      もしiが差(numbersの大きさ, 1)より小さいならば{
+         resultにdelimeterを追加する
+      }
+      iを増やす
+   }
+
+   resultが答え
+}

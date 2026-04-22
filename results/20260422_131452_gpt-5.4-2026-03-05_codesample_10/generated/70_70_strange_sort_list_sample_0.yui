@@ -1,0 +1,47 @@
+標準ライブラリを使う
+
+strange_sort_list = 入力 lst に対し {
+   n=lstの大きさ
+   もしnが0ならば{
+      []が答え
+   }
+
+   arr=[]
+   i=0
+   n回くり返す{
+      arrにlst[i]を追加する
+      iを増やす
+   }
+
+   i=0
+   n回くり返す{
+      j=0
+      limit=差(n,1)
+      limit回くり返す{
+         nj=和(j,1)
+         もしarr[j]がarr[nj]より大きいならば{
+            tmp=arr[j]
+            arr[j]=arr[nj]
+            arr[nj]=tmp
+         }
+         jを増やす
+      }
+   }
+
+   result=[]
+   left=0
+   right=差(n,1)
+
+   n回くり返す{
+      もしleftがright以下ならば{
+         resultにarr[left]を追加する
+         leftを増やす
+      }
+      もしleftがright以下ならば{
+         resultにarr[right]を追加する
+         rightを減らす
+      }
+   }
+
+   resultが答え
+}

@@ -1,0 +1,20 @@
+{
+  "model": "claude-haiku-4-5",
+  "lang": "ja",
+  "template": "pro159/pyguide_ja.md",
+  "context": "pro159/pyguide_ja.md",
+  "temperature": 0.2,
+  "k": 1,
+  "total_problems": 164,
+  "passed_problems": 43,
+  "failed_problems": 121,
+  "pass_at_k": 26.22,
+  "confidence_interval_95": {
+    "lower": 20.09,
+    "upper": 33.44,
+    "method": "Wilson Score"
+  },
+  "timestamp": "20260422_211415",
+  "total_samples": 164,
+  "passed_samples": 43
+}

@@ -1,0 +1,26 @@
+標準ライブラリを使う
+
+parse_music = 入力 music_string に対し {
+   result = []
+   tokens = music_string を " " で分割する
+   n = tokens の大きさ
+   i = 0
+   n 回くり返す {
+      token = tokens[i]
+      もし token が "o'" ならば {
+         result に 4 を追加する
+      }
+      そうでなければ {
+         もし token が "o|'" ならば {
+            result に 2 を追加する
+         }
+         そうでなければ {
+            もし token が ".|」" ならば {
+               result に 1 を追加する
+            }
+         }
+      }
+      i を増やす
+   }
+   result が答え
+}

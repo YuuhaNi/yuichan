@@ -1,0 +1,16 @@
+標準ライブラリを使う
+
+concatenate = 入力 strings に対し {
+   result = ""
+   i = 0
+   stringsの大きさ回くり返す{
+      part = strings[i]
+      j = 0
+      partの大きさ回くり返す{
+         resultにpart[j]を追加する
+         jを増やす
+      }
+      iを増やす
+   }
+   resultが答え
+}

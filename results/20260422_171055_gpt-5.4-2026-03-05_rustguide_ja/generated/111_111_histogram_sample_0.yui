@@ -1,0 +1,45 @@
+標準ライブラリを使う
+
+histogram = 入力 test に対し {
+   counts = {}
+   i = 0
+
+   もしtestの大きさが0ならば{
+      countsが答え
+   }
+
+   testの大きさ回くり返す{
+      ch = test[i]
+      もしchが" "[0]以外ならば{
+         key = 文字列化(ch)
+         もしkeyがcountsのいずれかならば{
+            counts[key] = 和(counts[key], 1)
+         }そうでなければ{
+            counts[key] = 1
+         }
+      }
+      iを増やす
+   }
+
+   max_count = 0
+   result = {}
+   keys = 配列化(counts)
+   j = 0
+
+   keysの大きさ回くり返す{
+      key = 文字列化(keys[j])
+      value = counts[key]
+      もしvalueがmax_countより大きいならば{
+         max_count = value
+         result = {}
+         result[key] = value
+      }そうでなければ{
+         もしvalueがmax_countならば{
+            result[key] = value
+         }
+      }
+      jを増やす
+   }
+
+   resultが答え
+}

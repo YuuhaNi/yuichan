@@ -1,0 +1,30 @@
+標準ライブラリを使う
+
+Strongest_Extension = 入力 class_name, extensions に対し {
+    best = extensions[0]
+    best_score = -1000000
+
+    extensions の各要素 ext について {
+        cap = 0
+        sm = 0
+
+        ext の各要素 ch について {
+            code = 整数化(ch)
+
+            もし code >= 65 かつ code <= 90 なら {
+                cap = 和(cap, 1)
+            } 違えば もし code >= 97 かつ code <= 122 なら {
+                sm = 和(sm, 1)
+            }
+        }
+
+        score = 差(cap, sm)
+
+        もし score > best_score なら {
+            best_score = score
+            best = ext
+        }
+    }
+
+    戻る 文字列化(class_name) + "." + 文字列化(best)
+}

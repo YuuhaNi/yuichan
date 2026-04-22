@@ -1,0 +1,38 @@
+標準ライブラリを使う
+
+parse_nested_parens = 入力 paren_string に対し {
+    groups = 分割(paren_string, " ")
+    result = []
+    i = 0
+    group_count = groupsの大きさ
+
+    group_count回 くり返す {
+        group = groups[i]
+        depth = 0
+        max_depth = 0
+        j = 0
+        char_count = groupの大きさ
+
+        char_count回 くり返す {
+            ch = group[j]
+            もし ch が "(" ならば {
+                depthを増やす
+                もし depth が max_depth より大きい ならば {
+                    max_depth = depth
+                }
+            } そうでなければ {
+                もし ch が ")" ならば {
+                    depthを減らす
+                } そうでなければ {
+                    何もしない
+                }
+            }
+            jを増やす
+        }
+
+        resultにmax_depthを追加する
+        iを増やす
+    }
+
+    resultが答え
+}

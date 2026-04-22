@@ -1,0 +1,23 @@
+標準ライブラリを使う
+
+correct_bracketing = 入力 brackets に対し {
+    balance = 0
+    i = 0
+    bracketsの大きさ回 くり返す {
+        ch = brackets[i]
+        もし ch が "<" ならば {
+            balanceを増やす
+        } そうでなければ {
+            もし balance が 0 ならば {
+                偽が答え
+            }
+            balanceを減らす
+        }
+        iを増やす
+    }
+    もし balance が 0 ならば {
+        真が答え
+    } そうでなければ {
+        偽が答え
+    }
+}

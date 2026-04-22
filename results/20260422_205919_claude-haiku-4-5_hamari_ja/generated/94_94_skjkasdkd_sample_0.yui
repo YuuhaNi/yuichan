@@ -1,0 +1,63 @@
+標準ライブラリを使う
+
+skjkasdkd = 入力 lst に対し {
+   # 素数判定関数
+   is_prime = 入力 n に対し {
+      もし n が 2 より小さい ならば {
+         0
+      }
+      そうでなければ {
+         もし n が 2 ならば {
+            1
+         }
+         そうでなければ {
+            もし 剰余(n, 2) が 0 ならば {
+               0
+            }
+            そうでなければ {
+               is_prime_check = 1
+               i = 3
+               n_sqrt = 商(n, 1)
+               
+               差(n, 1) 回 くり返す {
+                  もし 積(i, i) が n より大きい ならば {
+                     くり返しを抜ける
+                  }
+                  もし 剰余(n, i) が 0 ならば {
+                     is_prime_check = 0
+                     くり返しを抜ける
+                  }
+                  i = 和(i, 2)
+               }
+               is_prime_check
+            }
+         }
+      }
+   }
+   
+   # 最大素数を探す
+   max_prime = 0
+   lst の 各要素を x として {
+      もし is_prime(x) が 1 ならば {
+         もし x が max_prime より大きい ならば {
+            max_prime = x
+         }
+      }
+   }
+   
+   # 桁数の和を計算
+   digit_sum = 0
+   もし max_prime が 0 ならば {
+      digit_sum = 0
+   }
+   そうでなければ {
+      current = max_prime
+      current が 0 より大きい ならば {
+         digit = 剰余(current, 10)
+         digit_sum = 和(digit_sum, digit)
+         current = 商(current, 10)
+      } を くり返す
+   }
+   
+   digit_sum
+}

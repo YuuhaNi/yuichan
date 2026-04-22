@@ -1,0 +1,69 @@
+標準ライブラリを使う
+
+split_words = 入力 txt に対し {
+   has_space = 偽
+   has_comma = 偽
+
+   i = 0
+   txtの大きさ回くり返す{
+      もしtxt[i]が" "[0]ならば{
+         has_space = 真
+      }
+      もしtxt[i]が","[0]ならば{
+         has_comma = 真
+      }
+      iを増やす
+   }
+
+   もしhas_spaceが真ならば{
+      result = []
+      word = ""
+      i = 0
+      txtの大きさ回くり返す{
+         もしtxt[i]が" "[0]ならば{
+            resultにwordを追加する
+            word = ""
+         }
+         そうでなければ{
+            wordにtxt[i]を追加する
+         }
+         iを増やす
+      }
+      resultにwordを追加する
+      resultが答え
+   }
+
+   もしhas_commaが真ならば{
+      result = []
+      word = ""
+      i = 0
+      txtの大きさ回くり返す{
+         もしtxt[i]が","[0]ならば{
+            resultにwordを追加する
+            word = ""
+         }
+         そうでなければ{
+            wordにtxt[i]を追加する
+         }
+         iを増やす
+      }
+      resultにwordを追加する
+      resultが答え
+   }
+
+   count = 0
+   i = 0
+   txtの大きさ回くり返す{
+      code = txt[i]
+      idx = 差(code, "a"[0])
+      もしidxが0以上ならば{
+         もしidxが25以下ならば{
+            もし剰余(idx, 2)が0ならば{
+               countを増やす
+            }
+         }
+      }
+      iを増やす
+   }
+   countが答え
+}

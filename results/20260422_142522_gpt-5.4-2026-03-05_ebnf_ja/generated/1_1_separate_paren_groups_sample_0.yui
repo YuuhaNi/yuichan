@@ -1,0 +1,34 @@
+標準ライブラリを使う
+
+separate_paren_groups = 入力 paren_string に対し {
+  groups = []
+  current = ""
+  depth = 0
+  i = 0
+  n = paren_stringの大きさ
+
+  n回 くり返す {
+    ch = paren_string[i]
+
+    もし ch が " " ならば {
+      何もしない
+    } そうでなければ {
+      current = 連結(current, ch)
+
+      もし ch が "(" ならば {
+        depthを増やす
+      } そうでなければ {
+        depthを減らす
+      }
+
+      もし depth が 0 ならば {
+        groupsの末尾に currentを追加する
+        current = ""
+      }
+    }
+
+    iを増やす
+  }
+
+  groupsが答え
+}

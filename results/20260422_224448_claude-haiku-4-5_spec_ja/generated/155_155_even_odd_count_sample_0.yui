@@ -1,0 +1,44 @@
+標準ライブラリを使う
+
+even_odd_count = 入力 num に対し {
+   絶対値num = 絶対値(num)
+   digits = 文字列化(絶対値num)
+   even_count = 0
+   odd_count = 0
+   
+   digits の大きさ 回くり返す {
+      digit_index = 0
+      digits の大きさ 回くり返す {
+         digit = digits[digit_index]
+         剰余(digit, 2) が 0 ならば {
+            even_count を増やす
+         }
+         そうでなければ {
+            odd_count を増やす
+         }
+         digit_index を増やす
+         くり返しを抜ける
+      }
+   }
+   
+   {"even": even_count, "odd": odd_count} が答え
+}
+標準ライブラリを使う
+
+even_odd_count = 入力 num に対し {
+   digits = 文字列化(絶対値(num))
+   even_count = 0
+   odd_count = 0
+   
+   digits の大きさ 回くり返す {
+      digit = digits[0]
+      もし 剰余(digit, 2) が 0 ならば {
+         even_count を増やす
+      }
+      そうでなければ {
+         odd_count を増やす
+      }
+   }
+   
+   {"even": even_count, "odd": odd_count} が答え
+}

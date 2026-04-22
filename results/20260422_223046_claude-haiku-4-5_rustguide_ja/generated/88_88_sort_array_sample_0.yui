@@ -1,0 +1,57 @@
+標準ライブラリを使う
+
+sort_array = 入力 array に対し {
+   もし array の大きさ が 0 ならば {
+      array が答え
+   }
+   
+   size = array の大きさ
+   first = array[0]
+   last = array[差(size, 1)]
+   sum = 和(first, last)
+   remainder = 剰余(sum, 2)
+   
+   # コピーを作成
+   result = []
+   i = 0
+   size 回くり返す {
+      result に array[i] を追加する
+      i を増やす
+   }
+   
+   # 昇順でソート（バブルソート）
+   もし remainder が 1 ならば {
+      i = 0
+      size 回くり返す {
+         j = 0
+         差(size, 1) 回くり返す {
+            もし result[j] が result[和(j, 1)] より大きいならば {
+               temp = result[j]
+               result[j] = result[和(j, 1)]
+               result[和(j, 1)] = temp
+            }
+            j を増やす
+         }
+         i を増やす
+      }
+   }
+   
+   # 降順でソート（バブルソート）
+   そうでなければ {
+      i = 0
+      size 回くり返す {
+         j = 0
+         差(size, 1) 回くり返す {
+            もし result[j] が result[和(j, 1)] より小さいならば {
+               temp = result[j]
+               result[j] = result[和(j, 1)]
+               result[和(j, 1)] = temp
+            }
+            j を増やす
+         }
+         i を増やす
+      }
+   }
+   
+   result が答え
+}

@@ -1,0 +1,7 @@
+標準ライブラリを使う
+
+truncate_number = 入力 number に対し {
+   integer_part = 整数部(number)
+   fractional_part = 差(number, 小数化(integer_part))
+   fractional_part
+}

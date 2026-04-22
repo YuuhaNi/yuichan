@@ -1,0 +1,55 @@
+標準ライブラリを使う
+
+parse_music = 入力 music_string に対し {
+   result = []
+   
+   # 文字列をスペースで分割するため、各文字を確認していく
+   i = 0
+   current_note = ""
+   
+   music_string の大きさ 回くり返す {
+      char = music_string[i]
+      
+      # スペース（文字コード32）で区切られているかチェック
+      もし char が 32 ならば {
+         # current_note が空でなければ処理
+         もし current_note の大きさ が 0 以外 ならば {
+            # 音符の種類を判定して拍数を追加
+            もし current_note が "o'" ならば {
+               result に 4 を追加する
+            } そうでなければ {
+               もし current_note が "o|'" ならば {
+                  result に 2 を追加する
+               } そうでなければ {
+                  もし current_note が ".|\"" ならば {
+                     result に 1 を追加する
+                  }
+               }
+            }
+            current_note = ""
+         }
+      } そうでなければ {
+         # 文字を current_note に追加
+         current_note に char を追加する
+      }
+      
+      i を増やす
+   }
+   
+   # 最後の音符を処理
+   もし current_note の大きさ が 0 以外 ならば {
+      もし current_note が "o'" ならば {
+         result に 4 を追加する
+      } そうでなければ {
+         もし current_note が "o|'" ならば {
+            result に 2 を追加する
+         } そうでなければ {
+            もし current_note が ".|\"" ならば {
+               result に 1 を追加する
+            }
+         }
+      }
+   }
+   
+   result が答え
+}

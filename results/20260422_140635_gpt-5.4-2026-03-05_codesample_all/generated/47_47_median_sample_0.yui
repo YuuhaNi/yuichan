@@ -1,0 +1,14 @@
+標準ライブラリを使う
+
+median = 入力 l に対し {
+   a=bubble_sort(l)
+   n=aの大きさ
+   mid=商(n,2)
+   parity=剰余(n,2)
+   もしparityが1ならば{
+      a[mid]が答え
+   }
+   left=差(mid,1)
+   s=和(a[left],a[mid])
+   商(小数化(s),小数化(2))が答え
+}

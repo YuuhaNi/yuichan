@@ -1,0 +1,28 @@
+標準ライブラリを使う
+
+generate_integers = 入力 a, b に対し {
+   lo=最小値(a,b)
+   hi=最大値(a,b)
+   result=[]
+
+   # 両端の差が 2 以下なら「間にある」偶数は存在しない
+   もし差(hi,lo)が2以下ならば{
+      resultが答え
+   }
+
+   start=和(lo,1)
+   もし剰余(start,2)が1ならば{
+      startを増やす
+   }
+
+   x=start
+   limit=差(hi,1)
+   差(和(limit,1),start)回くり返す{
+      もしxがlimit以下ならば{
+         resultにxを追加する
+         x=和(x,2)
+      }
+   }
+
+   resultが答え
+}

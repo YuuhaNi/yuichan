@@ -1,0 +1,21 @@
+標準ライブラリを使う
+
+factorize = 入力 n に対し {
+    factors = []
+    d = 2
+    残り = n
+
+    繰り返し (商(d, d) <= 残り) {
+        繰り返し (剰余(残り, d) == 0) {
+            factors = factors + [d]
+            残り = 商(残り, d)
+        }
+        d = 和(d, 1)
+    }
+
+    もし (残り > 1) {
+        factors = factors + [残り]
+    }
+
+    戻る factors
+}

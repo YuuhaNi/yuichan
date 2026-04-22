@@ -1,0 +1,47 @@
+標準ライブラリを使う
+
+next_smallest = 入力 lst に対し {
+   もしlstの大きさが2より小さいならば{
+      値なしが答え
+   }
+
+   smallest = 最大値(lst)
+   second = 最大値(lst)
+   found_smallest = 偽
+   found_second = 偽
+
+   i = 0
+   lstの大きさ回くり返す{
+      x = lst[i]
+
+      もしxがsmallestより小さいならば{
+         smallest = x
+         found_smallest = 真
+      }
+
+      iを増やす
+   }
+
+   i = 0
+   lstの大きさ回くり返す{
+      x = lst[i]
+
+      もしxがsmallestより大きいならば{
+         もしfound_secondが偽ならば{
+            second = x
+            found_second = 真
+         }そうでなければ{
+            もしxがsecondより小さいならば{
+               second = x
+            }
+         }
+      }
+
+      iを増やす
+   }
+
+   もしfound_secondが真ならば{
+      secondが答え
+   }
+   値なしが答え
+}

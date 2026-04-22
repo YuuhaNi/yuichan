@@ -1,0 +1,25 @@
+標準ライブラリを使う
+
+search = 入力 lst に対し {
+   n=lstの大きさ
+   best=差(0,1)
+   i=0
+   n回くり返す{
+      x=lst[i]
+      count=0
+      j=0
+      n回くり返す{
+         もしlst[j]がxならば{
+            countを増やす
+         }
+         jを増やす
+      }
+      もしcountがx以上ならば{
+         もしxがbestより大きいならば{
+            best=x
+         }
+      }
+      iを増やす
+   }
+   bestが答え
+}

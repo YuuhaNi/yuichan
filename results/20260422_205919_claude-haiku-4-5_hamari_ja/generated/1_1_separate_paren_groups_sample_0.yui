@@ -1,0 +1,36 @@
+標準ライブラリを使う
+
+separate_paren_groups = 入力 paren_string に対し {
+   # 空白を除去
+   cleaned = ""
+   paren_string の各文字 c に対し {
+      もし c が " " 以外ならば {
+         cleaned = 和(cleaned, c)
+      }
+   }
+   
+   # 結果リストとカウンタを初期化
+   result = []
+   current = ""
+   depth = 0
+   
+   # 各文字を処理
+   cleaned の各文字 char に対し {
+      current = 和(current, char)
+      
+      もし char が "(" ならば {
+         depth を増やす
+      }
+      そうでなければ {
+         depth を減らす
+      }
+      
+      # depth が 0 になったら1つのグループが完成
+      もし depth が 0 ならば {
+         result に current を追加する
+         current = ""
+      }
+   }
+   
+   result が答え
+}

@@ -1,0 +1,37 @@
+標準ライブラリを使う
+
+circular_shift = 入力 x, shift に対し {
+   # 整数を文字列に変換
+   s = 文字列化(x)
+   n = sの大きさ
+   
+   # shift が桁数より大きい場合は反転して返す
+   もし shift が n より大きい ならば {
+      reverse(配列化(s))が答え
+   }
+   
+   # shift を桁数で正規化 (循環シフトなので n で割った余り)
+   normalized_shift = 剰余(shift, n)
+   
+   # 右シフト: 末尾の normalized_shift 文字を先頭に移動
+   result = ""
+   
+   # 末尾から normalized_shift 文字を取る
+   start = 差(n, normalized_shift)
+   i = start
+   n 回 くり返す {
+      もし i が n より小さい ならば {
+         result に s[i] を追加する
+      }
+      i を増やす
+   }
+   
+   # 先頭から start 文字を取る
+   i = 0
+   start 回 くり返す {
+      result に s[i] を追加する
+      i を増やす
+   }
+   
+   result が答え
+}

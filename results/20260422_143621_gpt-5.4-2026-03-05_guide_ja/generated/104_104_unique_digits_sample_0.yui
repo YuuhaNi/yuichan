@@ -1,0 +1,46 @@
+標準ライブラリを使う
+
+unique_digits = 入力 x に対し {
+   result = []
+   i = 0
+
+   xの大きさ回くり返す{
+      n = x[i]
+      s = 文字列化(n)
+      ok = 真
+      j = 0
+
+      sの大きさ回くり返す{
+         d = 整数化(s[j])
+         もし剰余(d, 2)が0ならば{
+            ok = 偽
+            くり返しを抜ける
+         }
+         jを増やす
+      }
+
+      もしokが真ならば{
+         resultにnを追加する
+      }
+      iを増やす
+   }
+
+   a = 0
+   resultの大きさ回くり返す{
+      b = 0
+      resultの大きさ回くり返す{
+         もし差(b, 1)がresultの大きさ以上ならば{
+            くり返しを抜ける
+         }
+         もしresult[b]がresult[差(b,1)]より大きいならば{
+            temp = result[b]
+            result[b] = result[差(b,1)]
+            result[差(b,1)] = temp
+         }
+         bを増やす
+      }
+      aを増やす
+   }
+
+   resultが答え
+}

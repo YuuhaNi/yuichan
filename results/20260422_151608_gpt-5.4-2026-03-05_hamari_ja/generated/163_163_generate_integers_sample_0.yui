@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+generate_integers = 入力 a, b に対し {
+   lo=最小(a,b)
+   hi=最大(a,b)
+   result=[]
+
+   もし差(hi,lo)が2より小さいならば{
+      resultが答え
+   }
+
+   current=和(lo,1)
+   parity=剰余(current,2)
+   もしparityが0以外ならば{
+      current=和(current,1)
+   }
+
+   くり返し{
+      もしcurrentがhi以上ならば{
+         くり返しを抜ける
+      }
+      resultにcurrentを追加する
+      current=和(current,2)
+   }
+
+   resultが答え
+}

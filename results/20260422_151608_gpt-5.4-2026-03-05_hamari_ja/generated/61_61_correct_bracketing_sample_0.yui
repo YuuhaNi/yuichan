@@ -1,0 +1,30 @@
+標準ライブラリを使う
+
+correct_bracketing = 入力 brackets に対し {
+    balance=0
+    i=0
+    n=bracketsの長さ
+
+    n回くり返す{
+        ch=brackets[i]
+
+        もしchが"("ならば{
+            balanceを増やす
+        }
+        そうでなければ{
+            balanceを減らす
+            もしbalanceが0より小さいならば{
+                Falseが答え
+            }
+        }
+
+        iを増やす
+    }
+
+    もしbalanceが0ならば{
+        Trueが答え
+    }
+    そうでなければ{
+        Falseが答え
+    }
+}

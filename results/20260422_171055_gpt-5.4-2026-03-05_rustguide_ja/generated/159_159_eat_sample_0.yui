@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+eat = 入力 number, need, remaining に対し {
+   total = number
+   left = remaining
+
+   もしremainingがneed以上ならば{
+      total = 和(number, need)
+      left = 差(remaining, need)
+   }
+   そうでなければ{
+      total = 和(number, remaining)
+      left = 0
+   }
+
+   [total, left]が答え
+}

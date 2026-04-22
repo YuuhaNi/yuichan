@@ -1,0 +1,29 @@
+標準ライブラリを使う
+
+double_the_difference = 入力 lst に対し {
+   total=0
+   i=0
+   n=lstの大きさ
+
+   n回くり返す{
+      x=lst[i]
+      skip=0
+
+      もしxが0より小さいならば{
+         skip=1
+      }
+      もし整数(x)がx以外ならば{
+         skip=1
+      }
+
+      もしskipが0ならば{
+         もし剰余(x,2)が1ならば{
+            total=和(total,積(x,x))
+         }
+      }
+
+      iを増やす
+   }
+
+   totalが答え
+}

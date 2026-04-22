@@ -1,0 +1,29 @@
+標準ライブラリを使う
+
+sum_product = 入力 numbers に対し {
+   sum = 0
+   product = 1
+   numbers の大きさ 回くり返す {
+      i = 0
+      もし i が numbers の大きさ より小さい ならば {
+         sum = 和(sum, numbers[i])
+         product = 積(product, numbers[i])
+         i を増やす
+      }
+   }
+   (sum, product)
+}
+標準ライブラリを使う
+
+sum_product = 入力 numbers に対し {
+   sum = 0
+   product = 1
+   sz = numbers の大きさ
+   i = 0
+   sz 回くり返す {
+      sum = 和(sum, numbers[i])
+      product = 積(product, numbers[i])
+      i を増やす
+   }
+   (sum, product)
+}

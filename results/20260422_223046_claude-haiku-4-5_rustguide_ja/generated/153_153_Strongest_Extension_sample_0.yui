@@ -1,0 +1,46 @@
+標準ライブラリを使う
+
+Strongest_Extension = 入力 class_name, extensions に対し {
+   strongest_ext = ""
+   max_strength = 0
+   first_iteration = 真
+   
+   extensions の大きさ回くり返す {
+      i = 0
+      cap = 0
+      sm = 0
+      
+      extensions[i] の大きさ回くり返す {
+         char = extensions[i][j]
+         もし char が 65 以上ならば {
+            もし char が 90 以下ならば {
+               cap を増やす
+            }
+         }
+         もし char が 97 以上ならば {
+            もし char が 122 以下ならば {
+               sm を増やす
+            }
+         }
+         j を増やす
+      }
+      
+      strength = 差(cap, sm)
+      
+      もし first_iteration が真ならば {
+         strongest_ext = extensions[i]
+         max_strength = strength
+         first_iteration = 偽
+      } そうでなければ {
+         もし strength が max_strength より大きいならば {
+            strongest_ext = extensions[i]
+            max_strength = strength
+         }
+      }
+      
+      i を増やす
+   }
+   
+   result = "{class_name}.{strongest_ext}"
+   result が答え
+}

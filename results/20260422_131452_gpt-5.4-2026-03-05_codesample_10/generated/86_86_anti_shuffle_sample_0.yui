@@ -1,0 +1,49 @@
+標準ライブラリを使う
+
+anti_shuffle = 入力 s に対し {
+   words=sを" "で分割
+   n=wordsの大きさ
+   result=[]
+   i=0
+
+   n回くり返す{
+      word=words[i]
+      m=wordの大きさ
+      chars=[]
+      j=0
+
+      m回くり返す{
+         charsにword[j]を追加する
+         jを増やす
+      }
+
+      a=0
+      m回くり返す{
+         b=0
+         limit=差(m,1)
+         limit回くり返す{
+            left=chars[b]
+            right=chars[和(b,1)]
+            もしleftがrightより大きいならば{
+               temp=chars[b]
+               chars[b]=chars[和(b,1)]
+               chars[和(b,1)]=temp
+            }
+            bを増やす
+         }
+         aを増やす
+      }
+
+      sorted=""
+      j=0
+      m回くり返す{
+         sortedにchars[j]を追加する
+         jを増やす
+      }
+
+      resultにsortedを追加する
+      iを増やす
+   }
+
+   resultを" "で結合 が答え
+}

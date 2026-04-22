@@ -1,0 +1,18 @@
+標準ライブラリを使う
+
+smallest_change = 入力 arr に対し {
+    n = arrの大きさ
+    count = 0
+    half = 商(n, 2)
+    i = 0
+    half回 くり返す {
+        j = 差(差(n, 1), i)
+        左 = arr[i]
+        右 = arr[j]
+        もし 左が右以外 ならば {
+            countを増やす
+        }
+        iを増やす
+    }
+    countが答え
+}

@@ -1,0 +1,15 @@
+標準ライブラリを使う
+
+add_elements = 入力 arr, k に対し {
+   total=0
+   i=0
+   k回くり返す{
+      x=arr[i]
+      s=文字列化(x)
+      もしsの大きさが2以下ならば{
+         total=和(total,x)
+      }
+      iを増やす
+   }
+   totalが答え
+}

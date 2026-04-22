@@ -1,0 +1,54 @@
+標準ライブラリを使う
+
+count_ones = 入力 n に対し {
+   count = 0
+   もし n が 0 以下 ならば {
+      n = 絶対値(n)
+   }
+   n の大きさ 回 くり返す {
+      もし n[count] が 1 ならば {
+         count を増やす
+      }
+   }
+   count が答え
+}
+
+sort_array = 入力 arr に対し {
+   result = []
+   i = 0
+   arr の大きさ 回 くり返す {
+      result に arr[i] を追加する
+      i を増やす
+   }
+   
+   sorted = 真
+   もし result の大きさ が 0 ならば {
+      result が答え
+   }
+   
+   n = result の大きさ
+   n 回 くり返す {
+      i = 0
+      差(n, 1) 回 くり返す {
+         ones_i = count_ones(result[i])
+         ones_next = count_ones(result[差(i, 1)])
+         
+         もし ones_i が ones_next より大きい ならば {
+            temp = result[i]
+            result[i] = result[差(i, 1)]
+            result[差(i, 1)] = temp
+         } そうでなければ {
+            もし ones_i が ones_next ならば {
+               もし result[i] が result[差(i, 1)] より大きい ならば {
+                  temp = result[i]
+                  result[i] = result[差(i, 1)]
+                  result[差(i, 1)] = temp
+               }
+            }
+         }
+         i を増やす
+      }
+   }
+   
+   result が答え
+}

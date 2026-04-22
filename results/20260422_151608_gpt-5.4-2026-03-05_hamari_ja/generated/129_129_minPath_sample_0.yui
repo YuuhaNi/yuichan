@@ -1,0 +1,100 @@
+標準ライブラリを使う
+
+minPath = 入力 grid, k に対し {
+   n=gridの大きさ
+
+   # 値 -> 座標 の対応を作る
+   posR=[]
+   posC=[]
+   need=和(積(n,n),1)
+   i=0
+   need回くり返す{
+      posRに0を追加する
+      posCに0を追加する
+   }
+
+   r=0
+   n回くり返す{
+      c=0
+      n回くり返す{
+         v=grid[r][c]
+         posR[v]=r
+         posC[v]=c
+         cを増やす
+      }
+      rを増やす
+   }
+
+   ans=[]
+   cur=1
+   ansにcurを追加する
+
+   steps=1
+   remain=差(k,1)
+   remain回くり返す{
+      r=posR[cur]
+      c=posC[cur]
+
+      best=0
+
+      # 上
+      もしrが0より大きいならば{
+         cand=grid[差(r,1)][c]
+         もしbestが0ならば{
+            best=cand
+         }
+         そうでなければ{
+            もしcandがbestより小さいならば{
+               best=cand
+            }
+         }
+      }
+
+      # 下
+      nr=和(r,1)
+      もしnrがnより小さいならば{
+         cand=grid[nr][c]
+         もしbestが0ならば{
+            best=cand
+         }
+         そうでなければ{
+            もしcandがbestより小さいならば{
+               best=cand
+            }
+         }
+      }
+
+      # 左
+      もしcが0より大きいならば{
+         cand=grid[r][差(c,1)]
+         もしbestが0ならば{
+            best=cand
+         }
+         そうでなければ{
+            もしcandがbestより小さいならば{
+               best=cand
+            }
+         }
+      }
+
+      # 右
+      nc=和(c,1)
+      もしncがnより小さいならば{
+         cand=grid[r][nc]
+         もしbestが0ならば{
+            best=cand
+         }
+         そうでなければ{
+            もしcandがbestより小さいならば{
+               best=cand
+            }
+         }
+      }
+
+      ansにbestを追加する
+      cur=best
+      stepsを増やす
+   }
+
+   ansが答え
+}

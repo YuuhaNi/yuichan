@@ -1,0 +1,31 @@
+標準ライブラリを使う
+
+get_closest_vowel = 入力wordに対し{
+   vowels="aeiouAEIOU"
+   n=wordの大きさ
+   result=""
+
+   # 右から見ていくが、最初と最後の文字は母音候補にしない
+   # つまり調べるのは 1 .. n-2
+   もしnが3より小さいならば{
+      resultが答え
+   }
+
+   i=差(n,2)
+   差(n,2)回くり返す{
+      c=word[i]
+      もしcがvowelsのいずれかならば{
+         left=word[差(i,1)]
+         right=word[和(i,1)]
+         もしleftがvowelsのいずれでもないならば{
+            もしrightがvowelsのいずれでもないならば{
+               resultにcを追加する
+               くり返しを抜ける
+            }
+         }
+      }
+      iを減らす
+   }
+
+   resultが答え
+}

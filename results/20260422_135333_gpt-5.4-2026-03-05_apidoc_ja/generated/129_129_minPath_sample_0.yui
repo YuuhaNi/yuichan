@@ -1,0 +1,66 @@
+標準ライブラリを使う
+
+minPath = 入力 grid, k に対し {
+  n = 配列化(grid).長さ
+
+  pos = {}
+  i = 0
+  ながら i < n {
+    j = 0
+    ながら j < n {
+      v = grid[i][j]
+      pos[v] = [i, j]
+      j = 和(j, 1)
+    }
+    i = 和(i, 1)
+  }
+
+  答え = []
+
+  cur = 1
+  答え.push(cur)
+
+  残り = 差(k, 1)
+
+  ながら 残り > 0 {
+    p = pos[cur]
+    x = p[0]
+    y = p[1]
+
+    best = 値なし
+
+    もし x > 0 なら {
+      cand = grid[差(x, 1)][y]
+      もし best == 値なし または cand < best なら {
+        best = cand
+      }
+    }
+
+    もし x < 差(n, 1) なら {
+      cand = grid[和(x, 1)][y]
+      もし best == 値なし または cand < best なら {
+        best = cand
+      }
+    }
+
+    もし y > 0 なら {
+      cand = grid[x][差(y, 1)]
+      もし best == 値なし または cand < best なら {
+        best = cand
+      }
+    }
+
+    もし y < 差(n, 1) なら {
+      cand = grid[x][和(y, 1)]
+      もし best == 値なし または cand < best なら {
+        best = cand
+      }
+    }
+
+    cur = best
+    答え.push(cur)
+    残り = 差(残り, 1)
+  }
+
+  戻る 答え
+}

@@ -1,0 +1,48 @@
+標準ライブラリを使う
+
+maximum = 入力 arr, k に対し {
+   result = []
+   i = 0
+   k回くり返す{
+      max_index = i
+      j = 差(i, 1)
+      arrの大きさ回くり返す{
+         jを増やす
+         もしjがarrの大きさ以上ならば{
+            くり返しを抜ける
+         }
+         もしarr[max_index]がarr[j]より小さいならば{
+            max_index = j
+         }
+      }
+      temp = arr[i]
+      arr[i] = arr[max_index]
+      arr[max_index] = temp
+      iを増やす
+   }
+
+   i = 0
+   k回くり返す{
+      resultにarr[i]を追加する
+      iを増やす
+   }
+
+   i = 0
+   k回くり返す{
+      j = 0
+      差(k, 1)回くり返す{
+         もしjが差(k, i, 1)以上ならば{
+            くり返しを抜ける
+         }
+         もしresult[j]がresult[和(j, 1)]より大きいならば{
+            temp = result[j]
+            result[j] = result[和(j, 1)]
+            result[和(j, 1)] = temp
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+
+   resultが答え
+}

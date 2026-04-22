@@ -1,0 +1,11 @@
+標準ライブラリを使う
+
+derivative = 入力 xs に対し {
+    result = []
+    i = 0
+    xs の大きさ を減らす 回 くり返す {
+        i を増やす
+        xs[i] * i が答え を result の末尾 に 追加する
+    }
+    result が答え
+}

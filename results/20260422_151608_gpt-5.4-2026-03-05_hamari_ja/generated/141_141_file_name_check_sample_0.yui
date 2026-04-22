@@ -1,0 +1,85 @@
+標準ライブラリを使う
+
+file_name_check = 入力 file_name に対し {
+   n=file_nameの長さ
+   dot_count=0
+   i=0
+   run_digits=0
+   first_dot=差(0,1)
+
+   n回くり返す{
+      ch=file_name[i]
+
+      もしchが"."ならば{
+         dot_countを増やす
+         もしfirst_dotが差(0,1)ならば{
+            first_dot=i
+         }
+         run_digits=0
+      }
+      そうでなければ{
+         is_digit=0
+         もしchが"0"のいずれかならば{ is_digit=1 }
+         もしchが"1"のいずれかならば{ is_digit=1 }
+         もしchが"2"のいずれかならば{ is_digit=1 }
+         もしchが"3"のいずれかならば{ is_digit=1 }
+         もしchが"4"のいずれかならば{ is_digit=1 }
+         もしchが"5"のいずれかならば{ is_digit=1 }
+         もしchが"6"のいずれかならば{ is_digit=1 }
+         もしchが"7"のいずれかならば{ is_digit=1 }
+         もしchが"8"のいずれかならば{ is_digit=1 }
+         もしchが"9"のいずれかならば{ is_digit=1 }
+
+         もしis_digitが1ならば{
+            run_digitsを増やす
+            もしrun_digitsが3以上ならば{
+               "No"が答え
+            }
+         }
+         そうでなければ{
+            run_digits=0
+         }
+      }
+
+      iを増やす
+   }
+
+   もしdot_countが1以外ならば{
+      "No"が答え
+   }
+
+   もしfirst_dotが0ならば{
+      "No"が答え
+   }
+
+   last_index=差(n,1)
+   もしfirst_dotがlast_indexならば{
+      "No"が答え
+   }
+
+   first_char=file_name[0]
+   is_alpha=0
+
+   もしfirst_charが"a"のいずれかならば{ is_alpha=1 }
+   もしfirst_charが"b"のいずれかならば{ is_alpha=1 }
+   もしfirst_charが"c"のいずれかならば{ is_alpha=1 }
+   もしfirst_charが"d"のいずれかならば{ is_alpha=1 }
+   もしfirst_charが"e"のいずれかならば{ is_alpha=1 }
+   もしfirst_charが"f"のいずれかならば{ is_alpha=1 }
+   もしfirst_charが"g"のいずれかならば{ is_alpha=1 }
+   もしfirst_charが"h"のいずれかならば{ is_alpha=1 }
+   もしfirst_charが"i"のいずれかならば{ is_alpha=1 }
+   もしfirst_charが"j"のいずれかならば{ is_alpha=1 }
+   もしfirst_charが"k"のいずれかならば{ is_alpha=1 }
+   もしfirst_charが"l"のいずれかならば{ is_alpha=1 }
+   もしfirst_charが"m"のいずれかならば{ is_alpha=1 }
+   もしfirst_charが"n"のいずれかならば{ is_alpha=1 }
+   もしfirst_charが"o"のいずれかならば{ is_alpha=1 }
+   もしfirst_charが"p"のいずれかならば{ is_alpha=1 }
+   もしfirst_charが"q"のいずれかならば{ is_alpha=1 }
+   もしfirst_charが"r"のいずれかならば{ is_alpha=1 }
+   もしfirst_charが"s"のいずれかならば{ is_alpha=1 }
+   もしfirst_charが"t"のいずれかならば{ is_alpha=1 }
+   もしfirst_charが"u"のいずれかならば{ is_alpha=1 }
+   もしfirst_charが"v"のいずれかならば{ is_alpha=1 }
+   もしfirst_charが"w"のいずれかならば{ is_alpha

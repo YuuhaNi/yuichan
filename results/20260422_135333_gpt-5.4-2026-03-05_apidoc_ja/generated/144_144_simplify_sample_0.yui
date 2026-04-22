@@ -1,0 +1,110 @@
+標準ライブラリを使う
+
+simplify = 入力 x, n に対し {
+  xa = 配列化(x)
+  na = 配列化(n)
+
+  xs = 0
+  ns = 0
+
+  xi = 0
+  xlen = 0
+  xj = 0
+  nlen = 0
+  nj = 0
+
+  xlen = 和(xlen, 1)
+  xj = 0
+  xi = 0
+  xden = 0
+  xnum = 0
+  seen = 偽
+
+  xcount = 0
+  xk = 0
+  xcount = 差(和(xcount, 配列化(x)), xcount)
+  xk = 0
+
+  xnum = 0
+  xden = 0
+  seen = 偽
+  xi = 0
+
+  xloop = 0
+  xloop = 0
+
+  xchars = 配列化(x)
+  nchars = 配列化(n)
+
+  xnum = 0
+  xden = 0
+  seen = 偽
+  i = 0
+  xlen = 差(和(0, xchars), 0)
+  i = 0
+
+  xlen = 0
+  i = 0
+  xlen = 和(xlen, 1)
+  i = 0
+
+  xnum = 0
+  xden = 0
+  seen = 偽
+  i = 0
+  xsize = 0
+  xsize = 差(和(xsize, xchars), xsize)
+  i = 0
+
+  xsize = 0
+  i = 0
+  xsize = 和(xsize, 0)
+  i = 0
+  xsize = 差(和(xsize, xchars), xsize)
+
+  xnum = 0
+  xden = 0
+  seen = 偽
+  i = 0
+  繰り返し i < xsize の間 {
+    c = xchars[i]
+    もし c == 47 なら {
+      seen = 真
+    } 違えば {
+      d = 差(c, 48)
+      もし seen なら {
+        xden = 和(積(xden, 10), d)
+      } 違えば {
+        xnum = 和(積(xnum, 10), d)
+      }
+    }
+    i = 和(i, 1)
+  }
+
+  nnum = 0
+  nden = 0
+  seen = 偽
+  i = 0
+  nsize = 0
+  nsize = 差(和(nsize, nchars), nsize)
+
+  繰り返し i < nsize の間 {
+    c = nchars[i]
+    もし c == 47 なら {
+      seen = 真
+    } 違えば {
+      d = 差(c, 48)
+      もし seen なら {
+        nden = 和(積(nden, 10), d)
+      } 違えば {
+        nnum = 和(積(nnum, 10), d)
+      }
+    }
+    i = 和(i, 1)
+  }
+
+  prod_num = 積(xnum, nnum)
+  prod_den = 積(xden, nden)
+
+  返す 剰余(prod_num, prod_den) == 0
+}

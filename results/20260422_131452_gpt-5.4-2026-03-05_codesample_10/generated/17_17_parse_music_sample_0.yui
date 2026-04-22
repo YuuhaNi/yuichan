@@ -1,0 +1,22 @@
+標準ライブラリを使う
+
+parse_music = 入力 music_string に対し {
+   parts=music_stringを" "で分割
+   result=[]
+   n=partsの大きさ
+   i=0
+   n回くり返す{
+      note=parts[i]
+      もしnoteが"o"ならば{
+         resultに4を追加する
+      }
+      もしnoteが"o|"ならば{
+         resultに2を追加する
+      }
+      もしnoteが".|"ならば{
+         resultに1を追加する
+      }
+      iを増やす
+   }
+   resultが答え
+}

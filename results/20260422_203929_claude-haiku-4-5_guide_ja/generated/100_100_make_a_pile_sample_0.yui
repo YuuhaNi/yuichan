@@ -1,0 +1,14 @@
+標準ライブラリを使う
+
+make_a_pile = 入力 n に対し {
+   result = []
+   current = n
+   
+   3回くり返す{
+      resultに current を追加する
+      currentを増やす
+      currentを増やす
+   }
+   
+   result が答え
+}

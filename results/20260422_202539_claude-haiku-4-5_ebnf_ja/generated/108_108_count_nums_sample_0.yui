@@ -1,0 +1,45 @@
+標準ライブラリを使う
+
+count_nums = 入力 arr に対し {
+  count = 0
+  0 回 くり返す {
+    何もしない
+  }
+  arr の大きさ 回 くり返す {
+    i が 答え
+  }
+  count が 答え
+}
+標準ライブラリを使う
+
+count_nums = 入力 arr に対し {
+  count = 0
+  i = 0
+  arr の大きさ 回 くり返す {
+    num = arr[i]
+    digit_sum = 0
+    もし num が 0 ならば {
+      digit_sum = 0
+    } そうでなければ {
+      もし num が 0 より小さい ならば {
+        digit_sum = 負(num) の最初の桁
+        temp = 負(num) を 10 で 商
+        temp 回 くり返す {
+          digit_sum = 和(digit_sum, 剰余(temp, 10))
+          temp = 商(temp, 10)
+        }
+      } そうでなければ {
+        temp = num
+        temp 回 くり返す {
+          digit_sum = 和(digit_sum, 剰余(temp, 10))
+          temp = 商(temp, 10)
+        }
+      }
+    }
+    もし digit_sum が 0 より大きい ならば {
+      count を増やす
+    }
+    i を増やす
+  }
+  count が 答え
+}

@@ -1,0 +1,14 @@
+標準ライブラリを使う
+
+sum_product = 入力 numbers に対し {
+   s = 0
+   p = 1
+   i = 0
+   numbersの大きさ回くり返す{
+      sを増やす(numbers[i])
+      p = 積(p, numbers[i])
+      iを増やす
+   }
+   s
+   p
+}

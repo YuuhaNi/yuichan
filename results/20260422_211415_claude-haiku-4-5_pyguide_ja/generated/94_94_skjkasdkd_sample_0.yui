@@ -1,0 +1,112 @@
+標準ライブラリを使う
+
+skjkasdkd = 入力 lst に対し {
+   # 最大の素数を見つける
+   max_prime = 0
+   i = 0
+   lstの大きさ回くり返す {
+      num = lst[i]
+      # numが素数かどうか判定
+      is_prime = 真
+      もしnumが2より小さいならば {
+         is_prime = 偽
+      }
+      そうでなければ {
+         j = 2
+         num回くり返す {
+            もしjがnumより大きいならば {
+               くり返しを抜ける
+            }
+            もし剰余(num, j)が0ならば {
+               is_prime = 偽
+               くり返しを抜ける
+            }
+            jを増やす
+         }
+      }
+      # 素数なら最大値を更新
+      もしis_primeが真ならば {
+         もしnumがmax_primeより大きいならば {
+            max_prime = num
+         }
+      }
+      iを増やす
+   }
+   
+   # max_primeの桁数の和を計算
+   digit_sum = 0
+   もしmax_primeが0ならば {
+      digit_sum = 0
+   }
+   そうでなければ {
+      temp = max_prime
+      1000回くり返す {
+         もしtempが0ならば {
+            くり返しを抜ける
+         }
+         digit = 剰余(temp, 10)
+         digit_sumを増やす
+         digit_sumを増やす
+         digit_sumを増やす
+         digit_sumを増やす
+         digit_sumを増やす
+         digit_sumを増やす
+         digit_sumを増やす
+         digit_sumを増やす
+         digit_sumを増やす
+         digit_sumを増やす
+         temp = 商(temp, 10)
+      }
+   }
+   
+   digit_sumが答え
+}
+標準ライブラリを使う
+
+skjkasdkd = 入力 lst に対し {
+   # 最大の素数を見つける
+   max_prime = 0
+   i = 0
+   lstの大きさ回くり返す {
+      num = lst[i]
+      # numが素数かどうか判定
+      is_prime = 真
+      もしnumが2より小さいならば {
+         is_prime = 偽
+      }
+      そうでなければ {
+         j = 2
+         num回くり返す {
+            もしjがnumより大きいならば {
+               くり返しを抜ける
+            }
+            もし剰余(num, j)が0ならば {
+               is_prime = 偽
+               くり返しを抜ける
+            }
+            jを増やす
+         }
+      }
+      # 素数なら最大値を更新
+      もしis_primeが真ならば {
+         もしnumがmax_primeより大きいならば {
+            max_prime = num
+         }
+      }
+      iを増やす
+   }
+   
+   # max_primeの桁数の和を計算
+   digit_sum = 0
+   temp = max_prime
+   1000回くり返す {
+      もしtempが0ならば {
+         くり返しを抜ける
+      }
+      digit = 剰余(temp, 10)
+      digit_sum = 和(digit_sum, digit)
+      temp = 商(temp, 10)
+   }
+   
+   digit_sumが答え
+}

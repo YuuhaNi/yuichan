@@ -1,0 +1,47 @@
+標準ライブラリを使う
+
+sorted_list_sum=入力lstに対し{
+   filtered=[]
+   n=lstの大きさ
+   i=0
+   n回くり返す{
+      s=lst[i]
+      len=sの大きさ
+      parity=剰余(len,2)
+      もしparityが0ならば{
+         filteredにsを追加する
+      }
+      iを増やす
+   }
+
+   m=filteredの大きさ
+   m回くり返す{
+      i=0
+      limit=差(m,1)
+      limit回くり返す{
+         j=和(i,1)
+         a=filtered[i]
+         b=filtered[j]
+         la=aの大きさ
+         lb=bの大きさ
+         swap=0
+
+         もしlaがlbより大きいならば{
+            swap=1
+         }
+         もしlaがlbならば{
+            もしaがbより大きいならば{
+               swap=1
+            }
+         }
+
+         もしswapが1ならば{
+            tmp=filtered[i]
+            filtered[i]=filtered[j]
+            filtered[j]=tmp
+         }
+         iを増やす
+      }
+   }
+   filteredが答え
+}

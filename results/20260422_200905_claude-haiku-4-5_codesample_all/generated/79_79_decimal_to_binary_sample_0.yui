@@ -1,0 +1,43 @@
+標準ライブラリを使う
+
+decimal_to_binary = 入力 decimal に対し {
+   # 0 の場合は特別処理
+   もし decimal が 0 ならば {
+      "db0db" が答え
+   }
+   
+   # 2進数の文字列を逆順で構築する
+   binary = ""
+   n = decimal
+   
+   # n が 0 になるまで 2 で割り続ける
+   100回くり返す {
+      もし n が 0 ならば {
+         くり返しを抜ける
+      }
+      
+      # n を 2 で割った余りが 0 か 1
+      remainder = 剰余(n, 2)
+      
+      # 余りを文字に変換して追加
+      もし remainder が 0 ならば {
+         binary に "0" を追加する
+      }
+      そうでなければ {
+         binary に "1" を追加する
+      }
+      
+      # n を 2 で割る (床除算)
+      n = 商(n, 2)
+   }
+   
+   # 逆順にする
+   binary = reverse(binary)
+   
+   # "db" で囲む
+   result = "db"
+   result に binary を追加する
+   result に "db" を追加する
+   
+   result が答え
+}

@@ -1,0 +1,79 @@
+標準ライブラリを使う
+
+order_by_points = 入力 nums に対し {
+   # 各要素に対して、元のインデックスと桁の合計を記録する
+   indexed_nums = []
+   n = nums の大きさ
+   i = 0
+   n 回くり返す {
+      num = nums[i]
+      # 負の数は絶対値にして桁の合計を計算
+      abs_num = num
+      もし num が 0 より小さいならば {
+         abs_num = 差(0, num)
+      }
+      
+      # 桁の合計を計算
+      digit_sum = 0
+      temp = abs_num
+      もし temp が 0 ならば {
+         digit_sum = 0
+      }
+      そうでなければ {
+         1000 回くり返す {
+            もし temp が 0 ならば {
+               くり返しを抜ける
+            }
+            digit = 剰余(temp, 10)
+            digit_sum = 和(digit_sum, digit)
+            temp = 商(temp, 10)
+         }
+      }
+      
+      # {元の値, 桁の合計, 元のインデックス} をリストに追加
+      indexed_nums に {"value": num, "digit_sum": digit_sum, "index": i} を追加する
+      i を増やす
+   }
+   
+   # バブルソートで安定ソート（桁の合計でソート、同じ場合は元のインデックスで比較）
+   m = indexed_nums の大きさ
+   i = 0
+   m 回くり返す {
+      j = 0
+      差(m, 1) 回くり返す {
+         item1 = indexed_nums[j]
+         item2 = indexed_nums[差(j, 1)]
+         
+         # 桁の合計で比較、同じ場合は元のインデックスで比較
+         もし item1["digit_sum"] が item2["digit_sum"] より大きいならば {
+            # スワップ
+            temp = indexed_nums[j]
+            indexed_nums[j] = indexed_nums[差(j, 1)]
+            indexed_nums[差(j, 1)] = temp
+         }
+         そうでなければ {
+            もし item1["digit_sum"] が item2["digit_sum"] と等しいならば {
+               もし item1["index"] が item2["index"] より大きいならば {
+                  # スワップ
+                  temp = indexed_nums[j]
+                  indexed_nums[j] = indexed_nums[差(j, 1)]
+                  indexed_nums[差(j, 1)] = temp
+               }
+            }
+         }
+         j を増やす
+      }
+      i を増やす
+   }
+   
+   # ソート済みのリストから値だけを抽出
+   result = []
+   n = indexed_nums の大きさ
+   i = 0
+   n 回くり返す {
+      result に indexed_nums[i]["value"] を追加する
+      i を増やす
+   }
+   
+   result が答え
+}

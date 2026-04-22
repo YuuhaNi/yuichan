@@ -1,0 +1,39 @@
+標準ライブラリを使う
+
+largest_smallest_integers = 入力 lst に対し {
+  max_negative = 値なし
+  min_positive = 値なし
+  
+  0 回 くり返す {
+    
+  }
+  
+  i = 0
+  lst の大きさ 回 くり返す {
+    current = lst[i]
+    
+    もし current が 0 より小さい ならば {
+      もし max_negative が 値なし ならば {
+        max_negative = current
+      } そうでなければ {
+        もし current が max_negative より大きい ならば {
+          max_negative = current
+        }
+      }
+    }
+    
+    もし current が 0 より大きい ならば {
+      もし min_positive が 値なし ならば {
+        min_positive = current
+      } そうでなければ {
+        もし current が min_positive より小さい ならば {
+          min_positive = current
+        }
+      }
+    }
+    
+    i を増やす
+  }
+  
+  {"negative": max_negative, "positive": min_positive} が 答え
+}

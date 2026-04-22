@@ -1,0 +1,40 @@
+標準ライブラリを使う
+
+maximum = 入力 arr, k に対し {
+  result = []
+  n = arrの大きさ
+
+  k回くり返す {
+    maxIndex = 0
+    i = 1
+    残り = 差(n, resultの大きさ)
+    残り回くり返す {
+      もし arr[i] が arr[maxIndex] より大きいならば {
+        maxIndex = i
+      }
+      iを増やす
+    }
+
+    resultにarr[maxIndex]を追加する
+    arr[maxIndex] = arr[差(n, resultの大きさ)]
+  }
+
+  i = 0
+  k回くり返す {
+    j = 0
+    回数 = 差(k, 1)
+    回数回くり返す {
+      もし j が 差(k, 差(i, 1)) より小さいならば {
+        もし result[j] が result[差(j, -1)] より大きいならば {
+          temp = result[j]
+          result[j] = result[差(j, -1)]
+          result[差(j, -1)] = temp
+        }
+      }
+      jを増やす
+    }
+    iを増やす
+  }
+
+  result が答え
+}

@@ -1,0 +1,32 @@
+標準ライブラリを使う
+
+prime_length = 入力 string に対し {
+   length = stringの大きさ
+   
+   もしlengthが2より小さいならば {
+      偽 が答え
+   }
+   
+   もしlengthが2ならば {
+      真 が答え
+   }
+   
+   is_prime = 真
+   i = 2
+   
+   {length}回くり返す {
+      もしiがlengthより大きいならば {
+         くり返しを抜ける
+      }
+      
+      remainder = 剰余(length, i)
+      もしremainderが0ならば {
+         is_prime = 偽
+         くり返しを抜ける
+      }
+      
+      iを増やす
+   }
+   
+   is_prime が答え
+}

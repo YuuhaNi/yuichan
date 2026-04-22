@@ -1,0 +1,59 @@
+標準ライブラリを使う
+
+words_in_sentence = 入力 sentence に対し {
+   words = []
+   current = ""
+   i = 0
+
+   sentenceの大きさ回くり返す{
+      ch = sentence[i]
+      もしchが" "[0]ならば{
+         wordsにcurrentを追加する
+         current = ""
+      }そうでなければ{
+         currentにchを追加する
+      }
+      iを増やす
+   }
+   wordsにcurrentを追加する
+
+   is_prime = 入力nに対し{
+      もしnが2より小さいならば{
+         偽が答え
+      }
+      d = 2
+      n回くり返す{
+         もしdがn以上ならば{
+            くり返しを抜ける
+         }
+         もし剰余(n, d)が0ならば{
+            偽が答え
+         }
+         dを増やす
+      }
+      真が答え
+   }
+
+   result = ""
+   first = 真
+   j = 0
+   wordsの大きさ回くり返す{
+      w = words[j]
+      もしis_prime(wの大きさ)が真ならば{
+         もしfirstが真ならば{
+            result = w
+            first = 偽
+         }そうでなければ{
+            resultに" "[0]を追加する
+            k = 0
+            wの大きさ回くり返す{
+               resultにw[k]を追加する
+               kを増やす
+            }
+         }
+      }
+      jを増やす
+   }
+
+   resultが答え
+}

@@ -1,0 +1,25 @@
+標準ライブラリを使う
+
+find_closest_elements = 入力 numbers に対し {
+    sorted = numbers を sorted に入れる
+    min_diff = 絶対値(sorted[1] と sorted[0] の差) を min_diff に入れる
+    a = sorted[0] を a に入れる
+    b = sorted[1] を b に入れる
+    i = 1 を i に入れる
+
+    i < (sorted の長さ - 1) の間 {
+        x = sorted[i] を x に入れる
+        y = sorted[i + 1] を y に入れる
+        d = 絶対値(y と x の差) を d に入れる
+
+        d < min_diff なら {
+            d を min_diff に入れる
+            x を a に入れる
+            y を b に入れる
+        }
+
+        i + 1 を i に入れる
+    }
+
+    (a, b) を返す
+}

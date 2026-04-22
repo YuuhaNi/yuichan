@@ -1,0 +1,28 @@
+標準ライブラリを使う
+
+fruit_distribution = 入力 s, n に対し {
+   parts = []
+   word = ""
+   i = 0
+
+   sの大きさ回くり返す{
+      ch = s[i]
+      もしchが" "[0]ならば{
+         もしwordの大きさが0以外ならば{
+            partsにwordを追加する
+            word = ""
+         }
+      }そうでなければ{
+         wordにchを追加する
+      }
+      iを増やす
+   }
+
+   もしwordの大きさが0以外ならば{
+      partsにwordを追加する
+   }
+
+   apples = 整数化(parts[0])
+   oranges = 整数化(parts[3])
+   差(n, apples, oranges)が答え
+}

@@ -1,0 +1,21 @@
+標準ライブラリを使う
+
+concatenate = 入力 strings に対し {
+  result = ""
+  0 回 {
+    何もしない
+  }
+  strings の大きさ 回 くり返す {
+    result = result + strings[0]
+  }
+  result が 答え
+}
+標準ライブラリを使う
+
+concatenate = 入力 strings に対し {
+  result = ""
+  strings の大きさ 回 くり返す {
+    result の末尾に strings[0] を追加する
+  }
+  result が 答え
+}

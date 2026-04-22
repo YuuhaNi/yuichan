@@ -1,0 +1,22 @@
+標準ライブラリを使う
+
+decimal_to_binary = 入力 decimal に対し {
+   result = ""
+   もし decimal が 0 ならば {
+      result = "db0db"
+   }
+   そうでなければ {
+      result に "db" を追加する
+      n = decimal
+      3回くり返す {
+         もし n が 0 ならば {
+            くり返しを抜ける
+         }
+         remainder = 剰余(n, 2)
+         result に 文字列化(remainder) を追加する
+         n = 商(n, 2)
+      }
+      result に "db" を追加する
+   }
+   result が答え
+}

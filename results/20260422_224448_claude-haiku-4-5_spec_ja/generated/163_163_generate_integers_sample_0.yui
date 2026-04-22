@@ -1,0 +1,24 @@
+標準ライブラリを使う
+
+generate_integers = 入力 a, b に対し {
+   最小値をa,bの中から求める
+   最大値をa,bの中から求める
+   
+   result = []
+   
+   もし最小値が最大値以上ならば {
+      関数から抜ける
+   }
+   
+   current = 最小値
+   もし剰余(current, 2)が0以外ならば {
+      currentを増やす
+   }
+   
+   current が最大値以下の間くり返す {
+      resultにcurrentを追加する
+      current = 和(current, 2)
+   }
+   
+   result が答え
+}

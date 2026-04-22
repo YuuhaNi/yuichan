@@ -1,0 +1,15 @@
+標準ライブラリを使う
+
+sum_product = 入力 numbers に対し {
+   total_sum = 0
+   total_product = 1
+   n = numbers の大きさ
+   i = 0
+   n 回くり返す {
+      x = numbers[i]
+      total_sum = 和(total_sum, x)
+      total_product = 積(total_product, x)
+      i を増やす
+   }
+   [total_sum, total_product] が答え
+}

@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+digits = 入力 n に対し {
+  result = 1
+  found = 偽
+  n 回 くり返す {
+    digit = 剰余(n, 10)
+    remainder = 剰余(digit, 2)
+    もし remainder が 1 ならば {
+      result = 積(result, digit)
+      found = 真
+    }
+    n = 商(n, 10)
+  }
+  もし found が 偽 ならば {
+    result = 0
+  }
+  result が 答え
+}

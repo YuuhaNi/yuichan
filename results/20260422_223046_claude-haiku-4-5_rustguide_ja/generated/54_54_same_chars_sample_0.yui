@@ -1,0 +1,54 @@
+標準ライブラリを使う
+
+same_chars = 入力 s0, s1 に対し {
+   # s0 と s1 を配列化して、ソート後に比較する
+   a0 = 配列化(s0)
+   a1 = 配列化(s1)
+   
+   # 配列をソート（昇順）
+   a0_sorted = a0
+   a1_sorted = a1
+   
+   # a0 と a1 の長さが異なれば False
+   もしa0の大きさがa1の大きさ以外ならば {
+      偽が答え
+   }
+   
+   # バブルソート for a0_sorted
+   n = a0の大きさ
+   n回くり返す {
+      i = 0
+      差(n, 1)回くり返す {
+         もしa0_sorted[i]がa0_sorted[差(i, 1)]より大きいならば {
+            temp = a0_sorted[i]
+            a0_sorted[i] = a0_sorted[差(i, 1)]
+            a0_sorted[差(i, 1)] = temp
+         }
+         iを増やす
+      }
+   }
+   
+   # バブルソート for a1_sorted
+   n回くり返す {
+      i = 0
+      差(n, 1)回くり返す {
+         もしa1_sorted[i]がa1_sorted[差(i, 1)]より大きいならば {
+            temp = a1_sorted[i]
+            a1_sorted[i] = a1_sorted[差(i, 1)]
+            a1_sorted[差(i, 1)] = temp
+         }
+         iを増やす
+      }
+   }
+   
+   # ソート済み配列を比較
+   i = 0
+   n回くり返す {
+      もしa0_sorted[i]がa1_sorted[i]以外ならば {
+         偽が答え
+      }
+      iを増やす
+   }
+   
+   真が答え
+}

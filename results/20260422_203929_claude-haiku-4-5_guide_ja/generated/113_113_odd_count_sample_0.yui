@@ -1,0 +1,59 @@
+標準ライブラリを使う
+
+odd_count = 入力 lst に対し {
+   result = []
+   i = 0
+   lstの大きさ回くり返す{
+      # 現在の文字列を取得
+      current_str = lst[i]
+      
+      # 奇数の個数をカウント
+      odd_num = 0
+      j = 0
+      current_strの大きさ回くり返す{
+         char_code = current_str[j]
+         # 文字コードを数字に変換（'0'は48、'1'は49...）
+         digit = 差(char_code, 48)
+         # 奇数判定：1,3,5,7,9
+         もしdigitが1ならば{
+            odd_numを増やす
+         }そうでなければ{
+            もしdigitが3ならば{
+               odd_numを増やす
+            }そうでなければ{
+               もしdigitが5ならば{
+                  odd_numを増やす
+               }そうでなければ{
+                  もしdigitが7ならば{
+                     odd_numを増やす
+                  }そうでなければ{
+                     もしdigitが9ならば{
+                        odd_numを増やす
+                     }
+                  }
+               }
+            }
+         }
+         jを増やす
+      }
+      
+      # テンプレート文字列を作成し、'i'をodd_numに置き換え
+      template = "the number of odd elements in the string i of the input."
+      output = ""
+      k = 0
+      templateの大きさ回くり返す{
+         char = template[k]
+         もしcharが105ならば{
+            # 105は'i'の文字コード
+            outputに文字列化(odd_num)を追加する
+         }そうでなければ{
+            outputにcharを追加する
+         }
+         kを増やす
+      }
+      
+      resultにoutputを追加する
+      iを増やす
+   }
+   resultが答え
+}

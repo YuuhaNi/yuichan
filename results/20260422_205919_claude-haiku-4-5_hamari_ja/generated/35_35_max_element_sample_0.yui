@@ -1,0 +1,14 @@
+標準ライブラリを使う
+
+max_element = 入力 l に対し {
+   max_val = l[0]
+   l の大きさを size とする
+   1回からsize回までくり返す {
+      i = ループ変数
+      current = l[差(i,1)]
+      もし current が max_val より大きい ならば {
+         max_val = current
+      }
+   }
+   max_val が答え
+}

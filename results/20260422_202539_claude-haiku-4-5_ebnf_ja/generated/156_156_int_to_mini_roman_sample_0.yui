@@ -1,0 +1,21 @@
+標準ライブラリを使う
+
+int_to_mini_roman = 入力 number に対し {
+    result = ""
+    
+    values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+    numerals = ["m", "cm", "d", "cd", "c", "xc", "l", "xl", "x", "ix", "v", "iv", "i"]
+    
+    i = 0
+    もし i が values の大きさ ならば {
+        もし number が values[i] 以上 ならば {
+            result の末尾に numerals[i] を追加する
+            number を差(number, values[i]) に = する
+        }
+        そうでなければ {
+            i を増やす
+        }
+    } くり返す
+    
+    result が 答え
+}

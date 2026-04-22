@@ -1,0 +1,116 @@
+標準ライブラリを使う
+
+minPath = 入力 grid, k に対し {
+   N = gridの大きさ
+   
+   # グリッドから値の位置を探すマップを作成
+   pos = {}
+   i = 0
+   N回くり返す {
+      j = 0
+      N回くり返す {
+         val = grid[i][j]
+         pos[文字列化(val)] = [i, j]
+         jを増やす
+      }
+      iを増やす
+   }
+   
+   # BFS で長さ k の最短経路を探す
+   # 状態: [現在行, 現在列, 訪問したセルの値のリスト]
+   queue = []
+   
+   # すべてのセルからスタート
+   i = 0
+   N回くり返す {
+      j = 0
+      N回くり返す {
+         val = grid[i][j]
+         queue に [i, j, [val]] を追加する
+         jを増やす
+      }
+      iを増やす
+   }
+   
+   minResult = 値なし
+   
+   queueの大きさ回くり返す {
+      もしqueueの大きさが0ならば {
+         くり返しを抜ける
+      }
+      
+      state = queue[0]
+      queue から 0 番目を削除する
+      
+      row = state[0]
+      col = state[1]
+      path = state[2]
+      
+      pathの大きさ = 和(pathの大きさ, 0)
+      
+      もしpathの大きさが k ならば {
+         もし minResult が 値なし ならば {
+            minResult = path
+         }
+         そうでなければ {
+            # 辞書順で比較
+            smaller = 偽
+            idx = 0
+            pathの大きさ回くり返す {
+               もしpath[idx]がminResult[idx]より小さいならば {
+                  smaller = 真
+                  くり返しを抜ける
+               }
+               もしpath[idx]がminResult[idx]より大きいならば {
+                  くり返しを抜ける
+               }
+               idxを増やす
+            }
+            もしsmallerならば {
+               minResult = path
+            }
+         }
+      }
+      そうでなければ {
+         # 隣接セルを探索
+         # 上
+         もしrowが0より大きいならば {
+            newRow = 差(row, 1)
+            newCol = col
+            newVal = grid[newRow][newCol]
+            newPath = path
+            newPath に newVal を追加する
+            queue に [newRow, newCol, newPath] を追加する
+         }
+         # 下
+         もしrowが差(N, 1)より小さいならば {
+            newRow = 和(row, 1)
+            newCol = col
+            newVal = grid[newRow][newCol]
+            newPath = path
+            newPath に newVal を追加する
+            queue に [newRow, newCol, newPath] を追加する
+         }
+         # 左
+         もしcolが0より大きいならば {
+            newRow = row
+            newCol = 差(col, 1)
+            newVal = grid[newRow][newCol]
+            newPath = path
+            newPath に newVal を追加する
+            queue に [newRow, newCol, newPath] を追加する
+         }
+         # 右
+         もしcolが差(N, 1)より小さいならば {
+            newRow = row
+            newCol = 和(col, 1)
+            newVal = grid[newRow][newCol]
+            newPath = path
+            newPath に newVal を追加する
+            queue に [newRow, newCol, newPath] を追加する
+         }
+      }
+   }
+   
+   minResultが答え
+}

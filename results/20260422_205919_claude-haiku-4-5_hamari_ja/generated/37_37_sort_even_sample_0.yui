@@ -1,0 +1,41 @@
+標準ライブラリを使う
+
+sort_even = 入力 l に対し {
+   evens = []
+   odds = []
+   
+   lの大きさ回くり返す {
+      i = 反復変数
+      elem = l[i]
+      parity = 剰余(i, 2)
+      
+      もし parity が 0 ならば {
+         evens に elem を追加する
+      }
+      そうでなければ {
+         odds に elem を追加する
+      }
+   }
+   
+   evens を昇順でソートする
+   
+   result = []
+   evens_idx = 0
+   odds_idx = 0
+   
+   lの大きさ回くり返す {
+      i = 反復変数
+      parity = 剰余(i, 2)
+      
+      もし parity が 0 ならば {
+         result に evens[evens_idx] を追加する
+         evens_idx を増やす
+      }
+      そうでなければ {
+         result に odds[odds_idx] を追加する
+         odds_idx を増やす
+      }
+   }
+   
+   result が答え
+}

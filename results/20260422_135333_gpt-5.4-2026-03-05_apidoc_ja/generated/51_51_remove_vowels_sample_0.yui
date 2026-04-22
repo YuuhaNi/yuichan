@@ -1,0 +1,18 @@
+標準ライブラリを使う
+
+remove_vowels = 入力 text に対し {
+    result = ""
+    i = 0
+    text_array = 配列化(text)
+
+    反復 (i < 最大値(text_array)) {
+        c = 文字列化([text_array[i]])
+        もし ((c == "a") または (c == "e") または (c == "i") または (c == "o") または (c == "u") または (c == "A") または (c == "E") または (c == "I") または (c == "O") または (c == "U")) {
+        } そうでなければ {
+            result = result + c
+        }
+        i = 和(i, 1)
+    }
+
+    戻る result
+}

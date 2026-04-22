@@ -1,0 +1,8 @@
+標準ライブラリを使う
+
+fruit_distribution = 入力 s, n に対し {
+  parts = s.split(" ")
+  apples = 整数化(parts[0])
+  oranges = 整数化(parts[3])
+  戻る 差(n, apples, oranges)
+}

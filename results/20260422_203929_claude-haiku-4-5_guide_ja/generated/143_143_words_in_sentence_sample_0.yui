@@ -1,0 +1,61 @@
+標準ライブラリを使う
+
+is_prime = 入力 n に対し {
+   もし n が 2 より小さい ならば {
+      偽 が 答え
+   }
+   もし n が 2 ならば {
+      真 が 答え
+   }
+   i = 2
+   n 回 くり返す {
+      もし i が n より大きい ならば {
+         くり返しを抜ける
+      }
+      もし 剰余(n, i) が 0 ならば {
+         偽 が 答え
+      }
+      i を増やす
+   }
+   真 が 答え
+}
+
+words_in_sentence = 入力 sentence に対し {
+   words = []
+   current_word = ""
+   i = 0
+   sentence の大きさ 回 くり返す {
+      char = sentence[i]
+      もし char が 32 ならば {
+         もし current_word の大きさ が 0 以外 ならば {
+            words に current_word を追加する
+            current_word = ""
+         }
+      } そうでなければ {
+         current_word に char を追加する
+      }
+      i を増やす
+   }
+   もし current_word の大きさ が 0 以外 ならば {
+      words に current_word を追加する
+   }
+   
+   result = ""
+   i = 0
+   words の大きさ 回 くり返す {
+      word = words[i]
+      word_len = word の大きさ
+      もし is_prime(word_len) が 真 ならば {
+         もし result の大きさ が 0 以外 ならば {
+            result に 32 を追加する
+         }
+         j = 0
+         word_len 回 くり返す {
+            result に word[j] を追加する
+            j を増やす
+         }
+      }
+      i を増やす
+   }
+   result が 答え
+}

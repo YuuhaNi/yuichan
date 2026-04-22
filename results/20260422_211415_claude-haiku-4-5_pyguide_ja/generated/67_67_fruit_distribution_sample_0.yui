@@ -1,0 +1,97 @@
+標準ライブラリを使う
+
+fruit_distribution = 入力 s, n に対し {
+   # 文字列から数字を抽出する
+   # "5 apples and 6 oranges" -> 5と6を取得
+   
+   apples = 0
+   oranges = 0
+   num_str = ""
+   is_first = 真
+   
+   sの大きさ回くり返す {
+      i = 0
+      c = s[i]
+      
+      # 数字かどうかを判定（文字コード48-57が0-9）
+      もしcが48以上ならば {
+         もしcが57以下ならば {
+            num_str = 文字列化(c)
+         }
+      }
+   }
+   
+   # より簡潔な方法：文字列を空白で分割して最初の数字を取得
+   apples_str = ""
+   oranges_str = ""
+   i = 0
+   
+   # 最初の数字（リンゴの数）を抽出
+   sの大きさ回くり返す {
+      c = s[i]
+      もしcが48以上ならば {
+         もしcが57以下ならば {
+            apples_str = 文字列化(c)
+            くり返しを抜ける
+         }
+      }
+      iを増やす
+   }
+   
+   # "and"の後の数字（オレンジの数）を抽出
+   found_and = 偽
+   i = 0
+   sの大きさ回くり返す {
+      もしs[i]が97ならば {  # 'a'の文字コード
+         もしs[差(i,1)]が100ならば {  # 'd'の文字コード
+            found_and = 真
+         }
+      }
+      もしfound_andが真ならば {
+         c = s[i]
+         もしcが48以上ならば {
+            もしcが57以下ならば {
+               oranges_str = 文字列化(c)
+               くり返しを抜ける
+            }
+         }
+      }
+      iを増やす
+   }
+   
+   apples = 整数化(apples_str)
+   oranges = 整数化(oranges_str)
+   
+   差(差(n, apples), oranges)が答え
+}
+標準ライブラリを使う
+
+fruit_distribution = 入力 s, n に対し {
+   # 文字列sから数字を抽出
+   apples = 0
+   oranges = 0
+   num = ""
+   count = 0
+   
+   sの大きさ回くり返す {
+      i = 0
+      c = s[i]
+      
+      # 文字コード48-57は0-9
+      もしcが48以上ならば {
+         もしcが57以下ならば {
+            countを増やす
+            もしcountが1ならば {
+               apples = 差(c, 48)
+            }
+            もしcountが2ならば {
+               oranges = 差(c, 48)
+               くり返しを抜ける
+            }
+         }
+      }
+      iを増やす
+   }
+   
+   差(差(n, apples), oranges)が答え
+}

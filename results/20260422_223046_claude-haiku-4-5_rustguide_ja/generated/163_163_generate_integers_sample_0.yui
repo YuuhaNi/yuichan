@@ -1,0 +1,20 @@
+標準ライブラリを使う
+
+generate_integers = 入力 a, b に対し {
+   # aとbの大小を判定して、小さい方をmin、大きい方をmaxに
+   min_val = 最小値(a, b)
+   max_val = 最大値(a, b)
+   
+   result = []
+   
+   # min_valからmax_valまでループ
+   差(max_val, min_val)回くり返す {
+      min_valを増やす
+      # 偶数判定：剰余が0なら偶数
+      もし剰余(min_val, 2)が0ならば {
+         resultにmin_val を追加する
+      }
+   }
+   
+   # resultが答え
+}

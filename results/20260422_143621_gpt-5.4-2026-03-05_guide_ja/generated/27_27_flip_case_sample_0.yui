@@ -1,0 +1,31 @@
+標準ライブラリを使う
+
+flip_case = 入力 string に対し {
+   result = ""
+   i = 0
+   stringの大きさ回くり返す{
+      ch = string[i]
+      code = 整数化(ch)
+
+      もしcodeが97以上ならば{
+         もしcodeが122以下ならば{
+            resultに文字列化(差(code, 32))を追加する
+         }そうでなければ{
+            resultにchを追加する
+         }
+      }そうでなければ{
+         もしcodeが65以上ならば{
+            もしcodeが90以下ならば{
+               resultに文字列化(和(code, 32))を追加する
+            }そうでなければ{
+               resultにchを追加する
+            }
+         }そうでなければ{
+            resultにchを追加する
+         }
+      }
+
+      iを増やす
+   }
+   resultが答え
+}

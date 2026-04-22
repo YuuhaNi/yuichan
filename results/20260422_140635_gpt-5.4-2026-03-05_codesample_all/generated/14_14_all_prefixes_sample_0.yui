@@ -1,0 +1,13 @@
+標準ライブラリを使う
+
+all_prefixes = 入力 string に対し {
+   result=[]
+   prefix=""
+   i=0
+   stringの大きさ回くり返す{
+      prefixにstring[i]を追加する
+      resultにprefixを追加する
+      iを増やす
+   }
+   resultが答え
+}

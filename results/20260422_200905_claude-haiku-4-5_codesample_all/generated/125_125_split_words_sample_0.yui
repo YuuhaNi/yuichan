@@ -1,0 +1,86 @@
+標準ライブラリを使う
+
+split_words = 入力 txt に対し {
+   # === ステップ 1: 空白で分割できるか調べる ===
+   space = " "
+   space_pos = find(txt, space)
+   
+   もし space_pos が 差(0,1) 以外 ならば {
+      # 空白が見つかった → 空白で分割
+      result = []
+      current = ""
+      i = 0
+      txt の大きさ 回 くり返す {
+         c = txt[i]
+         もし c が space ならば {
+            # 空白に到達 → current を結果に追加
+            もし current の大きさ が 0 より大きい ならば {
+               result に current を追加する
+            }
+            current = ""
+         }
+         そうでなければ {
+            current に c を追加する
+         }
+         i を増やす
+      }
+      # 最後の単語を追加
+      もし current の大きさ が 0 より大きい ならば {
+         result に current を追加する
+      }
+      result が答え
+   }
+   
+   # === ステップ 2: カンマで分割できるか調べる ===
+   comma = ","
+   comma_pos = find(txt, comma)
+   
+   もし comma_pos が 差(0,1) 以外 ならば {
+      # カンマが見つかった → カンマで分割
+      result = []
+      current = ""
+      i = 0
+      txt の大きさ 回 くり返す {
+         c = txt[i]
+         もし c が comma ならば {
+            # カンマに到達 → current を結果に追加
+            もし current の大きさ が 0 より大きい ならば {
+               result に current を追加する
+            }
+            current = ""
+         }
+         そうでなければ {
+            current に c を追加する
+         }
+         i を増やす
+      }
+      # 最後の単語を追加
+      もし current の大きさ が 0 より大きい ならば {
+         result に current を追加する
+      }
+      result が答え
+   }
+   
+   # === ステップ 3: アルファベットの奇数順の小文字を数える ===
+   # ord('a') = 0, ord('b') = 1, ..., ord('z') = 25
+   # 奇数順 = 1, 3, 5, ... (0 始まりなので b, d, f, ...)
+   count = 0
+   i = 0
+   txt の大きさ 回 くり返す {
+      c = txt[i]
+      # 小文字 a..z の判定
+      もし c が 97 以上 ならば {
+         もし c が 122 以下 ならば {
+            # ord を計算: c - 97
+            ord = 差(c, 97)
+            # ord が奇数かどうか判定: 剰余(ord, 2) が 1 なら奇数
+            parity = 剰余(ord, 2)
+            もし parity が 1 ならば {
+               count を増やす
+            }
+         }
+      }
+      i を増やす
+   }
+   count が答え
+}

@@ -1,0 +1,54 @@
+標準ライブラリを使う
+
+sort_even = 入力 l に対し {
+   # 偶数インデックスの要素を抽出
+   evens = []
+   i = 0
+   l の大きさ 回 くり返す {
+      parity = 剰余(i, 2)
+      もし parity が 0 ならば {
+         evens に l[i] を追加する
+      }
+      i を増やす
+   }
+   
+   # 偶数インデックスの要素をソート
+   evens = bubble_sort(evens)
+   
+   # 結果を組み立てる
+   result = []
+   even_idx = 0
+   i = 0
+   l の大きさ 回 くり返す {
+      parity = 剰余(i, 2)
+      もし parity が 0 ならば {
+         # 偶数インデックス: ソート済みの evens から取る
+         result に evens[even_idx] を追加する
+         even_idx を増やす
+      }
+      そうでなければ {
+         # 奇数インデックス: 元の l から取る
+         result に l[i] を追加する
+      }
+      i を増やす
+   }
+   
+   result が答え
+}
+
+bubble_sort = 入力 A に対し {
+   n = A の大きさ
+   n 回 くり返す {
+      i = 0
+      差(n, 1) 回 くり返す {
+         j = 和(i, 1)
+         もし A[i] が A[j] より大きい ならば {
+            tmp = A[i]
+            A[i] = A[j]
+            A[j] = tmp
+         }
+         i を増やす
+      }
+   }
+   A が答え
+}

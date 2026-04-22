@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+compare = 入力 game, guess に対し {
+    result = []
+    gameの大きさ回くり返す {
+        i = 0
+        もし i が gameの大きさより小さいならば {
+            score = game[i]
+            prediction = guess[i]
+            diff = 差(score, prediction)
+            もし diff が 0 より小さいならば {
+                diff = 差(0, diff)
+            }
+            result に diff を追加する
+            i を増やす
+        }
+    }
+    result が答え
+}

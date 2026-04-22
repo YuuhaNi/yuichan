@@ -1,0 +1,38 @@
+標準ライブラリを使う
+
+check_if_last_char_is_a_letter = 入力 txt に対し {
+   もしtxtの大きさが0ならば{
+      偽が答え
+   }
+
+   last = txt[差(txtの大きさ, 1)]
+
+   もしlastが" "ならば{
+      偽が答え
+   }
+
+   i = 0
+   start = 0
+   count = 0
+
+   txtの大きさ回くり返す{
+      もしtxt[i]が" "ならば{
+         もしstartが差(txtの大きさ, 1)ならば{
+            countを増やす
+         }
+         start = 和(i, 1)
+      }
+      iを増やす
+   }
+
+   もしstartが差(txtの大きさ, 1)ならば{
+      countを増やす
+   }
+
+   もしcountが1ならば{
+      真が答え
+   }
+   そうでなければ{
+      偽が答え
+   }
+}

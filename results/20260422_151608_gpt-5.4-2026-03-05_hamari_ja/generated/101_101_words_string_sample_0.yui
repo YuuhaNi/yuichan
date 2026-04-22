@@ -1,0 +1,36 @@
+標準ライブラリを使う
+
+words_string = 入力 s に対し {
+   result=[]
+   current=""
+   i=0
+   n=sの長さ
+
+   n回くり返す{
+      ch=s[i]
+      もしchが","のいずれかならば{
+         もしcurrentが""以外ならば{
+            resultにcurrentを追加する
+            current=""
+         }
+      }
+      そうでなければ{
+         もしchが" "のいずれかならば{
+            もしcurrentが""以外ならば{
+               resultにcurrentを追加する
+               current=""
+            }
+         }
+         そうでなければ{
+            current=文字列化(current,ch)
+         }
+      }
+      iを増やす
+   }
+
+   もしcurrentが""以外ならば{
+      resultにcurrentを追加する
+   }
+
+   resultが答え
+}

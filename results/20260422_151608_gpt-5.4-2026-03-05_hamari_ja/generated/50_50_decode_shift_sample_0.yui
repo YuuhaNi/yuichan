@@ -1,0 +1,58 @@
+標準ライブラリを使う
+
+decode_shift = 入力 s に対し {
+   out=""
+   i=0
+   n=sの長さ
+   n回くり返す{
+      ch=s[i]
+      code=文字コード(ch)
+
+      もしcodeが97以上ならば{
+         もしcodeが122以下ならば{
+            base=97
+            pos=差(code,base)
+            shifted=剰余(和(pos,5),26)
+            newcode=和(base,shifted)
+            out=outに文字(newcode)を追加したもの
+         }
+         そうでなければ{
+            もしcodeが65以上ならば{
+               もしcodeが90以下ならば{
+                  base=65
+                  pos=差(code,base)
+                  shifted=剰余(和(pos,5),26)
+                  newcode=和(base,shifted)
+                  out=outに文字(newcode)を追加したもの
+               }
+               そうでなければ{
+                  out=outにchを追加したもの
+               }
+            }
+            そうでなければ{
+               out=outにchを追加したもの
+            }
+         }
+      }
+      そうでなければ{
+         もしcodeが65以上ならば{
+            もしcodeが90以下ならば{
+               base=65
+               pos=差(code,base)
+               shifted=剰余(和(pos,5),26)
+               newcode=和(base,shifted)
+               out=outに文字(newcode)を追加したもの
+            }
+            そうでなければ{
+               out=outにchを追加したもの
+            }
+         }
+         そうでなければ{
+            out=outにchを追加したもの
+         }
+      }
+
+      iを増やす
+   }
+   outが答え
+}

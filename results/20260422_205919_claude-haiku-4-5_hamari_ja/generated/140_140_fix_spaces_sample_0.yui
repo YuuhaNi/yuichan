@@ -1,0 +1,50 @@
+標準ライブラリを使う
+
+fix_spaces = 入力 text に対し {
+   result = ""
+   i = 0
+   textの大きさを len とする
+   
+   len回くり返す {
+      char = text[i]
+      
+      もし char が " " ならば {
+         # 連続した空白をカウント
+         space_count = 1
+         j = 和(i, 1)
+         
+         # 連続した空白の個数を数える
+         {
+            もし j が len より小さい ならば {
+               もし text[j] が " " ならば {
+                  space_count = 和(space_count, 1)
+                  j = 和(j, 1)
+               }
+               そうでなければ {
+                  くり返しを抜ける
+               }
+            }
+            そうでなければ {
+               くり返しを抜ける
+            }
+         }
+         
+         # 空白が2個以上なら "-" を追加、1個なら "_" を追加
+         もし space_count が 2 以上 ならば {
+            result = 結合(result, "-")
+         }
+         そうでなければ {
+            result = 結合(result, "_")
+         }
+         
+         i = 差(和(i, space_count), 1)
+      }
+      そうでなければ {
+         result = 結合(result, char)
+      }
+      
+      i = 和(i, 1)
+   }
+   
+   result が答え
+}

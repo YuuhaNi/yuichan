@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+count_nums = 入力 arr に対し {
+   count = 0
+   arrの大きさ回くり返す {
+      i = 0
+      num = arr[i]
+      digit_sum = 0
+      
+      もし num が 0 より小さいならば {
+         digit_sum = num
+         num = 0
+      } そうでなければ {
+         num_str = 文字列化(num)
+         num_str の大きさ回くり返す {
+            digit_sum = 和(digit_sum, 整数化(文字列化(num_str[i])))
+            i を増やす
+         }
+      }
+      
+      もし digit_sum が 0 より大きいならば {
+         count を増やす
+      }
+      i を増やす
+   }
+   count が答え
+}

@@ -1,0 +1,16 @@
+標準ライブラリを使う
+
+has_close_elements = 入力 numbers, threshold に対し {
+  i = 0
+  繰り返す (i < 長さ(numbers)) {
+    j = i + 1
+    繰り返す (j < 長さ(numbers)) {
+      もし 絶対値(numbers[i] - numbers[j]) < threshold ならば {
+        戻す 真
+      }
+      j = j + 1
+    }
+    i = i + 1
+  }
+  戻す 偽
+}

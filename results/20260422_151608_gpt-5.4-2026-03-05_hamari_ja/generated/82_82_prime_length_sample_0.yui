@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+prime_length = 入力 string に対し {
+    n=stringの長さ
+    もしnが2より小さいならば{
+        Falseが答え
+    }
+
+    i=2
+    ok=True
+    差(n,2)回くり返す{
+        q=剰余(n,i)
+        もしqが0ならば{
+            ok=False
+        }
+        iを増やす
+    }
+    okが答え
+}

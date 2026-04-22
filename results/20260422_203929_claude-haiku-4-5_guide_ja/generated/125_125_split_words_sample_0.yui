@@ -1,0 +1,89 @@
+標準ライブラリを使う
+
+split_words = 入力 txt に対し {
+   # 空白で分割できるか確認
+   space_found = 偽
+   i = 0
+   txt の大きさ 回くり返す {
+      もし txt[i] が 32 ならば {
+         space_found = 真
+         くり返しを抜ける
+      }
+      i を増やす
+   }
+   
+   もし space_found が 真 ならば {
+      # 空白で分割
+      result = []
+      current_word = ""
+      i = 0
+      txt の大きさ 回くり返す {
+         もし txt[i] が 32 ならば {
+            もし current_word の大きさ が 0 以外 ならば {
+               result に current_word を追加する
+               current_word = ""
+            }
+         } そうでなければ {
+            current_word に txt[i] を追加する
+         }
+         i を増やす
+      }
+      もし current_word の大きさ が 0 以外 ならば {
+         result に current_word を追加する
+      }
+      result が答え
+   }
+   
+   # カンマで分割できるか確認
+   comma_found = 偽
+   i = 0
+   txt の大きさ 回くり返す {
+      もし txt[i] が 44 ならば {
+         comma_found = 真
+         くり返しを抜ける
+      }
+      i を増やす
+   }
+   
+   もし comma_found が 真 ならば {
+      # カンマで分割
+      result = []
+      current_word = ""
+      i = 0
+      txt の大きさ 回くり返す {
+         もし txt[i] が 44 ならば {
+            もし current_word の大きさ が 0 以外 ならば {
+               result に current_word を追加する
+               current_word = ""
+            }
+         } そうでなければ {
+            current_word に txt[i] を追加する
+         }
+         i を増やす
+      }
+      もし current_word の大きさ が 0 以外 ならば {
+         result に current_word を追加する
+      }
+      result が答え
+   }
+   
+   # アルファベットの奇数順の小文字の数を数える
+   count = 0
+   i = 0
+   txt の大きさ 回くり返す {
+      char_code = txt[i]
+      # 小文字 a-z は 97-122
+      もし char_code が 97 以上 ならば {
+         もし char_code が 122 以下 ならば {
+            # a=97(0), b=98(1), ... z=122(25)
+            position = 差(char_code, 97)
+            # 奇数順（1, 3, 5, ...）= position が奇数
+            もし 剰余(position, 2) が 1 ならば {
+               count を増やす
+            }
+         }
+      }
+      i を増やす
+   }
+   count が答え
+}

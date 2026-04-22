@@ -1,0 +1,61 @@
+標準ライブラリを使う
+
+order_by_points = 入力 nums に対し {
+   digit_sum = 入力 n に対し {
+      s = 0
+      t = 絶対値(n)
+      もしtが0ならば {
+         0 が答え
+      }
+      そうでなければ {
+         tの大きさ回くり返す {
+            s = 和(s, t[0])
+            t = 商(t, 10)
+         }
+         s が答え
+      }
+   }
+
+   items = []
+   numsの大きさ回くり返す {
+      i = itemsの大きさ
+      itemsに{"value": nums[i], "sum": digit_sum(nums[i]), "index": i}を追加する
+   }
+
+   sorted = []
+   itemsの大きさ回くり返す {
+      best = 0
+      j = 1
+      もしjがitemsの大きさより小さいならば {
+         差(itemsの大きさ, 1)回くり返す {
+            left = items[j]
+            right = items[best]
+            もしleft["sum"]がright["sum"]より小さいならば {
+               best = j
+            }
+            そうでなければ {
+               もしleft["sum"]がright["sum"]ならば {
+                  もしleft["index"]がright["index"]より小さいならば {
+                     best = j
+                  }
+               }
+            }
+            jを増やす
+         }
+      }
+
+      sortedにitems[best]["value"]を追加する
+
+      rest = []
+      k = 0
+      itemsの大きさ回くり返す {
+         もしkがbest以外ならば {
+            restにitems[k]を追加する
+         }
+         kを増やす
+      }
+      items = rest
+   }
+
+   sorted が答え
+}

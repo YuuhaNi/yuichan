@@ -1,0 +1,93 @@
+標準ライブラリを使う
+
+count_nums = 入力 arr に対し {
+   count=0
+   i=0
+   n=arrの大きさ
+
+   n回くり返す{
+      x=arr[i]
+      sum=0
+
+      もしxが0より小さいならば{
+         x_abs=差(0,x)
+         first=商(x_abs,10)
+         もしfirstが0ならば{
+            sum=x
+         }
+         そうでなければ{
+            sum=差(0,商(x_abs,10))
+            x_abs=剰余(x_abs,10)
+            もしx_absが0より大きいならば{
+               sum=和(sum,x_abs)
+            }
+         }
+      }
+      そうでなければ{
+         x_abs=x
+         もしx_absが0ならば{
+            sum=0
+         }
+         そうでなければ{
+            sum=0
+            もしx_absが0より大きいならば{
+               d=剰余(x_abs,10)
+               sum=和(sum,d)
+               x_abs=商(x_abs,10)
+            }
+            もしx_absが0より大きいならば{
+               d=剰余(x_abs,10)
+               sum=和(sum,d)
+               x_abs=商(x_abs,10)
+            }
+            もしx_absが0より大きいならば{
+               d=剰余(x_abs,10)
+               sum=和(sum,d)
+               x_abs=商(x_abs,10)
+            }
+            もしx_absが0より大きいならば{
+               d=剰余(x_abs,10)
+               sum=和(sum,d)
+               x_abs=商(x_abs,10)
+            }
+            もしx_absが0より大きいならば{
+               d=剰余(x_abs,10)
+               sum=和(sum,d)
+               x_abs=商(x_abs,10)
+            }
+            もしx_absが0より大きいならば{
+               d=剰余(x_abs,10)
+               sum=和(sum,d)
+               x_abs=商(x_abs,10)
+            }
+            もしx_absが0より大きいならば{
+               d=剰余(x_abs,10)
+               sum=和(sum,d)
+               x_abs=商(x_abs,10)
+            }
+            もしx_absが0より大きいならば{
+               d=剰余(x_abs,10)
+               sum=和(sum,d)
+               x_abs=商(x_abs,10)
+            }
+            もしx_absが0より大きいならば{
+               d=剰余(x_abs,10)
+               sum=和(sum,d)
+               x_abs=商(x_abs,10)
+            }
+            もしx_absが0より大きいならば{
+               d=剰余(x_abs,10)
+               sum=和(sum,d)
+            }
+         }
+      }
+
+      もしsumが0より大きいならば{
+         countを増やす
+      }
+
+      iを増やす
+   }
+
+   countが答え
+}

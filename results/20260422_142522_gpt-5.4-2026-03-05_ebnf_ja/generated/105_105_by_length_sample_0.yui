@@ -1,0 +1,44 @@
+標準ライブラリを使う
+
+by_length = 入力 arr に対し {
+    result = []
+    もし arrの大きさ が 0 ならば {
+        result が 答え
+    }
+
+    sorted = 昇順(arr)
+    reversed = 逆順(sorted)
+    i = 0
+    reversedの大きさ 回 くり返す {
+        x = reversed[i]
+        もし x が 1 ならば {
+            resultに "One" を追加する
+        }
+        もし x が 2 ならば {
+            resultに "Two" を追加する
+        }
+        もし x が 3 ならば {
+            resultに "Three" を追加する
+        }
+        もし x が 4 ならば {
+            resultに "Four" を追加する
+        }
+        もし x が 5 ならば {
+            resultに "Five" を追加する
+        }
+        もし x が 6 ならば {
+            resultに "Six" を追加する
+        }
+        もし x が 7 ならば {
+            resultに "Seven" を追加する
+        }
+        もし x が 8 ならば {
+            resultに "Eight" を追加する
+        }
+        もし x が 9 ならば {
+            resultに "Nine" を追加する
+        }
+        iを増やす
+    }
+    result が 答え
+}

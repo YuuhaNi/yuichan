@@ -1,0 +1,15 @@
+標準ライブラリを使う
+
+median = 入力 l に対し {
+    s=整列したl
+    n=sの大きさ
+    mid=商(n,2)
+    もし剰余(n,2)が1ならば{
+        s[mid]が答え
+    }
+    left=s[差(mid,1)]
+    right=s[mid]
+    sum=和(left,right)
+    denom=小数化(2)
+    商(小数化(sum),denom)が答え
+}

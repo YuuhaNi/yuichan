@@ -1,0 +1,18 @@
+標準ライブラリを使う
+
+change_base = 入力 x, base に対し {
+   もしxが0ならば{
+      "0"が答え
+   }
+   
+   result = ""
+   100回くり返す{
+      もしxが0ならば{
+         くり返しを抜ける
+      }
+      remainder = 剰余(x, base)
+      result = 文字列化(remainder) + result
+      x = 商(x, base)
+   }
+   resultが答え
+}

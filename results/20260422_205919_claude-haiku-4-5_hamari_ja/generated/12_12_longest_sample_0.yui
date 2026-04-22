@@ -1,0 +1,20 @@
+標準ライブラリを使う
+
+longest = 入力 strings に対し {
+   もし strings の大きさが 0 ならば {
+      なし
+   }
+   そうでなければ {
+      max_str = strings[0]
+      max_len = strings[0]の大きさ
+      1回目から strings の大きさ 未満 まで 1 ずつ増やしながら i に対し {
+         current_str = strings[i]
+         current_len = current_str の大きさ
+         もし current_len が max_len より大きい ならば {
+            max_str = current_str
+            max_len = current_len
+         }
+      }
+      max_str
+   }
+}

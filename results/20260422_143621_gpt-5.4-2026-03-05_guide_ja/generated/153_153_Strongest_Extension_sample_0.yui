@@ -1,0 +1,56 @@
+標準ライブラリを使う
+
+Strongest_Extension = 入力 class_name, extensions に対し {
+   best_name = extensions[0]
+   best_power = 0
+
+   i = 0
+   best_nameの大きさ回くり返す{
+      ch = best_name[i]
+      もしchが65以上ならば{
+         もしchが90以下ならば{
+            best_powerを増やす
+         }
+      }
+      もしchが97以上ならば{
+         もしchが122以下ならば{
+            best_power = 差(best_power, 1)
+         }
+      }
+      iを増やす
+   }
+
+   idx = 1
+   extensionsの大きさ回くり返す{
+      もしidxがextensionsの大きさ以上ならば{
+         くり返しを抜ける
+      }
+
+      name = extensions[idx]
+      power = 0
+      j = 0
+      nameの大きさ回くり返す{
+         ch = name[j]
+         もしchが65以上ならば{
+            もしchが90以下ならば{
+               powerを増やす
+            }
+         }
+         もしchが97以上ならば{
+            もしchが122以下ならば{
+               power = 差(power, 1)
+            }
+         }
+         jを増やす
+      }
+
+      もしpowerがbest_powerより大きいならば{
+         best_power = power
+         best_name = name
+      }
+
+      idxを増やす
+   }
+
+   "{class_name}.{best_name}"が答え
+}

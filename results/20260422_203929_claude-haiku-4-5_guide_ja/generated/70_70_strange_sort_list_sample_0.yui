@@ -1,0 +1,70 @@
+標準ライブラリを使う
+
+strange_sort_list = 入力 lst に対し {
+   もし lst の大きさ が 0 ならば {
+      []が答え
+   }
+   
+   result = []
+   remaining = lst
+   turn = 0
+   
+   remaining の大きさ 回くり返す {
+      もし turn が 0 ならば {
+         min_val = 最小値(remaining)
+         result に min_val を追加する
+         
+         i = 0
+         found = 偽
+         remaining の大きさ 回くり返す {
+            もし found が 偽 ならば {
+               もし remaining[i] が min_val ならば {
+                  remaining = 削除(remaining, i)
+                  found = 真
+               }
+               そうでなければ {
+                  i を増やす
+               }
+            }
+         }
+         turn = 1
+      }
+      そうでなければ {
+         max_val = 最大値(remaining)
+         result に max_val を追加する
+         
+         i = 0
+         found = 偽
+         remaining の大きさ 回くり返す {
+            もし found が 偽 ならば {
+               もし remaining[i] が max_val ならば {
+                  remaining = 削除(remaining, i)
+                  found = 真
+               }
+               そうでなければ {
+                  i を増やす
+               }
+            }
+         }
+         turn = 0
+      }
+      
+      もし remaining の大きさ が 0 ならば {
+         くり返しを抜ける
+      }
+   }
+   
+   result が答え
+}
+
+削除 = 入力 arr, idx に対し {
+   result = []
+   i = 0
+   arr の大きさ 回くり返す {
+      もし i が idx 以外 ならば {
+         result に arr[i] を追加する
+      }
+      i を増やす
+   }
+   result が答え
+}

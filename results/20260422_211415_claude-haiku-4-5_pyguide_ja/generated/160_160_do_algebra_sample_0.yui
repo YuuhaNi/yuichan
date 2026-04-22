@@ -1,0 +1,36 @@
+標準ライブラリを使う
+
+do_algebra = 入力 operator, operand に対し {
+   result = operand[0]
+   i = 0
+   operatorの大きさ回くり返す {
+      op = operator[i]
+      next_val = operand[差(i, 1)]
+      
+      もしopが"+"ならば {
+         result = 和(result, next_val)
+      }
+      そうでなければ {
+         もしopが"-"ならば {
+            result = 差(result, next_val)
+         }
+         そうでなければ {
+            もしopが"*"ならば {
+               result = 積(result, next_val)
+            }
+            そうでなければ {
+               もしopが"//"ならば {
+                  result = 商(result, next_val)
+               }
+               そうでなければ {
+                  もしopが"**"ならば {
+                     result = べき乗(result, next_val)
+                  }
+               }
+            }
+         }
+      }
+      iを増やす
+   }
+   resultが答え
+}

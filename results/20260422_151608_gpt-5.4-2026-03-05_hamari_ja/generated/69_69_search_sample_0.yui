@@ -1,0 +1,33 @@
+標準ライブラリを使う
+
+search = 入力 lst に対し {
+   freq={}
+   n=lstの大きさ
+   i=0
+   n回くり返す{
+      x=lst[i]
+      もしfreqがxのいずれかならば{
+         freq[x]=和(freq[x],1)
+      }
+      そうでなければ{
+         freq[x]=1
+      }
+      iを増やす
+   }
+
+   ans=差(0,1)
+   keys=freqのキー列
+   m=keysの大きさ
+   j=0
+   m回くり返す{
+      k=keys[j]
+      c=freq[k]
+      もしcがk以上ならば{
+         もしansがkより小さいならば{
+            ans=k
+         }
+      }
+      jを増やす
+   }
+   ansが答え
+}

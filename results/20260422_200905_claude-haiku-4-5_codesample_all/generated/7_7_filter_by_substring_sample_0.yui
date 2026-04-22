@@ -1,0 +1,16 @@
+標準ライブラリを使う
+
+filter_by_substring = 入力 strings, substring に対し {
+   result = []
+   n = strings の大きさ
+   i = 0
+   n 回くり返す {
+      s = strings[i]
+      pos = find(s, substring)
+      もし pos が 差(0, 1) 以外ならば {
+         result に s を追加する
+      }
+      i を増やす
+   }
+   result が答え
+}

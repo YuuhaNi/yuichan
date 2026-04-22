@@ -1,0 +1,15 @@
+標準ライブラリを使う
+
+compare = 入力 game, guess に対し {
+    result = []
+    0 回 くり返す {
+        何もしない
+    }
+    i = 0
+    game の大きさ 回 くり返す {
+        diff = 差(game[i], guess[i])
+        result の末尾 に diff を追加する
+        i を増やす
+    }
+    result が 答え
+}

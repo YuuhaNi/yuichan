@@ -1,0 +1,40 @@
+標準ライブラリを使う
+
+even_odd_count = 入力 num に対し {
+   # 負の数を正の数に変換
+   もし num が 0 より小さい ならば {
+      num = 絶対値(num)
+   }
+   
+   # 数字を文字列に変換して配列化
+   digits = 配列化(文字列化(num))
+   
+   even_count = 0
+   odd_count = 0
+   
+   # 各桁を調べる
+   digits の大きさ 回 くり返す {
+      digit = digits[0]
+      
+      # 偶数桁か奇数桁かを判定
+      もし 剰余(digit, 2) が 0 ならば {
+         even_count を増やす
+      } そうでなければ {
+         odd_count を増やす
+      }
+      
+      # 先頭の要素を削除（次の桁へ）
+      i = 0
+      digits の大きさ 回 くり返す {
+         もし i が 0 ならば {
+            i を増やす
+         } そうでなければ {
+            digits[i - 1] = digits[i]
+            i を増やす
+         }
+      }
+   }
+   
+   even = even_count
+   odd = odd_count
+}

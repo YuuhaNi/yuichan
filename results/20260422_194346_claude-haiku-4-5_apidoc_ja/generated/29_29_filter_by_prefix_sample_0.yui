@@ -1,0 +1,25 @@
+標準ライブラリを使う
+
+filter_by_prefix = 入力 strings, prefix に対し {
+  結果 = []
+  i = 0
+  繰り返す (i < 配列化(strings)の長さ) {
+    現在の文字列 = strings[i]
+    もし (現在の文字列の最初の文字列化(prefix)の長さ文字 == prefix) {
+      結果 = 結果 + [現在の文字列]
+    }
+    i = i + 1
+  }
+  結果を返す
+}
+標準ライブラリを使う
+
+filter_by_prefix = 入力 strings, prefix に対し {
+  結果 = []
+  各 s を strings で {
+    もし (s の 0 から 文字列化(prefix)の長さ までの部分文字列 == prefix) {
+      結果 = 結果 + [s]
+    }
+  }
+  結果を返す
+}

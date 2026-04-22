@@ -1,0 +1,70 @@
+標準ライブラリを使う
+
+# 素数判定: n が素数なら 真、そうでなければ 偽
+is_prime = 入力 n に対し {
+   もし n が 2 より小さい ならば {
+      偽が答え
+   }
+   もし n が 2 ならば {
+      真が答え
+   }
+   # 2 で割り切れるかチェック
+   もし 剰余(n, 2) が 0 ならば {
+      偽が答え
+   }
+   # 3 以上の奇数で割り切れるかチェック (√n まで)
+   i = 3
+   limit = 整数化(平方根(小数化(n)))
+   差(limit, 2) 回 くり返す {
+      もし 剰余(n, i) が 0 ならば {
+         偽が答え
+      }
+      i = 和(i, 2)
+   }
+   真が答え
+}
+
+# 単語を空白で分割する
+split_by_space = 入力 s に対し {
+   result = []
+   current = ""
+   i = 0
+   s の大きさ 回 くり返す {
+      c = s[i]
+      # 空白は 32
+      もし c が 32 ならば {
+         もし current の大きさ が 0 より大きい ならば {
+            result に current を追加する
+            current = ""
+         }
+      }
+      そうでなければ {
+         current に c を追加する
+      }
+      i を増やす
+   }
+   # 最後の単語を追加
+   もし current の大きさ が 0 より大きい ならば {
+      result に current を追加する
+   }
+   result が答え
+}
+
+# メイン処理
+words_in_sentence = 入力 sentence に対し {
+   words = split_by_space(sentence)
+   result = ""
+   i = 0
+   words の大きさ 回 くり返す {
+      word = words[i]
+      len = word の大きさ
+      もし is_prime(len) ならば {
+         もし result の大きさ が 0 より大きい ならば {
+            result に " " を追加する
+         }
+         result に word を追加する
+      }
+      i を増やす
+   }
+   result が答え
+}

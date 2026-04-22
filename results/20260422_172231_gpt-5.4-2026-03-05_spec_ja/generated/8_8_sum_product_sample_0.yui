@@ -1,0 +1,13 @@
+標準ライブラリを使う
+
+sum_product = 入力 numbers に対し {
+   total = 0
+   product = 1
+   i = 0
+   numbersの大きさ回くり返す {
+      total = 和(total, numbers[i])
+      product = 積(product, numbers[i])
+      iを増やす
+   }
+   [total, product] が答え
+}

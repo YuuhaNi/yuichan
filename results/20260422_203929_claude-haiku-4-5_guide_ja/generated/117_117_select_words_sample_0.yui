@@ -1,0 +1,52 @@
+標準ライブラリを使う
+
+select_words = 入力 s, n に対し {
+   子音 = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"
+   
+   words = []
+   current_word = ""
+   
+   i = 0
+   sの大きさ回くり返す{
+      char = s[i]
+      
+      もしchar が " " ならば{
+         もし current_word が "" 以外 ならば{
+            words に current_word を追加する
+            current_word = ""
+         }
+      }そうでなければ{
+         current_word に char を追加する
+      }
+      
+      i を増やす
+   }
+   
+   もし current_word が "" 以外 ならば{
+      words に current_word を追加する
+   }
+   
+   result = []
+   
+   j = 0
+   words の大きさ回くり返す{
+      word = words[j]
+      consonant_count = 0
+      
+      k = 0
+      word の大きさ回くり返す{
+         もし word[k] が 子音 のいずれか ならば{
+            consonant_count を増やす
+         }
+         k を増やす
+      }
+      
+      もし consonant_count が n ならば{
+         result に word を追加する
+      }
+      
+      j を増やす
+   }
+   
+   result が答え
+}

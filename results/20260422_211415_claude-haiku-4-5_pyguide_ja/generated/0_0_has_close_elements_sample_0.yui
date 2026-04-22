@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+has_close_elements = 入力 numbers, threshold に対し {
+   i = 0
+   numbersの大きさ回くり返す{
+      j = 0
+      numbersの大きさ回くり返す{
+         もしiがjより小さいならば{
+            diff = 絶対値(差(numbers[i], numbers[j]))
+            もしdiffがthresholdより小さいならば{
+               真が答え
+            }
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+   偽が答え
+}

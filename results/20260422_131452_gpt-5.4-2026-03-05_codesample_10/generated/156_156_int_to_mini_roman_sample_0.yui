@@ -1,0 +1,24 @@
+標準ライブラリを使う
+
+int_to_mini_roman = 入力 number に対し {
+   values=[1000,900,500,400,100,90,50,40,10,9,5,4,1]
+   romans=["m","cm","d","cd","c","xc","l","xl","x","ix","v","iv","i"]
+   result=""
+   i=0
+   n=valuesの大きさ
+
+   n回くり返す{
+      v=values[i]
+      r=romans[i]
+      もしnumberがv以上ならば{
+         count=商(number,v)
+         count回くり返す{
+            result="{result}{r}"
+         }
+         number=剰余(number,v)
+      }
+      iを増やす
+   }
+
+   resultが答え
+}

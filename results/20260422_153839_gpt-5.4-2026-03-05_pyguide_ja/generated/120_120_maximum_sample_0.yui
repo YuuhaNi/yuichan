@@ -1,0 +1,39 @@
+標準ライブラリを使う
+
+maximum = 入力 arr, k に対し {
+   result = []
+   n = arrの大きさ
+
+   k回くり返す{
+      i = 0
+      best_index = 0
+      best_value = arr[0]
+
+      n回くり返す{
+         もしarr[i]がbest_valueより大きいならば{
+            best_value = arr[i]
+            best_index = i
+         }
+         iを増やす
+      }
+
+      resultにbest_valueを追加する
+      arr[best_index] = -1001
+   }
+
+   i = 0
+   resultの大きさ回くり返す{
+      j = 0
+      resultの大きさ回くり返す{
+         もしresult[j]がresult[i]より大きいならば{
+            temp = result[i]
+            result[i] = result[j]
+            result[j] = temp
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+
+   resultが答え
+}

@@ -1,0 +1,33 @@
+標準ライブラリを使う
+
+separate_paren_groups = 入力 paren_string に対し {
+   result = []
+   current = ""
+   depth = 0
+   i = 0
+
+   paren_stringの大きさ回くり返す{
+      ch = paren_string[i]
+
+      もしchが" "以外ならば{
+         currentにchを追加する
+
+         もしchが"("[0]ならば{
+            depthを増やす
+         }
+         そうでなければ{
+            もしchが")"[0]ならば{
+               depth = 差(depth, 1)
+               もしdepthが0ならば{
+                  resultにcurrentを追加する
+                  current = ""
+               }
+            }
+         }
+      }
+
+      iを増やす
+   }
+
+   resultが答え
+}

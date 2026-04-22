@@ -1,0 +1,33 @@
+標準ライブラリを使う
+
+get_max_triples = 入力 n に対し {
+   a = []
+   i = 1
+   n回くり返す {
+      value = 差(積(i, i), i)
+      valueに1を追加する
+      aにvalueを追加する
+      iを増やす
+   }
+   
+   count = 0
+   i = 0
+   n回くり返す {
+      j = 和(i, 1)
+      n回くり返す {
+         k = 和(j, 1)
+         n回くり返す {
+            sum = 和(a[i], a[j], a[k])
+            remainder = 剰余(sum, 3)
+            もしremainderが0ならば {
+               countを増やす
+            }
+            kを増やす
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+   
+   count が答え
+}

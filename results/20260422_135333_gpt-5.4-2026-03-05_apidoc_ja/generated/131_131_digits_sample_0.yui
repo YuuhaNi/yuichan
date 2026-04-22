@@ -1,0 +1,26 @@
+標準ライブラリを使う
+
+digits = 入力 n に対し {
+    s = 文字列化(n)
+    i = 0
+    result = 1
+    found = 偽
+
+    反復(i < 長さ(s)) {
+        c = s[i]
+        d = 整数化(c)
+
+        もし 剰余(d, 2) == 1 なら {
+            result = 積(result, d)
+            found = 真
+        }
+
+        i = 和(i, 1)
+    }
+
+    もし found なら {
+        result
+    } でなければ {
+        0
+    }
+}

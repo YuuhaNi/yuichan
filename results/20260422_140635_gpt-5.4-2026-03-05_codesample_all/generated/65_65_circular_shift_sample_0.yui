@@ -1,0 +1,33 @@
+標準ライブラリを使う
+
+circular_shift = 入力 x, shift に対し {
+   s=文字列化(x)
+   n=sの大きさ
+
+   もしshiftがnより大きいならば{
+      reverse(s)が答え
+   }
+
+   もしnが0ならば{
+      ""が答え
+   }
+
+   k=剰余(shift,n)
+   もしkが0ならば{
+      sが答え
+   }
+
+   split=差(n,k)
+   result=""
+   i=split
+   k回くり返す{
+      resultにs[i]を追加する
+      iを増やす
+   }
+   i=0
+   split回くり返す{
+      resultにs[i]を追加する
+      iを増やす
+   }
+   resultが答え
+}

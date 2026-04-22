@@ -1,0 +1,11 @@
+標準ライブラリを使う
+
+filter_by_substring = 入力 strings, substring に対し {
+  result = []
+  strings の大きさ 回 くり返す {
+    もし strings[i] が substring ならば {
+      result に strings[i] を追加する
+    }
+  }
+  result が 答え
+}

@@ -1,0 +1,36 @@
+標準ライブラリを使う
+
+order_by_points = 入力 nums に対し {
+    桁合計を計算 = 入力 n に対し {
+        絶対値(n)
+        |> 文字列化
+        |> 配列化
+        |> 入力 codes に対し {
+            和(codes)
+        }
+    }
+    
+    nums
+    |> 入力 arr に対し {
+        arr の各要素 item を index で {
+            {"値": item, "桁合計": 桁合計を計算(item), "位置": index}
+        }
+    }
+    |> 入力 indexed に対し {
+        indexed を 入力 a, b に対し {
+            差(a の "桁合計", b の "桁合計")
+            |> 入力 diff に対し {
+                もし diff ≠ 0 ならば {
+                    diff
+                } そうでなければ {
+                    差(a の "位置", b の "位置")
+                }
+            }
+        } で並べ替え
+    }
+    |> 入力 sorted に対し {
+        sorted の各要素 item を {
+            item の "値"
+        }
+    }
+}

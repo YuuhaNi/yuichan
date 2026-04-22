@@ -1,0 +1,15 @@
+標準ライブラリを使う
+
+do_algebra = 入力 operator, operand に対し {
+   # 式を文字列として構築する
+   expr = 文字列化(operand[0])
+   n = operator の大きさ
+   i = 0
+   n 回くり返す {
+      op = operator[i]
+      expr = "{expr}{op}{operand[和(i,1)]}"
+      i を増やす
+   }
+   # 式を評価する
+   評価(expr) が答え
+}

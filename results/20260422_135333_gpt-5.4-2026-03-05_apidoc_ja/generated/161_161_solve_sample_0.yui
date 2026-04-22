@@ -1,0 +1,40 @@
+標準ライブラリを使う
+
+solve = 入力 s に対し {
+  hasAlpha = 偽
+  result = ""
+  i = 0
+
+  反復 (i < 長さ(s)) {
+    ch = s[i]
+    code = s[i]
+
+    もし ((65 <= code かつ code <= 90) または (97 <= code かつ code <= 122)) なら {
+      hasAlpha = 真
+
+      もし (65 <= code かつ code <= 90) なら {
+        result = result + 文字列化(配列化([code + 32]))
+      } でなければ {
+        result = result + 文字列化(配列化([code - 32]))
+      }
+    } でなければ {
+      result = result + 文字列化(配列化([code]))
+    }
+
+    i = i + 1
+  }
+
+  もし (hasAlpha) なら {
+    戻る result
+  } でなければ {
+    rev = ""
+    i = 長さ(s) - 1
+
+    反復 (i >= 0) {
+      rev = rev + 文字列化(配列化([s[i]]))
+      i = i - 1
+    }
+
+    戻る rev
+  }
+}

@@ -1,0 +1,48 @@
+標準ライブラリを使う
+
+circular_shift = 入力 x, shift に対し {
+   s = 文字列化(x)
+   n = sの大きさ
+   
+   もし shift が n より大きい ならば {
+      # 桁を反転して返す
+      result = ""
+      i = 差(n, 1)
+      n回くり返す {
+         result に s[i] を追加する
+         i を減らす
+      }
+      result が答え
+   }
+   そうでなければ {
+      # 右に shift 分シフト（循環）
+      # 右シフト = 末尾から shift 個を先頭に移動
+      actual_shift = 剰余(shift, n)
+      
+      もし actual_shift が 0 ならば {
+         s が答え
+      }
+      そうでなければ {
+         start = 差(n, actual_shift)
+         result = ""
+         
+         # 末尾から actual_shift 個を先頭に追加
+         i = start
+         n回くり返す {
+            もし i が n より小さい ならば {
+               result に s[i] を追加する
+            }
+            i を増やす
+         }
+         
+         # 残りの部分を追加
+         i = 0
+         start回くり返す {
+            result に s[i] を追加する
+            i を増やす
+         }
+         
+         result が答え
+      }
+   }
+}

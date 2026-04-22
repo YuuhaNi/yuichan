@@ -1,0 +1,34 @@
+標準ライブラリを使う
+
+prod_signs = 入力 arr に対し {
+   もしarrの大きさが0ならば {
+      値なし が答え
+   }
+   
+   abs_sum = 0
+   sign_prod = 1
+   
+   arrの大きさ回くり返す {
+      i = 0
+      arrの大きさ回くり返す {
+         もしiが0ならば {
+            abs_sum = 和(abs_sum, 絶対値(arr[i]))
+            
+            もしarr[i]が0ならば {
+               sign_prod = 積(sign_prod, 0)
+            }
+            そうでなければ {
+               もしarr[i]より大きいならば {
+                  sign_prod = 積(sign_prod, 1)
+               }
+               そうでなければ {
+                  sign_prod = 積(sign_prod, -1)
+               }
+            }
+         }
+         iを増やす
+      }
+   }
+   
+   積(abs_sum, sign_prod) が答え
+}

@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+mean_absolute_deviation = 入力 numbers に対し {
+   # 平均値を計算
+   total = 0
+   n = numbers の大きさ
+   i = 0
+   n 回くり返す {
+      total = 和(total, numbers[i])
+      i を増やす
+   }
+   mean = 商(小数化(total), 小数化(n))
+   
+   # 各要素と平均値の差の絶対値の合計を計算
+   sum_abs_diff = 0
+   i = 0
+   n 回くり返す {
+      diff = 差(numbers[i], mean)
+      abs_diff = 絶対値(diff)
+      sum_abs_diff = 和(sum_abs_diff, abs_diff)
+      i を増やす
+   }
+   
+   # 平均絶対偏差を計算
+   mad = 商(小数化(sum_abs_diff), 小数化(n))
+   mad が答え
+}

@@ -1,0 +1,39 @@
+標準ライブラリを使う
+
+sort_numbers = 入力 numbers に対し {
+   # 英単語を数値にマッピングする辞書
+   word_to_num = {"zero": 0, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8, "nine": 9}
+   
+   # 入力文字列を空白で分割
+   words = numbers を " " で分割する
+   
+   # 英単語を数値に変換
+   nums = []
+   words の個数 回くり返す {
+      i = ループ変数
+      word = words[i]
+      もし word が "" 以外 ならば {
+         num = word_to_num[word]
+         nums に num を追加する
+      }
+   }
+   
+   # 数値をソート
+   nums を昇順でソートする
+   
+   # 数値を英単語に変換して結合
+   num_to_word = {0: "zero", 1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight", 9: "nine"}
+   
+   result_words = []
+   nums の個数 回くり返す {
+      i = ループ変数
+      num = nums[i]
+      word = num_to_word[num]
+      result_words に word を追加する
+   }
+   
+   # 結果を空白で結合
+   result = result_words を " " で結合する
+   
+   result が答え
+}

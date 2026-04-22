@@ -1,0 +1,45 @@
+標準ライブラリを使う
+
+sort_even = 入力 l に対し {
+  result = []
+  even_elements = []
+  
+  l の大きさ 回 くり返す {
+    i = 0
+    もし i が l の大きさ より小さい ならば {
+      element = l[i]
+      もし i を 2 で 剰余 が 0 ならば {
+        even_elements に element を追加する
+      }
+      そうでなければ {
+        result に element を追加する
+      }
+      i を増やす
+    }
+  }
+  
+  sorted_even = 偶数要素をソート(even_elements)
+  result = マージ(result, sorted_even)
+  
+  result が 答え
+}
+標準ライブラリを使う
+
+sort_even = 入力 l に対し {
+  result = []
+  even_idx = 0
+  
+  l の大きさ 回 くり返す {
+    idx = 0
+    もし idx を 2 で 剰余 が 0 ならば {
+      result に ソート済み偶数要素[even_idx] を追加する
+      even_idx を増やす
+    }
+    そうでなければ {
+      result に l[idx] を追加する
+    }
+    idx を増やす
+  }
+  
+  result が 答え
+}

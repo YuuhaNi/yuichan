@@ -1,0 +1,24 @@
+標準ライブラリを使う
+
+f = 入力 n に対し {
+   result = []
+   factorial = 1
+   n回くり返す {
+      factorial = 積(factorial, n回くり返すの中のカウンタ)
+      resultにfactorialを追加する
+   }
+   result が答え
+}
+標準ライブラリを使う
+
+f = 入力 n に対し {
+   result = []
+   factorial = 1
+   i = 1
+   n回くり返す {
+      factorial = 積(factorial, i)
+      resultにfactorialを追加する
+      iを増やす
+   }
+   result が答え
+}

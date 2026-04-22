@@ -1,0 +1,55 @@
+標準ライブラリを使う
+
+# 素数判定: n が素数なら真、そうでなければ偽
+is_prime = 入力 n に対し {
+   もし n が 2 より小さい なら ば {
+      偽 が 答え
+   }
+   もし n が 2 ならば {
+      真 が 答え
+   }
+   もし 剰余(n, 2) が 0 なら ば {
+      偽 が 答え
+   }
+   # 3 以上の奇数で割り切れるかチェック
+   i = 3
+   limit = 整数化(平方根(小数化(n)))
+   差(limit, 2) 回 くり返す {
+      もし 剰余(n, i) が 0 なら ば {
+         偽 が 答え
+      }
+      i = 和(i, 2)
+   }
+   真 が 答え
+}
+
+intersection = 入力 interval1, interval2 に対し {
+   # interval1 = (start1, end1), interval2 = (start2, end2)
+   start1 = interval1[0]
+   end1 = interval1[1]
+   start2 = interval2[0]
+   end2 = interval2[1]
+   
+   # 交差部分の開始地点は max(start1, start2)
+   intersection_start = 最大値(start1, start2)
+   # 交差部分の終了地点は min(end1, end2)
+   intersection_end = 最小値(end1, end2)
+   
+   # 交差部分が存在するかチェック
+   もし intersection_start が intersection_end より大きい なら ば {
+      "NO" が 答え
+   }
+   
+   # 交差部分の長さを計算 (閉区間なので +1)
+   length = 和(差(intersection_end, intersection_start), 1)
+   
+   # 長さが素数かチェック
+   もし is_prime(length) が 真 なら ば {
+      "YES" が 答え
+   }
+   そう で なければ {
+      "NO" が 答え
+   }
+}
+
+# テスト

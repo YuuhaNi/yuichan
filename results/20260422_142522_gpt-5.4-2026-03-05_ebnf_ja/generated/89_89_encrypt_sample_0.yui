@@ -1,0 +1,14 @@
+標準ライブラリを使う
+
+encrypt = 入力 s に対し {
+    result = ""
+    i = 0
+    sの大きさ 回 くり返す {
+        c = s[i]
+        code = 文字コード(c)
+        shifted = 2 * code - 2 * 97 + 2 + 97
+        resultに 文字(shifted) を追加する
+        iを増やす
+    }
+    result が 答え
+}

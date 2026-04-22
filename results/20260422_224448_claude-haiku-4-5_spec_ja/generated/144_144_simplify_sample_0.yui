@@ -1,0 +1,109 @@
+標準ライブラリを使う
+
+simplify = 入力 x, n に対し {
+   # x を分子と分母に分割
+   x_parts = x
+   x_slash_index = 0
+   x_len = x_partsの大きさ
+   i = 0
+   i回くり返す {
+      もしx_parts[i]が47ならば {
+         x_slash_index = i
+         くり返しを抜ける
+      }
+      iを増やす
+   }
+   
+   x_numerator = 整数化(x_parts)
+   x_denominator = 整数化(x_parts)
+   
+   # n を分子と分母に分割
+   n_parts = n
+   n_slash_index = 0
+   n_len = n_partsの大きさ
+   i = 0
+   i回くり返す {
+      もしn_parts[i]が47ならば {
+         n_slash_index = i
+         くり返しを抜ける
+      }
+      iを増やす
+   }
+   
+   n_numerator = 整数化(n_parts)
+   n_denominator = 整数化(n_parts)
+   
+   # x * n = (x_numerator * n_numerator) / (x_denominator * n_denominator)
+   result_numerator = 積(x_numerator, n_numerator)
+   result_denominator = 積(x_denominator, n_denominator)
+   
+   # 結果が整数かどうかを判定
+   もし剰余(result_numerator, result_denominator)が0ならば {
+      真 が答え
+   }
+   そうでなければ {
+      偽 が答え
+   }
+}
+標準ライブラリを使う
+
+simplify = 入力 x, n に対し {
+   # 文字列から "/" の位置を探して分子と分母を抽出
+   x_slash = 0
+   i = 0
+   x_lenの大きさ回くり返す {
+      もしx[i]が47ならば {
+         x_slash = i
+         くり返しを抜ける
+      }
+      iを増やす
+   }
+   
+   n_slash = 0
+   i = 0
+   n_lenの大きさ回くり返す {
+      もしn[i]が47ならば {
+         n_slash = i
+         くり返しを抜ける
+      }
+      iを増やす
+   }
+   
+   # 分子と分母を計算
+   x_num = 積(整数化(x), n)
+   x_den = 積(整数化(x), n)
+   
+   # 積が整数になるかチェック
+   もし剰余(x_num, x_den)が0ならば {
+      真 が答え
+   }
+   そうでなければ {
+      偽 が答え
+   }
+}
+標準ライブラリを使う
+
+simplify = 入力 x, n に対し {
+   # x = a/b, n = c/d とすると
+   # x * n = (a*c)/(b*d) が整数 ⟺ (b*d) | (a*c)
+   
+   # "/" で分割して分子分母を取得する処理
+   # x から分子と分母を抽出
+   x_num = 0
+   x_den = 0
+   
+   # n から分子と分母を抽出  
+   n_num = 0
+   n_den = 0
+   
+   # 結果: (x_num * n_num) が (x_den * n_den) で割り切れるか
+   result_num = 積(x_num, n_num)
+   result_den = 積(x_den, n_den)
+   
+   もし剰余(result_num, result_den)が0ならば {
+      真 が答え
+   }
+   そうでなければ {
+      偽 が答え
+   }
+}

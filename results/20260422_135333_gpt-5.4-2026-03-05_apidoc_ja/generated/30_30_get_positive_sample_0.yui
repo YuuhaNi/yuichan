@@ -1,0 +1,14 @@
+標準ライブラリを使う
+
+get_positive = 入力 l に対し {
+  result = []
+  i = 0
+  もし i < 配列化(l).長さ の間 {
+    x = l[i]
+    もし x > 0 なら {
+      result = result + [x]
+    }
+    i = i + 1
+  }
+  result
+}

@@ -1,0 +1,75 @@
+標準ライブラリを使う
+
+# 整数の2進数表現における"1"の個数を数える
+count_ones=入力nに対し{
+   もしnが0より小さいならば{
+      # 負の数の場合、絶対値を使う
+      n=絶対値(n)
+   }
+   count=0
+   もしnが0ならば{
+      countが答え
+   }
+   そうでなければ{
+      # n を2で割り続けて、余りが1の回数を数える
+      1000回くり返す{
+         もしnが0ならば{
+            くり返しを抜ける
+         }
+         remainder=剰余(n,2)
+         もしremainder が1ならば{
+            countを増やす
+         }
+         n=商(n,2)
+      }
+      countが答え
+   }
+}
+
+# バブルソート（カスタム比較）
+sort_array=入力arrに対し{
+   result=[]
+   # 入力配列をコピー
+   n=arrの大きさ
+   i=0
+   n回くり返す{
+      resultにarr[i]を追加する
+      iを増やす
+   }
+   
+   # バブルソート
+   n=resultの大きさ
+   n回くり返す{
+      i=0
+      差(n,1)回くり返す{
+         j=和(i,1)
+         a=result[i]
+         b=result[j]
+         
+         # a と b の"1"の個数を数える
+         ones_a=count_ones(a)
+         ones_b=count_ones(b)
+         
+         # "1"の個数で比較
+         もしones_aがones_bより大きいならば{
+            # 入れ替える
+            tmp=result[i]
+            result[i]=result[j]
+            result[j]=tmp
+         }
+         そうでなければ{
+            # "1"の個数が同じ場合は10進数で比較
+            もしones_aがones_bならば{
+               もしaがbより大きいならば{
+                  # 入れ替える
+                  tmp=result[i]
+                  result[i]=result[j]
+                  result[j]=tmp
+               }
+            }
+         }
+         iを増やす
+      }
+   }
+   resultが答え
+}

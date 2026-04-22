@@ -1,0 +1,45 @@
+標準ライブラリを使う
+
+solve = 入力 N に対し {
+   # N を文字列に変換して各桁を取得
+   N_str = 文字列化(N)
+   digit_sum = 0
+   
+   # 各桁の数字を足す
+   N_strの大きさ回くり返す{
+      i = 0
+      N_strの大きさ回くり返す{
+         もしiが差(N_strの大きさ, 1)より小さいならば{
+            iを増やす
+         }そうでなければ{
+            くり返しを抜ける
+         }
+      }
+   }
+   
+   # より簡潔な実装
+   digit_sum = 0
+   i = 0
+   N_strの大きさ回くり返す{
+      digit_sum = 和(digit_sum, 整数化(N_str[i]))
+      iを増やす
+   }
+   
+   # digit_sum を2進数に変換
+   binary = ""
+   もしdigit_sumが0ならば{
+      binary = "0"
+   }そうでなければ{
+      temp = digit_sum
+      temp回くり返す{
+         もしtempが0ならば{
+            くり返しを抜ける
+         }
+         remainder = 剰余(temp, 2)
+         binary = 和(文字列化(remainder), binary)
+         temp = 商(temp, 2)
+      }
+   }
+   
+   binaryが答え
+}

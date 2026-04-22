@@ -1,0 +1,9 @@
+標準ライブラリを使う
+
+sum_product = 入力 numbers に対し {
+    もし 配列判定(numbers) かつ 長さ(numbers) = 0 ならば {
+        (0, 1) を返す
+    }
+    
+    (和(numbers), 積(numbers)) を返す
+}

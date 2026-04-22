@@ -1,0 +1,41 @@
+標準ライブラリを使う
+
+words_string = 入力 s に対し {
+   result = []
+   current_word = ""
+   
+   s の大きさ 回くり返す {
+      i = 0
+      i < s の大きさ より小さい {
+         char = s[i]
+         
+         もし char が 32 ならば {
+            # スペース（文字コード32）
+            もし current_word の大きさ が 0 以外 ならば {
+               result に current_word を追加する
+               current_word = ""
+            }
+         }
+         そうでなければ {
+            もし char が 44 ならば {
+               # カンマ（文字コード44）
+               もし current_word の大きさ が 0 以外 ならば {
+                  result に current_word を追加する
+                  current_word = ""
+               }
+            }
+            そうでなければ {
+               current_word に char を追加する
+            }
+         }
+         
+         i を増やす
+      }
+   }
+   
+   もし current_word の大きさ が 0 以外 ならば {
+      result に current_word を追加する
+   }
+   
+   result が答え
+}

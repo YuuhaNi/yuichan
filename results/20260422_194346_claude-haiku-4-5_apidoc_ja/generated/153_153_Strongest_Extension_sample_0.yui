@@ -1,0 +1,62 @@
+標準ライブラリを使う
+
+Strongest_Extension = 入力 class_name, extensions に対し {
+    最強 = 値なし
+    最強強度 = 値なし
+    
+    繰り返す extension を extensions で {
+        大文字数 = 0
+        小文字数 = 0
+        
+        繰り返す char を 配列化(extension) で {
+            文字 = 文字列化(char)
+            
+            もし 文字 == 文字列化(整数化(文字)) でなければ {
+                もし 文字 == 大文字化(文字) ならば {
+                    大文字数 = 大文字数 + 1
+                } でなければ {
+                    小文字数 = 小文字数 + 1
+                }
+            }
+        }
+        
+        強度 = 大文字数 - 小文字数
+        
+        もし 最強強度 == 値なし または 強度 > 最強強度 ならば {
+            最強 = extension
+            最強強度 = 強度
+        }
+    }
+    
+    class_name + "." + 最強
+}
+標準ライブラリを使う
+
+Strongest_Extension = 入力 class_name, extensions に対し {
+    最強 = 値なし
+    最強強度 = 値なし
+    
+    繰り返す extension を extensions で {
+        大文字数 = 0
+        小文字数 = 0
+        
+        繰り返す i を 範囲(0, 長さ(extension)) で {
+            char_code = 配列化(extension)[i]
+            
+            もし (char_code >= 65 かつ char_code <= 90) ならば {
+                大文字数 = 大文字数 + 1
+            } でなければ もし (char_code >= 97 かつ char_code <= 122) ならば {
+                小文字数 = 小文字数 + 1
+            }
+        }
+        
+        強度 = 大文字数 - 小文字数
+        
+        もし 最強強度 == 値なし または 強度 > 最強強度 ならば {
+            最強 = extension
+            最強強度 = 強度
+        }
+    }
+    
+    class_name + "." + 最強
+}

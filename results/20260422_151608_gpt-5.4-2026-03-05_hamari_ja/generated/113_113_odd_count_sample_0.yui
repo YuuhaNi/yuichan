@@ -1,0 +1,49 @@
+標準ライブラリを使う
+
+odd_count = 入力 lst に対し {
+    result=[]
+    i=0
+    n=lstの大きさ
+
+    n回くり返す{
+        s=lst[i]
+        j=0
+        m=sの大きさ
+        odd=0
+
+        m回くり返す{
+            ch=s[j]
+            もしchが"1"のいずれかならば{
+                oddを増やす
+            }
+            そうでなければ{
+                もしchが"3"のいずれかならば{
+                    oddを増やす
+                }
+                そうでなければ{
+                    もしchが"5"のいずれかならば{
+                        oddを増やす
+                    }
+                    そうでなければ{
+                        もしchが"7"のいずれかならば{
+                            oddを増やす
+                        }
+                        そうでなければ{
+                            もしchが"9"のいずれかならば{
+                                oddを増やす
+                            }
+                        }
+                    }
+                }
+            }
+            jを増やす
+        }
+
+        cnt=文字列化(odd)
+        msg="the number of odd elements "とcntと"n the str"とcntと"ng "とcntと" of the "とcntと"nput."
+        resultにmsgを追加する
+        iを増やす
+    }
+
+    resultが答え
+}

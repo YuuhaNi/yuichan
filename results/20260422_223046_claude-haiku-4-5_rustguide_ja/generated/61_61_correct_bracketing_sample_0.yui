@@ -1,0 +1,26 @@
+標準ライブラリを使う
+
+correct_bracketing = 入力 brackets に対し {
+   count = 0
+   bracketsの大きさ回くり返す {
+      char = brackets[0]
+      もし"("[0]がcharならば {
+         countを増やす
+      }
+      もし")"[0]がcharならば {
+         countを減らす
+      }
+      もしcountが0より小さいならば {
+         偽が答え
+      }
+      brackets = 配列化(brackets)
+      brackets[0]を削除する
+      brackets = 文字列化(brackets)
+   }
+   もしcountが0ならば {
+      真が答え
+   }
+   そうでなければ {
+      偽が答え
+   }
+}

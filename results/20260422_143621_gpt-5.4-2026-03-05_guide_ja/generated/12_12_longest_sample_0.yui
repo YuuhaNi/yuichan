@@ -1,0 +1,22 @@
+標準ライブラリを使う
+
+longest = 入力 strings に対し {
+   もしstringsの大きさが0ならば{
+      値なしが答え
+   }
+
+   best = strings[0]
+   i = 1
+
+   stringsの大きさ回くり返す{
+      もしiがstringsの大きさ以上ならば{
+         くり返しを抜ける
+      }
+      もしbestの大きさがstrings[i]の大きさより小さいならば{
+         best = strings[i]
+      }
+      iを増やす
+   }
+
+   bestが答え
+}

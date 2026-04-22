@@ -1,0 +1,15 @@
+標準ライブラリを使う
+
+string_sequence = 入力 n に対し {
+  result = ""
+  i = 0
+  (n + 1) 回 くり返す {
+    もし result が "" ならば {
+      result = "{i}"
+    } そうでなければ {
+      result の末尾に " {i}" を追加する
+    }
+    i を増やす
+  }
+  result が 答え
+}

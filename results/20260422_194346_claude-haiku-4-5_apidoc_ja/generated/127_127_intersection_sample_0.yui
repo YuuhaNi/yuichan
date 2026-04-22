@@ -1,0 +1,54 @@
+標準ライブラリを使う
+
+intersection = 入力 interval1, interval2 に対し {
+    # 区間の開始と終了を取得
+    start1 = interval1[0]
+    end1 = interval1[1]
+    start2 = interval2[0]
+    end2 = interval2[1]
+    
+    # 交差部分の開始と終了を計算
+    intersection_start = 最大値(start1, start2)
+    intersection_end = 最小値(end1, end2)
+    
+    # 交差部分が存在するかチェック
+    もし intersection_start > intersection_end ならば {
+        戻す "NO"
+    }
+    
+    # 交差部分の長さを計算
+    length = 差(intersection_end, intersection_start)
+    length = 和(length, 1)
+    
+    # 素数判定関数
+    is_prime = 入力 n に対し {
+        もし n < 2 ならば {
+            戻す 偽
+        }
+        
+        もし n == 2 ならば {
+            戻す 真
+        }
+        
+        もし 剰余(n, 2) == 0 ならば {
+            戻す 偽
+        }
+        
+        i = 3
+        繰り返す i <= 平方根(n) の間 {
+            もし 剰余(n, i) == 0 ならば {
+                戻す 偽
+            }
+            i = 和(i, 2)
+        }
+        
+        戻す 真
+    }
+    
+    # 長さが素数かチェック
+    もし is_prime(length) ならば {
+        戻す "YES"
+    } そうでなければ {
+        戻す "NO"
+    }
+}

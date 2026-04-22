@@ -1,0 +1,32 @@
+標準ライブラリを使う
+
+remove_duplicates = 入力 numbers に対し {
+    result = []
+    seen = {}
+    count = {}
+    
+    numbers の大きさ 回 くり返す {
+        i = 0
+        numbers の大きさ 回 くり返す {
+            current = numbers[i]
+            もし count が current ならば {
+                count[current] = 和(count[current], 1)
+            } そうでなければ {
+                count[current] = 1
+            }
+            i を増やす
+        }
+        くり返しを抜ける
+    }
+    
+    i = 0
+    numbers の大きさ 回 くり返す {
+        current = numbers[i]
+        もし count[current] が 1 ならば {
+            result に current を追加する
+        }
+        i を増やす
+    }
+    
+    result が 答え
+}

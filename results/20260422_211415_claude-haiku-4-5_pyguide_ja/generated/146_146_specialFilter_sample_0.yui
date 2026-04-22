@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+specialFilter = 入力 nums に対し {
+   count = 0
+   i = 0
+   numsの大きさ回くり返す {
+      num = nums[i]
+      もし num が 10 より大きいならば {
+         # 最初の桁を取得（絶対値を文字列化して最初の文字を取得）
+         numStr = 文字列化(絶対値(num))
+         firstDigit = numStr[0]
+         lastDigit = numStr[差(numStr の大きさ, 1)]
+         
+         # 最初と最後の桁が奇数かチェック
+         firstIsOdd = 剰余(firstDigit, 2)
+         lastIsOdd = 剰余(lastDigit, 2)
+         
+         もし firstIsOdd が 1 ならば {
+            もし lastIsOdd が 1 ならば {
+               countを増やす
+            }
+         }
+      }
+      iを増やす
+   }
+   countが答え
+}

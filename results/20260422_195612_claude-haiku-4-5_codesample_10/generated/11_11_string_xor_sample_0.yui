@@ -1,0 +1,15 @@
+標準ライブラリを使う
+
+string_xor = 入力 a, b に対し {
+   result = ""
+   n = aの大きさ
+   i = 0
+   n回くり返す {
+      bit_a = 整数化(a[i])
+      bit_b = 整数化(b[i])
+      xor_result = 剰余(和(bit_a, bit_b), 2)
+      result に 文字列化(xor_result) を追加する
+      i を増やす
+   }
+   result が答え
+}

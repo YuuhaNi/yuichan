@@ -1,0 +1,39 @@
+標準ライブラリを使う
+
+unique = 入力 l に対し {
+   result = []
+   i = 0
+   lの大きさを size とする
+   
+   繰り返す {
+      もし i が size 以上 ならば {
+         くり返しを抜ける
+      }
+      
+      x = l[i]
+      found = 0
+      j = 0
+      result の大きさを result_size とする
+      
+      繰り返す {
+         もし j が result_size 以上 ならば {
+            くり返しを抜ける
+         }
+         
+         もし x が result[j] ならば {
+            found = 1
+         }
+         
+         j を増やす
+      }
+      
+      もし found が 0 ならば {
+         result に x を追加する
+      }
+      
+      i を増やす
+   }
+   
+   result を昇順でソートする
+   result が答え
+}

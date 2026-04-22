@@ -1,0 +1,43 @@
+標準ライブラリを使う
+
+sort_array = 入力 arr に対し {
+    popcount = 入力 n に対し {
+        count = 0
+        x = n
+        反復 x > 0 の間 {
+            count = 和(count, 剰余(x, 2))
+            x = 商(x, 2)
+        }
+        戻る count
+    }
+
+    result = arr
+
+    i = 0
+    反復 i < 差(配列化(result).長さ, 1) の間 {
+        j = 0
+        反復 j < 差(配列化(result).長さ, 和(i, 1)) の間 {
+            a = result[j]
+            b = result[和(j, 1)]
+            pa = popcount(a)
+            pb = popcount(b)
+
+            もし pa > pb なら {
+                temp = result[j]
+                result[j] = result[和(j, 1)]
+                result[和(j, 1)] = temp
+            } 違えば もし pa == pb なら {
+                もし a > b なら {
+                    temp = result[j]
+                    result[j] = result[和(j, 1)]
+                    result[和(j, 1)] = temp
+                }
+            }
+
+            j = 和(j, 1)
+        }
+        i = 和(i, 1)
+    }
+
+    戻る result
+}

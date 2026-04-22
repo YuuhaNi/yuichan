@@ -1,0 +1,13 @@
+標準ライブラリを使う
+
+compare = 入力 game, guess に対し {
+    result = []
+    i = 0
+
+    i < 長さ(game) の間 {
+        result = result + [絶対値(差(game[i], guess[i]))]
+        i = 和(i, 1)
+    }
+
+    result
+}

@@ -1,0 +1,49 @@
+標準ライブラリを使う
+
+histogram = 入力 test に対し {
+   もしtestが""ならば{
+      {}が答え
+   }
+
+   parts=testを" "で分割する
+   counts={}
+   i=0
+   n=partsの大きさ
+
+   n回くり返す{
+      ch=parts[i]
+      もしchが""以外ならば{
+         もしcountsがchをキーに含むならば{
+            counts[ch]=和(counts[ch],1)
+         }
+         そうでなければ{
+            counts[ch]=1
+         }
+      }
+      iを増やす
+   }
+
+   maxCount=0
+   result={}
+   keys=countsのキー列
+   i=0
+   m=keysの大きさ
+
+   m回くり返す{
+      ch=keys[i]
+      c=counts[ch]
+      もしcがmaxCountより大きいならば{
+         maxCount=c
+         result={}
+         result[ch]=c
+      }
+      そうでなければ{
+         もしcがmaxCountならば{
+            result[ch]=c
+         }
+      }
+      iを増やす
+   }
+
+   resultが答え
+}

@@ -1,0 +1,45 @@
+標準ライブラリを使う
+
+fix_spaces = 入力 text に対し {
+    result = ""
+    i = 0
+    
+    もし text の大きさ が 0 ならば {
+        "" が答え
+    }
+    
+    くり返す text の大きさ 回 {
+        char = text[i]
+        
+        もし char が " " ならば {
+            space_count = 1
+            j = 和(i, 1)
+            
+            くり返す 和(text の大きさ, 1) 回 {
+                もし j が text の大きさ より小さい ならば {
+                    もし text[j] が " " ならば {
+                        space_count を増やす
+                        j を増やす
+                    } そうでなければ {
+                        くり返しを抜ける
+                    }
+                } そうでなければ {
+                    くり返しを抜ける
+                }
+            }
+            
+            もし space_count が 1 ならば {
+                result の末尾 に "_" を追加する
+            } そうでなければ {
+                result の末尾 に "-" を追加する
+            }
+            
+            i = 和(i, space_count)
+        } そうでなければ {
+            result の末尾 に char を追加する
+            i を増やす
+        }
+    }
+    
+    result が答え
+}

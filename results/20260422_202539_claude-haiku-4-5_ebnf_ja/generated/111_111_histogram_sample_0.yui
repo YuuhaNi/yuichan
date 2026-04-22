@@ -1,0 +1,34 @@
+標準ライブラリを使う
+
+histogram = 入力 test に対し {
+  counts = {}
+  words = test の分割(" ")
+  
+  words の大きさ 回 くり返す {
+    word = words[0]
+    もし counts が word を含む ならば {
+      counts[word] = 和(counts[word], 1)
+    } そうでなければ {
+      counts[word] = 1
+    }
+    words = words の末尾以外()
+  }
+  
+  max_count = 0
+  counts の値 を くり返す {
+    value = counts[0]
+    もし value が max_count より大きい ならば {
+      max_count = value
+    }
+  }
+  
+  result = {}
+  counts の鍵 を くり返す {
+    key = counts[0]
+    もし counts[key] が max_count ならば {
+      result[key] = counts[key]
+    }
+  }
+  
+  result が 答え
+}

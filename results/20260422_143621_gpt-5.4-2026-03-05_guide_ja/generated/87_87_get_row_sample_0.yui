@@ -1,0 +1,22 @@
+標準ライブラリを使う
+
+get_row = 入力 lst, x に対し {
+   result = []
+   row = 0
+
+   lstの大きさ回くり返す{
+      current = lst[row]
+      col = currentの大きさ
+
+      currentの大きさ回くり返す{
+         col = 差(col, 1)
+         もしcurrent[col]がxならば{
+            resultに[row, col]を追加する
+         }
+      }
+
+      rowを増やす
+   }
+
+   resultが答え
+}

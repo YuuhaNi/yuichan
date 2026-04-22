@@ -1,0 +1,49 @@
+標準ライブラリを使う
+
+specialFilter = 入力 nums に対し {
+   count = 0
+   nums の大きさ 回くり返す {
+      i = 0
+      nums の大きさ 回くり返す {
+         num = nums[i]
+         もし num が 10 より大きい ならば {
+            first_digit = 絶対値(num)
+            last_digit = 絶対値(num)
+            first_digit が 10 以上 ならば {
+               first_digit を 10 で割り続ける
+            }
+            もし 剰余(first_digit, 2) が 1 ならば {
+               もし 剰余(絶対値(num), 2) が 1 ならば {
+                  count を増やす
+               }
+            }
+         }
+         i を増やす
+      }
+   }
+   count が答え
+}
+標準ライブラリを使う
+
+specialFilter = 入力 nums に対し {
+   count = 0
+   i = 0
+   nums の大きさ 回くり返す {
+      num = nums[i]
+      もし num が 10 より大きい ならば {
+         abs_num = 絶対値(num)
+         last_digit = 剰余(abs_num, 10)
+         first_digit = 商(abs_num, 10)
+         もし first_digit が 0 以外 ならば {
+            first_digit = 商(first_digit, 10)
+         }
+         もし 剰余(last_digit, 2) が 1 ならば {
+            もし 剰余(first_digit, 2) が 1 ならば {
+               count を増やす
+            }
+         }
+      }
+      i を増やす
+   }
+   count が答え
+}

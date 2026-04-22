@@ -1,0 +1,33 @@
+標準ライブラリを使う
+
+factorize = 入力 n に対し {
+   factors=[]
+   d=2
+   rest=n
+
+   くり返し{
+      もし積(d,d)がrestより大きいならば{
+         くり返しを抜ける
+      }
+
+      くり返し{
+         q=商(rest,d)
+         prod=積(q,d)
+         もしprodがrestならば{
+            factorsにdを追加する
+            rest=q
+         }
+         そうでなければ{
+            くり返しを抜ける
+         }
+      }
+
+      d=和(d,1)
+   }
+
+   もしrestが1より大きいならば{
+      factorsにrestを追加する
+   }
+
+   factorsが答え
+}

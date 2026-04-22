@@ -1,0 +1,29 @@
+標準ライブラリを使う
+
+max_fill = 入力 grid, capacity に対し {
+   total_water = 0
+   
+   i = 0
+   grid の大きさ 回くり返す {
+      row = grid[i]
+      j = 0
+      row の大きさ 回くり返す {
+         もし row[j] が 1 ならば {
+            total_water を増やす
+         }
+         j を増やす
+      }
+      i を増やす
+   }
+   
+   もし total_water が 0 ならば {
+      0 が答え
+   }
+   
+   buckets_needed = 商(total_water, capacity)
+   もし 剰余(total_water, capacity) が 0以外 ならば {
+      buckets_needed を増やす
+   }
+   
+   buckets_needed が答え
+}

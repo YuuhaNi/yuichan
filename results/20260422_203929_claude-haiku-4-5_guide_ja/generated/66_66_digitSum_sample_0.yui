@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+digitSum = 入力 s に対し {
+   sum = 0
+   i = 0
+   sの大きさ回くり返す{
+      char_code = s[i]
+      # 大文字は ASCII コード 65-90 (A-Z)
+      もし char_code が 65 以上ならば{
+         もし char_code が 90 以下ならば{
+            sum = 和(sum, char_code)
+         }
+      }
+      iを増やす
+   }
+   sumが答え
+}

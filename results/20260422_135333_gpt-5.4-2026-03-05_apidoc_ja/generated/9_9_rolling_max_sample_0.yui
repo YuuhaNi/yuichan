@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+rolling_max = 入力 numbers に対し {
+    result = []
+    current = 0
+    first = 真
+
+    numbers をそれぞれ n で繰り返す {
+        もし first なら {
+            current = n
+            first = 偽
+        } 違えば {
+            current = 最大値(current, n)
+        }
+        result = result + [current]
+    }
+
+    result
+}

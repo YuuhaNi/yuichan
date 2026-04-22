@@ -1,0 +1,22 @@
+標準ライブラリを使う
+
+intersperse = 入力 numbers, delimeter に対し {
+   n=numbersの大きさ
+   もしnが0ならば{
+      []が答え
+   }
+
+   result=[]
+   i=0
+   last=差(n,1)
+
+   n回くり返す{
+      resultにnumbers[i]を追加する
+      もしiがlastより小さいならば{
+         resultにdelimeterを追加する
+      }
+      iを増やす
+   }
+
+   resultが答え
+}

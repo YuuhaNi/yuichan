@@ -1,0 +1,33 @@
+標準ライブラリを使う
+
+is_multiply_prime = 入力 a に対し {
+   count = 0
+   divisor = 2
+   temp = a
+   
+   100回くり返す {
+      もし temp が 1 ならば {
+         くり返しを抜ける
+      }
+      
+      もし 剰余(temp, divisor) が 0 ならば {
+         count を増やす
+         temp = 商(temp, divisor)
+      } そうでなければ {
+         divisor を増やす
+      }
+      
+      もし divisor が temp より大きい ならば {
+         もし temp が 1 以外 ならば {
+            count を増やす
+         }
+         くり返しを抜ける
+      }
+   }
+   
+   もし count が 3 ならば {
+      真が答え
+   } そうでなければ {
+      偽が答え
+   }
+}

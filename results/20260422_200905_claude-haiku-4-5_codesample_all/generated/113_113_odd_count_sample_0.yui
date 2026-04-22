@@ -1,0 +1,30 @@
+標準ライブラリを使う
+
+odd_count = 入力 lst に対し {
+   result = []
+   n = lst の大きさ
+   i = 0
+   n 回くり返す {
+      s = lst[i]
+      # 文字列 s に含まれる奇数の個数を数える
+      count = 0
+      j = 0
+      s の大きさ 回くり返す {
+         c = s[j]
+         # 文字コードを数値に変換 ('0'=48, '1'=49, ..., '9'=57)
+         digit = 差(c, 48)
+         # 奇数判定: 2 で割った余りが 1 なら奇数
+         parity = 剰余(digit, 2)
+         もし parity が 1 ならば {
+            count を増やす
+         }
+         j を増やす
+      }
+      # テンプレート文字列内の 'i' をすべて count に置換する
+      template = "the number of odd elements in the string i of the input."
+      replaced = replace(template, "i", 文字列化(count))
+      result に replaced を追加する
+      i を増やす
+   }
+   result が答え
+}

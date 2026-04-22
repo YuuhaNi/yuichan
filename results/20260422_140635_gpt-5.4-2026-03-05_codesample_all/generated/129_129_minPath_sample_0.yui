@@ -1,0 +1,70 @@
+標準ライブラリを使う
+
+minPath=入力grid,kに対し{
+   n=gridの大きさ
+
+   # 値 -> 座標 の対応表を作る
+   # pos[v] = [r,c]
+   pos=[]
+   r=0
+   n回くり返す{
+      c=0
+      n回くり返す{
+         v=grid[r][c]
+         もしvがposの大きさ以上ならば{
+            need=和(v,1)
+            now=posの大きさ
+            diff=差(need,now)
+            diff回くり返す{
+               posに[]を追加する
+            }
+         }
+         pos[v]=[r,c]
+         cを増やす
+      }
+      rを増やす
+   }
+
+   # 最初の値は必ず 1 が最小
+   result=[1]
+
+   # k=1 なら [1]
+   もしkが1ならば{
+      resultが答え
+   }
+
+   cur=1
+   steps=1
+
+   # 残り k-1 個を貪欲に選ぶ
+   # 次に置ける値 x は、現在位置からマンハッタン距離 d で到達可能、
+   # かつ残り手数 rem で長さを埋められるもの。
+   # グリッドでは隣接移動で偶奇調整のための往復ができるので、
+   # d <= rem なら常に残りを埋められる。
+   limit=差(k,1)
+   limit回くり返す{
+      rem=差(k,和(steps,1))
+      found=0
+      cand=1
+      maxv=積(n,n)
+      maxv回くり返す{
+         もしfoundが0ならば{
+            p1=pos[cur]
+            p2=pos[cand]
+            d=和(
+               絶対値(差(p1[0],p2[0])),
+               絶対値(差(p1[1],p2[1]))
+            )
+            もしdがrem以下ならば{
+               resultにcandを追加する
+               cur=cand
+               found=1
+            }
+         }
+         candを増やす
+      }
+      stepsを増やす
+   }
+
+   resultが答え
+}

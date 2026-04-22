@@ -1,0 +1,15 @@
+標準ライブラリを使う
+
+decode_shift = 入力 s に対し {
+   result = ""
+   sの大きさを n とする
+   n回くり返す {
+      c = s[0]
+      code = 文字コード(c)
+      shifted_code = 和(code, 5)
+      shifted_char = 文字(shifted_code)
+      result = 文字列連結(result, shifted_char)
+      s = 部分文字列(s, 1)
+   }
+   result
+}

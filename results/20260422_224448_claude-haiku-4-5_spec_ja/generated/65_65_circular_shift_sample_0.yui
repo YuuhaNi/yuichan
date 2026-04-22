@@ -1,0 +1,38 @@
+標準ライブラリを使う
+
+circular_shift = 入力 x, shift に対し {
+   # x を文字列に変換して桁を取得
+   x_str = 文字列化(x)
+   digits = x_strの大きさ
+   
+   # shift が桁数より大きい場合は反転
+   もし shift が digits より大きい ならば {
+      # 文字列を反転
+      reversed = ""
+      digits回くり返す {
+         reversed に x_str[差(digits, 1)] を追加する
+         digits を減らす
+      }
+      reversed が答え
+   }
+   
+   # 通常の循環シフト
+   # shift 分だけ右にシフト = 後ろから shift 文字を前に移動
+   shift_normalized = 剰余(shift, digits)
+   
+   result = ""
+   
+   # 後ろから shift_normalized 文字を前に追加
+   shift_normalized回くり返す {
+      result に x_str[差(digits, shift_normalized)] を追加する
+      shift_normalized を減らす
+   }
+   
+   # 残りの文字を追加
+   差(digits, shift_normalized)回くり返す {
+      result に x_str[差(digits, 1)] を追加する
+      digits を減らす
+   }
+   
+   result が答え
+}

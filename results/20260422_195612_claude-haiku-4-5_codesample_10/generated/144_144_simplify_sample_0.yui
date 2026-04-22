@@ -1,0 +1,28 @@
+標準ライブラリを使う
+
+simplify = 入力 x, n に対し {
+   # x を分子/分母に分解
+   x_parts = x を "/" で分割する
+   x_num = 整数化(x_parts[0])
+   x_den = 整数化(x_parts[1])
+   
+   # n を分子/分母に分解
+   n_parts = n を "/" で分割する
+   n_num = 整数化(n_parts[0])
+   n_den = 整数化(n_parts[1])
+   
+   # x * n = (x_num * n_num) / (x_den * n_den)
+   result_num = 積(x_num, n_num)
+   result_den = 積(x_den, n_den)
+   
+   # 結果が整数かどうかを判定
+   # 分子が分母で割り切れるかを確認
+   remainder = 剰余(result_num, result_den)
+   
+   もし remainder が 0 ならば {
+      真が答え
+   }
+   そうでなければ {
+      偽が答え
+   }
+}

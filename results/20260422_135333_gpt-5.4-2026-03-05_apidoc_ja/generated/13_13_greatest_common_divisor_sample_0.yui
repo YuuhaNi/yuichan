@@ -1,0 +1,11 @@
+標準ライブラリを使う
+
+greatest_common_divisor = 入力 a, b に対し {
+  a = 絶対値(a)
+  b = 絶対値(b)
+  もし b == 0 なら {
+    a
+  } 違えば {
+    greatest_common_divisor(b, 剰余(a, b))
+  }
+}

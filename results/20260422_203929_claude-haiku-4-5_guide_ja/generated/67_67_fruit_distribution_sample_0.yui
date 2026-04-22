@@ -1,0 +1,35 @@
+標準ライブラリを使う
+
+fruit_distribution = 入力 s, n に対し {
+   # 文字列から数字を抽出する
+   # "5 apples and 6 oranges" から 5 と 6 を取り出す
+   
+   words = []
+   current_word = ""
+   i = 0
+   sの大きさ回くり返す{
+      char = s[i]
+      # スペース（32）で単語を分割
+      もしcharが32ならば{
+         もしcurrent_wordの大きさが0以外ならば{
+            wordsにcurrent_wordを追加する
+            current_word = ""
+         }
+      }そうでなければ{
+         current_wordにcharを追加する
+      }
+      iを増やす
+   }
+   もしcurrent_wordの大きさが0以外ならば{
+      wordsにcurrent_wordを追加する
+   }
+   
+   # 最初の単語（リンゴの数）と3番目の単語（オレンジの数）を取得
+   apples = 整数化(words[0])
+   oranges = 整数化(words[2])
+   
+   # マンゴーの数 = 総数 - リンゴ - オレンジ
+   mangoes = 差(n, apples, oranges)
+   
+   mangoesが答え
+}

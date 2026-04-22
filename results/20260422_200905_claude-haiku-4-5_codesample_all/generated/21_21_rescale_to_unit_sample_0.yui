@@ -1,0 +1,34 @@
+標準ライブラリを使う
+
+rescale_to_unit = 入力 numbers に対し {
+   # 最小値と最大値を求める
+   min_val = numbers[0]
+   max_val = numbers[0]
+   n = numbers の大きさ
+   i = 0
+   n 回くり返す {
+      x = numbers[i]
+      もし x が min_val より小さいならば {
+         min_val = x
+      }
+      もし x が max_val より大きいならば {
+         max_val = x
+      }
+      i を増やす
+   }
+   
+   # 範囲 (最大値 - 最小値) を計算
+   range = 差(max_val, min_val)
+   
+   # 各要素を線形変換: (x - min) / (max - min)
+   result = []
+   i = 0
+   n 回くり返す {
+      x = numbers[i]
+      normalized = 商(小数化(差(x, min_val)), 小数化(range))
+      result に normalized を追加する
+      i を増やす
+   }
+   
+   result が答え
+}

@@ -1,0 +1,16 @@
+標準ライブラリを使う
+
+smallest_change = 入力 arr に対し {
+   n = arr の大きさ
+   changes = 0
+   i = 0
+   商(n, 2) 回くり返す {
+      left = arr[i]
+      right = arr[差(差(n, 1), i)]
+      もし left が right 以外ならば {
+         changes を増やす
+      }
+      i を増やす
+   }
+   changes が答え
+}

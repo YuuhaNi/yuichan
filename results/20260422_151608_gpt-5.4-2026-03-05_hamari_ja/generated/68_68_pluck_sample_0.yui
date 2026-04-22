@@ -1,0 +1,39 @@
+標準ライブラリを使う
+
+pluck = 入力 arr に対し {
+   n=arrの大きさ
+   もしnが0ならば{
+      []
+   }
+
+   i=0
+   found=0
+   bestValue=0
+   bestIndex=0
+
+   n回くり返す{
+      v=arr[i]
+      parity=剰余(v,2)
+      もしparityが0ならば{
+         もしfoundが0ならば{
+            found=1
+            bestValue=v
+            bestIndex=i
+         }
+         そうでなければ{
+            もしvがbestValueより小さいならば{
+               bestValue=v
+               bestIndex=i
+            }
+         }
+      }
+      iを増やす
+   }
+
+   もしfoundが0ならば{
+      []
+   }
+   そうでなければ{
+      [bestValue,bestIndex]
+   }
+}

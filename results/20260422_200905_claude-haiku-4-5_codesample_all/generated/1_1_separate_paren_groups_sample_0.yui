@@ -1,0 +1,46 @@
+標準ライブラリを使う
+
+separate_paren_groups = 入力 paren_string に対し {
+   # 空白を削除した文字列を作る
+   cleaned = ""
+   i = 0
+   paren_string の大きさ 回 くり返す {
+      c = paren_string[i]
+      # スペース (32) 以外を追加
+      もし c が 32 以外 ならば {
+         cleaned に c を追加する
+      }
+      i を増やす
+   }
+   
+   # 結果配列
+   result = []
+   current = ""
+   depth = 0
+   
+   j = 0
+   cleaned の大きさ 回 くり返す {
+      ch = cleaned[j]
+      current に ch を追加する
+      
+      # '(' は 40, ')' は 41
+      もし ch が 40 ならば {
+         depth を増やす
+      }
+      そうでなければ {
+         もし ch が 41 ならば {
+            depth を減らす
+         }
+      }
+      
+      # depth が 0 になったら 1 つのグループが完成
+      もし depth が 0 ならば {
+         result に current を追加する
+         current = ""
+      }
+      
+      j を増やす
+   }
+   
+   result が答え
+}

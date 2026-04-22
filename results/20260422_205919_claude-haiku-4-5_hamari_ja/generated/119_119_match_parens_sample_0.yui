@@ -1,0 +1,57 @@
+標準ライブラリを使う
+
+match_parens = 入力 lst に対し {
+   s1 = lst[0]
+   s2 = lst[1]
+   
+   # パターン1: s1 + s2 の順序でチェック
+   result1 = is_good(和(s1, s2))
+   
+   # パターン2: s2 + s1 の順序でチェック
+   result2 = is_good(和(s2, s1))
+   
+   # どちらかが良い文字列なら Yes
+   もしresult1が1ならば{
+      "Yes"
+   }
+   そうでなければ{
+      もしresult2が1ならば{
+         "Yes"
+      }
+      そうでなければ{
+         "No"
+      }
+   }
+}
+
+is_good = 入力 s に対し {
+   balance = 0
+   len = sの大きさ
+   i = 0
+   
+   len回くり返す{
+      char = s[i]
+      
+      もしcharが"("のいずれかならば{
+         balance = 和(balance, 1)
+      }
+      そうでなければ{
+         balance = 差(balance, 1)
+      }
+      
+      # balance が負になったら不良
+      もしbalanceが0より小さいならば{
+         0
+      }
+      
+      i = 和(i, 1)
+   }
+   
+   # 最終的に balance が 0 なら良い文字列
+   もしbalanceが0ならば{
+      1
+   }
+   そうでなければ{
+      0
+   }
+}

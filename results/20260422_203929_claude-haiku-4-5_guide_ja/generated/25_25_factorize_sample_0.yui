@@ -1,0 +1,29 @@
+標準ライブラリを使う
+
+factorize = 入力 n に対し {
+   factors = []
+   divisor = 2
+   
+   divisor回くり返す{
+      もしdivisorが差(n,1)より大きいならば{
+         くり返しを抜ける
+      }
+      
+      nが1ならば{
+         くり返しを抜ける
+      }
+      
+      もし剰余(n, divisor)が0ならば{
+         factorsにdivisorを追加する
+         n = 商(n, divisor)
+      }そうでなければ{
+         divisorを増やす
+      }
+   }
+   
+   もしnが1以外ならば{
+      factorsにnを追加する
+   }
+   
+   factorsが答え
+}

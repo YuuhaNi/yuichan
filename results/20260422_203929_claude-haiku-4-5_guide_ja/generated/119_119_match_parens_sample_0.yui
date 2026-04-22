@@ -1,0 +1,67 @@
+標準ライブラリを使う
+
+match_parens = 入力 lst に対し {
+   # 括弧がバランスしているか判定する関数
+   is_good = 入力 s に対し {
+      balance = 0
+      i = 0
+      sの大きさ回くり返す {
+         char = s[i]
+         もし char が "("[0] ならば {
+            balance を増やす
+         } そうでなければ {
+            balance を減らす
+         }
+         # balance が負になったら不正
+         もし balance が 0 より小さい ならば {
+            0 が答え
+         }
+         i を増やす
+      }
+      # 最後に balance が 0 なら良い
+      もし balance が 0 ならば {
+         1 が答え
+      } そうでなければ {
+         0 が答え
+      }
+   }
+
+   # lst[0] + lst[1] の順で結合して判定
+   s1 = lst[0]
+   s2 = lst[1]
+   combined1 = ""
+   
+   i = 0
+   s1の大きさ回くり返す {
+      combined1 に s1[i] を追加する
+      i を増やす
+   }
+   i = 0
+   s2の大きさ回くり返す {
+      combined1 に s2[i] を追加する
+      i を増やす
+   }
+
+   もし is_good(combined1) が 1 ならば {
+      "Yes" が答え
+   }
+
+   # lst[1] + lst[0] の順で結合して判定
+   combined2 = ""
+   i = 0
+   s2の大きさ回くり返す {
+      combined2 に s2[i] を追加する
+      i を増やす
+   }
+   i = 0
+   s1の大きさ回くり返す {
+      combined2 に s1[i] を追加する
+      i を増やす
+   }
+
+   もし is_good(combined2) が 1 ならば {
+      "Yes" が答え
+   }
+
+   "No" が答え
+}

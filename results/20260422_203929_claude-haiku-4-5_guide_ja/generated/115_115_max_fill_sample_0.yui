@@ -1,0 +1,30 @@
+標準ライブラリを使う
+
+max_fill = 入力 grid, capacity に対し {
+   total_water = 0
+   
+   # 各行（井戸）を処理
+   i = 0
+   gridの大きさ回くり返す{
+      row = grid[i]
+      
+      # 各行の水の量を合計
+      j = 0
+      rowの大きさ回くり返す{
+         total_water = 和(total_water, row[j])
+         jを増やす
+      }
+      
+      iを増やす
+   }
+   
+   # 必要なバケツの回数を計算（天井除算）
+   もしtotal_waterが0ならば{
+      0が答え
+   }
+   そうでなければ{
+      # (total_water + capacity - 1) / capacity で天井除算
+      buckets = 商(和(total_water, 差(capacity, 1)), capacity)
+      bucketsが答え
+   }
+}

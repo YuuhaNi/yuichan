@@ -1,0 +1,28 @@
+標準ライブラリを使う
+
+simplify = 入力 x, n に対し {
+   # x を分子/分母に分割する
+   slash_x = find(x, "/")
+   x_num = 整数化(部分文字列(x, 0, slash_x))
+   x_denom = 整数化(部分文字列(x, 和(slash_x, 1), sの大きさ))
+   
+   # n を分子/分母に分割する
+   slash_n = find(n, "/")
+   n_num = 整数化(部分文字列(n, 0, slash_n))
+   n_denom = 整数化(部分文字列(n, 和(slash_n, 1), nの大きさ))
+   
+   # x * n = (x_num * n_num) / (x_denom * n_denom)
+   result_num = 積(x_num, n_num)
+   result_denom = 積(x_denom, n_denom)
+   
+   # 結果が整数かどうかを判定する
+   # 整数になるには result_num が result_denom で割り切れる必要がある
+   remainder = 剰余(result_num, result_denom)
+   
+   もし remainder が 0 ならば {
+      真が答え
+   }
+   そうでなければ {
+      偽が答え
+   }
+}

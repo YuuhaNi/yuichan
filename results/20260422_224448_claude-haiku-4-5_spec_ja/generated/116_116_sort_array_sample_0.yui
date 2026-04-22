@@ -1,0 +1,54 @@
+標準ライブラリを使う
+
+# 2進数表現における"1"の個数をカウントする関数
+count_ones = 入力 n に対し {
+   もしnが0ならば {
+      0 が答え
+   }
+   count = 0
+   もしnが0より小さいならば {
+      n = 差(0, n)
+   }
+   nの大きさを count_size とする
+   count_size回くり返す {
+      もしn[count]が1ならば {
+         countを増やす
+      }
+   }
+   count が答え
+}
+
+# メイン関数
+sort_array = 入力 arr に対し {
+   result = []
+   arrの大きさを len とする
+   len回くり返す {
+      min_idx = 0
+      min_ones = count_ones(arr[0])
+      min_val = arr[0]
+      
+      i = 1
+      差(len, 1)回くり返す {
+         current_ones = count_ones(arr[i])
+         もしcurrent_onesがmin_onesより小さいならば {
+            min_idx = i
+            min_ones = current_ones
+            min_val = arr[i]
+         }
+         そうでなければ {
+            もしcurrent_onesがmin_onesならば {
+               もしarr[i]がmin_valより小さいならば {
+                  min_idx = i
+                  min_val = arr[i]
+               }
+            }
+         }
+         iを増やす
+      }
+      
+      resultにmin_valを追加する
+      arr[min_idx] = arr[差(len, 1)]
+      lenを減らす
+   }
+   result が答え
+}

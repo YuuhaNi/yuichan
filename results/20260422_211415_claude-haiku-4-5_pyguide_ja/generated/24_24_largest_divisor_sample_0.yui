@@ -1,0 +1,13 @@
+標準ライブラリを使う
+
+largest_divisor = 入力 n に対し {
+   i = 1
+   result = 1
+   n回くり返す {
+      もし剰余(n, i)が0ならば {
+         result = i
+      }
+      iを増やす
+   }
+   resultが答え
+}

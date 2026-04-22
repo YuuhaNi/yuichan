@@ -1,0 +1,44 @@
+標準ライブラリを使う
+
+intersection = 入力 interval1, interval2 に対し {
+   a1=interval1[0]
+   b1=interval1[1]
+   a2=interval2[0]
+   b2=interval2[1]
+
+   left=a1
+   もしa2がleftより大きいならば{
+      left=a2
+   }
+
+   right=b1
+   もしb2がrightより小さいならば{
+      right=b2
+   }
+
+   もしleftがrightより大きいならば{
+      "NO"が答え
+   }
+
+   length=和(差(right,left),1)
+
+   もしlengthが2より小さいならば{
+      "NO"が答え
+   }
+
+   i=2
+   prime=真
+   差(length,2)回くり返す{
+      もし剰余(length,i)が0ならば{
+         prime=偽
+      }
+      iを増やす
+   }
+
+   もしprimeならば{
+      "YES"が答え
+   }
+   そうでなければ{
+      "NO"が答え
+   }
+}

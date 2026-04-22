@@ -1,0 +1,42 @@
+標準ライブラリを使う
+
+check_if_last_char_is_a_letter = 入力 txt に対し {
+   n=txtの長さ
+   もしnが0ならば{
+      偽が答え
+   }
+
+   lastIndex=差(n,1)
+   last=txt[lastIndex]
+
+   もしlastが" "ならば{
+      偽が答え
+   }
+
+   isLower=0
+   もしlastが"a"以上ならば{
+      もしlastが"z"以下ならば{
+         isLower=1
+      }
+   }
+
+   isUpper=0
+   もしlastが"A"以上ならば{
+      もしlastが"Z"以下ならば{
+         isUpper=1
+      }
+   }
+
+   もしisLowerが1のいずれか[isUpper]ならば{
+      もしnが1ならば{
+         真が答え
+      }
+      prevIndex=差(n,2)
+      prev=txt[prevIndex]
+      もしprevが" "ならば{
+         真が答え
+      }
+   }
+
+   偽が答え
+}

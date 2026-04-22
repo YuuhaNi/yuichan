@@ -1,0 +1,39 @@
+標準ライブラリを使う
+
+strange_sort_list = 入力 lst に対し {
+   result = []
+   sorted_lst = lst を昇順に並べ替える
+   left = 0
+   right = 差(sorted_lst の大きさ, 1)
+   turn = 0
+   
+   もし sorted_lst の大きさ が 0 ならば {
+      result
+   }
+   そうでなければ {
+      もし sorted_lst の大きさ が 1 ならば {
+         sorted_lst
+      }
+      そうでなければ {
+         sorted_lst の大きさ 回くり返す {
+            skip = 0
+            もし left が right より大きい ならば {
+               skip = 1
+            }
+            もし skip が 0 ならば {
+               もし turn が 0 ならば {
+                  result に sorted_lst[left] を追加する
+                  left = 和(left, 1)
+                  turn = 1
+               }
+               そうでなければ {
+                  result に sorted_lst[right] を追加する
+                  right = 差(right, 1)
+                  turn = 0
+               }
+            }
+         }
+         result
+      }
+   }
+}

@@ -1,0 +1,54 @@
+標準ライブラリを使う
+
+digits = 入力 n に対し {
+   result = 1
+   found = 偽
+   n回くり返す {
+      digit = 剰余(n, 10)
+      もしdigitが2以外ならば {
+         もしdigitが4以外ならば {
+            もしdigitが6以外ならば {
+               もしdigitが8以外ならば {
+                  resultにdigitを追加する
+                  found = 真
+               }
+            }
+         }
+      }
+      n = 商(n, 10)
+   }
+   もしfoundが偽ならば {
+      0 が答え
+   }
+   そうでなければ {
+      積(result) が答え
+   }
+}
+標準ライブラリを使う
+
+digits = 入力 n に対し {
+   result = 1
+   found = 偽
+   n回くり返す {
+      digit = 剰余(n, 10)
+      もしdigitが1以外ならば {
+         もしdigitが3以外ならば {
+            もしdigitが5以外ならば {
+               もしdigitが7以外ならば {
+                  もしdigitが9以外ならば {
+                     result = 積(result, digit)
+                     found = 真
+                  }
+               }
+            }
+         }
+      }
+      n = 商(n, 10)
+   }
+   もしfoundが偽ならば {
+      0 が答え
+   }
+   そうでなければ {
+      result が答え
+   }
+}

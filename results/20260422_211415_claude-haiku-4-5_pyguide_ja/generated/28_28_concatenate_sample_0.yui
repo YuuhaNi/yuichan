@@ -1,0 +1,11 @@
+標準ライブラリを使う
+
+concatenate = 入力 strings に対し {
+   result = ""
+   i = 0
+   stringsの大きさ回くり返す{
+      result = 和(result, strings[i])
+      iを増やす
+   }
+   resultが答え
+}

@@ -1,0 +1,66 @@
+標準ライブラリを使う
+
+sort_array = 入力 arr に対し {
+   result = arr
+   n = resultの大きさ
+
+   n回くり返す {
+      i = 0
+      n回くり返す {
+         もしiが差(n, 1)より小さいならば {
+            a = result[i]
+            b = result[和(i, 1)]
+
+            ac = 0
+            bc = 0
+
+            ta = 絶対値(a)
+            tb = 絶対値(b)
+
+            もしtaが0以外ならば {
+               taの大きさ回くり返す {
+                  もしta[ac]が1ならば {
+                     何もしない
+                  }
+               }
+            }
+
+            j = 0
+            taの大きさ回くり返す {
+               もしta[j]が1ならば {
+                  acを増やす
+               }
+               jを増やす
+            }
+
+            j = 0
+            tbの大きさ回くり返す {
+               もしtb[j]が1ならば {
+                  bcを増やす
+               }
+               jを増やす
+            }
+
+            swap = 偽
+            もしacがbcより大きいならば {
+               swap = 真
+            }
+            そうでなければ {
+               もしacがbcならば {
+                  もしaがbより大きいならば {
+                     swap = 真
+                  }
+               }
+            }
+
+            もしswapが真ならば {
+               temp = result[i]
+               result[i] = result[和(i, 1)]
+               result[和(i, 1)] = temp
+            }
+         }
+         iを増やす
+      }
+   }
+   result が答え
+}

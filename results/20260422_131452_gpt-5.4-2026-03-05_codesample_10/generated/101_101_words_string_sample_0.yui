@@ -1,0 +1,36 @@
+標準ライブラリを使う
+
+words_string = 入力 s に対し {
+   result=[]
+   token=""
+   n=sの大きさ
+   i=0
+
+   n回くり返す{
+      c=s[i]
+      もしcが44ならば{
+         もしtokenが""以外ならば{
+            resultにtokenを追加する
+            token=""
+         }
+      }
+      そうでなければ{
+         もしcが32ならば{
+            もしtokenが""以外ならば{
+               resultにtokenを追加する
+               token=""
+            }
+         }
+         そうでなければ{
+            tokenにcを追加する
+         }
+      }
+      iを増やす
+   }
+
+   もしtokenが""以外ならば{
+      resultにtokenを追加する
+   }
+
+   resultが答え
+}

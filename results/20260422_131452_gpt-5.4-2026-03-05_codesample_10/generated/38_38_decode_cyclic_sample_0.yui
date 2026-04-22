@@ -1,0 +1,49 @@
+標準ライブラリを使う
+
+decode_cyclic = 入力 s に対し {
+   n=sの大きさ
+   result=""
+   i=0
+   n回くり返す{
+      c=s[i]
+      mod=剰余(i,3)
+      nc=c
+      もしcが65以上ならば{
+         もしcが90以下ならば{
+            base=65
+            offset=差(c,base)
+            もしmodが0ならば{
+               nc=和(base,剰余(和(offset,23),26))
+            }
+            そうでなければ{
+               もしmodが1ならば{
+                  nc=和(base,offset)
+               }
+               そうでなければ{
+                  nc=和(base,剰余(和(offset,3),26))
+               }
+            }
+         }
+      }
+      もしcが97以上ならば{
+         もしcが122以下ならば{
+            base=97
+            offset=差(c,base)
+            もしmodが0ならば{
+               nc=和(base,剰余(和(offset,23),26))
+            }
+            そうでなければ{
+               もしmodが1ならば{
+                  nc=和(base,offset)
+               }
+               そうでなければ{
+                  nc=和(base,剰余(和(offset,3),26))
+               }
+            }
+         }
+      }
+      resultにncを追加する
+      iを増やす
+   }
+   resultが答え
+}

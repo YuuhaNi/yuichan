@@ -1,0 +1,52 @@
+標準ライブラリを使う
+
+order_by_points = 入力 nums に対し {
+   result = []
+   used = []
+   i = 0
+   numsの大きさ回くり返す{
+      usedに偽を追加する
+   }
+
+   numsの大きさ回くり返す{
+      best_index = -1
+      best_score = 0
+
+      j = 0
+      numsの大きさ回くり返す{
+         もしused[j]が偽ならば{
+            x = nums[j]
+            ax = 絶対値(x)
+            score = 0
+
+            もしaxが0ならば{
+               score = 0
+            }そうでなければ{
+               ax回くり返す{
+                  もしaxが0ならば{
+                     くり返しを抜ける
+                  }
+                  score = 和(score, 剰余(ax, 10))
+                  ax = 商(ax, 10)
+               }
+            }
+
+            もしbest_indexが-1ならば{
+               best_index = j
+               best_score = score
+            }そうでなければ{
+               もしscoreがbest_scoreより小さいならば{
+                  best_index = j
+                  best_score = score
+               }
+            }
+         }
+         jを増やす
+      }
+
+      resultにnums[best_index]を追加する
+      used[best_index] = 真
+   }
+
+   resultが答え
+}

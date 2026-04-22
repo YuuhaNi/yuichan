@@ -1,0 +1,34 @@
+標準ライブラリを使う
+
+flip_case = 入力 string に対し {
+   result = ""
+   stringの大きさ回くり返す{
+      i = 0
+      stringの大きさ回くり返す{
+         char_code = string[i]
+         # 大文字（65-90）を小文字に
+         もしchar_codeが65以上ならば{
+            もしchar_codeが90以下ならば{
+               resultに差(char_code, 32)を追加する
+               くり返しを抜ける
+            }
+         }
+         # 小文字（97-122）を大文字に
+         もしchar_codeが97以上ならば{
+            もしchar_codeが122以下ならば{
+               resultに和(char_code, 32)を追加する
+               くり返しを抜ける
+            }
+         }
+         # その他の文字はそのまま
+         もしchar_codeが65より小さいならば{
+            もしchar_codeが97より小さいならば{
+               resultにchar_codeを追加する
+               くり返しを抜ける
+            }
+         }
+         iを増やす
+      }
+   }
+   resultが答え
+}

@@ -1,0 +1,29 @@
+標準ライブラリを使う
+
+is_nested = 入力 string に対し {
+   depth = 0
+   max_depth = 0
+   i = 0
+   string の大きさ 回 くり返す {
+      c = string[i]
+      # '[' は開き括弧 (文字コード 91)
+      もし c が 91 ならば {
+         depth を増やす
+         もし depth が max_depth より大きい ならば {
+            max_depth = depth
+         }
+      }
+      # ']' は閉じ括弧 (文字コード 93)
+      もし c が 93 ならば {
+         depth を減らす
+      }
+      i を増やす
+   }
+   # max_depth が 2 以上なら入れ子がある
+   もし max_depth が 2 以上 ならば {
+      真 が答え
+   }
+   そうでなければ {
+      偽 が答え
+   }
+}

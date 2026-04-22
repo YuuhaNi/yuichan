@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+words_string = 入力 s に対し {
+  s を「,」で分割した配列を items とする
+  
+  結果 = []
+  items の各要素 item に対し {
+    item を「 」で分割した配列を words とする
+    words の各要素 word に対し {
+      word が空でなければ {
+        結果に word を追加
+      }
+    }
+  }
+  
+  結果を返す
+}

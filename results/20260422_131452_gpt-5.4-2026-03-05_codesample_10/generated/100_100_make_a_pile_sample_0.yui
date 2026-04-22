@@ -1,0 +1,11 @@
+標準ライブラリを使う
+
+make_a_pile = 入力 n に対し {
+   result=[]
+   x=n
+   n回くり返す{
+      resultにxを追加する
+      x=和(x,2)
+   }
+   resultが答え
+}

@@ -1,0 +1,34 @@
+標準ライブラリを使う
+
+prod_signs = 入力 arr に対し {
+   もし arr の大きさ が 0 ならば {
+      値なし が答え
+   }
+   そうでなければ {
+      sum_abs = 0
+      prod_sign = 1
+      n = arr の大きさ
+      i = 0
+      n 回くり返す {
+         x = arr[i]
+         # 絶対値を合計に加える
+         もし x が 0 より小さい ならば {
+            sum_abs = 和(sum_abs, 差(0, x))
+         }
+         そうでなければ {
+            sum_abs = 和(sum_abs, x)
+         }
+         # 符号を掛け合わせる
+         もし x が 0 より小さい ならば {
+            prod_sign = 積(prod_sign, -1)
+         }
+         そうでなければ {
+            もし x が 0 ならば {
+               prod_sign = 0
+            }
+         }
+         i を増やす
+      }
+      積(sum_abs, prod_sign) が答え
+   }
+}

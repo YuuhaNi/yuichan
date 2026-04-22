@@ -1,0 +1,9704 @@
+
+============================================================
+[1/164] 0_has_close_elements - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+has_close_elements = 入力 numbers, threshold に対し {
+  i = 0
+  もし i < 配列長(numbers) なら {
+    i = 0
+    反復 i < 配列長(numbers) の間 {
+      j = i + 1
+      反復 j < 配列長(numbers) の間 {
+        もし 絶対値(差(numbers[i], numbers[j])) < threshold なら {
+          戻る 真
+        }
+        j = j + 1
+      }
+      i = i + 1
+    }
+  }
+  戻る 偽
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+has_close_elements = 入力 numbers, threshold に対し {
+  i = 0
+  もし i < 配列長(numbers) なら {
+    i = 0
+    反復 i < 配列長(numbers) の間 {
+      j = i + 1
+      反復 j < 配列長(numbers) の間 {
+        もし 絶対値(差(numbers[i], numbers[j])) < threshold なら {
+          戻る 真
+        }
+        j = j + 1
+      }
+      i = i + 1
+    }
+  }
+  戻る 偽
+}
+--- Result: ✗ FAILED (0.07s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[2/164] 1_separate_paren_groups - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+separate_paren_groups = 入力 paren_string に対し {
+    cleaned = ""
+    current = ""
+    depth = 0
+    result = []
+
+    反復 (i = 0; i < 長さ(paren_string); i = 和(i, 1)) {
+        ch = paren_string[i]
+
+        もし ch != " " なら {
+            cleaned = 文字列連結(cleaned, ch)
+        }
+    }
+
+    反復 (i = 0; i < 長さ(cleaned); i = 和(i, 1)) {
+        ch = cleaned[i]
+        current = 文字列連結(current, ch)
+
+        もし ch == "(" なら {
+            depth = 和(depth, 1)
+        } 違えば もし ch == ")" なら {
+            depth = 差(depth, 1)
+
+            もし depth == 0 なら {
+                result = 配列追加(result, current)
+                current = ""
+            }
+        }
+    }
+
+    result
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+separate_paren_groups = 入力 paren_string に対し {
+    cleaned = ""
+    current = ""
+    depth = 0
+    result = []
+
+    反復 (i = 0; i < 長さ(paren_string); i = 和(i, 1)) {
+        ch = paren_string[i]
+
+        もし ch != " " なら {
+            cleaned = 文字列連結(cleaned, ch)
+        }
+    }
+
+    反復 (i = 0; i < 長さ(cleaned); i = 和(i, 1)) {
+        ch = cleaned[i]
+        current = 文字列連結(current, ch)
+
+        もし ch == "(" なら {
+            depth = 和(depth, 1)
+        } 違えば もし ch == ")" なら {
+            depth = 差(depth, 1)
+
+            もし depth == 0 なら {
+                result = 配列追加(result, current)
+                current = ""
+            }
+        }
+    }
+
+    result
+}
+--- Result: ✗ FAILED (0.07s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[3/164] 2_truncate_number - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+truncate_number = 入力 number に対し {
+  戻る 差(number, 整数化(number))
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+truncate_number = 入力 number に対し {
+  戻る 差(number, 整数化(number))
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[4/164] 3_below_zero - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+below_zero = 入力 operations に対し {
+    balance = 0
+    operations の各値 op について {
+        balance = 和(balance, op)
+        もし balance <= 0 なら {
+            戻る 真
+        }
+    }
+    戻る 偽
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+below_zero = 入力 operations に対し {
+    balance = 0
+    operations の各値 op について {
+        balance = 和(balance, op)
+        もし balance <= 0 なら {
+            戻る 真
+        }
+    }
+    戻る 偽
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[5/164] 4_mean_absolute_deviation - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+mean_absolute_deviation = 入力 numbers に対し {
+    n = 配列化(numbers)
+    len = 配列数(n)
+    avg = 和(n) / len
+    deviations = [絶対値(n[0] - avg)]
+    i = 1
+    もし i < len なら {
+        deviations = []
+        i = 0
+        繰り返し i < len の間 {
+            deviations = deviations + [絶対値(n[i] - avg)]
+            i = i + 1
+        }
+    }
+    戻す 和(deviations) / len
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+mean_absolute_deviation = 入力 numbers に対し {
+    n = 配列化(numbers)
+    len = 配列数(n)
+    avg = 和(n) / len
+    deviations = [絶対値(n[0] - avg)]
+    i = 1
+    もし i < len なら {
+        deviations = []
+        i = 0
+        繰り返し i < len の間 {
+            deviations = deviations + [絶対値(n[i] - avg)]
+            i = i + 1
+        }
+    }
+    戻す 和(deviations) / len
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[6/164] 5_intersperse - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+intersperse = 入力 numbers, delimeter に対し {
+  もし 最大値(配列化(numbers)) == 値なし なら {
+    []
+  } でなければ {
+    result = []
+    i = 0
+    n = 最大値([0, 差(長さ(numbers), 1)])  # 長さ が使えない環境なら下の再帰版を使ってください
+    繰り返し i < 長さ(numbers) の間 {
+      result = result + [numbers[i]]
+      もし i < 差(長さ(numbers), 1) なら {
+        result = result + [delimeter]
+      }
+      i = 和(i, 1)
+    }
+    result
+  }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+intersperse = 入力 numbers, delimeter に対し {
+  もし 最大値(配列化(numbers)) == 値なし なら {
+    []
+  } でなければ {
+    result = []
+    i = 0
+    n = 最大値([0, 差(長さ(numbers), 1)])  # 長さ が使えない環境なら下の再帰版を使ってください
+    繰り返し i < 長さ(numbers) の間 {
+      result = result + [numbers[i]]
+      もし i < 差(長さ(numbers), 1) なら {
+        result = result + [delimeter]
+      }
+      i = 和(i, 1)
+    }
+    result
+  }
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[7/164] 6_parse_nested_parens - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+parse_nested_parens = 入力 paren_string に対し {
+    groups = paren_string.split(" ")
+    result = []
+
+    groups.forEach(入力 group に対し {
+        depth = 0
+        max_depth = 0
+
+        group.split("").forEach(入力 ch に対し {
+            もし ch == "(" なら {
+                depth = 和(depth, 1)
+                もし depth > max_depth なら {
+                    max_depth = depth
+                }
+            } 違えば {
+                もし ch == ")" なら {
+                    depth = 差(depth, 1)
+                }
+            }
+        })
+
+        result.push(max_depth)
+    })
+
+    result
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+parse_nested_parens = 入力 paren_string に対し {
+    groups = paren_string.split(" ")
+    result = []
+
+    groups.forEach(入力 group に対し {
+        depth = 0
+        max_depth = 0
+
+        group.split("").forEach(入力 ch に対し {
+            もし ch == "(" なら {
+                depth = 和(depth, 1)
+                もし depth > max_depth なら {
+                    max_depth = depth
+                }
+            } 違えば {
+                もし ch == ")" なら {
+                    depth = 差(depth, 1)
+                }
+            }
+        })
+
+        result.push(max_depth)
+    })
+
+    result
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[8/164] 7_filter_by_substring - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+filter_by_substring = 入力 strings, substring に対し {
+  result = []
+  i = 0
+  反復 (i < 長さ(strings)) {
+    s = strings[i]
+    もし 含む(s, substring) なら {
+      result = result + [s]
+    }
+    i = i + 1
+  }
+  result
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+filter_by_substring = 入力 strings, substring に対し {
+  result = []
+  i = 0
+  反復 (i < 長さ(strings)) {
+    s = strings[i]
+    もし 含む(s, substring) なら {
+      result = result + [s]
+    }
+    i = i + 1
+  }
+  result
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[9/164] 8_sum_product - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+sum_product = 入力 numbers に対し {
+    (和(numbers), 積(numbers))
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+sum_product = 入力 numbers に対し {
+    (和(numbers), 積(numbers))
+}
+--- Result: ✗ FAILED (0.07s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[10/164] 9_rolling_max - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+rolling_max = 入力 numbers に対し {
+    result = []
+    current = 0
+    first = 真
+
+    numbers をそれぞれ n で繰り返す {
+        もし first なら {
+            current = n
+            first = 偽
+        } 違えば {
+            current = 最大値(current, n)
+        }
+        result = result + [current]
+    }
+
+    result
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+rolling_max = 入力 numbers に対し {
+    result = []
+    current = 0
+    first = 真
+
+    numbers をそれぞれ n で繰り返す {
+        もし first なら {
+            current = n
+            first = 偽
+        } 違えば {
+            current = 最大値(current, n)
+        }
+        result = result + [current]
+    }
+
+    result
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[11/164] 10_make_palindrome - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+make_palindrome = 入力 string に対し {
+    chars = 配列化(string)
+    n = 長さ(chars)
+    i = 0
+
+    反復(i < 商(n, 2)) {
+        もし chars[i] != chars[差(差(n, 1), i)] なら {
+            戻る 偽
+        }
+        i = 和(i, 1)
+    }
+
+    戻る 真
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+make_palindrome = 入力 string に対し {
+    chars = 配列化(string)
+    n = 長さ(chars)
+    i = 0
+
+    反復(i < 商(n, 2)) {
+        もし chars[i] != chars[差(差(n, 1), i)] なら {
+            戻る 偽
+        }
+        i = 和(i, 1)
+    }
+
+    戻る 真
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[12/164] 11_string_xor - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+string_xor = 入力 a, b に対し {
+    結果 = ""
+    i = 0
+    反復 (i < 長さ(a)) {
+        もし a[i] == b[i] なら {
+            結果 = 結果 + "0"
+        } でなければ {
+            結果 = 結果 + "1"
+        }
+        i = 和(i, 1)
+    }
+    戻る 結果
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+string_xor = 入力 a, b に対し {
+    結果 = ""
+    i = 0
+    反復 (i < 長さ(a)) {
+        もし a[i] == b[i] なら {
+            結果 = 結果 + "0"
+        } でなければ {
+            結果 = 結果 + "1"
+        }
+        i = 和(i, 1)
+    }
+    戻る 結果
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[13/164] 12_longest - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+longest = 入力 strings に対し {
+    もし 配列判定(strings) かつ 最大値(配列化(strings)) = 0 なら {
+        値なし
+    } でなければ {
+        best = strings[0]
+        i = 1
+        の間 i < 最大値(配列化(strings)) {
+            もし 最大値(配列化(strings[i])) > 最大値(配列化(best)) なら {
+                best = strings[i]
+            }
+            i = 和(i, 1)
+        }
+        best
+    }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+longest = 入力 strings に対し {
+    もし 配列判定(strings) かつ 最大値(配列化(strings)) = 0 なら {
+        値なし
+    } でなければ {
+        best = strings[0]
+        i = 1
+        の間 i < 最大値(配列化(strings)) {
+            もし 最大値(配列化(strings[i])) > 最大値(配列化(best)) なら {
+                best = strings[i]
+            }
+            i = 和(i, 1)
+        }
+        best
+    }
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[14/164] 13_greatest_common_divisor - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+greatest_common_divisor = 入力 a, b に対し {
+  a = 絶対値(a)
+  b = 絶対値(b)
+  もし b == 0 なら {
+    a
+  } 違えば {
+    greatest_common_divisor(b, 剰余(a, b))
+  }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+greatest_common_divisor = 入力 a, b に対し {
+  a = 絶対値(a)
+  b = 絶対値(b)
+  もし b == 0 なら {
+    a
+  } 違えば {
+    greatest_common_divisor(b, 剰余(a, b))
+  }
+}
+--- Result: ✗ FAILED (0.07s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[15/164] 14_all_prefixes - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+all_prefixes = 入力 string に対し {
+  prefixes = []
+  i = 1
+  繰り返す (i <= 配列化(string)の長さ) {
+    prefixes = prefixes に string[0 から i] を追加
+    i = 和(i, 1)
+  }
+  prefixes
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+all_prefixes = 入力 string に対し {
+  prefixes = []
+  i = 1
+  繰り返す (i <= 配列化(string)の長さ) {
+    prefixes = prefixes に string[0 から i] を追加
+    i = 和(i, 1)
+  }
+  prefixes
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[16/164] 15_string_sequence - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+string_sequence = 入力 n に対し {
+  result = "0"
+  i = 1
+  反復 i <= n の間 {
+    result = result + " " + 文字列化(i)
+    i = 和(i, 1)
+  }
+  result
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+string_sequence = 入力 n に対し {
+  result = "0"
+  i = 1
+  反復 i <= n の間 {
+    result = result + " " + 文字列化(i)
+    i = 和(i, 1)
+  }
+  result
+}
+--- Result: ✗ FAILED (0.06s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[17/164] 16_count_distinct_characters - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+count_distinct_characters = 入力 string に対し {
+  chars = 配列化(string)
+  seen = {}
+  i = 0
+  distinct = 0
+
+  i < 長さ(chars) の間 {
+    code = chars[i]
+
+    code >= 65 かつ code <= 90 なら {
+      code = 和(code, 32)
+    }
+
+    key = 文字列化(code)
+
+    seen[key] == 値なし なら {
+      seen[key] = 真
+      distinct = 和(distinct, 1)
+    }
+
+    i = 和(i, 1)
+  }
+
+  distinct
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+count_distinct_characters = 入力 string に対し {
+  chars = 配列化(string)
+  seen = {}
+  i = 0
+  distinct = 0
+
+  i < 長さ(chars) の間 {
+    code = chars[i]
+
+    code >= 65 かつ code <= 90 なら {
+      code = 和(code, 32)
+    }
+
+    key = 文字列化(code)
+
+    seen[key] == 値なし なら {
+      seen[key] = 真
+      distinct = 和(distinct, 1)
+    }
+
+    i = 和(i, 1)
+  }
+
+  distinct
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[18/164] 17_parse_music - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+parse_music = 入力 music_string に対し {
+    notes = music_string.split(" ")
+    result = []
+
+    notes.each(入力 note に対し {
+        もし note == "o" なら {
+            result.push(4)
+        } 違えば もし note == "o|" なら {
+            result.push(2)
+        } 違えば {
+            result.push(1)
+        }
+    })
+
+    result
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+parse_music = 入力 music_string に対し {
+    notes = music_string.split(" ")
+    result = []
+
+    notes.each(入力 note に対し {
+        もし note == "o" なら {
+            result.push(4)
+        } 違えば もし note == "o|" なら {
+            result.push(2)
+        } 違えば {
+            result.push(1)
+        }
+    })
+
+    result
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[19/164] 18_how_many_times - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+how_many_times = 入力 string, substring に対し {
+    もし 最大値(配列化(substring)) == 値なし なら {
+        戻る 0
+    }
+
+    count = 0
+    i = 0
+    s = 配列化(string)
+    sub = 配列化(substring)
+    n = 最大値(差(配列化(s)), 0)
+    m = 最大値(差(配列化(sub)), 0)
+
+    反復 i < 差(和(n, 1), 差(m, 1)) の間 {
+        j = 0
+        ok = 真
+
+        反復 j < m の間 {
+            もし s[和(i, j)] != sub[j] なら {
+                ok = 偽
+                j = m
+            } そうでなければ {
+                j = 和(j, 1)
+            }
+        }
+
+        もし ok なら {
+            count = 和(count, 1)
+        }
+
+        i = 和(i, 1)
+    }
+
+    戻る count
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+how_many_times = 入力 string, substring に対し {
+    もし 最大値(配列化(substring)) == 値なし なら {
+        戻る 0
+    }
+
+    count = 0
+    i = 0
+    s = 配列化(string)
+    sub = 配列化(substring)
+    n = 最大値(差(配列化(s)), 0)
+    m = 最大値(差(配列化(sub)), 0)
+
+    反復 i < 差(和(n, 1), 差(m, 1)) の間 {
+        j = 0
+        ok = 真
+
+        反復 j < m の間 {
+            もし s[和(i, j)] != sub[j] なら {
+                ok = 偽
+                j = m
+            } そうでなければ {
+                j = 和(j, 1)
+            }
+        }
+
+        もし ok なら {
+            count = 和(count, 1)
+        }
+
+        i = 和(i, 1)
+    }
+
+    戻る count
+}
+--- Result: ✗ FAILED (0.06s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[20/164] 19_sort_numbers - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+sort_numbers = 入力 numbers に対し {
+    words = ["", "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+    result = ""
+    first = 真
+
+    i = 0
+    繰り返し(i < 10) {
+        target = words[i]
+        j = 0
+        start = 0
+
+        繰り返し(start < 長さ(numbers)) {
+            k = start
+            token = ""
+
+            繰り返し(k < 長さ(numbers) かつ numbers[k] != " ") {
+                token = token + numbers[k]
+                k = k + 1
+            }
+
+            もし(token == target) {
+                もし(first) {
+                    result = token
+                    first = 偽
+                } 違えば {
+                    result = result + " " + token
+                }
+            }
+
+            start = k + 1
+        }
+
+        i = i + 1
+    }
+
+    result
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+sort_numbers = 入力 numbers に対し {
+    words = ["", "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+    result = ""
+    first = 真
+
+    i = 0
+    繰り返し(i < 10) {
+        target = words[i]
+        j = 0
+        start = 0
+
+        繰り返し(start < 長さ(numbers)) {
+            k = start
+            token = ""
+
+            繰り返し(k < 長さ(numbers) かつ numbers[k] != " ") {
+                token = token + numbers[k]
+                k = k + 1
+            }
+
+            もし(token == target) {
+                もし(first) {
+                    result = token
+                    first = 偽
+                } 違えば {
+                    result = result + " " + token
+                }
+            }
+
+            start = k + 1
+        }
+
+        i = i + 1
+    }
+
+    result
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[21/164] 20_find_closest_elements - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+find_closest_elements = 入力 numbers に対し {
+    sorted = numbers を sorted に入れる
+    min_diff = 絶対値(sorted[1] と sorted[0] の差) を min_diff に入れる
+    a = sorted[0] を a に入れる
+    b = sorted[1] を b に入れる
+    i = 1 を i に入れる
+
+    i < (sorted の長さ - 1) の間 {
+        x = sorted[i] を x に入れる
+        y = sorted[i + 1] を y に入れる
+        d = 絶対値(y と x の差) を d に入れる
+
+        d < min_diff なら {
+            d を min_diff に入れる
+            x を a に入れる
+            y を b に入れる
+        }
+
+        i + 1 を i に入れる
+    }
+
+    (a, b) を返す
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+find_closest_elements = 入力 numbers に対し {
+    sorted = numbers を sorted に入れる
+    min_diff = 絶対値(sorted[1] と sorted[0] の差) を min_diff に入れる
+    a = sorted[0] を a に入れる
+    b = sorted[1] を b に入れる
+    i = 1 を i に入れる
+
+    i < (sorted の長さ - 1) の間 {
+        x = sorted[i] を x に入れる
+        y = sorted[i + 1] を y に入れる
+        d = 絶対値(y と x の差) を d に入れる
+
+        d < min_diff なら {
+            d を min_diff に入れる
+            x を a に入れる
+            y を b に入れる
+        }
+
+        i + 1 を i に入れる
+    }
+
+    (a, b) を返す
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[22/164] 21_rescale_to_unit - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+rescale_to_unit = 入力 numbers に対し {
+  min_value = 最小値(numbers)
+  max_value = 最大値(numbers)
+  range = 差(max_value, min_value)
+
+  result = []
+  i = 0
+  反復 i < 長さ(numbers) の間 {
+    value = numbers[i]
+    normalized = 商(差(value, min_value), range)
+    result = result + [normalized]
+    i = 和(i, 1)
+  }
+  result
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+rescale_to_unit = 入力 numbers に対し {
+  min_value = 最小値(numbers)
+  max_value = 最大値(numbers)
+  range = 差(max_value, min_value)
+
+  result = []
+  i = 0
+  反復 i < 長さ(numbers) の間 {
+    value = numbers[i]
+    normalized = 商(差(value, min_value), range)
+    result = result + [normalized]
+    i = 和(i, 1)
+  }
+  result
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[23/164] 22_filter_integers - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+filter_integers = 入力 values に対し {
+  result = []
+  values の各要素を item として繰り返す {
+    もし 整数判定(item) なら {
+      result = result + [item]
+    }
+  }
+  result
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+filter_integers = 入力 values に対し {
+  result = []
+  values の各要素を item として繰り返す {
+    もし 整数判定(item) なら {
+      result = result + [item]
+    }
+  }
+  result
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[24/164] 23_strlen - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+strlen = 入力 string に対し {
+  戻る 配列化(string)の長さ
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+strlen = 入力 string に対し {
+  戻る 配列化(string)の長さ
+}
+--- Result: ✗ FAILED (0.06s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[25/164] 24_largest_divisor - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+largest_divisor = 入力 n に対し {
+  i = 差(n, 1)
+  反復(i が 1 以上 の間) {
+    もし(剰余(n, i) が 0) なら {
+      戻る i
+    }
+    i = 差(i, 1)
+  }
+  戻る 1
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+largest_divisor = 入力 n に対し {
+  i = 差(n, 1)
+  反復(i が 1 以上 の間) {
+    もし(剰余(n, i) が 0) なら {
+      戻る i
+    }
+    i = 差(i, 1)
+  }
+  戻る 1
+}
+--- Result: ✗ FAILED (0.06s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[26/164] 25_factorize - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+factorize = 入力 n に対し {
+    factors = []
+    d = 2
+    残り = n
+
+    繰り返し (商(d, d) <= 残り) {
+        繰り返し (剰余(残り, d) == 0) {
+            factors = factors + [d]
+            残り = 商(残り, d)
+        }
+        d = 和(d, 1)
+    }
+
+    もし (残り > 1) {
+        factors = factors + [残り]
+    }
+
+    戻る factors
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+factorize = 入力 n に対し {
+    factors = []
+    d = 2
+    残り = n
+
+    繰り返し (商(d, d) <= 残り) {
+        繰り返し (剰余(残り, d) == 0) {
+            factors = factors + [d]
+            残り = 商(残り, d)
+        }
+        d = 和(d, 1)
+    }
+
+    もし (残り > 1) {
+        factors = factors + [残り]
+    }
+
+    戻る factors
+}
+--- Result: ✗ FAILED (0.10s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[27/164] 26_remove_duplicates - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+remove_duplicates = 入力 numbers に対し {
+    counts = {}
+    i = 0
+    ながら(i < 長さ(numbers)) {
+        x = numbers[i]
+        もし(オブジェクト判定(counts[x])) {
+            counts[x] = 和(counts[x], 1)
+        } 違えば {
+            counts[x] = 1
+        }
+        i = 和(i, 1)
+    }
+
+    result = []
+    i = 0
+    ながら(i < 長さ(numbers)) {
+        x = numbers[i]
+        もし(counts[x] == 1) {
+            result = result + [x]
+        }
+        i = 和(i, 1)
+    }
+
+    result
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+remove_duplicates = 入力 numbers に対し {
+    counts = {}
+    i = 0
+    ながら(i < 長さ(numbers)) {
+        x = numbers[i]
+        もし(オブジェクト判定(counts[x])) {
+            counts[x] = 和(counts[x], 1)
+        } 違えば {
+            counts[x] = 1
+        }
+        i = 和(i, 1)
+    }
+
+    result = []
+    i = 0
+    ながら(i < 長さ(numbers)) {
+        x = numbers[i]
+        もし(counts[x] == 1) {
+            result = result + [x]
+        }
+        i = 和(i, 1)
+    }
+
+    result
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[28/164] 27_flip_case - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+flip_case = 入力 string に対し {
+  chars = 配列化(string)
+  result = ""
+
+  chars の各要素 code について {
+    もし code >= 97 かつ code <= 122 なら {
+      result = result + 文字列化([code - 32])
+    } そうでなく もし code >= 65 かつ code <= 90 なら {
+      result = result + 文字列化([code + 32])
+    } でなければ {
+      result = result + 文字列化([code])
+    }
+  }
+
+  result
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+flip_case = 入力 string に対し {
+  chars = 配列化(string)
+  result = ""
+
+  chars の各要素 code について {
+    もし code >= 97 かつ code <= 122 なら {
+      result = result + 文字列化([code - 32])
+    } そうでなく もし code >= 65 かつ code <= 90 なら {
+      result = result + 文字列化([code + 32])
+    } でなければ {
+      result = result + 文字列化([code])
+    }
+  }
+
+  result
+}
+--- Result: ✗ FAILED (0.07s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[29/164] 28_concatenate - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+concatenate = 入力 strings に対し {
+  result = ""
+  strings の各要素を item として繰り返す {
+    result = 文字列化(result) + 文字列化(item)
+  }
+  result
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+concatenate = 入力 strings に対し {
+  result = ""
+  strings の各要素を item として繰り返す {
+    result = 文字列化(result) + 文字列化(item)
+  }
+  result
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[30/164] 29_filter_by_prefix - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+filter_by_prefix = 入力 strings, prefix に対し {
+  result = []
+  i = 0
+  prefix_len = 配列化(prefix)
+
+  もし i < 最大値(0, 和(配列化(strings))) なら {
+  }
+
+  反復 i < 和(stringsの長さ) の間 {
+    s = strings[i]
+    matched = 真
+    j = 0
+    反復 j < 和(prefix_lenの長さ) の間 {
+      もし j >= 和(配列化(s)の長さ) なら {
+        matched = 偽
+        j = 和(prefix_lenの長さ)
+      } でなければ {
+        もし 配列化(s)[j] != prefix_len[j] なら {
+          matched = 偽
+          j = 和(prefix_lenの長さ)
+        } でなければ {
+          j = 和(j, 1)
+        }
+      }
+    }
+    もし matched なら {
+      result = result + [s]
+    }
+    i = 和(i, 1)
+  }
+  result
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+filter_by_prefix = 入力 strings, prefix に対し {
+  result = []
+  i = 0
+  prefix_len = 配列化(prefix)
+
+  もし i < 最大値(0, 和(配列化(strings))) なら {
+  }
+
+  反復 i < 和(stringsの長さ) の間 {
+    s = strings[i]
+    matched = 真
+    j = 0
+    反復 j < 和(prefix_lenの長さ) の間 {
+      もし j >= 和(配列化(s)の長さ) なら {
+        matched = 偽
+        j = 和(prefix_lenの長さ)
+      } でなければ {
+        もし 配列化(s)[j] != prefix_len[j] なら {
+          matched = 偽
+          j = 和(prefix_lenの長さ)
+        } でなければ {
+          j = 和(j, 1)
+        }
+      }
+    }
+    もし matched なら {
+      result = result + [s]
+    }
+    i = 和(i, 1)
+  }
+  result
+}
+--- Result: ✗ FAILED (0.05s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[31/164] 30_get_positive - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+get_positive = 入力 l に対し {
+  result = []
+  i = 0
+  もし i < 配列化(l).長さ の間 {
+    x = l[i]
+    もし x > 0 なら {
+      result = result + [x]
+    }
+    i = i + 1
+  }
+  result
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+get_positive = 入力 l に対し {
+  result = []
+  i = 0
+  もし i < 配列化(l).長さ の間 {
+    x = l[i]
+    もし x > 0 なら {
+      result = result + [x]
+    }
+    i = i + 1
+  }
+  result
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[32/164] 31_is_prime - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+is_prime = 入力 n に対し {
+    もし 最大値(n, 1) が 1 なら {
+        偽
+    } でなく もし 剰余(n, 2) が 0 なら {
+        n が 2
+    } でなく {
+        i = 3
+        ループ {
+            もし 積(i, i) が 最大値(積(i, i), n) なら {
+                真
+            }
+            もし 剰余(n, i) が 0 なら {
+                偽
+            }
+            i = 和(i, 2)
+        }
+    }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+is_prime = 入力 n に対し {
+    もし 最大値(n, 1) が 1 なら {
+        偽
+    } でなく もし 剰余(n, 2) が 0 なら {
+        n が 2
+    } でなく {
+        i = 3
+        ループ {
+            もし 積(i, i) が 最大値(積(i, i), n) なら {
+                真
+            }
+            もし 剰余(n, i) が 0 なら {
+                偽
+            }
+            i = 和(i, 2)
+        }
+    }
+}
+--- Result: ✗ FAILED (0.07s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[33/164] 32_find_zero - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+find_zero = 入力 xs, x に対し {
+    result = 0
+    power = 1
+    i = 0
+
+    反復 i < 長さ(xs) の間 {
+        result = 和(result, 積(xs[i], power))
+        power = 積(power, x)
+        i = 和(i, 1)
+    }
+
+    result
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+find_zero = 入力 xs, x に対し {
+    result = 0
+    power = 1
+    i = 0
+
+    反復 i < 長さ(xs) の間 {
+        result = 和(result, 積(xs[i], power))
+        power = 積(power, x)
+        i = 和(i, 1)
+    }
+
+    result
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[34/164] 33_sort_third - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+sort_third = 入力 l に対し {
+    thirds = []
+    i = 0
+    ながら i < 長さ(l) {
+        もし 剰余(i, 3) == 0 なら {
+            thirds = 足す(thirds, [l[i]])
+        }
+        i = 和(i, 1)
+    }
+
+    thirds = ソート(thirds)
+
+    result = []
+    i = 0
+    j = 0
+    ながら i < 長さ(l) {
+        もし 剰余(i, 3) == 0 なら {
+            result = 足す(result, [thirds[j]])
+            j = 和(j, 1)
+        } でなければ {
+            result = 足す(result, [l[i]])
+        }
+        i = 和(i, 1)
+    }
+
+    result
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+sort_third = 入力 l に対し {
+    thirds = []
+    i = 0
+    ながら i < 長さ(l) {
+        もし 剰余(i, 3) == 0 なら {
+            thirds = 足す(thirds, [l[i]])
+        }
+        i = 和(i, 1)
+    }
+
+    thirds = ソート(thirds)
+
+    result = []
+    i = 0
+    j = 0
+    ながら i < 長さ(l) {
+        もし 剰余(i, 3) == 0 なら {
+            result = 足す(result, [thirds[j]])
+            j = 和(j, 1)
+        } でなければ {
+            result = 足す(result, [l[i]])
+        }
+        i = 和(i, 1)
+    }
+
+    result
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[35/164] 34_unique - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+unique = 入力 l に対し {
+    結果 = []
+    i = 0
+
+    反復 i < 配列長(l) の間 {
+        v = l[i]
+        ある = 偽
+        j = 0
+
+        反復 j < 配列長(結果) の間 {
+            もし 結果[j] == v なら {
+                ある = 真
+            }
+            j = 和(j, 1)
+        }
+
+        もし ある == 偽 なら {
+            位置 = 0
+            反復 位置 < 配列長(結果) かつ 結果[位置] < v の間 {
+                位置 = 和(位置, 1)
+            }
+
+            新しい結果 = []
+            j = 0
+            反復 j < 位置 の間 {
+                新しい結果 = 結合(新しい結果, [結果[j]])
+                j = 和(j, 1)
+            }
+
+            新しい結果 = 結合(新しい結果, [v])
+
+            反復 j < 配列長(結果) の間 {
+                新しい結果 = 結合(新しい結果, [結果[j]])
+                j = 和(j, 1)
+            }
+
+            結果 = 新しい結果
+        }
+
+        i = 和(i, 1)
+    }
+
+    結果
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+unique = 入力 l に対し {
+    結果 = []
+    i = 0
+
+    反復 i < 配列長(l) の間 {
+        v = l[i]
+        ある = 偽
+        j = 0
+
+        反復 j < 配列長(結果) の間 {
+            もし 結果[j] == v なら {
+                ある = 真
+            }
+            j = 和(j, 1)
+        }
+
+        もし ある == 偽 なら {
+            位置 = 0
+            反復 位置 < 配列長(結果) かつ 結果[位置] < v の間 {
+                位置 = 和(位置, 1)
+            }
+
+            新しい結果 = []
+            j = 0
+            反復 j < 位置 の間 {
+                新しい結果 = 結合(新しい結果, [結果[j]])
+                j = 和(j, 1)
+            }
+
+            新しい結果 = 結合(新しい結果, [v])
+
+            反復 j < 配列長(結果) の間 {
+                新しい結果 = 結合(新しい結果, [結果[j]])
+                j = 和(j, 1)
+            }
+
+            結果 = 新しい結果
+        }
+
+        i = 和(i, 1)
+    }
+
+    結果
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[36/164] 35_max_element - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+max_element = 入力 l に対し {
+  最大値(l)
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+max_element = 入力 l に対し {
+  最大値(l)
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍max_element([1, 2, 3]) ❌{"l": [1, 2, 3]} ✅3 line 8, column 1:
+| >>> max_element([1, 2, 3])
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[37/164] 36_fizz_buzz - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+fizz_buzz = 入力 n に対し {
+    count = 0
+    i = 0
+
+    の間、差(n, i) > 0 のあいだ {
+        もし または(剰余(i, 11) == 0, 剰余(i, 13) == 0) なら {
+            s = 文字列化(i)
+            j = 0
+            の間、差(長さ(s), j) > 0 のあいだ {
+                もし s[j] == "7" なら {
+                    count = 和(count, 1)
+                }
+                j = 和(j, 1)
+            }
+        }
+        i = 和(i, 1)
+    }
+
+    count
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+fizz_buzz = 入力 n に対し {
+    count = 0
+    i = 0
+
+    の間、差(n, i) > 0 のあいだ {
+        もし または(剰余(i, 11) == 0, 剰余(i, 13) == 0) なら {
+            s = 文字列化(i)
+            j = 0
+            の間、差(長さ(s), j) > 0 のあいだ {
+                もし s[j] == "7" なら {
+                    count = 和(count, 1)
+                }
+                j = 和(j, 1)
+            }
+        }
+        i = 和(i, 1)
+    }
+
+    count
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[38/164] 37_sort_even - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+sort_even = 入力 l に対し {
+    偶数番目 = []
+    奇数番目 = []
+    i = 0
+
+    i < 配列化(l).長さ の間 {
+        もし 剰余(i, 2) == 0 なら {
+            偶数番目 = 偶数番目 + [l[i]]
+        } そうでなければ {
+            奇数番目 = 奇数番目 + [l[i]]
+        }
+        i = 和(i, 1)
+    }
+
+    偶数番目 = 偶数番目 を昇順ソートしたもの
+
+    結果 = []
+    偶数i = 0
+    奇数i = 0
+    i = 0
+
+    i < 配列化(l).長さ の間 {
+        もし 剰余(i, 2) == 0 なら {
+            結果 = 結果 + [偶数番目[偶数i]]
+            偶数i = 和(偶数i, 1)
+        } そうでなければ {
+            結果 = 結果 + [奇数番目[奇数i]]
+            奇数i = 和(奇数i, 1)
+        }
+        i = 和(i, 1)
+    }
+
+    結果
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+sort_even = 入力 l に対し {
+    偶数番目 = []
+    奇数番目 = []
+    i = 0
+
+    i < 配列化(l).長さ の間 {
+        もし 剰余(i, 2) == 0 なら {
+            偶数番目 = 偶数番目 + [l[i]]
+        } そうでなければ {
+            奇数番目 = 奇数番目 + [l[i]]
+        }
+        i = 和(i, 1)
+    }
+
+    偶数番目 = 偶数番目 を昇順ソートしたもの
+
+    結果 = []
+    偶数i = 0
+    奇数i = 0
+    i = 0
+
+    i < 配列化(l).長さ の間 {
+        もし 剰余(i, 2) == 0 なら {
+            結果 = 結果 + [偶数番目[偶数i]]
+            偶数i = 和(偶数i, 1)
+        } そうでなければ {
+            結果 = 結果 + [奇数番目[奇数i]]
+            奇数i = 和(奇数i, 1)
+        }
+        i = 和(i, 1)
+    }
+
+    結果
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[39/164] 38_decode_cyclic - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+decode_cyclic = 入力 s に対し {
+  codes = 配列化(s)
+  n = 長さ(codes)
+  result = []
+
+  i = 0
+  の間 (i < n) {
+    if (i + 2 < n) {
+      result = 追加(result, codes[i + 1])
+      result = 追加(result, codes[i + 2])
+      result = 追加(result, codes[i])
+    } 違えば {
+      result = 追加(result, codes[i])
+      if (i + 1 < n) {
+        result = 追加(result, codes[i + 1])
+      }
+      if (i + 2 < n) {
+        result = 追加(result, codes[i + 2])
+      }
+    }
+    i = 和(i, 3)
+  }
+
+  文字列化(result)
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+decode_cyclic = 入力 s に対し {
+  codes = 配列化(s)
+  n = 長さ(codes)
+  result = []
+
+  i = 0
+  の間 (i < n) {
+    if (i + 2 < n) {
+      result = 追加(result, codes[i + 1])
+      result = 追加(result, codes[i + 2])
+      result = 追加(result, codes[i])
+    } 違えば {
+      result = 追加(result, codes[i])
+      if (i + 1 < n) {
+        result = 追加(result, codes[i + 1])
+      }
+      if (i + 2 < n) {
+        result = 追加(result, codes[i + 2])
+      }
+    }
+    i = 和(i, 3)
+  }
+
+  文字列化(result)
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[40/164] 39_prime_fib - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+prime_fib = 入力 n に対し {
+    is_prime = 入力 x に対し {
+        もし x < 2 なら { 偽 }
+        違えば {
+            d = 2
+            ok = 真
+            繰り返し d * d <= x の間 {
+                もし 剰余(x, d) == 0 なら {
+                    ok = 偽
+                    d = 和(x, 1)
+                }
+                違えば {
+                    d = 和(d, 1)
+                }
+            }
+            ok
+        }
+    }
+
+    a = 1
+    b = 1
+    count = 0
+
+    繰り返し 真 の間 {
+        c = 和(a, b)
+        a = b
+        b = c
+
+        もし is_prime(b) なら {
+            count = 和(count, 1)
+            もし count == n なら {
+                b
+            }
+        }
+    }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+prime_fib = 入力 n に対し {
+    is_prime = 入力 x に対し {
+        もし x < 2 なら { 偽 }
+        違えば {
+            d = 2
+            ok = 真
+            繰り返し d * d <= x の間 {
+                もし 剰余(x, d) == 0 なら {
+                    ok = 偽
+                    d = 和(x, 1)
+                }
+                違えば {
+                    d = 和(d, 1)
+                }
+            }
+            ok
+        }
+    }
+
+    a = 1
+    b = 1
+    count = 0
+
+    繰り返し 真 の間 {
+        c = 和(a, b)
+        a = b
+        b = c
+
+        もし is_prime(b) なら {
+            count = 和(count, 1)
+            もし count == n なら {
+                b
+            }
+        }
+    }
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[41/164] 40_triples_sum_to_zero - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+triples_sum_to_zero = 入力 l に対し {
+    もし 配列判定(l) でなければ {
+        偽
+    } そうでなくもし 最小値([配列化(l).長さ, 3]) != 3 なら {
+        偽
+    } そうでなければ {
+        i = 0
+        その間 i < l.長さ の間 {
+            j = 和(i, 1)
+            その間 j < l.長さ の間 {
+                k = 和(j, 1)
+                その間 k < l.長さ の間 {
+                    もし 和(l[i], l[j], l[k]) == 0 なら {
+                        真
+                    }
+                    k = 和(k, 1)
+                }
+                j = 和(j, 1)
+            }
+            i = 和(i, 1)
+        }
+        偽
+    }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+triples_sum_to_zero = 入力 l に対し {
+    もし 配列判定(l) でなければ {
+        偽
+    } そうでなくもし 最小値([配列化(l).長さ, 3]) != 3 なら {
+        偽
+    } そうでなければ {
+        i = 0
+        その間 i < l.長さ の間 {
+            j = 和(i, 1)
+            その間 j < l.長さ の間 {
+                k = 和(j, 1)
+                その間 k < l.長さ の間 {
+                    もし 和(l[i], l[j], l[k]) == 0 なら {
+                        真
+                    }
+                    k = 和(k, 1)
+                }
+                j = 和(j, 1)
+            }
+            i = 和(i, 1)
+        }
+        偽
+    }
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[42/164] 41_car_race_collision - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+car_race_collision = 入力 n に対し {
+  戻る n * n
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+car_race_collision = 入力 n に対し {
+  戻る n * n
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[43/164] 42_incr_list - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+incr_list = 入力 l に対し {
+  i = 0
+  結果 = []
+  反復 (i < 配列長(l)) {
+    結果 = 結果 + [和(l[i], 1)]
+    i = 和(i, 1)
+  }
+  戻す 結果
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+incr_list = 入力 l に対し {
+  i = 0
+  結果 = []
+  反復 (i < 配列長(l)) {
+    結果 = 結果 + [和(l[i], 1)]
+    i = 和(i, 1)
+  }
+  戻す 結果
+}
+--- Result: ✗ FAILED (0.06s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[44/164] 43_pairs_sum_to_zero - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+pairs_sum_to_zero = 入力 l に対し {
+  i = 0
+  反復 (i < 配列長さ(l)) {
+    j = i + 1
+    反復 (j < 配列長さ(l)) {
+      もし 和(l[i], l[j]) == 0 なら {
+        真 を返す
+      }
+      j = j + 1
+    }
+    i = i + 1
+  }
+  偽 を返す
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+pairs_sum_to_zero = 入力 l に対し {
+  i = 0
+  反復 (i < 配列長さ(l)) {
+    j = i + 1
+    反復 (j < 配列長さ(l)) {
+      もし 和(l[i], l[j]) == 0 なら {
+        真 を返す
+      }
+      j = j + 1
+    }
+    i = i + 1
+  }
+  偽 を返す
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[45/164] 44_change_base - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+change_base = 入力 x, base に対し {
+    もし x < base なら {
+        戻す 文字列化(x)
+    } そうでなければ {
+        戻す change_base(商(x, base), base) + 文字列化(剰余(x, base))
+    }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+change_base = 入力 x, base に対し {
+    もし x < base なら {
+        戻す 文字列化(x)
+    } そうでなければ {
+        戻す change_base(商(x, base), base) + 文字列化(剰余(x, base))
+    }
+}
+--- Result: ✗ FAILED (0.07s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[46/164] 45_triangle_area - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+triangle_area = 入力 a, h に対し {
+  商(積(a, h), 2.0)
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+triangle_area = 入力 a, h に対し {
+  商(積(a, h), 2.0)
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍triangle_area(5, 3) ❌{"a": 5, "h": 3} ✅7.500000 line 8, column 1:
+| >>> triangle_area(5, 3)
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[47/164] 46_fib4 - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+fib4 = 入力 n に対し {
+  もし n == 0 なら {
+    返す 0
+  }
+  もし n == 1 なら {
+    返す 0
+  }
+  もし n == 2 なら {
+    返す 2
+  }
+  もし n == 3 なら {
+    返す 0
+  }
+
+  a = 0
+  b = 0
+  c = 2
+  d = 0
+  i = 4
+
+  i < n の間 {
+    次 = 和(a, b, c, d)
+    a = b
+    b = c
+    c = d
+    d = 次
+    i = 和(i, 1)
+  }
+
+  返す 和(a, b, c, d)
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+fib4 = 入力 n に対し {
+  もし n == 0 なら {
+    返す 0
+  }
+  もし n == 1 なら {
+    返す 0
+  }
+  もし n == 2 なら {
+    返す 2
+  }
+  もし n == 3 なら {
+    返す 0
+  }
+
+  a = 0
+  b = 0
+  c = 2
+  d = 0
+  i = 4
+
+  i < n の間 {
+    次 = 和(a, b, c, d)
+    a = b
+    b = c
+    c = d
+    d = 次
+    i = 和(i, 1)
+  }
+
+  返す 和(a, b, c, d)
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[48/164] 47_median - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+median = 入力 l に対し {
+  n = 長さ(l)
+  s = 並べ替え(l)
+  もし 剰余(n, 2) == 1 なら {
+    返す s[商(n, 2)]
+  } でなければ {
+    a = s[差(商(n, 2), 1)]
+    b = s[商(n, 2)]
+    返す 商(和(a, b), 2.0)
+  }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+median = 入力 l に対し {
+  n = 長さ(l)
+  s = 並べ替え(l)
+  もし 剰余(n, 2) == 1 なら {
+    返す s[商(n, 2)]
+  } でなければ {
+    a = s[差(商(n, 2), 1)]
+    b = s[商(n, 2)]
+    返す 商(和(a, b), 2.0)
+  }
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[49/164] 48_is_palindrome - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+is_palindrome = 入力 text に対し {
+    もし text == '' なら {
+        真
+    } でなければ もし text[0] == text[長さ(text) - 1] なら {
+        is_palindrome(text[1 から 長さ(text) - 1 まで])
+    } でなければ {
+        偽
+    }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+is_palindrome = 入力 text に対し {
+    もし text == '' なら {
+        真
+    } でなければ もし text[0] == text[長さ(text) - 1] なら {
+        is_palindrome(text[1 から 長さ(text) - 1 まで])
+    } でなければ {
+        偽
+    }
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[50/164] 49_modp - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+modp = 入力 n, p に対し {
+    もし 整数判定(n) かつ 整数判定(p) なら {
+        もし p が 1 なら {
+            戻る 0
+        }
+        結果 = 1
+        底 = 剰余(2, p)
+        指数 = n
+
+        反復(指数 が 0 より大きい) {
+            もし 剰余(指数, 2) が 1 なら {
+                結果 = 剰余(積(結果, 底), p)
+            }
+            底 = 剰余(積(底, 底), p)
+            指数 = 商(指数, 2)
+        }
+
+        戻る 結果
+    } 違えば {
+        戻る 値なし
+    }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+modp = 入力 n, p に対し {
+    もし 整数判定(n) かつ 整数判定(p) なら {
+        もし p が 1 なら {
+            戻る 0
+        }
+        結果 = 1
+        底 = 剰余(2, p)
+        指数 = n
+
+        反復(指数 が 0 より大きい) {
+            もし 剰余(指数, 2) が 1 なら {
+                結果 = 剰余(積(結果, 底), p)
+            }
+            底 = 剰余(積(底, 底), p)
+            指数 = 商(指数, 2)
+        }
+
+        戻る 結果
+    } 違えば {
+        戻る 値なし
+    }
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[51/164] 50_decode_shift - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+decode_shift = 入力 s に対し {
+  codes = 配列化(s)
+  out = []
+  i = 0
+  反復 (i < 長さ(codes)) {
+    c = codes[i]
+
+    もし ((c >= 65) かつ (c <= 90)) なら {
+      out = 結合(out, [剰余(c - 65 + 5, 26) + 65])
+    } 違えば もし ((c >= 97) かつ (c <= 122)) なら {
+      out = 結合(out, [剰余(c - 97 + 5, 26) + 97])
+    } 違えば {
+      out = 結合(out, [c])
+    }
+
+    i = i + 1
+  }
+  文字列化(out)
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+decode_shift = 入力 s に対し {
+  codes = 配列化(s)
+  out = []
+  i = 0
+  反復 (i < 長さ(codes)) {
+    c = codes[i]
+
+    もし ((c >= 65) かつ (c <= 90)) なら {
+      out = 結合(out, [剰余(c - 65 + 5, 26) + 65])
+    } 違えば もし ((c >= 97) かつ (c <= 122)) なら {
+      out = 結合(out, [剰余(c - 97 + 5, 26) + 97])
+    } 違えば {
+      out = 結合(out, [c])
+    }
+
+    i = i + 1
+  }
+  文字列化(out)
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[52/164] 51_remove_vowels - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+remove_vowels = 入力 text に対し {
+    result = ""
+    i = 0
+    text_array = 配列化(text)
+
+    反復 (i < 最大値(text_array)) {
+        c = 文字列化([text_array[i]])
+        もし ((c == "a") または (c == "e") または (c == "i") または (c == "o") または (c == "u") または (c == "A") または (c == "E") または (c == "I") または (c == "O") または (c == "U")) {
+        } そうでなければ {
+            result = result + c
+        }
+        i = 和(i, 1)
+    }
+
+    戻る result
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+remove_vowels = 入力 text に対し {
+    result = ""
+    i = 0
+    text_array = 配列化(text)
+
+    反復 (i < 最大値(text_array)) {
+        c = 文字列化([text_array[i]])
+        もし ((c == "a") または (c == "e") または (c == "i") または (c == "o") または (c == "u") または (c == "A") または (c == "E") または (c == "I") または (c == "O") または (c == "U")) {
+        } そうでなければ {
+            result = result + c
+        }
+        i = 和(i, 1)
+    }
+
+    戻る result
+}
+--- Result: ✗ FAILED (0.11s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[53/164] 52_below_threshold - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+below_threshold = 入力 l, t に対し {
+    i = 0
+    n = 配列化(l)
+    長さ = 最大値(0, 和(n, 0))
+    i = 0
+    反復 i < 配列化(l) の長さ の間 {
+        もし l[i] > t なら {
+            戻る 偽
+        }
+        i = 和(i, 1)
+    }
+    戻る 真
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+below_threshold = 入力 l, t に対し {
+    i = 0
+    n = 配列化(l)
+    長さ = 最大値(0, 和(n, 0))
+    i = 0
+    反復 i < 配列化(l) の長さ の間 {
+        もし l[i] > t なら {
+            戻る 偽
+        }
+        i = 和(i, 1)
+    }
+    戻る 真
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[54/164] 53_add - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+add = 入力 x, y に対し {
+  和(x, y)
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+add = 入力 x, y に対し {
+  和(x, y)
+}
+--- Result: ✗ FAILED (0.10s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍add(0, 1) ❌{"x": 0, "y": 1} ✅1 line 8, column 1:
+| >>> add(0, 1)
+| ^^^^^^^^^^^^^^^
+
+
+============================================================
+[55/164] 54_same_chars - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+same_chars = 入力 s0, s1 に対し {
+  a = 配列化(s0)
+  b = 配列化(s1)
+
+  i = 0
+  その間(差(i, 長さ(a))) {
+    c = a[i]
+    もし 含むか(b, c) なら {
+    } でなければ {
+      戻る 偽
+    }
+    i = 和(i, 1)
+  }
+
+  j = 0
+  その間(差(j, 長さ(b))) {
+    c = b[j]
+    もし 含むか(a, c) なら {
+    } でなければ {
+      戻る 偽
+    }
+    j = 和(j, 1)
+  }
+
+  戻る 真
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+same_chars = 入力 s0, s1 に対し {
+  a = 配列化(s0)
+  b = 配列化(s1)
+
+  i = 0
+  その間(差(i, 長さ(a))) {
+    c = a[i]
+    もし 含むか(b, c) なら {
+    } でなければ {
+      戻る 偽
+    }
+    i = 和(i, 1)
+  }
+
+  j = 0
+  その間(差(j, 長さ(b))) {
+    c = b[j]
+    もし 含むか(a, c) なら {
+    } でなければ {
+      戻る 偽
+    }
+    j = 和(j, 1)
+  }
+
+  戻る 真
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[56/164] 55_fib - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+fib = 入力 n に対し {
+  もし 最大値(n, 1) が 1 なら {
+    1
+  } でなければ {
+    和(fib(差(n, 1)), fib(差(n, 2)))
+  }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+fib = 入力 n に対し {
+  もし 最大値(n, 1) が 1 なら {
+    1
+  } でなければ {
+    和(fib(差(n, 1)), fib(差(n, 2)))
+  }
+}
+--- Result: ✗ FAILED (0.06s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[57/164] 56_correct_bracketing - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+correct_bracketing = 入力 brackets に対し {
+    balance = 0
+    i = 0
+
+    反復 i < 長さ(brackets) の間 {
+        ch = brackets[i]
+
+        もし ch == "<" なら {
+            balance = 和(balance, 1)
+        } そうでなくもし ch == ">" なら {
+            balance = 差(balance, 1)
+            もし balance < 0 なら {
+                戻る 偽
+            }
+        }
+
+        i = 和(i, 1)
+    }
+
+    戻る balance == 0
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+correct_bracketing = 入力 brackets に対し {
+    balance = 0
+    i = 0
+
+    反復 i < 長さ(brackets) の間 {
+        ch = brackets[i]
+
+        もし ch == "<" なら {
+            balance = 和(balance, 1)
+        } そうでなくもし ch == ">" なら {
+            balance = 差(balance, 1)
+            もし balance < 0 なら {
+                戻る 偽
+            }
+        }
+
+        i = 和(i, 1)
+    }
+
+    戻る balance == 0
+}
+--- Result: ✗ FAILED (0.07s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[58/164] 57_monotonic - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+monotonic = 入力 l に対し {
+    もし 最大値(l) が l[0] なら {
+        i = 1
+        反復 i < 長さ(l) の間 {
+            もし l[i - 1] < l[i] なら {
+                偽 を返す
+            }
+            i = 和(i, 1)
+        }
+        真 を返す
+    }
+
+    もし 最小値(l) が l[0] なら {
+        i = 1
+        反復 i < 長さ(l) の間 {
+            もし l[i - 1] > l[i] なら {
+                偽 を返す
+            }
+            i = 和(i, 1)
+        }
+        真 を返す
+    }
+
+    偽 を返す
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+monotonic = 入力 l に対し {
+    もし 最大値(l) が l[0] なら {
+        i = 1
+        反復 i < 長さ(l) の間 {
+            もし l[i - 1] < l[i] なら {
+                偽 を返す
+            }
+            i = 和(i, 1)
+        }
+        真 を返す
+    }
+
+    もし 最小値(l) が l[0] なら {
+        i = 1
+        反復 i < 長さ(l) の間 {
+            もし l[i - 1] > l[i] なら {
+                偽 を返す
+            }
+            i = 和(i, 1)
+        }
+        真 を返す
+    }
+
+    偽 を返す
+}
+--- Result: ✗ FAILED (0.07s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[59/164] 58_common - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+common = 入力 l1, l2 に対し {
+    結果 = []
+    i = 0
+    の間(i < 長さ(l1)) {
+        値 = l1[i]
+        もし((含む(l2, 値)) かつ (ない 含む(結果, 値))) {
+            追加(結果, 値)
+        }
+        i = 和(i, 1)
+    }
+    ソート(結果)
+    戻る 結果
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+common = 入力 l1, l2 に対し {
+    結果 = []
+    i = 0
+    の間(i < 長さ(l1)) {
+        値 = l1[i]
+        もし((含む(l2, 値)) かつ (ない 含む(結果, 値))) {
+            追加(結果, 値)
+        }
+        i = 和(i, 1)
+    }
+    ソート(結果)
+    戻る 結果
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[60/164] 59_largest_prime_factor - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+largest_prime_factor = 入力 n に対し {
+    最大 = 1
+    d = 2
+
+    反復 (真) {
+        もし 剰余(n, d) == 0 なら {
+            最大 = d
+            n = 商(n, d)
+        } でなければ {
+            もし 積(d, d) > n なら {
+                もし n > 1 なら {
+                    最大 = n
+                }
+                戻る 最大
+            }
+            d = 和(d, 1)
+        }
+    }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+largest_prime_factor = 入力 n に対し {
+    最大 = 1
+    d = 2
+
+    反復 (真) {
+        もし 剰余(n, d) == 0 なら {
+            最大 = d
+            n = 商(n, d)
+        } でなければ {
+            もし 積(d, d) > n なら {
+                もし n > 1 なら {
+                    最大 = n
+                }
+                戻る 最大
+            }
+            d = 和(d, 1)
+        }
+    }
+}
+--- Result: ✗ FAILED (0.07s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[61/164] 60_sum_to_n - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+sum_to_n = 入力 n に対し {
+  商(積(n, 和(n, 1)), 2)
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+sum_to_n = 入力 n に対し {
+  商(積(n, 和(n, 1)), 2)
+}
+--- Result: ✗ FAILED (0.12s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍sum_to_n(1) ❌{"n": 1} ✅1 line 8, column 1:
+| >>> sum_to_n(1)
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[62/164] 61_correct_bracketing - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+correct_bracketing = 入力 brackets に対し {
+    balance = 0
+    i = 0
+
+    反復(i < 長さ(brackets)) {
+        ch = brackets[i]
+
+        もし(ch == "(") {
+            balance = 和(balance, 1)
+        } 違えば {
+            balance = 差(balance, 1)
+            もし(balance < 0) {
+                戻る 偽
+            }
+        }
+
+        i = 和(i, 1)
+    }
+
+    戻る balance == 0
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+correct_bracketing = 入力 brackets に対し {
+    balance = 0
+    i = 0
+
+    反復(i < 長さ(brackets)) {
+        ch = brackets[i]
+
+        もし(ch == "(") {
+            balance = 和(balance, 1)
+        } 違えば {
+            balance = 差(balance, 1)
+            もし(balance < 0) {
+                戻る 偽
+            }
+        }
+
+        i = 和(i, 1)
+    }
+
+    戻る balance == 0
+}
+--- Result: ✗ FAILED (0.07s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[63/164] 62_derivative - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+derivative = 入力 xs に対し {
+  ys = []
+  i = 1
+  繰り返し i < 配列長(xs) の間 {
+    ys = 配列追加(ys, 積(xs[i], i))
+    i = 和(i, 1)
+  }
+  ys
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+derivative = 入力 xs に対し {
+  ys = []
+  i = 1
+  繰り返し i < 配列長(xs) の間 {
+    ys = 配列追加(ys, 積(xs[i], i))
+    i = 和(i, 1)
+  }
+  ys
+}
+--- Result: ✗ FAILED (0.07s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[64/164] 63_fibfib - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+fibfib = 入力 n に対し {
+    もし 整数判定(n) でなければ {
+        エラー("mismatch-argument")
+    }
+
+    もし n == 0 なら {
+        返す 0
+    }
+    もし n == 1 なら {
+        返す 0
+    }
+    もし n == 2 なら {
+        返す 1
+    }
+
+    a = 0
+    b = 0
+    c = 1
+    i = 3
+
+    繰り返し i <= n の間 {
+        next = 和(a, b, c)
+        a = b
+        b = c
+        c = next
+        i = 和(i, 1)
+    }
+
+    返す c
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+fibfib = 入力 n に対し {
+    もし 整数判定(n) でなければ {
+        エラー("mismatch-argument")
+    }
+
+    もし n == 0 なら {
+        返す 0
+    }
+    もし n == 1 なら {
+        返す 0
+    }
+    もし n == 2 なら {
+        返す 1
+    }
+
+    a = 0
+    b = 0
+    c = 1
+    i = 3
+
+    繰り返し i <= n の間 {
+        next = 和(a, b, c)
+        a = b
+        b = c
+        c = next
+        i = 和(i, 1)
+    }
+
+    返す c
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[65/164] 64_vowels_count - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+vowels_count = 入力 s に対し {
+  count = 0
+  i = 0
+
+  繰り返し(i < 長さ(s)) {
+    ch = s[i]
+    もし(ch == "a" または ch == "e" または ch == "i" または ch == "o" または ch == "u" または ch == "A" または ch == "E" または ch == "I" または ch == "O" または ch == "U") {
+      count = 和(count, 1)
+    }
+    i = 和(i, 1)
+  }
+
+  count
+}
+
+表示(vowels_count("hello"))
+表示(vowels_count("AEIOU"))
+表示(vowels_count("xyz"))
+表示(vowels_count(""))
+表示(vowels_count("Yui Language"))
+表示(vowels_count("abcdefghijklmnopqrstuvwxyz"))
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+vowels_count = 入力 s に対し {
+  count = 0
+  i = 0
+
+  繰り返し(i < 長さ(s)) {
+    ch = s[i]
+    もし(ch == "a" または ch == "e" または ch == "i" または ch == "o" または ch == "u" または ch == "A" または ch == "E" または ch == "I" または ch == "O" または ch == "U") {
+      count = 和(count, 1)
+    }
+    i = 和(i, 1)
+  }
+
+  count
+}
+
+表示(vowels_count("hello"))
+表示(vowels_count("AEIOU"))
+表示(vowels_count("xyz"))
+表示(vowels_count(""))
+表示(vowels_count("Yui Language"))
+表示(vowels_count("abcdefghijklmnopqrstuvwxyz"))
+--- Result: ✗ FAILED (0.07s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[66/164] 65_circular_shift - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+circular_shift = 入力 x, shift に対し {
+    s = 文字列化(x)
+    n = 長さ(s)
+
+    もし shift > n なら {
+        result = ""
+        i = 差(n, 1)
+        の間 {
+            i >= 0
+        } {
+            result = result + 文字(i)(s)
+            i = 差(i, 1)
+        }
+        result
+    } そうでなければ {
+        k = 剰余(shift, n)
+        もし k == 0 なら {
+            s
+        } そうでなければ {
+            right = 部分文字列(s, 差(n, k), n)
+            left = 部分文字列(s, 0, 差(n, k))
+            right + left
+        }
+    }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+circular_shift = 入力 x, shift に対し {
+    s = 文字列化(x)
+    n = 長さ(s)
+
+    もし shift > n なら {
+        result = ""
+        i = 差(n, 1)
+        の間 {
+            i >= 0
+        } {
+            result = result + 文字(i)(s)
+            i = 差(i, 1)
+        }
+        result
+    } そうでなければ {
+        k = 剰余(shift, n)
+        もし k == 0 なら {
+            s
+        } そうでなければ {
+            right = 部分文字列(s, 差(n, k), n)
+            left = 部分文字列(s, 0, 差(n, k))
+            right + left
+        }
+    }
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[67/164] 66_digitSum - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+digitSum = 入力 s に対し {
+  合計 = 0
+  i = 0
+  繰り返し i < 配列化(s).長さ の間 {
+    c = 配列化(s)[i]
+    もし c >= 65 かつ c <= 90 なら {
+      合計 = 和(合計, c)
+    }
+    i = 和(i, 1)
+  }
+  合計
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+digitSum = 入力 s に対し {
+  合計 = 0
+  i = 0
+  繰り返し i < 配列化(s).長さ の間 {
+    c = 配列化(s)[i]
+    もし c >= 65 かつ c <= 90 なら {
+      合計 = 和(合計, c)
+    }
+    i = 和(i, 1)
+  }
+  合計
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[68/164] 67_fruit_distribution - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+fruit_distribution = 入力 s, n に対し {
+  parts = s.split(" ")
+  apples = 整数化(parts[0])
+  oranges = 整数化(parts[3])
+  戻る 差(n, apples, oranges)
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+fruit_distribution = 入力 s, n に対し {
+  parts = s.split(" ")
+  apples = 整数化(parts[0])
+  oranges = 整数化(parts[3])
+  戻る 差(n, apples, oranges)
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[69/164] 68_pluck - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+pluck = 入力 arr に対し {
+  もし 和(arr) == 値なし なら {
+    戻る []
+  }
+
+  最小値候補 = 値なし
+  最小位置 = 値なし
+  i = 0
+
+  繰り返し i < 配列の長さ(arr) の間 {
+    値 = arr[i]
+    もし 剰余(値, 2) == 0 なら {
+      もし 最小値候補 == 値なし または 値 < 最小値候補 なら {
+        最小値候補 = 値
+        最小位置 = i
+      }
+    }
+    i = 和(i, 1)
+  }
+
+  もし 最小値候補 == 値なし なら {
+    戻る []
+  }
+
+  戻る [最小値候補, 最小位置]
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+pluck = 入力 arr に対し {
+  もし 和(arr) == 値なし なら {
+    戻る []
+  }
+
+  最小値候補 = 値なし
+  最小位置 = 値なし
+  i = 0
+
+  繰り返し i < 配列の長さ(arr) の間 {
+    値 = arr[i]
+    もし 剰余(値, 2) == 0 なら {
+      もし 最小値候補 == 値なし または 値 < 最小値候補 なら {
+        最小値候補 = 値
+        最小位置 = i
+      }
+    }
+    i = 和(i, 1)
+  }
+
+  もし 最小値候補 == 値なし なら {
+    戻る []
+  }
+
+  戻る [最小値候補, 最小位置]
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[70/164] 69_search - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+search = 入力 lst に対し {
+  counts = {}
+  i = 0
+
+  (i < 長さ(lst)) の間 {
+    x = lst[i]
+    もし x が counts に含まれる なら {
+      counts[x] = 和(counts[x], 1)
+    } そうでなければ {
+      counts[x] = 1
+    }
+    i = 和(i, 1)
+  }
+
+  keys = 配列化(counts)
+  ans = -1
+  i = 0
+
+  (i < 長さ(keys)) の間 {
+    k = 整数化(keys[i])
+    c = counts[keys[i]]
+    もし (c >= k) かつ (k > ans) なら {
+      ans = k
+    }
+    i = 和(i, 1)
+  }
+
+  ans
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+search = 入力 lst に対し {
+  counts = {}
+  i = 0
+
+  (i < 長さ(lst)) の間 {
+    x = lst[i]
+    もし x が counts に含まれる なら {
+      counts[x] = 和(counts[x], 1)
+    } そうでなければ {
+      counts[x] = 1
+    }
+    i = 和(i, 1)
+  }
+
+  keys = 配列化(counts)
+  ans = -1
+  i = 0
+
+  (i < 長さ(keys)) の間 {
+    k = 整数化(keys[i])
+    c = counts[keys[i]]
+    もし (c >= k) かつ (k > ans) なら {
+      ans = k
+    }
+    i = 和(i, 1)
+  }
+
+  ans
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[71/164] 70_strange_sort_list - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+strange_sort_list = 入力 lst に対し {
+  result = []
+  left = 0
+  right = 長さ(lst) - 1
+
+  繰り返し (left <= right) の間 {
+    result = result + [lst[left]]
+    left = left + 1
+
+    もし (left <= right) なら {
+      result = result + [lst[right]]
+      right = right - 1
+    }
+  }
+
+  result
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+strange_sort_list = 入力 lst に対し {
+  result = []
+  left = 0
+  right = 長さ(lst) - 1
+
+  繰り返し (left <= right) の間 {
+    result = result + [lst[left]]
+    left = left + 1
+
+    もし (left <= right) なら {
+      result = result + [lst[right]]
+      right = right - 1
+    }
+  }
+
+  result
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[72/164] 71_triangle_area - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+triangle_area = 入力 a, b, c に対し {
+  もし 和(a, b) <= c なら {
+    -1
+  } そうでなく もし 和(a, c) <= b なら {
+    -1
+  } そうでなく もし 和(b, c) <= a なら {
+    -1
+  } そうでなければ {
+    s = 商(和(a, b, c), 2.0)
+    area = 平方根(積(s, 差(s, a), 差(s, b), 差(s, c)))
+    商(整数化(和(積(area, 100), 0.5)), 100.0)
+  }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+triangle_area = 入力 a, b, c に対し {
+  もし 和(a, b) <= c なら {
+    -1
+  } そうでなく もし 和(a, c) <= b なら {
+    -1
+  } そうでなく もし 和(b, c) <= a なら {
+    -1
+  } そうでなければ {
+    s = 商(和(a, b, c), 2.0)
+    area = 平方根(積(s, 差(s, a), 差(s, b), 差(s, c)))
+    商(整数化(和(積(area, 100), 0.5)), 100.0)
+  }
+}
+--- Result: ✗ FAILED (0.06s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[73/164] 72_will_it_fly - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+will_it_fly = 入力 q, w に対し {
+    もし 和(q) > w なら {
+        偽
+    } 違えば {
+        q == 反転(q)
+    }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+will_it_fly = 入力 q, w に対し {
+    もし 和(q) > w なら {
+        偽
+    } 違えば {
+        q == 反転(q)
+    }
+}
+--- Result: ✗ FAILED (0.07s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[74/164] 73_smallest_change - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+smallest_change = 入力 arr に対し {
+  n = 配列長(arr)
+  changes = 0
+  i = 0
+
+  反復 (i < 商(n, 2)) {
+    もし arr[i] != arr[差(差(n, 1), i)] なら {
+      changes = 和(changes, 1)
+    }
+    i = 和(i, 1)
+  }
+
+  戻る changes
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+smallest_change = 入力 arr に対し {
+  n = 配列長(arr)
+  changes = 0
+  i = 0
+
+  反復 (i < 商(n, 2)) {
+    もし arr[i] != arr[差(差(n, 1), i)] なら {
+      changes = 和(changes, 1)
+    }
+    i = 和(i, 1)
+  }
+
+  戻る changes
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[75/164] 74_total_match - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+total_match = 入力 lst1, lst2 に対し {
+  len1 = 0
+  len2 = 0
+
+  それぞれ s が lst1 の間 {
+    len1 = 和(len1, 長さ(s))
+  }
+
+  それぞれ s が lst2 の間 {
+    len2 = 和(len2, 長さ(s))
+  }
+
+  もし len1 <= len2 なら {
+    lst1
+  } そうでなければ {
+    lst2
+  }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+total_match = 入力 lst1, lst2 に対し {
+  len1 = 0
+  len2 = 0
+
+  それぞれ s が lst1 の間 {
+    len1 = 和(len1, 長さ(s))
+  }
+
+  それぞれ s が lst2 の間 {
+    len2 = 和(len2, 長さ(s))
+  }
+
+  もし len1 <= len2 なら {
+    lst1
+  } そうでなければ {
+    lst2
+  }
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[76/164] 75_is_multiply_prime - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+is_multiply_prime = 入力 a に対し {
+  i = 2
+  もし a < 8 なら {
+    戻る 偽
+  }
+  i の間、 i <= a {
+    もし 剰余(a, i) == 0 なら {
+      j = 2
+      j の間、 j <= 商(a, i) {
+        もし 剰余(商(a, i), j) == 0 なら {
+          k = 商(商(a, i), j)
+          もし 積(i, j, k) == a なら {
+            pi = 2
+            i_is_prime = 真
+            pi の間、 pi < i {
+              もし 剰余(i, pi) == 0 なら {
+                i_is_prime = 偽
+              }
+              pi = 和(pi, 1)
+            }
+            pj = 2
+            j_is_prime = 真
+            pj の間、 pj < j {
+              もし 剰余(j, pj) == 0 なら {
+                j_is_prime = 偽
+              }
+              pj = 和(pj, 1)
+            }
+            pk = 2
+            k_is_prime = 真
+            pk の間、 pk < k {
+              もし 剰余(k, pk) == 0 なら {
+                k_is_prime = 偽
+              }
+              pk = 和(pk, 1)
+            }
+            もし i_is_prime かつ j_is_prime かつ k_is_prime なら {
+              戻る 真
+            }
+          }
+        }
+        j = 和(j, 1)
+      }
+    }
+    i = 和(i, 1)
+  }
+  戻る 偽
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+is_multiply_prime = 入力 a に対し {
+  i = 2
+  もし a < 8 なら {
+    戻る 偽
+  }
+  i の間、 i <= a {
+    もし 剰余(a, i) == 0 なら {
+      j = 2
+      j の間、 j <= 商(a, i) {
+        もし 剰余(商(a, i), j) == 0 なら {
+          k = 商(商(a, i), j)
+          もし 積(i, j, k) == a なら {
+            pi = 2
+            i_is_prime = 真
+            pi の間、 pi < i {
+              もし 剰余(i, pi) == 0 なら {
+                i_is_prime = 偽
+              }
+              pi = 和(pi, 1)
+            }
+            pj = 2
+            j_is_prime = 真
+            pj の間、 pj < j {
+              もし 剰余(j, pj) == 0 なら {
+                j_is_prime = 偽
+              }
+              pj = 和(pj, 1)
+            }
+            pk = 2
+            k_is_prime = 真
+            pk の間、 pk < k {
+              もし 剰余(k, pk) == 0 なら {
+                k_is_prime = 偽
+              }
+              pk = 和(pk, 1)
+            }
+            もし i_is_prime かつ j_is_prime かつ k_is_prime なら {
+              戻る 真
+            }
+          }
+        }
+        j = 和(j, 1)
+      }
+    }
+    i = 和(i, 1)
+  }
+  戻る 偽
+}
+--- Result: ✗ FAILED (0.07s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[77/164] 76_is_simple_power - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+is_simple_power = 入力 x, n に対し {
+  もし x == 1 なら {
+    真
+  } そうでなくもし n == 1 なら {
+    偽
+  } そうでなくもし n == 0 なら {
+    x == 0
+  } そうでなくもし 剰余(x, n) != 0 なら {
+    偽
+  } そうでなければ {
+    is_simple_power(商(x, n), n)
+  }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+is_simple_power = 入力 x, n に対し {
+  もし x == 1 なら {
+    真
+  } そうでなくもし n == 1 なら {
+    偽
+  } そうでなくもし n == 0 なら {
+    x == 0
+  } そうでなくもし 剰余(x, n) != 0 なら {
+    偽
+  } そうでなければ {
+    is_simple_power(商(x, n), n)
+  }
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[78/164] 77_iscube - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+iscube = 入力 a に対し {
+  i = -1000000
+  その間 (i <= 1000000) {
+    もし (積(i, i, i) == a) なら {
+      戻る 真
+    }
+    i = 和(i, 1)
+  }
+  戻る 偽
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+iscube = 入力 a に対し {
+  i = -1000000
+  その間 (i <= 1000000) {
+    もし (積(i, i, i) == a) なら {
+      戻る 真
+    }
+    i = 和(i, 1)
+  }
+  戻る 偽
+}
+--- Result: ✗ FAILED (0.07s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[79/164] 78_hex_key - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+hex_key = 入力 num に対し {
+  count = 0
+  i = 0
+
+  もし i < 長さ(num) の間 {
+    ch = num[i]
+
+    もし ch == "2" または ch == "3" または ch == "5" または ch == "7" または ch == "B" または ch == "D" なら {
+      count = 和(count, 1)
+    }
+
+    i = 和(i, 1)
+  }
+
+  count
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+hex_key = 入力 num に対し {
+  count = 0
+  i = 0
+
+  もし i < 長さ(num) の間 {
+    ch = num[i]
+
+    もし ch == "2" または ch == "3" または ch == "5" または ch == "7" または ch == "B" または ch == "D" なら {
+      count = 和(count, 1)
+    }
+
+    i = 和(i, 1)
+  }
+
+  count
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[80/164] 79_decimal_to_binary - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+decimal_to_binary = 入力 decimal に対し {
+  もし decimal が 0 なら {
+    戻る "db0db"
+  }
+
+  result = ""
+  n = decimal
+
+  その間 n が 0 より大きい {
+    bit = 剰余(n, 2)
+    result = 文字列化(bit) + result
+    n = 商(n, 2)
+  }
+
+  戻る "db" + result + "db"
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+decimal_to_binary = 入力 decimal に対し {
+  もし decimal が 0 なら {
+    戻る "db0db"
+  }
+
+  result = ""
+  n = decimal
+
+  その間 n が 0 より大きい {
+    bit = 剰余(n, 2)
+    result = 文字列化(bit) + result
+    n = 商(n, 2)
+  }
+
+  戻る "db" + result + "db"
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[81/164] 80_is_happy - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+is_happy = 入力 s に対し {
+  もし 長さ(s) < 3 なら {
+    戻る 偽
+  }
+
+  i = 0
+  繰り返し i < 差(長さ(s), 2) の間 {
+    もし s[i] != s[和(i, 1)] かつ s[i] != s[和(i, 2)] かつ s[和(i, 1)] != s[和(i, 2)] なら {
+      戻る 真
+    }
+    i = 和(i, 1)
+  }
+
+  戻る 偽
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+is_happy = 入力 s に対し {
+  もし 長さ(s) < 3 なら {
+    戻る 偽
+  }
+
+  i = 0
+  繰り返し i < 差(長さ(s), 2) の間 {
+    もし s[i] != s[和(i, 1)] かつ s[i] != s[和(i, 2)] かつ s[和(i, 1)] != s[和(i, 2)] なら {
+      戻る 真
+    }
+    i = 和(i, 1)
+  }
+
+  戻る 偽
+}
+--- Result: ✗ FAILED (0.07s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[82/164] 81_numerical_letter_grade - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+numerical_letter_grade = 入力 grades に対し {
+  result = []
+
+  grades の各要素 g について {
+    もし g == 4.0 なら {
+      result に "A+" を追加
+    } でなければ もし g > 3.7 なら {
+      result に "A" を追加
+    } でなければ もし g > 3.3 なら {
+      result に "A-" を追加
+    } でなければ もし g > 3.0 なら {
+      result に "B+" を追加
+    } でなければ もし g > 2.7 なら {
+      result に "B" を追加
+    } でなければ もし g > 2.3 なら {
+      result に "B-" を追加
+    } でなければ もし g > 2.0 なら {
+      result に "C+" を追加
+    } でなければ もし g > 1.7 なら {
+      result に "C" を追加
+    } でなければ もし g > 1.3 なら {
+      result に "C-" を追加
+    } でなければ もし g > 1.0 なら {
+      result に "D+" を追加
+    } でなければ もし g > 0.7 なら {
+      result に "D" を追加
+    } でなければ もし g > 0.0 なら {
+      result に "D-" を追加
+    } でなければ {
+      result に "E" を追加
+    }
+  }
+
+  result
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+numerical_letter_grade = 入力 grades に対し {
+  result = []
+
+  grades の各要素 g について {
+    もし g == 4.0 なら {
+      result に "A+" を追加
+    } でなければ もし g > 3.7 なら {
+      result に "A" を追加
+    } でなければ もし g > 3.3 なら {
+      result に "A-" を追加
+    } でなければ もし g > 3.0 なら {
+      result に "B+" を追加
+    } でなければ もし g > 2.7 なら {
+      result に "B" を追加
+    } でなければ もし g > 2.3 なら {
+      result に "B-" を追加
+    } でなければ もし g > 2.0 なら {
+      result に "C+" を追加
+    } でなければ もし g > 1.7 なら {
+      result に "C" を追加
+    } でなければ もし g > 1.3 なら {
+      result に "C-" を追加
+    } でなければ もし g > 1.0 なら {
+      result に "D+" を追加
+    } でなければ もし g > 0.7 なら {
+      result に "D" を追加
+    } でなければ もし g > 0.0 なら {
+      result に "D-" を追加
+    } でなければ {
+      result に "E" を追加
+    }
+  }
+
+  result
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[83/164] 82_prime_length - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+prime_length = 入力 string に対し {
+  length = 配列化(string)
+  n = 配列化(length)
+
+  もし 最小値(n) < 2 なら {
+    偽
+  } 違えば {
+    i = 2
+    ループ {
+      もし i * i > 最小値(n) なら {
+        真
+      }
+      もし 剰余(最小値(n), i) == 0 なら {
+        偽
+      }
+      i = 和(i, 1)
+    }
+  }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+prime_length = 入力 string に対し {
+  length = 配列化(string)
+  n = 配列化(length)
+
+  もし 最小値(n) < 2 なら {
+    偽
+  } 違えば {
+    i = 2
+    ループ {
+      もし i * i > 最小値(n) なら {
+        真
+      }
+      もし 剰余(最小値(n), i) == 0 なら {
+        偽
+      }
+      i = 和(i, 1)
+    }
+  }
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[84/164] 83_starts_one_ends - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+starts_one_ends = 入力 n に対し {
+  もし n が 1 なら {
+    返す 1
+  }
+
+  total = 和(平方根(0), 0)  # 0 を作る
+  i = 0
+
+  繰り返し i < n - 1 の間 {
+    total = 和(total, 9)
+    i = 和(i, 1)
+  }
+
+  overlap = 1
+  i = 0
+
+  繰り返し i < n - 2 の間 {
+    overlap = 積(overlap, 10)
+    i = 和(i, 1)
+  }
+
+  返す 差(和(積(2, total), 1), overlap)
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+starts_one_ends = 入力 n に対し {
+  もし n が 1 なら {
+    返す 1
+  }
+
+  total = 和(平方根(0), 0)  # 0 を作る
+  i = 0
+
+  繰り返し i < n - 1 の間 {
+    total = 和(total, 9)
+    i = 和(i, 1)
+  }
+
+  overlap = 1
+  i = 0
+
+  繰り返し i < n - 2 の間 {
+    overlap = 積(overlap, 10)
+    i = 和(i, 1)
+  }
+
+  返す 差(和(積(2, total), 1), overlap)
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[85/164] 84_solve - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+solve = 入力 N に対し {
+    s = 文字列化(N)
+    i = 0
+    合計 = 0
+
+    繰り返し i < 長さ(s) の間 {
+        合計 = 和(合計, 差(整数化(s[i]), 48))
+        i = 和(i, 1)
+    }
+
+    もし 合計 == 0 なら {
+        戻る "0"
+    }
+
+    結果 = ""
+    繰り返し 合計 > 0 の間 {
+        結果 = 文字列化(剰余(合計, 2)) + 結果
+        合計 = 商(合計, 2)
+    }
+
+    戻る 結果
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+solve = 入力 N に対し {
+    s = 文字列化(N)
+    i = 0
+    合計 = 0
+
+    繰り返し i < 長さ(s) の間 {
+        合計 = 和(合計, 差(整数化(s[i]), 48))
+        i = 和(i, 1)
+    }
+
+    もし 合計 == 0 なら {
+        戻る "0"
+    }
+
+    結果 = ""
+    繰り返し 合計 > 0 の間 {
+        結果 = 文字列化(剰余(合計, 2)) + 結果
+        合計 = 商(合計, 2)
+    }
+
+    戻る 結果
+}
+--- Result: ✗ FAILED (0.06s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[86/164] 85_add - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+add = 入力 lst に対し {
+  合計 = 0
+  i = 0
+  反復 (i < 配列長(lst)) {
+    もし ((剰余(i, 2) == 1) かつ (剰余(lst[i], 2) == 0)) なら {
+      合計 = 和(合計, lst[i])
+    }
+    i = 和(i, 1)
+  }
+  合計
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+add = 入力 lst に対し {
+  合計 = 0
+  i = 0
+  反復 (i < 配列長(lst)) {
+    もし ((剰余(i, 2) == 1) かつ (剰余(lst[i], 2) == 0)) なら {
+      合計 = 和(合計, lst[i])
+    }
+    i = 和(i, 1)
+  }
+  合計
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[87/164] 86_anti_shuffle - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+anti_shuffle = 入力 s に対し {
+  parts = s.split(" ")
+  sorted_parts = []
+
+  parts.each(入力 w に対し {
+    chars = []
+    w.each(入力 c に対し {
+      chars.push(c)
+    })
+    chars.sort()
+    sorted_parts.push(chars.join(""))
+  })
+
+  戻る sorted_parts.join(" ")
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+anti_shuffle = 入力 s に対し {
+  parts = s.split(" ")
+  sorted_parts = []
+
+  parts.each(入力 w に対し {
+    chars = []
+    w.each(入力 c に対し {
+      chars.push(c)
+    })
+    chars.sort()
+    sorted_parts.push(chars.join(""))
+  })
+
+  戻る sorted_parts.join(" ")
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[88/164] 87_get_row - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+get_row = 入力 lst, x に対し {
+  結果 = []
+  行 = 0
+
+  lst の各要素を row について繰り返す {
+    列 = 0
+    見つけた = []
+
+    row の各要素を value について繰り返す {
+      もし value == x なら {
+        見つけた = 和(見つけた, [[行, 列]])
+      }
+      列 = 和(列, 1)
+    }
+
+    長さ = 差(0, 0)
+    見つけた の各要素を _ について繰り返す {
+      長さ = 和(長さ, 1)
+    }
+
+    もし 長さ > 0 なら {
+      i = 差(長さ, 1)
+      繰り返す {
+        もし i < 0 なら {
+          抜ける
+        }
+        結果 = 和(結果, [見つけた[i]])
+        i = 差(i, 1)
+      }
+    }
+
+    行 = 和(行, 1)
+  }
+
+  戻る 結果
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+get_row = 入力 lst, x に対し {
+  結果 = []
+  行 = 0
+
+  lst の各要素を row について繰り返す {
+    列 = 0
+    見つけた = []
+
+    row の各要素を value について繰り返す {
+      もし value == x なら {
+        見つけた = 和(見つけた, [[行, 列]])
+      }
+      列 = 和(列, 1)
+    }
+
+    長さ = 差(0, 0)
+    見つけた の各要素を _ について繰り返す {
+      長さ = 和(長さ, 1)
+    }
+
+    もし 長さ > 0 なら {
+      i = 差(長さ, 1)
+      繰り返す {
+        もし i < 0 なら {
+          抜ける
+        }
+        結果 = 和(結果, [見つけた[i]])
+        i = 差(i, 1)
+      }
+    }
+
+    行 = 和(行, 1)
+  }
+
+  戻る 結果
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[89/164] 88_sort_array - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+sort_array = 入力 array に対し {
+    もし 最大値(配列化(array)) == 値なし なら {
+        戻る []
+    }
+
+    result = 配列化(array)
+    n = 長さ(result)
+
+    i = 0
+    その間 (i < n) {
+        j = 0
+        その間 (j < 差(n, 1)) {
+            a = result[j]
+            b = result[和(j, 1)]
+
+            もし a > b なら {
+                temp = result[j]
+                result[j] = result[和(j, 1)]
+                result[和(j, 1)] = temp
+            }
+            j = 和(j, 1)
+        }
+        i = 和(i, 1)
+    }
+
+    first_last_sum = 和(result[0], result[差(n, 1)])
+
+    もし 剰余(first_last_sum, 2) == 0 なら {
+        reversed = []
+        k = 差(n, 1)
+        その間 (k >= 0) {
+            reversed = 和(reversed, [result[k]])
+            k = 差(k, 1)
+        }
+        戻る reversed
+    }
+
+    戻る result
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+sort_array = 入力 array に対し {
+    もし 最大値(配列化(array)) == 値なし なら {
+        戻る []
+    }
+
+    result = 配列化(array)
+    n = 長さ(result)
+
+    i = 0
+    その間 (i < n) {
+        j = 0
+        その間 (j < 差(n, 1)) {
+            a = result[j]
+            b = result[和(j, 1)]
+
+            もし a > b なら {
+                temp = result[j]
+                result[j] = result[和(j, 1)]
+                result[和(j, 1)] = temp
+            }
+            j = 和(j, 1)
+        }
+        i = 和(i, 1)
+    }
+
+    first_last_sum = 和(result[0], result[差(n, 1)])
+
+    もし 剰余(first_last_sum, 2) == 0 なら {
+        reversed = []
+        k = 差(n, 1)
+        その間 (k >= 0) {
+            reversed = 和(reversed, [result[k]])
+            k = 差(k, 1)
+        }
+        戻る reversed
+    }
+
+    戻る result
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[90/164] 89_encrypt - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+encrypt = 入力 s に対し {
+  文字列判定(s) でなければ {
+    ""
+  } そうでなければ {
+    codes = 配列化(s)
+    result = []
+    i = 0
+
+    i < 最大値(codes) + 1 の間 {
+      i < 最大値([i, 長さ(codes) - 1]) でなければ {
+      } そうでなければ {
+        c = codes[i]
+
+        c >= 97 かつ c <= 122 なら {
+          shifted = 剰余(差(c, 97), -2)
+          result = result + [和(97, 剰余(和(差(c, 97), 4), 26))]
+        } そうでなければ {
+          result = result + [c]
+        }
+
+        i = 和(i, 1)
+      }
+    }
+
+    out = ""
+    j = 0
+    j < 長さ(result) の間 {
+      out = out + 文字(result[j])
+      j = 和(j, 1)
+    }
+    out
+  }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+encrypt = 入力 s に対し {
+  文字列判定(s) でなければ {
+    ""
+  } そうでなければ {
+    codes = 配列化(s)
+    result = []
+    i = 0
+
+    i < 最大値(codes) + 1 の間 {
+      i < 最大値([i, 長さ(codes) - 1]) でなければ {
+      } そうでなければ {
+        c = codes[i]
+
+        c >= 97 かつ c <= 122 なら {
+          shifted = 剰余(差(c, 97), -2)
+          result = result + [和(97, 剰余(和(差(c, 97), 4), 26))]
+        } そうでなければ {
+          result = result + [c]
+        }
+
+        i = 和(i, 1)
+      }
+    }
+
+    out = ""
+    j = 0
+    j < 長さ(result) の間 {
+      out = out + 文字(result[j])
+      j = 和(j, 1)
+    }
+    out
+  }
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[91/164] 90_next_smallest - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+next_smallest = 入力 lst に対し {
+  もし 配列判定(lst) が 偽 なら {
+    値なし
+  } でなければ {
+    もし 長さ(lst) < 2 なら {
+      値なし
+    } でなければ {
+      sorted = 並べ替え(lst)
+      smallest = sorted[0]
+      i = 1
+      次 = 値なし
+
+      繰り返し i < 長さ(sorted) の間 {
+        もし sorted[i] > smallest なら {
+          次 = sorted[i]
+          i = 長さ(sorted)
+        } でなければ {
+          i = 和(i, 1)
+        }
+      }
+
+      次
+    }
+  }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+next_smallest = 入力 lst に対し {
+  もし 配列判定(lst) が 偽 なら {
+    値なし
+  } でなければ {
+    もし 長さ(lst) < 2 なら {
+      値なし
+    } でなければ {
+      sorted = 並べ替え(lst)
+      smallest = sorted[0]
+      i = 1
+      次 = 値なし
+
+      繰り返し i < 長さ(sorted) の間 {
+        もし sorted[i] > smallest なら {
+          次 = sorted[i]
+          i = 長さ(sorted)
+        } でなければ {
+          i = 和(i, 1)
+        }
+      }
+
+      次
+    }
+  }
+}
+--- Result: ✗ FAILED (0.07s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[92/164] 91_is_bored - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+is_bored = 入力 S に対し {
+  文一覧 = []
+  現在 = ""
+
+  区切り判定 = 入力 C に対し {
+    もし C == "." なら { 戻る 真 }
+    もし C == "?" なら { 戻る 真 }
+    もし C == "!" なら { 戻る 真 }
+    戻る 偽
+  }
+
+  i = 0
+  反復 (i < 長さ(S)) {
+    文字 = S[i]
+
+    もし 区切り判定(文字) なら {
+      文一覧 = 文一覧 + [現在]
+      現在 = ""
+    } そうでなければ {
+      現在 = 現在 + 文字
+    }
+
+    i = i + 1
+  }
+
+  もし 現在 != "" なら {
+    文一覧 = 文一覧 + [現在]
+  }
+
+  数 = 0
+  j = 0
+  反復 (j < 長さ(文一覧)) {
+    文 = 文一覧[j]
+
+    もし 長さ(文) >= 2 なら {
+      もし 文[0] == "I" かつ 文[1] == " " なら {
+        数 = 数 + 1
+      }
+    }
+
+    j = j + 1
+  }
+
+  戻る 数
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+is_bored = 入力 S に対し {
+  文一覧 = []
+  現在 = ""
+
+  区切り判定 = 入力 C に対し {
+    もし C == "." なら { 戻る 真 }
+    もし C == "?" なら { 戻る 真 }
+    もし C == "!" なら { 戻る 真 }
+    戻る 偽
+  }
+
+  i = 0
+  反復 (i < 長さ(S)) {
+    文字 = S[i]
+
+    もし 区切り判定(文字) なら {
+      文一覧 = 文一覧 + [現在]
+      現在 = ""
+    } そうでなければ {
+      現在 = 現在 + 文字
+    }
+
+    i = i + 1
+  }
+
+  もし 現在 != "" なら {
+    文一覧 = 文一覧 + [現在]
+  }
+
+  数 = 0
+  j = 0
+  反復 (j < 長さ(文一覧)) {
+    文 = 文一覧[j]
+
+    もし 長さ(文) >= 2 なら {
+      もし 文[0] == "I" かつ 文[1] == " " なら {
+        数 = 数 + 1
+      }
+    }
+
+    j = j + 1
+  }
+
+  戻る 数
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[93/164] 92_any_int - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+any_int = 入力 x, y, z に対し {
+  もし かつ(整数判定(x), 整数判定(y), 整数判定(z)) なら {
+    戻る または(
+      等しい(x, 和(y, z)),
+      等しい(y, 和(x, z)),
+      等しい(z, 和(x, y))
+    )
+  }
+  戻る 偽
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+any_int = 入力 x, y, z に対し {
+  もし かつ(整数判定(x), 整数判定(y), 整数判定(z)) なら {
+    戻る または(
+      等しい(x, 和(y, z)),
+      等しい(y, 和(x, z)),
+      等しい(z, 和(x, y))
+    )
+  }
+  戻る 偽
+}
+--- Result: ✗ FAILED (0.07s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[94/164] 93_encode - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+encode = 入力 message に対し {
+    result = ""
+    i = 0
+
+    反復 i < 長さ(message) の間 {
+        ch = message[i]
+        code = 整数化(ch)
+
+        もし ch == "a" なら {
+            result = result + "c"
+        } 違えば もし ch == "e" なら {
+            result = result + "g"
+        } 違えば もし ch == "i" なら {
+            result = result + "k"
+        } 違えば もし ch == "o" なら {
+            result = result + "q"
+        } 違えば もし ch == "u" なら {
+            result = result + "w"
+        } 違えば もし ch == "A" なら {
+            result = result + "C"
+        } 違えば もし ch == "E" なら {
+            result = result + "G"
+        } 違えば もし ch == "I" なら {
+            result = result + "K"
+        } 違えば もし ch == "O" なら {
+            result = result + "Q"
+        } 違えば もし ch == "U" なら {
+            result = result + "W"
+        } 違えば もし code >= 97 かつ code <= 122 なら {
+            result = result + 文字列化(配列化([code - 32])[0])
+        } 違えば もし code >= 65 かつ code <= 90 なら {
+            result = result + 文字列化(配列化([code + 32])[0])
+        } 違えば {
+            result = result + ch
+        }
+
+        i = i + 1
+    }
+
+    result
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+encode = 入力 message に対し {
+    result = ""
+    i = 0
+
+    反復 i < 長さ(message) の間 {
+        ch = message[i]
+        code = 整数化(ch)
+
+        もし ch == "a" なら {
+            result = result + "c"
+        } 違えば もし ch == "e" なら {
+            result = result + "g"
+        } 違えば もし ch == "i" なら {
+            result = result + "k"
+        } 違えば もし ch == "o" なら {
+            result = result + "q"
+        } 違えば もし ch == "u" なら {
+            result = result + "w"
+        } 違えば もし ch == "A" なら {
+            result = result + "C"
+        } 違えば もし ch == "E" なら {
+            result = result + "G"
+        } 違えば もし ch == "I" なら {
+            result = result + "K"
+        } 違えば もし ch == "O" なら {
+            result = result + "Q"
+        } 違えば もし ch == "U" なら {
+            result = result + "W"
+        } 違えば もし code >= 97 かつ code <= 122 なら {
+            result = result + 文字列化(配列化([code - 32])[0])
+        } 違えば もし code >= 65 かつ code <= 90 なら {
+            result = result + 文字列化(配列化([code + 32])[0])
+        } 違えば {
+            result = result + ch
+        }
+
+        i = i + 1
+    }
+
+    result
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[95/164] 94_skjkasdkd - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+skjkasdkd = 入力 lst に対し {
+    素数判定 = 入力 n に対し {
+        もし n < 2 なら {
+            戻る 偽
+        }
+        i = 2
+        ループ { 
+            もし i * i > n なら {
+                戻る 真
+            }
+            もし 剰余(n, i) == 0 なら {
+                戻る 偽
+            }
+            i = 和(i, 1)
+        }
+    }
+
+    最大素数 = 0
+    i = 0
+
+    ループ {
+        もし i >= 配列長(lst) なら {
+            抜ける
+        }
+
+        値 = lst[i]
+        もし 素数判定(値) かつ 値 > 最大素数 なら {
+            最大素数 = 値
+        }
+
+        i = 和(i, 1)
+    }
+
+    文字 = 文字列化(最大素数)
+    合計 = 0
+    i = 0
+
+    ループ {
+        もし i >= 文字列長(文字) なら {
+            抜ける
+        }
+
+        合計 = 和(合計, 整数化(文字[i]))
+        i = 和(i, 1)
+    }
+
+    戻る 合計
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+skjkasdkd = 入力 lst に対し {
+    素数判定 = 入力 n に対し {
+        もし n < 2 なら {
+            戻る 偽
+        }
+        i = 2
+        ループ { 
+            もし i * i > n なら {
+                戻る 真
+            }
+            もし 剰余(n, i) == 0 なら {
+                戻る 偽
+            }
+            i = 和(i, 1)
+        }
+    }
+
+    最大素数 = 0
+    i = 0
+
+    ループ {
+        もし i >= 配列長(lst) なら {
+            抜ける
+        }
+
+        値 = lst[i]
+        もし 素数判定(値) かつ 値 > 最大素数 なら {
+            最大素数 = 値
+        }
+
+        i = 和(i, 1)
+    }
+
+    文字 = 文字列化(最大素数)
+    合計 = 0
+    i = 0
+
+    ループ {
+        もし i >= 文字列長(文字) なら {
+            抜ける
+        }
+
+        合計 = 和(合計, 整数化(文字[i]))
+        i = 和(i, 1)
+    }
+
+    戻る 合計
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[96/164] 95_check_dict_case - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+check_dict_case = 入力 dict に対し {
+  keys = 配列化(dict)
+
+  もし 最大値(keys) == 値なし なら {
+    偽
+  } 違えば {
+    has_lower = 偽
+    has_upper = 偽
+    invalid = 偽
+
+    keys をそれぞれ key について {
+      もし 文字列判定(key) == 偽 なら {
+        invalid = 真
+      } 違えば {
+        chars = 配列化(key)
+
+        chars をそれぞれ code について {
+          もし code >= 97 かつ code <= 122 なら {
+            has_lower = 真
+          } 違えば もし code >= 65 かつ code <= 90 なら {
+            has_upper = 真
+          }
+        }
+      }
+    }
+
+    もし invalid なら {
+      偽
+    } 違えば もし has_lower かつ has_upper then {
+      偽
+    } 違えば もし has_lower なら {
+      真
+    } 違えば もし has_upper なら {
+      真
+    } 違えば {
+      偽
+    }
+  }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+check_dict_case = 入力 dict に対し {
+  keys = 配列化(dict)
+
+  もし 最大値(keys) == 値なし なら {
+    偽
+  } 違えば {
+    has_lower = 偽
+    has_upper = 偽
+    invalid = 偽
+
+    keys をそれぞれ key について {
+      もし 文字列判定(key) == 偽 なら {
+        invalid = 真
+      } 違えば {
+        chars = 配列化(key)
+
+        chars をそれぞれ code について {
+          もし code >= 97 かつ code <= 122 なら {
+            has_lower = 真
+          } 違えば もし code >= 65 かつ code <= 90 なら {
+            has_upper = 真
+          }
+        }
+      }
+    }
+
+    もし invalid なら {
+      偽
+    } 違えば もし has_lower かつ has_upper then {
+      偽
+    } 違えば もし has_lower なら {
+      真
+    } 違えば もし has_upper なら {
+      真
+    } 違えば {
+      偽
+    }
+  }
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[97/164] 96_count_up_to - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+count_up_to = 入力 n に対し {
+  結果 = []
+  候補 = 2
+
+  その間(候補 < n) {
+    素数 = 真
+    割る数 = 2
+
+    その間(割る数 < 候補) {
+      もし(剰余(候補, 割る数) == 0) {
+        素数 = 偽
+      }
+      割る数 = 和(割る数, 1)
+    }
+
+    もし(素数) {
+      結果 = 結果 + [候補]
+    }
+
+    候補 = 和(候補, 1)
+  }
+
+  戻す 結果
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+count_up_to = 入力 n に対し {
+  結果 = []
+  候補 = 2
+
+  その間(候補 < n) {
+    素数 = 真
+    割る数 = 2
+
+    その間(割る数 < 候補) {
+      もし(剰余(候補, 割る数) == 0) {
+        素数 = 偽
+      }
+      割る数 = 和(割る数, 1)
+    }
+
+    もし(素数) {
+      結果 = 結果 + [候補]
+    }
+
+    候補 = 和(候補, 1)
+  }
+
+  戻す 結果
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[98/164] 97_multiply - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+multiply = 入力 a, b に対し {
+    戻す 積(剰余(絶対値(a), 10), 剰余(絶対値(b), 10))
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+multiply = 入力 a, b に対し {
+    戻す 積(剰余(絶対値(a), 10), 剰余(絶対値(b), 10))
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[99/164] 98_count_upper - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+count_upper = 入力 s に対し {
+  i = 0
+  c = 0
+  長さ = 配列化(s)
+
+  繰り返す (i < 最大値(長さ) の間) {
+    ch = 文字列化([長さ[i]])
+    もし ((剰余(i, 2) == 0) かつ ((ch == "A") または (ch == "E") または (ch == "I") または (ch == "O") または (ch == "U"))) なら {
+      c = 和(c, 1)
+    }
+    i = 和(i, 1)
+  }
+
+  c
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+count_upper = 入力 s に対し {
+  i = 0
+  c = 0
+  長さ = 配列化(s)
+
+  繰り返す (i < 最大値(長さ) の間) {
+    ch = 文字列化([長さ[i]])
+    もし ((剰余(i, 2) == 0) かつ ((ch == "A") または (ch == "E") または (ch == "I") または (ch == "O") または (ch == "U"))) なら {
+      c = 和(c, 1)
+    }
+    i = 和(i, 1)
+  }
+
+  c
+}
+--- Result: ✗ FAILED (0.06s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[100/164] 99_closest_integer - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+closest_integer = 入力 value に対し {
+  x = 小数化(value)
+  i = 整数化(x)
+
+  もし x が 0 以上 なら {
+    もし 差(x, i) が 0.5 以上 なら {
+      戻る 和(i, 1)
+    } 違えば {
+      戻る i
+    }
+  } 違えば {
+    もし 差(絶対値(x), 絶対値(i)) が 0.5 以上 なら {
+      戻る 差(i, 1)
+    } 違えば {
+      戻る i
+    }
+  }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+closest_integer = 入力 value に対し {
+  x = 小数化(value)
+  i = 整数化(x)
+
+  もし x が 0 以上 なら {
+    もし 差(x, i) が 0.5 以上 なら {
+      戻る 和(i, 1)
+    } 違えば {
+      戻る i
+    }
+  } 違えば {
+    もし 差(絶対値(x), 絶対値(i)) が 0.5 以上 なら {
+      戻る 差(i, 1)
+    } 違えば {
+      戻る i
+    }
+  }
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[101/164] 100_make_a_pile - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+make_a_pile = 入力 n に対し {
+  結果 = []
+  i = 0
+  繰り返し (i < n) の間 {
+    結果 = 結果 + [和(n, 積(2, i))]
+    i = 和(i, 1)
+  }
+  結果
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+make_a_pile = 入力 n に対し {
+  結果 = []
+  i = 0
+  繰り返し (i < n) の間 {
+    結果 = 結果 + [和(n, 積(2, i))]
+    i = 和(i, 1)
+  }
+  結果
+}
+--- Result: ✗ FAILED (0.11s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[102/164] 101_words_string - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+words_string = 入力 s に対し {
+  結果 = []
+  現在 = ""
+
+  i = 0
+  反復 (i < 配列化(s) の長さ) {
+    文字 = 文字列化([配列化(s)[i]])
+    もし (文字 == "," または 文字 == " ") なら {
+      もし (現在 != "") なら {
+        結果 = 結果 に 現在 を追加
+        現在 = ""
+      }
+    } 違えば {
+      現在 = 現在 + 文字
+    }
+    i = i + 1
+  }
+
+  もし (現在 != "") なら {
+    結果 = 結果 に 現在 を追加
+  }
+
+  戻す 結果
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+words_string = 入力 s に対し {
+  結果 = []
+  現在 = ""
+
+  i = 0
+  反復 (i < 配列化(s) の長さ) {
+    文字 = 文字列化([配列化(s)[i]])
+    もし (文字 == "," または 文字 == " ") なら {
+      もし (現在 != "") なら {
+        結果 = 結果 に 現在 を追加
+        現在 = ""
+      }
+    } 違えば {
+      現在 = 現在 + 文字
+    }
+    i = i + 1
+  }
+
+  もし (現在 != "") なら {
+    結果 = 結果 に 現在 を追加
+  }
+
+  戻す 結果
+}
+--- Result: ✗ FAILED (0.14s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[103/164] 102_choose_num - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+choose_num = 入力 x, y に対し {
+  もし 最大値(x, y) != y なら {
+    戻る -1
+  }
+
+  もし 剰余(y, 2) == 0 なら {
+    戻る y
+  }
+
+  もし 差(y, x) >= 1 なら {
+    戻る 差(y, 1)
+  }
+
+  戻る -1
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+choose_num = 入力 x, y に対し {
+  もし 最大値(x, y) != y なら {
+    戻る -1
+  }
+
+  もし 剰余(y, 2) == 0 なら {
+    戻る y
+  }
+
+  もし 差(y, x) >= 1 なら {
+    戻る 差(y, 1)
+  }
+
+  戻る -1
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[104/164] 103_rounded_avg - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+rounded_avg = 入力 n, m に対し {
+  もし n > m なら {
+    -1
+  } でなければ {
+    平均 = 商(和(n, m), 2)
+    二進 = ""
+    値 = 平均
+
+    もし 値 == 0 なら {
+      "0b0"
+    } でなければ {
+      繰り返し 値 > 0 の間 {
+        桁 = 剰余(値, 2)
+        二進 = 和("0", "")  # ダミー
+        もし 桁 == 0 なら {
+          二進 = "0" + 二進
+        } でなければ {
+          二進 = "1" + 二進
+        }
+        値 = 商(値, 2)
+      }
+      "0b" + 二進
+    }
+  }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+rounded_avg = 入力 n, m に対し {
+  もし n > m なら {
+    -1
+  } でなければ {
+    平均 = 商(和(n, m), 2)
+    二進 = ""
+    値 = 平均
+
+    もし 値 == 0 なら {
+      "0b0"
+    } でなければ {
+      繰り返し 値 > 0 の間 {
+        桁 = 剰余(値, 2)
+        二進 = 和("0", "")  # ダミー
+        もし 桁 == 0 なら {
+          二進 = "0" + 二進
+        } でなければ {
+          二進 = "1" + 二進
+        }
+        値 = 商(値, 2)
+      }
+      "0b" + 二進
+    }
+  }
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[105/164] 104_unique_digits - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+unique_digits = 入力 x に対し {
+  結果 = []
+  i = 0
+
+  反復 (i < 配列化(x).長さ) {
+    n = x[i]
+    s = 文字列化(n)
+    j = 0
+    偶数桁あり = 偽
+
+    反復 (j < 配列化(s).長さ) {
+      桁 = 整数化(s[j])
+      もし 剰余(桁, 2) == 0 なら {
+        偶数桁あり = 真
+        j = 配列化(s).長さ
+      } 違えば {
+        j = 和(j, 1)
+      }
+    }
+
+    もし 偶数桁あり == 偽 なら {
+      結果.追加(n)
+    }
+
+    i = 和(i, 1)
+  }
+
+  a = 0
+  反復 (a < 差(結果.長さ, 1)) {
+    b = 0
+    反復 (b < 差(結果.長さ, 和(a, 1))) {
+      もし 結果[b] > 結果[和(b, 1)] なら {
+        一時 = 結果[b]
+        結果[b] = 結果[和(b, 1)]
+        結果[和(b, 1)] = 一時
+      }
+      b = 和(b, 1)
+    }
+    a = 和(a, 1)
+  }
+
+  戻る 結果
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+unique_digits = 入力 x に対し {
+  結果 = []
+  i = 0
+
+  反復 (i < 配列化(x).長さ) {
+    n = x[i]
+    s = 文字列化(n)
+    j = 0
+    偶数桁あり = 偽
+
+    反復 (j < 配列化(s).長さ) {
+      桁 = 整数化(s[j])
+      もし 剰余(桁, 2) == 0 なら {
+        偶数桁あり = 真
+        j = 配列化(s).長さ
+      } 違えば {
+        j = 和(j, 1)
+      }
+    }
+
+    もし 偶数桁あり == 偽 なら {
+      結果.追加(n)
+    }
+
+    i = 和(i, 1)
+  }
+
+  a = 0
+  反復 (a < 差(結果.長さ, 1)) {
+    b = 0
+    反復 (b < 差(結果.長さ, 和(a, 1))) {
+      もし 結果[b] > 結果[和(b, 1)] なら {
+        一時 = 結果[b]
+        結果[b] = 結果[和(b, 1)]
+        結果[和(b, 1)] = 一時
+      }
+      b = 和(b, 1)
+    }
+    a = 和(a, 1)
+  }
+
+  戻る 結果
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[106/164] 105_by_length - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+by_length = 入力 arr に対し {
+    もし 配列判定(arr) == 偽 なら {
+        戻る []
+    }
+
+    結果 = []
+    残り = 9
+
+    反復 (残り > 0) {
+        i = 0
+        反復 (i < 長さ(arr)) {
+            値 = arr[i]
+            もし 値 == 残り なら {
+                もし 値 == 1 なら {
+                    結果 = 結果 + ["One"]
+                } 違えば もし 値 == 2 なら {
+                    結果 = 結果 + ["Two"]
+                } 違えば もし 値 == 3 なら {
+                    結果 = 結果 + ["Three"]
+                } 違えば もし 値 == 4 なら {
+                    結果 = 結果 + ["Four"]
+                } 違えば もし 値 == 5 なら {
+                    結果 = 結果 + ["Five"]
+                } 違えば もし 値 == 6 なら {
+                    結果 = 結果 + ["Six"]
+                } 違えば もし 値 == 7 なら {
+                    結果 = 結果 + ["Seven"]
+                } 違えば もし 値 == 8 なら {
+                    結果 = 結果 + ["Eight"]
+                } 違えば もし 値 == 9 なら {
+                    結果 = 結果 + ["Nine"]
+                }
+            }
+            i = 和(i, 1)
+        }
+        残り = 差(残り, 1)
+    }
+
+    戻る 結果
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+by_length = 入力 arr に対し {
+    もし 配列判定(arr) == 偽 なら {
+        戻る []
+    }
+
+    結果 = []
+    残り = 9
+
+    反復 (残り > 0) {
+        i = 0
+        反復 (i < 長さ(arr)) {
+            値 = arr[i]
+            もし 値 == 残り なら {
+                もし 値 == 1 なら {
+                    結果 = 結果 + ["One"]
+                } 違えば もし 値 == 2 なら {
+                    結果 = 結果 + ["Two"]
+                } 違えば もし 値 == 3 なら {
+                    結果 = 結果 + ["Three"]
+                } 違えば もし 値 == 4 なら {
+                    結果 = 結果 + ["Four"]
+                } 違えば もし 値 == 5 なら {
+                    結果 = 結果 + ["Five"]
+                } 違えば もし 値 == 6 なら {
+                    結果 = 結果 + ["Six"]
+                } 違えば もし 値 == 7 なら {
+                    結果 = 結果 + ["Seven"]
+                } 違えば もし 値 == 8 なら {
+                    結果 = 結果 + ["Eight"]
+                } 違えば もし 値 == 9 なら {
+                    結果 = 結果 + ["Nine"]
+                }
+            }
+            i = 和(i, 1)
+        }
+        残り = 差(残り, 1)
+    }
+
+    戻る 結果
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[107/164] 106_f - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+f = 入力 n に対し {
+  結果 = []
+  積値 = 1
+  i = 1
+
+  i <= n の間 {
+    積値 = 積(積値, i)
+    結果 = 結果 + [積値]
+    i = 和(i, 1)
+  }
+
+  戻る 結果
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+f = 入力 n に対し {
+  結果 = []
+  積値 = 1
+  i = 1
+
+  i <= n の間 {
+    積値 = 積(積値, i)
+    結果 = 結果 + [積値]
+    i = 和(i, 1)
+  }
+
+  戻る 結果
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[108/164] 107_even_odd_palindrome - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+even_odd_palindrome = 入力 n に対し {
+    偶数 = 0
+    奇数 = 0
+    i = 1
+
+    の間、i <= n {
+        s = 文字列化(i)
+        r = ""
+        j = 差(配列化(s)の長さ, 1)
+
+        の間、j >= 0 {
+            r = r + s[j]
+            j = 差(j, 1)
+        }
+
+        もし s == r なら {
+            もし 剰余(i, 2) == 0 なら {
+                偶数 = 和(偶数, 1)
+            } でなければ {
+                奇数 = 和(奇数, 1)
+            }
+        }
+
+        i = 和(i, 1)
+    }
+
+    (偶数, 奇数)
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+even_odd_palindrome = 入力 n に対し {
+    偶数 = 0
+    奇数 = 0
+    i = 1
+
+    の間、i <= n {
+        s = 文字列化(i)
+        r = ""
+        j = 差(配列化(s)の長さ, 1)
+
+        の間、j >= 0 {
+            r = r + s[j]
+            j = 差(j, 1)
+        }
+
+        もし s == r なら {
+            もし 剰余(i, 2) == 0 なら {
+                偶数 = 和(偶数, 1)
+            } でなければ {
+                奇数 = 和(奇数, 1)
+            }
+        }
+
+        i = 和(i, 1)
+    }
+
+    (偶数, 奇数)
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[109/164] 108_count_nums - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+count_nums = 入力 arr に対し {
+  count = 0
+
+  arr の各要素を n として繰り返す {
+    s = 文字列化(n)
+    sum_digits = 0
+    first = 真
+
+    s の各要素を ch として繰り返す {
+      もし ch == "-" なら {
+      } でなければ {
+        d = 整数化(ch)
+        もし first かつ n < 0 なら {
+          sum_digits = 和(sum_digits, 差(0, d))
+        } でなければ {
+          sum_digits = 和(sum_digits, d)
+        }
+        first = 偽
+      }
+    }
+
+    もし sum_digits > 0 なら {
+      count = 和(count, 1)
+    }
+  }
+
+  count
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+count_nums = 入力 arr に対し {
+  count = 0
+
+  arr の各要素を n として繰り返す {
+    s = 文字列化(n)
+    sum_digits = 0
+    first = 真
+
+    s の各要素を ch として繰り返す {
+      もし ch == "-" なら {
+      } でなければ {
+        d = 整数化(ch)
+        もし first かつ n < 0 なら {
+          sum_digits = 和(sum_digits, 差(0, d))
+        } でなければ {
+          sum_digits = 和(sum_digits, d)
+        }
+        first = 偽
+      }
+    }
+
+    もし sum_digits > 0 なら {
+      count = 和(count, 1)
+    }
+  }
+
+  count
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[110/164] 109_move_one_ball - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+move_one_ball = 入力 arr に対し {
+  もし 最大値(配列化(arr)) == 0 なら {
+    戻る 真
+  }
+
+  n = 最大値(配列化(arr))
+  breaks = 0
+  i = 0
+
+  繰り返し i < 差(n, 1) の間 {
+    もし arr[i] > arr[和(i, 1)] なら {
+      breaks = 和(breaks, 1)
+    }
+    i = 和(i, 1)
+  }
+
+  もし arr[差(n, 1)] > arr[0] なら {
+    breaks = 和(breaks, 1)
+  }
+
+  戻る breaks <= 1
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+move_one_ball = 入力 arr に対し {
+  もし 最大値(配列化(arr)) == 0 なら {
+    戻る 真
+  }
+
+  n = 最大値(配列化(arr))
+  breaks = 0
+  i = 0
+
+  繰り返し i < 差(n, 1) の間 {
+    もし arr[i] > arr[和(i, 1)] なら {
+      breaks = 和(breaks, 1)
+    }
+    i = 和(i, 1)
+  }
+
+  もし arr[差(n, 1)] > arr[0] なら {
+    breaks = 和(breaks, 1)
+  }
+
+  戻る breaks <= 1
+}
+--- Result: ✗ FAILED (0.07s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[111/164] 110_exchange - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+exchange = 入力 lst1, lst2 に対し {
+  odd1 = 0
+  i = 0
+  lst1 の間 {
+    もし 剰余(lst1[i], 2) != 0 なら {
+      odd1 = 和(odd1, 1)
+    }
+    i = 和(i, 1)
+  }
+
+  even2 = 0
+  j = 0
+  lst2 の間 {
+    もし 剰余(lst2[j], 2) == 0 なら {
+      even2 = 和(even2, 1)
+    }
+    j = 和(j, 1)
+  }
+
+  もし even2 >= odd1 なら {
+    "YES"
+  } そうでなければ {
+    "NO"
+  }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+exchange = 入力 lst1, lst2 に対し {
+  odd1 = 0
+  i = 0
+  lst1 の間 {
+    もし 剰余(lst1[i], 2) != 0 なら {
+      odd1 = 和(odd1, 1)
+    }
+    i = 和(i, 1)
+  }
+
+  even2 = 0
+  j = 0
+  lst2 の間 {
+    もし 剰余(lst2[j], 2) == 0 なら {
+      even2 = 和(even2, 1)
+    }
+    j = 和(j, 1)
+  }
+
+  もし even2 >= odd1 なら {
+    "YES"
+  } そうでなければ {
+    "NO"
+  }
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[112/164] 111_histogram - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+histogram = 入力 test に対し {
+    もし test == "" なら {
+        {}
+    } でなければ {
+        chars = test.split(" ")
+        counts = {}
+        max_count = 0
+
+        charsそれぞれに対し ch -> {
+            もし counts[ch] == 値なし なら {
+                counts[ch] = 1
+            } でなければ {
+                counts[ch] = counts[ch] + 1
+            }
+
+            もし counts[ch] > max_count なら {
+                max_count = counts[ch]
+            }
+        }
+
+        result = {}
+        charsそれぞれに対し ch -> {
+            もし counts[ch] == max_count なら {
+                result[ch] = counts[ch]
+            }
+        }
+
+        result
+    }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+histogram = 入力 test に対し {
+    もし test == "" なら {
+        {}
+    } でなければ {
+        chars = test.split(" ")
+        counts = {}
+        max_count = 0
+
+        charsそれぞれに対し ch -> {
+            もし counts[ch] == 値なし なら {
+                counts[ch] = 1
+            } でなければ {
+                counts[ch] = counts[ch] + 1
+            }
+
+            もし counts[ch] > max_count なら {
+                max_count = counts[ch]
+            }
+        }
+
+        result = {}
+        charsそれぞれに対し ch -> {
+            もし counts[ch] == max_count なら {
+                result[ch] = counts[ch]
+            }
+        }
+
+        result
+    }
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[113/164] 112_reverse_delete - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+reverse_delete = 入力 s, c に対し {
+    残す = []
+    i = 0
+
+    反復 (i < 長さ(s)) {
+        ch = s[i]
+        j = 0
+        含まれる = 偽
+
+        反復 (j < 長さ(c)) {
+            もし (ch == c[j]) なら {
+                含まれる = 真
+            }
+            j = 和(j, 1)
+        }
+
+        もし (含まれる == 偽) なら {
+            残す = 結合(残す, [ch])
+        }
+
+        i = 和(i, 1)
+    }
+
+    結果 = ""
+    i = 0
+    反復 (i < 長さ(残す)) {
+        結果 = 結果 + 残す[i]
+        i = 和(i, 1)
+    }
+
+    左 = 0
+    右 = 差(長さ(結果), 1)
+    回文 = 真
+
+    反復 (左 < 右) {
+        もし (結果[左] != 結果[右]) なら {
+            回文 = 偽
+        }
+        左 = 和(左, 1)
+        右 = 差(右, 1)
+    }
+
+    戻る (結果, 回文)
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+reverse_delete = 入力 s, c に対し {
+    残す = []
+    i = 0
+
+    反復 (i < 長さ(s)) {
+        ch = s[i]
+        j = 0
+        含まれる = 偽
+
+        反復 (j < 長さ(c)) {
+            もし (ch == c[j]) なら {
+                含まれる = 真
+            }
+            j = 和(j, 1)
+        }
+
+        もし (含まれる == 偽) なら {
+            残す = 結合(残す, [ch])
+        }
+
+        i = 和(i, 1)
+    }
+
+    結果 = ""
+    i = 0
+    反復 (i < 長さ(残す)) {
+        結果 = 結果 + 残す[i]
+        i = 和(i, 1)
+    }
+
+    左 = 0
+    右 = 差(長さ(結果), 1)
+    回文 = 真
+
+    反復 (左 < 右) {
+        もし (結果[左] != 結果[右]) なら {
+            回文 = 偽
+        }
+        左 = 和(左, 1)
+        右 = 差(右, 1)
+    }
+
+    戻る (結果, 回文)
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[114/164] 113_odd_count - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+odd_count = 入力 lst に対し {
+  結果 = []
+
+  lst の各要素を s について繰り返す {
+    個数 = 0
+
+    s の各要素を c について繰り返す {
+      もし c == "1" または c == "3" または c == "5" または c == "7" または c == "9" なら {
+        個数 = 和(個数, 1)
+      }
+    }
+
+    n = 文字列化(個数)
+    文 = "the number of odd elements in the string i of the input."
+
+    文 = 置換(文, "i", n)
+    結果 = 結果 に 文 を追加したもの
+  }
+
+  結果
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+odd_count = 入力 lst に対し {
+  結果 = []
+
+  lst の各要素を s について繰り返す {
+    個数 = 0
+
+    s の各要素を c について繰り返す {
+      もし c == "1" または c == "3" または c == "5" または c == "7" または c == "9" なら {
+        個数 = 和(個数, 1)
+      }
+    }
+
+    n = 文字列化(個数)
+    文 = "the number of odd elements in the string i of the input."
+
+    文 = 置換(文, "i", n)
+    結果 = 結果 に 文 を追加したもの
+  }
+
+  結果
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[115/164] 114_minSubArraySum - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+minSubArraySum = 入力 nums に対し {
+  もし 長さ(nums) == 0 なら {
+    エラー("mismatch-argument")
+  }
+
+  現在 = nums[0]
+  最小 = nums[0]
+  i = 1
+
+  反復 i < 長さ(nums) の間 {
+    現在 = 最小値(nums[i], 和(現在, nums[i]))
+    最小 = 最小値(最小, 現在)
+    i = 和(i, 1)
+  }
+
+  戻る 最小
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+minSubArraySum = 入力 nums に対し {
+  もし 長さ(nums) == 0 なら {
+    エラー("mismatch-argument")
+  }
+
+  現在 = nums[0]
+  最小 = nums[0]
+  i = 1
+
+  反復 i < 長さ(nums) の間 {
+    現在 = 最小値(nums[i], 和(現在, nums[i]))
+    最小 = 最小値(最小, 現在)
+    i = 和(i, 1)
+  }
+
+  戻る 最小
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[116/164] 115_max_fill - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+max_fill = 入力 grid, capacity に対し {
+  回数 = 0
+
+  各井戸 = 入力 i に対し {
+    水量 = 和(i)
+    もし 剰余(水量, capacity) == 0 なら {
+      戻る 商(水量, capacity)
+    } 違えば {
+      戻る 和(商(水量, capacity), 1)
+    }
+  }
+
+  それぞれ grid の 井戸 に対し {
+    回数 = 和(回数, 各井戸(井戸))
+  }
+
+  戻る 回数
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+max_fill = 入力 grid, capacity に対し {
+  回数 = 0
+
+  各井戸 = 入力 i に対し {
+    水量 = 和(i)
+    もし 剰余(水量, capacity) == 0 なら {
+      戻る 商(水量, capacity)
+    } 違えば {
+      戻る 和(商(水量, capacity), 1)
+    }
+  }
+
+  それぞれ grid の 井戸 に対し {
+    回数 = 和(回数, 各井戸(井戸))
+  }
+
+  戻る 回数
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[117/164] 116_sort_array - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+sort_array = 入力 arr に対し {
+    popcount = 入力 n に対し {
+        count = 0
+        x = n
+        反復 x > 0 の間 {
+            count = 和(count, 剰余(x, 2))
+            x = 商(x, 2)
+        }
+        戻る count
+    }
+
+    result = arr
+
+    i = 0
+    反復 i < 差(配列化(result).長さ, 1) の間 {
+        j = 0
+        反復 j < 差(配列化(result).長さ, 和(i, 1)) の間 {
+            a = result[j]
+            b = result[和(j, 1)]
+            pa = popcount(a)
+            pb = popcount(b)
+
+            もし pa > pb なら {
+                temp = result[j]
+                result[j] = result[和(j, 1)]
+                result[和(j, 1)] = temp
+            } 違えば もし pa == pb なら {
+                もし a > b なら {
+                    temp = result[j]
+                    result[j] = result[和(j, 1)]
+                    result[和(j, 1)] = temp
+                }
+            }
+
+            j = 和(j, 1)
+        }
+        i = 和(i, 1)
+    }
+
+    戻る result
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+sort_array = 入力 arr に対し {
+    popcount = 入力 n に対し {
+        count = 0
+        x = n
+        反復 x > 0 の間 {
+            count = 和(count, 剰余(x, 2))
+            x = 商(x, 2)
+        }
+        戻る count
+    }
+
+    result = arr
+
+    i = 0
+    反復 i < 差(配列化(result).長さ, 1) の間 {
+        j = 0
+        反復 j < 差(配列化(result).長さ, 和(i, 1)) の間 {
+            a = result[j]
+            b = result[和(j, 1)]
+            pa = popcount(a)
+            pb = popcount(b)
+
+            もし pa > pb なら {
+                temp = result[j]
+                result[j] = result[和(j, 1)]
+                result[和(j, 1)] = temp
+            } 違えば もし pa == pb なら {
+                もし a > b なら {
+                    temp = result[j]
+                    result[j] = result[和(j, 1)]
+                    result[和(j, 1)] = temp
+                }
+            }
+
+            j = 和(j, 1)
+        }
+        i = 和(i, 1)
+    }
+
+    戻る result
+}
+--- Result: ✗ FAILED (0.11s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[118/164] 117_select_words - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+select_words = 入力 s, n に対し {
+  単語一覧 = s.split(" ")
+  結果 = []
+
+  単語一覧 の各要素を w で繰り返す {
+    子音数 = 0
+    i = 0
+
+    i < w.length の間 {
+      c = w[i]
+      小文字 = c.lower()
+
+      もし (
+        小文字 != "a" かつ
+        小文字 != "e" かつ
+        小文字 != "i" かつ
+        小文字 != "o" かつ
+        小文字 != "u"
+      ) なら {
+        子音数 = 子音数 + 1
+      }
+
+      i = i + 1
+    }
+
+    もし 子音数 == n なら {
+      結果.push(w)
+    }
+  }
+
+  戻す 結果
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+select_words = 入力 s, n に対し {
+  単語一覧 = s.split(" ")
+  結果 = []
+
+  単語一覧 の各要素を w で繰り返す {
+    子音数 = 0
+    i = 0
+
+    i < w.length の間 {
+      c = w[i]
+      小文字 = c.lower()
+
+      もし (
+        小文字 != "a" かつ
+        小文字 != "e" かつ
+        小文字 != "i" かつ
+        小文字 != "o" かつ
+        小文字 != "u"
+      ) なら {
+        子音数 = 子音数 + 1
+      }
+
+      i = i + 1
+    }
+
+    もし 子音数 == n なら {
+      結果.push(w)
+    }
+  }
+
+  戻す 結果
+}
+--- Result: ✗ FAILED (0.07s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[119/164] 118_get_closest_vowel - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+get_closest_vowel = 入力 word に対し {
+  vowels = "aeiouAEIOU"
+  n = 長さ(word)
+
+  もし n < 3 なら {
+    戻る ""
+  }
+
+  i = n - 2
+  反復 (i >= 1) の間 {
+    c = word[i]
+    left = word[i - 1]
+    right = word[i + 1]
+
+    もし 含む(vowels, c) かつ (含む(vowels, left) == 偽) かつ (含む(vowels, right) == 偽) なら {
+      戻る c
+    }
+
+    i = i - 1
+  }
+
+  戻る ""
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+get_closest_vowel = 入力 word に対し {
+  vowels = "aeiouAEIOU"
+  n = 長さ(word)
+
+  もし n < 3 なら {
+    戻る ""
+  }
+
+  i = n - 2
+  反復 (i >= 1) の間 {
+    c = word[i]
+    left = word[i - 1]
+    right = word[i + 1]
+
+    もし 含む(vowels, c) かつ (含む(vowels, left) == 偽) かつ (含む(vowels, right) == 偽) なら {
+      戻る c
+    }
+
+    i = i - 1
+  }
+
+  戻る ""
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[120/164] 119_match_parens - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+match_parens = 入力 lst に対し {
+  a = lst[0]
+  b = lst[1]
+
+  check = 入力 s に対し {
+    balance = 0
+    i = 0
+    長さ = 配列化(s)
+    n = 最大値(0, 和(長さ))
+    i = 0
+    繰り返し i < n の間 {
+      ch = s[i]
+      もし ch == "(" なら {
+        balance = 和(balance, 1)
+      } そうでなければ {
+        balance = 差(balance, 1)
+      }
+      もし balance < 0 なら {
+        戻る 偽
+      }
+      i = 和(i, 1)
+    }
+    戻る balance == 0
+  }
+
+  もし check(a + b) なら {
+    戻る "Yes"
+  }
+
+  もし check(b + a) なら {
+    戻る "Yes"
+  }
+
+  戻る "No"
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+match_parens = 入力 lst に対し {
+  a = lst[0]
+  b = lst[1]
+
+  check = 入力 s に対し {
+    balance = 0
+    i = 0
+    長さ = 配列化(s)
+    n = 最大値(0, 和(長さ))
+    i = 0
+    繰り返し i < n の間 {
+      ch = s[i]
+      もし ch == "(" なら {
+        balance = 和(balance, 1)
+      } そうでなければ {
+        balance = 差(balance, 1)
+      }
+      もし balance < 0 なら {
+        戻る 偽
+      }
+      i = 和(i, 1)
+    }
+    戻る balance == 0
+  }
+
+  もし check(a + b) なら {
+    戻る "Yes"
+  }
+
+  もし check(b + a) なら {
+    戻る "Yes"
+  }
+
+  戻る "No"
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[121/164] 120_maximum - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+maximum = 入力 arr, k に対し {
+    n = arr の長さ
+    もし k == 0 なら {
+        []
+    } でなければ {
+        result = []
+        count = 0
+
+        反復 (i = 1000; i >= -1000; i = 差(i, 1)) {
+            j = 0
+            反復 (j < n) {
+                もし arr[j] == i なら {
+                    result = result に i を追加
+                    count = 和(count, 1)
+                    もし count == k なら {
+                        戻る result
+                    }
+                }
+                j = 和(j, 1)
+            }
+        }
+
+        result
+    }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+maximum = 入力 arr, k に対し {
+    n = arr の長さ
+    もし k == 0 なら {
+        []
+    } でなければ {
+        result = []
+        count = 0
+
+        反復 (i = 1000; i >= -1000; i = 差(i, 1)) {
+            j = 0
+            反復 (j < n) {
+                もし arr[j] == i なら {
+                    result = result に i を追加
+                    count = 和(count, 1)
+                    もし count == k なら {
+                        戻る result
+                    }
+                }
+                j = 和(j, 1)
+            }
+        }
+
+        result
+    }
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[122/164] 121_solution - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+solution = 入力 lst に対し {
+  合計 = 0
+  i = 0
+
+  lst の間 繰り返す {
+    もし 剰余(i, 2) が 0 なら {
+      もし 剰余(lst[i], 2) が 1 なら {
+        合計 = 和(合計, lst[i])
+      }
+    }
+    i = 和(i, 1)
+  }
+
+  合計
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+solution = 入力 lst に対し {
+  合計 = 0
+  i = 0
+
+  lst の間 繰り返す {
+    もし 剰余(i, 2) が 0 なら {
+      もし 剰余(lst[i], 2) が 1 なら {
+        合計 = 和(合計, lst[i])
+      }
+    }
+    i = 和(i, 1)
+  }
+
+  合計
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[123/164] 122_add_elements - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+add_elements = 入力 arr, k に対し {
+  合計 = 0
+  i = 0
+
+  反復 i < k の間 {
+    x = arr[i]
+    もし x < 100 なら {
+      合計 = 和(合計, x)
+    }
+    i = 和(i, 1)
+  }
+
+  戻る 合計
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+add_elements = 入力 arr, k に対し {
+  合計 = 0
+  i = 0
+
+  反復 i < k の間 {
+    x = arr[i]
+    もし x < 100 なら {
+      合計 = 和(合計, x)
+    }
+    i = 和(i, 1)
+  }
+
+  戻る 合計
+}
+--- Result: ✗ FAILED (0.07s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[124/164] 123_get_odd_collatz - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+get_odd_collatz = 入力 n に対し {
+  結果 = []
+  現在 = n
+
+  もし 剰余(現在, 2) が 1 なら {
+    結果 = [現在]
+  }
+
+  反復 {
+    もし 現在 が 1 なら {
+      終了
+    }
+
+    もし 剰余(現在, 2) が 0 なら {
+      現在 = 商(現在, 2)
+    } でなければ {
+      現在 = 和(積(3, 現在), 1)
+    }
+
+    もし 剰余(現在, 2) が 1 なら {
+      もし 配列判定(結果) が 真 なら {
+        結果 = result
+      }
+      結果 = result
+    }
+  }
+
+  結果 = []
+  現在 = n
+
+  反復 {
+    もし 剰余(現在, 2) が 1 なら {
+      結果 = 結果 + [現在]
+    }
+
+    もし 現在 が 1 なら {
+      終了
+    }
+
+    もし 剰余(現在, 2) が 0 なら {
+      現在 = 商(現在, 2)
+    } でなければ {
+      現在 = 和(積(3, 現在), 1)
+    }
+  }
+
+  結果を昇順ソートしたものを返す
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+get_odd_collatz = 入力 n に対し {
+  結果 = []
+  現在 = n
+
+  もし 剰余(現在, 2) が 1 なら {
+    結果 = [現在]
+  }
+
+  反復 {
+    もし 現在 が 1 なら {
+      終了
+    }
+
+    もし 剰余(現在, 2) が 0 なら {
+      現在 = 商(現在, 2)
+    } でなければ {
+      現在 = 和(積(3, 現在), 1)
+    }
+
+    もし 剰余(現在, 2) が 1 なら {
+      もし 配列判定(結果) が 真 なら {
+        結果 = result
+      }
+      結果 = result
+    }
+  }
+
+  結果 = []
+  現在 = n
+
+  反復 {
+    もし 剰余(現在, 2) が 1 なら {
+      結果 = 結果 + [現在]
+    }
+
+    もし 現在 が 1 なら {
+      終了
+    }
+
+    もし 剰余(現在, 2) が 0 なら {
+      現在 = 商(現在, 2)
+    } でなければ {
+      現在 = 和(積(3, 現在), 1)
+    }
+  }
+
+  結果を昇順ソートしたものを返す
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[125/164] 124_valid_date - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+valid_date = 入力 date に対し {
+    もし または(等しい(date, ""), 違う(文字列判定(date), 真)) なら {
+        戻る 偽
+    }
+
+    parts = 分割(date, "-")
+    もし 違う(長さ(parts), 3) なら {
+        戻る 偽
+    }
+
+    mm = 取得(parts, 0)
+    dd = 取得(parts, 1)
+    yyyy = 取得(parts, 2)
+
+    もし または(違う(長さ(mm), 2), 違う(長さ(dd), 2), 違う(長さ(yyyy), 4)) なら {
+        戻る 偽
+    }
+
+    もし または(違う(整数判定(整数化(mm)), 真), 違う(整数判定(整数化(dd)), 真), 違う(整数判定(整数化(yyyy)), 真)) なら {
+        戻る 偽
+    }
+
+    month = 整数化(mm)
+    day = 整数化(dd)
+
+    もし または(月未満 = 比較(月, 1), 月超過 = 比較(12, month)) なら {
+        戻る 偽
+    }
+
+    もし または(等しい(month, 1), 等しい(month, 3), 等しい(month, 5), 等しい(month, 7), 等しい(month, 8), 等しい(month, 10), 等しい(month, 12)) なら {
+        戻る かつ(以上(day, 1), 以下(day, 31))
+    }
+
+    もし または(等しい(month, 4), 等しい(month, 6), 等しい(month, 9), 等しい(month, 11)) なら {
+        戻る かつ(以上(day, 1), 以下(day, 30))
+    }
+
+    もし 等しい(month, 2) なら {
+        戻る かつ(以上(day, 1), 以下(day, 29))
+    }
+
+    戻る 偽
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+valid_date = 入力 date に対し {
+    もし または(等しい(date, ""), 違う(文字列判定(date), 真)) なら {
+        戻る 偽
+    }
+
+    parts = 分割(date, "-")
+    もし 違う(長さ(parts), 3) なら {
+        戻る 偽
+    }
+
+    mm = 取得(parts, 0)
+    dd = 取得(parts, 1)
+    yyyy = 取得(parts, 2)
+
+    もし または(違う(長さ(mm), 2), 違う(長さ(dd), 2), 違う(長さ(yyyy), 4)) なら {
+        戻る 偽
+    }
+
+    もし または(違う(整数判定(整数化(mm)), 真), 違う(整数判定(整数化(dd)), 真), 違う(整数判定(整数化(yyyy)), 真)) なら {
+        戻る 偽
+    }
+
+    month = 整数化(mm)
+    day = 整数化(dd)
+
+    もし または(月未満 = 比較(月, 1), 月超過 = 比較(12, month)) なら {
+        戻る 偽
+    }
+
+    もし または(等しい(month, 1), 等しい(month, 3), 等しい(month, 5), 等しい(month, 7), 等しい(month, 8), 等しい(month, 10), 等しい(month, 12)) なら {
+        戻る かつ(以上(day, 1), 以下(day, 31))
+    }
+
+    もし または(等しい(month, 4), 等しい(month, 6), 等しい(month, 9), 等しい(month, 11)) なら {
+        戻る かつ(以上(day, 1), 以下(day, 30))
+    }
+
+    もし 等しい(month, 2) なら {
+        戻る かつ(以上(day, 1), 以下(day, 29))
+    }
+
+    戻る 偽
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[126/164] 125_split_words - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+split_words = 入力 txt に対し {
+    もし txt に " " が含まれる なら {
+        txt を " " で分割する
+    } そうでなく もし txt に "," が含まれる なら {
+        txt を "," で分割する
+    } そうでなければ {
+        count = 0
+        chars = 配列化(txt)
+        i = 0
+        繰り返し i < 長さ(chars) の間 {
+            code = chars[i] - 97
+            もし 剰余(code, 2) == 0 なら {
+                count = 和(count, 1)
+            }
+            i = 和(i, 1)
+        }
+        count
+    }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+split_words = 入力 txt に対し {
+    もし txt に " " が含まれる なら {
+        txt を " " で分割する
+    } そうでなく もし txt に "," が含まれる なら {
+        txt を "," で分割する
+    } そうでなければ {
+        count = 0
+        chars = 配列化(txt)
+        i = 0
+        繰り返し i < 長さ(chars) の間 {
+            code = chars[i] - 97
+            もし 剰余(code, 2) == 0 なら {
+                count = 和(count, 1)
+            }
+            i = 和(i, 1)
+        }
+        count
+    }
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[127/164] 126_is_sorted - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+is_sorted = 入力 lst に対し {
+  もし 長さ(lst) == 0 なら {
+    真
+  } でなければ {
+    重複数 = 1
+    i = 1
+
+    反復(i < 長さ(lst)) {
+      もし lst[i] < lst[差(i, 1)] なら {
+        偽
+      }
+
+      もし lst[i] == lst[差(i, 1)] なら {
+        重複数 = 和(重複数, 1)
+        もし 重複数 >= 3 なら {
+          偽
+        }
+      } でなければ {
+        重複数 = 1
+      }
+
+      i = 和(i, 1)
+    }
+
+    真
+  }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+is_sorted = 入力 lst に対し {
+  もし 長さ(lst) == 0 なら {
+    真
+  } でなければ {
+    重複数 = 1
+    i = 1
+
+    反復(i < 長さ(lst)) {
+      もし lst[i] < lst[差(i, 1)] なら {
+        偽
+      }
+
+      もし lst[i] == lst[差(i, 1)] なら {
+        重複数 = 和(重複数, 1)
+        もし 重複数 >= 3 なら {
+          偽
+        }
+      } でなければ {
+        重複数 = 1
+      }
+
+      i = 和(i, 1)
+    }
+
+    真
+  }
+}
+--- Result: ✗ FAILED (0.07s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[128/164] 127_intersection - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+intersection = 入力 interval1, interval2 に対し {
+    start1 = interval1[0]
+    end1 = interval1[1]
+    start2 = interval2[0]
+    end2 = interval2[1]
+
+    left = 最大値(start1, start2)
+    right = 最小値(end1, end2)
+
+    もし left > right なら {
+        "NO"
+    } そうでなければ {
+        length = 和(差(right, left), 1)
+
+        もし length < 2 なら {
+            "NO"
+        } そうでなければ {
+            i = 2
+            prime = 真
+
+            繰り返し i < length の間 {
+                もし 剰余(length, i) == 0 なら {
+                    prime = 偽
+                    i = length
+                } そうでなければ {
+                    i = 和(i, 1)
+                }
+            }
+
+            もし prime なら {
+                "YES"
+            } そうでなければ {
+                "NO"
+            }
+        }
+    }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+intersection = 入力 interval1, interval2 に対し {
+    start1 = interval1[0]
+    end1 = interval1[1]
+    start2 = interval2[0]
+    end2 = interval2[1]
+
+    left = 最大値(start1, start2)
+    right = 最小値(end1, end2)
+
+    もし left > right なら {
+        "NO"
+    } そうでなければ {
+        length = 和(差(right, left), 1)
+
+        もし length < 2 なら {
+            "NO"
+        } そうでなければ {
+            i = 2
+            prime = 真
+
+            繰り返し i < length の間 {
+                もし 剰余(length, i) == 0 なら {
+                    prime = 偽
+                    i = length
+                } そうでなければ {
+                    i = 和(i, 1)
+                }
+            }
+
+            もし prime なら {
+                "YES"
+            } そうでなければ {
+                "NO"
+            }
+        }
+    }
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[129/164] 128_prod_signs - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+prod_signs = 入力 arr に対し {
+  もし 最大値(配列化(arr)) == 値なし なら {
+    値なし
+  } でなければ {
+    合計 = 0
+    符号積 = 1
+
+    arr の各要素 x について {
+      合計 = 和(合計, 絶対値(x))
+
+      もし x == 0 なら {
+        符号積 = 0
+      } でなければ {
+        もし x < 0 なら {
+          符号積 = 積(符号積, -1)
+        } でなければ {
+          符号積 = 積(符号積, 1)
+        }
+      }
+    }
+
+    積(合計, 符号積)
+  }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+prod_signs = 入力 arr に対し {
+  もし 最大値(配列化(arr)) == 値なし なら {
+    値なし
+  } でなければ {
+    合計 = 0
+    符号積 = 1
+
+    arr の各要素 x について {
+      合計 = 和(合計, 絶対値(x))
+
+      もし x == 0 なら {
+        符号積 = 0
+      } でなければ {
+        もし x < 0 なら {
+          符号積 = 積(符号積, -1)
+        } でなければ {
+          符号積 = 積(符号積, 1)
+        }
+      }
+    }
+
+    積(合計, 符号積)
+  }
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[130/164] 129_minPath - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+minPath = 入力 grid, k に対し {
+  n = 配列化(grid).長さ
+
+  pos = {}
+  i = 0
+  ながら i < n {
+    j = 0
+    ながら j < n {
+      v = grid[i][j]
+      pos[v] = [i, j]
+      j = 和(j, 1)
+    }
+    i = 和(i, 1)
+  }
+
+  答え = []
+
+  cur = 1
+  答え.push(cur)
+
+  残り = 差(k, 1)
+
+  ながら 残り > 0 {
+    p = pos[cur]
+    x = p[0]
+    y = p[1]
+
+    best = 値なし
+
+    もし x > 0 なら {
+      cand = grid[差(x, 1)][y]
+      もし best == 値なし または cand < best なら {
+        best = cand
+      }
+    }
+
+    もし x < 差(n, 1) なら {
+      cand = grid[和(x, 1)][y]
+      もし best == 値なし または cand < best なら {
+        best = cand
+      }
+    }
+
+    もし y > 0 なら {
+      cand = grid[x][差(y, 1)]
+      もし best == 値なし または cand < best なら {
+        best = cand
+      }
+    }
+
+    もし y < 差(n, 1) なら {
+      cand = grid[x][和(y, 1)]
+      もし best == 値なし または cand < best なら {
+        best = cand
+      }
+    }
+
+    cur = best
+    答え.push(cur)
+    残り = 差(残り, 1)
+  }
+
+  戻る 答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+minPath = 入力 grid, k に対し {
+  n = 配列化(grid).長さ
+
+  pos = {}
+  i = 0
+  ながら i < n {
+    j = 0
+    ながら j < n {
+      v = grid[i][j]
+      pos[v] = [i, j]
+      j = 和(j, 1)
+    }
+    i = 和(i, 1)
+  }
+
+  答え = []
+
+  cur = 1
+  答え.push(cur)
+
+  残り = 差(k, 1)
+
+  ながら 残り > 0 {
+    p = pos[cur]
+    x = p[0]
+    y = p[1]
+
+    best = 値なし
+
+    もし x > 0 なら {
+      cand = grid[差(x, 1)][y]
+      もし best == 値なし または cand < best なら {
+        best = cand
+      }
+    }
+
+    もし x < 差(n, 1) なら {
+      cand = grid[和(x, 1)][y]
+      もし best == 値なし または cand < best なら {
+        best = cand
+      }
+    }
+
+    もし y > 0 なら {
+      cand = grid[x][差(y, 1)]
+      もし best == 値なし または cand < best なら {
+        best = cand
+      }
+    }
+
+    もし y < 差(n, 1) なら {
+      cand = grid[x][和(y, 1)]
+      もし best == 値なし または cand < best なら {
+        best = cand
+      }
+    }
+
+    cur = best
+    答え.push(cur)
+    残り = 差(残り, 1)
+  }
+
+  戻る 答え
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[131/164] 130_tri - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+tri = 入力 n に対し {
+    result = [1]
+    i = 1
+    もし i が n 以下 なら {
+        result = result + [3]
+        i = 2
+    }
+    もし i が n 以下 なら {
+        result = result + [2]
+        i = 3
+    }
+    i から n まで繰り返す {
+        もし 剰余(i, 2) が 0 と等しい なら {
+            result = result + [和(1, 商(i, 2))]
+        } そうでなければ {
+            result = result + [和(result[商(差(i, 1), 2)], result[差(i, 2)], result[和(i, 1)])]
+        }
+    }
+    result
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+tri = 入力 n に対し {
+    result = [1]
+    i = 1
+    もし i が n 以下 なら {
+        result = result + [3]
+        i = 2
+    }
+    もし i が n 以下 なら {
+        result = result + [2]
+        i = 3
+    }
+    i から n まで繰り返す {
+        もし 剰余(i, 2) が 0 と等しい なら {
+            result = result + [和(1, 商(i, 2))]
+        } そうでなければ {
+            result = result + [和(result[商(差(i, 1), 2)], result[差(i, 2)], result[和(i, 1)])]
+        }
+    }
+    result
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[132/164] 131_digits - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+digits = 入力 n に対し {
+    s = 文字列化(n)
+    i = 0
+    result = 1
+    found = 偽
+
+    反復(i < 長さ(s)) {
+        c = s[i]
+        d = 整数化(c)
+
+        もし 剰余(d, 2) == 1 なら {
+            result = 積(result, d)
+            found = 真
+        }
+
+        i = 和(i, 1)
+    }
+
+    もし found なら {
+        result
+    } でなければ {
+        0
+    }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+digits = 入力 n に対し {
+    s = 文字列化(n)
+    i = 0
+    result = 1
+    found = 偽
+
+    反復(i < 長さ(s)) {
+        c = s[i]
+        d = 整数化(c)
+
+        もし 剰余(d, 2) == 1 なら {
+            result = 積(result, d)
+            found = 真
+        }
+
+        i = 和(i, 1)
+    }
+
+    もし found なら {
+        result
+    } でなければ {
+        0
+    }
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[133/164] 132_is_nested - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+is_nested = 入力 string に対し {
+  depth = 0
+  nested = 偽
+
+  i = 0
+  反復 (i < 文字列長(string)) {
+    ch = string[i]
+
+    もし (ch == "[") なら {
+      depth = 和(depth, 1)
+      もし (depth >= 2) なら {
+        nested = 真
+      }
+    } 違えば もし (ch == "]") なら {
+      もし (depth > 0) なら {
+        depth = 差(depth, 1)
+      }
+    }
+
+    i = 和(i, 1)
+  }
+
+  戻る nested
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+is_nested = 入力 string に対し {
+  depth = 0
+  nested = 偽
+
+  i = 0
+  反復 (i < 文字列長(string)) {
+    ch = string[i]
+
+    もし (ch == "[") なら {
+      depth = 和(depth, 1)
+      もし (depth >= 2) なら {
+        nested = 真
+      }
+    } 違えば もし (ch == "]") なら {
+      もし (depth > 0) なら {
+        depth = 差(depth, 1)
+      }
+    }
+
+    i = 和(i, 1)
+  }
+
+  戻る nested
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[134/164] 133_sum_squares - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+sum_squares = 入力 lst に対し {
+  合計 = 0
+  各要素 x について lst {
+    整数値 = 整数化(x)
+    もし 小数判定(x) なら {
+      もし x > 整数値 なら {
+        整数値 = 和(整数値, 1)
+      }
+    }
+    合計 = 和(合計, 積(整数値, 整数値))
+  }
+  戻す 合計
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+sum_squares = 入力 lst に対し {
+  合計 = 0
+  各要素 x について lst {
+    整数値 = 整数化(x)
+    もし 小数判定(x) なら {
+      もし x > 整数値 なら {
+        整数値 = 和(整数値, 1)
+      }
+    }
+    合計 = 和(合計, 積(整数値, 整数値))
+  }
+  戻す 合計
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[135/164] 134_check_if_last_char_is_a_letter - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+check_if_last_char_is_a_letter = 入力 txt に対し {
+    もし 文字列判定(txt) でなければ {
+        戻る 偽
+    }
+
+    chars = 配列化(txt)
+    n = 最大値(0, 差(長さ(chars), 0))
+
+    もし n == 0 なら {
+        戻る 偽
+    }
+
+    last = chars[差(n, 1)]
+
+    もし last == 32 なら {
+        戻る 偽
+    }
+
+    もし n == 1 なら {
+        もし かつ(last >= 65, last <= 90) または かつ(last >= 97, last <= 122) なら {
+            戻る 真
+        } でなければ {
+            戻る 偽
+        }
+    }
+
+    prev = chars[差(n, 2)]
+
+    is_letter = または(
+        かつ(last >= 65, last <= 90),
+        かつ(last >= 97, last <= 122)
+    )
+
+    もし is_letter でなければ {
+        戻る 偽
+    }
+
+    もし prev == 32 なら {
+        戻る 真
+    } でなければ {
+        戻る 偽
+    }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+check_if_last_char_is_a_letter = 入力 txt に対し {
+    もし 文字列判定(txt) でなければ {
+        戻る 偽
+    }
+
+    chars = 配列化(txt)
+    n = 最大値(0, 差(長さ(chars), 0))
+
+    もし n == 0 なら {
+        戻る 偽
+    }
+
+    last = chars[差(n, 1)]
+
+    もし last == 32 なら {
+        戻る 偽
+    }
+
+    もし n == 1 なら {
+        もし かつ(last >= 65, last <= 90) または かつ(last >= 97, last <= 122) なら {
+            戻る 真
+        } でなければ {
+            戻る 偽
+        }
+    }
+
+    prev = chars[差(n, 2)]
+
+    is_letter = または(
+        かつ(last >= 65, last <= 90),
+        かつ(last >= 97, last <= 122)
+    )
+
+    もし is_letter でなければ {
+        戻る 偽
+    }
+
+    もし prev == 32 なら {
+        戻る 真
+    } でなければ {
+        戻る 偽
+    }
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[136/164] 135_can_arrange - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+can_arrange = 入力 arr に対し {
+    i = 差(配列長(arr), 1)
+    その間 (i > 0) {
+        もし (arr[i] < arr[差(i, 1)]) {
+            戻る i
+        }
+        i = 差(i, 1)
+    }
+    戻る -1
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+can_arrange = 入力 arr に対し {
+    i = 差(配列長(arr), 1)
+    その間 (i > 0) {
+        もし (arr[i] < arr[差(i, 1)]) {
+            戻る i
+        }
+        i = 差(i, 1)
+    }
+    戻る -1
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[137/164] 136_largest_smallest_integers - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+largest_smallest_integers = 入力 lst に対し {
+    largest_negative = 値なし
+    smallest_positive = 値なし
+
+    それぞれ x を lst について {
+        もし x < 0 なら {
+            もし largest_negative == 値なし または x > largest_negative なら {
+                largest_negative = x
+            }
+        } 違えば もし x > 0 なら {
+            もし smallest_positive == 値なし または x < smallest_positive なら {
+                smallest_positive = x
+            }
+        }
+    }
+
+    (largest_negative, smallest_positive)
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+largest_smallest_integers = 入力 lst に対し {
+    largest_negative = 値なし
+    smallest_positive = 値なし
+
+    それぞれ x を lst について {
+        もし x < 0 なら {
+            もし largest_negative == 値なし または x > largest_negative なら {
+                largest_negative = x
+            }
+        } 違えば もし x > 0 なら {
+            もし smallest_positive == 値なし または x < smallest_positive なら {
+                smallest_positive = x
+            }
+        }
+    }
+
+    (largest_negative, smallest_positive)
+}
+--- Result: ✗ FAILED (0.11s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[138/164] 137_compare_one - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+compare_one = 入力 a, b に対し {
+  値A = もし 文字列判定(a) なら {
+    小数化(置換(a, ",", "."))
+  } でなければ {
+    小数化(a)
+  }
+
+  値B = もし 文字列判定(b) なら {
+    小数化(置換(b, ",", "."))
+  } でなければ {
+    小数化(b)
+  }
+
+  もし 値A = 値B なら {
+    値なし
+  } でなければ もし 値A > 値B なら {
+    a
+  } でなければ {
+    b
+  }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+compare_one = 入力 a, b に対し {
+  値A = もし 文字列判定(a) なら {
+    小数化(置換(a, ",", "."))
+  } でなければ {
+    小数化(a)
+  }
+
+  値B = もし 文字列判定(b) なら {
+    小数化(置換(b, ",", "."))
+  } でなければ {
+    小数化(b)
+  }
+
+  もし 値A = 値B なら {
+    値なし
+  } でなければ もし 値A > 値B なら {
+    a
+  } でなければ {
+    b
+  }
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[139/164] 138_is_equal_to_sum_even - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+is_equal_to_sum_even = 入力 n に対し {
+    もし かつ(整数判定(n), n >= 8, 剰余(n, 2) == 0) なら {
+        真
+    } 違えば {
+        偽
+    }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+is_equal_to_sum_even = 入力 n に対し {
+    もし かつ(整数判定(n), n >= 8, 剰余(n, 2) == 0) なら {
+        真
+    } 違えば {
+        偽
+    }
+}
+--- Result: ✗ FAILED (0.07s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[140/164] 139_special_factorial - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+special_factorial = 入力 n に対し {
+  もし n が 1 なら {
+    1
+  } でなければ {
+    積(n, special_factorial(差(n, 1)), special_factorial(差(n, 1)))
+  }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+special_factorial = 入力 n に対し {
+  もし n が 1 なら {
+    1
+  } でなければ {
+    積(n, special_factorial(差(n, 1)), special_factorial(差(n, 1)))
+  }
+}
+--- Result: ✗ FAILED (0.07s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[141/164] 140_fix_spaces - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+fix_spaces = 入力 text に対し {
+    result = ""
+    i = 0
+
+    もし i < 長さ(text) なら {
+        その間 i < 長さ(text) {
+            もし text[i] == " " なら {
+                count = 0
+                その間 i < 長さ(text) かつ text[i] == " " {
+                    count = 和(count, 1)
+                    i = 和(i, 1)
+                }
+                もし count == 1 なら {
+                    result = result + "_"
+                } それ以外なら {
+                    result = result + "-"
+                }
+            } それ以外なら {
+                result = result + text[i]
+                i = 和(i, 1)
+            }
+        }
+    }
+
+    result
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+fix_spaces = 入力 text に対し {
+    result = ""
+    i = 0
+
+    もし i < 長さ(text) なら {
+        その間 i < 長さ(text) {
+            もし text[i] == " " なら {
+                count = 0
+                その間 i < 長さ(text) かつ text[i] == " " {
+                    count = 和(count, 1)
+                    i = 和(i, 1)
+                }
+                もし count == 1 なら {
+                    result = result + "_"
+                } それ以外なら {
+                    result = result + "-"
+                }
+            } それ以外なら {
+                result = result + text[i]
+                i = 和(i, 1)
+            }
+        }
+    }
+
+    result
+}
+--- Result: ✗ FAILED (0.11s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[142/164] 141_file_name_check - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+file_name_check = 入力 file_name に対し {
+  chars = 配列化(file_name)
+  n = 長さ(chars)
+
+  dot_count = 0
+  dot_pos = -1
+  i = 0
+  digit_run = 0
+
+  反復 (i < n) {
+    c = chars[i]
+
+    もし (c == 46) なら {
+      dot_count = 和(dot_count, 1)
+      dot_pos = i
+      digit_run = 0
+    } 違えば もし (((c >= 48) かつ (c <= 57))) なら {
+      digit_run = 和(digit_run, 1)
+      もし (digit_run >= 3) なら {
+        戻る "No"
+      }
+    } 違えば {
+      digit_run = 0
+    }
+
+    i = 和(i, 1)
+  }
+
+  もし (dot_count != 1) なら {
+    戻る "No"
+  }
+
+  もし (dot_pos <= 0) なら {
+    戻る "No"
+  }
+
+  first = chars[0]
+  is_lower = ((first >= 97) かつ (first <= 122))
+  is_upper = ((first >= 65) かつ (first <= 90))
+  もし ((is_lower または is_upper) == 偽) なら {
+    戻る "No"
+  }
+
+  ext_len = 差(n, dot_pos, 1)
+
+  もし (ext_len == 3) なら {
+    e1 = chars[和(dot_pos, 1)]
+    e2 = chars[和(dot_pos, 2)]
+    e3 = chars[和(dot_pos, 3)]
+
+    is_txt = ((e1 == 116) かつ (e2 == 120) かつ (e3 == 116))
+    is_exe = ((e1 == 101) かつ (e2 == 120) かつ (e3 == 101))
+    is_dll = ((e1 == 100) かつ (e2 == 108) かつ (e3 == 108))
+
+    もし (is_txt または is_exe または is_dll) なら {
+      戻る "Yes"
+    }
+  }
+
+  戻る "No"
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+file_name_check = 入力 file_name に対し {
+  chars = 配列化(file_name)
+  n = 長さ(chars)
+
+  dot_count = 0
+  dot_pos = -1
+  i = 0
+  digit_run = 0
+
+  反復 (i < n) {
+    c = chars[i]
+
+    もし (c == 46) なら {
+      dot_count = 和(dot_count, 1)
+      dot_pos = i
+      digit_run = 0
+    } 違えば もし (((c >= 48) かつ (c <= 57))) なら {
+      digit_run = 和(digit_run, 1)
+      もし (digit_run >= 3) なら {
+        戻る "No"
+      }
+    } 違えば {
+      digit_run = 0
+    }
+
+    i = 和(i, 1)
+  }
+
+  もし (dot_count != 1) なら {
+    戻る "No"
+  }
+
+  もし (dot_pos <= 0) なら {
+    戻る "No"
+  }
+
+  first = chars[0]
+  is_lower = ((first >= 97) かつ (first <= 122))
+  is_upper = ((first >= 65) かつ (first <= 90))
+  もし ((is_lower または is_upper) == 偽) なら {
+    戻る "No"
+  }
+
+  ext_len = 差(n, dot_pos, 1)
+
+  もし (ext_len == 3) なら {
+    e1 = chars[和(dot_pos, 1)]
+    e2 = chars[和(dot_pos, 2)]
+    e3 = chars[和(dot_pos, 3)]
+
+    is_txt = ((e1 == 116) かつ (e2 == 120) かつ (e3 == 116))
+    is_exe = ((e1 == 101) かつ (e2 == 120) かつ (e3 == 101))
+    is_dll = ((e1 == 100) かつ (e2 == 108) かつ (e3 == 108))
+
+    もし (is_txt または is_exe または is_dll) なら {
+      戻る "Yes"
+    }
+  }
+
+  戻る "No"
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[143/164] 142_sum_squares - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+sum_squares = 入力 lst に対し {
+  合計 = 0
+  i = 0
+
+  lst の間 {
+    値 = lst[i]
+
+    もし 剰余(i, 3) == 0 なら {
+      合計 = 和(合計, 積(値, 値))
+    } でなければ もし 剰余(i, 4) == 0 なら {
+      合計 = 和(合計, 積(値, 値, 値))
+    } でなければ {
+      合計 = 和(合計, 値)
+    }
+
+    i = 和(i, 1)
+  }
+
+  合計
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+sum_squares = 入力 lst に対し {
+  合計 = 0
+  i = 0
+
+  lst の間 {
+    値 = lst[i]
+
+    もし 剰余(i, 3) == 0 なら {
+      合計 = 和(合計, 積(値, 値))
+    } でなければ もし 剰余(i, 4) == 0 なら {
+      合計 = 和(合計, 積(値, 値, 値))
+    } でなければ {
+      合計 = 和(合計, 値)
+    }
+
+    i = 和(i, 1)
+  }
+
+  合計
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[144/164] 143_words_in_sentence - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+words_in_sentence = 入力 sentence に対し {
+    words = sentence.split(" ")
+    result = []
+    各 word in words {
+        n = word.length()
+        もし n < 2 なら {
+        } 違えば {
+            is_prime = 真
+            i = 2
+            各 _ in word {
+                もし i * i > n なら {
+                    抜ける
+                }
+                もし 剰余(n, i) == 0 なら {
+                    is_prime = 偽
+                    抜ける
+                }
+                i = 和(i, 1)
+            }
+            もし is_prime なら {
+                result.push(word)
+            }
+        }
+    }
+    戻る result.join(" ")
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+words_in_sentence = 入力 sentence に対し {
+    words = sentence.split(" ")
+    result = []
+    各 word in words {
+        n = word.length()
+        もし n < 2 なら {
+        } 違えば {
+            is_prime = 真
+            i = 2
+            各 _ in word {
+                もし i * i > n なら {
+                    抜ける
+                }
+                もし 剰余(n, i) == 0 なら {
+                    is_prime = 偽
+                    抜ける
+                }
+                i = 和(i, 1)
+            }
+            もし is_prime なら {
+                result.push(word)
+            }
+        }
+    }
+    戻る result.join(" ")
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[145/164] 144_simplify - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+simplify = 入力 x, n に対し {
+  xa = 配列化(x)
+  na = 配列化(n)
+
+  xs = 0
+  ns = 0
+
+  xi = 0
+  xlen = 0
+  xj = 0
+  nlen = 0
+  nj = 0
+
+  xlen = 和(xlen, 1)
+  xj = 0
+  xi = 0
+  xden = 0
+  xnum = 0
+  seen = 偽
+
+  xcount = 0
+  xk = 0
+  xcount = 差(和(xcount, 配列化(x)), xcount)
+  xk = 0
+
+  xnum = 0
+  xden = 0
+  seen = 偽
+  xi = 0
+
+  xloop = 0
+  xloop = 0
+
+  xchars = 配列化(x)
+  nchars = 配列化(n)
+
+  xnum = 0
+  xden = 0
+  seen = 偽
+  i = 0
+  xlen = 差(和(0, xchars), 0)
+  i = 0
+
+  xlen = 0
+  i = 0
+  xlen = 和(xlen, 1)
+  i = 0
+
+  xnum = 0
+  xden = 0
+  seen = 偽
+  i = 0
+  xsize = 0
+  xsize = 差(和(xsize, xchars), xsize)
+  i = 0
+
+  xsize = 0
+  i = 0
+  xsize = 和(xsize, 0)
+  i = 0
+  xsize = 差(和(xsize, xchars), xsize)
+
+  xnum = 0
+  xden = 0
+  seen = 偽
+  i = 0
+  繰り返し i < xsize の間 {
+    c = xchars[i]
+    もし c == 47 なら {
+      seen = 真
+    } 違えば {
+      d = 差(c, 48)
+      もし seen なら {
+        xden = 和(積(xden, 10), d)
+      } 違えば {
+        xnum = 和(積(xnum, 10), d)
+      }
+    }
+    i = 和(i, 1)
+  }
+
+  nnum = 0
+  nden = 0
+  seen = 偽
+  i = 0
+  nsize = 0
+  nsize = 差(和(nsize, nchars), nsize)
+
+  繰り返し i < nsize の間 {
+    c = nchars[i]
+    もし c == 47 なら {
+      seen = 真
+    } 違えば {
+      d = 差(c, 48)
+      もし seen なら {
+        nden = 和(積(nden, 10), d)
+      } 違えば {
+        nnum = 和(積(nnum, 10), d)
+      }
+    }
+    i = 和(i, 1)
+  }
+
+  prod_num = 積(xnum, nnum)
+  prod_den = 積(xden, nden)
+
+  返す 剰余(prod_num, prod_den) == 0
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+simplify = 入力 x, n に対し {
+  xa = 配列化(x)
+  na = 配列化(n)
+
+  xs = 0
+  ns = 0
+
+  xi = 0
+  xlen = 0
+  xj = 0
+  nlen = 0
+  nj = 0
+
+  xlen = 和(xlen, 1)
+  xj = 0
+  xi = 0
+  xden = 0
+  xnum = 0
+  seen = 偽
+
+  xcount = 0
+  xk = 0
+  xcount = 差(和(xcount, 配列化(x)), xcount)
+  xk = 0
+
+  xnum = 0
+  xden = 0
+  seen = 偽
+  xi = 0
+
+  xloop = 0
+  xloop = 0
+
+  xchars = 配列化(x)
+  nchars = 配列化(n)
+
+  xnum = 0
+  xden = 0
+  seen = 偽
+  i = 0
+  xlen = 差(和(0, xchars), 0)
+  i = 0
+
+  xlen = 0
+  i = 0
+  xlen = 和(xlen, 1)
+  i = 0
+
+  xnum = 0
+  xden = 0
+  seen = 偽
+  i = 0
+  xsize = 0
+  xsize = 差(和(xsize, xchars), xsize)
+  i = 0
+
+  xsize = 0
+  i = 0
+  xsize = 和(xsize, 0)
+  i = 0
+  xsize = 差(和(xsize, xchars), xsize)
+
+  xnum = 0
+  xden = 0
+  seen = 偽
+  i = 0
+  繰り返し i < xsize の間 {
+    c = xchars[i]
+    もし c == 47 なら {
+      seen = 真
+    } 違えば {
+      d = 差(c, 48)
+      もし seen なら {
+        xden = 和(積(xden, 10), d)
+      } 違えば {
+        xnum = 和(積(xnum, 10), d)
+      }
+    }
+    i = 和(i, 1)
+  }
+
+  nnum = 0
+  nden = 0
+  seen = 偽
+  i = 0
+  nsize = 0
+  nsize = 差(和(nsize, nchars), nsize)
+
+  繰り返し i < nsize の間 {
+    c = nchars[i]
+    もし c == 47 なら {
+      seen = 真
+    } 違えば {
+      d = 差(c, 48)
+      もし seen なら {
+        nden = 和(積(nden, 10), d)
+      } 違えば {
+        nnum = 和(積(nnum, 10), d)
+      }
+    }
+    i = 和(i, 1)
+  }
+
+  prod_num = 積(xnum, nnum)
+  prod_den = 積(xden, nden)
+
+  返す 剰余(prod_num, prod_den) == 0
+}
+--- Result: ✗ FAILED (0.12s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[146/164] 145_order_by_points - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+order_by_points = 入力 nums に対し {
+    桁和 = 入力 n に対し {
+        s = 文字列化(絶対値(n))
+        合計 = 0
+        i = 0
+        長さ = 配列化(s)
+
+        反復 (i < 最大値(長さ)) {
+            合計 = 和(合計, 差(長さ[i], 48))
+            i = 和(i, 1)
+        }
+
+        戻る 合計
+    }
+
+    結果 = []
+    使用 = []
+    i = 0
+    長さ = 配列化(nums)
+
+    反復 (i < 最大値(長さ)) {
+        使用 = 和(使用, [偽])
+        i = 和(i, 1)
+    }
+
+    残り = 最大値(長さ)
+
+    反復 (残り > 0) {
+        最小位置 = -1
+        最小桁和 = 0
+        i = 0
+
+        反復 (i < 最大値(長さ)) {
+            もし (使用[i] == 偽) {
+                現在桁和 = 桁和(nums[i])
+
+                もし (最小位置 == -1) {
+                    最小位置 = i
+                    最小桁和 = 現在桁和
+                } 違えば もし (現在桁和 < 最小桁和) {
+                    最小位置 = i
+                    最小桁和 = 現在桁和
+                }
+            }
+            i = 和(i, 1)
+        }
+
+        結果 = 和(結果, [nums[最小位置]])
+        使用[最小位置] = 真
+        残り = 差(残り, 1)
+    }
+
+    戻る 結果
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+order_by_points = 入力 nums に対し {
+    桁和 = 入力 n に対し {
+        s = 文字列化(絶対値(n))
+        合計 = 0
+        i = 0
+        長さ = 配列化(s)
+
+        反復 (i < 最大値(長さ)) {
+            合計 = 和(合計, 差(長さ[i], 48))
+            i = 和(i, 1)
+        }
+
+        戻る 合計
+    }
+
+    結果 = []
+    使用 = []
+    i = 0
+    長さ = 配列化(nums)
+
+    反復 (i < 最大値(長さ)) {
+        使用 = 和(使用, [偽])
+        i = 和(i, 1)
+    }
+
+    残り = 最大値(長さ)
+
+    反復 (残り > 0) {
+        最小位置 = -1
+        最小桁和 = 0
+        i = 0
+
+        反復 (i < 最大値(長さ)) {
+            もし (使用[i] == 偽) {
+                現在桁和 = 桁和(nums[i])
+
+                もし (最小位置 == -1) {
+                    最小位置 = i
+                    最小桁和 = 現在桁和
+                } 違えば もし (現在桁和 < 最小桁和) {
+                    最小位置 = i
+                    最小桁和 = 現在桁和
+                }
+            }
+            i = 和(i, 1)
+        }
+
+        結果 = 和(結果, [nums[最小位置]])
+        使用[最小位置] = 真
+        残り = 差(残り, 1)
+    }
+
+    戻る 結果
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[147/164] 146_specialFilter - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+specialFilter = 入力 nums に対し {
+  count = 0
+  i = 0
+
+  反復(i < 長さ(nums)) {
+    n = nums[i]
+
+    もし n > 10 なら {
+      s = 文字列化(絶対値(n))
+      first = s[0]
+      last = s[差(長さ(s), 1)]
+
+      もし または(first == "1", first == "3", first == "5", first == "7", first == "9") なら {
+        もし または(last == "1", last == "3", last == "5", last == "7", last == "9") なら {
+          count = 和(count, 1)
+        }
+      }
+    }
+
+    i = 和(i, 1)
+  }
+
+  count
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+specialFilter = 入力 nums に対し {
+  count = 0
+  i = 0
+
+  反復(i < 長さ(nums)) {
+    n = nums[i]
+
+    もし n > 10 なら {
+      s = 文字列化(絶対値(n))
+      first = s[0]
+      last = s[差(長さ(s), 1)]
+
+      もし または(first == "1", first == "3", first == "5", first == "7", first == "9") なら {
+        もし または(last == "1", last == "3", last == "5", last == "7", last == "9") なら {
+          count = 和(count, 1)
+        }
+      }
+    }
+
+    i = 和(i, 1)
+  }
+
+  count
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[148/164] 147_get_max_triples - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+get_max_triples = 入力 n に対し {
+    a = []
+    i = 1
+    間 i 以下 n の間 {
+        a = a + [差(積(i, i), i, -1)]
+        i = 和(i, 1)
+    }
+
+    result = []
+    i = 0
+    間 i 未満 差(n, 2) の間 {
+        j = 和(i, 1)
+        間 j 未満 差(n, 1) の間 {
+            k = 和(j, 1)
+            間 k 未満 n の間 {
+                x = a[i]
+                y = a[j]
+                z = a[k]
+                もし 剰余(和(x, y, z), 3) が 0 なら {
+                    result = result + [[x, y, z]]
+                }
+                k = 和(k, 1)
+            }
+            j = 和(j, 1)
+        }
+        i = 和(i, 1)
+    }
+
+    result
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+get_max_triples = 入力 n に対し {
+    a = []
+    i = 1
+    間 i 以下 n の間 {
+        a = a + [差(積(i, i), i, -1)]
+        i = 和(i, 1)
+    }
+
+    result = []
+    i = 0
+    間 i 未満 差(n, 2) の間 {
+        j = 和(i, 1)
+        間 j 未満 差(n, 1) の間 {
+            k = 和(j, 1)
+            間 k 未満 n の間 {
+                x = a[i]
+                y = a[j]
+                z = a[k]
+                もし 剰余(和(x, y, z), 3) が 0 なら {
+                    result = result + [[x, y, z]]
+                }
+                k = 和(k, 1)
+            }
+            j = 和(j, 1)
+        }
+        i = 和(i, 1)
+    }
+
+    result
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[149/164] 148_bf - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+bf = 入力 planet1, planet2 に対し {
+  惑星一覧 = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
+
+  i1 = -1
+  i2 = -1
+  i = 0
+
+  反復 (i < 8) {
+    もし (惑星一覧[i] == planet1) {
+      i1 = i
+    }
+    もし (惑星一覧[i] == planet2) {
+      i2 = i
+    }
+    i = 和(i, 1)
+  }
+
+  もし ((i1 == -1) または (i2 == -1)) {
+    戻る ()
+  }
+
+  もし (i1 > i2) {
+    tmp = i1
+    i1 = i2
+    i2 = tmp
+  }
+
+  結果 = []
+  i = 和(i1, 1)
+
+  反復 (i < i2) {
+    結果 = 結果 + [惑星一覧[i]]
+    i = 和(i, 1)
+  }
+
+  戻る 結果
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+bf = 入力 planet1, planet2 に対し {
+  惑星一覧 = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
+
+  i1 = -1
+  i2 = -1
+  i = 0
+
+  反復 (i < 8) {
+    もし (惑星一覧[i] == planet1) {
+      i1 = i
+    }
+    もし (惑星一覧[i] == planet2) {
+      i2 = i
+    }
+    i = 和(i, 1)
+  }
+
+  もし ((i1 == -1) または (i2 == -1)) {
+    戻る ()
+  }
+
+  もし (i1 > i2) {
+    tmp = i1
+    i1 = i2
+    i2 = tmp
+  }
+
+  結果 = []
+  i = 和(i1, 1)
+
+  反復 (i < i2) {
+    結果 = 結果 + [惑星一覧[i]]
+    i = 和(i, 1)
+  }
+
+  戻る 結果
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[150/164] 149_sorted_list_sum - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+sorted_list_sum = 入力 lst に対し {
+  偶数文字列たち = lst から絞り込み, 入力 s に対し {
+    剰余(長さ(s), 2) == 0
+  }
+
+  偶数文字列たち を並べ替え, 入力 a, b に対し {
+    もし 長さ(a) < 長さ(b) なら {
+      真
+    } でなければ もし 長さ(a) > 長さ(b) なら {
+      偽
+    } でなければ {
+      a < b
+    }
+  }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+sorted_list_sum = 入力 lst に対し {
+  偶数文字列たち = lst から絞り込み, 入力 s に対し {
+    剰余(長さ(s), 2) == 0
+  }
+
+  偶数文字列たち を並べ替え, 入力 a, b に対し {
+    もし 長さ(a) < 長さ(b) なら {
+      真
+    } でなければ もし 長さ(a) > 長さ(b) なら {
+      偽
+    } でなければ {
+      a < b
+    }
+  }
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[151/164] 150_x_or_y - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+x_or_y = 入力 n, x, y に対し {
+  もし 最大値(n, 2) != n なら {
+    y
+  } でなければ {
+    i = 2
+    素数 = 真
+
+    反復 (i < n) の間 {
+      もし 剰余(n, i) == 0 なら {
+        素数 = 偽
+        i = n
+      } でなければ {
+        i = 和(i, 1)
+      }
+    }
+
+    もし 素数 なら {
+      x
+    } でなければ {
+      y
+    }
+  }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+x_or_y = 入力 n, x, y に対し {
+  もし 最大値(n, 2) != n なら {
+    y
+  } でなければ {
+    i = 2
+    素数 = 真
+
+    反復 (i < n) の間 {
+      もし 剰余(n, i) == 0 なら {
+        素数 = 偽
+        i = n
+      } でなければ {
+        i = 和(i, 1)
+      }
+    }
+
+    もし 素数 なら {
+      x
+    } でなければ {
+      y
+    }
+  }
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[152/164] 151_double_the_difference - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+double_the_difference = 入力 lst に対し {
+  合計 = 0
+  lst の各要素を x について {
+    もし かつ(整数判定(x), x >= 0, 剰余(x, 2) == 1) なら {
+      合計 = 和(合計, 積(x, x))
+    }
+  }
+  合計
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+double_the_difference = 入力 lst に対し {
+  合計 = 0
+  lst の各要素を x について {
+    もし かつ(整数判定(x), x >= 0, 剰余(x, 2) == 1) なら {
+      合計 = 和(合計, 積(x, x))
+    }
+  }
+  合計
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[153/164] 152_compare - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+compare = 入力 game, guess に対し {
+    result = []
+    i = 0
+
+    i < 長さ(game) の間 {
+        result = result + [絶対値(差(game[i], guess[i]))]
+        i = 和(i, 1)
+    }
+
+    result
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+compare = 入力 game, guess に対し {
+    result = []
+    i = 0
+
+    i < 長さ(game) の間 {
+        result = result + [絶対値(差(game[i], guess[i]))]
+        i = 和(i, 1)
+    }
+
+    result
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[154/164] 153_Strongest_Extension - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+Strongest_Extension = 入力 class_name, extensions に対し {
+    best = extensions[0]
+    best_score = -1000000
+
+    extensions の各要素 ext について {
+        cap = 0
+        sm = 0
+
+        ext の各要素 ch について {
+            code = 整数化(ch)
+
+            もし code >= 65 かつ code <= 90 なら {
+                cap = 和(cap, 1)
+            } 違えば もし code >= 97 かつ code <= 122 なら {
+                sm = 和(sm, 1)
+            }
+        }
+
+        score = 差(cap, sm)
+
+        もし score > best_score なら {
+            best_score = score
+            best = ext
+        }
+    }
+
+    戻る 文字列化(class_name) + "." + 文字列化(best)
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+Strongest_Extension = 入力 class_name, extensions に対し {
+    best = extensions[0]
+    best_score = -1000000
+
+    extensions の各要素 ext について {
+        cap = 0
+        sm = 0
+
+        ext の各要素 ch について {
+            code = 整数化(ch)
+
+            もし code >= 65 かつ code <= 90 なら {
+                cap = 和(cap, 1)
+            } 違えば もし code >= 97 かつ code <= 122 なら {
+                sm = 和(sm, 1)
+            }
+        }
+
+        score = 差(cap, sm)
+
+        もし score > best_score なら {
+            best_score = score
+            best = ext
+        }
+    }
+
+    戻る 文字列化(class_name) + "." + 文字列化(best)
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[155/164] 154_cycpattern_check - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+cycpattern_check = 入力 a, b に対し {
+    もし b == "" なら {
+        戻る 真
+    }
+
+    n = 配列化(文字列化(b)).長さ
+    i = 0
+
+    繰り返し i < n の間 {
+        rotated = b[i:n] + b[0:i]
+        もし a に rotated が含まれる なら {
+            戻る 真
+        }
+        i = 和(i, 1)
+    }
+
+    戻る 偽
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+cycpattern_check = 入力 a, b に対し {
+    もし b == "" なら {
+        戻る 真
+    }
+
+    n = 配列化(文字列化(b)).長さ
+    i = 0
+
+    繰り返し i < n の間 {
+        rotated = b[i:n] + b[0:i]
+        もし a に rotated が含まれる なら {
+            戻る 真
+        }
+        i = 和(i, 1)
+    }
+
+    戻る 偽
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[156/164] 155_even_odd_count - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+even_odd_count = 入力 num に対し {
+    s = 文字列化(絶対値(num))
+    even = 0
+    odd = 0
+    i = 0
+
+    もし i < 長さ(s) の間 {
+        ch = s[i]
+        digit = 整数化(ch)
+
+        もし 剰余(digit, 2) == 0 なら {
+            even = 和(even, 1)
+        } 違えば {
+            odd = 和(odd, 1)
+        }
+
+        i = 和(i, 1)
+    }
+
+    [even, odd]
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+even_odd_count = 入力 num に対し {
+    s = 文字列化(絶対値(num))
+    even = 0
+    odd = 0
+    i = 0
+
+    もし i < 長さ(s) の間 {
+        ch = s[i]
+        digit = 整数化(ch)
+
+        もし 剰余(digit, 2) == 0 なら {
+            even = 和(even, 1)
+        } 違えば {
+            odd = 和(odd, 1)
+        }
+
+        i = 和(i, 1)
+    }
+
+    [even, odd]
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[157/164] 156_int_to_mini_roman - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+int_to_mini_roman = 入力 number に対し {
+    result = ""
+    values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+    romans = ["m", "cm", "d", "cd", "c", "xc", "l", "xl", "x", "ix", "v", "iv", "i"]
+
+    i = 0
+    反復 (i < 13) {
+        反復 (number >= values[i]) {
+            result = result + romans[i]
+            number = 差(number, values[i])
+        }
+        i = 和(i, 1)
+    }
+
+    戻る result
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+int_to_mini_roman = 入力 number に対し {
+    result = ""
+    values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+    romans = ["m", "cm", "d", "cd", "c", "xc", "l", "xl", "x", "ix", "v", "iv", "i"]
+
+    i = 0
+    反復 (i < 13) {
+        反復 (number >= values[i]) {
+            result = result + romans[i]
+            number = 差(number, values[i])
+        }
+        i = 和(i, 1)
+    }
+
+    戻る result
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[158/164] 157_right_angle_triangle - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+right_angle_triangle = 入力 a, b, c に対し {
+  x = 積(a, a)
+  y = 積(b, b)
+  z = 積(c, c)
+  または(
+    等しい(和(x, y), z),
+    等しい(和(x, z), y),
+    等しい(和(y, z), x)
+  )
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+right_angle_triangle = 入力 a, b, c に対し {
+  x = 積(a, a)
+  y = 積(b, b)
+  z = 積(c, c)
+  または(
+    等しい(和(x, y), z),
+    等しい(和(x, z), y),
+    等しい(和(y, z), x)
+  )
+}
+--- Result: ✗ FAILED (0.07s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[159/164] 158_find_max - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+find_max = 入力 words に対し {
+    best = ""
+    best_count = -1
+
+    words の各要素を w で繰り返す {
+        chars = 配列化(w)
+        unique = []
+
+        chars の各要素を c で繰り返す {
+            found = 偽
+            unique の各要素を u で繰り返す {
+                もし u == c なら {
+                    found = 真
+                }
+            }
+            もし found == 偽 なら {
+                unique = unique + [c]
+            }
+        }
+
+        count = 長さ(unique)
+
+        もし count > best_count なら {
+            best = w
+            best_count = count
+        } でなければ もし count == best_count なら {
+            もし w < best なら {
+                best = w
+            }
+        }
+    }
+
+    best
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+find_max = 入力 words に対し {
+    best = ""
+    best_count = -1
+
+    words の各要素を w で繰り返す {
+        chars = 配列化(w)
+        unique = []
+
+        chars の各要素を c で繰り返す {
+            found = 偽
+            unique の各要素を u で繰り返す {
+                もし u == c なら {
+                    found = 真
+                }
+            }
+            もし found == 偽 なら {
+                unique = unique + [c]
+            }
+        }
+
+        count = 長さ(unique)
+
+        もし count > best_count なら {
+            best = w
+            best_count = count
+        } でなければ もし count == best_count なら {
+            もし w < best なら {
+                best = w
+            }
+        }
+    }
+
+    best
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[160/164] 159_eat - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+eat = 入力 number, need, remaining に対し {
+  食べる = 最小値(need, remaining)
+  [和(number, 食べる), 差(remaining, 食べる)]
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+eat = 入力 number, need, remaining に対し {
+  食べる = 最小値(need, remaining)
+  [和(number, 食べる), 差(remaining, 食べる)]
+}
+--- Result: ✗ FAILED (0.10s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍eat(5, 6, 10) ❌{"number": 5, "need": 6, "remaining": 10, "食べる": 6} ✅[11, 4] line 9, column 1:
+| >>> eat(5, 6, 10)
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[161/164] 160_do_algebra - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+do_algebra = 入力 operator, operand に対し {
+    result = operand[0]
+    i = 0
+
+    繰り返し i < 配列化(operator).長さ の間 {
+        op = operator[i]
+        value = operand[差(i, -1)]
+
+        もし op == "+" なら {
+            result = 和(result, value)
+        } そうでなく もし op == "-" なら {
+            result = 差(result, value)
+        } そうでなく もし op == "*" なら {
+            result = 積(result, value)
+        } そうでなく もし op == "//" なら {
+            result = 商(result, value)
+        } そうでなく もし op == "**" なら {
+            power = 1
+            j = 0
+            繰り返し j < value の間 {
+                power = 積(power, result)
+                j = 和(j, 1)
+            }
+            result = power
+        }
+
+        i = 和(i, 1)
+    }
+
+    result
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+do_algebra = 入力 operator, operand に対し {
+    result = operand[0]
+    i = 0
+
+    繰り返し i < 配列化(operator).長さ の間 {
+        op = operator[i]
+        value = operand[差(i, -1)]
+
+        もし op == "+" なら {
+            result = 和(result, value)
+        } そうでなく もし op == "-" なら {
+            result = 差(result, value)
+        } そうでなく もし op == "*" なら {
+            result = 積(result, value)
+        } そうでなく もし op == "//" なら {
+            result = 商(result, value)
+        } そうでなく もし op == "**" なら {
+            power = 1
+            j = 0
+            繰り返し j < value の間 {
+                power = 積(power, result)
+                j = 和(j, 1)
+            }
+            result = power
+        }
+
+        i = 和(i, 1)
+    }
+
+    result
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[162/164] 161_solve - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+solve = 入力 s に対し {
+  hasAlpha = 偽
+  result = ""
+  i = 0
+
+  反復 (i < 長さ(s)) {
+    ch = s[i]
+    code = s[i]
+
+    もし ((65 <= code かつ code <= 90) または (97 <= code かつ code <= 122)) なら {
+      hasAlpha = 真
+
+      もし (65 <= code かつ code <= 90) なら {
+        result = result + 文字列化(配列化([code + 32]))
+      } でなければ {
+        result = result + 文字列化(配列化([code - 32]))
+      }
+    } でなければ {
+      result = result + 文字列化(配列化([code]))
+    }
+
+    i = i + 1
+  }
+
+  もし (hasAlpha) なら {
+    戻る result
+  } でなければ {
+    rev = ""
+    i = 長さ(s) - 1
+
+    反復 (i >= 0) {
+      rev = rev + 文字列化(配列化([s[i]]))
+      i = i - 1
+    }
+
+    戻る rev
+  }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+solve = 入力 s に対し {
+  hasAlpha = 偽
+  result = ""
+  i = 0
+
+  反復 (i < 長さ(s)) {
+    ch = s[i]
+    code = s[i]
+
+    もし ((65 <= code かつ code <= 90) または (97 <= code かつ code <= 122)) なら {
+      hasAlpha = 真
+
+      もし (65 <= code かつ code <= 90) なら {
+        result = result + 文字列化(配列化([code + 32]))
+      } でなければ {
+        result = result + 文字列化(配列化([code - 32]))
+      }
+    } でなければ {
+      result = result + 文字列化(配列化([code]))
+    }
+
+    i = i + 1
+  }
+
+  もし (hasAlpha) なら {
+    戻る result
+  } でなければ {
+    rev = ""
+    i = 長さ(s) - 1
+
+    反復 (i >= 0) {
+      rev = rev + 文字列化(配列化([s[i]]))
+      i = i - 1
+    }
+
+    戻る rev
+  }
+}
+--- Result: ✗ FAILED (0.07s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[163/164] 162_string_to_md5 - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+string_to_md5 = 入力 text に対し {
+    もし 文字列判定(text) かつ text == "" なら {
+        戻る 値なし
+    }
+
+    戻る md5(text)
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+string_to_md5 = 入力 text に対し {
+    もし 文字列判定(text) かつ text == "" なら {
+        戻る 値なし
+    }
+
+    戻る md5(text)
+}
+--- Result: ✗ FAILED (0.10s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[164/164] 163_generate_integers - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+generate_integers = 入力 a, b に対し {
+  小さい = 最小値(a, b)
+  大きい = 最大値(a, b)
+  結果 = []
+
+  もし 剰余(小さい, 2) != 0 なら {
+    小さい = 和(小さい, 1)
+  }
+
+  もし 差(大きい, 小さい) < 2 なら {
+    戻る 結果
+  }
+
+  現在 = 小さい
+  もし 現在 == 大きい なら {
+    戻る 結果
+  }
+
+  繰り返し {
+    もし 現在 >= 大きい なら {
+      止める
+    }
+    結果 に 現在 を追加
+    現在 = 和(現在, 2)
+  }
+
+  戻る 結果
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+generate_integers = 入力 a, b に対し {
+  小さい = 最小値(a, b)
+  大きい = 最大値(a, b)
+  結果 = []
+
+  もし 剰余(小さい, 2) != 0 なら {
+    小さい = 和(小さい, 1)
+  }
+
+  もし 差(大きい, 小さい) < 2 なら {
+    戻る 結果
+  }
+
+  現在 = 小さい
+  もし 現在 == 大きい なら {
+    戻る 結果
+  }
+
+  繰り返し {
+    もし 現在 >= 大きい なら {
+      止める
+    }
+    結果 に 現在 を追加
+    現在 = 和(現在, 2)
+  }
+
+  戻る 結果
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+評価結果サマリー
+============================================================
+Total:  164 問題
+Passed: 0 問題
+Failed: 164 問題
+pass@1: 0.00% (0/164)
+95% CI: [0.00%, 2.29%] (Wilson Score)

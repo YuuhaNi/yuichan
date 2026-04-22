@@ -1,0 +1,38 @@
+標準ライブラリを使う
+
+# 数値が回文数かどうかを判定する
+is_palindrome = 入力 num に対し {
+   s = 文字列化(num)
+   len = sの大きさ
+   half = 商(len, 2)
+   i = 0
+   half回くり返す {
+      j = 差(差(len, 1), i)
+      もし s[i] が s[j] 以外 ならば {
+         偽が答え
+      }
+      i を増やす
+   }
+   真が答え
+}
+
+# 1 から n までの偶数と奇数の回文数を数える
+even_odd_palindrome = 入力 n に対し {
+   even_count = 0
+   odd_count = 0
+   i = 1
+   n回くり返す {
+      もし is_palindrome(i) ならば {
+         # i が偶数か奇数かを判定
+         remainder = 剰余(i, 2)
+         もし remainder が 0 ならば {
+            even_count を増やす
+         }
+         そうでなければ {
+            odd_count を増やす
+         }
+      }
+      i を増やす
+   }
+   {"even": even_count, "odd": odd_count} が答え
+}

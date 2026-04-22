@@ -1,0 +1,43 @@
+標準ライブラリを使う
+
+sorted_list_sum = 入力 lst に対し {
+   result = []
+   i = 0
+
+   lstの大きさ回くり返す{
+      s = lst[i]
+      もし剰余(sの大きさ, 2)が0ならば{
+         resultにsを追加する
+      }
+      iを増やす
+   }
+
+   n = resultの大きさ
+   n回くり返す{
+      j = 0
+      差(n, 1)回くり返す{
+         a = result[j]
+         b = result[和(j, 1)]
+         swap = 偽
+
+         もしaの大きさがbの大きさより大きいならば{
+            swap = 真
+         }そうでなければ{
+            もしaの大きさがbの大きさならば{
+               もしaがbより大きいならば{
+                  swap = 真
+               }
+            }
+         }
+
+         もしswapが真ならば{
+            temp = result[j]
+            result[j] = result[和(j, 1)]
+            result[和(j, 1)] = temp
+         }
+         jを増やす
+      }
+   }
+
+   resultが答え
+}

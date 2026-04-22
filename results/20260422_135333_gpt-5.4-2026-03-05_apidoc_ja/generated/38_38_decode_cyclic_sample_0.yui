@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+decode_cyclic = 入力 s に対し {
+  codes = 配列化(s)
+  n = 長さ(codes)
+  result = []
+
+  i = 0
+  の間 (i < n) {
+    if (i + 2 < n) {
+      result = 追加(result, codes[i + 1])
+      result = 追加(result, codes[i + 2])
+      result = 追加(result, codes[i])
+    } 違えば {
+      result = 追加(result, codes[i])
+      if (i + 1 < n) {
+        result = 追加(result, codes[i + 1])
+      }
+      if (i + 2 < n) {
+        result = 追加(result, codes[i + 2])
+      }
+    }
+    i = 和(i, 3)
+  }
+
+  文字列化(result)
+}

@@ -1,0 +1,53 @@
+標準ライブラリを使う
+
+even_odd_palindrome = 入力 n に対し {
+  even_count = 0
+  odd_count = 0
+  
+  1 回 くり返す {
+    i = 1
+    i が n より大きい ならば {
+      くり返しを抜ける
+    }
+    
+    # 数値を文字列に変換して回文判定
+    num_str = 文字列化(i)
+    reversed_str = 逆順(num_str)
+    
+    もし num_str が reversed_str ならば {
+      # 回文数である
+      もし 剰余(i, 2) が 0 ならば {
+        even_count を増やす
+      }
+      そうでなければ {
+        odd_count を増やす
+      }
+    }
+    
+    i を増やす
+  }
+  
+  {"even": even_count, "odd": odd_count} が 答え
+}
+標準ライブラリを使う
+
+even_odd_palindrome = 入力 n に対し {
+  even_count = 0
+  odd_count = 0
+  
+  n 回 くり返す {
+    i = カウンタ
+    num_str = 文字列化(i)
+    
+    もし num_str が 逆順(num_str) ならば {
+      もし 剰余(i, 2) が 0 ならば {
+        even_count を増やす
+      }
+      そうでなければ {
+        odd_count を増やす
+      }
+    }
+  }
+  
+  {"even": even_count, "odd": odd_count} が 答え
+}

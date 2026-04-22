@@ -1,0 +1,72 @@
+標準ライブラリを使う
+
+sort_numbers = 入力 numbers に対し {
+   word_to_num = 入力なしに対し {
+      # 何も返さない → ローカル変数をまとめたオブジェクトが返る
+   }
+   word_to_num["zero"] = 0
+   word_to_num["one"] = 1
+   word_to_num["two"] = 2
+   word_to_num["three"] = 3
+   word_to_num["four"] = 4
+   word_to_num["five"] = 5
+   word_to_num["six"] = 6
+   word_to_num["seven"] = 7
+   word_to_num["eight"] = 8
+   word_to_num["nine"] = 9
+
+   num_to_word = 入力なしに対し {
+      # 何も返さない → ローカル変数をまとめたオブジェクトが返る
+   }
+   num_to_word[0] = "zero"
+   num_to_word[1] = "one"
+   num_to_word[2] = "two"
+   num_to_word[3] = "three"
+   num_to_word[4] = "four"
+   num_to_word[5] = "five"
+   num_to_word[6] = "six"
+   num_to_word[7] = "seven"
+   num_to_word[8] = "eight"
+   num_to_word[9] = "nine"
+
+   words = []
+   i = 0
+   numbers の大きさ を N に対し {
+      もし numbers[i] が " " 以外 ならば {
+         word = ""
+         もし numbers[i] が " " 以外 ならば {
+            word に numbers[i] を追加する
+            i を増やす
+         }
+         words に word_to_num[word] を追加する
+      }
+      そうでなければ {
+         i を増やす
+      }
+   }
+
+   sorted = []
+   j = 0
+   9回くり返す {
+      k = 0
+      words の大きさ を M に対し {
+         もし words[k] が j ならば {
+            sorted に num_to_word[j] を追加する
+         }
+         k を増やす
+      }
+      j を増やす
+   }
+
+   result = ""
+   m = 0
+   sorted の大きさ を L に対し {
+      もし m が 0 以外 ならば {
+         result に " " を追加する
+      }
+      result に sorted[m] を追加する
+      m を増やす
+   }
+
+   result が答え
+}

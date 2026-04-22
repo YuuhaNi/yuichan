@@ -1,0 +1,30 @@
+標準ライブラリを使う
+
+count_nums = 入力 arr に対し {
+  count = 0
+
+  arr の各要素を n として繰り返す {
+    s = 文字列化(n)
+    sum_digits = 0
+    first = 真
+
+    s の各要素を ch として繰り返す {
+      もし ch == "-" なら {
+      } でなければ {
+        d = 整数化(ch)
+        もし first かつ n < 0 なら {
+          sum_digits = 和(sum_digits, 差(0, d))
+        } でなければ {
+          sum_digits = 和(sum_digits, d)
+        }
+        first = 偽
+      }
+    }
+
+    もし sum_digits > 0 なら {
+      count = 和(count, 1)
+    }
+  }
+
+  count
+}

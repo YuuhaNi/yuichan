@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+encrypt = 入力 s に対し {
+   result = ""
+   sの大きさを n とする
+   n回くり返す {
+      i = 0
+      もし i が n より小さい ならば {
+         char = s[i]
+         code = 文字コード(char)
+         
+         もし code が 97 以上 ならば {
+            もし code が 122 以下 ならば {
+               pos = 差(code, 97)
+               new_pos = 和(積(pos, 2), 2)
+               wrapped_pos = 剰余(new_pos, 26)
+               new_code = 和(wrapped_pos, 97)
+               new_char = 文字(new_code)
+               result = 和(result, new_char)
+            }
+         }
+         
+         i を増やす
+      }
+   }
+   result が答え
+}

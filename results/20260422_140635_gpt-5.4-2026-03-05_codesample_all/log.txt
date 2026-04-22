@@ -1,0 +1,11391 @@
+
+============================================================
+[1/164] 0_has_close_elements - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+has_close_elements = 入力 numbers, threshold に対し {
+   n=numbersの大きさ
+   i=0
+   n回くり返す{
+      j=和(i,1)
+      remain=差(n,j)
+      remain回くり返す{
+         d=絶対値(差(numbers[i],numbers[j]))
+         もしdがthresholdより小さいならば{
+            真が答え
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+   偽が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+has_close_elements = 入力 numbers, threshold に対し {
+   n=numbersの大きさ
+   i=0
+   n回くり返す{
+      j=和(i,1)
+      remain=差(n,j)
+      remain回くり返す{
+         d=絶対値(差(numbers[i],numbers[j]))
+         もしdがthresholdより小さいならば{
+            真が答え
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+   偽が答え
+}
+--- Result: ✗ FAILED (0.14s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍has_close_elements([1.0, 2.0, 3.9, 4.0, 5.0, 2.2], 0.3) ❌true ✅1 line 22, column 1:
+| >>> has_close_elements([1.0, 2.0, 3.9, 4.0, 5.0, 2.2], 0.3)
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[2/164] 1_separate_paren_groups - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+separate_paren_groups = 入力 paren_string に対し {
+   groups=[]
+   current=""
+   depth=0
+   i=0
+   n=paren_stringの大きさ
+
+   n回くり返す{
+      c=paren_string[i]
+
+      # 空白は無視する
+      もしcが32ならば{
+         何もしない
+      }
+      そうでなければ{
+         currentにcを追加する
+
+         もしcが40ならば{
+            depthを増やす
+         }
+         もしcが41ならば{
+            depthを減らす
+            もしdepthが0ならば{
+               groupsにcurrentを追加する
+               current=""
+            }
+         }
+      }
+
+      iを増やす
+   }
+
+   groupsが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+separate_paren_groups = 入力 paren_string に対し {
+   groups=[]
+   current=""
+   depth=0
+   i=0
+   n=paren_stringの大きさ
+
+   n回くり返す{
+      c=paren_string[i]
+
+      # 空白は無視する
+      もしcが32ならば{
+         何もしない
+      }
+      そうでなければ{
+         currentにcを追加する
+
+         もしcが40ならば{
+            depthを増やす
+         }
+         もしcが41ならば{
+            depthを減らす
+            もしdepthが0ならば{
+               groupsにcurrentを追加する
+               current=""
+            }
+         }
+      }
+
+      iを増やす
+   }
+
+   groupsが答え
+}
+--- Result: ✓ PASSED (0.13s) ---
+
+============================================================
+[3/164] 2_truncate_number - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+truncate_number = 入力 number に対し {
+   integer=整数化(number)
+   frac=差(number,integer)
+   fracが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+truncate_number = 入力 number に対し {
+   integer=整数化(number)
+   frac=差(number,integer)
+   fracが答え
+}
+--- Result: ✓ PASSED (0.09s) ---
+
+============================================================
+[4/164] 3_below_zero - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+below_zero = 入力 operations に対し {
+   balance=0
+   i=0
+   operationsの大きさ回くり返す{
+      balance=和(balance,operations[i])
+      もしbalanceが0以下ならば{
+         真が答え
+      }
+      iを増やす
+   }
+   偽が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+below_zero = 入力 operations に対し {
+   balance=0
+   i=0
+   operationsの大きさ回くり返す{
+      balance=和(balance,operations[i])
+      もしbalanceが0以下ならば{
+         真が答え
+      }
+      iを増やす
+   }
+   偽が答え
+}
+--- Result: ✗ FAILED (0.12s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍below_zero([]) ❌false ✅0 line 17, column 1:
+| >>> below_zero([])
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[5/164] 4_mean_absolute_deviation - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+mean_absolute_deviation = 入力 numbers に対し {
+   n=numbersの大きさ
+
+   total=小数化(0)
+   i=0
+   n回くり返す{
+      total=和(total,numbers[i])
+      iを増やす
+   }
+   mean=商(total,小数化(n))
+
+   dev_total=小数化(0)
+   i=0
+   n回くり返す{
+      dev=絶対値(差(numbers[i],mean))
+      dev_total=和(dev_total,dev)
+      iを増やす
+   }
+
+   商(dev_total,小数化(n))が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+mean_absolute_deviation = 入力 numbers に対し {
+   n=numbersの大きさ
+
+   total=小数化(0)
+   i=0
+   n回くり返す{
+      total=和(total,numbers[i])
+      iを増やす
+   }
+   mean=商(total,小数化(n))
+
+   dev_total=小数化(0)
+   i=0
+   n回くり返す{
+      dev=絶対値(差(numbers[i],mean))
+      dev_total=和(dev_total,dev)
+      iを増やす
+   }
+
+   商(dev_total,小数化(n))が答え
+}
+--- Result: ✓ PASSED (0.12s) ---
+
+============================================================
+[6/164] 5_intersperse - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+intersperse = 入力 numbers, delimeter に対し {
+   result=[]
+   n=numbersの大きさ
+   i=0
+   n回くり返す{
+      resultにnumbers[i]を追加する
+      もしiが差(n,1)以外ならば{
+         resultにdelimeterを追加する
+      }
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+intersperse = 入力 numbers, delimeter に対し {
+   result=[]
+   n=numbersの大きさ
+   i=0
+   n回くり返す{
+      resultにnumbers[i]を追加する
+      もしiが差(n,1)以外ならば{
+         resultにdelimeterを追加する
+      }
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✓ PASSED (0.09s) ---
+
+============================================================
+[7/164] 6_parse_nested_parens - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+parse_nested_parens = 入力 paren_string に対し {
+   groups=[]
+   current=""
+   i=0
+   n=paren_stringの大きさ
+
+   # 空白で区切って各グループを取り出す
+   n回くり返す{
+      c=paren_string[i]
+      もしcが32ならば{
+         もしcurrentが""以外ならば{
+            groupsにcurrentを追加する
+            current=""
+         }
+      }
+      そうでなければ{
+         currentにcを追加する
+      }
+      iを増やす
+   }
+   もしcurrentが""以外ならば{
+      groupsにcurrentを追加する
+   }
+
+   # 各グループの最大ネスト深さを求める
+   result=[]
+   gi=0
+   groupsの大きさ回くり返す{
+      s=groups[gi]
+      depth=0
+      best=0
+      j=0
+      sの大きさ回くり返す{
+         c=s[j]
+         もしcが40ならば{
+            depthを増やす
+            もしdepthがbestより大きいならば{
+               best=depth
+            }
+         }
+         もしcが41ならば{
+            depthを減らす
+         }
+         jを増やす
+      }
+      resultにbestを追加する
+      giを増やす
+   }
+
+   resultが答え
+}
+
+>>> parse_nested_parens("(()()) ((())) () ((())()())")
+[2,3,1,3]
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+parse_nested_parens = 入力 paren_string に対し {
+   groups=[]
+   current=""
+   i=0
+   n=paren_stringの大きさ
+
+   # 空白で区切って各グループを取り出す
+   n回くり返す{
+      c=paren_string[i]
+      もしcが32ならば{
+         もしcurrentが""以外ならば{
+            groupsにcurrentを追加する
+            current=""
+         }
+      }
+      そうでなければ{
+         currentにcを追加する
+      }
+      iを増やす
+   }
+   もしcurrentが""以外ならば{
+      groupsにcurrentを追加する
+   }
+
+   # 各グループの最大ネスト深さを求める
+   result=[]
+   gi=0
+   groupsの大きさ回くり返す{
+      s=groups[gi]
+      depth=0
+      best=0
+      j=0
+      sの大きさ回くり返す{
+         c=s[j]
+         もしcが40ならば{
+            depthを増やす
+            もしdepthがbestより大きいならば{
+               best=depth
+            }
+         }
+         もしcが41ならば{
+            depthを減らす
+         }
+         jを増やす
+      }
+      resultにbestを追加する
+      giを増やす
+   }
+
+   resultが答え
+}
+--- Result: ✓ PASSED (0.15s) ---
+
+============================================================
+[8/164] 7_filter_by_substring - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+filter_by_substring = 入力 strings, substring に対し {
+   result=[]
+   n=stringsの大きさ
+   i=0
+   n回くり返す{
+      s=strings[i]
+      pos=find(s,substring)
+      もしposが差(0,1)以外ならば{
+         resultにsを追加する
+      }
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+filter_by_substring = 入力 strings, substring に対し {
+   result=[]
+   n=stringsの大きさ
+   i=0
+   n回くり返す{
+      s=strings[i]
+      pos=find(s,substring)
+      もしposが差(0,1)以外ならば{
+         resultにsを追加する
+      }
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✗ FAILED (0.13s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] 関数が定義されていません ❌find line 9, column 11:
+|       pos=find(s,substring)
+|           ^^^^
+
+
+============================================================
+[9/164] 8_sum_product - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+sum_product = 入力 numbers に対し {
+   total=0
+   prod=1
+   i=0
+   n=numbersの大きさ
+   n回くり返す{
+      x=numbers[i]
+      total=和(total,x)
+      prod=積(prod,x)
+      iを増やす
+   }
+   [total,prod]が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+sum_product = 入力 numbers に対し {
+   total=0
+   prod=1
+   i=0
+   n=numbersの大きさ
+   n回くり返す{
+      x=numbers[i]
+      total=和(total,x)
+      prod=積(prod,x)
+      iを増やす
+   }
+   [total,prod]が答え
+}
+--- Result: ✓ PASSED (0.12s) ---
+
+============================================================
+[10/164] 9_rolling_max - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+rolling_max = 入力 numbers に対し {
+   result=[]
+   n=numbersの大きさ
+   もしnが0ならば{
+      resultが答え
+   }
+
+   current_max=numbers[0]
+   resultにcurrent_maxを追加する
+
+   i=1
+   差(n,1)回くり返す{
+      x=numbers[i]
+      もしxがcurrent_maxより大きいならば{
+         current_max=x
+      }
+      resultにcurrent_maxを追加する
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+rolling_max = 入力 numbers に対し {
+   result=[]
+   n=numbersの大きさ
+   もしnが0ならば{
+      resultが答え
+   }
+
+   current_max=numbers[0]
+   resultにcurrent_maxを追加する
+
+   i=1
+   差(n,1)回くり返す{
+      x=numbers[i]
+      もしxがcurrent_maxより大きいならば{
+         current_max=x
+      }
+      resultにcurrent_maxを追加する
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✓ PASSED (0.12s) ---
+
+============================================================
+[11/164] 10_make_palindrome - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+make_palindrome = 入力 string に対し {
+   n=stringの大きさ
+   half=商(n,2)
+   i=0
+   half回くり返す{
+      j=差(差(n,1),i)
+      もしstring[i]がstring[j]以外ならば{
+         偽が答え
+      }
+      iを増やす
+   }
+   真が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+make_palindrome = 入力 string に対し {
+   n=stringの大きさ
+   half=商(n,2)
+   i=0
+   half回くり返す{
+      j=差(差(n,1),i)
+      もしstring[i]がstring[j]以外ならば{
+         偽が答え
+      }
+      iを増やす
+   }
+   真が答え
+}
+--- Result: ✗ FAILED (0.11s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍make_palindrome("") ❌true ✅"" line 18, column 1:
+| >>> make_palindrome("")
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[12/164] 11_string_xor - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+string_xor = 入力 a, b に対し {
+   n=aの大きさ
+   result=""
+   i=0
+   n回くり返す{
+      x=差(a[i],48)
+      y=差(b[i],48)
+      bit=0
+      もしxがy以外ならば{
+         bit=1
+      }
+      resultに和(bit,48)を追加する
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+string_xor = 入力 a, b に対し {
+   n=aの大きさ
+   result=""
+   i=0
+   n回くり返す{
+      x=差(a[i],48)
+      y=差(b[i],48)
+      bit=0
+      もしxがy以外ならば{
+         bit=1
+      }
+      resultに和(bit,48)を追加する
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[13/164] 12_longest - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+longest = 入力 strings に対し {
+   n=stringsの大きさ
+   もしnが0ならば{
+      値なしが答え
+   }
+
+   best=strings[0]
+   best_len=bestの大きさ
+   i=1
+   差(n,1)回くり返す{
+      s=strings[i]
+      len=sの大きさ
+      もしlenがbest_lenより大きいならば{
+         best=s
+         best_len=len
+      }
+      iを増やす
+   }
+   bestが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+longest = 入力 strings に対し {
+   n=stringsの大きさ
+   もしnが0ならば{
+      値なしが答え
+   }
+
+   best=strings[0]
+   best_len=bestの大きさ
+   i=1
+   差(n,1)回くり返す{
+      s=strings[i]
+      len=sの大きさ
+      もしlenがbest_lenより大きいならば{
+         best=s
+         best_len=len
+      }
+      iを増やす
+   }
+   bestが答え
+}
+--- Result: ✗ FAILED (0.12s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍longest([]) ❌null ✅"" line 25, column 1:
+| >>> longest([])
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[14/164] 13_greatest_common_divisor - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+greatest_common_divisor = 入力 a, b に対し {
+   x=絶対値(a)
+   y=絶対値(b)
+   1000回くり返す{
+      もしyが0ならば{
+         xが答え
+      }
+      r=剰余(x,y)
+      x=y
+      y=r
+   }
+   xが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+greatest_common_divisor = 入力 a, b に対し {
+   x=絶対値(a)
+   y=絶対値(b)
+   1000回くり返す{
+      もしyが0ならば{
+         xが答え
+      }
+      r=剰余(x,y)
+      x=y
+      y=r
+   }
+   xが答え
+}
+--- Result: ✓ PASSED (0.10s) ---
+
+============================================================
+[15/164] 14_all_prefixes - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+all_prefixes = 入力 string に対し {
+   result=[]
+   prefix=""
+   i=0
+   stringの大きさ回くり返す{
+      prefixにstring[i]を追加する
+      resultにprefixを追加する
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+all_prefixes = 入力 string に対し {
+   result=[]
+   prefix=""
+   i=0
+   stringの大きさ回くり返す{
+      prefixにstring[i]を追加する
+      resultにprefixを追加する
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✓ PASSED (0.10s) ---
+
+============================================================
+[16/164] 15_string_sequence - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+string_sequence = 入力 n に対し {
+   result=""
+   i=0
+   和(n,1)回くり返す{
+      もしiが0ならば{
+         result=文字列化(i)
+      }
+      そうでなければ{
+         result="{result} {i}"
+      }
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+string_sequence = 入力 n に対し {
+   result=""
+   i=0
+   和(n,1)回くり返す{
+      もしiが0ならば{
+         result=文字列化(i)
+      }
+      そうでなければ{
+         result="{result} {i}"
+      }
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✓ PASSED (0.10s) ---
+
+============================================================
+[17/164] 16_count_distinct_characters - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+count_distinct_characters = 入力 string に対し {
+   seen=""
+   i=0
+   stringの大きさ回くり返す{
+      c=string[i]
+
+      # 大文字 A..Z は小文字にそろえる
+      もしcが65以上ならば{
+         もしcが90以下ならば{
+            c=和(c,32)
+         }
+      }
+
+      もしcがseenのいずれでもないならば{
+         seenにcを追加する
+      }
+      iを増やす
+   }
+   seenの大きさが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+count_distinct_characters = 入力 string に対し {
+   seen=""
+   i=0
+   stringの大きさ回くり返す{
+      c=string[i]
+
+      # 大文字 A..Z は小文字にそろえる
+      もしcが65以上ならば{
+         もしcが90以下ならば{
+            c=和(c,32)
+         }
+      }
+
+      もしcがseenのいずれでもないならば{
+         seenにcを追加する
+      }
+      iを増やす
+   }
+   seenの大きさが答え
+}
+--- Result: ✓ PASSED (0.12s) ---
+
+============================================================
+[18/164] 17_parse_music - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+parse_music=入力music_stringに対し{
+   result=[]
+   token=""
+   i=0
+   n=music_stringの大きさ
+
+   n回くり返す{
+      c=music_string[i]
+      もしcが32ならば{
+         もしtokenが"o"ならば{
+            resultに4を追加する
+         }
+         もしtokenが"o|"ならば{
+            resultに2を追加する
+         }
+         もしtokenが".|"ならば{
+            resultに1を追加する
+         }
+         token=""
+      }
+      そうでなければ{
+         tokenにcを追加する
+      }
+      iを増やす
+   }
+
+   もしtokenが"o"ならば{
+      resultに4を追加する
+   }
+   もしtokenが"o|"ならば{
+      resultに2を追加する
+   }
+   もしtokenが".|"ならば{
+      resultに1を追加する
+   }
+
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+parse_music=入力music_stringに対し{
+   result=[]
+   token=""
+   i=0
+   n=music_stringの大きさ
+
+   n回くり返す{
+      c=music_string[i]
+      もしcが32ならば{
+         もしtokenが"o"ならば{
+            resultに4を追加する
+         }
+         もしtokenが"o|"ならば{
+            resultに2を追加する
+         }
+         もしtokenが".|"ならば{
+            resultに1を追加する
+         }
+         token=""
+      }
+      そうでなければ{
+         tokenにcを追加する
+      }
+      iを増やす
+   }
+
+   もしtokenが"o"ならば{
+      resultに4を追加する
+   }
+   もしtokenが"o|"ならば{
+      resultに2を追加する
+   }
+   もしtokenが".|"ならば{
+      resultに1を追加する
+   }
+
+   resultが答え
+}
+--- Result: ✓ PASSED (0.11s) ---
+
+============================================================
+[19/164] 18_how_many_times - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+how_many_times = 入力 string, substring に対し {
+   n=stringの大きさ
+   m=substringの大きさ
+
+   # 空文字列は 0 回とする
+   もしmが0ならば{
+      0が答え
+   }
+
+   count=0
+
+   # string の方が短ければ一致はない
+   もしnがmより小さいならば{
+      0が答え
+   }
+
+   i=0
+   limit=和(差(n,m),1)
+   limit回くり返す{
+      match=1
+      j=0
+      m回くり返す{
+         ij=和(i,j)
+         もしstring[ij]がsubstring[j]以外ならば{
+            match=0
+         }
+         jを増やす
+      }
+      もしmatchが1ならば{
+         countを増やす
+      }
+      iを増やす
+   }
+
+   countが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+how_many_times = 入力 string, substring に対し {
+   n=stringの大きさ
+   m=substringの大きさ
+
+   # 空文字列は 0 回とする
+   もしmが0ならば{
+      0が答え
+   }
+
+   count=0
+
+   # string の方が短ければ一致はない
+   もしnがmより小さいならば{
+      0が答え
+   }
+
+   i=0
+   limit=和(差(n,m),1)
+   limit回くり返す{
+      match=1
+      j=0
+      m回くり返す{
+         ij=和(i,j)
+         もしstring[ij]がsubstring[j]以外ならば{
+            match=0
+         }
+         jを増やす
+      }
+      もしmatchが1ならば{
+         countを増やす
+      }
+      iを増やす
+   }
+
+   countが答え
+}
+--- Result: ✓ PASSED (0.13s) ---
+
+============================================================
+[20/164] 19_sort_numbers - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+sort_numbers = 入力 numbers に対し {
+   words=["zero","one","two","three","four","five","six","seven","eight","nine"]
+   counts=[0,0,0,0,0,0,0,0,0,0]
+
+   current=""
+   i=0
+   n=numbersの大きさ
+
+   和(n,1)回くり返す{
+      end=0
+      もしiがn以上ならば{
+         end=1
+         c=32
+      }
+      そうでなければ{
+         c=numbers[i]
+      }
+
+      もしcが32ならば{
+         j=0
+         10回くり返す{
+            もしcurrentがwords[j]ならば{
+               counts[j]を増やす
+            }
+            jを増やす
+         }
+         current=""
+      }
+      そうでなければ{
+         currentにcを追加する
+      }
+
+      もしendが0ならば{
+         iを増やす
+      }
+   }
+
+   result=""
+   first=1
+   j=0
+   10回くり返す{
+      counts[j]回くり返す{
+         もしfirstが0ならば{
+            resultに32を追加する
+         }
+         k=0
+         words[j]の大きさ回くり返す{
+            resultにwords[j][k]を追加する
+            kを増やす
+         }
+         first=0
+      }
+      jを増やす
+   }
+
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+sort_numbers = 入力 numbers に対し {
+   words=["zero","one","two","three","four","five","six","seven","eight","nine"]
+   counts=[0,0,0,0,0,0,0,0,0,0]
+
+   current=""
+   i=0
+   n=numbersの大きさ
+
+   和(n,1)回くり返す{
+      end=0
+      もしiがn以上ならば{
+         end=1
+         c=32
+      }
+      そうでなければ{
+         c=numbers[i]
+      }
+
+      もしcが32ならば{
+         j=0
+         10回くり返す{
+            もしcurrentがwords[j]ならば{
+               counts[j]を増やす
+            }
+            jを増やす
+         }
+         current=""
+      }
+      そうでなければ{
+         currentにcを追加する
+      }
+
+      もしendが0ならば{
+         iを増やす
+      }
+   }
+
+   result=""
+   first=1
+   j=0
+   10回くり返す{
+      counts[j]回くり返す{
+         もしfirstが0ならば{
+            resultに32を追加する
+         }
+         k=0
+         words[j]の大きさ回くり返す{
+            resultにwords[j][k]を追加する
+            kを増やす
+         }
+         first=0
+      }
+      jを増やす
+   }
+
+   resultが答え
+}
+--- Result: ✓ PASSED (0.15s) ---
+
+============================================================
+[21/164] 20_find_closest_elements - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+find_closest_elements = 入力 numbers に対し {
+   sorted=bubble_sort(numbers)
+   n=sortedの大きさ
+
+   best_a=sorted[0]
+   best_b=sorted[1]
+   best_d=絶対値(差(best_b,best_a))
+
+   i=1
+   差(n,1)回くり返す{
+      a=sorted[i]
+      b=sorted[和(i,1)]
+      d=絶対値(差(b,a))
+      もしdがbest_dより小さいならば{
+         best_a=a
+         best_b=b
+         best_d=d
+      }
+      iを増やす
+   }
+   [best_a,best_b]が答え
+}
+
+bubble_sort=入力Aに対し{
+   n=Aの大きさ
+   n回くり返す{
+      i=0
+      差(n,1)回くり返す{
+         j=和(i,1)
+         もしA[i]がA[j]より大きいならば{
+            tmp=A[i]
+            A[i]=A[j]
+            A[j]=tmp
+         }
+         iを増やす
+      }
+   }
+   Aが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+find_closest_elements = 入力 numbers に対し {
+   sorted=bubble_sort(numbers)
+   n=sortedの大きさ
+
+   best_a=sorted[0]
+   best_b=sorted[1]
+   best_d=絶対値(差(best_b,best_a))
+
+   i=1
+   差(n,1)回くり返す{
+      a=sorted[i]
+      b=sorted[和(i,1)]
+      d=絶対値(差(b,a))
+      もしdがbest_dより小さいならば{
+         best_a=a
+         best_b=b
+         best_d=d
+      }
+      iを増やす
+   }
+   [best_a,best_b]が答え
+}
+
+bubble_sort=入力Aに対し{
+   n=Aの大きさ
+   n回くり返す{
+      i=0
+      差(n,1)回くり返す{
+         j=和(i,1)
+         もしA[i]がA[j]より大きいならば{
+            tmp=A[i]
+            A[i]=A[j]
+            A[j]=tmp
+         }
+         iを増やす
+      }
+   }
+   Aが答え
+}
+--- Result: ✗ FAILED (0.14s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] index-error ✅<6 ❌6 🔍[1.0, 2.0, 2.2, 3.9, 4.0, 5.0] line 14, column 9:
+|       b=sorted[和(i,1)]
+|         ^^^^^^^^^^^^^^
+
+
+============================================================
+[22/164] 21_rescale_to_unit - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+rescale_to_unit = 入力 numbers に対し {
+   n=numbersの大きさ
+
+   lo=numbers[0]
+   hi=numbers[0]
+   i=1
+   差(n,1)回くり返す{
+      x=numbers[i]
+      もしxがloより小さいならば{
+         lo=x
+      }
+      もしxがhiより大きいならば{
+         hi=x
+      }
+      iを増やす
+   }
+
+   span=差(hi,lo)
+   result=[]
+   i=0
+   n回くり返す{
+      x=numbers[i]
+      y=商(差(x,lo),span)
+      resultにyを追加する
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+rescale_to_unit = 入力 numbers に対し {
+   n=numbersの大きさ
+
+   lo=numbers[0]
+   hi=numbers[0]
+   i=1
+   差(n,1)回くり返す{
+      x=numbers[i]
+      もしxがloより小さいならば{
+         lo=x
+      }
+      もしxがhiより大きいならば{
+         hi=x
+      }
+      iを増やす
+   }
+
+   span=差(hi,lo)
+   result=[]
+   i=0
+   n回くり返す{
+      x=numbers[i]
+      y=商(差(x,lo),span)
+      resultにyを追加する
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✓ PASSED (0.13s) ---
+
+============================================================
+[23/164] 22_filter_integers - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+filter_integers = 入力 values に対し {
+   result=[]
+   n=valuesの大きさ
+   i=0
+   n回くり返す{
+      x=values[i]
+      もし整数判定(x)ならば{
+         resultにxを追加する
+      }
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+filter_integers = 入力 values に対し {
+   result=[]
+   n=valuesの大きさ
+   i=0
+   n回くり返す{
+      x=values[i]
+      もし整数判定(x)ならば{
+         resultにxを追加する
+      }
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[24/164] 23_strlen - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+strlen = 入力 string に対し {
+   stringの大きさが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+strlen = 入力 string に対し {
+   stringの大きさが答え
+}
+--- Result: ✓ PASSED (0.07s) ---
+
+============================================================
+[25/164] 24_largest_divisor - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+largest_divisor = 入力 n に対し {
+   d=商(n,2)
+   もしnが1以下ならば{
+      0が答え
+   }
+   d回くり返す{
+      もし剰余(n,d)が0ならば{
+         dが答え
+      }
+      dを減らす
+   }
+   1が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+largest_divisor = 入力 n に対し {
+   d=商(n,2)
+   もしnが1以下ならば{
+      0が答え
+   }
+   d回くり返す{
+      もし剰余(n,d)が0ならば{
+         dが答え
+      }
+      dを減らす
+   }
+   1が答え
+}
+--- Result: ✓ PASSED (0.10s) ---
+
+============================================================
+[26/164] 25_factorize - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+factorize = 入力 n に対し {
+   result=[]
+   d=2
+   # d*d <= n の間、割れるだけ割る
+   limit=平方根(n)
+   もしnが2より小さいならば{
+      resultが答え
+   }
+   limit=整数化(limit)
+   limitを増やす
+   limit回くり返す{
+      もし積(d,d)がnより大きいならば{
+         くり返しを抜ける
+      }
+      もし剰余(n,d)が0ならば{
+         resultにdを追加する
+         n=商(n,d)
+      }
+      そうでなければ{
+         dを増やす
+      }
+   }
+   もしnが1より大きいならば{
+      resultにnを追加する
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+factorize = 入力 n に対し {
+   result=[]
+   d=2
+   # d*d <= n の間、割れるだけ割る
+   limit=平方根(n)
+   もしnが2より小さいならば{
+      resultが答え
+   }
+   limit=整数化(limit)
+   limitを増やす
+   limit回くり返す{
+      もし積(d,d)がnより大きいならば{
+         くり返しを抜ける
+      }
+      もし剰余(n,d)が0ならば{
+         resultにdを追加する
+         n=商(n,d)
+      }
+      そうでなければ{
+         dを増やす
+      }
+   }
+   もしnが1より大きいならば{
+      resultにnを追加する
+   }
+   resultが答え
+}
+--- Result: ✓ PASSED (0.12s) ---
+
+============================================================
+[27/164] 26_remove_duplicates - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+remove_duplicates = 入力 numbers に対し {
+   result=[]
+   n=numbersの大きさ
+   i=0
+   n回くり返す{
+      x=numbers[i]
+      count=0
+      j=0
+      n回くり返す{
+         もしnumbers[j]がxならば{
+            countを増やす
+         }
+         jを増やす
+      }
+      もしcountが1ならば{
+         resultにxを追加する
+      }
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+remove_duplicates = 入力 numbers に対し {
+   result=[]
+   n=numbersの大きさ
+   i=0
+   n回くり返す{
+      x=numbers[i]
+      count=0
+      j=0
+      n回くり返す{
+         もしnumbers[j]がxならば{
+            countを増やす
+         }
+         jを増やす
+      }
+      もしcountが1ならば{
+         resultにxを追加する
+      }
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✓ PASSED (0.11s) ---
+
+============================================================
+[28/164] 27_flip_case - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+flip_case = 入力 string に対し {
+   result=""
+   n=stringの大きさ
+   i=0
+   n回くり返す{
+      c=string[i]
+      nc=c
+
+      # 英大文字 A..Z → 小文字
+      もしcが65以上ならば{
+         もしcが90以下ならば{
+            nc=和(c,32)
+         }
+      }
+
+      # 英小文字 a..z → 大文字
+      もしcが97以上ならば{
+         もしcが122以下ならば{
+            nc=差(c,32)
+         }
+      }
+
+      resultにncを追加する
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+flip_case = 入力 string に対し {
+   result=""
+   n=stringの大きさ
+   i=0
+   n回くり返す{
+      c=string[i]
+      nc=c
+
+      # 英大文字 A..Z → 小文字
+      もしcが65以上ならば{
+         もしcが90以下ならば{
+            nc=和(c,32)
+         }
+      }
+
+      # 英小文字 a..z → 大文字
+      もしcが97以上ならば{
+         もしcが122以下ならば{
+            nc=差(c,32)
+         }
+      }
+
+      resultにncを追加する
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✓ PASSED (0.11s) ---
+
+============================================================
+[29/164] 28_concatenate - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+concatenate = 入力 strings に対し {
+   result=""
+   i=0
+   stringsの大きさ回くり返す{
+      result="{result}{strings[i]}"
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+concatenate = 入力 strings に対し {
+   result=""
+   i=0
+   stringsの大きさ回くり返す{
+      result="{result}{strings[i]}"
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✓ PASSED (0.10s) ---
+
+============================================================
+[30/164] 29_filter_by_prefix - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+filter_by_prefix = 入力 strings, prefix に対し {
+   result=[]
+   n=stringsの大きさ
+   m=prefixの大きさ
+   i=0
+   n回くり返す{
+      s=strings[i]
+      ok=1
+      もしsの大きさがmより小さいならば{
+         ok=0
+      }
+      そうでなければ{
+         j=0
+         m回くり返す{
+            もしs[j]がprefix[j]以外ならば{
+               ok=0
+            }
+            jを増やす
+         }
+      }
+      もしokが1ならば{
+         resultにsを追加する
+      }
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+filter_by_prefix = 入力 strings, prefix に対し {
+   result=[]
+   n=stringsの大きさ
+   m=prefixの大きさ
+   i=0
+   n回くり返す{
+      s=strings[i]
+      ok=1
+      もしsの大きさがmより小さいならば{
+         ok=0
+      }
+      そうでなければ{
+         j=0
+         m回くり返す{
+            もしs[j]がprefix[j]以外ならば{
+               ok=0
+            }
+            jを増やす
+         }
+      }
+      もしokが1ならば{
+         resultにsを追加する
+      }
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✓ PASSED (0.11s) ---
+
+============================================================
+[31/164] 30_get_positive - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+get_positive = 入力 l に対し {
+   result=[]
+   i=0
+   lの大きさ回くり返す{
+      x=l[i]
+      もしxが0より大きいならば{
+         resultにxを追加する
+      }
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+get_positive = 入力 l に対し {
+   result=[]
+   i=0
+   lの大きさ回くり返す{
+      x=l[i]
+      もしxが0より大きいならば{
+         resultにxを追加する
+      }
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✓ PASSED (0.11s) ---
+
+============================================================
+[32/164] 31_is_prime - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+is_prime = 入力 n に対し {
+   もしnが2より小さいならば{
+      偽が答え
+   }
+   d=2
+   d2=積(d,d)
+   n回くり返す{
+      もしd2がnより大きいならば{
+         くり返しを抜ける
+      }
+      もし剰余(n,d)が0ならば{
+         偽が答え
+      }
+      dを増やす
+      d2=積(d,d)
+   }
+   真が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+is_prime = 入力 n に対し {
+   もしnが2より小さいならば{
+      偽が答え
+   }
+   d=2
+   d2=積(d,d)
+   n回くり返す{
+      もしd2がnより大きいならば{
+         くり返しを抜ける
+      }
+      もし剰余(n,d)が0ならば{
+         偽が答え
+      }
+      dを増やす
+      d2=積(d,d)
+   }
+   真が答え
+}
+--- Result: ✗ FAILED (0.13s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍is_prime(6) ❌false ✅0 line 23, column 1:
+| >>> is_prime(6)
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[33/164] 32_find_zero - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+find_zero = 入力 xs, x に対し {
+   result=0
+   power=1
+   n=xsの大きさ
+   i=0
+   n回くり返す{
+      result=和(result,積(xs[i],power))
+      power=積(power,x)
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+find_zero = 入力 xs, x に対し {
+   result=0
+   power=1
+   n=xsの大きさ
+   i=0
+   n回くり返す{
+      result=和(result,積(xs[i],power))
+      power=積(power,x)
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✗ FAILED (0.15s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] 関数が定義されていません ❌approx_zero line 17, column 5:
+| >>> approx_zero(poly([-10, -2], find_zero([-10, -2])))
+|     ^^^^^^^^^^^
+
+
+============================================================
+[34/164] 33_sort_third - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+sort_third = 入力 l に対し {
+   result=[]
+   thirds=[]
+   n=lの大きさ
+   i=0
+
+   n回くり返す{
+      もし剰余(i,3)が0ならば{
+         thirdsにl[i]を追加する
+      }
+      iを増やす
+   }
+
+   thirds=bubble_sort(thirds)
+
+   ti=0
+   i=0
+   n回くり返す{
+      もし剰余(i,3)が0ならば{
+         resultにthirds[ti]を追加する
+         tiを増やす
+      }
+      そうでなければ{
+         resultにl[i]を追加する
+      }
+      iを増やす
+   }
+
+   resultが答え
+}
+
+bubble_sort=入力Aに対し{
+   n=Aの大きさ
+   n回くり返す{
+      i=0
+      差(n,1)回くり返す{
+         j=和(i,1)
+         もしA[i]がA[j]より大きいならば{
+            tmp=A[i]
+            A[i]=A[j]
+            A[j]=tmp
+         }
+         iを増やす
+      }
+   }
+   Aが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+sort_third = 入力 l に対し {
+   result=[]
+   thirds=[]
+   n=lの大きさ
+   i=0
+
+   n回くり返す{
+      もし剰余(i,3)が0ならば{
+         thirdsにl[i]を追加する
+      }
+      iを増やす
+   }
+
+   thirds=bubble_sort(thirds)
+
+   ti=0
+   i=0
+   n回くり返す{
+      もし剰余(i,3)が0ならば{
+         resultにthirds[ti]を追加する
+         tiを増やす
+      }
+      そうでなければ{
+         resultにl[i]を追加する
+      }
+      iを増やす
+   }
+
+   resultが答え
+}
+
+bubble_sort=入力Aに対し{
+   n=Aの大きさ
+   n回くり返す{
+      i=0
+      差(n,1)回くり返す{
+         j=和(i,1)
+         もしA[i]がA[j]より大きいならば{
+            tmp=A[i]
+            A[i]=A[j]
+            A[j]=tmp
+         }
+         iを増やす
+      }
+   }
+   Aが答え
+}
+--- Result: ✓ PASSED (0.17s) ---
+
+============================================================
+[35/164] 34_unique - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+unique = 入力 l に対し {
+   result=[]
+   i=0
+   lの大きさ回くり返す{
+      x=l[i]
+      もしxがresultのいずれでもないならば{
+         resultにxを追加する
+      }
+      iを増やす
+   }
+   bubble_sort(result)が答え
+}
+
+bubble_sort=入力Aに対し{
+   n=Aの大きさ
+   n回くり返す{
+      i=0
+      差(n,1)回くり返す{
+         j=和(i,1)
+         もしA[i]がA[j]より大きいならば{
+            tmp=A[i]
+            A[i]=A[j]
+            A[j]=tmp
+         }
+         iを増やす
+      }
+   }
+   Aが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+unique = 入力 l に対し {
+   result=[]
+   i=0
+   lの大きさ回くり返す{
+      x=l[i]
+      もしxがresultのいずれでもないならば{
+         resultにxを追加する
+      }
+      iを増やす
+   }
+   bubble_sort(result)が答え
+}
+
+bubble_sort=入力Aに対し{
+   n=Aの大きさ
+   n回くり返す{
+      i=0
+      差(n,1)回くり返す{
+         j=和(i,1)
+         もしA[i]がA[j]より大きいならば{
+            tmp=A[i]
+            A[i]=A[j]
+            A[j]=tmp
+         }
+         iを増やす
+      }
+   }
+   Aが答え
+}
+--- Result: ✓ PASSED (0.11s) ---
+
+============================================================
+[36/164] 35_max_element - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+max_element = 入力 l に対し {
+   best=l[0]
+   i=1
+   差(lの大きさ,1)回くり返す{
+      もしl[i]がbestより大きいならば{
+         best=l[i]
+      }
+      iを増やす
+   }
+   bestが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+max_element = 入力 l に対し {
+   best=l[0]
+   i=1
+   差(lの大きさ,1)回くり返す{
+      もしl[i]がbestより大きいならば{
+         best=l[i]
+      }
+      iを増やす
+   }
+   bestが答え
+}
+--- Result: ✓ PASSED (0.11s) ---
+
+============================================================
+[37/164] 36_fizz_buzz - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+fizz_buzz = 入力 n に対し {
+   count=0
+   i=0
+   n回くり返す{
+      ok=0
+      もし剰余(i,11)が0ならば{
+         ok=1
+      }
+      もし剰余(i,13)が0ならば{
+         ok=1
+      }
+      もしokが1ならば{
+         s=文字列化(i)
+         j=0
+         sの大きさ回くり返す{
+            もしs[j]が55ならば{
+               countを増やす
+            }
+            jを増やす
+         }
+      }
+      iを増やす
+   }
+   countが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+fizz_buzz = 入力 n に対し {
+   count=0
+   i=0
+   n回くり返す{
+      ok=0
+      もし剰余(i,11)が0ならば{
+         ok=1
+      }
+      もし剰余(i,13)が0ならば{
+         ok=1
+      }
+      もしokが1ならば{
+         s=文字列化(i)
+         j=0
+         sの大きさ回くり返す{
+            もしs[j]が55ならば{
+               countを増やす
+            }
+            jを増やす
+         }
+      }
+      iを増やす
+   }
+   countが答え
+}
+--- Result: ✓ PASSED (4.17s) ---
+
+============================================================
+[38/164] 37_sort_even - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+sort_even = 入力 l に対し {
+   evens=[]
+   i=0
+   n=lの大きさ
+
+   # 偶数インデックスの要素を集める
+   n回くり返す{
+      もし剰余(i,2)が0ならば{
+         evensにl[i]を追加する
+      }
+      iを増やす
+   }
+
+   # 偶数インデックス部分だけソート
+   evens=bubble_sort(evens)
+
+   # 元の配列に戻す
+   result=[]
+   i=0
+   j=0
+   n回くり返す{
+      もし剰余(i,2)が0ならば{
+         resultにevens[j]を追加する
+         jを増やす
+      }
+      そうでなければ{
+         resultにl[i]を追加する
+      }
+      iを増やす
+   }
+
+   resultが答え
+}
+
+bubble_sort=入力Aに対し{
+   n=Aの大きさ
+   n回くり返す{
+      i=0
+      差(n,1)回くり返す{
+         j=和(i,1)
+         もしA[i]がA[j]より大きいならば{
+            tmp=A[i]
+            A[i]=A[j]
+            A[j]=tmp
+         }
+         iを増やす
+      }
+   }
+   Aが答え
+}
+
+>>> sort_even([1,2,3])
+[1,2,3]
+>>> sort_even([5,6,3,4])
+[3,6,5,4]
+>>> sort_even([])
+[]
+>>> sort_even([7])
+[7]
+>>> sort_even([9,8,7,6,5])
+[5,8,7,6,9]
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+sort_even = 入力 l に対し {
+   evens=[]
+   i=0
+   n=lの大きさ
+
+   # 偶数インデックスの要素を集める
+   n回くり返す{
+      もし剰余(i,2)が0ならば{
+         evensにl[i]を追加する
+      }
+      iを増やす
+   }
+
+   # 偶数インデックス部分だけソート
+   evens=bubble_sort(evens)
+
+   # 元の配列に戻す
+   result=[]
+   i=0
+   j=0
+   n回くり返す{
+      もし剰余(i,2)が0ならば{
+         resultにevens[j]を追加する
+         jを増やす
+      }
+      そうでなければ{
+         resultにl[i]を追加する
+      }
+      iを増やす
+   }
+
+   resultが答え
+}
+
+bubble_sort=入力Aに対し{
+   n=Aの大きさ
+   n回くり返す{
+      i=0
+      差(n,1)回くり返す{
+         j=和(i,1)
+         もしA[i]がA[j]より大きいならば{
+            tmp=A[i]
+            A[i]=A[j]
+            A[j]=tmp
+         }
+         iを増やす
+      }
+   }
+   Aが答え
+}
+--- Result: ✓ PASSED (0.15s) ---
+
+============================================================
+[39/164] 38_decode_cyclic - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+decode_cyclic = 入力 s に対し {
+   result=""
+   n=sの大きさ
+   i=0
+   n回くり返す{
+      c=s[i]
+      r=剰余(i,3)
+      もしrが0ならば{
+         resultにcを追加する
+      }
+      もしrが1ならば{
+         result=c+result
+      }
+      もしrが2ならば{
+         result=差(result,c)
+      }
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+decode_cyclic = 入力 s に対し {
+   result=""
+   n=sの大きさ
+   i=0
+   n回くり返す{
+      c=s[i]
+      r=剰余(i,3)
+      もしrが0ならば{
+         resultにcを追加する
+      }
+      もしrが1ならば{
+         result=c+result
+      }
+      もしrが2ならば{
+         result=差(result,c)
+      }
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✗ FAILED (0.12s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] サポートされていない演算子です 🔍+ line 14, column 17:
+|          result=c+result
+|                 ^^^^^^^^
+
+
+============================================================
+[40/164] 39_prime_fib - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+prime_fib = 入力 n に対し {
+   is_prime=入力xに対し{
+      もしxが2より小さいならば{
+         偽が答え
+      }
+      d=2
+      1000000回くり返す{
+         もし積(d,d)がxより大きいならば{
+            くり返しを抜ける
+         }
+         もし剰余(x,d)が0ならば{
+            偽が答え
+         }
+         dを増やす
+      }
+      真が答え
+   }
+
+   a=0
+   b=1
+   count=0
+
+   1000000回くり返す{
+      c=和(a,b)
+      a=b
+      b=c
+
+      もしis_prime(a)ならば{
+         countを増やす
+         もしcountがnならば{
+            aが答え
+         }
+      }
+   }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+prime_fib = 入力 n に対し {
+   is_prime=入力xに対し{
+      もしxが2より小さいならば{
+         偽が答え
+      }
+      d=2
+      1000000回くり返す{
+         もし積(d,d)がxより大きいならば{
+            くり返しを抜ける
+         }
+         もし剰余(x,d)が0ならば{
+            偽が答え
+         }
+         dを増やす
+      }
+      真が答え
+   }
+
+   a=0
+   b=1
+   count=0
+
+   1000000回くり返す{
+      c=和(a,b)
+      a=b
+      b=c
+
+      もしis_prime(a)ならば{
+         countを増やす
+         もしcountがnならば{
+            aが答え
+         }
+      }
+   }
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[41/164] 40_triples_sum_to_zero - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+triples_sum_to_zero = 入力 l に対し {
+   n=lの大きさ
+   もしnが3より小さいならば{
+      偽が答え
+   }
+
+   i=0
+   n回くり返す{
+      j=和(i,1)
+      rem1=差(n,j)
+      rem1回くり返す{
+         k=和(j,1)
+         rem2=差(n,k)
+         rem2回くり返す{
+            s=和(l[i],l[j],l[k])
+            もしsが0ならば{
+               真が答え
+            }
+            kを増やす
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+   偽が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+triples_sum_to_zero = 入力 l に対し {
+   n=lの大きさ
+   もしnが3より小さいならば{
+      偽が答え
+   }
+
+   i=0
+   n回くり返す{
+      j=和(i,1)
+      rem1=差(n,j)
+      rem1回くり返す{
+         k=和(j,1)
+         rem2=差(n,k)
+         rem2回くり返す{
+            s=和(l[i],l[j],l[k])
+            もしsが0ならば{
+               真が答え
+            }
+            kを増やす
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+   偽が答え
+}
+--- Result: ✗ FAILED (0.14s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍triples_sum_to_zero([1, 3, 5, 0]) ❌false ✅0 line 31, column 1:
+| >>> triples_sum_to_zero([1, 3, 5, 0])
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[42/164] 41_car_race_collision - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+car_race_collision = 入力 n に対し {
+   積(n,n)が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+car_race_collision = 入力 n に対し {
+   積(n,n)が答え
+}
+--- Result: ✓ PASSED (0.09s) ---
+
+============================================================
+[43/164] 42_incr_list - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+incr_list = 入力 l に対し {
+   result=[]
+   i=0
+   lの大きさ回くり返す{
+      resultに和(l[i],1)を追加する
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+incr_list = 入力 l に対し {
+   result=[]
+   i=0
+   lの大きさ回くり返す{
+      resultに和(l[i],1)を追加する
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[44/164] 43_pairs_sum_to_zero - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+pairs_sum_to_zero = 入力 l に対し {
+   n=lの大きさ
+   i=0
+   n回くり返す{
+      j=和(i,1)
+      差(n,和(i,1))回くり返す{
+         もし和(l[i],l[j])が0ならば{
+            真が答え
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+   偽が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+pairs_sum_to_zero = 入力 l に対し {
+   n=lの大きさ
+   i=0
+   n回くり返す{
+      j=和(i,1)
+      差(n,和(i,1))回くり返す{
+         もし和(l[i],l[j])が0ならば{
+            真が答え
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+   偽が答え
+}
+--- Result: ✗ FAILED (0.13s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍pairs_sum_to_zero([1, 3, 5, 0]) ❌false ✅0 line 20, column 1:
+| >>> pairs_sum_to_zero([1, 3, 5, 0])
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[45/164] 44_change_base - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+change_base = 入力 x, base に対し {
+   もしxが0ならば{
+      "0"が答え
+   }
+
+   result=""
+   n=x
+   1000回くり返す{
+      もしnが0ならば{
+         くり返しを抜ける
+      }
+      r=剰余(n,base)
+      c=文字列化(r)
+      result=和(c,result)
+      n=商(n,base)
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+change_base = 入力 x, base に対し {
+   もしxが0ならば{
+      "0"が答え
+   }
+
+   result=""
+   n=x
+   1000回くり返す{
+      もしnが0ならば{
+         くり返しを抜ける
+      }
+      r=剰余(n,base)
+      c=文字列化(r)
+      result=和(c,result)
+      n=商(n,base)
+   }
+   resultが答え
+}
+--- Result: ✗ FAILED (0.12s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] データの種類（型）が違っています ✅<🔢number> ❌"2" line 16, column 14:
+|       result=和(c,result)
+|              ^^^^^^^^^^^
+
+
+============================================================
+[46/164] 45_triangle_area - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+triangle_area = 入力 a, h に対し {
+   area=商(積(小数化(a),h),2)
+   areaが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+triangle_area = 入力 a, h に対し {
+   area=商(積(小数化(a),h),2)
+   areaが答え
+}
+--- Result: ✓ PASSED (0.07s) ---
+
+============================================================
+[47/164] 46_fib4 - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+fib4 = 入力 n に対し {
+   もしnが0ならば{
+      0が答え
+   }
+   もしnが1ならば{
+      0が答え
+   }
+   もしnが2ならば{
+      2が答え
+   }
+   もしnが3ならば{
+      0が答え
+   }
+
+   a=0
+   b=0
+   c=2
+   d=0
+   i=4
+   差(n,3)回くり返す{
+      next=和(和(a,b),和(c,d))
+      a=b
+      b=c
+      c=d
+      d=next
+      iを増やす
+   }
+   dが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+fib4 = 入力 n に対し {
+   もしnが0ならば{
+      0が答え
+   }
+   もしnが1ならば{
+      0が答え
+   }
+   もしnが2ならば{
+      2が答え
+   }
+   もしnが3ならば{
+      0が答え
+   }
+
+   a=0
+   b=0
+   c=2
+   d=0
+   i=4
+   差(n,3)回くり返す{
+      next=和(和(a,b),和(c,d))
+      a=b
+      b=c
+      c=d
+      d=next
+      iを増やす
+   }
+   dが答え
+}
+--- Result: ✓ PASSED (0.11s) ---
+
+============================================================
+[48/164] 47_median - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+median = 入力 l に対し {
+   a=bubble_sort(l)
+   n=aの大きさ
+   mid=商(n,2)
+   parity=剰余(n,2)
+   もしparityが1ならば{
+      a[mid]が答え
+   }
+   left=差(mid,1)
+   s=和(a[left],a[mid])
+   商(小数化(s),小数化(2))が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+median = 入力 l に対し {
+   a=bubble_sort(l)
+   n=aの大きさ
+   mid=商(n,2)
+   parity=剰余(n,2)
+   もしparityが1ならば{
+      a[mid]が答え
+   }
+   left=差(mid,1)
+   s=和(a[left],a[mid])
+   商(小数化(s),小数化(2))が答え
+}
+--- Result: ✗ FAILED (0.11s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] 関数が定義されていません ❌bubble_sort line 4, column 6:
+|    a=bubble_sort(l)
+|      ^^^^^^^^^^^
+
+
+============================================================
+[49/164] 48_is_palindrome - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+is_palindrome = 入力 text に対し {
+   n=textの大きさ
+   half=商(n,2)
+   i=0
+   ok=真
+   half回くり返す{
+      j=差(差(n,1),i)
+      もしtext[i]がtext[j]以外ならば{
+         ok=偽
+      }
+      iを増やす
+   }
+   okが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+is_palindrome = 入力 text に対し {
+   n=textの大きさ
+   half=商(n,2)
+   i=0
+   ok=真
+   half回くり返す{
+      j=差(差(n,1),i)
+      もしtext[i]がtext[j]以外ならば{
+         ok=偽
+      }
+      iを増やす
+   }
+   okが答え
+}
+--- Result: ✗ FAILED (0.11s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍is_palindrome("") ❌true ✅1 line 19, column 1:
+| >>> is_palindrome("")
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[50/164] 49_modp - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+modp = 入力 n, p に対し {
+   result=1
+   i=0
+   n回くり返す{
+      result=剰余(積(result,2),p)
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+modp = 入力 n, p に対し {
+   result=1
+   i=0
+   n回くり返す{
+      result=剰余(積(result,2),p)
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✓ PASSED (0.11s) ---
+
+============================================================
+[51/164] 50_decode_shift - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+decode_shift = 入力 s に対し {
+   result=""
+   n=sの大きさ
+   i=0
+   n回くり返す{
+      c=s[i]
+      nc=c
+
+      # 大文字 A..Z を 5 文字ずらす
+      もしcが65以上ならば{
+         もしcが90以下ならば{
+            offset=差(c,65)
+            shifted=剰余(和(offset,5),26)
+            nc=和(shifted,65)
+         }
+      }
+
+      # 小文字 a..z を 5 文字ずらす
+      もしcが97以上ならば{
+         もしcが122以下ならば{
+            offset=差(c,97)
+            shifted=剰余(和(offset,5),26)
+            nc=和(shifted,97)
+         }
+      }
+
+      resultにncを追加する
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+decode_shift = 入力 s に対し {
+   result=""
+   n=sの大きさ
+   i=0
+   n回くり返す{
+      c=s[i]
+      nc=c
+
+      # 大文字 A..Z を 5 文字ずらす
+      もしcが65以上ならば{
+         もしcが90以下ならば{
+            offset=差(c,65)
+            shifted=剰余(和(offset,5),26)
+            nc=和(shifted,65)
+         }
+      }
+
+      # 小文字 a..z を 5 文字ずらす
+      もしcが97以上ならば{
+         もしcが122以下ならば{
+            offset=差(c,97)
+            shifted=剰余(和(offset,5),26)
+            nc=和(shifted,97)
+         }
+      }
+
+      resultにncを追加する
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✗ FAILED (0.14s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍decode_shift("ifcnmmjciacwhxsgfhlm") ❌"nkhsrrohnfhbmcxlkmqr" ✅"daxihhexdvxrcsnbacgh" line 37, column 1:
+| >>> decode_shift("ifcnmmjciacwhxsgfhlm")
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[52/164] 51_remove_vowels - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+remove_vowels = 入力 text に対し {
+   vowels="aeiouAEIOU"
+   result=""
+   i=0
+   textの大きさ回くり返す{
+      c=text[i]
+      もしcがvowelsのいずれでもないならば{
+         resultにcを追加する
+      }
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+remove_vowels = 入力 text に対し {
+   vowels="aeiouAEIOU"
+   result=""
+   i=0
+   textの大きさ回くり返す{
+      c=text[i]
+      もしcがvowelsのいずれでもないならば{
+         resultにcを追加する
+      }
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✓ PASSED (0.12s) ---
+
+============================================================
+[53/164] 52_below_threshold - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+below_threshold = 入力 l, t に対し {
+   i=0
+   lの大きさ回くり返す{
+      もしl[i]がtより大きいならば{
+         偽が答え
+      }
+      iを増やす
+   }
+   真が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+below_threshold = 入力 l, t に対し {
+   i=0
+   lの大きさ回くり返す{
+      もしl[i]がtより大きいならば{
+         偽が答え
+      }
+      iを増やす
+   }
+   真が答え
+}
+--- Result: ✗ FAILED (0.11s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍below_threshold([1, 2, 4, 10], 100) ❌true ✅1 line 15, column 1:
+| >>> below_threshold([1, 2, 4, 10], 100)
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[54/164] 53_add - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+add = 入力 x, y に対し {
+   和(x,y)が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+add = 入力 x, y に対し {
+   和(x,y)が答え
+}
+--- Result: ✓ PASSED (0.10s) ---
+
+============================================================
+[55/164] 54_same_chars - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+same_chars = 入力 s0, s1 に対し {
+   u0=unique_chars(s0)
+   u1=unique_chars(s1)
+
+   もしu0の大きさがu1の大きさ以外ならば{
+      偽が答え
+   }
+
+   i=0
+   u0の大きさ回くり返す{
+      c=u0[i]
+      もしcがu1のいずれでもないならば{
+         偽が答え
+      }
+      iを増やす
+   }
+
+   真が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+same_chars = 入力 s0, s1 に対し {
+   u0=unique_chars(s0)
+   u1=unique_chars(s1)
+
+   もしu0の大きさがu1の大きさ以外ならば{
+      偽が答え
+   }
+
+   i=0
+   u0の大きさ回くり返す{
+      c=u0[i]
+      もしcがu1のいずれでもないならば{
+         偽が答え
+      }
+      iを増やす
+   }
+
+   真が答え
+}
+--- Result: ✗ FAILED (0.12s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] 関数が定義されていません ❌unique_chars line 4, column 7:
+|    u0=unique_chars(s0)
+|       ^^^^^^^^^^^^
+
+
+============================================================
+[56/164] 55_fib - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+fib = 入力 n に対し {
+   もしnが0ならば{
+      0が答え
+   }
+   もしnが1ならば{
+      1が答え
+   }
+   a=0
+   b=1
+   i=1
+   差(n,1)回くり返す{
+      c=和(a,b)
+      a=b
+      b=c
+      iを増やす
+   }
+   bが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+fib = 入力 n に対し {
+   もしnが0ならば{
+      0が答え
+   }
+   もしnが1ならば{
+      1が答え
+   }
+   a=0
+   b=1
+   i=1
+   差(n,1)回くり返す{
+      c=和(a,b)
+      a=b
+      b=c
+      iを増やす
+   }
+   bが答え
+}
+--- Result: ✓ PASSED (0.11s) ---
+
+============================================================
+[57/164] 56_correct_bracketing - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+correct_bracketing = 入力 brackets に対し {
+   depth=0
+   i=0
+   n=bracketsの大きさ
+   n回くり返す{
+      c=brackets[i]
+      もしcが60ならば{
+         depthを増やす
+      }
+      もしcが62ならば{
+         depthを減らす
+         もしdepthが0より小さいならば{
+            偽が答え
+         }
+      }
+      iを増やす
+   }
+   もしdepthが0ならば{
+      真が答え
+   }
+   そうでなければ{
+      偽が答え
+   }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+correct_bracketing = 入力 brackets に対し {
+   depth=0
+   i=0
+   n=bracketsの大きさ
+   n回くり返す{
+      c=brackets[i]
+      もしcが60ならば{
+         depthを増やす
+      }
+      もしcが62ならば{
+         depthを減らす
+         もしdepthが0より小さいならば{
+            偽が答え
+         }
+      }
+      iを増やす
+   }
+   もしdepthが0ならば{
+      真が答え
+   }
+   そうでなければ{
+      偽が答え
+   }
+}
+--- Result: ✗ FAILED (0.11s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍correct_bracketing("<>") ❌true ✅1 line 29, column 1:
+| >>> correct_bracketing("<>")
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[58/164] 57_monotonic - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+monotonic = 入力 l に対し {
+   n=lの大きさ
+   もしnが2以下ならば{
+      真が答え
+   }
+
+   inc=1
+   dec=1
+   i=1
+   差(n,1)回くり返す{
+      prev=l[差(i,1)]
+      curr=l[i]
+      もしcurrがprevより小さいならば{
+         inc=0
+      }
+      もしcurrがprevより大きいならば{
+         dec=0
+      }
+      iを増やす
+   }
+
+   もしincが1ならば{
+      真が答え
+   }
+   もしdecが1ならば{
+      真が答え
+   }
+   偽が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+monotonic = 入力 l に対し {
+   n=lの大きさ
+   もしnが2以下ならば{
+      真が答え
+   }
+
+   inc=1
+   dec=1
+   i=1
+   差(n,1)回くり返す{
+      prev=l[差(i,1)]
+      curr=l[i]
+      もしcurrがprevより小さいならば{
+         inc=0
+      }
+      もしcurrがprevより大きいならば{
+         dec=0
+      }
+      iを増やす
+   }
+
+   もしincが1ならば{
+      真が答え
+   }
+   もしdecが1ならば{
+      真が答え
+   }
+   偽が答え
+}
+--- Result: ✗ FAILED (0.13s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍monotonic([1, 2, 4, 10]) ❌true ✅1 line 34, column 1:
+| >>> monotonic([1, 2, 4, 10])
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[59/164] 58_common - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+common = 入力 l1, l2 に対し {
+   result=[]
+   i=0
+   l1の大きさ回くり返す{
+      x=l1[i]
+      もしxがl2のいずれかならば{
+         もしxがresultのいずれでもないならば{
+            resultにxを追加する
+         }
+      }
+      iを増やす
+   }
+   bubble_sort(result)が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+common = 入力 l1, l2 に対し {
+   result=[]
+   i=0
+   l1の大きさ回くり返す{
+      x=l1[i]
+      もしxがl2のいずれかならば{
+         もしxがresultのいずれでもないならば{
+            resultにxを追加する
+         }
+      }
+      iを増やす
+   }
+   bubble_sort(result)が答え
+}
+--- Result: ✗ FAILED (0.12s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] 関数が定義されていません ❌bubble_sort line 15, column 4:
+|    bubble_sort(result)が答え
+|    ^^^^^^^^^^^
+
+
+============================================================
+[60/164] 59_largest_prime_factor - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+largest_prime_factor = 入力 n に対し {
+   d=2
+   last=1
+   もし剰余(n,2)が0ならば{
+      last=2
+      もし剰余(n,d)が0ならば{
+         n=商(n,d)
+      }
+      剰余(n,d)が0の間くり返す{
+         n=商(n,d)
+      }
+   }
+   d=3
+   平方根(n)がd以上の間くり返す{
+      もし剰余(n,d)が0ならば{
+         last=d
+         n=商(n,d)
+         剰余(n,d)が0の間くり返す{
+            n=商(n,d)
+         }
+      }
+      d=和(d,2)
+   }
+   もしnが1より大きいならば{
+      nが答え
+   }
+   lastが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+largest_prime_factor = 入力 n に対し {
+   d=2
+   last=1
+   もし剰余(n,2)が0ならば{
+      last=2
+      もし剰余(n,d)が0ならば{
+         n=商(n,d)
+      }
+      剰余(n,d)が0の間くり返す{
+         n=商(n,d)
+      }
+   }
+   d=3
+   平方根(n)がd以上の間くり返す{
+      もし剰余(n,d)が0ならば{
+         last=d
+         n=商(n,d)
+         剰余(n,d)が0の間くり返す{
+            n=商(n,d)
+         }
+      }
+      d=和(d,2)
+   }
+   もしnが1より大きいならば{
+      nが答え
+   }
+   lastが答え
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[61/164] 60_sum_to_n - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+sum_to_n = 入力 n に対し {
+   total=0
+   i=1
+   n回くり返す{
+      total=和(total,i)
+      iを増やす
+   }
+   totalが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+sum_to_n = 入力 n に対し {
+   total=0
+   i=1
+   n回くり返す{
+      total=和(total,i)
+      iを増やす
+   }
+   totalが答え
+}
+--- Result: ✓ PASSED (0.10s) ---
+
+============================================================
+[62/164] 61_correct_bracketing - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+correct_bracketing = 入力 brackets に対し {
+   balance=0
+   i=0
+   n=bracketsの大きさ
+   ok=1
+
+   n回くり返す{
+      c=brackets[i]
+      もしcが40ならば{
+         balanceを増やす
+      }
+      もしcが41ならば{
+         balanceを減らす
+      }
+      もしbalanceが0より小さいならば{
+         ok=0
+      }
+      iを増やす
+   }
+
+   もしokが0ならば{
+      偽が答え
+   }
+   もしbalanceが0ならば{
+      真が答え
+   }
+   偽が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+correct_bracketing = 入力 brackets に対し {
+   balance=0
+   i=0
+   n=bracketsの大きさ
+   ok=1
+
+   n回くり返す{
+      c=brackets[i]
+      もしcが40ならば{
+         balanceを増やす
+      }
+      もしcが41ならば{
+         balanceを減らす
+      }
+      もしbalanceが0より小さいならば{
+         ok=0
+      }
+      iを増やす
+   }
+
+   もしokが0ならば{
+      偽が答え
+   }
+   もしbalanceが0ならば{
+      真が答え
+   }
+   偽が答え
+}
+--- Result: ✗ FAILED (0.15s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍correct_bracketing("()") ❌true ✅1 line 33, column 1:
+| >>> correct_bracketing("()")
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[63/164] 62_derivative - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+derivative = 入力 xs に対し {
+   n=xsの大きさ
+   result=[]
+   i=1
+   差(n,1)回くり返す{
+      resultに積(xs[i],i)を追加する
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+derivative = 入力 xs に対し {
+   n=xsの大きさ
+   result=[]
+   i=1
+   差(n,1)回くり返す{
+      resultに積(xs[i],i)を追加する
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[64/164] 63_fibfib - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+fibfib=入力nに対し{
+   もしnが0ならば{
+      0が答え
+   }
+   もしnが1ならば{
+      0が答え
+   }
+   もしnが2ならば{
+      1が答え
+   }
+
+   a=0
+   b=0
+   c=1
+   i=3
+   差(n,2)回くり返す{
+      next=和(和(a,b),c)
+      a=b
+      b=c
+      c=next
+      iを増やす
+   }
+   cが答え
+}
+
+>>> fibfib(1)
+0
+>>> fibfib(5)
+4
+>>> fibfib(8)
+24
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+fibfib=入力nに対し{
+   もしnが0ならば{
+      0が答え
+   }
+   もしnが1ならば{
+      0が答え
+   }
+   もしnが2ならば{
+      1が答え
+   }
+
+   a=0
+   b=0
+   c=1
+   i=3
+   差(n,2)回くり返す{
+      next=和(和(a,b),c)
+      a=b
+      b=c
+      c=next
+      iを増やす
+   }
+   cが答え
+}
+--- Result: ✓ PASSED (0.12s) ---
+
+============================================================
+[65/164] 64_vowels_count - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+vowels_count=入力sに対し{
+   vowels="aeiouAEIOU"
+   count=0
+   i=0
+   sの大きさ回くり返す{
+      c=s[i]
+      もしcがvowelsのいずれかならば{
+         countを増やす
+      }
+      iを増やす
+   }
+   countが答え
+}
+
+# テスト: 基本
+>>> vowels_count("hello")
+2
+>>> vowels_count("world")
+1
+
+# テスト: 母音なし
+>>> vowels_count("xyz")
+0
+
+# テスト: すべて母音
+>>> vowels_count("aeiou")
+5
+>>> vowels_count("AEIOU")
+5
+
+# テスト: 大文字小文字混在
+>>> vowels_count("ApplE")
+2
+
+# テスト: 空文字列
+>>> vowels_count("")
+0
+
+# テスト: 記号や数字は数えない
+>>> vowels_count("a1e!i?o_u")
+5
+
+# テスト: 長めの単語
+>>> vowels_count("programming")
+3
+>>> vowels_count("beautiful")
+5
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+vowels_count=入力sに対し{
+   vowels="aeiouAEIOU"
+   count=0
+   i=0
+   sの大きさ回くり返す{
+      c=s[i]
+      もしcがvowelsのいずれかならば{
+         countを増やす
+      }
+      iを増やす
+   }
+   countが答え
+}
+
+# テスト: 基本
+--- Result: ✗ FAILED (0.11s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍vowels_count("key") ❌1 ✅2 line 24, column 1:
+| >>> vowels_count("key")
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[66/164] 65_circular_shift - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+circular_shift = 入力 x, shift に対し {
+   s=文字列化(x)
+   n=sの大きさ
+
+   もしshiftがnより大きいならば{
+      reverse(s)が答え
+   }
+
+   もしnが0ならば{
+      ""が答え
+   }
+
+   k=剰余(shift,n)
+   もしkが0ならば{
+      sが答え
+   }
+
+   split=差(n,k)
+   result=""
+   i=split
+   k回くり返す{
+      resultにs[i]を追加する
+      iを増やす
+   }
+   i=0
+   split回くり返す{
+      resultにs[i]を追加する
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+circular_shift = 入力 x, shift に対し {
+   s=文字列化(x)
+   n=sの大きさ
+
+   もしshiftがnより大きいならば{
+      reverse(s)が答え
+   }
+
+   もしnが0ならば{
+      ""が答え
+   }
+
+   k=剰余(shift,n)
+   もしkが0ならば{
+      sが答え
+   }
+
+   split=差(n,k)
+   result=""
+   i=split
+   k回くり返す{
+      resultにs[i]を追加する
+      iを増やす
+   }
+   i=0
+   split回くり返す{
+      resultにs[i]を追加する
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✗ FAILED (0.12s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] 関数が定義されていません ❌reverse line 8, column 7:
+|       reverse(s)が答え
+|       ^^^^^^^
+
+
+============================================================
+[67/164] 66_digitSum - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+digitSum = 入力 s に対し {
+   total=0
+   i=0
+   sの大きさ回くり返す{
+      c=s[i]
+      もしcが65以上ならば{
+         もしcが90以下ならば{
+            total=和(total,c)
+         }
+      }
+      iを増やす
+   }
+   totalが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+digitSum = 入力 s に対し {
+   total=0
+   i=0
+   sの大きさ回くり返す{
+      c=s[i]
+      もしcが65以上ならば{
+         もしcが90以下ならば{
+            total=和(total,c)
+         }
+      }
+      iを増やす
+   }
+   totalが答え
+}
+--- Result: ✓ PASSED (0.11s) ---
+
+============================================================
+[68/164] 67_fruit_distribution - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+fruit_distribution = 入力 s, n に対し {
+   parts=sを" "で分割
+   apples=整数化(parts[0])
+   oranges=整数化(parts[3])
+   差(差(n,apples),oranges)が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+fruit_distribution = 入力 s, n に対し {
+   parts=sを" "で分割
+   apples=整数化(parts[0])
+   oranges=整数化(parts[3])
+   差(差(n,apples),oranges)が答え
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[69/164] 68_pluck - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+pluck=入力arrに対し{
+   n=arrの大きさ
+   もしnが0ならば{
+      []が答え
+   }
+
+   found=0
+   best_value=0
+   best_index=0
+   i=0
+
+   n回くり返す{
+      x=arr[i]
+      r=剰余(x,2)
+
+      もしrが0ならば{
+         もしfoundが0ならば{
+            found=1
+            best_value=x
+            best_index=i
+         }
+         そうでなければ{
+            もしxがbest_valueより小さいならば{
+               best_value=x
+               best_index=i
+            }
+         }
+      }
+      iを増やす
+   }
+
+   もしfoundが0ならば{
+      []が答え
+   }
+   [best_value,best_index]が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+pluck=入力arrに対し{
+   n=arrの大きさ
+   もしnが0ならば{
+      []が答え
+   }
+
+   found=0
+   best_value=0
+   best_index=0
+   i=0
+
+   n回くり返す{
+      x=arr[i]
+      r=剰余(x,2)
+
+      もしrが0ならば{
+         もしfoundが0ならば{
+            found=1
+            best_value=x
+            best_index=i
+         }
+         そうでなければ{
+            もしxがbest_valueより小さいならば{
+               best_value=x
+               best_index=i
+            }
+         }
+      }
+      iを増やす
+   }
+
+   もしfoundが0ならば{
+      []が答え
+   }
+   [best_value,best_index]が答え
+}
+--- Result: ✓ PASSED (0.13s) ---
+
+============================================================
+[70/164] 69_search - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+search = 入力 lst に対し {
+   n=lstの大きさ
+   best=差(0,1)
+   i=0
+   n回くり返す{
+      x=lst[i]
+      count=0
+      j=0
+      n回くり返す{
+         もしlst[j]がxならば{
+            countを増やす
+         }
+         jを増やす
+      }
+      もしcountがx以上ならば{
+         もしxがbestより大きいならば{
+            best=x
+         }
+      }
+      iを増やす
+   }
+   bestが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+search = 入力 lst に対し {
+   n=lstの大きさ
+   best=差(0,1)
+   i=0
+   n回くり返す{
+      x=lst[i]
+      count=0
+      j=0
+      n回くり返す{
+         もしlst[j]がxならば{
+            countを増やす
+         }
+         jを増やす
+      }
+      もしcountがx以上ならば{
+         もしxがbestより大きいならば{
+            best=x
+         }
+      }
+      iを増やす
+   }
+   bestが答え
+}
+--- Result: ✓ PASSED (0.33s) ---
+
+============================================================
+[71/164] 70_strange_sort_list - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+strange_sort_list = 入力 lst に対し {
+   sorted=bubble_sort(lst)
+   n=sortedの大きさ
+   result=[]
+   left=0
+   right=差(n,1)
+
+   n回くり返す{
+      もしleftがright以下ならば{
+         resultにsorted[left]を追加する
+         leftを増やす
+      }
+      もしleftがright以下ならば{
+         resultにsorted[right]を追加する
+         rightを減らす
+      }
+   }
+   resultが答え
+}
+
+bubble_sort=入力Aに対し{
+   n=Aの大きさ
+   n回くり返す{
+      i=0
+      差(n,1)回くり返す{
+         j=和(i,1)
+         もしA[i]がA[j]より大きいならば{
+            tmp=A[i]
+            A[i]=A[j]
+            A[j]=tmp
+         }
+         iを増やす
+      }
+   }
+   Aが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+strange_sort_list = 入力 lst に対し {
+   sorted=bubble_sort(lst)
+   n=sortedの大きさ
+   result=[]
+   left=0
+   right=差(n,1)
+
+   n回くり返す{
+      もしleftがright以下ならば{
+         resultにsorted[left]を追加する
+         leftを増やす
+      }
+      もしleftがright以下ならば{
+         resultにsorted[right]を追加する
+         rightを減らす
+      }
+   }
+   resultが答え
+}
+
+bubble_sort=入力Aに対し{
+   n=Aの大きさ
+   n回くり返す{
+      i=0
+      差(n,1)回くり返す{
+         j=和(i,1)
+         もしA[i]がA[j]より大きいならば{
+            tmp=A[i]
+            A[i]=A[j]
+            A[j]=tmp
+         }
+         iを増やす
+      }
+   }
+   Aが答え
+}
+--- Result: ✓ PASSED (0.16s) ---
+
+============================================================
+[72/164] 71_triangle_area - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+triangle_area = 入力 a, b, c に対し {
+   ok=1
+   ab=和(a,b)
+   ac=和(a,c)
+   bc=和(b,c)
+
+   もしabがc以下ならば{
+      ok=0
+   }
+   もしacがb以下ならば{
+      ok=0
+   }
+   もしbcがa以下ならば{
+      ok=0
+   }
+
+   もしokが0ならば{
+      -1が答え
+   }
+
+   s=商(小数化(和(a,和(b,c))),小数化(2))
+   area2=積(s,積(差(s,a),積(差(s,b),差(s,c))))
+   area=平方根(area2)
+   rounded=商(整数化(和(積(area,100),0.5)),100.0)
+   roundedが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+triangle_area = 入力 a, b, c に対し {
+   ok=1
+   ab=和(a,b)
+   ac=和(a,c)
+   bc=和(b,c)
+
+   もしabがc以下ならば{
+      ok=0
+   }
+   もしacがb以下ならば{
+      ok=0
+   }
+   もしbcがa以下ならば{
+      ok=0
+   }
+
+   もしokが0ならば{
+      -1が答え
+   }
+
+   s=商(小数化(和(a,和(b,c))),小数化(2))
+   area2=積(s,積(差(s,a),積(差(s,b),差(s,c))))
+   area=平方根(area2)
+   rounded=商(整数化(和(積(area,100),0.5)),100.0)
+   roundedが答え
+}
+--- Result: ✓ PASSED (0.13s) ---
+
+============================================================
+[73/164] 72_will_it_fly - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+will_it_fly=入力q,wに対し{
+   total=0
+   n=qの大きさ
+   i=0
+   balanced=1
+
+   n回くり返す{
+      total=和(total,q[i])
+
+      j=差(差(n,1),i)
+      もしq[i]がq[j]以外ならば{
+         balanced=0
+      }
+
+      iを増やす
+   }
+
+   もしbalancedが1ならば{
+      もしtotalがw以下ならば{
+         真が答え
+      }
+   }
+   偽が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+will_it_fly=入力q,wに対し{
+   total=0
+   n=qの大きさ
+   i=0
+   balanced=1
+
+   n回くり返す{
+      total=和(total,q[i])
+
+      j=差(差(n,1),i)
+      もしq[i]がq[j]以外ならば{
+         balanced=0
+      }
+
+      iを増やす
+   }
+
+   もしbalancedが1ならば{
+      もしtotalがw以下ならば{
+         真が答え
+      }
+   }
+   偽が答え
+}
+--- Result: ✗ FAILED (0.11s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍will_it_fly([3, 2, 3], 9) ❌true ✅1 line 29, column 1:
+| >>> will_it_fly([3, 2, 3], 9)
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[74/164] 73_smallest_change - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+smallest_change = 入力 arr に対し {
+   n=arrの大きさ
+   half=商(n,2)
+   count=0
+   i=0
+   half回くり返す{
+      j=差(差(n,1),i)
+      もしarr[i]がarr[j]以外ならば{
+         countを増やす
+      }
+      iを増やす
+   }
+   countが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+smallest_change = 入力 arr に対し {
+   n=arrの大きさ
+   half=商(n,2)
+   count=0
+   i=0
+   half回くり返す{
+      j=差(差(n,1),i)
+      もしarr[i]がarr[j]以外ならば{
+         countを増やす
+      }
+      iを増やす
+   }
+   countが答え
+}
+--- Result: ✓ PASSED (0.12s) ---
+
+============================================================
+[75/164] 74_total_match - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+total_match = 入力 lst1, lst2 に対し {
+   sum1=0
+   i=0
+   lst1の大きさ回くり返す{
+      sum1=和(sum1,lst1[i]の大きさ)
+      iを増やす
+   }
+
+   sum2=0
+   j=0
+   lst2の大きさ回くり返す{
+      sum2=和(sum2,lst2[j]の大きさ)
+      jを増やす
+   }
+
+   もしsum1がsum2以下ならば{
+      lst1が答え
+   }
+   lst2が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+total_match = 入力 lst1, lst2 に対し {
+   sum1=0
+   i=0
+   lst1の大きさ回くり返す{
+      sum1=和(sum1,lst1[i]の大きさ)
+      iを増やす
+   }
+
+   sum2=0
+   j=0
+   lst2の大きさ回くり返す{
+      sum2=和(sum2,lst2[j]の大きさ)
+      jを増やす
+   }
+
+   もしsum1がsum2以下ならば{
+      lst1が答え
+   }
+   lst2が答え
+}
+--- Result: ✓ PASSED (0.14s) ---
+
+============================================================
+[76/164] 75_is_multiply_prime - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+is_multiply_prime = 入力 a に対し {
+   # 3つの素数 p,q,r の積 a = p*q*r を全探索する
+   p=2
+   99回くり返す{
+      もしpがaより大きいならば{
+         くり返しを抜ける
+      }
+
+      # p が素数か判定
+      p_prime=1
+      d=2
+      p回くり返す{
+         もしdがpより小さいならば{
+            もし剰余(p,d)が0ならば{
+               p_prime=0
+            }
+         }
+         dを増やす
+      }
+
+      もしp_primeが1ならば{
+         q=2
+         99回くり返す{
+            pq=積(p,q)
+            もしpqがaより大きいならば{
+               くり返しを抜ける
+            }
+
+            # q が素数か判定
+            q_prime=1
+            d=2
+            q回くり返す{
+               もしdがqより小さいならば{
+                  もし剰余(q,d)が0ならば{
+                     q_prime=0
+                  }
+               }
+               dを増やす
+            }
+
+            もしq_primeが1ならば{
+               もし剰余(a,pq)が0ならば{
+                  r=商(a,pq)
+
+                  # r が素数か判定
+                  もしrが2以上ならば{
+                     r_prime=1
+                     d=2
+                     r回くり返す{
+                        もしdがrより小さいならば{
+                           もし剰余(r,d)が0ならば{
+                              r_prime=0
+                           }
+                        }
+                        dを増やす
+                     }
+                     もしr_primeが1ならば{
+                        真が答え
+                     }
+                  }
+               }
+            }
+            qを増やす
+         }
+      }
+      pを増やす
+   }
+   偽が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+is_multiply_prime = 入力 a に対し {
+   # 3つの素数 p,q,r の積 a = p*q*r を全探索する
+   p=2
+   99回くり返す{
+      もしpがaより大きいならば{
+         くり返しを抜ける
+      }
+
+      # p が素数か判定
+      p_prime=1
+      d=2
+      p回くり返す{
+         もしdがpより小さいならば{
+            もし剰余(p,d)が0ならば{
+               p_prime=0
+            }
+         }
+         dを増やす
+      }
+
+      もしp_primeが1ならば{
+         q=2
+         99回くり返す{
+            pq=積(p,q)
+            もしpqがaより大きいならば{
+               くり返しを抜ける
+            }
+
+            # q が素数か判定
+            q_prime=1
+            d=2
+            q回くり返す{
+               もしdがqより小さいならば{
+                  もし剰余(q,d)が0ならば{
+                     q_prime=0
+                  }
+               }
+               dを増やす
+            }
+
+            もしq_primeが1ならば{
+               もし剰余(a,pq)が0ならば{
+                  r=商(a,pq)
+
+                  # r が素数か判定
+                  もしrが2以上ならば{
+                     r_prime=1
+                     d=2
+                     r回くり返す{
+                        もしdがrより小さいならば{
+                           もし剰余(r,d)が0ならば{
+                              r_prime=0
+                           }
+                        }
+                        dを増やす
+                     }
+                     もしr_primeが1ならば{
+                        真が答え
+                     }
+                  }
+               }
+            }
+            qを増やす
+         }
+      }
+      pを増やす
+   }
+   偽が答え
+}
+--- Result: ✗ FAILED (0.16s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍is_multiply_prime(5) ❌false ✅0 line 74, column 1:
+| >>> is_multiply_prime(5)
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[77/164] 76_is_simple_power - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+is_simple_power = 入力 x, n に対し {
+   もしxが1ならば{
+      真が答え
+   }
+   もしnが1以下ならば{
+      偽が答え
+   }
+   value=x
+   1000回くり返す{
+      r=剰余(value,n)
+      もしrが0以外ならば{
+         偽が答え
+      }
+      value=商(value,n)
+      もしvalueが1ならば{
+         真が答え
+      }
+   }
+   偽が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+is_simple_power = 入力 x, n に対し {
+   もしxが1ならば{
+      真が答え
+   }
+   もしnが1以下ならば{
+      偽が答え
+   }
+   value=x
+   1000回くり返す{
+      r=剰余(value,n)
+      もしrが0以外ならば{
+         偽が答え
+      }
+      value=商(value,n)
+      もしvalueが1ならば{
+         真が答え
+      }
+   }
+   偽が答え
+}
+--- Result: ✗ FAILED (0.10s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍is_simple_power(16, 2) ❌true ✅1 line 25, column 1:
+| >>> is_simple_power(16, 2)
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[78/164] 77_iscube - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+iscube = 入力 a に対し {
+   n=絶対値(a)
+   i=0
+   n回くり返す{
+      cube=積(積(i,i),i)
+      もしcubeがnならば{
+         真が答え
+      }
+      もしcubeがnより大きいならば{
+         偽が答え
+      }
+      iを増やす
+   }
+   真が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+iscube = 入力 a に対し {
+   n=絶対値(a)
+   i=0
+   n回くり返す{
+      cube=積(積(i,i),i)
+      もしcubeがnならば{
+         真が答え
+      }
+      もしcubeがnより大きいならば{
+         偽が答え
+      }
+      iを増やす
+   }
+   真が答え
+}
+--- Result: ✗ FAILED (0.10s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍iscube(1) ❌true ✅1 line 20, column 1:
+| >>> iscube(1)
+| ^^^^^^^^^^^^^^^
+
+
+============================================================
+[79/164] 78_hex_key - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+hex_key=入力numに対し{
+   primes="2357BD"
+   count=0
+   i=0
+   numの大きさ回くり返す{
+      c=num[i]
+      もしcがprimesのいずれかならば{
+         countを増やす
+      }
+      iを増やす
+   }
+   countが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+hex_key=入力numに対し{
+   primes="2357BD"
+   count=0
+   i=0
+   numの大きさ回くり返す{
+      c=num[i]
+      もしcがprimesのいずれかならば{
+         countを増やす
+      }
+      iを増やす
+   }
+   countが答え
+}
+--- Result: ✓ PASSED (0.11s) ---
+
+============================================================
+[80/164] 79_decimal_to_binary - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+decimal_to_binary = 入力 decimal に対し {
+   もしdecimalが0ならば{
+      "db0db"が答え
+   }
+
+   bits=""
+   n=decimal
+
+   1000回くり返す{
+      もしnが0ならば{
+         くり返しを抜ける
+      }
+      r=剰余(n,2)
+      もしrが0ならば{
+         bits=和("0",bits)
+      }
+      そうでなければ{
+         bits=和("1",bits)
+      }
+      n=商(n,2)
+   }
+
+   和(和("db",bits),"db")が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+decimal_to_binary = 入力 decimal に対し {
+   もしdecimalが0ならば{
+      "db0db"が答え
+   }
+
+   bits=""
+   n=decimal
+
+   1000回くり返す{
+      もしnが0ならば{
+         くり返しを抜ける
+      }
+      r=剰余(n,2)
+      もしrが0ならば{
+         bits=和("0",bits)
+      }
+      そうでなければ{
+         bits=和("1",bits)
+      }
+      n=商(n,2)
+   }
+
+   和(和("db",bits),"db")が答え
+}
+--- Result: ✗ FAILED (0.11s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] データの種類（型）が違っています ✅<🔢number> ❌"0" line 17, column 15:
+|          bits=和("0",bits)
+|               ^^^^^^^^^^^
+
+
+============================================================
+[81/164] 80_is_happy - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+is_happy = 入力 s に対し {
+   n=sの大きさ
+   もしnが3より小さいならば{
+      偽が答え
+   }
+
+   i=0
+   limit=差(n,2)
+   limit回くり返す{
+      a=s[i]
+      b=s[和(i,1)]
+      c=s[和(i,2)]
+      もしaがb以外ならば{
+         もしaがc以外ならば{
+            もしbがc以外ならば{
+               真が答え
+            }
+         }
+      }
+      iを増やす
+   }
+   偽が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+is_happy = 入力 s に対し {
+   n=sの大きさ
+   もしnが3より小さいならば{
+      偽が答え
+   }
+
+   i=0
+   limit=差(n,2)
+   limit回くり返す{
+      a=s[i]
+      b=s[和(i,1)]
+      c=s[和(i,2)]
+      もしaがb以外ならば{
+         もしaがc以外ならば{
+            もしbがc以外ならば{
+               真が答え
+            }
+         }
+      }
+      iを増やす
+   }
+   偽が答え
+}
+--- Result: ✗ FAILED (0.11s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍is_happy("a") ❌false ✅0 line 28, column 1:
+| >>> is_happy("a")
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[82/164] 81_numerical_letter_grade - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+numerical_letter_grade=入力gradesに対し{
+   result=[]
+   n=gradesの大きさ
+   i=0
+   n回くり返す{
+      g=grades[i]
+      letter="E"
+
+      もしgが4.0ならば{
+         letter="A+"
+      }
+      そうでなければ{
+         もしgが3.7より大きいならば{
+            letter="A"
+         }
+         そうでなければ{
+            もしgが3.3より大きいならば{
+               letter="A-"
+            }
+            そうでなければ{
+               もしgが3.0より大きいならば{
+                  letter="B+"
+               }
+               そうでなければ{
+                  もしgが2.7より大きいならば{
+                     letter="B"
+                  }
+                  そうでなければ{
+                     もしgが2.3より大きいならば{
+                        letter="B-"
+                     }
+                     そうでなければ{
+                        もしgが2.0より大きいならば{
+                           letter="C+"
+                        }
+                        そうでなければ{
+                           もしgが1.7より大きいならば{
+                              letter="C"
+                           }
+                           そうでなければ{
+                              もしgが1.3より大きいならば{
+                                 letter="C-"
+                              }
+                              そうでなければ{
+                                 もしgが1.0より大きいならば{
+                                    letter="D+"
+                                 }
+                                 そうでなければ{
+                                    もしgが0.7より大きいならば{
+                                       letter="D"
+                                    }
+                                    そうでなければ{
+                                       もしgが0.0より大きいならば{
+                                          letter="D-"
+                                       }
+                                    }
+                                 }
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+
+      resultにletterを追加する
+      iを増やす
+   }
+   resultが答え
+}
+
+>>> numerical_letter_grade([4.0,3,1.7,2,3.5])
+["A+","B","C-","C","A-"]
+>>> numerical_letter_grade([0.0,0.5,0.8,1.1])
+["E","D-","D","D+"]
+>>> numerical_letter_grade([])
+[]
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+numerical_letter_grade=入力gradesに対し{
+   result=[]
+   n=gradesの大きさ
+   i=0
+   n回くり返す{
+      g=grades[i]
+      letter="E"
+
+      もしgが4.0ならば{
+         letter="A+"
+      }
+      そうでなければ{
+         もしgが3.7より大きいならば{
+            letter="A"
+         }
+         そうでなければ{
+            もしgが3.3より大きいならば{
+               letter="A-"
+            }
+            そうでなければ{
+               もしgが3.0より大きいならば{
+                  letter="B+"
+               }
+               そうでなければ{
+                  もしgが2.7より大きいならば{
+                     letter="B"
+                  }
+                  そうでなければ{
+                     もしgが2.3より大きいならば{
+                        letter="B-"
+                     }
+                     そうでなければ{
+                        もしgが2.0より大きいならば{
+                           letter="C+"
+                        }
+                        そうでなければ{
+                           もしgが1.7より大きいならば{
+                              letter="C"
+                           }
+                           そうでなければ{
+                              もしgが1.3より大きいならば{
+                                 letter="C-"
+                              }
+                              そうでなければ{
+                                 もしgが1.0より大きいならば{
+                                    letter="D+"
+                                 }
+                                 そうでなければ{
+                                    もしgが0.7より大きいならば{
+                                       letter="D"
+                                    }
+                                    そうでなければ{
+                                       もしgが0.0より大きいならば{
+                                          letter="D-"
+                                       }
+                                    }
+                                 }
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+
+      resultにletterを追加する
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✓ PASSED (0.16s) ---
+
+============================================================
+[83/164] 82_prime_length - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+prime_length = 入力 string に対し {
+   n=stringの大きさ
+
+   # 0 と 1 は素数ではない
+   もしnが2より小さいならば{
+      偽が答え
+   }
+
+   i=2
+   limit=平方根(n)
+   # 2 から √n まで割り切れる数があるか調べる
+   差(整数化(limit),1)回くり返す{
+      もし剰余(n,i)が0ならば{
+         偽が答え
+      }
+      iを増やす
+   }
+
+   真が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+prime_length = 入力 string に対し {
+   n=stringの大きさ
+
+   # 0 と 1 は素数ではない
+   もしnが2より小さいならば{
+      偽が答え
+   }
+
+   i=2
+   limit=平方根(n)
+   # 2 から √n まで割り切れる数があるか調べる
+   差(整数化(limit),1)回くり返す{
+      もし剰余(n,i)が0ならば{
+         偽が答え
+      }
+      iを増やす
+   }
+
+   真が答え
+}
+--- Result: ✗ FAILED (0.13s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍prime_length("Hello") ❌true ✅1 line 25, column 1:
+| >>> prime_length("Hello")
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[84/164] 83_starts_one_ends - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+starts_one_ends = 入力 n に対し {
+   # n桁の数は 10^(n-1) 個ある
+   total=1
+   i=1
+   n回くり返す{
+      total=積(total,10)
+      iを増やす
+   }
+   total=商(total,10)
+
+   # 先頭が1の数は 10^(n-1) 個
+   starts=total
+
+   # 末尾が1の数も 10^(n-1) 個
+   ends=total
+
+   # 両方満たす数 (先頭も末尾も1) は n=1 でも n>=2 でも 10^(n-2) 個に相当し、
+   # 上の total を 10 で割ればよい
+   both=商(total,10)
+   もしnが1ならば{
+      both=1
+   }
+
+   和(差(和(starts,ends),both),0)が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+starts_one_ends = 入力 n に対し {
+   # n桁の数は 10^(n-1) 個ある
+   total=1
+   i=1
+   n回くり返す{
+      total=積(total,10)
+      iを増やす
+   }
+   total=商(total,10)
+
+   # 先頭が1の数は 10^(n-1) 個
+   starts=total
+
+   # 末尾が1の数も 10^(n-1) 個
+   ends=total
+
+   # 両方満たす数 (先頭も末尾も1) は n=1 でも n>=2 でも 10^(n-2) 個に相当し、
+   # 上の total を 10 で割ればよい
+   both=商(total,10)
+   もしnが1ならば{
+      both=1
+   }
+
+   和(差(和(starts,ends),both),0)が答え
+}
+--- Result: ✗ FAILED (0.11s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍starts_one_ends(2) ❌19 ✅18 line 32, column 1:
+| >>> starts_one_ends(2)
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[85/164] 84_solve - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+solve = 入力 N に対し {
+   s=文字列化(N)
+   sum=0
+   i=0
+   sの大きさ回くり返す{
+      c=s[i]
+      d=差(c,48)
+      sum=和(sum,d)
+      iを増やす
+   }
+
+   もしsumが0ならば{
+      "0"が答え
+   }
+
+   result=""
+   x=sum
+   20回くり返す{
+      もしxが0より大きいならば{
+         bit=剰余(x,2)
+         c=和(bit,48)
+         resultにcを追加する
+         x=商(x,2)
+      }
+   }
+   reverse(result)が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+solve = 入力 N に対し {
+   s=文字列化(N)
+   sum=0
+   i=0
+   sの大きさ回くり返す{
+      c=s[i]
+      d=差(c,48)
+      sum=和(sum,d)
+      iを増やす
+   }
+
+   もしsumが0ならば{
+      "0"が答え
+   }
+
+   result=""
+   x=sum
+   20回くり返す{
+      もしxが0より大きいならば{
+         bit=剰余(x,2)
+         c=和(bit,48)
+         resultにcを追加する
+         x=商(x,2)
+      }
+   }
+   reverse(result)が答え
+}
+--- Result: ✗ FAILED (0.11s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] 関数が定義されていません ❌reverse line 28, column 4:
+|    reverse(result)が答え
+|    ^^^^^^^
+
+
+============================================================
+[86/164] 85_add - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+add = 入力 lst に対し {
+   total=0
+   n=lstの大きさ
+   i=0
+   n回くり返す{
+      もし剰余(i,2)が1ならば{
+         x=lst[i]
+         もし剰余(x,2)が0ならば{
+            total=和(total,x)
+         }
+      }
+      iを増やす
+   }
+   totalが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+add = 入力 lst に対し {
+   total=0
+   n=lstの大きさ
+   i=0
+   n回くり返す{
+      もし剰余(i,2)が1ならば{
+         x=lst[i]
+         もし剰余(x,2)が0ならば{
+            total=和(total,x)
+         }
+      }
+      iを増やす
+   }
+   totalが答え
+}
+--- Result: ✓ PASSED (0.11s) ---
+
+============================================================
+[87/164] 86_anti_shuffle - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+anti_shuffle = 入力 s に対し {
+   result=""
+   word=""
+   i=0
+   n=sの大きさ
+
+   n回くり返す{
+      c=s[i]
+      もしcが32ならば{
+         sorted=bubble_sort(word)
+         k=0
+         sortedの大きさ回くり返す{
+            resultにsorted[k]を追加する
+            kを増やす
+         }
+         resultにcを追加する
+         word=""
+      }
+      そうでなければ{
+         wordにcを追加する
+      }
+      iを増やす
+   }
+
+   sorted=bubble_sort(word)
+   k=0
+   sortedの大きさ回くり返す{
+      resultにsorted[k]を追加する
+      kを増やす
+   }
+
+   resultが答え
+}
+
+bubble_sort=入力Aに対し{
+   n=Aの大きさ
+   n回くり返す{
+      i=0
+      差(n,1)回くり返す{
+         j=和(i,1)
+         もしA[i]がA[j]より大きいならば{
+            tmp=A[i]
+            A[i]=A[j]
+            A[j]=tmp
+         }
+         iを増やす
+      }
+   }
+   Aが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+anti_shuffle = 入力 s に対し {
+   result=""
+   word=""
+   i=0
+   n=sの大きさ
+
+   n回くり返す{
+      c=s[i]
+      もしcが32ならば{
+         sorted=bubble_sort(word)
+         k=0
+         sortedの大きさ回くり返す{
+            resultにsorted[k]を追加する
+            kを増やす
+         }
+         resultにcを追加する
+         word=""
+      }
+      そうでなければ{
+         wordにcを追加する
+      }
+      iを増やす
+   }
+
+   sorted=bubble_sort(word)
+   k=0
+   sortedの大きさ回くり返す{
+      resultにsorted[k]を追加する
+      kを増やす
+   }
+
+   resultが答え
+}
+
+bubble_sort=入力Aに対し{
+   n=Aの大きさ
+   n回くり返す{
+      i=0
+      差(n,1)回くり返す{
+         j=和(i,1)
+         もしA[i]がA[j]より大きいならば{
+            tmp=A[i]
+            A[i]=A[j]
+            A[j]=tmp
+         }
+         iを増やす
+      }
+   }
+   Aが答え
+}
+--- Result: ✓ PASSED (0.15s) ---
+
+============================================================
+[88/164] 87_get_row - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+get_row = 入力 lst, x に対し {
+   result=[]
+   rows=lstの大きさ
+   i=0
+   rows回くり返す{
+      row=lst[i]
+      cols=rowの大きさ
+      j=cols
+      cols回くり返す{
+         jを減らす
+         もしrow[j]がxならば{
+            resultに[i,j]を追加する
+         }
+      }
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+get_row = 入力 lst, x に対し {
+   result=[]
+   rows=lstの大きさ
+   i=0
+   rows回くり返す{
+      row=lst[i]
+      cols=rowの大きさ
+      j=cols
+      cols回くり返す{
+         jを減らす
+         もしrow[j]がxならば{
+            resultに[i,j]を追加する
+         }
+      }
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✓ PASSED (0.14s) ---
+
+============================================================
+[89/164] 88_sort_array - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+sort_array = 入力 array に対し {
+   n=arrayの大きさ
+
+   # 元の配列を変更しないためコピーを作る
+   result=[]
+   i=0
+   n回くり返す{
+      resultにarray[i]を追加する
+      iを増やす
+   }
+
+   # 要素数 0 または 1 ならそのまま返す
+   もしnが1以下ならば{
+      resultが答え
+   }
+
+   # 先頭と末尾の和の偶奇で並び順を決める
+   first=array[0]
+   last=array[差(n,1)]
+   s=和(first,last)
+   parity=剰余(s,2)
+
+   # バブルソート
+   n回くり返す{
+      i=0
+      差(n,1)回くり返す{
+         j=和(i,1)
+
+         # parity=1 なら昇順、parity=0 なら降順
+         swap=0
+         もしparityが1ならば{
+            もしresult[i]がresult[j]より大きいならば{
+               swap=1
+            }
+         }
+         そうでなければ{
+            もしresult[i]がresult[j]より小さいならば{
+               swap=1
+            }
+         }
+
+         もしswapが1ならば{
+            tmp=result[i]
+            result[i]=result[j]
+            result[j]=tmp
+         }
+         iを増やす
+      }
+   }
+
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+sort_array = 入力 array に対し {
+   n=arrayの大きさ
+
+   # 元の配列を変更しないためコピーを作る
+   result=[]
+   i=0
+   n回くり返す{
+      resultにarray[i]を追加する
+      iを増やす
+   }
+
+   # 要素数 0 または 1 ならそのまま返す
+   もしnが1以下ならば{
+      resultが答え
+   }
+
+   # 先頭と末尾の和の偶奇で並び順を決める
+   first=array[0]
+   last=array[差(n,1)]
+   s=和(first,last)
+   parity=剰余(s,2)
+
+   # バブルソート
+   n回くり返す{
+      i=0
+      差(n,1)回くり返す{
+         j=和(i,1)
+
+         # parity=1 なら昇順、parity=0 なら降順
+         swap=0
+         もしparityが1ならば{
+            もしresult[i]がresult[j]より大きいならば{
+               swap=1
+            }
+         }
+         そうでなければ{
+            もしresult[i]がresult[j]より小さいならば{
+               swap=1
+            }
+         }
+
+         もしswapが1ならば{
+            tmp=result[i]
+            result[i]=result[j]
+            result[j]=tmp
+         }
+         iを増やす
+      }
+   }
+
+   resultが答え
+}
+--- Result: ✓ PASSED (0.15s) ---
+
+============================================================
+[90/164] 89_encrypt - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+encrypt = 入力 s に対し {
+   result=""
+   n=sの大きさ
+   i=0
+   n回くり返す{
+      c=s[i]
+      nc=c
+
+      # 小文字 a..z を 4 文字後ろへ回転
+      もしcが97以上ならば{
+         もしcが122以下ならば{
+            offset=差(c,97)
+            shifted=剰余(和(offset,4),26)
+            nc=和(shifted,97)
+         }
+      }
+
+      # 大文字 A..Z を 4 文字後ろへ回転
+      もしcが65以上ならば{
+         もしcが90以下ならば{
+            offset=差(c,65)
+            shifted=剰余(和(offset,4),26)
+            nc=和(shifted,65)
+         }
+      }
+
+      resultにncを追加する
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+encrypt = 入力 s に対し {
+   result=""
+   n=sの大きさ
+   i=0
+   n回くり返す{
+      c=s[i]
+      nc=c
+
+      # 小文字 a..z を 4 文字後ろへ回転
+      もしcが97以上ならば{
+         もしcが122以下ならば{
+            offset=差(c,97)
+            shifted=剰余(和(offset,4),26)
+            nc=和(shifted,97)
+         }
+      }
+
+      # 大文字 A..Z を 4 文字後ろへ回転
+      もしcが65以上ならば{
+         もしcが90以下ならば{
+            offset=差(c,65)
+            shifted=剰余(和(offset,4),26)
+            nc=和(shifted,65)
+         }
+      }
+
+      resultにncを追加する
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✓ PASSED (0.12s) ---
+
+============================================================
+[91/164] 90_next_smallest - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+next_smallest = 入力lstに対し{
+   n=lstの大きさ
+   もしnが2より小さいならば{
+      値なしが答え
+   }
+
+   min=lst[0]
+   second=値なし
+   i=1
+   差(n,1)回くり返す{
+      x=lst[i]
+      もしxがminより小さいならば{
+         second=min
+         min=x
+      }
+      そうでなければ{
+         もしxがminより大きいならば{
+            もしsecondが値なしならば{
+               second=x
+            }
+            そうでなければ{
+               もしxがsecondより小さいならば{
+                  second=x
+               }
+            }
+         }
+      }
+      iを増やす
+   }
+   secondが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+next_smallest = 入力lstに対し{
+   n=lstの大きさ
+   もしnが2より小さいならば{
+      値なしが答え
+   }
+
+   min=lst[0]
+   second=値なし
+   i=1
+   差(n,1)回くり返す{
+      x=lst[i]
+      もしxがminより小さいならば{
+         second=min
+         min=x
+      }
+      そうでなければ{
+         もしxがminより大きいならば{
+            もしsecondが値なしならば{
+               second=x
+            }
+            そうでなければ{
+               もしxがsecondより小さいならば{
+                  second=x
+               }
+            }
+         }
+      }
+      iを増やす
+   }
+   secondが答え
+}
+--- Result: ✗ FAILED (0.13s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍next_smallest([1, 2, 3, 4, 5]) ❌2 ✅[2] line 36, column 1:
+| >>> next_smallest([1, 2, 3, 4, 5])
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[92/164] 91_is_bored - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+is_bored = 入力 S に対し {
+   count=0
+   start=1
+   i=0
+   n=Sの大きさ
+
+   n回くり返す{
+      c=S[i]
+
+      もしstartが1ならば{
+         もしcが73ならば{
+            j=和(i,1)
+            もしjがnより小さいならば{
+               もしS[j]が32ならば{
+                  countを増やす
+               }
+            }
+         }
+      }
+
+      もしcが46ならば{
+         start=1
+      }
+      もしcが63ならば{
+         start=1
+      }
+      もしcが33ならば{
+         start=1
+      }
+
+      もしcが46以外ならば{
+         もしcが63以外ならば{
+            もしcが33以外ならば{
+               もしcが32以外ならば{
+                  start=0
+               }
+            }
+         }
+      }
+
+      iを増やす
+   }
+
+   countが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+is_bored = 入力 S に対し {
+   count=0
+   start=1
+   i=0
+   n=Sの大きさ
+
+   n回くり返す{
+      c=S[i]
+
+      もしstartが1ならば{
+         もしcが73ならば{
+            j=和(i,1)
+            もしjがnより小さいならば{
+               もしS[j]が32ならば{
+                  countを増やす
+               }
+            }
+         }
+      }
+
+      もしcが46ならば{
+         start=1
+      }
+      もしcが63ならば{
+         start=1
+      }
+      もしcが33ならば{
+         start=1
+      }
+
+      もしcが46以外ならば{
+         もしcが63以外ならば{
+            もしcが33以外ならば{
+               もしcが32以外ならば{
+                  start=0
+               }
+            }
+         }
+      }
+
+      iを増やす
+   }
+
+   countが答え
+}
+--- Result: ✓ PASSED (0.14s) ---
+
+============================================================
+[93/164] 92_any_int - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+any_int = 入力 x, y, z に対し {
+   もし整数判定(x)ならば{
+      もし整数判定(y)ならば{
+         もし整数判定(z)ならば{
+            s1=和(x,y)
+            s2=和(x,z)
+            s3=和(y,z)
+            もしs1がzならば{
+               真が答え
+            }
+            もしs2がyならば{
+               真が答え
+            }
+            もしs3がxならば{
+               真が答え
+            }
+         }
+      }
+   }
+   偽が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+any_int = 入力 x, y, z に対し {
+   もし整数判定(x)ならば{
+      もし整数判定(y)ならば{
+         もし整数判定(z)ならば{
+            s1=和(x,y)
+            s2=和(x,z)
+            s3=和(y,z)
+            もしs1がzならば{
+               真が答え
+            }
+            もしs2がyならば{
+               真が答え
+            }
+            もしs3がxならば{
+               真が答え
+            }
+         }
+      }
+   }
+   偽が答え
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[94/164] 93_encode - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+encode = 入力 message に対し {
+   result=""
+   n=messageの大きさ
+   i=0
+   n回くり返す{
+      c=message[i]
+      nc=c
+
+      # まず大文字小文字を入れ替える
+      # 小文字 a..z → 大文字 A..Z
+      もしcが97以上ならば{
+         もしcが122以下ならば{
+            nc=差(c,32)
+         }
+      }
+      # 大文字 A..Z → 小文字 a..z
+      もしcが65以上ならば{
+         もしcが90以下ならば{
+            nc=和(c,32)
+         }
+      }
+
+      # 入れ替え後の文字が母音なら、英字で 2 つ前の文字に置き換える
+      # A E I O U / a e i o u → C G K Q W / c g k q w
+      もしncが65ならば{ nc=67 }
+      もしncが69ならば{ nc=71 }
+      もしncが73ならば{ nc=75 }
+      もしncが79ならば{ nc=81 }
+      もしncが85ならば{ nc=87 }
+      もしncが97ならば{ nc=99 }
+      もしncが101ならば{ nc=103 }
+      もしncが105ならば{ nc=107 }
+      もしncが111ならば{ nc=113 }
+      もしncが117ならば{ nc=119 }
+
+      resultにncを追加する
+      iを増やす
+   }
+   resultが答え
+}
+
+>>> encode("test")
+"TGST"
+>>> encode("This is a message")
+"tHKS KS C MGSSCGG"
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+encode = 入力 message に対し {
+   result=""
+   n=messageの大きさ
+   i=0
+   n回くり返す{
+      c=message[i]
+      nc=c
+
+      # まず大文字小文字を入れ替える
+      # 小文字 a..z → 大文字 A..Z
+      もしcが97以上ならば{
+         もしcが122以下ならば{
+            nc=差(c,32)
+         }
+      }
+      # 大文字 A..Z → 小文字 a..z
+      もしcが65以上ならば{
+         もしcが90以下ならば{
+            nc=和(c,32)
+         }
+      }
+
+      # 入れ替え後の文字が母音なら、英字で 2 つ前の文字に置き換える
+      # A E I O U / a e i o u → C G K Q W / c g k q w
+      もしncが65ならば{ nc=67 }
+      もしncが69ならば{ nc=71 }
+      もしncが73ならば{ nc=75 }
+      もしncが79ならば{ nc=81 }
+      もしncが85ならば{ nc=87 }
+      もしncが97ならば{ nc=99 }
+      もしncが101ならば{ nc=103 }
+      もしncが105ならば{ nc=107 }
+      もしncが111ならば{ nc=113 }
+      もしncが117ならば{ nc=119 }
+
+      resultにncを追加する
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✓ PASSED (0.15s) ---
+
+============================================================
+[95/164] 94_skjkasdkd - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+skjkasdkd = 入力 lst に対し {
+   # 素数判定
+   is_prime=入力nに対し{
+      もしnが2より小さいならば{
+         偽が答え
+      }
+      d=2
+      limit=平方根(n)
+      もしlimitがdより小さいならば{
+         真が答え
+      }
+      差(整数化(limit),1)回くり返す{
+         もし剰余(n,d)が0ならば{
+            偽が答え
+         }
+         dを増やす
+      }
+      真が答え
+   }
+
+   maxp=0
+   i=0
+   lstの大きさ回くり返す{
+      x=lst[i]
+      もしis_prime(x)ならば{
+         もしxがmaxpより大きいならば{
+            maxp=x
+         }
+      }
+      iを増やす
+   }
+
+   s=文字列化(maxp)
+   total=0
+   j=0
+   sの大きさ回くり返す{
+      digit=差(s[j],48)
+      total=和(total,digit)
+      jを増やす
+   }
+   totalが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+skjkasdkd = 入力 lst に対し {
+   # 素数判定
+   is_prime=入力nに対し{
+      もしnが2より小さいならば{
+         偽が答え
+      }
+      d=2
+      limit=平方根(n)
+      もしlimitがdより小さいならば{
+         真が答え
+      }
+      差(整数化(limit),1)回くり返す{
+         もし剰余(n,d)が0ならば{
+            偽が答え
+         }
+         dを増やす
+      }
+      真が答え
+   }
+
+   maxp=0
+   i=0
+   lstの大きさ回くり返す{
+      x=lst[i]
+      もしis_prime(x)ならば{
+         もしxがmaxpより大きいならば{
+            maxp=x
+         }
+      }
+      iを増やす
+   }
+
+   s=文字列化(maxp)
+   total=0
+   j=0
+   sの大きさ回くり返す{
+      digit=差(s[j],48)
+      total=和(total,digit)
+      jを増やす
+   }
+   totalが答え
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[96/164] 95_check_dict_case - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+check_dict_case = 入力dictに対し{
+   keys=dictのキー列
+   n=keysの大きさ
+
+   # 空辞書は False
+   もしnが0ならば{
+      偽が答え
+   }
+
+   all_lower=1
+   all_upper=1
+
+   i=0
+   n回くり返す{
+      k=keys[i]
+
+      # キーは文字列でなければならない
+      もし文字列判定(k)が偽ならば{
+         偽が答え
+      }
+
+      j=0
+      kの大きさ回くり返す{
+         c=k[j]
+
+         # 小文字 a..z 以外があれば all_lower ではない
+         もしcが97より小さいならば{
+            all_lower=0
+         }
+         もしcが122より大きいならば{
+            all_lower=0
+         }
+
+         # 大文字 A..Z 以外があれば all_upper ではない
+         もしcが65より小さいならば{
+            all_upper=0
+         }
+         もしcが90より大きいならば{
+            all_upper=0
+         }
+
+         jを増やす
+      }
+      iを増やす
+   }
+
+   # すべて小文字なら True
+   もしall_lowerが1ならば{
+      真が答え
+   }
+
+   # すべて大文字なら False
+   もしall_upperが1ならば{
+      偽が答え
+   }
+
+   # それ以外も False
+   偽が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+check_dict_case = 入力dictに対し{
+   keys=dictのキー列
+   n=keysの大きさ
+
+   # 空辞書は False
+   もしnが0ならば{
+      偽が答え
+   }
+
+   all_lower=1
+   all_upper=1
+
+   i=0
+   n回くり返す{
+      k=keys[i]
+
+      # キーは文字列でなければならない
+      もし文字列判定(k)が偽ならば{
+         偽が答え
+      }
+
+      j=0
+      kの大きさ回くり返す{
+         c=k[j]
+
+         # 小文字 a..z 以外があれば all_lower ではない
+         もしcが97より小さいならば{
+            all_lower=0
+         }
+         もしcが122より大きいならば{
+            all_lower=0
+         }
+
+         # 大文字 A..Z 以外があれば all_upper ではない
+         もしcが65より小さいならば{
+            all_upper=0
+         }
+         もしcが90より大きいならば{
+            all_upper=0
+         }
+
+         jを増やす
+      }
+      iを増やす
+   }
+
+   # すべて小文字なら True
+   もしall_lowerが1ならば{
+      真が答え
+   }
+
+   # すべて大文字なら False
+   もしall_upperが1ならば{
+      偽が答え
+   }
+
+   # それ以外も False
+   偽が答え
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[97/164] 96_count_up_to - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+count_up_to=入力nに対し{
+   result=[]
+   i=2
+   n回くり返す{
+      もしiがnより小さいならば{
+         prime=1
+         j=2
+         i回くり返す{
+            もしjがiより小さいならば{
+               もし剰余(i,j)が0ならば{
+                  prime=0
+               }
+            }
+            jを増やす
+         }
+         もしprimeが1ならば{
+            resultにiを追加する
+         }
+      }
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+count_up_to=入力nに対し{
+   result=[]
+   i=2
+   n回くり返す{
+      もしiがnより小さいならば{
+         prime=1
+         j=2
+         i回くり返す{
+            もしjがiより小さいならば{
+               もし剰余(i,j)が0ならば{
+                  prime=0
+               }
+            }
+            jを増やす
+         }
+         もしprimeが1ならば{
+            resultにiを追加する
+         }
+      }
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✓ PASSED (0.23s) ---
+
+============================================================
+[98/164] 97_multiply - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+multiply = 入力 a, b に対し {
+   x=剰余(絶対値(a),10)
+   y=剰余(絶対値(b),10)
+   積(x,y)が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+multiply = 入力 a, b に対し {
+   x=剰余(絶対値(a),10)
+   y=剰余(絶対値(b),10)
+   積(x,y)が答え
+}
+--- Result: ✓ PASSED (0.10s) ---
+
+============================================================
+[99/164] 98_count_upper - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+count_upper = 入力 s に対し {
+   count=0
+   i=0
+   sの大きさ回くり返す{
+      c=s[i]
+      もし剰余(i,2)が0ならば{
+         もしcが"AEIOU"のいずれかならば{
+            countを増やす
+         }
+      }
+      iを増やす
+   }
+   countが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+count_upper = 入力 s に対し {
+   count=0
+   i=0
+   sの大きさ回くり返す{
+      c=s[i]
+      もし剰余(i,2)が0ならば{
+         もしcが"AEIOU"のいずれかならば{
+            countを増やす
+         }
+      }
+      iを増やす
+   }
+   countが答え
+}
+--- Result: ✓ PASSED (0.11s) ---
+
+============================================================
+[100/164] 99_closest_integer - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+closest_integer = 入力 value に対し {
+   x=小数化(value)
+   n=整数化(x)
+   frac=差(x,n)
+
+   もしxが0以上ならば{
+      もしfracが0.5以上ならば{
+         和(n,1)が答え
+      }
+      nが答え
+   }
+
+   もしfracが-0.5以下ならば{
+      差(n,1)が答え
+   }
+   nが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+closest_integer = 入力 value に対し {
+   x=小数化(value)
+   n=整数化(x)
+   frac=差(x,n)
+
+   もしxが0以上ならば{
+      もしfracが0.5以上ならば{
+         和(n,1)が答え
+      }
+      nが答え
+   }
+
+   もしfracが-0.5以下ならば{
+      差(n,1)が答え
+   }
+   nが答え
+}
+--- Result: ✓ PASSED (0.11s) ---
+
+============================================================
+[101/164] 100_make_a_pile - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+make_a_pile = 入力 n に対し {
+   result=[]
+   current=n
+   i=0
+   n回くり返す{
+      resultにcurrentを追加する
+      current=和(current,2)
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+make_a_pile = 入力 n に対し {
+   result=[]
+   current=n
+   i=0
+   n回くり返す{
+      resultにcurrentを追加する
+      current=和(current,2)
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✓ PASSED (0.10s) ---
+
+============================================================
+[102/164] 101_words_string - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+words_string = 入力 s に対し {
+   result=[]
+   current=""
+   i=0
+   n=sの大きさ
+
+   n回くり返す{
+      c=s[i]
+      もしcが","のいずれかならば{
+         もしcurrentが""以外ならば{
+            resultにcurrentを追加する
+            current=""
+         }
+      }
+      そうでなければ{
+         もしcが" "のいずれかならば{
+            もしcurrentが""以外ならば{
+               resultにcurrentを追加する
+               current=""
+            }
+         }
+         そうでなければ{
+            currentにcを追加する
+         }
+      }
+      iを増やす
+   }
+
+   もしcurrentが""以外ならば{
+      resultにcurrentを追加する
+   }
+
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+words_string = 入力 s に対し {
+   result=[]
+   current=""
+   i=0
+   n=sの大きさ
+
+   n回くり返す{
+      c=s[i]
+      もしcが","のいずれかならば{
+         もしcurrentが""以外ならば{
+            resultにcurrentを追加する
+            current=""
+         }
+      }
+      そうでなければ{
+         もしcが" "のいずれかならば{
+            もしcurrentが""以外ならば{
+               resultにcurrentを追加する
+               current=""
+            }
+         }
+         そうでなければ{
+            currentにcを追加する
+         }
+      }
+      iを増やす
+   }
+
+   もしcurrentが""以外ならば{
+      resultにcurrentを追加する
+   }
+
+   resultが答え
+}
+--- Result: ✓ PASSED (0.14s) ---
+
+============================================================
+[103/164] 102_choose_num - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+choose_num = 入力 x, y に対し {
+   もしxがyより大きいならば{
+      -1が答え
+   }
+   もしyが偶数ならば{
+      yが答え
+   }
+   candidate=差(y,1)
+   もしcandidateがx以上ならば{
+      candidateが答え
+   }
+   -1が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+choose_num = 入力 x, y に対し {
+   もしxがyより大きいならば{
+      -1が答え
+   }
+   もしyが偶数ならば{
+      yが答え
+   }
+   candidate=差(y,1)
+   もしcandidateがx以上ならば{
+      candidateが答え
+   }
+   -1が答え
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[104/164] 103_rounded_avg - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+rounded_avg = 入力 n, m に対し {
+   もしnがmより大きいならば{
+      差(0,1)が答え
+   }
+
+   count=和(差(m,n),1)
+   total=商(積(和(n,m),count),2)
+
+   q=商(total,count)
+   r=剰余(total,count)
+
+   doubled=積(r,2)
+   もしdoubledがcount以上ならば{
+      qを増やす
+   }
+
+   bits=""
+   x=q
+
+   もしxが0ならば{
+      bits="0"
+   }
+   そうでなければ{
+      もしxが1以上ならば{
+         1000回くり返す{
+            もしxが0より大きいならば{
+               d=剰余(x,2)
+               もしdが0ならば{
+                  bits=文字列補間("{d}{bits}")
+               }
+               そうでなければ{
+                  bits=文字列補間("{d}{bits}")
+               }
+               x=商(x,2)
+            }
+         }
+      }
+   }
+
+   文字列補間("0b{bits}")が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+rounded_avg = 入力 n, m に対し {
+   もしnがmより大きいならば{
+      差(0,1)が答え
+   }
+
+   count=和(差(m,n),1)
+   total=商(積(和(n,m),count),2)
+
+   q=商(total,count)
+   r=剰余(total,count)
+
+   doubled=積(r,2)
+   もしdoubledがcount以上ならば{
+      qを増やす
+   }
+
+   bits=""
+   x=q
+
+   もしxが0ならば{
+      bits="0"
+   }
+   そうでなければ{
+      もしxが1以上ならば{
+         1000回くり返す{
+            もしxが0より大きいならば{
+               d=剰余(x,2)
+               もしdが0ならば{
+                  bits=文字列補間("{d}{bits}")
+               }
+               そうでなければ{
+                  bits=文字列補間("{d}{bits}")
+               }
+               x=商(x,2)
+            }
+         }
+      }
+   }
+
+   文字列補間("0b{bits}")が答え
+}
+--- Result: ✗ FAILED (0.15s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] 関数が定義されていません ❌文字列補間 line 34, column 24:
+|                   bits=文字列補間("{d}{bits}")
+|                        ^^^^^
+
+
+============================================================
+[105/164] 104_unique_digits - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+unique_digits = 入力 x に対し {
+   result=[]
+   n=xの大きさ
+   i=0
+   n回くり返す{
+      v=x[i]
+      s=文字列化(v)
+      digits=sの大きさ
+      even=剰余(digits,2)
+      もしevenが1ならば{
+         resultにvを追加する
+      }
+      iを増やす
+   }
+   bubble_sort(result)が答え
+}
+
+bubble_sort=入力Aに対し{
+   n=Aの大きさ
+   n回くり返す{
+      i=0
+      差(n,1)回くり返す{
+         j=和(i,1)
+         もしA[i]がA[j]より大きいならば{
+            tmp=A[i]
+            A[i]=A[j]
+            A[j]=tmp
+         }
+         iを増やす
+      }
+   }
+   Aが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+unique_digits = 入力 x に対し {
+   result=[]
+   n=xの大きさ
+   i=0
+   n回くり返す{
+      v=x[i]
+      s=文字列化(v)
+      digits=sの大きさ
+      even=剰余(digits,2)
+      もしevenが1ならば{
+         resultにvを追加する
+      }
+      iを増やす
+   }
+   bubble_sort(result)が答え
+}
+
+bubble_sort=入力Aに対し{
+   n=Aの大きさ
+   n回くり返す{
+      i=0
+      差(n,1)回くり返す{
+         j=和(i,1)
+         もしA[i]がA[j]より大きいならば{
+            tmp=A[i]
+            A[i]=A[j]
+            A[j]=tmp
+         }
+         iを増やす
+      }
+   }
+   Aが答え
+}
+--- Result: ✗ FAILED (0.13s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍unique_digits([15, 33, 1422, 1]) ❌[1] ✅[1, 15, 33] line 38, column 1:
+| >>> unique_digits([15, 33, 1422, 1])
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[106/164] 105_by_length - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+by_length=入力arrに対し{
+   sorted=bubble_sort(arr)
+   rev=reverse(sorted)
+   result=[]
+   n=revの大きさ
+   i=0
+   n回くり返す{
+      x=rev[i]
+      もしxが1ならば{
+         resultに"One"を追加する
+      }
+      もしxが2ならば{
+         resultに"Two"を追加する
+      }
+      もしxが3ならば{
+         resultに"Three"を追加する
+      }
+      もしxが4ならば{
+         resultに"Four"を追加する
+      }
+      もしxが5ならば{
+         resultに"Five"を追加する
+      }
+      もしxが6ならば{
+         resultに"Six"を追加する
+      }
+      もしxが7ならば{
+         resultに"Seven"を追加する
+      }
+      もしxが8ならば{
+         resultに"Eight"を追加する
+      }
+      もしxが9ならば{
+         resultに"Nine"を追加する
+      }
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+by_length=入力arrに対し{
+   sorted=bubble_sort(arr)
+   rev=reverse(sorted)
+   result=[]
+   n=revの大きさ
+   i=0
+   n回くり返す{
+      x=rev[i]
+      もしxが1ならば{
+         resultに"One"を追加する
+      }
+      もしxが2ならば{
+         resultに"Two"を追加する
+      }
+      もしxが3ならば{
+         resultに"Three"を追加する
+      }
+      もしxが4ならば{
+         resultに"Four"を追加する
+      }
+      もしxが5ならば{
+         resultに"Five"を追加する
+      }
+      もしxが6ならば{
+         resultに"Six"を追加する
+      }
+      もしxが7ならば{
+         resultに"Seven"を追加する
+      }
+      もしxが8ならば{
+         resultに"Eight"を追加する
+      }
+      もしxが9ならば{
+         resultに"Nine"を追加する
+      }
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✗ FAILED (0.13s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] 関数が定義されていません ❌bubble_sort line 4, column 11:
+|    sorted=bubble_sort(arr)
+|           ^^^^^^^^^^^
+
+
+============================================================
+[107/164] 106_f - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+f = 入力 n に対し {
+   result=[]
+   acc=1
+   i=1
+   n回くり返す{
+      acc=積(acc,i)
+      resultにaccを追加する
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+f = 入力 n に対し {
+   result=[]
+   acc=1
+   i=1
+   n回くり返す{
+      acc=積(acc,i)
+      resultにaccを追加する
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✗ FAILED (0.10s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍f(5) ❌[1, 2, 6, 24, 120] ✅[1, 2, 6, 24, 15] line 16, column 1:
+| >>> f(5)
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[108/164] 107_even_odd_palindrome - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+even_odd_palindrome=入力nに対し{
+   even=0
+   odd=0
+   i=1
+   n回くり返す{
+      s=文字列化(i)
+      rs=reverse(s)
+      もしsがrsならば{
+         もし剰余(i,2)が0ならば{
+            evenを増やす
+         }
+         そうでなければ{
+            oddを増やす
+         }
+      }
+      iを増やす
+   }
+   [even,odd]が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+even_odd_palindrome=入力nに対し{
+   even=0
+   odd=0
+   i=1
+   n回くり返す{
+      s=文字列化(i)
+      rs=reverse(s)
+      もしsがrsならば{
+         もし剰余(i,2)が0ならば{
+            evenを増やす
+         }
+         そうでなければ{
+            oddを増やす
+         }
+      }
+      iを増やす
+   }
+   [even,odd]が答え
+}
+--- Result: ✗ FAILED (0.12s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] 関数が定義されていません ❌reverse line 9, column 10:
+|       rs=reverse(s)
+|          ^^^^^^^
+
+
+============================================================
+[109/164] 108_count_nums - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+count_nums=入力arrに対し{
+   count=0
+   n=arrの大きさ
+   i=0
+   n回くり返す{
+      x=arr[i]
+
+      # 各桁の和を求める
+      もしxが0より小さいならば{
+         y=差(0,x)
+         sum=差(0,剰余(y,10))
+         y=商(y,10)
+         yの大きさ回くり返す{
+            sum=和(sum,剰余(y,10))
+            y=商(y,10)
+         }
+      }
+      そうでなければ{
+         y=x
+         sum=0
+         yの大きさ回くり返す{
+            sum=和(sum,剰余(y,10))
+            y=商(y,10)
+         }
+      }
+
+      もしsumが0より大きいならば{
+         countを増やす
+      }
+      iを増やす
+   }
+   countが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+count_nums=入力arrに対し{
+   count=0
+   n=arrの大きさ
+   i=0
+   n回くり返す{
+      x=arr[i]
+
+      # 各桁の和を求める
+      もしxが0より小さいならば{
+         y=差(0,x)
+         sum=差(0,剰余(y,10))
+         y=商(y,10)
+         yの大きさ回くり返す{
+            sum=和(sum,剰余(y,10))
+            y=商(y,10)
+         }
+      }
+      そうでなければ{
+         y=x
+         sum=0
+         yの大きさ回くり返す{
+            sum=和(sum,剰余(y,10))
+            y=商(y,10)
+         }
+      }
+
+      もしsumが0より大きいならば{
+         countを増やす
+      }
+      iを増やす
+   }
+   countが答え
+}
+--- Result: ✗ FAILED (0.14s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍count_nums([12, 23, 34, -45, -56, 0]) ❌3 ✅5 line 48, column 1:
+| >>> count_nums([12, 23, 34, -45, -56, 0])
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[110/164] 109_move_one_ball - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+move_one_ball=入力arrに対し{
+   n=arrの大きさ
+   もしnが0ならば{
+      真が答え
+   }
+
+   drops=0
+   i=0
+   差(n,1)回くり返す{
+      j=和(i,1)
+      もしarr[i]がarr[j]より大きいならば{
+         dropsを増やす
+      }
+      iを増やす
+   }
+
+   もしarr[差(n,1)]がarr[0]より大きいならば{
+      dropsを増やす
+   }
+
+   もしdropsが1以下ならば{
+      真が答え
+   }
+   そうでなければ{
+      偽が答え
+   }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+move_one_ball=入力arrに対し{
+   n=arrの大きさ
+   もしnが0ならば{
+      真が答え
+   }
+
+   drops=0
+   i=0
+   差(n,1)回くり返す{
+      j=和(i,1)
+      もしarr[i]がarr[j]より大きいならば{
+         dropsを増やす
+      }
+      iを増やす
+   }
+
+   もしarr[差(n,1)]がarr[0]より大きいならば{
+      dropsを増やす
+   }
+
+   もしdropsが1以下ならば{
+      真が答え
+   }
+   そうでなければ{
+      偽が答え
+   }
+}
+--- Result: ✗ FAILED (0.12s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍move_one_ball([3, 4, 5, 1, 2]) ❌true ✅1 line 32, column 1:
+| >>> move_one_ball([3, 4, 5, 1, 2])
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[111/164] 110_exchange - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+exchange = 入力 lst1, lst2 に対し {
+   odd1=0
+   even2=0
+
+   i=0
+   lst1の大きさ回くり返す{
+      もし剰余(lst1[i],2)が0以外ならば{
+         odd1を増やす
+      }
+      iを増やす
+   }
+
+   j=0
+   lst2の大きさ回くり返す{
+      もし剰余(lst2[j],2)が0ならば{
+         even2を増やす
+      }
+      jを増やす
+   }
+
+   もしeven2がodd1以上ならば{
+      "YES"が答え
+   }
+   そうでなければ{
+      "NO"が答え
+   }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+exchange = 入力 lst1, lst2 に対し {
+   odd1=0
+   even2=0
+
+   i=0
+   lst1の大きさ回くり返す{
+      もし剰余(lst1[i],2)が0以外ならば{
+         odd1を増やす
+      }
+      iを増やす
+   }
+
+   j=0
+   lst2の大きさ回くり返す{
+      もし剰余(lst2[j],2)が0ならば{
+         even2を増やす
+      }
+      jを増やす
+   }
+
+   もしeven2がodd1以上ならば{
+      "YES"が答え
+   }
+   そうでなければ{
+      "NO"が答え
+   }
+}
+--- Result: ✓ PASSED (0.14s) ---
+
+============================================================
+[112/164] 111_histogram - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+histogram = 入力 test に対し {
+   もしtestの大きさが0ならば{
+      {}が答え
+   }
+
+   counts={}
+   token=""
+   i=0
+   n=testの大きさ
+
+   n回くり返す{
+      c=test[i]
+      もしcが32ならば{
+         もしtokenの大きさが0より大きいならば{
+            もしtokenがcountsのいずれかならば{
+               counts[token]を増やす
+            }
+            そうでなければ{
+               counts[token]=1
+            }
+            token=""
+         }
+      }
+      そうでなければ{
+         tokenにcを追加する
+      }
+      iを増やす
+   }
+
+   もしtokenの大きさが0より大きいならば{
+      もしtokenがcountsのいずれかならば{
+         counts[token]を増やす
+      }
+      そうでなければ{
+         counts[token]=1
+      }
+   }
+
+   best=0
+   result={}
+   letters=countsのキー列
+   m=lettersの大きさ
+   j=0
+   m回くり返す{
+      ch=letters[j]
+      cnt=counts[ch]
+      もしcntがbestより大きいならば{
+         best=cnt
+         result={}
+         result[ch]=cnt
+      }
+      そうでなければ{
+         もしcntがbestならば{
+            result[ch]=cnt
+         }
+      }
+      jを増やす
+   }
+
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+histogram = 入力 test に対し {
+   もしtestの大きさが0ならば{
+      {}が答え
+   }
+
+   counts={}
+   token=""
+   i=0
+   n=testの大きさ
+
+   n回くり返す{
+      c=test[i]
+      もしcが32ならば{
+         もしtokenの大きさが0より大きいならば{
+            もしtokenがcountsのいずれかならば{
+               counts[token]を増やす
+            }
+            そうでなければ{
+               counts[token]=1
+            }
+            token=""
+         }
+      }
+      そうでなければ{
+         tokenにcを追加する
+      }
+      iを増やす
+   }
+
+   もしtokenの大きさが0より大きいならば{
+      もしtokenがcountsのいずれかならば{
+         counts[token]を増やす
+      }
+      そうでなければ{
+         counts[token]=1
+      }
+   }
+
+   best=0
+   result={}
+   letters=countsのキー列
+   m=lettersの大きさ
+   j=0
+   m回くり返す{
+      ch=letters[j]
+      cnt=counts[ch]
+      もしcntがbestより大きいならば{
+         best=cnt
+         result={}
+         result[ch]=cnt
+      }
+      そうでなければ{
+         もしcntがbestならば{
+            result[ch]=cnt
+         }
+      }
+      jを増やす
+   }
+
+   resultが答え
+}
+--- Result: ✗ FAILED (0.10s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[113/164] 112_reverse_delete - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+reverse_delete = 入力 s, c に対し {
+   filtered=""
+   i=0
+   sの大きさ回くり返す{
+      ch=s[i]
+      もしchがcのいずれでもないならば{
+         filteredにchを追加する
+      }
+      iを増やす
+   }
+
+   ok=1
+   n=filteredの大きさ
+   half=商(n,2)
+   i=0
+   half回くり返す{
+      j=差(差(n,1),i)
+      もしfiltered[i]がfiltered[j]以外ならば{
+         ok=0
+      }
+      iを増やす
+   }
+
+   result=偽
+   もしokが1ならば{
+      result=真
+   }
+   [filtered,result]が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+reverse_delete = 入力 s, c に対し {
+   filtered=""
+   i=0
+   sの大きさ回くり返す{
+      ch=s[i]
+      もしchがcのいずれでもないならば{
+         filteredにchを追加する
+      }
+      iを増やす
+   }
+
+   ok=1
+   n=filteredの大きさ
+   half=商(n,2)
+   i=0
+   half回くり返す{
+      j=差(差(n,1),i)
+      もしfiltered[i]がfiltered[j]以外ならば{
+         ok=0
+      }
+      iを増やす
+   }
+
+   result=偽
+   もしokが1ならば{
+      result=真
+   }
+   [filtered,result]が答え
+}
+--- Result: ✓ PASSED (0.14s) ---
+
+============================================================
+[114/164] 113_odd_count - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+odd_count=入力lstに対し{
+   result=[]
+   n=lstの大きさ
+   i=0
+   n回くり返す{
+      s=lst[i]
+      count=0
+      j=0
+      sの大きさ回くり返す{
+         c=s[j]
+         もしcが"13579"のいずれかならば{
+            countを増やす
+         }
+         jを増やす
+      }
+      msg="the number of odd elements {count}n the str{count}ng {count} of the {count}nput."
+      resultにmsgを追加する
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+odd_count=入力lstに対し{
+   result=[]
+   n=lstの大きさ
+   i=0
+   n回くり返す{
+      s=lst[i]
+      count=0
+      j=0
+      sの大きさ回くり返す{
+         c=s[j]
+         もしcが"13579"のいずれかならば{
+            countを増やす
+         }
+         jを増やす
+      }
+      msg="the number of odd elements {count}n the str{count}ng {count} of the {count}nput."
+      resultにmsgを追加する
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✓ PASSED (0.12s) ---
+
+============================================================
+[115/164] 114_minSubArraySum - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+minSubArraySum = 入力 nums に対し {
+   current=nums[0]
+   best=nums[0]
+   n=numsの大きさ
+   i=1
+   差(n,1)回くり返す{
+      x=nums[i]
+      extend=和(current,x)
+      current=最小値(x,extend)
+      best=最小値(best,current)
+      iを増やす
+   }
+   bestが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+minSubArraySum = 入力 nums に対し {
+   current=nums[0]
+   best=nums[0]
+   n=numsの大きさ
+   i=1
+   差(n,1)回くり返す{
+      x=nums[i]
+      extend=和(current,x)
+      current=最小値(x,extend)
+      best=最小値(best,current)
+      iを増やす
+   }
+   bestが答え
+}
+--- Result: ✓ PASSED (0.14s) ---
+
+============================================================
+[116/164] 115_max_fill - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+max_fill=入力grid,capacityに対し{
+   total=0
+   rows=gridの大きさ
+   i=0
+   rows回くり返す{
+      row=grid[i]
+      cols=rowの大きさ
+      water=0
+      j=0
+      cols回くり返す{
+         water=和(water,row[j])
+         jを増やす
+      }
+      もしwaterが0より大きいならば{
+         trips=商(water,capacity)
+         rem=剰余(water,capacity)
+         もしremが0より大きいならば{
+            tripsを増やす
+         }
+         total=和(total,trips)
+      }
+      iを増やす
+   }
+   totalが答え
+}
+
+>>> max_fill([[0,0,1,0],[0,1,0,0],[1,1,1,1]],1)
+6
+>>> max_fill([[0,0,1,1],[0,0,0,0],[1,1,1,1],[0,1,1,1]],2)
+5
+>>> max_fill([[0,0,0],[0,0,0]],5)
+0
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+max_fill=入力grid,capacityに対し{
+   total=0
+   rows=gridの大きさ
+   i=0
+   rows回くり返す{
+      row=grid[i]
+      cols=rowの大きさ
+      water=0
+      j=0
+      cols回くり返す{
+         water=和(water,row[j])
+         jを増やす
+      }
+      もしwaterが0より大きいならば{
+         trips=商(water,capacity)
+         rem=剰余(water,capacity)
+         もしremが0より大きいならば{
+            tripsを増やす
+         }
+         total=和(total,trips)
+      }
+      iを増やす
+   }
+   totalが答え
+}
+--- Result: ✓ PASSED (0.14s) ---
+
+============================================================
+[117/164] 116_sort_array - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+# 非負整数の配列を、
+# 1. 2進表現における 1 の個数が少ない順
+# 2. 1 の個数が同じなら数値が小さい順
+# でソートする
+
+# 整数 n の 2 進表現に含まれる 1 の個数を数える
+bit_count=入力nに対し{
+   x=絶対値(n)
+   count=0
+   # 0 のときは 1 の個数は 0
+   xの大きさ回くり返す{
+      もしx[0]が1ならば{
+         countを増やす
+      }
+      x=rshift(x,1)
+   }
+   countが答え
+}
+
+sort_array = 入力 arr に対し {
+   n=arrの大きさ
+   n回くり返す{
+      i=0
+      差(n,1)回くり返す{
+         j=和(i,1)
+         a=arr[i]
+         b=arr[j]
+         ca=bit_count(a)
+         cb=bit_count(b)
+
+         swap=0
+         もしcaがcbより大きいならば{
+            swap=1
+         }
+         もしcaがcbならば{
+            もしaがbより大きいならば{
+               swap=1
+            }
+         }
+
+         もしswapが1ならば{
+            tmp=arr[i]
+            arr[i]=arr[j]
+            arr[j]=tmp
+         }
+         iを増やす
+      }
+   }
+   arrが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+# 非負整数の配列を、
+# 1. 2進表現における 1 の個数が少ない順
+# 2. 1 の個数が同じなら数値が小さい順
+# でソートする
+
+# 整数 n の 2 進表現に含まれる 1 の個数を数える
+bit_count=入力nに対し{
+   x=絶対値(n)
+   count=0
+   # 0 のときは 1 の個数は 0
+   xの大きさ回くり返す{
+      もしx[0]が1ならば{
+         countを増やす
+      }
+      x=rshift(x,1)
+   }
+   countが答え
+}
+
+sort_array = 入力 arr に対し {
+   n=arrの大きさ
+   n回くり返す{
+      i=0
+      差(n,1)回くり返す{
+         j=和(i,1)
+         a=arr[i]
+         b=arr[j]
+         ca=bit_count(a)
+         cb=bit_count(b)
+
+         swap=0
+         もしcaがcbより大きいならば{
+            swap=1
+         }
+         もしcaがcbならば{
+            もしaがbより大きいならば{
+               swap=1
+            }
+         }
+
+         もしswapが1ならば{
+            tmp=arr[i]
+            arr[i]=arr[j]
+            arr[j]=tmp
+         }
+         iを増やす
+      }
+   }
+   arrが答え
+}
+--- Result: ✗ FAILED (0.16s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] 関数が定義されていません ❌rshift line 17, column 9:
+|       x=rshift(x,1)
+|         ^^^^^^
+
+
+============================================================
+[118/164] 117_select_words - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+select_words = 入力 s, n に対し {
+   words=[]
+   current=""
+   i=0
+   sの大きさ回くり返す{
+      c=s[i]
+      もしcが32ならば{
+         wordsにcurrentを追加する
+         current=""
+      }
+      そうでなければ{
+         currentにcを追加する
+      }
+      iを増やす
+   }
+   wordsにcurrentを追加する
+
+   result=[]
+   wi=0
+   wordsの大きさ回くり返す{
+      w=words[wi]
+      consonants=0
+      j=0
+      wの大きさ回くり返す{
+         ch=w[j]
+         is_vowel=0
+         もしchが97ならば{ is_vowel=1 }   # a
+         もしchが101ならば{ is_vowel=1 }  # e
+         もしchが105ならば{ is_vowel=1 }  # i
+         もしchが111ならば{ is_vowel=1 }  # o
+         もしchが117ならば{ is_vowel=1 }  # u
+         もしchが65ならば{ is_vowel=1 }   # A
+         もしchが69ならば{ is_vowel=1 }   # E
+         もしchが73ならば{ is_vowel=1 }   # I
+         もしchが79ならば{ is_vowel=1 }   # O
+         もしchが85ならば{ is_vowel=1 }   # U
+
+         もしis_vowelが0ならば{
+            consonantsを増やす
+         }
+         jを増やす
+      }
+      もしconsonantsがnならば{
+         resultにwを追加する
+      }
+      wiを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+select_words = 入力 s, n に対し {
+   words=[]
+   current=""
+   i=0
+   sの大きさ回くり返す{
+      c=s[i]
+      もしcが32ならば{
+         wordsにcurrentを追加する
+         current=""
+      }
+      そうでなければ{
+         currentにcを追加する
+      }
+      iを増やす
+   }
+   wordsにcurrentを追加する
+
+   result=[]
+   wi=0
+   wordsの大きさ回くり返す{
+      w=words[wi]
+      consonants=0
+      j=0
+      wの大きさ回くり返す{
+         ch=w[j]
+         is_vowel=0
+         もしchが97ならば{ is_vowel=1 }   # a
+         もしchが101ならば{ is_vowel=1 }  # e
+         もしchが105ならば{ is_vowel=1 }  # i
+         もしchが111ならば{ is_vowel=1 }  # o
+         もしchが117ならば{ is_vowel=1 }  # u
+         もしchが65ならば{ is_vowel=1 }   # A
+         もしchが69ならば{ is_vowel=1 }   # E
+         もしchが73ならば{ is_vowel=1 }   # I
+         もしchが79ならば{ is_vowel=1 }   # O
+         もしchが85ならば{ is_vowel=1 }   # U
+
+         もしis_vowelが0ならば{
+            consonantsを増やす
+         }
+         jを増やす
+      }
+      もしconsonantsがnならば{
+         resultにwを追加する
+      }
+      wiを増やす
+   }
+   resultが答え
+}
+--- Result: ✓ PASSED (0.17s) ---
+
+============================================================
+[119/164] 118_get_closest_vowel - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+get_closest_vowel = 入力wordに対し{
+   vowels="aeiouAEIOU"
+   n=wordの大きさ
+   result=""
+
+   # 右から見ていくが、最初と最後の文字は母音候補にしない
+   # つまり調べるのは 1 .. n-2
+   もしnが3より小さいならば{
+      resultが答え
+   }
+
+   i=差(n,2)
+   差(n,2)回くり返す{
+      c=word[i]
+      もしcがvowelsのいずれかならば{
+         left=word[差(i,1)]
+         right=word[和(i,1)]
+         もしleftがvowelsのいずれでもないならば{
+            もしrightがvowelsのいずれでもないならば{
+               resultにcを追加する
+               くり返しを抜ける
+            }
+         }
+      }
+      iを減らす
+   }
+
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+get_closest_vowel = 入力wordに対し{
+   vowels="aeiouAEIOU"
+   n=wordの大きさ
+   result=""
+
+   # 右から見ていくが、最初と最後の文字は母音候補にしない
+   # つまり調べるのは 1 .. n-2
+   もしnが3より小さいならば{
+      resultが答え
+   }
+
+   i=差(n,2)
+   差(n,2)回くり返す{
+      c=word[i]
+      もしcがvowelsのいずれかならば{
+         left=word[差(i,1)]
+         right=word[和(i,1)]
+         もしleftがvowelsのいずれでもないならば{
+            もしrightがvowelsのいずれでもないならば{
+               resultにcを追加する
+               くり返しを抜ける
+            }
+         }
+      }
+      iを減らす
+   }
+
+   resultが答え
+}
+--- Result: ✓ PASSED (0.15s) ---
+
+============================================================
+[120/164] 119_match_parens - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+match_parens = 入力 lst に対し {
+   a=lst[0]
+   b=lst[1]
+
+   # 順序 1: a + b を調べる
+   ok1=1
+   bal=0
+
+   i=0
+   aの大きさ回くり返す{
+      c=a[i]
+      もしcが40ならば{
+         balを増やす
+      }
+      そうでなければ{
+         balを減らす
+      }
+      もしbalが0より小さいならば{
+         ok1=0
+      }
+      iを増やす
+   }
+
+   i=0
+   bの大きさ回くり返す{
+      c=b[i]
+      もしcが40ならば{
+         balを増やす
+      }
+      そうでなければ{
+         balを減らす
+      }
+      もしbalが0より小さいならば{
+         ok1=0
+      }
+      iを増やす
+   }
+
+   もしbalが0以外ならば{
+      ok1=0
+   }
+
+   もしok1が1ならば{
+      "Yes"が答え
+   }
+
+   # 順序 2: b + a を調べる
+   ok2=1
+   bal=0
+
+   i=0
+   bの大きさ回くり返す{
+      c=b[i]
+      もしcが40ならば{
+         balを増やす
+      }
+      そうでなければ{
+         balを減らす
+      }
+      もしbalが0より小さいならば{
+         ok2=0
+      }
+      iを増やす
+   }
+
+   i=0
+   aの大きさ回くり返す{
+      c=a[i]
+      もしcが40ならば{
+         balを増やす
+      }
+      そうでなければ{
+         balを減らす
+      }
+      もしbalが0より小さいならば{
+         ok2=0
+      }
+      iを増やす
+   }
+
+   もしbalが0以外ならば{
+      ok2=0
+   }
+
+   もしok2が1ならば{
+      "Yes"が答え
+   }
+
+   "No"が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+match_parens = 入力 lst に対し {
+   a=lst[0]
+   b=lst[1]
+
+   # 順序 1: a + b を調べる
+   ok1=1
+   bal=0
+
+   i=0
+   aの大きさ回くり返す{
+      c=a[i]
+      もしcが40ならば{
+         balを増やす
+      }
+      そうでなければ{
+         balを減らす
+      }
+      もしbalが0より小さいならば{
+         ok1=0
+      }
+      iを増やす
+   }
+
+   i=0
+   bの大きさ回くり返す{
+      c=b[i]
+      もしcが40ならば{
+         balを増やす
+      }
+      そうでなければ{
+         balを減らす
+      }
+      もしbalが0より小さいならば{
+         ok1=0
+      }
+      iを増やす
+   }
+
+   もしbalが0以外ならば{
+      ok1=0
+   }
+
+   もしok1が1ならば{
+      "Yes"が答え
+   }
+
+   # 順序 2: b + a を調べる
+   ok2=1
+   bal=0
+
+   i=0
+   bの大きさ回くり返す{
+      c=b[i]
+      もしcが40ならば{
+         balを増やす
+      }
+      そうでなければ{
+         balを減らす
+      }
+      もしbalが0より小さいならば{
+         ok2=0
+      }
+      iを増やす
+   }
+
+   i=0
+   aの大きさ回くり返す{
+      c=a[i]
+      もしcが40ならば{
+         balを増やす
+      }
+      そうでなければ{
+         balを減らす
+      }
+      もしbalが0より小さいならば{
+         ok2=0
+      }
+      iを増やす
+   }
+
+   もしbalが0以外ならば{
+      ok2=0
+   }
+
+   もしok2が1ならば{
+      "Yes"が答え
+   }
+
+   "No"が答え
+}
+--- Result: ✓ PASSED (0.18s) ---
+
+============================================================
+[121/164] 120_maximum - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+maximum = 入力 arr, k に対し {
+   sorted=bubble_sort(arr)
+   n=sortedの大きさ
+   start=差(n,k)
+   result=[]
+   i=start
+   k回くり返す{
+      resultにsorted[i]を追加する
+      iを増やす
+   }
+   resultが答え
+}
+
+bubble_sort=入力Aに対し{
+   n=Aの大きさ
+   n回くり返す{
+      i=0
+      差(n,1)回くり返す{
+         j=和(i,1)
+         もしA[i]がA[j]より大きいならば{
+            tmp=A[i]
+            A[i]=A[j]
+            A[j]=tmp
+         }
+         iを増やす
+      }
+   }
+   Aが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+maximum = 入力 arr, k に対し {
+   sorted=bubble_sort(arr)
+   n=sortedの大きさ
+   start=差(n,k)
+   result=[]
+   i=start
+   k回くり返す{
+      resultにsorted[i]を追加する
+      iを増やす
+   }
+   resultが答え
+}
+
+bubble_sort=入力Aに対し{
+   n=Aの大きさ
+   n回くり返す{
+      i=0
+      差(n,1)回くり返す{
+         j=和(i,1)
+         もしA[i]がA[j]より大きいならば{
+            tmp=A[i]
+            A[i]=A[j]
+            A[j]=tmp
+         }
+         iを増やす
+      }
+   }
+   Aが答え
+}
+--- Result: ✓ PASSED (0.16s) ---
+
+============================================================
+[122/164] 121_solution - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+solution = 入力 lst に対し {
+   total=0
+   n=lstの大きさ
+   i=0
+   n回くり返す{
+      x=lst[i]
+      もし剰余(i,2)が0ならば{
+         もし剰余(x,2)が1ならば{
+            total=和(total,x)
+         }
+      }
+      iを増やす
+   }
+   totalが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+solution = 入力 lst に対し {
+   total=0
+   n=lstの大きさ
+   i=0
+   n回くり返す{
+      x=lst[i]
+      もし剰余(i,2)が0ならば{
+         もし剰余(x,2)が1ならば{
+            total=和(total,x)
+         }
+      }
+      iを増やす
+   }
+   totalが答え
+}
+--- Result: ✓ PASSED (0.11s) ---
+
+============================================================
+[123/164] 122_add_elements - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+add_elements = 入力 arr, k に対し {
+   total=0
+   i=0
+   k回くり返す{
+      x=arr[i]
+      s=文字列化(x)
+      もしsの大きさが2以下ならば{
+         total=和(total,x)
+      }
+      iを増やす
+   }
+   totalが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+add_elements = 入力 arr, k に対し {
+   total=0
+   i=0
+   k回くり返す{
+      x=arr[i]
+      s=文字列化(x)
+      もしsの大きさが2以下ならば{
+         total=和(total,x)
+      }
+      iを増やす
+   }
+   totalが答え
+}
+--- Result: ✓ PASSED (0.11s) ---
+
+============================================================
+[124/164] 123_get_odd_collatz - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+get_odd_collatz = 入力 n に対し {
+   odds=[]
+   current=n
+
+   10000回くり返す{
+      # 奇数なら追加
+      もし剰余(current,2)が1ならば{
+         oddsにcurrentを追加する
+      }
+
+      # 1 に達したら終了
+      もしcurrentが1ならば{
+         くり返しを抜ける
+      }
+
+      # 次のコラッツ項
+      もし剰余(current,2)が0ならば{
+         current=商(current,2)
+      }
+      そうでなければ{
+         current=和(積(3,current),1)
+      }
+   }
+
+   bubble_sort(odds)が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+get_odd_collatz = 入力 n に対し {
+   odds=[]
+   current=n
+
+   10000回くり返す{
+      # 奇数なら追加
+      もし剰余(current,2)が1ならば{
+         oddsにcurrentを追加する
+      }
+
+      # 1 に達したら終了
+      もしcurrentが1ならば{
+         くり返しを抜ける
+      }
+
+      # 次のコラッツ項
+      もし剰余(current,2)が0ならば{
+         current=商(current,2)
+      }
+      そうでなければ{
+         current=和(積(3,current),1)
+      }
+   }
+
+   bubble_sort(odds)が答え
+}
+--- Result: ✗ FAILED (0.10s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] 関数が定義されていません ❌bubble_sort line 27, column 4:
+|    bubble_sort(odds)が答え
+|    ^^^^^^^^^^^
+
+
+============================================================
+[125/164] 124_valid_date - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+valid_date=入力dateに対し{
+   # 1. 空文字列は無効
+   もしdateの大きさが0ならば{
+      偽が答え
+   }
+
+   # 2. 形式 mm-dd-yyyy か確認する
+   もしdateの大きさが10以外ならば{
+      偽が答え
+   }
+   もしdate[2]が45以外ならば{
+      偽が答え
+   }
+   もしdate[5]が45以外ならば{
+      偽が答え
+   }
+
+   # 3. 数字だけで構成されているか確認する
+   i=0
+   10回くり返す{
+      c=date[i]
+      もしiが2以外ならば{
+         もしiが5以外ならば{
+            もしcが48より小さいならば{
+               偽が答え
+            }
+            もしcが57より大きいならば{
+               偽が答え
+            }
+         }
+      }
+      iを増やす
+   }
+
+   # 4. 月・日を取り出す
+   m1=差(date[0],48)
+   m2=差(date[1],48)
+   month=和(積(m1,10),m2)
+
+   d1=差(date[3],48)
+   d2=差(date[4],48)
+   day=和(積(d1,10),d2)
+
+   # 5. 月の範囲確認
+   もしmonthが1より小さいならば{
+      偽が答え
+   }
+   もしmonthが12より大きいならば{
+      偽が答え
+   }
+
+   # 6. 日の範囲確認
+   もしdayが1より小さいならば{
+      偽が答え
+   }
+
+   # 31日ある月
+   もしmonthが1ならば{
+      もしdayが31以下ならば{ 真が答え }
+      偽が答え
+   }
+   もしmonthが3ならば{
+      もしdayが31以下ならば{ 真が答え }
+      偽が答え
+   }
+   もしmonthが5ならば{
+      もしdayが31以下ならば{ 真が答え }
+      偽が答え
+   }
+   もしmonthが7ならば{
+      もしdayが31以下ならば{ 真が答え }
+      偽が答え
+   }
+   もしmonthが8ならば{
+      もしdayが31以下ならば{ 真が答え }
+      偽が答え
+   }
+   もしmonthが10ならば{
+      もしdayが31以下ならば{ 真が答え }
+      偽が答え
+   }
+   もしmonthが12ならば{
+      もしdayが31以下ならば{ 真が答え }
+      偽が答え
+   }
+
+   # 30日ある月
+   もしmonthが4ならば{
+      もしdayが30以下ならば{ 真が答え }
+      偽が答え
+   }
+   もしmonthが6ならば{
+      もしdayが30以下ならば{ 真が答え }
+      偽が答え
+   }
+   もしmonthが9ならば{
+      もしdayが30以下ならば{ 真が答え }
+      偽が答え
+   }
+   もしmonthが11ならば{
+      もしdayが30以下ならば{ 真が答え }
+      偽が答え
+   }
+
+   # 2月
+   もしmonthが2ならば{
+      もしdayが29以下ならば{ 真が答え }
+      偽が答え
+   }
+
+   偽が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+valid_date=入力dateに対し{
+   # 1. 空文字列は無効
+   もしdateの大きさが0ならば{
+      偽が答え
+   }
+
+   # 2. 形式 mm-dd-yyyy か確認する
+   もしdateの大きさが10以外ならば{
+      偽が答え
+   }
+   もしdate[2]が45以外ならば{
+      偽が答え
+   }
+   もしdate[5]が45以外ならば{
+      偽が答え
+   }
+
+   # 3. 数字だけで構成されているか確認する
+   i=0
+   10回くり返す{
+      c=date[i]
+      もしiが2以外ならば{
+         もしiが5以外ならば{
+            もしcが48より小さいならば{
+               偽が答え
+            }
+            もしcが57より大きいならば{
+               偽が答え
+            }
+         }
+      }
+      iを増やす
+   }
+
+   # 4. 月・日を取り出す
+   m1=差(date[0],48)
+   m2=差(date[1],48)
+   month=和(積(m1,10),m2)
+
+   d1=差(date[3],48)
+   d2=差(date[4],48)
+   day=和(積(d1,10),d2)
+
+   # 5. 月の範囲確認
+   もしmonthが1より小さいならば{
+      偽が答え
+   }
+   もしmonthが12より大きいならば{
+      偽が答え
+   }
+
+   # 6. 日の範囲確認
+   もしdayが1より小さいならば{
+      偽が答え
+   }
+
+   # 31日ある月
+   もしmonthが1ならば{
+      もしdayが31以下ならば{ 真が答え }
+      偽が答え
+   }
+   もしmonthが3ならば{
+      もしdayが31以下ならば{ 真が答え }
+      偽が答え
+   }
+   もしmonthが5ならば{
+      もしdayが31以下ならば{ 真が答え }
+      偽が答え
+   }
+   もしmonthが7ならば{
+      もしdayが31以下ならば{ 真が答え }
+      偽が答え
+   }
+   もしmonthが8ならば{
+      もしdayが31以下ならば{ 真が答え }
+      偽が答え
+   }
+   もしmonthが10ならば{
+      もしdayが31以下ならば{ 真が答え }
+      偽が答え
+   }
+   もしmonthが12ならば{
+      もしdayが31以下ならば{ 真が答え }
+      偽が答え
+   }
+
+   # 30日ある月
+   もしmonthが4ならば{
+      もしdayが30以下ならば{ 真が答え }
+      偽が答え
+   }
+   もしmonthが6ならば{
+      もしdayが30以下ならば{ 真が答え }
+      偽が答え
+   }
+   もしmonthが9ならば{
+      もしdayが30以下ならば{ 真が答え }
+      偽が答え
+   }
+   もしmonthが11ならば{
+      もしdayが30以下ならば{ 真が答え }
+      偽が答え
+   }
+
+   # 2月
+   もしmonthが2ならば{
+      もしdayが29以下ならば{ 真が答え }
+      偽が答え
+   }
+
+   偽が答え
+}
+--- Result: ✗ FAILED (0.24s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍valid_date("03-11-2000") ❌true ✅1 line 117, column 1:
+| >>> valid_date("03-11-2000")
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[126/164] 125_split_words - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+split_words=入力txtに対し{
+   # まず空白区切りを試す
+   words=txtを" "で分割
+   もしwordsの大きさが1より大きいならば{
+      wordsが答え
+   }
+
+   # 空白が無ければカンマ区切りを試す
+   parts=txtを","で分割
+   もしpartsの大きさが1より大きいならば{
+      partsが答え
+   }
+
+   # 空白もカンマも無ければ、奇数順の小文字を数える
+   count=0
+   i=0
+   txtの大きさ回くり返す{
+      c=txt[i]
+      もしcが97以上ならば{
+         もしcが122以下ならば{
+            idx=差(c,97)
+            parity=剰余(idx,2)
+            もしparityが1ならば{
+               countを増やす
+            }
+         }
+      }
+      iを増やす
+   }
+   countが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+split_words=入力txtに対し{
+   # まず空白区切りを試す
+   words=txtを" "で分割
+   もしwordsの大きさが1より大きいならば{
+      wordsが答え
+   }
+
+   # 空白が無ければカンマ区切りを試す
+   parts=txtを","で分割
+   もしpartsの大きさが1より大きいならば{
+      partsが答え
+   }
+
+   # 空白もカンマも無ければ、奇数順の小文字を数える
+   count=0
+   i=0
+   txtの大きさ回くり返す{
+      c=txt[i]
+      もしcが97以上ならば{
+         もしcが122以下ならば{
+            idx=差(c,97)
+            parity=剰余(idx,2)
+            もしparityが1ならば{
+               countを増やす
+            }
+         }
+      }
+      iを増やす
+   }
+   countが答え
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[127/164] 126_is_sorted - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+is_sorted=入力lstに対し{
+   n=lstの大きさ
+   もしnが1以下ならば{
+      真が答え
+   }
+
+   has_dup=0
+   i=1
+   差(n,1)回くり返す{
+      prev=lst[差(i,1)]
+      curr=lst[i]
+
+      もしcurrがprev以下ならば{
+         偽が答え
+      }
+
+      もしiが1以上ならば{
+         もしcurrがprevならば{
+            has_dupを増やす
+         }
+      }
+
+      iを増やす
+   }
+
+   もしhas_dupが2以上ならば{
+      偽が答え
+   }
+
+   真が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+is_sorted=入力lstに対し{
+   n=lstの大きさ
+   もしnが1以下ならば{
+      真が答え
+   }
+
+   has_dup=0
+   i=1
+   差(n,1)回くり返す{
+      prev=lst[差(i,1)]
+      curr=lst[i]
+
+      もしcurrがprev以下ならば{
+         偽が答え
+      }
+
+      もしiが1以上ならば{
+         もしcurrがprevならば{
+            has_dupを増やす
+         }
+      }
+
+      iを増やす
+   }
+
+   もしhas_dupが2以上ならば{
+      偽が答え
+   }
+
+   真が答え
+}
+--- Result: ✗ FAILED (0.15s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍is_sorted([5]) ❌true ✅1 line 36, column 1:
+| >>> is_sorted([5])
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[128/164] 127_intersection - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+intersection = 入力 interval1, interval2 に対し {
+   a1=interval1[0]
+   b1=interval1[1]
+   a2=interval2[0]
+   b2=interval2[1]
+
+   left=a1
+   もしa2がleftより大きいならば{
+      left=a2
+   }
+
+   right=b1
+   もしb2がrightより小さいならば{
+      right=b2
+   }
+
+   # 閉区間の共通部分 [left,right] の長さは right-left
+   len=差(right,left)
+
+   もしlenが2より小さいならば{
+      "NO"が答え
+   }
+
+   is_prime=1
+   d=2
+   差(len,2)回くり返す{
+      もし剰余(len,d)が0ならば{
+         is_prime=0
+      }
+      dを増やす
+   }
+
+   もしis_primeが1ならば{
+      "YES"が答え
+   }
+   そうでなければ{
+      "NO"が答え
+   }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+intersection = 入力 interval1, interval2 に対し {
+   a1=interval1[0]
+   b1=interval1[1]
+   a2=interval2[0]
+   b2=interval2[1]
+
+   left=a1
+   もしa2がleftより大きいならば{
+      left=a2
+   }
+
+   right=b1
+   もしb2がrightより小さいならば{
+      right=b2
+   }
+
+   # 閉区間の共通部分 [left,right] の長さは right-left
+   len=差(right,left)
+
+   もしlenが2より小さいならば{
+      "NO"が答え
+   }
+
+   is_prime=1
+   d=2
+   差(len,2)回くり返す{
+      もし剰余(len,d)が0ならば{
+         is_prime=0
+      }
+      dを増やす
+   }
+
+   もしis_primeが1ならば{
+      "YES"が答え
+   }
+   そうでなければ{
+      "NO"が答え
+   }
+}
+--- Result: ✓ PASSED (0.14s) ---
+
+============================================================
+[129/164] 128_prod_signs - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+prod_signs = 入力 arr に対し {
+   n=arrの大きさ
+   もしnが0ならば{
+      値なしが答え
+   }
+
+   total=0
+   sign=1
+   i=0
+   n回くり返す{
+      x=arr[i]
+      total=和(total,絶対値(x))
+
+      もしxが0ならば{
+         sign=0
+      }
+      そうでなければ{
+         もしxが0より小さいならば{
+            sign=差(0,sign)
+         }
+      }
+      iを増やす
+   }
+
+   積(total,sign)が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+prod_signs = 入力 arr に対し {
+   n=arrの大きさ
+   もしnが0ならば{
+      値なしが答え
+   }
+
+   total=0
+   sign=1
+   i=0
+   n回くり返す{
+      x=arr[i]
+      total=和(total,絶対値(x))
+
+      もしxが0ならば{
+         sign=0
+      }
+      そうでなければ{
+         もしxが0より小さいならば{
+            sign=差(0,sign)
+         }
+      }
+      iを増やす
+   }
+
+   積(total,sign)が答え
+}
+--- Result: ✗ FAILED (0.13s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍prod_signs([1, 2, 2, -4]) ❌-9 ✅[-9] line 31, column 1:
+| >>> prod_signs([1, 2, 2, -4])
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[130/164] 129_minPath - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+minPath=入力grid,kに対し{
+   n=gridの大きさ
+
+   # 値 -> 座標 の対応表を作る
+   # pos[v] = [r,c]
+   pos=[]
+   r=0
+   n回くり返す{
+      c=0
+      n回くり返す{
+         v=grid[r][c]
+         もしvがposの大きさ以上ならば{
+            need=和(v,1)
+            now=posの大きさ
+            diff=差(need,now)
+            diff回くり返す{
+               posに[]を追加する
+            }
+         }
+         pos[v]=[r,c]
+         cを増やす
+      }
+      rを増やす
+   }
+
+   # 最初の値は必ず 1 が最小
+   result=[1]
+
+   # k=1 なら [1]
+   もしkが1ならば{
+      resultが答え
+   }
+
+   cur=1
+   steps=1
+
+   # 残り k-1 個を貪欲に選ぶ
+   # 次に置ける値 x は、現在位置からマンハッタン距離 d で到達可能、
+   # かつ残り手数 rem で長さを埋められるもの。
+   # グリッドでは隣接移動で偶奇調整のための往復ができるので、
+   # d <= rem なら常に残りを埋められる。
+   limit=差(k,1)
+   limit回くり返す{
+      rem=差(k,和(steps,1))
+      found=0
+      cand=1
+      maxv=積(n,n)
+      maxv回くり返す{
+         もしfoundが0ならば{
+            p1=pos[cur]
+            p2=pos[cand]
+            d=和(
+               絶対値(差(p1[0],p2[0])),
+               絶対値(差(p1[1],p2[1]))
+            )
+            もしdがrem以下ならば{
+               resultにcandを追加する
+               cur=cand
+               found=1
+            }
+         }
+         candを増やす
+      }
+      stepsを増やす
+   }
+
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+minPath=入力grid,kに対し{
+   n=gridの大きさ
+
+   # 値 -> 座標 の対応表を作る
+   # pos[v] = [r,c]
+   pos=[]
+   r=0
+   n回くり返す{
+      c=0
+      n回くり返す{
+         v=grid[r][c]
+         もしvがposの大きさ以上ならば{
+            need=和(v,1)
+            now=posの大きさ
+            diff=差(need,now)
+            diff回くり返す{
+               posに[]を追加する
+            }
+         }
+         pos[v]=[r,c]
+         cを増やす
+      }
+      rを増やす
+   }
+
+   # 最初の値は必ず 1 が最小
+   result=[1]
+
+   # k=1 なら [1]
+   もしkが1ならば{
+      resultが答え
+   }
+
+   cur=1
+   steps=1
+
+   # 残り k-1 個を貪欲に選ぶ
+   # 次に置ける値 x は、現在位置からマンハッタン距離 d で到達可能、
+   # かつ残り手数 rem で長さを埋められるもの。
+   # グリッドでは隣接移動で偶奇調整のための往復ができるので、
+   # d <= rem なら常に残りを埋められる。
+   limit=差(k,1)
+   limit回くり返す{
+      rem=差(k,和(steps,1))
+      found=0
+      cand=1
+      maxv=積(n,n)
+      maxv回くり返す{
+         もしfoundが0ならば{
+            p1=pos[cur]
+            p2=pos[cand]
+            d=和(
+               絶対値(差(p1[0],p2[0])),
+               絶対値(差(p1[1],p2[1]))
+            )
+            もしdがrem以下ならば{
+               resultにcandを追加する
+               cur=cand
+               found=1
+            }
+         }
+         candを増やす
+      }
+      stepsを増やす
+   }
+
+   resultが答え
+}
+--- Result: ✗ FAILED (0.10s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[131/164] 130_tri - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+tri = 入力 n に対し {
+   result=[1]
+   もしnが0ならば{
+      resultが答え
+   }
+
+   i=1
+   n回くり返す{
+      もし剰余(i,2)が0ならば{
+         x=和(1,商(i,2))
+      }
+      そうでなければ{
+         もしiが1ならば{
+            x=3
+         }
+         そうでなければ{
+            next=和(1,商(和(i,1),2))
+            x=和(result[差(i,1)],和(result[差(i,2)],next))
+         }
+      }
+      resultにxを追加する
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+tri = 入力 n に対し {
+   result=[1]
+   もしnが0ならば{
+      resultが答え
+   }
+
+   i=1
+   n回くり返す{
+      もし剰余(i,2)が0ならば{
+         x=和(1,商(i,2))
+      }
+      そうでなければ{
+         もしiが1ならば{
+            x=3
+         }
+         そうでなければ{
+            next=和(1,商(和(i,1),2))
+            x=和(result[差(i,1)],和(result[差(i,2)],next))
+         }
+      }
+      resultにxを追加する
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✓ PASSED (0.15s) ---
+
+============================================================
+[132/164] 131_digits - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+digits = 入力 n に対し {
+   s=文字列化(n)
+   product=1
+   found=0
+   i=0
+   sの大きさ回くり返す{
+      d=整数化(s[i])
+      もし剰余(d,2)が1ならば{
+         product=積(product,d)
+         found=1
+      }
+      iを増やす
+   }
+   もしfoundが0ならば{
+      0が答え
+   }
+   productが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+digits = 入力 n に対し {
+   s=文字列化(n)
+   product=1
+   found=0
+   i=0
+   sの大きさ回くり返す{
+      d=整数化(s[i])
+      もし剰余(d,2)が1ならば{
+         product=積(product,d)
+         found=1
+      }
+      iを増やす
+   }
+   もしfoundが0ならば{
+      0が答え
+   }
+   productが答え
+}
+--- Result: ✗ FAILED (0.11s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍digits(5) ❌53 ✅5 line 23, column 1:
+| >>> digits(5)
+| ^^^^^^^^^^^^^^^
+
+
+============================================================
+[133/164] 132_is_nested - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+is_nested=入力stringに対し{
+   depth=0
+   nested=0
+   i=0
+   stringの大きさ回くり返す{
+      c=string[i]
+      もしcが91ならば{
+         depthを増やす
+         もしdepthが2以上ならば{
+            nested=1
+         }
+      }
+      もしcが93ならば{
+         もしdepthが0ならば{
+            偽が答え
+         }
+         depthを減らす
+      }
+      iを増やす
+   }
+   もしnestedが1ならば{
+      真が答え
+   }
+   偽が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+is_nested=入力stringに対し{
+   depth=0
+   nested=0
+   i=0
+   stringの大きさ回くり返す{
+      c=string[i]
+      もしcが91ならば{
+         depthを増やす
+         もしdepthが2以上ならば{
+            nested=1
+         }
+      }
+      もしcが93ならば{
+         もしdepthが0ならば{
+            偽が答え
+         }
+         depthを減らす
+      }
+      iを増やす
+   }
+   もしnestedが1ならば{
+      真が答え
+   }
+   偽が答え
+}
+--- Result: ✗ FAILED (0.13s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍is_nested("[[]]") ❌true ✅1 line 30, column 1:
+| >>> is_nested("[[]]")
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[134/164] 133_sum_squares - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+sum_squares = 入力 lst に対し {
+   total=0
+   i=0
+   lstの大きさ回くり返す{
+      x=lst[i]
+      y=天井(x)
+      total=和(total,積(y,y))
+      iを増やす
+   }
+   totalが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+sum_squares = 入力 lst に対し {
+   total=0
+   i=0
+   lstの大きさ回くり返す{
+      x=lst[i]
+      y=天井(x)
+      total=和(total,積(y,y))
+      iを増やす
+   }
+   totalが答え
+}
+--- Result: ✗ FAILED (0.10s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] 関数が定義されていません ❌天井 line 8, column 9:
+|       y=天井(x)
+|         ^^^
+
+
+============================================================
+[135/164] 134_check_if_last_char_is_a_letter - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+check_if_last_char_is_a_letter = 入力 txt に対し {
+   n=txtの大きさ
+   もしnが0ならば{
+      偽が答え
+   }
+
+   last=txt[差(n,1)]
+
+   is_letter=0
+   もしlastが65以上ならば{
+      もしlastが90以下ならば{
+         is_letter=1
+      }
+   }
+   もしlastが97以上ならば{
+      もしlastが122以下ならば{
+         is_letter=1
+      }
+   }
+
+   もしis_letterが0ならば{
+      偽が答え
+   }
+
+   もしnが1ならば{
+      真が答え
+   }
+
+   prev=txt[差(n,2)]
+   もしprevが32ならば{
+      真が答え
+   }
+
+   偽が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+check_if_last_char_is_a_letter = 入力 txt に対し {
+   n=txtの大きさ
+   もしnが0ならば{
+      偽が答え
+   }
+
+   last=txt[差(n,1)]
+
+   is_letter=0
+   もしlastが65以上ならば{
+      もしlastが90以下ならば{
+         is_letter=1
+      }
+   }
+   もしlastが97以上ならば{
+      もしlastが122以下ならば{
+         is_letter=1
+      }
+   }
+
+   もしis_letterが0ならば{
+      偽が答え
+   }
+
+   もしnが1ならば{
+      真が答え
+   }
+
+   prev=txt[差(n,2)]
+   もしprevが32ならば{
+      真が答え
+   }
+
+   偽が答え
+}
+--- Result: ✗ FAILED (0.15s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍check_if_last_char_is_a_letter("apple") ❌false ✅0 line 40, column 1:
+| >>> check_if_last_char_is_a_letter("apple")
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[136/164] 135_can_arrange - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+can_arrange = 入力 arr に対し {
+   n=arrの大きさ
+   neg1=差(0,1)
+   ans=neg1
+   i=1
+   差(n,1)回くり返す{
+      もしarr[i]がarr[差(i,1)]以下ならば{
+         ans=i
+      }
+      iを増やす
+   }
+   ansが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+can_arrange = 入力 arr に対し {
+   n=arrの大きさ
+   neg1=差(0,1)
+   ans=neg1
+   i=1
+   差(n,1)回くり返す{
+      もしarr[i]がarr[差(i,1)]以下ならば{
+         ans=i
+      }
+      iを増やす
+   }
+   ansが答え
+}
+--- Result: ✗ FAILED (0.11s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] index-error ✅<0 ❌1 🔍[] line 9, column 9:
+|       もしarr[i]がarr[差(i,1)]以下ならば{
+|         ^^^^^^
+
+
+============================================================
+[137/164] 136_largest_smallest_integers - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+largest_smallest_integers = 入力 lst に対し {
+   neg=値なし
+   pos=値なし
+   i=0
+   lstの大きさ回くり返す{
+      x=lst[i]
+
+      もしxが0より小さいならば{
+         もしnegが値なしならば{
+            neg=x
+         }
+         そうでなければ{
+            もしxがnegより大きいならば{
+               neg=x
+            }
+         }
+      }
+
+      もしxが0より大きいならば{
+         もしposが値なしならば{
+            pos=x
+         }
+         そうでなければ{
+            もしxがposより小さいならば{
+               pos=x
+            }
+         }
+      }
+
+      iを増やす
+   }
+   [neg,pos]が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+largest_smallest_integers = 入力 lst に対し {
+   neg=値なし
+   pos=値なし
+   i=0
+   lstの大きさ回くり返す{
+      x=lst[i]
+
+      もしxが0より小さいならば{
+         もしnegが値なしならば{
+            neg=x
+         }
+         そうでなければ{
+            もしxがnegより大きいならば{
+               neg=x
+            }
+         }
+      }
+
+      もしxが0より大きいならば{
+         もしposが値なしならば{
+            pos=x
+         }
+         そうでなければ{
+            もしxがposより小さいならば{
+               pos=x
+            }
+         }
+      }
+
+      iを増やす
+   }
+   [neg,pos]が答え
+}
+--- Result: ✗ FAILED (0.16s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍largest_smallest_integers([2, 4, 1, 3, 5, 7]) ❌[null, 1] ✅[[], 1] line 38, column 1:
+| >>> largest_smallest_integers([2, 4, 1, 3, 5, 7])
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[138/164] 137_compare_one - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+compare_one = 入力 a, b に対し {
+   # 文字列なら "," を "." に置き換えてから小数化する
+   もし文字列判定(a)ならば{
+      sa=replace(a,",",".")
+      va=小数化(sa)
+   }
+   そうでなければ{
+      va=小数化(a)
+   }
+
+   もし文字列判定(b)ならば{
+      sb=replace(b,",",".")
+      vb=小数化(sb)
+   }
+   そうでなければ{
+      vb=小数化(b)
+   }
+
+   もしvaがvbより大きいならば{
+      aが答え
+   }
+   もしvbがvaより大きいならば{
+      bが答え
+   }
+   値なしが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+compare_one = 入力 a, b に対し {
+   # 文字列なら "," を "." に置き換えてから小数化する
+   もし文字列判定(a)ならば{
+      sa=replace(a,",",".")
+      va=小数化(sa)
+   }
+   そうでなければ{
+      va=小数化(a)
+   }
+
+   もし文字列判定(b)ならば{
+      sb=replace(b,",",".")
+      vb=小数化(sb)
+   }
+   そうでなければ{
+      vb=小数化(b)
+   }
+
+   もしvaがvbより大きいならば{
+      aが答え
+   }
+   もしvbがvaより大きいならば{
+      bが答え
+   }
+   値なしが答え
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[139/164] 138_is_equal_to_sum_even - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+is_equal_to_sum_even = 入力 n に対し {
+   # 4つの正の偶数の最小和は 2+2+2+2 = 8
+   # また、偶数の和なので n 自体も偶数である必要がある
+   もしnが8より小さいならば{
+      偽が答え
+   }
+   もし剰余(n,2)が0ならば{
+      真が答え
+   }
+   偽が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+is_equal_to_sum_even = 入力 n に対し {
+   # 4つの正の偶数の最小和は 2+2+2+2 = 8
+   # また、偶数の和なので n 自体も偶数である必要がある
+   もしnが8より小さいならば{
+      偽が答え
+   }
+   もし剰余(n,2)が0ならば{
+      真が答え
+   }
+   偽が答え
+}
+--- Result: ✗ FAILED (0.10s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍is_equal_to_sum_even(4) ❌false ✅0 line 16, column 1:
+| >>> is_equal_to_sum_even(4)
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[140/164] 139_special_factorial - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+special_factorial = 入力 n に対し {
+   result=1
+   current=1
+   i=1
+   n回くり返す{
+      current=積(current,i)
+      result=積(result,current)
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+special_factorial = 入力 n に対し {
+   result=1
+   current=1
+   i=1
+   n回くり返す{
+      current=積(current,i)
+      result=積(result,current)
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✓ PASSED (0.13s) ---
+
+============================================================
+[141/164] 140_fix_spaces - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+fix_spaces = 入力 text に対し {
+   result=""
+   n=textの大きさ
+   i=0
+
+   n回くり返す{
+      c=text[i]
+      もしcが32ならば{
+         count=0
+         もしiがnより小さいならば{
+            countを増やす
+         }
+         limit=差(n,i)
+         j=和(i,1)
+         差(limit,1)回くり返す{
+            もしtext[j]が32ならば{
+               countを増やす
+               jを増やす
+            }
+         }
+         もしcountが1ならば{
+            resultに95を追加する
+         }
+         そうでなければ{
+            resultに45を追加する
+         }
+         i=和(i,count)
+      }
+      そうでなければ{
+         resultにcを追加する
+         iを増やす
+      }
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+fix_spaces = 入力 text に対し {
+   result=""
+   n=textの大きさ
+   i=0
+
+   n回くり返す{
+      c=text[i]
+      もしcが32ならば{
+         count=0
+         もしiがnより小さいならば{
+            countを増やす
+         }
+         limit=差(n,i)
+         j=和(i,1)
+         差(limit,1)回くり返す{
+            もしtext[j]が32ならば{
+               countを増やす
+               jを増やす
+            }
+         }
+         もしcountが1ならば{
+            resultに95を追加する
+         }
+         そうでなければ{
+            resultに45を追加する
+         }
+         i=和(i,count)
+      }
+      そうでなければ{
+         resultにcを追加する
+         iを増やす
+      }
+   }
+   resultが答え
+}
+--- Result: ✗ FAILED (0.13s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] index-error ✅<28 ❌28 🔍[89, 101, 108, 108, 111, 119, 32, 89, 101, 108, 108, 111, 119, 32, 32, 68, 105, 114, 116, 121, 32, 32, 70, 101, 108, 108, 111, 119] line 9, column 9:
+|       c=text[i]
+|         ^^^^^^^
+
+
+============================================================
+[142/164] 141_file_name_check - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+file_name_check = 入力 file_name に対し {
+   n=file_nameの大きさ
+
+   # ドットの位置を探し、個数も数える
+   dot_count=0
+   dot_pos=差(0,1)
+   i=0
+   n回くり返す{
+      もしfile_name[i]が46ならば{
+         dot_countを増やす
+         dot_pos=i
+      }
+      iを増やす
+   }
+
+   # ドットはちょうど 1 つ
+   もしdot_countが1以外ならば{
+      "No"が答え
+   }
+
+   # ドットの前後は空であってはならない
+   もしdot_posが0ならば{
+      "No"が答え
+   }
+   もしdot_posが差(n,1)ならば{
+      "No"が答え
+   }
+
+   # 先頭文字は英字
+   c=file_name[0]
+   is_alpha=0
+   もしcが65以上ならば{
+      もしcが90以下ならば{
+         is_alpha=1
+      }
+   }
+   もしcが97以上ならば{
+      もしcが122以下ならば{
+         is_alpha=1
+      }
+   }
+   もしis_alphaが0ならば{
+      "No"が答え
+   }
+
+   # 3桁以上連続する数字があってはならない
+   digit_run=0
+   i=0
+   n回くり返す{
+      c=file_name[i]
+      is_digit=0
+      もしcが48以上ならば{
+         もしcが57以下ならば{
+            is_digit=1
+         }
+      }
+      もしis_digitが1ならば{
+         digit_runを増やす
+         もしdigit_runが3以上ならば{
+            "No"が答え
+         }
+      }
+      そうでなければ{
+         digit_run=0
+      }
+      iを増やす
+   }
+
+   # 拡張子チェック
+   ext=""
+   i=和(dot_pos,1)
+   ext_len=差(n,i)
+   ext_len回くり返す{
+      extにfile_name[i]を追加する
+      iを増やす
+   }
+
+   もしextが["txt","exe","dll"]のいずれかならば{
+      "Yes"が答え
+   }
+   そうでなければ{
+      "No"が答え
+   }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+file_name_check = 入力 file_name に対し {
+   n=file_nameの大きさ
+
+   # ドットの位置を探し、個数も数える
+   dot_count=0
+   dot_pos=差(0,1)
+   i=0
+   n回くり返す{
+      もしfile_name[i]が46ならば{
+         dot_countを増やす
+         dot_pos=i
+      }
+      iを増やす
+   }
+
+   # ドットはちょうど 1 つ
+   もしdot_countが1以外ならば{
+      "No"が答え
+   }
+
+   # ドットの前後は空であってはならない
+   もしdot_posが0ならば{
+      "No"が答え
+   }
+   もしdot_posが差(n,1)ならば{
+      "No"が答え
+   }
+
+   # 先頭文字は英字
+   c=file_name[0]
+   is_alpha=0
+   もしcが65以上ならば{
+      もしcが90以下ならば{
+         is_alpha=1
+      }
+   }
+   もしcが97以上ならば{
+      もしcが122以下ならば{
+         is_alpha=1
+      }
+   }
+   もしis_alphaが0ならば{
+      "No"が答え
+   }
+
+   # 3桁以上連続する数字があってはならない
+   digit_run=0
+   i=0
+   n回くり返す{
+      c=file_name[i]
+      is_digit=0
+      もしcが48以上ならば{
+         もしcが57以下ならば{
+            is_digit=1
+         }
+      }
+      もしis_digitが1ならば{
+         digit_runを増やす
+         もしdigit_runが3以上ならば{
+            "No"が答え
+         }
+      }
+      そうでなければ{
+         digit_run=0
+      }
+      iを増やす
+   }
+
+   # 拡張子チェック
+   ext=""
+   i=和(dot_pos,1)
+   ext_len=差(n,i)
+   ext_len回くり返す{
+      extにfile_name[i]を追加する
+      iを増やす
+   }
+
+   もしextが["txt","exe","dll"]のいずれかならば{
+      "Yes"が答え
+   }
+   そうでなければ{
+      "No"が答え
+   }
+}
+--- Result: ✗ FAILED (0.24s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍file_name_check("His12FILE94.exe") ❌"Yes" ✅"No" line 99, column 1:
+| >>> file_name_check("His12FILE94.exe")
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[143/164] 142_sum_squares - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+sum_squares=入力lstに対し{
+   total=0
+   n=lstの大きさ
+   i=0
+   n回くり返す{
+      x=lst[i]
+      r3=剰余(i,3)
+      r4=剰余(i,4)
+      もしr3が0ならば{
+         total=和(total,積(x,x))
+      }
+      そうでなければ{
+         もしr4が0ならば{
+            total=和(total,積(積(x,x),x))
+         }
+         そうでなければ{
+            total=和(total,x)
+         }
+      }
+      iを増やす
+   }
+   totalが答え
+}
+
+>>> sum_squares([1,2,3])
+6
+>>> sum_squares([])
+0
+>>> sum_squares([-1,-5,2,-1,-5])
+-126
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+sum_squares=入力lstに対し{
+   total=0
+   n=lstの大きさ
+   i=0
+   n回くり返す{
+      x=lst[i]
+      r3=剰余(i,3)
+      r4=剰余(i,4)
+      もしr3が0ならば{
+         total=和(total,積(x,x))
+      }
+      そうでなければ{
+         もしr4が0ならば{
+            total=和(total,積(積(x,x),x))
+         }
+         そうでなければ{
+            total=和(total,x)
+         }
+      }
+      iを増やす
+   }
+   totalが答え
+}
+--- Result: ✓ PASSED (0.16s) ---
+
+============================================================
+[144/164] 143_words_in_sentence - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+words_in_sentence = 入力 sentence に対し {
+   result=""
+   current=""
+   i=0
+   n=sentenceの大きさ
+
+   n回くり返す{
+      c=sentence[i]
+      もしcが32ならば{
+         len=currentの大きさ
+         prime=1
+         もしlenが2より小さいならば{
+            prime=0
+         }
+         そうでなければ{
+            d=2
+            len回くり返す{
+               もしdがlenより小さいならば{
+                  もし剰余(len,d)が0ならば{
+                     prime=0
+                  }
+               }
+               dを増やす
+            }
+         }
+         もしprimeが1ならば{
+            もしresultが""ならば{
+               result=current
+            }
+            そうでなければ{
+               resultに32を追加する
+               j=0
+               currentの大きさ回くり返す{
+                  resultにcurrent[j]を追加する
+                  jを増やす
+               }
+            }
+         }
+         current=""
+      }
+      そうでなければ{
+         currentにcを追加する
+      }
+      iを増やす
+   }
+
+   len=currentの大きさ
+   prime=1
+   もしlenが2より小さいならば{
+      prime=0
+   }
+   そうでなければ{
+      d=2
+      len回くり返す{
+         もしdがlenより小さいならば{
+            もし剰余(len,d)が0ならば{
+               prime=0
+            }
+         }
+         dを増やす
+      }
+   }
+   もしprimeが1ならば{
+      もしresultが""ならば{
+         result=current
+      }
+      そうでなければ{
+         resultに32を追加する
+         j=0
+         currentの大きさ回くり返す{
+            resultにcurrent[j]を追加する
+            jを増やす
+         }
+      }
+   }
+
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+words_in_sentence = 入力 sentence に対し {
+   result=""
+   current=""
+   i=0
+   n=sentenceの大きさ
+
+   n回くり返す{
+      c=sentence[i]
+      もしcが32ならば{
+         len=currentの大きさ
+         prime=1
+         もしlenが2より小さいならば{
+            prime=0
+         }
+         そうでなければ{
+            d=2
+            len回くり返す{
+               もしdがlenより小さいならば{
+                  もし剰余(len,d)が0ならば{
+                     prime=0
+                  }
+               }
+               dを増やす
+            }
+         }
+         もしprimeが1ならば{
+            もしresultが""ならば{
+               result=current
+            }
+            そうでなければ{
+               resultに32を追加する
+               j=0
+               currentの大きさ回くり返す{
+                  resultにcurrent[j]を追加する
+                  jを増やす
+               }
+            }
+         }
+         current=""
+      }
+      そうでなければ{
+         currentにcを追加する
+      }
+      iを増やす
+   }
+
+   len=currentの大きさ
+   prime=1
+   もしlenが2より小さいならば{
+      prime=0
+   }
+   そうでなければ{
+      d=2
+      len回くり返す{
+         もしdがlenより小さいならば{
+            もし剰余(len,d)が0ならば{
+               prime=0
+            }
+         }
+         dを増やす
+      }
+   }
+   もしprimeが1ならば{
+      もしresultが""ならば{
+         result=current
+      }
+      そうでなければ{
+         resultに32を追加する
+         j=0
+         currentの大きさ回くり返す{
+            resultにcurrent[j]を追加する
+            jを増やす
+         }
+      }
+   }
+
+   resultが答え
+}
+--- Result: ✓ PASSED (0.17s) ---
+
+============================================================
+[145/164] 144_simplify - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+simplify = 入力 x, n に対し {
+   sx=分割(x,"/")
+   sn=分割(n,"/")
+   xa=整数化(sx[0])
+   xb=整数化(sx[1])
+   na=整数化(sn[0])
+   nb=整数化(sn[1])
+
+   num=積(xa,na)
+   den=積(xb,nb)
+
+   もし剰余(num,den)が0ならば{
+      真が答え
+   }
+   そうでなければ{
+      偽が答え
+   }
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+simplify = 入力 x, n に対し {
+   sx=分割(x,"/")
+   sn=分割(n,"/")
+   xa=整数化(sx[0])
+   xb=整数化(sx[1])
+   na=整数化(sn[0])
+   nb=整数化(sn[1])
+
+   num=積(xa,na)
+   den=積(xb,nb)
+
+   もし剰余(num,den)が0ならば{
+      真が答え
+   }
+   そうでなければ{
+      偽が答え
+   }
+}
+--- Result: ✗ FAILED (0.14s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] 関数が定義されていません ❌分割 line 4, column 7:
+|    sx=分割(x,"/")
+|       ^^^
+
+
+============================================================
+[146/164] 145_order_by_points - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+order_by_points = 入力 nums に対し {
+   n=numsの大きさ
+   i=0
+   pairs=[]
+
+   n回くり返す{
+      x=nums[i]
+      s=文字列化(x)
+      j=0
+      total=0
+      sの大きさ回くり返す{
+         c=s[j]
+         もしcが45以外ならば{
+            total=和(total,差(c,48))
+         }
+         jを増やす
+      }
+      pairsに{"sum":total,"index":i,"value":x}を追加する
+      iを増やす
+   }
+
+   m=pairsの大きさ
+   m回くり返す{
+      i=0
+      limit=差(m,1)
+      limit回くり返す{
+         j=和(i,1)
+         left=pairs[i]
+         right=pairs[j]
+         swap=0
+
+         もしleft["sum"]がright["sum"]より大きいならば{
+            swap=1
+         }
+         もしleft["sum"]がright["sum"]ならば{
+            もしleft["index"]がright["index"]より大きいならば{
+               swap=1
+            }
+         }
+
+         もしswapが1ならば{
+            tmp=pairs[i]
+            pairs[i]=pairs[j]
+            pairs[j]=tmp
+         }
+         iを増やす
+      }
+   }
+
+   result=[]
+   i=0
+   m回くり返す{
+      resultにpairs[i]["value"]を追加する
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+order_by_points = 入力 nums に対し {
+   n=numsの大きさ
+   i=0
+   pairs=[]
+
+   n回くり返す{
+      x=nums[i]
+      s=文字列化(x)
+      j=0
+      total=0
+      sの大きさ回くり返す{
+         c=s[j]
+         もしcが45以外ならば{
+            total=和(total,差(c,48))
+         }
+         jを増やす
+      }
+      pairsに{"sum":total,"index":i,"value":x}を追加する
+      iを増やす
+   }
+
+   m=pairsの大きさ
+   m回くり返す{
+      i=0
+      limit=差(m,1)
+      limit回くり返す{
+         j=和(i,1)
+         left=pairs[i]
+         right=pairs[j]
+         swap=0
+
+         もしleft["sum"]がright["sum"]より大きいならば{
+            swap=1
+         }
+         もしleft["sum"]がright["sum"]ならば{
+            もしleft["index"]がright["index"]より大きいならば{
+               swap=1
+            }
+         }
+
+         もしswapが1ならば{
+            tmp=pairs[i]
+            pairs[i]=pairs[j]
+            pairs[j]=tmp
+         }
+         iを増やす
+      }
+   }
+
+   result=[]
+   i=0
+   m回くり返す{
+      resultにpairs[i]["value"]を追加する
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✗ FAILED (0.17s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍order_by_points([1, 11, -1, -11, -12]) ❌[1, -1, 11, -11, -12] ✅[-1, -11, 1, -12, 11] line 62, column 1:
+| >>> order_by_points([1, 11, -1, -11, -12])
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[147/164] 146_specialFilter - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+specialFilter = 入力 nums に対し {
+   count=0
+   n=numsの大きさ
+   i=0
+   n回くり返す{
+      x=nums[i]
+      もしxが10より大きいならば{
+         s=文字列化(x)
+         first=s[0]
+         last=s[差(sの大きさ,1)]
+
+         first_odd=0
+         もしfirstが49ならば{ first_odd=1 }
+         もしfirstが51ならば{ first_odd=1 }
+         もしfirstが53ならば{ first_odd=1 }
+         もしfirstが55ならば{ first_odd=1 }
+         もしfirstが57ならば{ first_odd=1 }
+
+         last_odd=0
+         もしlastが49ならば{ last_odd=1 }
+         もしlastが51ならば{ last_odd=1 }
+         もしlastが53ならば{ last_odd=1 }
+         もしlastが55ならば{ last_odd=1 }
+         もしlastが57ならば{ last_odd=1 }
+
+         もしfirst_oddが1ならば{
+            もしlast_oddが1ならば{
+               countを増やす
+            }
+         }
+      }
+      iを増やす
+   }
+   countが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+specialFilter = 入力 nums に対し {
+   count=0
+   n=numsの大きさ
+   i=0
+   n回くり返す{
+      x=nums[i]
+      もしxが10より大きいならば{
+         s=文字列化(x)
+         first=s[0]
+         last=s[差(sの大きさ,1)]
+
+         first_odd=0
+         もしfirstが49ならば{ first_odd=1 }
+         もしfirstが51ならば{ first_odd=1 }
+         もしfirstが53ならば{ first_odd=1 }
+         もしfirstが55ならば{ first_odd=1 }
+         もしfirstが57ならば{ first_odd=1 }
+
+         last_odd=0
+         もしlastが49ならば{ last_odd=1 }
+         もしlastが51ならば{ last_odd=1 }
+         もしlastが53ならば{ last_odd=1 }
+         もしlastが55ならば{ last_odd=1 }
+         もしlastが57ならば{ last_odd=1 }
+
+         もしfirst_oddが1ならば{
+            もしlast_oddが1ならば{
+               countを増やす
+            }
+         }
+      }
+      iを増やす
+   }
+   countが答え
+}
+--- Result: ✓ PASSED (0.16s) ---
+
+============================================================
+[148/164] 147_get_max_triples - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+get_max_triples = 入力 n に対し {
+   a=[]
+   i=1
+   n回くり返す{
+      x=和(差(積(i,i),i),1)
+      aにxを追加する
+      iを増やす
+   }
+
+   count=0
+   i=0
+   n回くり返す{
+      j=和(i,1)
+      remj=差(n,j)
+      remj回くり返す{
+         k=和(j,1)
+         remk=差(n,k)
+         remk回くり返す{
+            s=和(a[i],a[j],a[k])
+            もし剰余(s,3)が0ならば{
+               countを増やす
+            }
+            kを増やす
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+   countが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+get_max_triples = 入力 n に対し {
+   a=[]
+   i=1
+   n回くり返す{
+      x=和(差(積(i,i),i),1)
+      aにxを追加する
+      iを増やす
+   }
+
+   count=0
+   i=0
+   n回くり返す{
+      j=和(i,1)
+      remj=差(n,j)
+      remj回くり返す{
+         k=和(j,1)
+         remk=差(n,k)
+         remk回くり返す{
+            s=和(a[i],a[j],a[k])
+            もし剰余(s,3)が0ならば{
+               countを増やす
+            }
+            kを増やす
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+   countが答え
+}
+--- Result: ✓ PASSED (4.78s) ---
+
+============================================================
+[149/164] 148_bf - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+bf = 入力 planet1, planet2 に対し {
+   planets=["Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune"]
+
+   i1=差(0,1)
+   i2=差(0,1)
+
+   i=0
+   planetsの大きさ回くり返す{
+      もしplanets[i]がplanet1ならば{
+         i1=i
+      }
+      もしplanets[i]がplanet2ならば{
+         i2=i
+      }
+      iを増やす
+   }
+
+   neg1=差(0,1)
+   もしi1がneg1ならば{
+      []が答え
+   }
+   もしi2がneg1ならば{
+      []が答え
+   }
+
+   start=i1
+   end=i2
+   もしi1がi2より大きいならば{
+      start=i2
+      end=i1
+   }
+
+   result=[]
+   i=和(start,1)
+   count=差(end,start)
+   もしcountが1以下ならば{
+      resultが答え
+   }
+   差(count,1)回くり返す{
+      resultにplanets[i]を追加する
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+bf = 入力 planet1, planet2 に対し {
+   planets=["Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune"]
+
+   i1=差(0,1)
+   i2=差(0,1)
+
+   i=0
+   planetsの大きさ回くり返す{
+      もしplanets[i]がplanet1ならば{
+         i1=i
+      }
+      もしplanets[i]がplanet2ならば{
+         i2=i
+      }
+      iを増やす
+   }
+
+   neg1=差(0,1)
+   もしi1がneg1ならば{
+      []が答え
+   }
+   もしi2がneg1ならば{
+      []が答え
+   }
+
+   start=i1
+   end=i2
+   もしi1がi2より大きいならば{
+      start=i2
+      end=i1
+   }
+
+   result=[]
+   i=和(start,1)
+   count=差(end,start)
+   もしcountが1以下ならば{
+      resultが答え
+   }
+   差(count,1)回くり返す{
+      resultにplanets[i]を追加する
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✓ PASSED (0.15s) ---
+
+============================================================
+[150/164] 149_sorted_list_sum - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+sorted_list_sum=入力lstに対し{
+   filtered=[]
+   n=lstの大きさ
+   i=0
+   n回くり返す{
+      s=lst[i]
+      len=sの大きさ
+      parity=剰余(len,2)
+      もしparityが0ならば{
+         filteredにsを追加する
+      }
+      iを増やす
+   }
+
+   m=filteredの大きさ
+   m回くり返す{
+      i=0
+      limit=差(m,1)
+      limit回くり返す{
+         j=和(i,1)
+         a=filtered[i]
+         b=filtered[j]
+         la=aの大きさ
+         lb=bの大きさ
+         swap=0
+
+         もしlaがlbより大きいならば{
+            swap=1
+         }
+         もしlaがlbならば{
+            もしaがbより大きいならば{
+               swap=1
+            }
+         }
+
+         もしswapが1ならば{
+            tmp=filtered[i]
+            filtered[i]=filtered[j]
+            filtered[j]=tmp
+         }
+         iを増やす
+      }
+   }
+   filteredが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+sorted_list_sum=入力lstに対し{
+   filtered=[]
+   n=lstの大きさ
+   i=0
+   n回くり返す{
+      s=lst[i]
+      len=sの大きさ
+      parity=剰余(len,2)
+      もしparityが0ならば{
+         filteredにsを追加する
+      }
+      iを増やす
+   }
+
+   m=filteredの大きさ
+   m回くり返す{
+      i=0
+      limit=差(m,1)
+      limit回くり返す{
+         j=和(i,1)
+         a=filtered[i]
+         b=filtered[j]
+         la=aの大きさ
+         lb=bの大きさ
+         swap=0
+
+         もしlaがlbより大きいならば{
+            swap=1
+         }
+         もしlaがlbならば{
+            もしaがbより大きいならば{
+               swap=1
+            }
+         }
+
+         もしswapが1ならば{
+            tmp=filtered[i]
+            filtered[i]=filtered[j]
+            filtered[j]=tmp
+         }
+         iを増やす
+      }
+   }
+   filteredが答え
+}
+--- Result: ✓ PASSED (0.16s) ---
+
+============================================================
+[151/164] 150_x_or_y - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+x_or_y = 入力 n, x, y に対し {
+   もしnが2より小さいならば{
+      yが答え
+   }
+   d=2
+   limit=平方根(n)
+   # 2 から √n まで割り切れる数があるか調べる
+   n回くり返す{
+      もしdがlimitより大きいならば{
+         くり返しを抜ける
+      }
+      もし剰余(n,d)が0ならば{
+         yが答え
+      }
+      dを増やす
+   }
+   xが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+x_or_y = 入力 n, x, y に対し {
+   もしnが2より小さいならば{
+      yが答え
+   }
+   d=2
+   limit=平方根(n)
+   # 2 から √n まで割り切れる数があるか調べる
+   n回くり返す{
+      もしdがlimitより大きいならば{
+         くり返しを抜ける
+      }
+      もし剰余(n,d)が0ならば{
+         yが答え
+      }
+      dを増やす
+   }
+   xが答え
+}
+--- Result: ✓ PASSED (0.13s) ---
+
+============================================================
+[152/164] 151_double_the_difference - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+double_the_difference = 入力 lst に対し {
+   total=0
+   i=0
+   lstの大きさ回くり返す{
+      x=lst[i]
+      もし整数判定(x)ならば{
+         もしxが0より大きいならば{
+            もし剰余(x,2)が1ならば{
+               total=和(total,積(x,x))
+            }
+         }
+      }
+      iを増やす
+   }
+   totalが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+double_the_difference = 入力 lst に対し {
+   total=0
+   i=0
+   lstの大きさ回くり返す{
+      x=lst[i]
+      もし整数判定(x)ならば{
+         もしxが0より大きいならば{
+            もし剰余(x,2)が1ならば{
+               total=和(total,積(x,x))
+            }
+         }
+      }
+      iを増やす
+   }
+   totalが答え
+}
+--- Result: ✗ FAILED (0.08s) ---
+Error: Error: No syntax matched the given files.
+
+
+============================================================
+[153/164] 152_compare - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+compare = 入力 game, guess に対し {
+   n=gameの大きさ
+   result=[]
+   i=0
+   n回くり返す{
+      d=絶対値(差(game[i],guess[i]))
+      resultにdを追加する
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+compare = 入力 game, guess に対し {
+   n=gameの大きさ
+   result=[]
+   i=0
+   n回くり返す{
+      d=絶対値(差(game[i],guess[i]))
+      resultにdを追加する
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✓ PASSED (0.10s) ---
+
+============================================================
+[154/164] 153_Strongest_Extension - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+Strongest_Extension = 入力 class_name, extensions に対し {
+   best=extensions[0]
+   best_strength=0
+
+   i=0
+   bestの大きさ回くり返す{
+      c=best[i]
+      もしcが65以上ならば{
+         もしcが90以下ならば{
+            best_strengthを増やす
+         }
+      }
+      もしcが97以上ならば{
+         もしcが122以下ならば{
+            best_strengthを減らす
+         }
+      }
+      iを増やす
+   }
+
+   n=extensionsの大きさ
+   idx=1
+   差(n,1)回くり返す{
+      ext=extensions[idx]
+      strength=0
+      j=0
+      extの大きさ回くり返す{
+         c=ext[j]
+         もしcが65以上ならば{
+            もしcが90以下ならば{
+               strengthを増やす
+            }
+         }
+         もしcが97以上ならば{
+            もしcが122以下ならば{
+               strengthを減らす
+            }
+         }
+         jを増やす
+      }
+      もしstrengthがbest_strengthより大きいならば{
+         best=ext
+         best_strength=strength
+      }
+      idxを増やす
+   }
+
+   "{class_name}.{best}"が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+Strongest_Extension = 入力 class_name, extensions に対し {
+   best=extensions[0]
+   best_strength=0
+
+   i=0
+   bestの大きさ回くり返す{
+      c=best[i]
+      もしcが65以上ならば{
+         もしcが90以下ならば{
+            best_strengthを増やす
+         }
+      }
+      もしcが97以上ならば{
+         もしcが122以下ならば{
+            best_strengthを減らす
+         }
+      }
+      iを増やす
+   }
+
+   n=extensionsの大きさ
+   idx=1
+   差(n,1)回くり返す{
+      ext=extensions[idx]
+      strength=0
+      j=0
+      extの大きさ回くり返す{
+         c=ext[j]
+         もしcが65以上ならば{
+            もしcが90以下ならば{
+               strengthを増やす
+            }
+         }
+         もしcが97以上ならば{
+            もしcが122以下ならば{
+               strengthを減らす
+            }
+         }
+         jを増やす
+      }
+      もしstrengthがbest_strengthより大きいならば{
+         best=ext
+         best_strength=strength
+      }
+      idxを増やす
+   }
+
+   "{class_name}.{best}"が答え
+}
+--- Result: ✓ PASSED (0.18s) ---
+
+============================================================
+[155/164] 154_cycpattern_check - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+cycpattern_check=入力a,bに対し{
+   n=bの大きさ
+
+   # 空文字列は常に部分文字列
+   もしnが0ならば{
+      真が答え
+   }
+
+   # b を 2 回つないだ文字列を作る
+   # b の回転文字列はすべて (b+b) の部分文字列になる
+   doubled=""
+   i=0
+   n回くり返す{
+      doubledにb[i]を追加する
+      iを増やす
+   }
+   i=0
+   n回くり返す{
+      doubledにb[i]を追加する
+      iを増やす
+   }
+
+   limit=和(差(n,1),1)
+   i=0
+   limit回くり返す{
+      rot=""
+      j=0
+      n回くり返す{
+         rotにdoubled[和(i,j)]を追加する
+         jを増やす
+      }
+      もしfind(a,rot)が0以上ならば{
+         真が答え
+      }
+      iを増やす
+   }
+
+   偽が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+cycpattern_check=入力a,bに対し{
+   n=bの大きさ
+
+   # 空文字列は常に部分文字列
+   もしnが0ならば{
+      真が答え
+   }
+
+   # b を 2 回つないだ文字列を作る
+   # b の回転文字列はすべて (b+b) の部分文字列になる
+   doubled=""
+   i=0
+   n回くり返す{
+      doubledにb[i]を追加する
+      iを増やす
+   }
+   i=0
+   n回くり返す{
+      doubledにb[i]を追加する
+      iを増やす
+   }
+
+   limit=和(差(n,1),1)
+   i=0
+   limit回くり返す{
+      rot=""
+      j=0
+      n回くり返す{
+         rotにdoubled[和(i,j)]を追加する
+         jを増やす
+      }
+      もしfind(a,rot)が0以上ならば{
+         真が答え
+      }
+      iを増やす
+   }
+
+   偽が答え
+}
+--- Result: ✗ FAILED (0.13s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] 関数が定義されていません ❌find line 34, column 9:
+|       もしfind(a,rot)が0以上ならば{
+|         ^^^^
+
+
+============================================================
+[156/164] 155_even_odd_count - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+even_odd_count = 入力 num に対し {
+   s=文字列化(num)
+   even=0
+   odd=0
+   i=0
+   n=sの大きさ
+
+   もしnが0ならば{
+      [0,0]が答え
+   }
+
+   もしs[0]が45ならば{
+      i=1
+   }
+
+   差(n,i)回くり返す{
+      c=s[i]
+      d=差(c,48)
+      もし剰余(d,2)が0ならば{
+         evenを増やす
+      }
+      そうでなければ{
+         oddを増やす
+      }
+      iを増やす
+   }
+
+   [even,odd]が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+even_odd_count = 入力 num に対し {
+   s=文字列化(num)
+   even=0
+   odd=0
+   i=0
+   n=sの大きさ
+
+   もしnが0ならば{
+      [0,0]が答え
+   }
+
+   もしs[0]が45ならば{
+      i=1
+   }
+
+   差(n,i)回くり返す{
+      c=s[i]
+      d=差(c,48)
+      もし剰余(d,2)が0ならば{
+         evenを増やす
+      }
+      そうでなければ{
+         oddを増やす
+      }
+      iを増やす
+   }
+
+   [even,odd]が答え
+}
+--- Result: ✓ PASSED (0.12s) ---
+
+============================================================
+[157/164] 156_int_to_mini_roman - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+int_to_mini_roman = 入力 number に対し {
+   values=[1000,900,500,400,100,90,50,40,10,9,5,4,1]
+   symbols=["m","cm","d","cd","c","xc","l","xl","x","ix","v","iv","i"]
+   result=""
+   i=0
+   valuesの大きさ回くり返す{
+      v=values[i]
+      s=symbols[i]
+      もしnumberがv以上ならば{
+         q=商(number,v)
+         q回くり返す{
+            resultにsを追加する
+         }
+         number=剰余(number,v)
+      }
+      iを増やす
+   }
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+int_to_mini_roman = 入力 number に対し {
+   values=[1000,900,500,400,100,90,50,40,10,9,5,4,1]
+   symbols=["m","cm","d","cd","c","xc","l","xl","x","ix","v","iv","i"]
+   result=""
+   i=0
+   valuesの大きさ回くり返す{
+      v=values[i]
+      s=symbols[i]
+      もしnumberがv以上ならば{
+         q=商(number,v)
+         q回くり返す{
+            resultにsを追加する
+         }
+         number=剰余(number,v)
+      }
+      iを増やす
+   }
+   resultが答え
+}
+--- Result: ✓ PASSED (0.15s) ---
+
+============================================================
+[158/164] 157_right_angle_triangle - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+right_angle_triangle = 入力 a, b, c に対し {
+   ok=1
+   ab=和(a,b)
+   ac=和(a,c)
+   bc=和(b,c)
+   もしabがc以下ならば{ ok=0 }
+   もしacがb以下ならば{ ok=0 }
+   もしbcがa以下ならば{ ok=0 }
+   もしokが0ならば{
+      偽が答え
+   }
+
+   a2=積(a,a)
+   b2=積(b,b)
+   c2=積(c,c)
+
+   もし和(a2,b2)がc2ならば{
+      真が答え
+   }
+   もし和(a2,c2)がb2ならば{
+      真が答え
+   }
+   もし和(b2,c2)がa2ならば{
+      真が答え
+   }
+   偽が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+right_angle_triangle = 入力 a, b, c に対し {
+   ok=1
+   ab=和(a,b)
+   ac=和(a,c)
+   bc=和(b,c)
+   もしabがc以下ならば{ ok=0 }
+   もしacがb以下ならば{ ok=0 }
+   もしbcがa以下ならば{ ok=0 }
+   もしokが0ならば{
+      偽が答え
+   }
+
+   a2=積(a,a)
+   b2=積(b,b)
+   c2=積(c,c)
+
+   もし和(a2,b2)がc2ならば{
+      真が答え
+   }
+   もし和(a2,c2)がb2ならば{
+      真が答え
+   }
+   もし和(b2,c2)がa2ならば{
+      真が答え
+   }
+   偽が答え
+}
+--- Result: ✗ FAILED (0.14s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍right_angle_triangle(3, 4, 5) ❌true ✅1 line 32, column 1:
+| >>> right_angle_triangle(3, 4, 5)
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+[159/164] 158_find_max - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+find_max = 入力 words に対し {
+   best=words[0]
+   best_count=unique_chars(best)の大きさ
+
+   n=wordsの大きさ
+   i=1
+   差(n,1)回くり返す{
+      w=words[i]
+      count=unique_chars(w)の大きさ
+
+      もしcountがbest_countより大きいならば{
+         best=w
+         best_count=count
+      }
+      そうでなければ{
+         もしcountがbest_countならば{
+            もしwがbestより小さいならば{
+               best=w
+               best_count=count
+            }
+         }
+      }
+      iを増やす
+   }
+   bestが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+find_max = 入力 words に対し {
+   best=words[0]
+   best_count=unique_chars(best)の大きさ
+
+   n=wordsの大きさ
+   i=1
+   差(n,1)回くり返す{
+      w=words[i]
+      count=unique_chars(w)の大きさ
+
+      もしcountがbest_countより大きいならば{
+         best=w
+         best_count=count
+      }
+      そうでなければ{
+         もしcountがbest_countならば{
+            もしwがbestより小さいならば{
+               best=w
+               best_count=count
+            }
+         }
+      }
+      iを増やす
+   }
+   bestが答え
+}
+--- Result: ✗ FAILED (0.14s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] 関数が定義されていません ❌unique_chars line 5, column 15:
+|    best_count=unique_chars(best)の大きさ
+|               ^^^^^^^^^^^^
+
+
+============================================================
+[160/164] 159_eat - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+eat = 入力 number, need, remaining に対し {
+   total=number
+   left=remaining
+
+   もしremainingがneed以上ならば{
+      total=和(number,need)
+      left=差(remaining,need)
+   }
+   そうでなければ{
+      total=和(number,remaining)
+      left=0
+   }
+
+   [total,left]が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+eat = 入力 number, need, remaining に対し {
+   total=number
+   left=remaining
+
+   もしremainingがneed以上ならば{
+      total=和(number,need)
+      left=差(remaining,need)
+   }
+   そうでなければ{
+      total=和(number,remaining)
+      left=0
+   }
+
+   [total,left]が答え
+}
+--- Result: ✓ PASSED (0.12s) ---
+
+============================================================
+[161/164] 160_do_algebra - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+do_algebra = 入力 operator, operand に対し {
+   expr=文字列化(operand[0])
+   n=operatorの大きさ
+   i=0
+   n回くり返す{
+      expr="{expr}{operator[i]}{operand[和(i,1)]}"
+      iを増やす
+   }
+   整数化(expr)が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+do_algebra = 入力 operator, operand に対し {
+   expr=文字列化(operand[0])
+   n=operatorの大きさ
+   i=0
+   n回くり返す{
+      expr="{expr}{operator[i]}{operand[和(i,1)]}"
+      iを増やす
+   }
+   整数化(expr)が答え
+}
+--- Result: ✗ FAILED (0.11s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] int-conversion ❌2**3*4+5 🔥could not convert string to float: '2**3*4+5' line 11, column 4:
+|    整数化(expr)が答え
+|    ^^^^^^^^^
+
+
+============================================================
+[162/164] 161_solve - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+solve=入力sに対し{
+   result=""
+   found=0
+   n=sの大きさ
+   i=0
+   n回くり返す{
+      c=s[i]
+      nc=c
+
+      # 大文字 A..Z → 小文字
+      もしcが65以上ならば{
+         もしcが90以下ならば{
+            nc=和(c,32)
+            found=1
+         }
+      }
+
+      # 小文字 a..z → 大文字
+      もしcが97以上ならば{
+         もしcが122以下ならば{
+            nc=差(c,32)
+            found=1
+         }
+      }
+
+      resultにncを追加する
+      iを増やす
+   }
+
+   もしfoundが0ならば{
+      reverse(result)が答え
+   }
+
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+solve=入力sに対し{
+   result=""
+   found=0
+   n=sの大きさ
+   i=0
+   n回くり返す{
+      c=s[i]
+      nc=c
+
+      # 大文字 A..Z → 小文字
+      もしcが65以上ならば{
+         もしcが90以下ならば{
+            nc=和(c,32)
+            found=1
+         }
+      }
+
+      # 小文字 a..z → 大文字
+      もしcが97以上ならば{
+         もしcが122以下ならば{
+            nc=差(c,32)
+            found=1
+         }
+      }
+
+      resultにncを追加する
+      iを増やす
+   }
+
+   もしfoundが0ならば{
+      reverse(result)が答え
+   }
+
+   resultが答え
+}
+--- Result: ✗ FAILED (0.12s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] 関数が定義されていません ❌reverse line 33, column 7:
+|       reverse(result)が答え
+|       ^^^^^^^
+
+
+============================================================
+[163/164] 162_string_to_md5 - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+string_to_md5 = 入力 text に対し {
+   もしtextの大きさが0ならば{
+      値なしが答え
+   }
+   md5(text)が答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+string_to_md5 = 入力 text に対し {
+   もしtextの大きさが0ならば{
+      値なしが答え
+   }
+   md5(text)が答え
+}
+--- Result: ✗ FAILED (0.09s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] 関数が定義されていません ❌md5 line 7, column 4:
+|    md5(text)が答え
+|    ^^^
+
+
+============================================================
+[164/164] 163_generate_integers - Sample 1/1
+============================================================
+--- Generated Code ---
+```yui
+標準ライブラリを使う
+
+generate_integers = 入力 a, b に対し {
+   lo=最小値(a,b)
+   hi=最大値(a,b)
+   result=[]
+
+   # 両端の差が 2 以下なら「間にある」偶数は存在しない
+   もし差(hi,lo)が2以下ならば{
+      resultが答え
+   }
+
+   start=和(lo,1)
+   もし剰余(start,2)が1ならば{
+      startを増やす
+   }
+
+   x=start
+   limit=差(hi,1)
+   差(和(limit,1),start)回くり返す{
+      もしxがlimit以下ならば{
+         resultにxを追加する
+         x=和(x,2)
+      }
+   }
+
+   resultが答え
+}
+```
+--- Extracted Code ---
+標準ライブラリを使う
+
+generate_integers = 入力 a, b に対し {
+   lo=最小値(a,b)
+   hi=最大値(a,b)
+   result=[]
+
+   # 両端の差が 2 以下なら「間にある」偶数は存在しない
+   もし差(hi,lo)が2以下ならば{
+      resultが答え
+   }
+
+   start=和(lo,1)
+   もし剰余(start,2)が1ならば{
+      startを増やす
+   }
+
+   x=start
+   limit=差(hi,1)
+   差(和(limit,1),start)回くり返す{
+      もしxがlimit以下ならば{
+         resultにxを追加する
+         x=和(x,2)
+      }
+   }
+
+   resultが答え
+}
+--- Result: ✗ FAILED (0.12s) ---
+Error: Detected syntax: yui
+
+Error occurred:
+[構文エラー/SyntaxError] テストを失敗 🔍generate_integers(2, 10) ❌[4, 6, 8] ✅[2, 4, 6, 8] line 31, column 1:
+| >>> generate_integers(2, 10)
+| ^^^^^^^^^^^^^^^^
+
+
+============================================================
+評価結果サマリー
+============================================================
+Total:  164 問題
+Passed: 85 問題
+Failed: 79 問題
+pass@1: 51.83% (85/164)
+95% CI: [44.23%, 59.35%] (Wilson Score)

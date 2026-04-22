@@ -1,0 +1,59 @@
+標準ライブラリを使う
+
+intersection = 入力 interval1, interval2 に対し {
+   # interval1 = (start1, end1), interval2 = (start2, end2)
+   start1 = interval1[0]
+   end1 = interval1[1]
+   start2 = interval2[0]
+   end2 = interval2[1]
+   
+   # 交差部分の開始地点 = max(start1, start2)
+   # 交差部分の終了地点 = min(end1, end2)
+   cross_start = start1
+   もしstart2がstart1より大きいならば{
+      cross_start = start2
+   }
+   
+   cross_end = end1
+   もしend2がend1より小さいならば{
+      cross_end = end2
+   }
+   
+   # 交差部分が存在するか確認
+   もしcross_startがcross_endより大きいならば{
+      "NO"
+   }
+   そうでなければ{
+      # 交差部分の長さ = cross_end - cross_start + 1
+      length = 差(cross_end, cross_start)
+      length = 和(length, 1)
+      
+      # 素数判定
+      is_prime = 0
+      もしlengthが2ならば{
+         is_prime = 1
+      }
+      そうでなければ{
+         もしlengthが3ならば{
+            is_prime = 1
+         }
+         そうでなければ{
+            もしlengthが5ならば{
+               is_prime = 1
+            }
+            そうでなければ{
+               もしlengthが7ならば{
+                  is_prime = 1
+               }
+            }
+         }
+      }
+      
+      もしis_primeが1ならば{
+         "YES"
+      }
+      そうでなければ{
+         "NO"
+      }
+   }
+}

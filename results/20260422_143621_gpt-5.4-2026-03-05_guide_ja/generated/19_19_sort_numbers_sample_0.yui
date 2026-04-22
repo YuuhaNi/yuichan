@@ -1,0 +1,54 @@
+標準ライブラリを使う
+
+sort_numbers = 入力 numbers に対し {
+   words = ["", "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+   result = ""
+   i = 0
+
+   wordsの大きさ回くり返す{
+      もしiが0ならば{
+         target = ""
+      }そうでなければ{
+         target = words[i]
+      }
+
+      pieces = []
+      current = ""
+      j = 0
+      ended = 偽
+
+      numbersの大きさ回くり返す{
+         もしjがnumbersの大きさ以上ならば{
+            くり返しを抜ける
+         }
+         ch = numbers[j]
+         もしchが" "[0]ならば{
+            piecesにcurrentを追加する
+            current = ""
+         }そうでなければ{
+            currentにchを追加する
+         }
+         jを増やす
+      }
+      piecesにcurrentを追加する
+
+      k = 0
+      piecesの大きさ回くり返す{
+         もしkがpiecesの大きさ以上ならば{
+            くり返しを抜ける
+         }
+         もしpieces[k]がtargetならば{
+            もしresultが""ならば{
+               result = target
+            }そうでなければ{
+               result = "{result} {target}"
+            }
+         }
+         kを増やす
+      }
+
+      iを増やす
+   }
+
+   resultが答え
+}

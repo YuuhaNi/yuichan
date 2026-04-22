@@ -1,0 +1,28 @@
+標準ライブラリを使う
+
+prod_signs = 入力 arr に対し {
+   arrの大きさが0ならば {
+      None
+   }
+   
+   abs_sum = 0
+   sign_prod = 1
+   
+   arr の各要素を x として {
+      もし x が 0 より小さい ならば {
+         abs_sum = 和(abs_sum, 差(0, x))
+         sign_prod = 積(sign_prod, 差(0, 1))
+      }
+      そうでなければ {
+         もし x が 0 ならば {
+            sign_prod = 0
+         }
+         そうでなければ {
+            abs_sum = 和(abs_sum, x)
+            sign_prod = 積(sign_prod, 1)
+         }
+      }
+   }
+   
+   積(abs_sum, sign_prod)
+}

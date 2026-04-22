@@ -1,0 +1,40 @@
+標準ライブラリを使う
+
+encrypt = 入力 s に対し {
+   result = ""
+   sの大きさ回くり返す {
+      i = 0
+      iを増やす
+      char_code = s[i]
+      # アルファベットの位置を計算（a=0, b=1, ..., z=25）
+      もしchar_codeが97以上ならば {
+         # 小文字の場合
+         pos = 差(char_code, 97)
+         # 位置を2倍して2を加える
+         new_pos = 和(積(pos, 2), 2)
+         # 26で割った余りで循環させる
+         new_pos = 剰余(new_pos, 26)
+         # 文字コードに戻す
+         new_char_code = 和(new_pos, 97)
+         resultにnew_char_codeを追加する
+      }
+      そうでなければ {
+         もしchar_codeが65以上ならば {
+            # 大文字の場合
+            pos = 差(char_code, 65)
+            # 位置を2倍して2を加える
+            new_pos = 和(積(pos, 2), 2)
+            # 26で割った余りで循環させる
+            new_pos = 剰余(new_pos, 26)
+            # 文字コードに戻す
+            new_char_code = 和(new_pos, 65)
+            resultにnew_char_codeを追加する
+         }
+         そうでなければ {
+            # アルファベット以外はそのまま
+            resultにchar_codeを追加する
+         }
+      }
+   }
+   result が答え
+}

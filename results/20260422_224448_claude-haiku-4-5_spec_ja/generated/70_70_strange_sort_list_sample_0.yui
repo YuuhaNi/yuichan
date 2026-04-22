@@ -1,0 +1,40 @@
+標準ライブラリを使う
+
+strange_sort_list = 入力 lst に対し {
+   result = []
+   sorted_lst = lst
+   
+   # lstを昇順にソート（簡易的なバブルソート）
+   i = 0
+   lstの大きさを n とする
+   n回くり返す {
+      j = 0
+      差(n, 1)回くり返す {
+         もしsorted_lst[j]がsorted_lst[和(j, 1)]より大きいならば {
+            temp = sorted_lst[j]
+            sorted_lst[j] = sorted_lst[和(j, 1)]
+            sorted_lst[和(j, 1)] = temp
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+   
+   # ソート済みリストから交互に最小値と最大値を取る
+   left = 0
+   right = 差(sorted_lstの大きさ, 1)
+   
+   sorted_lstの大きさ回くり返す {
+      もしleftがright以下ならば {
+         resultにsorted_lst[left]を追加する
+         leftを増やす
+         
+         もしleftがright以下ならば {
+            resultにsorted_lst[right]を追加する
+            rightを減らす
+         }
+      }
+   }
+   
+   result が答え
+}

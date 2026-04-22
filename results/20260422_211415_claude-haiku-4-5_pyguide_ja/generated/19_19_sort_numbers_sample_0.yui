@@ -1,0 +1,55 @@
+標準ライブラリを使う
+
+sort_numbers = 入力 numbers に対し {
+   words = [numbers]
+   result = []
+   
+   # 単語を配列に分割
+   i = 0
+   current = ""
+   numbersの大きさ回くり返す {
+      char = numbers[i]
+      もし char が " "[0] ならば {
+         もし current が "" 以外 ならば {
+            resultに current を追加する
+            current = ""
+         }
+      } そうでなければ {
+         current = 和(current, 文字列化(char))
+      }
+      i を増やす
+   }
+   もし current が "" 以外 ならば {
+      resultに current を追加する
+   }
+   
+   # ソート用の数値マッピング
+   order = {"zero": 0, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8, "nine": 9}
+   
+   # バブルソート
+   resultの大きさ回くり返す {
+      j = 0
+      差(resultの大きさ, 1)回くり返す {
+         もし order[result[j]] が order[result[差(j, 1)]] より大きい ならば {
+            temp = result[j]
+            result[j] = result[差(j, 1)]
+            result[差(j, 1)] = temp
+         }
+         j を増やす
+      }
+   }
+   
+   # ソート済み単語を空白で結合
+   sorted_str = ""
+   i = 0
+   resultの大きさ回くり返す {
+      もし i が 0 ならば {
+         sorted_str = result[i]
+      } そうでなければ {
+         sorted_str = 和(sorted_str, " ", result[i])
+      }
+      i を増やす
+   }
+   
+   sorted_str が答え
+}

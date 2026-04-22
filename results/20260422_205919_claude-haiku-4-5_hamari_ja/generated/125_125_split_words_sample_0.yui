@@ -1,0 +1,46 @@
+標準ライブラリを使う
+
+split_words = 入力 txt に対し {
+   # 空白で分割できるか試す
+   space_list = txt を " " で分割する
+   space_count = space_list の大きさ
+   
+   もし space_count が 1 より大きいならば {
+      space_list が答え
+   }
+   
+   # カンマで分割できるか試す
+   comma_list = txt を "," で分割する
+   comma_count = comma_list の大きさ
+   
+   もし comma_count が 1 より大きいならば {
+      comma_list が答え
+   }
+   
+   # アルファベットの奇数順の小文字の数を数える
+   count = 0
+   txt の長さを len とする
+   len 回くり返す {
+      i = 反復変数
+      char = txt[i]
+      
+      # 小文字か判定し、ord値を計算
+      # a=0, b=1, c=2, ... z=25
+      # 奇数順 = インデックスが奇数 (1, 3, 5, ...)
+      もし char が "a" 以上ならば {
+         もし char が "z" 以下ならば {
+            # ord値を計算 (a=0, b=1, ...)
+            ord_val = char の文字コード
+            a_code = "a" の文字コード
+            index = 差(ord_val, a_code)
+            
+            # indexが奇数か判定
+            もし 剰余(index, 2) が 1 ならば {
+               count を増やす
+            }
+         }
+      }
+   }
+   
+   count が答え
+}

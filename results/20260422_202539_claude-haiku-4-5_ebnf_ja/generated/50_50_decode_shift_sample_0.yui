@@ -1,0 +1,20 @@
+標準ライブラリを使う
+
+decode_shift = 入力 s に対し {
+  result = ""
+  s の大きさ 回 くり返す {
+    i = 0
+    もし i が s の大きさ より小さい ならば {
+      char_code = 文字コード(s[i])
+      shifted_code = char_code を増やす
+      shifted_code を増やす
+      shifted_code を増やす
+      shifted_code を増やす
+      shifted_code を増やす
+      shifted_char = コード文字(shifted_code)
+      result の末尾 に shifted_char を追加する
+      i を増やす
+    }
+  }
+  result が 答え
+}

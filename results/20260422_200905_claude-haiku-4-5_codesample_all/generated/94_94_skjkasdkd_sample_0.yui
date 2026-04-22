@@ -1,0 +1,70 @@
+標準ライブラリを使う
+
+# 素数判定: n が素数なら真、そうでなければ偽
+is_prime = 入力 n に対し {
+   もし n が 2 より小さい ならば {
+      偽が答え
+   }
+   もし n が 2 ならば {
+      真が答え
+   }
+   # 2 で割り切れるなら素数ではない
+   r2 = 剰余(n, 2)
+   もし r2 が 0 ならば {
+      偽が答え
+   }
+   # 3 以上の奇数で割り切れるかを調べる
+   # √n まで調べれば十分
+   i = 3
+   limit = 整数化(平方根(小数化(n)))
+   limit = 和(limit, 1)
+   limit 回 くり返す {
+      もし i が limit より大きい ならば {
+         くり返しを抜ける
+      }
+      ri = 剰余(n, i)
+      もし ri が 0 ならば {
+         偽が答え
+      }
+      i = 和(i, 2)
+   }
+   真が答え
+}
+
+# 最大の素数を見つける
+find_max_prime = 入力 lst に対し {
+   max_prime = 差(0, 1)
+   n = lst の大きさ
+   i = 0
+   n 回 くり返す {
+      x = lst[i]
+      もし is_prime(x) が 真 ならば {
+         もし x が max_prime より大きい ならば {
+            max_prime = x
+         }
+      }
+      i を増やす
+   }
+   max_prime が答え
+}
+
+# 桁数の和を計算
+digit_sum = 入力 n に対し {
+   s = 文字列化(n)
+   total = 0
+   i = 0
+   s の大きさ 回 くり返す {
+      c = s[i]
+      # 文字コード '0' = 48, '1' = 49, ..., '9' = 57
+      digit = 差(c, 48)
+      total = 和(total, digit)
+      i を増やす
+   }
+   total が答え
+}
+
+# メイン関数
+answer = 入力 lst に対し {
+   max_prime = find_max_prime(lst)
+   digit_sum(max_prime) が答え
+}

@@ -1,0 +1,64 @@
+標準ライブラリを使う
+
+max_fill = 入力 grid, capacity に対し {
+   total_water = 0
+   rows = grid の大きさ
+   i = 0
+   rows 回くり返す {
+      row = grid[i]
+      cols = row の大きさ
+      j = 0
+      cols 回くり返す {
+         total_water = 和(total_water, row[j])
+         j を増やす
+      }
+      i を増やす
+   }
+   
+   # 天井関数: (total_water + capacity - 1) / capacity
+   buckets = 商(和(total_water, 差(capacity, 1)), capacity)
+   buckets が答え
+}
+標準ライブラリを使う
+
+max_fill = 入力 grid, capacity に対し {
+   total_buckets = 0
+   rows = grid の大きさ
+   i = 0
+   rows 回くり返す {
+      row = grid[i]
+      water_in_well = 0
+      cols = row の大きさ
+      j = 0
+      cols 回くり返す {
+         water_in_well = 和(water_in_well, row[j])
+         j を増やす
+      }
+      # この井戸に必要なバケツ数（天井関数）
+      buckets_needed = 商(和(水_in_well, 差(capacity, 1)), capacity)
+      total_buckets = 和(total_buckets, buckets_needed)
+      i を増やす
+   }
+   total_buckets が答え
+}
+標準ライブラリを使う
+
+max_fill = 入力 grid, capacity に対し {
+   total_buckets = 0
+   rows = grid の大きさ
+   i = 0
+   rows 回くり返す {
+      row = grid[i]
+      water = 0
+      cols = row の大きさ
+      j = 0
+      cols 回くり返す {
+         water = 和(water, row[j])
+         j を増やす
+      }
+      buckets = 商(和(water, 差(capacity, 1)), capacity)
+      total_buckets = 和(total_buckets, buckets)
+      i を増やす
+   }
+   total_buckets が答え
+}

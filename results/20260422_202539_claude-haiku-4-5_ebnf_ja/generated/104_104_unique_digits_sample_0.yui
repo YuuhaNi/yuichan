@@ -1,0 +1,22 @@
+標準ライブラリを使う
+
+unique_digits = 入力 x に対し {
+    result = []
+    x の大きさ 回 くり返す {
+        i = 0
+        current = x[i]
+        has_even_digit = 偽
+        current 回 くり返す {
+            digit = 剰余(current, 10)
+            もし 剰余(digit, 2) が 0 ならば {
+                has_even_digit = 真
+            }
+            current = 商(current, 10)
+        }
+        もし has_even_digit が 偽 ならば {
+            result に current を追加する
+        }
+        i を増やす
+    }
+    result が 答え
+}

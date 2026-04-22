@@ -1,0 +1,24 @@
+標準ライブラリを使う
+
+total_match = 入力 lst1, lst2 に対し {
+  count1 = 0
+  i = 0
+  lst1の大きさ回くり返す {
+    count1 = 和(count1, lst1[i]の大きさ)
+    i = を増やす
+  }
+  
+  count2 = 0
+  j = 0
+  lst2の大きさ回くり返す {
+    count2 = 和(count2, lst2[j]の大きさ)
+    j = を増やす
+  }
+  
+  もし count1 が count2 より小さい ならば {
+    lst1 が 答え
+  }
+  そうでなければ {
+    lst2 が 答え
+  }
+}

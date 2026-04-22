@@ -1,0 +1,12 @@
+標準ライブラリを使う
+
+below_zero = 入力 operations に対し {
+    残高 = 0
+    繰り返す operations の各要素 operation について {
+        残高 = 和(残高, operation)
+        もし 残高 <= 0 ならば {
+            戻す 真
+        }
+    }
+    戻す 偽
+}

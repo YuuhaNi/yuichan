@@ -1,0 +1,14 @@
+標準ライブラリを使う
+
+all_prefixes = 入力 string に対し {
+   result=[]
+   current=""
+   n=stringの大きさ
+   i=0
+   n回くり返す{
+      current="{current}{string[i]}"
+      resultにcurrentを追加する
+      iを増やす
+   }
+   resultが答え
+}

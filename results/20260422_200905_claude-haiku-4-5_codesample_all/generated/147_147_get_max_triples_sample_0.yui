@@ -1,0 +1,37 @@
+標準ライブラリを使う
+
+get_max_triples = 入力 n に対し {
+   # 配列 a を作成: a[i] = i*i - i + 1 (i は 1 から n)
+   a = []
+   i = 1
+   n回くり返す {
+      val = 差(積(i, i), i)
+      val = 和(val, 1)
+      a に val を追加する
+      i を増やす
+   }
+
+   # 三つ組を数える
+   count = 0
+   i = 0
+   n回くり返す {
+      j = 和(i, 1)
+      差(n, 1)回くり返す {
+         k = 和(j, 1)
+         差(n, 1)回くり返す {
+            # a[i] + a[j] + a[k] が 3 の倍数かチェック
+            sum = 和(a[i], a[j])
+            sum = 和(sum, a[k])
+            remainder = 剰余(sum, 3)
+            もし remainder が 0 ならば {
+               count を増やす
+            }
+            k を増やす
+         }
+         j を増やす
+      }
+      i を増やす
+   }
+
+   count が答え
+}

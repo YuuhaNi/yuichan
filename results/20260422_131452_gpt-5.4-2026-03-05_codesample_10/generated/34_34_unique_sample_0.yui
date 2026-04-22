@@ -1,0 +1,16 @@
+標準ライブラリを使う
+
+unique = 入力 l に対し {
+   result=[]
+   n=lの大きさ
+   i=0
+   n回くり返す{
+      x=l[i]
+      もしxがresultのいずれでもないならば{
+         resultにxを追加する
+      }
+      iを増やす
+   }
+   resultをソートする
+   resultが答え
+}

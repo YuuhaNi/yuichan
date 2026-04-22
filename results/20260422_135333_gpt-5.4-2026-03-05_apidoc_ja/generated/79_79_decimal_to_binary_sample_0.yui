@@ -1,0 +1,18 @@
+標準ライブラリを使う
+
+decimal_to_binary = 入力 decimal に対し {
+  もし decimal が 0 なら {
+    戻る "db0db"
+  }
+
+  result = ""
+  n = decimal
+
+  その間 n が 0 より大きい {
+    bit = 剰余(n, 2)
+    result = 文字列化(bit) + result
+    n = 商(n, 2)
+  }
+
+  戻る "db" + result + "db"
+}

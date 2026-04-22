@@ -1,0 +1,39 @@
+標準ライブラリを使う
+
+circular_shift = 入力 x, shift に対し {
+   s = 文字列化(x)
+   n = sの大きさ
+   
+   もしshiftがnより大きいならば{
+      # 桁を反転して返す
+      result = ""
+      n回くり返す{
+         nを減らす
+         resultにs[n]を追加する
+      }
+      resultが答え
+   }
+   
+   # shift 分だけ右にシフト
+   shifted_index = 差(n, 剰余(shift, n))
+   result = ""
+   
+   # shifted_index から末尾まで
+   i = shifted_index
+   n回くり返す{
+      もしiがnならば{
+         くり返しを抜ける
+      }
+      resultにs[i]を追加する
+      iを増やす
+   }
+   
+   # 先頭から shifted_index - 1 まで
+   i = 0
+   shifted_index回くり返す{
+      resultにs[i]を追加する
+      iを増やす
+   }
+   
+   resultが答え
+}

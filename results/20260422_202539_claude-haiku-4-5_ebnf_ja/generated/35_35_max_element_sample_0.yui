@@ -1,0 +1,15 @@
+標準ライブラリを使う
+
+max_element = 入力 l に対し {
+  max_val = l[0]
+  1 回 {
+    i = 0
+    長さ(l) 回 {
+      もし l[i] が max_val より大きい ならば {
+        max_val = l[i]
+      }
+      i を増やす
+    }
+  }
+  max_val が 答え
+}

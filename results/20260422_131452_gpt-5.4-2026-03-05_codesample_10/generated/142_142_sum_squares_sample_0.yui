@@ -1,0 +1,23 @@
+標準ライブラリを使う
+
+sum_squares=入力lstに対し{
+   total=0
+   n=lstの大きさ
+   i=0
+   n回くり返す{
+      x=lst[i]
+      もし剰余(i,3)が0ならば{
+         total=和(total,積(x,x))
+      }
+      そうでなければ{
+         もし剰余(i,4)が0ならば{
+            total=和(total,積(積(x,x),x))
+         }
+         そうでなければ{
+            total=和(total,x)
+         }
+      }
+      iを増やす
+   }
+   totalが答え
+}

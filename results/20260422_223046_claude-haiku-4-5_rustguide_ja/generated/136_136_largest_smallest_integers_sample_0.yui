@@ -1,0 +1,36 @@
+標準ライブラリを使う
+
+largest_smallest_integers = 入力 lst に対し {
+   largest_negative = 値なし
+   smallest_positive = 値なし
+   
+   lstの大きさ回くり返す {
+      i = 0
+      lstの大きさ回くり返す {
+         num = lst[i]
+         
+         もし num が 0 より小さいならば {
+            もし largest_negative が 値なし ならば {
+               largest_negative = num
+            } そうでなければ {
+               もし num が largest_negative より大きいならば {
+                  largest_negative = num
+               }
+            }
+         }
+         
+         もし num が 0 より大きいならば {
+            もし smallest_positive が 値なし ならば {
+               smallest_positive = num
+            } そうでなければ {
+               もし num が smallest_positive より小さいならば {
+                  smallest_positive = num
+               }
+            }
+         }
+         
+         iを増やす
+      }
+      くり返しを抜ける
+   }
+}

@@ -1,0 +1,18 @@
+標準ライブラリを使う
+
+is_bored = 入力 S に対し {
+  count = 0
+  sentences = S を分割する("。|？|！|\\.|\\?|!")
+  sentences の大きさ 回 くり返す {
+    i = 0
+    sentence = sentences[i]
+    trimmed = sentence を削除する(" ")
+    もし trimmed が "I " より小さい ならば {
+      もし trimmed の最初(2) が "I " ならば {
+        count を増やす
+      }
+    }
+    i を増やす
+  }
+  count が 答え
+}

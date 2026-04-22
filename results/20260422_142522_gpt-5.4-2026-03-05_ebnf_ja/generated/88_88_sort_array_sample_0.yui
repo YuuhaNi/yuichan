@@ -1,0 +1,31 @@
+標準ライブラリを使う
+
+sort_array = 入力 array に対し {
+    もし arrayの大きさ が 0 ならば {
+        [] が 答え
+    }
+
+    copied = []
+    i = 0
+    arrayの大きさ 回 くり返す {
+        copiedにarray[i]を追加する
+        iを増やす
+    }
+
+    first = copied[0]
+    last = copied[copiedの大きさ]
+    last_index = copiedの大きさ
+    last_indexを減らす
+    last = copied[last_index]
+
+    sum = 和(first, last)
+    mod = 剰余(sum, 2)
+
+    もし mod が 1 ならば {
+        sorted = 昇順に並べる(copied)
+        sorted が 答え
+    } そうでなければ {
+        sorted = 降順に並べる(copied)
+        sorted が 答え
+    }
+}

@@ -1,0 +1,120 @@
+標準ライブラリを使う
+
+minPath = 入力 grid, k に対し {
+   n = gridの大きさ
+
+   pos = {}
+   r = 0
+   n回くり返す{
+      c = 0
+      n回くり返す{
+         v = grid[r][c]
+         pos[文字列化(v)] = [r, c]
+         cを増やす
+      }
+      rを増やす
+   }
+
+   cur = []
+   nxt = []
+   cells = 積(n, n)
+
+   best = 1
+   i = 2
+   cells回くり返す{
+      もしiがcellsより大きいならば{
+         くり返しを抜ける
+      }
+
+      a = pos[文字列化(best)]
+      b = pos[文字列化(i)]
+      dist = 和(絶対値(差(a[0], b[0])), 絶対値(差(a[1], b[1])))
+
+      need = 差(k, 1)
+      もしdistがneed以下ならば{
+         best = i
+         くり返しを抜ける
+      }
+      iを増やす
+   }
+
+   curにbestを追加する
+
+   step = 1
+   差(k, 1)回くり返す{
+      now = cur[差(step, 1)]
+      p = pos[文字列化(now)]
+      r = p[0]
+      c = p[1]
+
+      cand = cells
+      found = 偽
+
+      もしrが0より大きいならば{
+         v = grid[差(r,1)][c]
+         rem = 差(k, step, 1)
+         q = pos[文字列化(best)]
+         dist = 和(絶対値(差(差(r,1), q[0])), 絶対値(差(c, q[1])))
+         もしdistがrem以下ならば{
+            cand = v
+            found = 真
+         }
+      }
+
+      もし和(r,1)がnより小さいならば{
+         v = grid[和(r,1)][c]
+         rem = 差(k, step, 1)
+         q = pos[文字列化(best)]
+         dist = 和(絶対値(差(和(r,1), q[0])), 絶対値(差(c, q[1])))
+         もしdistがrem以下ならば{
+            もしfoundが偽ならば{
+               cand = v
+               found = 真
+            }そうでなければ{
+               もしvがcandより小さいならば{
+                  cand = v
+               }
+            }
+         }
+      }
+
+      もしcが0より大きいならば{
+         v = grid[r][差(c,1)]
+         rem = 差(k, step, 1)
+         q = pos[文字列化(best)]
+         dist = 和(絶対値(差(r, q[0])), 絶対値(差(差(c,1), q[1])))
+         もしdistがrem以下ならば{
+            もしfoundが偽ならば{
+               cand = v
+               found = 真
+            }そうでなければ{
+               もしvがcandより小さいならば{
+                  cand = v
+               }
+            }
+         }
+      }
+
+      もし和(c,1)がnより小さいならば{
+         v = grid[r][和(c,1)]
+         rem = 差(k, step, 1)
+         q = pos[文字列化(best)]
+         dist = 和(絶対値(差(r, q[0])), 絶対値(差(和(c,1), q[1])))
+         もしdistがrem以下ならば{
+            もしfoundが偽ならば{
+               cand = v
+               found = 真
+            }そうでなければ{
+               もしvがcandより小さいならば{
+                  cand = v
+               }
+            }
+         }
+      }
+
+      curにcandを追加する
+      stepを増やす
+   }
+
+   curが答え
+}

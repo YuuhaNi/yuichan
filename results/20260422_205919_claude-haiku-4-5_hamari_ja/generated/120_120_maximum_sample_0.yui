@@ -1,0 +1,20 @@
+標準ライブラリを使う
+
+maximum = 入力 arr, k に対し {
+   # arr をソート
+   sorted_arr = arr をソートする
+   
+   # 結果を格納する配列
+   result = []
+   
+   # 大きい方から k 個を取得するため、末尾から k 個を逆順で追加
+   i = 0
+   k回くり返す {
+      idx = 差(arrの大きさ, 和(i, 1))
+      resultに sorted_arr[idx] を追加する
+      iを増やす
+   }
+   
+   # 結果を昇順でソート
+   result をソートする
+}

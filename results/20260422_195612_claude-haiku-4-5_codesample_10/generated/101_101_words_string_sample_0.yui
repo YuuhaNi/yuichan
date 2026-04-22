@@ -1,0 +1,33 @@
+標準ライブラリを使う
+
+words_string = 入力 s に対し {
+   result = []
+   current = ""
+   n = sの大きさ
+   i = 0
+   n回くり返す {
+      c = s[i]
+      もし c が "," ならば {
+         もし current が "" でないならば {
+            result に current を追加する
+            current = ""
+         }
+      }
+      そうでなければ {
+         もし c が " " ならば {
+            もし current が "" でないならば {
+               result に current を追加する
+               current = ""
+            }
+         }
+         そうでなければ {
+            current に c を追加する
+         }
+      }
+      i を増やす
+   }
+   もし current が "" でないならば {
+      result に current を追加する
+   }
+   result が答え
+}

@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+rolling_max = 入力 numbers に対し {
+   result = []
+   current_max = 値なし
+   i = 0
+   numbersの大きさ回くり返す{
+      もし current_max が 値なし ならば{
+         current_max = numbers[i]
+      }そうでなければ{
+         もし numbers[i] が current_max より大きい ならば{
+            current_max = numbers[i]
+         }
+      }
+      result に current_max を追加する
+      i を増やす
+   }
+   result が答え
+}

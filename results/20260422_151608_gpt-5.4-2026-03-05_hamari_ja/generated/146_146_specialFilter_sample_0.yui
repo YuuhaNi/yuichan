@@ -1,0 +1,43 @@
+標準ライブラリを使う
+
+specialFilter = 入力 nums に対し {
+   count=0
+   i=0
+   n=numsの大きさ
+
+   n回くり返す{
+      x=nums[i]
+
+      もしxが10より大きいならば{
+         last=剰余(x,10)
+         first=x
+
+         くり返す{
+            もしfirstが10より小さいならば{
+               くり返しを抜ける
+            }
+            first=商(first,10)
+         }
+
+         lastOdd=0
+         firstOdd=0
+
+         もしlastが1のいずれか[1,3,5,7,9]ならば{
+            lastOdd=1
+         }
+         もしfirstが1のいずれか[1,3,5,7,9]ならば{
+            firstOdd=1
+         }
+
+         もしlastOddが1ならば{
+            もしfirstOddが1ならば{
+               countを増やす
+            }
+         }
+      }
+
+      iを増やす
+   }
+
+   countが答え
+}

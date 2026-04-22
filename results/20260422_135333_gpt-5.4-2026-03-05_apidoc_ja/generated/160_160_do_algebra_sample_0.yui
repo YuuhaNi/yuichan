@@ -1,0 +1,33 @@
+標準ライブラリを使う
+
+do_algebra = 入力 operator, operand に対し {
+    result = operand[0]
+    i = 0
+
+    繰り返し i < 配列化(operator).長さ の間 {
+        op = operator[i]
+        value = operand[差(i, -1)]
+
+        もし op == "+" なら {
+            result = 和(result, value)
+        } そうでなく もし op == "-" なら {
+            result = 差(result, value)
+        } そうでなく もし op == "*" なら {
+            result = 積(result, value)
+        } そうでなく もし op == "//" なら {
+            result = 商(result, value)
+        } そうでなく もし op == "**" なら {
+            power = 1
+            j = 0
+            繰り返し j < value の間 {
+                power = 積(power, result)
+                j = 和(j, 1)
+            }
+            result = power
+        }
+
+        i = 和(i, 1)
+    }
+
+    result
+}

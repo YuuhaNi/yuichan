@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+is_palindrome = 入力 string に対し {
+   n = stringの大きさ
+   i = 0
+   result = 真
+   
+   商(n, 2)回くり返す {
+      もし string[i] が string[差(差(n, 1), i)] 以外ならば {
+         result = 偽
+         くり返しを抜ける
+      }
+      iを増やす
+   }
+   
+   resultが答え
+}

@@ -1,0 +1,11 @@
+標準ライブラリを使う
+
+string_sequence = 入力 n に対し {
+  result = "0"
+  i = 1
+  反復 i <= n の間 {
+    result = result + " " + 文字列化(i)
+    i = 和(i, 1)
+  }
+  result
+}

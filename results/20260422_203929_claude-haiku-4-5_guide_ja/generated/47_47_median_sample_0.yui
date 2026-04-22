@@ -1,0 +1,72 @@
+標準ライブラリを使う
+
+median = 入力 l に対し {
+   # リストをソート（バブルソート）
+   sorted = []
+   i = 0
+   lの大きさ回くり返す{
+      sortedにl[i]を追加する
+      iを増やす
+   }
+   
+   # バブルソート
+   i = 0
+   sortedの大きさ回くり返す{
+      j = 0
+      差(sortedの大きさ, 1)回くり返す{
+         もしsorted[j]がsorted[和(j,1)]より大きいならば{
+            temp = sorted[j]
+            sorted[j] = sorted[和(j,1)]
+            sorted[和(j,1)] = temp
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+   
+   # 中央値を計算
+   n = sortedの大きさ
+   mid = 商(n, 2)
+   
+   もし剰余(n, 2)が0ならば{
+      # 要素数が偶数の場合：中央の2つの平均
+      小数化(和(sorted[差(mid,1)], sorted[mid]))を2で割った値が答え
+   }そうでなければ{
+      # 要素数が奇数の場合：中央の要素
+      sorted[mid]が答え
+   }
+}
+標準ライブラリを使う
+
+median = 入力 l に対し {
+   # リストをソート（バブルソート）
+   sorted = []
+   i = 0
+   lの大きさ回くり返す{
+      sortedにl[i]を追加する
+      iを増やす
+   }
+   
+   i = 0
+   sortedの大きさ回くり返す{
+      j = 0
+      差(sortedの大きさ, 1)回くり返す{
+         もしsorted[j]がsorted[和(j,1)]より大きいならば{
+            temp = sorted[j]
+            sorted[j] = sorted[和(j,1)]
+            sorted[和(j,1)] = temp
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+   
+   n = sortedの大きさ
+   mid = 商(n, 2)
+   
+   もし剰余(n, 2)が0ならば{
+      商(和(sorted[差(mid,1)], sorted[mid]), 2.0)が答え
+   }そうでなければ{
+      sorted[mid]が答え
+   }
+}

@@ -1,0 +1,23 @@
+標準ライブラリを使う
+
+add = 入力 lst に対し {
+   total = 0
+   i = 0
+   n = lst の大きさ
+   n 回くり返す {
+      # i が奇数のインデックスかを調べる
+      parity = 剰余(i, 2)
+      もし parity が 1 ならば {
+         # i は奇数インデックス
+         x = lst[i]
+         # x が偶数かを調べる
+         remainder = 剰余(x, 2)
+         もし remainder が 0 ならば {
+            # x は偶数
+            total = 和(total, x)
+         }
+      }
+      i を増やす
+   }
+   total が答え
+}

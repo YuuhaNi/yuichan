@@ -1,0 +1,20 @@
+標準ライブラリを使う
+
+factorize = 入力 n に対し {
+  factors = []
+  divisor = 2
+  
+  繰り返す (divisor * divisor <= n) {
+    繰り返す (剰余(n, divisor) == 0) {
+      factors を factors + [divisor] に更新
+      n を 商(n, divisor) に更新
+    }
+    divisor を divisor + 1 に更新
+  }
+  
+  もし (n > 1) なら {
+    factors を factors + [n] に更新
+  }
+  
+  factors を返す
+}

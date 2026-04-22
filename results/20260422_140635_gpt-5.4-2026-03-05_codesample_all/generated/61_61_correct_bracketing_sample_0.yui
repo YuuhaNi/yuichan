@@ -1,0 +1,30 @@
+標準ライブラリを使う
+
+correct_bracketing = 入力 brackets に対し {
+   balance=0
+   i=0
+   n=bracketsの大きさ
+   ok=1
+
+   n回くり返す{
+      c=brackets[i]
+      もしcが40ならば{
+         balanceを増やす
+      }
+      もしcが41ならば{
+         balanceを減らす
+      }
+      もしbalanceが0より小さいならば{
+         ok=0
+      }
+      iを増やす
+   }
+
+   もしokが0ならば{
+      偽が答え
+   }
+   もしbalanceが0ならば{
+      真が答え
+   }
+   偽が答え
+}

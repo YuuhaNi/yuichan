@@ -1,0 +1,14 @@
+標準ライブラリを使う
+
+largest_divisor = 入力 n に対し {
+   result = 1
+   i = 2
+   n回くり返す {
+      もし n が i で割り切れるならば {
+         result = 商(n, i)
+         くり返しを抜ける
+      }
+      i を増やす
+   }
+   result が答え
+}

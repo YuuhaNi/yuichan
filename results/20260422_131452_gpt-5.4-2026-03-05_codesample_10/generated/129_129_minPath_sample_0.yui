@@ -1,0 +1,123 @@
+標準ライブラリを使う
+
+minPath = 入力 grid, k に対し {
+   n=gridの大きさ
+
+   # 値 -> [行,列] の位置表
+   pos=[]
+   i=0
+   n回くり返す{
+      j=0
+      n回くり返す{
+         v=grid[i][j]
+         pos[v]=[i,j]
+         jを増やす
+      }
+      iを増やす
+   }
+
+   # ある値 start から長さ k の最小辞書順パスを作る
+   build=入力startに対し{
+      path=[start]
+      cur=start
+      rem=差(k,1)
+
+      rem回くり返す{
+         p=pos[cur]
+         r=p[0]
+         c=p[1]
+
+         best=0
+         found=偽
+
+         # 上
+         もしrが0より大きいならば{
+            nv=grid[差(r,1)][c]
+            best=nv
+            found=真
+         }
+
+         # 下
+         もしrが差(n,1)より小さいならば{
+            nv=grid[和(r,1)][c]
+            もしfoundが偽ならば{
+               best=nv
+               found=真
+            }
+            そうでなければ{
+               もしnvがbestより小さいならば{
+                  best=nv
+               }
+            }
+         }
+
+         # 左
+         もしcが0より大きいならば{
+            nv=grid[r][差(c,1)]
+            もしfoundが偽ならば{
+               best=nv
+               found=真
+            }
+            そうでなければ{
+               もしnvがbestより小さいならば{
+                  best=nv
+               }
+            }
+         }
+
+         # 右
+         もしcが差(n,1)より小さいならば{
+            nv=grid[r][和(c,1)]
+            もしfoundが偽ならば{
+               best=nv
+               found=真
+            }
+            そうでなければ{
+               もしnvがbestより小さいならば{
+                  best=nv
+               }
+            }
+         }
+
+         pathにbestを追加する
+         cur=best
+      }
+
+      pathが答え
+   }
+
+   # 配列 a,b の辞書順比較: a < b なら真
+   lexLess=入力a,bに対し{
+      i=0
+      k回くり返す{
+         もしa[i]がb[i]より小さいならば{
+            真が答え
+         }
+         もしa[i]がb[i]より大きいならば{
+            偽が答え
+         }
+         iを増やす
+      }
+      偽が答え
+   }
+
+   total=積(n,n)
+   ans=値なし
+   started=偽
+   v=1
+   total回くり返す{
+      cand=build(v)
+      もしstartedが偽ならば{
+         ans=cand
+         started=真
+      }
+      そうでなければ{
+         もしlexLess(cand,ans)ならば{
+            ans=cand
+         }
+      }
+      vを増やす
+   }
+
+   ansが答え
+}

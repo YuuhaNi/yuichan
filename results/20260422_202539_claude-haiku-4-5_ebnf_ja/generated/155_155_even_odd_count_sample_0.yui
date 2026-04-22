@@ -1,0 +1,48 @@
+標準ライブラリを使う
+
+even_odd_count = 入力 num に対し {
+    num_str = 絶対値(num)を文字列に変換する
+    even_count = 0
+    odd_count = 0
+    num_str の大きさ回 くり返す {
+        digit = 数値に変換(num_str[くり返し変数])
+        もし digit が 0 ならば {
+            even_count を増やす
+        } そうでなければ {
+            もし digit が 1 ならば {
+                odd_count を増やす
+            } そうでなければ {
+                もし digit が 2 ならば {
+                    even_count を増やす
+                } そうでなければ {
+                    もし digit が 3 ならば {
+                        odd_count を増やす
+                    } そうでなければ {
+                        もし digit が 4 ならば {
+                            even_count を増やす
+                        } そうでなければ {
+                            もし digit が 5 ならば {
+                                odd_count を増やす
+                            } そうでなければ {
+                                もし digit が 6 ならば {
+                                    even_count を増やす
+                                } そうでなければ {
+                                    もし digit が 7 ならば {
+                                        odd_count を増やす
+                                    } そうでなければ {
+                                        もし digit が 8 ならば {
+                                            even_count を増やす
+                                        } そうでなければ {
+                                            odd_count を増やす
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    [even_count, odd_count] が 答え
+}

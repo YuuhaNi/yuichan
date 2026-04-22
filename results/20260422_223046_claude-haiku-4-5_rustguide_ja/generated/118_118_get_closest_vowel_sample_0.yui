@@ -1,0 +1,45 @@
+標準ライブラリを使う
+
+get_closest_vowel = 入力 word に対し {
+   vowels = "aeiouAEIOU"
+   n = wordの大きさ
+   
+   # 右から左へ走査
+   i = 差(n, 2)
+   
+   # iが1以上の間ループ（最初と最後は除外）
+   差(n, 1)回くり返す {
+      もしiが0より小さいならば {
+         くり返しを抜ける
+      }
+      
+      # 現在の文字が母音か確認
+      current_char = word[i]
+      もしcurrent_charがvowelsのいずれかならば {
+         # 左右の文字が子音か確認
+         left_char = word[差(i, 1)]
+         right_char = word[和(i, 1)]
+         
+         left_is_consonant = 0
+         right_is_consonant = 0
+         
+         もしleft_charがvowelsのいずれでもないならば {
+            left_is_consonantを増やす
+         }
+         もしright_charがvowelsのいずれでもないならば {
+            right_is_consonantを増やす
+         }
+         
+         # 両側が子音なら、その文字を返す
+         もしleft_is_consonantが1ならば {
+            もしright_is_consonantが1ならば {
+               文字列化(current_char)が答え
+            }
+         }
+      }
+      
+      iを減らす
+   }
+   
+   ""が答え
+}

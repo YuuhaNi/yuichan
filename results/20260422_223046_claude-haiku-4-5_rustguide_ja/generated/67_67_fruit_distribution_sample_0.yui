@@ -1,0 +1,103 @@
+標準ライブラリを使う
+
+fruit_distribution = 入力 s, n に対し {
+   # 文字列から数字を抽出する
+   # "5 apples and 6 oranges" -> apples の前の数字と oranges の前の数字を取得
+   
+   # スペースで分割して最初の数字を取得
+   apples = 整数化(s[0])
+   
+   # "and" の後の数字を取得するため、文字列を探索
+   i = 0
+   sの大きさ回くり返す {
+      もしs[i]が"a"ならば {
+         もしs[差(i,1)]が" "ならば {
+            oranges = 整数化(s[差(i,1)])
+            くり返しを抜ける
+         }
+      }
+      iを増やす
+   }
+   
+   # より簡潔な方法：文字列から数字だけを抽出
+   # "5 apples and 6 oranges" の場合、スペース区切りで分割
+   parts = s
+   
+   # 最初のスペースまでが最初の数字
+   apples_str = ""
+   i = 0
+   parts の大きさ回くり返す {
+      もしparts[i]が" "ならば {
+         くり返しを抜ける
+      }
+      apples_str に parts[i] を追加する
+      iを増やす
+   }
+   apples = 整数化(apples_str)
+   
+   # "and " の後の数字を取得
+   oranges_str = ""
+   found_and = 偽
+   i = 0
+   parts の大きさ回くり返す {
+      もしfound_and が真ならば {
+         もしparts[i]が" "ならば {
+            くり返しを抜ける
+         }
+         もしparts[i]が数字ならば {
+            oranges_str に parts[i] を追加する
+         }
+      }
+      もしparts[i]が"d"ならば {
+         found_and = 真
+      }
+      iを増やす
+   }
+   oranges = 整数化(oranges_str)
+   
+   # マンゴーの数 = 総数 - リンゴ - オレンジ
+   mangoes = 差(差(n, apples), oranges)
+   mangoes が答え
+}
+標準ライブラリを使う
+
+fruit_distribution = 入力 s, n に対し {
+   # 文字列から最初の数字を抽出
+   apples_str = ""
+   i = 0
+   s の大きさ回くり返す {
+      もし s[i] が " " ならば {
+         くり返しを抜ける
+      }
+      apples_str に s[i] を追加する
+      iを増やす
+   }
+   apples = 整数化(apples_str)
+   
+   # "and " の後の数字を抽出
+   oranges_str = ""
+   found_and = 偽
+   i = 0
+   s の大きさ回くり返す {
+      もし s[i] が "d" ならば {
+         found_and = 真
+      }
+      もし found_and が真 ならば {
+         もし s[i] が " " ならば {
+            もし oranges_str が "" 以外 ならば {
+               くり返しを抜ける
+            }
+         }
+         もし s[i] が " " 以外 ならば {
+            もし s[i] が "d" 以外 ならば {
+               oranges_str に s[i] を追加する
+            }
+         }
+      }
+      iを増やす
+   }
+   oranges = 整数化(oranges_str)
+   
+   # マンゴーの数を計算
+   差(差(n, apples), oranges) が答え
+}

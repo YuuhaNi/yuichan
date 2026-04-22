@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+string_xor = 入力 a, b に対し {
+  n=aの長さ
+  i=0
+  result=""
+  n回くり返す{
+    ca=a[i]
+    cb=b[i]
+    もしcaがcbならば{
+      result=連結(result,"0")
+    }
+    そうでなければ{
+      result=連結(result,"1")
+    }
+    iを増やす
+  }
+  resultが答え
+}

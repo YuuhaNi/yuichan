@@ -1,0 +1,53 @@
+標準ライブラリを使う
+
+common = 入力 l1, l2 に対し {
+   result = []
+   i = 0
+
+   l1の大きさ回くり返す{
+      x = l1[i]
+      found = 偽
+      j = 0
+
+      l2の大きさ回くり返す{
+         もしl2[j]がxならば{
+            found = 真
+            くり返しを抜ける
+         }
+         jを増やす
+      }
+
+      もしfoundが真ならば{
+         exists = 偽
+         k = 0
+         resultの大きさ回くり返す{
+            もしresult[k]がxならば{
+               exists = 真
+               くり返しを抜ける
+            }
+            kを増やす
+         }
+         もしexistsが偽ならば{
+            resultにxを追加する
+         }
+      }
+      iを増やす
+   }
+
+   n = resultの大きさ
+   n回くり返す{
+      a = 0
+      差(n,1)回くり返す{
+         b = 和(a,1)
+         もしresult[a]がresult[b]より大きいならば{
+            t = result[a]
+            result[a] = result[b]
+            result[b] = t
+         }
+         aを増やす
+      }
+      nを減らす
+   }
+
+   resultが答え
+}

@@ -1,0 +1,36 @@
+標準ライブラリを使う
+
+odd_count = 入力 lst に対し {
+   result = []
+   i = 0
+   lstの大きさ回くり返す {
+      s = lst[i]
+      odd_num = 0
+      j = 0
+      sの大きさ回くり返す {
+         char = s[j]
+         num = 文字列を数値に(char)
+         remainder = 剰余(num, 2)
+         もしreminderが0以外ならば {
+            odd_numを増やす
+         }
+         jを増やす
+      }
+      template = "the number of odd elements in the string i of the input."
+      output = ""
+      k = 0
+      templateの大きさ回くり返す {
+         c = template[k]
+         もしcが"i"ならば {
+            output = 文字列を連結(output, 文字列に(odd_num))
+         }
+         そうでなければ {
+            output = 文字列を連結(output, c)
+         }
+         kを増やす
+      }
+      resultにoutputを追加する
+      iを増やす
+   }
+   result
+}

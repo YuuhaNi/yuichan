@@ -1,0 +1,35 @@
+標準ライブラリを使う
+
+encrypt = 入力 s に対し {
+  文字列判定(s) でなければ {
+    ""
+  } そうでなければ {
+    codes = 配列化(s)
+    result = []
+    i = 0
+
+    i < 最大値(codes) + 1 の間 {
+      i < 最大値([i, 長さ(codes) - 1]) でなければ {
+      } そうでなければ {
+        c = codes[i]
+
+        c >= 97 かつ c <= 122 なら {
+          shifted = 剰余(差(c, 97), -2)
+          result = result + [和(97, 剰余(和(差(c, 97), 4), 26))]
+        } そうでなければ {
+          result = result + [c]
+        }
+
+        i = 和(i, 1)
+      }
+    }
+
+    out = ""
+    j = 0
+    j < 長さ(result) の間 {
+      out = out + 文字(result[j])
+      j = 和(j, 1)
+    }
+    out
+  }
+}

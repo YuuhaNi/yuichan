@@ -1,0 +1,43 @@
+標準ライブラリを使う
+
+solve = 入力 N に対し {
+   # N の各桁を取得して合計する
+   digit_sum = 0
+   temp = N
+   
+   もし N が 0 ならば {
+      digit_sum = 0
+   }
+   そうでなければ {
+      # N が 0 でない場合、各桁を処理
+      10回くり返す {
+         もし temp が 0 ならば {
+            くり返しを抜ける
+         }
+         digit_sum = 和(digit_sum, 剰余(temp, 10))
+         temp = 商(temp, 10)
+      }
+   }
+   
+   # digit_sum を2進数文字列に変換
+   もし digit_sum が 0 ならば {
+      result = "0"
+   }
+   そうでなければ {
+      binary = ""
+      n = digit_sum
+      
+      100回くり返す {
+         もし n が 0 ならば {
+            くり返しを抜ける
+         }
+         remainder = 剰余(n, 2)
+         binary = 文字列化(remainder) + binary
+         n = 商(n, 2)
+      }
+      
+      result = binary
+   }
+   
+   result が答え
+}

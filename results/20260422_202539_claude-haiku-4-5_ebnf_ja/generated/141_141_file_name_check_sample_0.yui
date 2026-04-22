@@ -1,0 +1,82 @@
+標準ライブラリを使う
+
+file_name_check = 入力 file_name に対し {
+    もし file_name が "" ならば {
+        "No" が答え
+    }
+    
+    dot_count = 0
+    dot_pos = 値なし
+    i = 0
+    {
+        もし i が file_name の大きさ ならば {
+            くり返しを抜ける
+        }
+        char = file_name[i]
+        もし char が "." ならば {
+            dot_count を増やす
+            dot_pos = i
+        }
+        i を増やす
+    }
+    
+    もし dot_count が 1 でなければ ならば {
+        "No" が答え
+    }
+    
+    name_part = file_name[0:dot_pos]
+    ext_part = file_name[dot_pos + 1:file_name の大きさ]
+    
+    もし name_part が "" ならば {
+        "No" が答え
+    }
+    
+    first_char = name_part[0]
+    もし first_char が "a" より小さい ならば {
+        もし first_char が "A" より小さい ならば {
+            "No" が答え
+        }
+        もし first_char が "Z" より大きい ならば {
+            "No" が答え
+        }
+    }
+    もし first_char が "z" より大きい ならば {
+        "No" が答え
+    }
+    
+    consecutive_digits = 0
+    i = 0
+    {
+        もし i が file_name の大きさ ならば {
+            くり返しを抜ける
+        }
+        char = file_name[i]
+        もし char が "0" 以上 ならば {
+            もし char が "9" 以下 ならば {
+                consecutive_digits を増やす
+                もし consecutive_digits が 3 以上 ならば {
+                    "No" が答え
+                }
+            }
+        }
+        もし char が "0" より小さい ならば {
+            consecutive_digits = 0
+        }
+        もし char が "9" より大きい ならば {
+            consecutive_digits = 0
+        }
+        i を増やす
+    }
+    
+    もし ext_part が "txt" ならば {
+        "Yes" が答え
+    }
+    もし ext_part が "exe" ならば {
+        "Yes" が答え
+    }
+    もし ext_part が "dll" ならば {
+        "Yes" が答え
+    }
+    
+    "No" が答え
+}

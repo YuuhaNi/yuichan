@@ -1,0 +1,37 @@
+標準ライブラリを使う
+
+specialFilter = 入力 nums に対し {
+   count=0
+   n=numsの大きさ
+   i=0
+   n回くり返す{
+      x=nums[i]
+      もしxが10より大きいならば{
+         s=文字列化(x)
+         first=s[0]
+         last=s[差(sの大きさ,1)]
+
+         first_odd=0
+         もしfirstが49ならば{ first_odd=1 }
+         もしfirstが51ならば{ first_odd=1 }
+         もしfirstが53ならば{ first_odd=1 }
+         もしfirstが55ならば{ first_odd=1 }
+         もしfirstが57ならば{ first_odd=1 }
+
+         last_odd=0
+         もしlastが49ならば{ last_odd=1 }
+         もしlastが51ならば{ last_odd=1 }
+         もしlastが53ならば{ last_odd=1 }
+         もしlastが55ならば{ last_odd=1 }
+         もしlastが57ならば{ last_odd=1 }
+
+         もしfirst_oddが1ならば{
+            もしlast_oddが1ならば{
+               countを増やす
+            }
+         }
+      }
+      iを増やす
+   }
+   countが答え
+}

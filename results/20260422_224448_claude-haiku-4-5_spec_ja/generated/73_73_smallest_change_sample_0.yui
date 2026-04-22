@@ -1,0 +1,26 @@
+標準ライブラリを使う
+
+smallest_change = 入力 arr に対し {
+   count = 0
+   left = 0
+   right = 差(arrの大きさ, 1)
+   
+   もし arrの大きさ が 0 ならば {
+      0 が答え
+   }
+   
+   arrの大きさ回くり返す {
+      もし left が right 以上 ならば {
+         くり返しを抜ける
+      }
+      
+      もし arr[left] が arr[right] 以外 ならば {
+         count を増やす
+      }
+      
+      left を増やす
+      right を減らす
+   }
+   
+   count が答え
+}

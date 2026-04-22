@@ -1,0 +1,80 @@
+標準ライブラリを使う
+
+words_in_sentence = 入力 sentence に対し {
+   result=""
+   current=""
+   i=0
+   n=sentenceの大きさ
+
+   n回くり返す{
+      c=sentence[i]
+      もしcが32ならば{
+         len=currentの大きさ
+         prime=1
+         もしlenが2より小さいならば{
+            prime=0
+         }
+         そうでなければ{
+            d=2
+            len回くり返す{
+               もしdがlenより小さいならば{
+                  もし剰余(len,d)が0ならば{
+                     prime=0
+                  }
+               }
+               dを増やす
+            }
+         }
+         もしprimeが1ならば{
+            もしresultが""ならば{
+               result=current
+            }
+            そうでなければ{
+               resultに32を追加する
+               j=0
+               currentの大きさ回くり返す{
+                  resultにcurrent[j]を追加する
+                  jを増やす
+               }
+            }
+         }
+         current=""
+      }
+      そうでなければ{
+         currentにcを追加する
+      }
+      iを増やす
+   }
+
+   len=currentの大きさ
+   prime=1
+   もしlenが2より小さいならば{
+      prime=0
+   }
+   そうでなければ{
+      d=2
+      len回くり返す{
+         もしdがlenより小さいならば{
+            もし剰余(len,d)が0ならば{
+               prime=0
+            }
+         }
+         dを増やす
+      }
+   }
+   もしprimeが1ならば{
+      もしresultが""ならば{
+         result=current
+      }
+      そうでなければ{
+         resultに32を追加する
+         j=0
+         currentの大きさ回くり返す{
+            resultにcurrent[j]を追加する
+            jを増やす
+         }
+      }
+   }
+
+   resultが答え
+}

@@ -1,0 +1,36 @@
+標準ライブラリを使う
+
+fix_spaces = 入力 text に対し {
+    result = ""
+    count = 0
+    i = 0
+    n = textの大きさ
+
+    n回 くり返す {
+        ch = text[i]
+        もし ch が " " ならば {
+            countを増やす
+        } そうでなければ {
+            もし count が 1 ならば {
+                resultの末尾に "_"を追加する
+            } そうでなければ {
+                もし count が 2以上 ならば {
+                    resultの末尾に "-"を追加する
+                }
+            }
+            resultの末尾に chを追加する
+            count = 0
+        }
+        iを増やす
+    }
+
+    もし count が 1 ならば {
+        resultの末尾に "_"を追加する
+    } そうでなければ {
+        もし count が 2以上 ならば {
+            resultの末尾に "-"を追加する
+        }
+    }
+
+    resultが答え
+}

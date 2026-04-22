@@ -1,0 +1,26 @@
+標準ライブラリを使う
+
+intersperse = 入力 numbers, delimeter に対し {
+  もし 配列判定(numbers)が偽 ならば {
+    値なし を返す
+  }
+  
+  もし 和(配列化(numbers)の長さ) が 0 ならば {
+    [] を返す
+  }
+  
+  result = []
+  i = 0
+  
+  繰り返す (i が numbers の長さ より小さい間) {
+    result に numbers[i] を追加
+    
+    もし i が numbers の長さ - 1 より小さい ならば {
+      result に delimeter を追加
+    }
+    
+    i = i + 1
+  }
+  
+  result を返す
+}

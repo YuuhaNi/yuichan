@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+iscube = 入力 a に対し {
+  もし a が 0 ならば {
+    真 が 答え
+  }
+  
+  もし a が 0 より大きい ならば {
+    cube_root = 立方根(a)
+    rounded = 四捨五入(cube_root)
+    もし 積(rounded, 積(rounded, rounded)) が a ならば {
+      真 が 答え
+    }
+    偽 が 答え
+  }
+  
+  もし a が 0 より小さい ならば {
+    abs_a = 絶対値(a)
+    cube_root = 立方根(abs_a)
+    rounded = 四捨五入(cube_root)
+    negated = 差(0, rounded)
+    もし 積(negated, 積(negated, negated)) が a ならば {
+      真 が 答え
+    }
+    偽 が 答え
+  }
+}

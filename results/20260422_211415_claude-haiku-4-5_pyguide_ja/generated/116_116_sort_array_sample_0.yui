@@ -1,0 +1,58 @@
+標準ライブラリを使う
+
+count_ones = 入力 n に対し {
+   もし n が 0 より小さいならば {
+      n = 差(0, n)
+   }
+   count = 0
+   32回くり返す {
+      もし 剰余(n, 2) が 1 ならば {
+         count を増やす
+      }
+      n = 商(n, 2)
+      もし n が 0 ならば {
+         くり返しを抜ける
+      }
+   }
+   count が答え
+}
+
+sort_array = 入力 arr に対し {
+   result = []
+   i = 0
+   arr の大きさ 回くり返す {
+      result に arr[i] を追加する
+      i を増やす
+   }
+   
+   sorted = 真
+   arr の大きさ 回くり返す {
+      sorted = 真
+      j = 0
+      差(arr の大きさ, 1) 回くり返す {
+         ones_j = count_ones(result[j])
+         ones_next = count_ones(result[差(j, 1)])
+         
+         もし ones_j が ones_next より大きいならば {
+            temp = result[j]
+            result[j] = result[差(j, 1)]
+            result[差(j, 1)] = temp
+            sorted = 偽
+         } そうでなければ {
+            もし ones_j が ones_next ならば {
+               もし result[j] が result[差(j, 1)] より大きいならば {
+                  temp = result[j]
+                  result[j] = result[差(j, 1)]
+                  result[差(j, 1)] = temp
+                  sorted = 偽
+               }
+            }
+         }
+         j を増やす
+      }
+      もし sorted が 真 ならば {
+         くり返しを抜ける
+      }
+   }
+   result が答え
+}

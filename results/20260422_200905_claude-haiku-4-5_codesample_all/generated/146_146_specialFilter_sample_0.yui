@@ -1,0 +1,47 @@
+標準ライブラリを使う
+
+specialFilter = 入力 nums に対し {
+   count = 0
+   n = nums の大きさ
+   i = 0
+   n 回くり返す {
+      x = nums[i]
+      
+      # 10より大きいかチェック
+      もし x が 10 より大きい ならば {
+         # 最初の桁を取得（文字列化して最初の文字のコード値）
+         s = 文字列化(x)
+         first_char = s[0]
+         last_char = s[差(s の大きさ, 1)]
+         
+         # 最初の桁が奇数かチェック
+         # '1'=49, '3'=51, '5'=53, '7'=55, '9'=57
+         first_is_odd = 0
+         もし first_char が 49 ならば { first_is_odd = 1 }
+         もし first_char が 51 ならば { first_is_odd = 1 }
+         もし first_char が 53 ならば { first_is_odd = 1 }
+         もし first_char が 55 ならば { first_is_odd = 1 }
+         もし first_char が 57 ならば { first_is_odd = 1 }
+         
+         # 最後の桁が奇数かチェック
+         last_is_odd = 0
+         もし last_char が 49 ならば { last_is_odd = 1 }
+         もし last_char が 51 ならば { last_is_odd = 1 }
+         もし last_char が 53 ならば { last_is_odd = 1 }
+         もし last_char が 55 ならば { last_is_odd = 1 }
+         もし last_char が 57 ならば { last_is_odd = 1 }
+         
+         # 両方奇数ならカウント
+         もし first_is_odd が 1 ならば {
+            もし last_is_odd が 1 ならば {
+               count を増やす
+            }
+         }
+      }
+      
+      i を増やす
+   }
+   count が答え
+}
+
+# テスト

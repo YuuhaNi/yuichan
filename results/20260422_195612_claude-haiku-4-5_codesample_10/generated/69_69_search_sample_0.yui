@@ -1,0 +1,41 @@
+標準ライブラリを使う
+
+search = 入力 lst に対し {
+   # 各要素の頻度をカウント
+   freq = {}
+   n = lst の大きさ
+   i = 0
+   n 回くり返す {
+      num = lst[i]
+      もし freq に num が含まれるならば {
+         freq[num] を増やす
+      }
+      そうでなければ {
+         freq[num] = 1
+      }
+      i を増やす
+   }
+   
+   # 条件を満たす最大の整数を探す
+   result = -1
+   
+   # freq のキーを列挙して調べる
+   keys = freq の キー
+   m = keys の大きさ
+   j = 0
+   m 回くり返す {
+      num = keys[j]
+      count = freq[num]
+      # 条件: 0 より大きく、かつ頻度がその値以上
+      もし num が 0 より大きいならば {
+         もし count が num 以上ならば {
+            もし num が result より大きいならば {
+               result = num
+            }
+         }
+      }
+      j を増やす
+   }
+   
+   result が答え
+}

@@ -1,0 +1,22 @@
+標準ライブラリを使う
+
+encrypt = 入力 s に対し {
+   result = ""
+   i = 0
+   sの大きさ回くり返す{
+      char_code = s[i]
+      # 'a' は 97、'z' は 122
+      # 文字位置を計算（0-25）
+      pos = 差(char_code, 97)
+      # 位置を2倍して2を足す
+      new_pos = 和(積(pos, 2), 2)
+      # 26で割った余りで循環させる
+      new_pos = 剰余(new_pos, 26)
+      # 文字コードに変換
+      new_char_code = 和(new_pos, 97)
+      # 結果に追加
+      resultにnew_char_codeを追加する
+      iを増やす
+   }
+   resultが答え
+}

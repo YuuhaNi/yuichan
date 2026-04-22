@@ -1,0 +1,53 @@
+標準ライブラリを使う
+
+check_dict_case = 入力 dict に対し {
+   keys = []
+   i = 0
+
+   # オブジェクトのキーを集める
+   dictの大きさ回くり返す{
+      くり返しを抜ける
+   }
+
+   もしdictの大きさが0ならば{
+      偽が答え
+   }
+
+   lower_count = 0
+   upper_count = 0
+   total = 0
+
+   # Yui ではオブジェクトのキー一覧を直接取り出す構文がないため、
+   # この問題では dict を配列化してキー文字列を順に調べる想定で判定する
+   items = 配列化(文字列化(dict))
+   pos = 0
+
+   has_lower = 偽
+   has_upper = 偽
+   has_other = 偽
+
+   itemsの大きさ回くり返す{
+      ch = items[pos]
+      もしchが97以上ならば{
+         もしchが122以下ならば{
+            has_lower = 真
+         }
+      }
+      もしchが65以上ならば{
+         もしchが90以下ならば{
+            has_upper = 真
+         }
+      }
+      posを増やす
+   }
+
+   もしhas_lowerが偽ならば{
+      偽が答え
+   }
+
+   もしhas_upperが真ならば{
+      偽が答え
+   }
+
+   真が答え
+}

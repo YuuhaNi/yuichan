@@ -1,0 +1,16 @@
+標準ライブラリを使う
+
+decode_cyclic = 入力 s に対し {
+   result = ""
+   len = sの大きさ
+   i = 0
+   len回くり返す {
+      pos = 商(積(i, 3), 2)
+      もしpos が len より大きいならば {
+         くり返しを抜ける
+      }
+      result に s[pos] を追加する
+      i を増やす
+   }
+   result が答え
+}

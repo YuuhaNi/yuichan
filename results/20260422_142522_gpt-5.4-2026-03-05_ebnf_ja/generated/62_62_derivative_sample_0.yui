@@ -1,0 +1,15 @@
+標準ライブラリを使う
+
+derivative = 入力 xs に対し {
+    result = []
+    i = 1
+    n = xsの大きさ
+    もし n が 1 以下 ならば {
+        result が 答え
+    }
+    和(n, -1)回 くり返す {
+        resultに 積(xs[i], i)を追加する
+        iを増やす
+    }
+    result が 答え
+}

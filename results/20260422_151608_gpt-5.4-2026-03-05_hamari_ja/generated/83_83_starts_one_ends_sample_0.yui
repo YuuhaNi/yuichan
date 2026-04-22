@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+starts_one_ends = 入力 n に対し {
+    もしnが1ならば{
+        1が答え
+    }
+
+    pow=1
+    i=1
+    差(n,1)回くり返す{
+        pow=積(pow,10)
+    }
+
+    count=和(pow, 積(9,pow))
+    overlap=1
+    和(count, overlap)が答え
+}

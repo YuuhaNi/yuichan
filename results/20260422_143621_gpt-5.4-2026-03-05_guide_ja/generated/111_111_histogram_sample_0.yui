@@ -1,0 +1,84 @@
+標準ライブラリを使う
+
+histogram = 入力 test に対し {
+   counts = {}
+   current = ""
+   i = 0
+
+   testの大きさ回くり返す{
+      ch = test[i]
+      もしchが" "[0]ならば{
+         もしcurrentが""以外ならば{
+            もしcurrentがcountsのいずれかならば{
+               counts[current] = 和(counts[current], 1)
+            }そうでなければ{
+               counts[current] = 1
+            }
+            current = ""
+         }
+      }そうでなければ{
+         currentにchを追加する
+      }
+      iを増やす
+   }
+
+   もしcurrentが""以外ならば{
+      もしcurrentがcountsのいずれかならば{
+         counts[current] = 和(counts[current], 1)
+      }そうでなければ{
+         counts[current] = 1
+      }
+   }
+
+   result = {}
+   max_count = 0
+   keys = []
+   current = ""
+   i = 0
+
+   text = 文字列化(counts)
+   textの大きさ回くり返す{
+      ch = text[i]
+
+      もしchが"\""[0]ならば{
+         i = 和(i, 1)
+         current = ""
+         textの大きさ回くり返す{
+            もしiがtextの大きさ以上ならば{
+               くり返しを抜ける
+            }
+            ch = text[i]
+            もしchが"\""[0]ならば{
+               くり返しを抜ける
+            }
+            currentにchを追加する
+            iを増やす
+         }
+         keysにcurrentを追加する
+      }
+
+      iを増やす
+   }
+
+   i = 0
+   keysの大きさ回くり返す{
+      key = keys[i]
+      value = counts[key]
+      もしvalueがmax_countより大きいならば{
+         max_count = value
+      }
+      iを増やす
+   }
+
+   i = 0
+   keysの大きさ回くり返す{
+      key = keys[i]
+      value = counts[key]
+      もしvalueがmax_countならば{
+         result[key] = value
+      }
+      iを増やす
+   }
+
+   resultが答え
+}

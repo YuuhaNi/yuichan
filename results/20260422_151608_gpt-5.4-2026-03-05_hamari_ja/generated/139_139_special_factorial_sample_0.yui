@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+special_factorial = 入力 n に対し {
+   result=1
+   i=1
+   n回くり返す{
+      fact=1
+      j=1
+      i回くり返す{
+         fact=積(fact,j)
+         jを増やす
+      }
+      result=積(result,fact)
+      iを増やす
+   }
+   resultが答え
+}

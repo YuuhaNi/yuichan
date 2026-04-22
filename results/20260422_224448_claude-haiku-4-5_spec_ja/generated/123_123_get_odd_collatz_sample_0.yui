@@ -1,0 +1,25 @@
+標準ライブラリを使う
+
+get_odd_collatz = 入力 n に対し {
+   odd_list = []
+   current = n
+   
+   くり返す {
+      もし剰余(current, 2)が0以外ならば {
+         odd_listにcurrentを追加する
+      }
+      
+      もしcurrentが1ならば {
+         くり返しを抜ける
+      }
+      
+      もし剰余(current, 2)が0ならば {
+         current = 商(current, 2)
+      }
+      そうでなければ {
+         current = 和(積(current, 3), 1)
+      }
+   }
+   
+   odd_list が答え
+}

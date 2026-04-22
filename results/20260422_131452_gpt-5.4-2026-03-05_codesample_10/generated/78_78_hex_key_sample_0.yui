@@ -1,0 +1,16 @@
+標準ライブラリを使う
+
+hex_key=入力numに対し{
+   count=0
+   n=numの大きさ
+   i=0
+   primes=["2","3","5","7","B","D"]
+   n回くり返す{
+      ch=num[i]
+      もしchがprimesのいずれかならば{
+         countを増やす
+      }
+      iを増やす
+   }
+   countが答え
+}

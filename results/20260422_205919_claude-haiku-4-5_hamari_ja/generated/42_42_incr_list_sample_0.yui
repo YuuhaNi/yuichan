@@ -1,0 +1,13 @@
+標準ライブラリを使う
+
+incr_list = 入力 l に対し {
+   result = []
+   lの大きさ回くり返す {
+      i = ループ回数
+      iを減らす
+      elem = l[i]
+      elem_incr = 和(elem, 1)
+      resultに elem_incr を追加する
+   }
+   result
+}

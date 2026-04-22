@@ -1,0 +1,41 @@
+標準ライブラリを使う
+
+check_dict_case = 入力 dict に対し {
+  keys = 配列化(dict)
+
+  もし 最大値(keys) == 値なし なら {
+    偽
+  } 違えば {
+    has_lower = 偽
+    has_upper = 偽
+    invalid = 偽
+
+    keys をそれぞれ key について {
+      もし 文字列判定(key) == 偽 なら {
+        invalid = 真
+      } 違えば {
+        chars = 配列化(key)
+
+        chars をそれぞれ code について {
+          もし code >= 97 かつ code <= 122 なら {
+            has_lower = 真
+          } 違えば もし code >= 65 かつ code <= 90 なら {
+            has_upper = 真
+          }
+        }
+      }
+    }
+
+    もし invalid なら {
+      偽
+    } 違えば もし has_lower かつ has_upper then {
+      偽
+    } 違えば もし has_lower なら {
+      真
+    } 違えば もし has_upper なら {
+      真
+    } 違えば {
+      偽
+    }
+  }
+}

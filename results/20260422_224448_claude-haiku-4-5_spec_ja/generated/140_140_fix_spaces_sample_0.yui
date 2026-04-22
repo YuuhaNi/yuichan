@@ -1,0 +1,39 @@
+標準ライブラリを使う
+
+fix_spaces = 入力 text に対し {
+   result = ""
+   i = 0
+   textの大きさ が答え_size
+   
+   i < textの大きさ が条件 {
+      char = text[i]
+      
+      もし char が 32 ならば {
+         space_count = 1
+         i を増やす
+         
+         i < textの大きさ が条件 {
+            もし text[i] が 32 ならば {
+               space_count を増やす
+               i を増やす
+            }
+            そうでなければ {
+               くり返しを抜ける
+            }
+         }
+         
+         もし space_count が 1 ならば {
+            result に "_" を追加する
+         }
+         そうでなければ {
+            result に "-" を追加する
+         }
+      }
+      そうでなければ {
+         result に char を追加する
+         i を増やす
+      }
+   }
+   
+   result が答え
+}

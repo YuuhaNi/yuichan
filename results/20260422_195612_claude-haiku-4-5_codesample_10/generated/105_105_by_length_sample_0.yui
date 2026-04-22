@@ -1,0 +1,60 @@
+標準ライブラリを使う
+
+by_length = 入力 arr に対し {
+   # 1から9までの数値のみをフィルタリング
+   filtered = []
+   n = arrの大きさ
+   i = 0
+   n回くり返す {
+      x = arr[i]
+      もし x が 1 以上ならば {
+         もし x が 9 以下ならば {
+            filtered に x を追加する
+         }
+      }
+      i を増やす
+   }
+   
+   # 空配列の場合は空配列を返す
+   もし filtered の大きさ が 0 ならば {
+      []が答え
+   }
+   
+   # ソート（バブルソート）
+   sorted = filtered
+   len = sorted の大きさ
+   i = 0
+   len 回くり返す {
+      j = 0
+      差(len, 1) 回くり返す {
+         もし sorted[j] が sorted[和(j, 1)] より大きいならば {
+            temp = sorted[j]
+            sorted[j] = sorted[和(j, 1)]
+            sorted[和(j, 1)] = temp
+         }
+         j を増やす
+      }
+      i を増やす
+   }
+   
+   # 逆順にする
+   reversed = []
+   i = 差(len, 1)
+   len 回くり返す {
+      reversed に sorted[i] を追加する
+      i を減らす
+   }
+   
+   # 数字を名前に置き換える
+   names = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"]
+   result = []
+   i = 0
+   len 回くり返す {
+      num = reversed[i]
+      idx = 差(num, 1)
+      result に names[idx] を追加する
+      i を増やす
+   }
+   
+   result が答え
+}

@@ -1,0 +1,44 @@
+標準ライブラリを使う
+
+get_odd_collatz = 入力 n に対し {
+   odds = []
+   current = n
+   
+   くり返す{
+      # 現在の値が奇数なら odds に追加
+      もし剰余(current, 2)が0以外ならば{
+         oddsにcurrentを追加する
+      }
+      
+      # current が 1 に達したら終了
+      もしcurrentが1ならば{
+         くり返しを抜ける
+      }
+      
+      # コラッツ数列の次の項を計算
+      もし剰余(current, 2)が0ならば{
+         # 偶数: 2で割る
+         current = 商(current, 2)
+      }そうでなければ{
+         # 奇数: 3倍 + 1
+         current = 和(積(current, 3), 1)
+      }
+   }
+   
+   # ソート（昇順）
+   i = 0
+   oddsの大きさ回くり返す{
+      j = 0
+      差(oddsの大きさ, 1)回くり返す{
+         もしodds[j]がodds[和(j,1)]より大きいならば{
+            temp = odds[j]
+            odds[j] = odds[和(j,1)]
+            odds[和(j,1)] = temp
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+   
+   oddsが答え
+}

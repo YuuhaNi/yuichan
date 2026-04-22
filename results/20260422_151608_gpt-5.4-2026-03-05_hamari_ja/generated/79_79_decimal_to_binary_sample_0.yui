@@ -1,0 +1,23 @@
+標準ライブラリを使う
+
+decimal_to_binary = 入力 decimal に対し {
+   もしdecimalが0ならば{
+      "db0db"が答え
+   }
+
+   bits=""
+   n=decimal
+
+   nが0より大きい間くり返す{
+      bit=剰余(n,2)
+      もしbitが0ならば{
+         bits=連結("0",bits)
+      }
+      そうでなければ{
+         bits=連結("1",bits)
+      }
+      n=商(n,2)
+   }
+
+   連結("db",連結(bits,"db"))が答え
+}

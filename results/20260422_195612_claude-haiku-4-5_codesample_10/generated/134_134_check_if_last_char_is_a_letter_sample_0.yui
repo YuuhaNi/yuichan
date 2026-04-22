@@ -1,0 +1,49 @@
+標準ライブラリを使う
+
+check_if_last_char_is_a_letter = 入力 txt に対し {
+   n = txtの大きさ
+   もし n が 0 ならば {
+      偽が答え
+   }
+   そうでなければ {
+      last_char = txt[差(n,1)]
+      # 最後の文字がアルファベットか判定 (A-Z: 65-90, a-z: 97-122)
+      is_letter = 偽
+      もし last_char が 65 以上 ならば {
+         もし last_char が 90 以下 ならば {
+            is_letter = 真
+         }
+      }
+      もし last_char が 97 以上 ならば {
+         もし last_char が 122 以下 ならば {
+            is_letter = 真
+         }
+      }
+      
+      # 最後の文字がスペースでないか判定 (スペース: 32)
+      is_not_space = last_char が 32 でない
+      
+      # 最後の文字の次の文字がスペースまたは存在しないか判定
+      # つまり、最後の文字が単語の一部でない = 最後の文字の前がスペース
+      is_single_char = 真
+      もし n が 1 より大きい ならば {
+         prev_char = txt[差(n,2)]
+         もし prev_char が 32 でない ならば {
+            is_single_char = 偽
+         }
+      }
+      
+      # アルファベットで、かつ単語の一部でない
+      もし is_letter が 真 ならば {
+         もし is_single_char が 真 ならば {
+            真が答え
+         }
+         そうでなければ {
+            偽が答え
+         }
+      }
+      そうでなければ {
+         偽が答え
+      }
+   }
+}

@@ -1,0 +1,63 @@
+標準ライブラリを使う
+
+file_name_check = 入力 file_name に対し {
+  chars = 配列化(file_name)
+  n = 長さ(chars)
+
+  dot_count = 0
+  dot_pos = -1
+  i = 0
+  digit_run = 0
+
+  反復 (i < n) {
+    c = chars[i]
+
+    もし (c == 46) なら {
+      dot_count = 和(dot_count, 1)
+      dot_pos = i
+      digit_run = 0
+    } 違えば もし (((c >= 48) かつ (c <= 57))) なら {
+      digit_run = 和(digit_run, 1)
+      もし (digit_run >= 3) なら {
+        戻る "No"
+      }
+    } 違えば {
+      digit_run = 0
+    }
+
+    i = 和(i, 1)
+  }
+
+  もし (dot_count != 1) なら {
+    戻る "No"
+  }
+
+  もし (dot_pos <= 0) なら {
+    戻る "No"
+  }
+
+  first = chars[0]
+  is_lower = ((first >= 97) かつ (first <= 122))
+  is_upper = ((first >= 65) かつ (first <= 90))
+  もし ((is_lower または is_upper) == 偽) なら {
+    戻る "No"
+  }
+
+  ext_len = 差(n, dot_pos, 1)
+
+  もし (ext_len == 3) なら {
+    e1 = chars[和(dot_pos, 1)]
+    e2 = chars[和(dot_pos, 2)]
+    e3 = chars[和(dot_pos, 3)]
+
+    is_txt = ((e1 == 116) かつ (e2 == 120) かつ (e3 == 116))
+    is_exe = ((e1 == 101) かつ (e2 == 120) かつ (e3 == 101))
+    is_dll = ((e1 == 100) かつ (e2 == 108) かつ (e3 == 108))
+
+    もし (is_txt または is_exe または is_dll) なら {
+      戻る "Yes"
+    }
+  }
+
+  戻る "No"
+}

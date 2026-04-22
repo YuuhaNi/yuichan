@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+encrypt = 入力 s に対し {
+   result = ""
+   i = 0
+   sの大きさ回くり返す{
+      c = s[i]
+      code = 整数化(c)
+      base = 97
+      pos = 差(code, base)
+      new_pos = 剰余(和(積(pos, 2), 2), 26)
+      new_code = 和(base, new_pos)
+      resultにnew_codeを追加する
+      iを増やす
+   }
+   resultが答え
+}

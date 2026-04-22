@@ -1,0 +1,8 @@
+標準ライブラリを使う
+
+fruit_distribution = 入力 s, n に対し {
+  apples = 数値に変換(分割(s, " ")[0])
+  oranges = 数値に変換(分割(s, " ")[3])
+  mangoes = 差(n, 和(apples, oranges))
+  mangoes が 答え
+}

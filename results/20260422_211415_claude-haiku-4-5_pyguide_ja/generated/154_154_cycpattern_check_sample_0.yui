@@ -1,0 +1,30 @@
+標準ライブラリを使う
+
+cycpattern_check = 入力 a, b に対し {
+   b_len = bの大きさ
+   doubled = b
+   i = 0
+   b_len回くり返す{
+      doubled = 和(doubled, b)
+      iを増やす
+   }
+   
+   a_len = aの大きさ
+   j = 0
+   a_len回くり返す{
+      k = 0
+      found = 真
+      b_len回くり返す{
+         もしa[和(j,k)]がdoubled[k]以外ならば{
+            found = 偽
+            くり返しを抜ける
+         }
+         kを増やす
+      }
+      もしfoundが真ならば{
+         真が答え
+      }
+      jを増やす
+   }
+   偽が答え
+}

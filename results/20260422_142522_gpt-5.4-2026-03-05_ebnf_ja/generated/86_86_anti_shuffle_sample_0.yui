@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+anti_shuffle = 入力 s に対し {
+    words = 文字列分割(s, " ")
+    result = []
+    i = 0
+    wordsの大きさ回 くり返す {
+        word = words[i]
+        chars = 文字列分割(word, "")
+        整列済み = 整列(chars)
+        sorted_word = 文字列結合(整列済み, "")
+        resultにsorted_wordを追加する
+        iを増やす
+    }
+    joined = 文字列結合(result, " ")
+    joinedが答え
+}

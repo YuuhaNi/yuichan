@@ -1,0 +1,14 @@
+標準ライブラリを使う
+
+make_a_pile = 入力 n に対し {
+   result = []
+   current = n
+   # 段数は n と同じ
+   n回くり返す {
+      result に current を追加する
+      # 次の段の石の数を計算する
+      # 奇数なら +2、偶数なら +2 (どちらでも +2)
+      current = 和(current, 2)
+   }
+   result が答え
+}

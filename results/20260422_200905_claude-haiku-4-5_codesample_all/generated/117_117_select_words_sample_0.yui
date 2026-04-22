@@ -1,0 +1,51 @@
+標準ライブラリを使う
+
+select_words = 入力 s, n に対し {
+   result = []
+   words = []
+   current_word = ""
+   
+   # === ステップ 1: 文字列を単語に分割する ===
+   i = 0
+   s の大きさ 回 くり返す {
+      c = s[i]
+      # 空白は 32
+      もし c が 32 ならば {
+         もし current_word の大きさ が 0 より大きい ならば {
+            words に current_word を追加する
+            current_word = ""
+         }
+      }
+      そうでなければ {
+         current_word に c を追加する
+      }
+      i を増やす
+   }
+   # 最後の単語を追加
+   もし current_word の大きさ が 0 より大きい ならば {
+      words に current_word を追加する
+   }
+   
+   # === ステップ 2: 各単語の子音数を数える ===
+   consonants = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"
+   j = 0
+   words の大きさ 回 くり返す {
+      word = words[j]
+      count = 0
+      k = 0
+      word の大きさ 回 くり返す {
+         ch = word[k]
+         もし ch が consonants のいずれか ならば {
+            count を増やす
+         }
+         k を増やす
+      }
+      # 子音数が n と一致したら結果に追加
+      もし count が n ならば {
+         result に word を追加する
+      }
+      j を増やす
+   }
+   
+   result が答え
+}

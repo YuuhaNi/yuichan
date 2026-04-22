@@ -1,0 +1,23 @@
+標準ライブラリを使う
+
+count_distinct_characters = 入力 string に対し {
+   lowercase = 小文字化(string)
+   chars = []
+   stringの大きさを n とする
+   n回くり返す {
+      i = 反復変数
+      char = lowercase[i]
+      found = 0
+      charsの大きさを chars_size とする
+      chars_size回くり返す {
+         j = 反復変数
+         もし chars[j] が char ならば {
+            found = 1
+         }
+      }
+      もし found が 0 ならば {
+         chars に char を追加する
+      }
+   }
+   chars の大きさ
+}

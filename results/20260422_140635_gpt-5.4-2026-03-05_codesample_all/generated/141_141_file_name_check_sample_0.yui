@@ -1,0 +1,86 @@
+標準ライブラリを使う
+
+file_name_check = 入力 file_name に対し {
+   n=file_nameの大きさ
+
+   # ドットの位置を探し、個数も数える
+   dot_count=0
+   dot_pos=差(0,1)
+   i=0
+   n回くり返す{
+      もしfile_name[i]が46ならば{
+         dot_countを増やす
+         dot_pos=i
+      }
+      iを増やす
+   }
+
+   # ドットはちょうど 1 つ
+   もしdot_countが1以外ならば{
+      "No"が答え
+   }
+
+   # ドットの前後は空であってはならない
+   もしdot_posが0ならば{
+      "No"が答え
+   }
+   もしdot_posが差(n,1)ならば{
+      "No"が答え
+   }
+
+   # 先頭文字は英字
+   c=file_name[0]
+   is_alpha=0
+   もしcが65以上ならば{
+      もしcが90以下ならば{
+         is_alpha=1
+      }
+   }
+   もしcが97以上ならば{
+      もしcが122以下ならば{
+         is_alpha=1
+      }
+   }
+   もしis_alphaが0ならば{
+      "No"が答え
+   }
+
+   # 3桁以上連続する数字があってはならない
+   digit_run=0
+   i=0
+   n回くり返す{
+      c=file_name[i]
+      is_digit=0
+      もしcが48以上ならば{
+         もしcが57以下ならば{
+            is_digit=1
+         }
+      }
+      もしis_digitが1ならば{
+         digit_runを増やす
+         もしdigit_runが3以上ならば{
+            "No"が答え
+         }
+      }
+      そうでなければ{
+         digit_run=0
+      }
+      iを増やす
+   }
+
+   # 拡張子チェック
+   ext=""
+   i=和(dot_pos,1)
+   ext_len=差(n,i)
+   ext_len回くり返す{
+      extにfile_name[i]を追加する
+      iを増やす
+   }
+
+   もしextが["txt","exe","dll"]のいずれかならば{
+      "Yes"が答え
+   }
+   そうでなければ{
+      "No"が答え
+   }
+}

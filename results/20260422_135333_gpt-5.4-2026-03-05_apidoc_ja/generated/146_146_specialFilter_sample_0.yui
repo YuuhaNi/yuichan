@@ -1,0 +1,26 @@
+標準ライブラリを使う
+
+specialFilter = 入力 nums に対し {
+  count = 0
+  i = 0
+
+  反復(i < 長さ(nums)) {
+    n = nums[i]
+
+    もし n > 10 なら {
+      s = 文字列化(絶対値(n))
+      first = s[0]
+      last = s[差(長さ(s), 1)]
+
+      もし または(first == "1", first == "3", first == "5", first == "7", first == "9") なら {
+        もし または(last == "1", last == "3", last == "5", last == "7", last == "9") なら {
+          count = 和(count, 1)
+        }
+      }
+    }
+
+    i = 和(i, 1)
+  }
+
+  count
+}

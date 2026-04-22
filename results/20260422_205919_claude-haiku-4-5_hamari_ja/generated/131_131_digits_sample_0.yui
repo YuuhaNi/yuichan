@@ -1,0 +1,29 @@
+標準ライブラリを使う
+
+digits = 入力 n に対し {
+   result = 1
+   found_odd = 0
+   
+   n_str = 文字列化(n)
+   len = n_strの大きさ
+   
+   i = 0
+   len回くり返す {
+      digit_char = n_str[i]
+      digit = 数値化(digit_char)
+      
+      remainder = 剰余(digit, 2)
+      もしremainder が 0 以外ならば {
+         result = 積(result, digit)
+         found_odd = 1
+      }
+      
+      i = 和(i, 1)
+   }
+   
+   もし found_odd が 0 ならば {
+      result = 0
+   }
+   
+   result が答え
+}

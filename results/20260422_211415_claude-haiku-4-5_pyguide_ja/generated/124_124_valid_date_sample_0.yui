@@ -1,0 +1,78 @@
+標準ライブラリを使う
+
+valid_date = 入力 date に対し {
+   # 空文字列チェック
+   もし date が "" ならば {
+      偽が答え
+   }
+   
+   # "-" で分割
+   parts = []
+   current = ""
+   i = 0
+   date の大きさ 回くり返す {
+      char = date[i]
+      もし char が "-"[0] ならば {
+         parts に current を追加する
+         current = ""
+      } そうでなければ {
+         current に char を追加する
+      }
+      i を増やす
+   }
+   parts に current を追加する
+   
+   # 形式チェック: mm-dd-yyyy で3つに分かれているか
+   もし parts の大きさ が 3 でなければ {
+      偽が答え
+   }
+   
+   # 各部分を整数に変換
+   month_str = parts[0]
+   day_str = parts[1]
+   year_str = parts[2]
+   
+   # 月の検証
+   month = 整数化(month_str)
+   もし month が 1 より小さい ならば {
+      偽が答え
+   }
+   もし month が 12 より大きい ならば {
+      偽が答え
+   }
+   
+   # 日の検証
+   day = 整数化(day_str)
+   もし day が 1 より小さい ならば {
+      偽が答え
+   }
+   
+   # 月ごとの日数チェック
+   max_day = 31
+   もし month が 4 ならば {
+      max_day = 30
+   } そうでなければ {
+      もし month が 6 ならば {
+         max_day = 30
+      } そうでなければ {
+         もし month が 9 ならば {
+            max_day = 30
+         } そうでなければ {
+            もし month が 11 ならば {
+               max_day = 30
+            } そうでなければ {
+               もし month が 2 ならば {
+                  max_day = 29
+               }
+            }
+         }
+      }
+   }
+   
+   もし day が max_day より大きい ならば {
+      偽が答え
+   }
+   
+   # すべてのチェックに合格
+   真が答え
+}

@@ -1,0 +1,45 @@
+標準ライブラリを使う
+
+check_dict_case = 入力 dict に対し {
+   keys = dict の キー
+   keys_size = keys の 大きさ
+   
+   もし keys_size が 0 ならば {
+      偽
+   }
+   
+   all_lower = 真
+   all_upper = 真
+   i = 0
+   
+   keys_size 回くり返す {
+      key = keys[i]
+      
+      もし key が 文字列 型 ならば {
+         key_str = 文字列化(key)
+         lower_key = key_str を 小文字化
+         upper_key = key_str を 大文字化
+         
+         もし key_str が lower_key 以外 ならば {
+            all_lower = 偽
+         }
+         
+         もし key_str が upper_key 以外 ならば {
+            all_upper = 偽
+         }
+      }
+      そうでなければ {
+         all_lower = 偽
+         all_upper = 偽
+      }
+      
+      i を 増やす
+   }
+   
+   もし all_lower が 真 ならば {
+      真
+   }
+   そうでなければ {
+      偽
+   }
+}

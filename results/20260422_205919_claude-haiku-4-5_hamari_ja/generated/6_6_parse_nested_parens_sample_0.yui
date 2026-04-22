@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+parse_nested_parens = 入力 paren_string に対し {
+   groups = paren_string を ' ' で区切る
+   result = []
+   
+   groups の各要素 group に対し {
+      max_depth = 0
+      current_depth = 0
+      
+      group の各文字 char に対し {
+         もし char が '(' のいずれかならば {
+            current_depth = 和(current_depth, 1)
+            もし current_depth が max_depth より大きいならば {
+               max_depth = current_depth
+            }
+         }
+         そうでなければ {
+            current_depth = 差(current_depth, 1)
+         }
+      }
+      
+      result に max_depth を追加する
+   }
+   
+   result が答え
+}

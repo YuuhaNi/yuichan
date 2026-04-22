@@ -1,0 +1,18 @@
+標準ライブラリを使う
+
+longest = 入力 strings に対し {
+  もし stringsの大きさ が 0 ならば {
+    値なし が 答え
+  }
+  longest_str = strings[0]
+  i = 1
+  stringsの大きさ 回 くり返す {
+    もし i が stringsの大きさ より小さい ならば {
+      もし strings[i]の大きさ が longest_strの大きさ より大きい ならば {
+        longest_str = strings[i]
+      }
+      iを増やす
+    }
+  }
+  longest_str が 答え
+}

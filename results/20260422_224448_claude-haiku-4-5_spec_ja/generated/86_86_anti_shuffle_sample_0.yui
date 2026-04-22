@@ -1,0 +1,64 @@
+標準ライブラリを使う
+
+anti_shuffle = 入力 s に対し {
+   result = ""
+   i = 0
+   sの大きさ回くり返す {
+      もし i が sの大きさ以上ならば {
+         くり返しを抜ける
+      }
+      
+      # 現在位置の文字がスペースかどうかを確認
+      もし s[i] が 32 ならば {
+         resultに32を追加する
+         i を増やす
+      }
+      そうでなければ {
+         # 単語の開始位置を記録
+         word_start = i
+         word = ""
+         
+         # スペースまたは文字列の終わりまで単語を集める
+         {
+            もし i が sの大きさ以上ならば {
+               くり返しを抜ける
+            }
+            もし s[i] が 32 ならば {
+               くり返しを抜ける
+            }
+            wordにs[i]を追加する
+            i を増やす
+         } を i が sの大きさ以下の間くり返す
+         
+         # 単語の文字をソート（バブルソート）
+         sorted_word = word
+         word_len = wordの大きさ
+         
+         j = 0
+         word_len回くり返す {
+            k = 0
+            差(word_len, 1)回くり返す {
+               もし sorted_word[k] が sorted_word[差(k, 1)]より大きいならば {
+                  temp = sorted_word[k]
+                  sorted_word[k] = sorted_word[差(k, 1)]
+                  sorted_word[差(k, 1)] = temp
+               }
+               k を増やす
+            }
+            j を増やす
+         }
+         
+         # ソート済みの単語をresultに追加
+         m = 0
+         sorted_wordの大きさ回くり返す {
+            もし m が sorted_wordの大きさ以上ならば {
+               くり返しを抜ける
+            }
+            resultにsorted_word[m]を追加する
+            m を増やす
+         }
+      }
+   }
+   
+   result が答え
+}

@@ -1,0 +1,25 @@
+標準ライブラリを使う
+
+sort_array = 入力 array に対し {
+    もし array の大きさ が 0 ならば {
+        array が 答え
+    }
+    そうでなければ {
+        もし array の大きさ が 1 ならば {
+            array が 答え
+        }
+        そうでなければ {
+            first = array[0]
+            last = array[array の大きさ を減らす]
+            sum = 和(first, last)
+            remainder = 剰余(sum, 2)
+            
+            もし remainder が 1 ならば {
+                昇順ソート(array) が 答え
+            }
+            そうでなければ {
+                降順ソート(array) が 答え
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+標準ライブラリを使う
+
+filter_by_substring = 入力 strings, substring に対し {
+  結果 = []
+  i = 0
+  繰り返す (i < 長さ(strings)) {
+    もし (文字列に含む(strings[i], substring)) {
+      結果 = 追加(結果, strings[i])
+    }
+    i = i + 1
+  }
+  結果を返す
+}

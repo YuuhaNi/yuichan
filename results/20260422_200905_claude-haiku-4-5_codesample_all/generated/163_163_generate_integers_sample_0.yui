@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+generate_integers = 入力 a, b に対し {
+   # a と b の小さい方を min、大きい方を max にする
+   min = a
+   max = b
+   もし a が b より大きい ならば {
+      min = b
+      max = a
+   }
+   
+   # 結果配列
+   result = []
+   
+   # min から max までの偶数を探す
+   i = min
+   差(max, min)を増やす回くり返す {
+      # i が偶数かどうかを判定 (2 で割った余りが 0)
+      remainder = 剰余(i, 2)
+      もし remainder が 0 ならば {
+         result に i を追加する
+      }
+      i を増やす
+   }
+   
+   result が答え
+}

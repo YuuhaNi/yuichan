@@ -1,0 +1,91 @@
+標準ライブラリを使う
+
+select_words = 入力 s, n に対し {
+   result = []
+   words = []
+   current_word = ""
+   
+   # 文字列を単語に分割
+   i = 0
+   sの大きさ回くり返す {
+      char = s[i]
+      もし char が 32 ならば {
+         # スペース（文字コード32）
+         もし current_word が "" 以外ならば {
+            words に current_word を追加する
+            current_word = ""
+         }
+      } そうでなければ {
+         current_word に char を追加する
+      }
+      i を増やす
+   }
+   # 最後の単語を追加
+   もし current_word が "" 以外ならば {
+      words に current_word を追加する
+   }
+   
+   # 各単語の子音数をカウント
+   j = 0
+   words の大きさ回くり返す {
+      word = words[j]
+      consonant_count = 0
+      
+      k = 0
+      word の大きさ回くり返す {
+         char = word[k]
+         # 子音判定：a,e,i,o,u,A,E,I,O,U 以外の英文字
+         もし char が 97 ならば {
+            # a
+         } そうでなければ {
+            もし char が 101 ならば {
+               # e
+            } そうでなければ {
+               もし char が 105 ならば {
+                  # i
+               } そうでなければ {
+                  もし char が 111 ならば {
+                     # o
+                  } そうでなければ {
+                     もし char が 117 ならば {
+                        # u
+                     } そうでなければ {
+                        もし char が 65 ならば {
+                           # A
+                        } そうでなければ {
+                           もし char が 69 ならば {
+                              # E
+                           } そうでなければ {
+                              もし char が 73 ならば {
+                                 # I
+                              } そうでなければ {
+                                 もし char が 79 ならば {
+                                    # O
+                                 } そうでなければ {
+                                    もし char が 85 ならば {
+                                       # U
+                                    } そうでなければ {
+                                       consonant_count を増やす
+                                    }
+                                 }
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+         k を増やす
+      }
+      
+      # 子音数がnと一致したら結果に追加
+      もし consonant_count が n ならば {
+         result に word を追加する
+      }
+      
+      j を増やす
+   }
+   
+   result が答え
+}

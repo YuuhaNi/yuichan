@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+can_arrange = 入力 arr に対し {
+  result = 値なし
+  i = 1
+  arr の大きさ 回 くり返す {
+    もし arr[i] が arr[i - 1] 以下 ならば {
+      result = i
+    }
+    i を増やす
+  }
+  もし result が 値なし ならば {
+    -1 が 答え
+  } そうでなければ {
+    result が 答え
+  }
+}

@@ -1,0 +1,45 @@
+標準ライブラリを使う
+
+sort_even = 入力 l に対し {
+   # 偶数インデックスの要素を抽出
+   even_elements = []
+   i = 0
+   l の大きさ回くり返す {
+      もし剰余(i, 2)が0ならば {
+         even_elements に l[i] を追加する
+      }
+      i を増やす
+   }
+   
+   # even_elements をソート（バブルソート）
+   n = even_elements の大きさ
+   i = 0
+   n回くり返す {
+      j = 0
+      差(n, 1)回くり返す {
+         もし even_elements[j] が even_elements[差(j, 1)] より大きいならば {
+            temp = even_elements[j]
+            even_elements[j] = even_elements[差(j, 1)]
+            even_elements[差(j, 1)] = temp
+         }
+         j を増やす
+      }
+      i を増やす
+   }
+   
+   # 結果を構築
+   result = []
+   i = 0
+   even_idx = 0
+   l の大きさ回くり返す {
+      もし剰余(i, 2)が0ならば {
+         result に even_elements[even_idx] を追加する
+         even_idx を増やす
+      } そうでなければ {
+         result に l[i] を追加する
+      }
+      i を増やす
+   }
+   
+   result が答え
+}

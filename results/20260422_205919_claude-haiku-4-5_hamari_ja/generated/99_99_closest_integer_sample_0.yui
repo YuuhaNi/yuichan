@@ -1,0 +1,31 @@
+標準ライブラリを使う
+
+closest_integer = 入力 value に対し {
+   num = 小数化(value)
+   
+   # 小数部分を取得
+   int_part = 商(num, 1)
+   decimal_part = 差(num, int_part)
+   
+   # 小数部分を正の値に統一（負数対応）
+   もし decimal_part が 0 より小さい ならば {
+      decimal_part = 差(0, decimal_part)
+   }
+   
+   # 四捨五入の判定
+   もし decimal_part が 0.5 より小さい ならば {
+      # 0.5未満なら切り捨て
+      答え int_part
+   }
+   そうでなければ {
+      # 0.5以上ならゼロから遠い方へ
+      もし num が 0 以上 ならば {
+         # 正の数：切り上げ
+         答え 和(int_part, 1)
+      }
+      そうでなければ {
+         # 負の数：切り下げ（ゼロから遠い）
+         答え 差(int_part, 1)
+      }
+   }
+}

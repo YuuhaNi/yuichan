@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+can_arrange = 入力 arr に対し {
+   result = -1
+   n = arr の大きさ
+   i = 1
+   n 回くり返す {
+      もし i が n 以上ならば {
+         くり返しを抜ける
+      }
+      もし arr[i] が arr[差(i,1)] 以下ならば {
+         result = i
+      }
+      i を増やす
+   }
+   result が答え
+}

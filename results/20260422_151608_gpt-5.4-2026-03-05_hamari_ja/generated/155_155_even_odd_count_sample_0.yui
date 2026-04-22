@@ -1,0 +1,33 @@
+標準ライブラリを使う
+
+even_odd_count = 入力 num に対し {
+    もしnumが0より小さいならば{
+        num=差(0,num)
+    }
+
+    even=0
+    odd=0
+
+    もしnumが0ならば{
+        evenを増やす
+    }
+    そうでなければ{
+        くり返し{
+            digit=剰余(num,10)
+            parity=剰余(digit,2)
+            もしparityが0ならば{
+                evenを増やす
+            }
+            そうでなければ{
+                oddを増やす
+            }
+
+            num=商(num,10)
+            もしnumが0ならば{
+                くり返しを抜ける
+            }
+        }
+    }
+
+    (even,odd)が答え
+}

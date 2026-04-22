@@ -1,0 +1,18 @@
+標準ライブラリを使う
+
+largest_prime_factor = 入力 n に対し {
+    max_factor = 1
+    divisor = 2
+    
+    divisor , "が" , n , "以下" , ならば {
+        n , "を" , divisor , "で割った余り" , "が" , 0 , ならば {
+            max_factor = divisor
+            n , "を" , divisor , "で割った商" , "が" , n , "を代入する"
+        }
+        そうでなければ {
+            divisor , "を増やす"
+        }
+    } , "くり返す"
+    
+    max_factor が 答え
+}

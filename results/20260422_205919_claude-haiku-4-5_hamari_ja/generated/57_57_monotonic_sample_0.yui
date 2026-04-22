@@ -1,0 +1,39 @@
+標準ライブラリを使う
+
+monotonic = 入力 l に対し {
+   sz = l の大きさ
+   もし sz が 2 より小さい ならば {
+      真
+   }
+   
+   # 最初の 2 要素で増加/減少を判定
+   increasing = 0
+   decreasing = 0
+   
+   i = 0
+   sz回くり返す {
+      もし i が 差(sz, 1) より小さい ならば {
+         curr = l[i]
+         next = l[和(i, 1)]
+         
+         もし curr が next より小さい ならば {
+            increasing = 1
+         }
+         
+         もし curr が next より大きい ならば {
+            decreasing = 1
+         }
+         
+         # 増加と減少が混在していたら False
+         もし increasing が 1 ならば {
+            もし decreasing が 1 ならば {
+               偽
+            }
+         }
+      }
+      
+      i = 和(i, 1)
+   }
+   
+   真
+}

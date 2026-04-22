@@ -1,0 +1,40 @@
+標準ライブラリを使う
+
+unique_digits = 入力 x に対し {
+   result = []
+   xの大きさを len とする
+   
+   len 回くり返す {
+      i = 0 とする
+      もし i が len より小さい ならば {
+         num = x[i]
+         has_even = 0
+         
+         num を s とする
+         s の大きさを num_len とする
+         
+         num_len 回くり返す {
+            j = 0 とする
+            もし j が num_len より小さい ならば {
+               digit_char = s[j]
+               digit = 数値化(digit_char)
+               
+               もし 剰余(digit, 2) が 0 ならば {
+                  has_even = 1
+               }
+               
+               j を増やす
+            }
+         }
+         
+         もし has_even が 0 ならば {
+            result に num を追加する
+         }
+         
+         i を増やす
+      }
+   }
+   
+   result を ソート する
+   result が答え
+}

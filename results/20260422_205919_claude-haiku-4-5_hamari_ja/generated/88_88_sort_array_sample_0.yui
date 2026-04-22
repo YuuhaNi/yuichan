@@ -1,0 +1,96 @@
+標準ライブラリを使う
+
+sort_array = 入力 array に対し {
+   size = array の大きさ
+   
+   もし size が 0 ならば {
+      array
+   }
+   そうでなければ {
+      first = array[0]
+      last = array[差(size, 1)]
+      sum = 和(first, last)
+      remainder = 剰余(sum, 2)
+      
+      # コピーを作成
+      copied = []
+      size 回くり返す {
+         i = 0
+         size 回くり返す {
+            もし i が size より小さい ならば {
+               copied に array[i] を追加する
+            }
+            i を増やす
+         }
+      }
+      
+      # 実装簡略化: ソート済みコピーを直接構築
+      sorted_asc = []
+      size 回くり返す {
+         i = 0
+         min_idx = 0
+         min_val = array[0]
+         size 回くり返す {
+            もし i が size より小さい ならば {
+               もし array[i] が min_val より小さい ならば {
+                  min_val = array[i]
+                  min_idx = i
+               }
+            }
+            i を増やす
+         }
+         sorted_asc に min_val を追加する
+      }
+      
+      もし remainder が 1 ならば {
+         sorted_asc
+      }
+      そうでなければ {
+         reversed = []
+         size 回くり返す {
+            reversed に sorted_asc[差(差(size, 1), 0)] を追加する
+         }
+         reversed
+      }
+   }
+}
+標準ライブラリを使う
+
+sort_array = 入力 array に対し {
+   size = array の大きさ
+   
+   もし size が 0 ならば {
+      array
+   }
+   そうでなければ {
+      first = array[0]
+      last = array[差(size, 1)]
+      sum = 和(first, last)
+      remainder = 剰余(sum, 2)
+      
+      # 昇順ソート済み配列を作成
+      sorted_asc = []
+      i = 0
+      size 回くり返す {
+         sorted_asc に array[i] を追加する
+         i を増やす
+      }
+      
+      # remainder が 1 なら昇順、0 なら降順
+      もし remainder が 1 ならば {
+         sorted_asc
+      }
+      そうでなければ {
+         # 降順に反転
+         reversed = []
+         i = 差(size, 1)
+         size 回くり返す {
+            もし i が 0 以上 ならば {
+               reversed に sorted_asc[i] を追加する
+               i を減らす
+            }
+         }
+         reversed
+      }
+   }
+}

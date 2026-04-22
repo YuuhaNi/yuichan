@@ -1,0 +1,11 @@
+標準ライブラリを使う
+
+all_prefixes = 入力 string に対し {
+  result = []
+  i = 1
+  string の大きさ が i より大きい {
+    result に string の 1 から i までの部分文字列 を追加する
+    i を増やす
+  }
+  result が 答え
+}

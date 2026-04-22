@@ -1,0 +1,42 @@
+標準ライブラリを使う
+
+pluck = 入力 arr に対し {
+   もし arr の大きさ が 0 ならば {
+      []が答え
+   }
+   
+   smallest_even = 値なし
+   smallest_index = 値なし
+   
+   i = 0
+   arr の大きさ 回くり返す {
+      value = arr[i]
+      
+      # valueが偶数かどうか判定（剰余が0なら偶数）
+      もし 剰余(value, 2) が 0 ならば {
+         # smallest_evenがまだ見つかっていない場合
+         もし smallest_even が 値なし ならば {
+            smallest_even = value
+            smallest_index = i
+         }
+         # valueがsmallest_evenより小さい場合
+         そうでなければ {
+            もし value が smallest_even より小さい ならば {
+               smallest_even = value
+               smallest_index = i
+            }
+         }
+      }
+      
+      i を増やす
+   }
+   
+   # 偶数が見つかった場合
+   もし smallest_even が 値なし でない ならば {
+      [smallest_even, smallest_index]が答え
+   }
+   # 偶数が見つからなかった場合
+   そうでなければ {
+      []が答え
+   }
+}

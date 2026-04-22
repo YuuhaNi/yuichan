@@ -1,0 +1,61 @@
+標準ライブラリを使う
+
+string_sequence = 入力 n に対し {
+   result = ""
+   0回くり返す {
+      もしresultが""ならば {
+         resultに文字列化(0)を追加する
+      }
+      そうでなければ {
+         resultに" "を追加する
+         resultに文字列化(0)を追加する
+      }
+   }
+   n回くり返す {
+      resultに" "を追加する
+      resultに文字列化(0)を追加する
+   }
+   result が答え
+}
+標準ライブラリを使う
+
+string_sequence = 入力 n に対し {
+   result = ""
+   i = 0
+   n回くり返す {
+      もしiが0ならば {
+         resultに文字列化(i)を追加する
+      }
+      そうでなければ {
+         resultに" "を追加する
+         resultに文字列化(i)を追加する
+      }
+      iを増やす
+   }
+   iを増やす
+   result が答え
+}
+標準ライブラリを使う
+
+string_sequence = 入力 n に対し {
+   result = ""
+   i = 0
+   n回くり返す {
+      もしresultが""ならば {
+         resultに文字列化(i)を追加する
+      }
+      そうでなければ {
+         resultに" "を追加する
+         resultに文字列化(i)を追加する
+      }
+      iを増やす
+   }
+   もしresultが""ならば {
+      resultに文字列化(n)を追加する
+   }
+   そうでなければ {
+      resultに" "を追加する
+      resultに文字列化(n)を追加する
+   }
+   result が答え
+}

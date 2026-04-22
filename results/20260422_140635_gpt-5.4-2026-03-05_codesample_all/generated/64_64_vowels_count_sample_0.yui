@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+vowels_count=入力sに対し{
+   vowels="aeiouAEIOU"
+   count=0
+   i=0
+   sの大きさ回くり返す{
+      c=s[i]
+      もしcがvowelsのいずれかならば{
+         countを増やす
+      }
+      iを増やす
+   }
+   countが答え
+}
+
+# テスト: 基本

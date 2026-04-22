@@ -1,0 +1,12 @@
+標準ライブラリを使う
+
+sum_squares = 入力 lst に対し {
+   total = 0
+   i = 0
+   lstの大きさ回くり返す{
+      x = 切り上げ(lst[i])
+      total = 和(total, 積(x, x))
+      iを増やす
+   }
+   totalが答え
+}

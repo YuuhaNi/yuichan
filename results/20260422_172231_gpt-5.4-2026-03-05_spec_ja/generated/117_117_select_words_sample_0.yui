@@ -1,0 +1,81 @@
+標準ライブラリを使う
+
+select_words = 入力 s, n に対し {
+   words = []
+   current = ""
+   i = 0
+
+   sの大きさ回くり返す {
+      c = s[i]
+      もしcが32ならば {
+         もしcurrentが""以外ならば {
+            wordsにcurrentを追加する
+            current = ""
+         }
+      }
+      そうでなければ {
+         current = "{current}{c}"
+      }
+      iを増やす
+   }
+
+   もしcurrentが""以外ならば {
+      wordsにcurrentを追加する
+   }
+
+   result = []
+   wi = 0
+
+   wordsの大きさ回くり返す {
+      word = words[wi]
+      count = 0
+      j = 0
+
+      wordの大きさ回くり返す {
+         ch = word[j]
+         lower = ch
+         もしchが65以上ならば {
+            もしchが90以下ならば {
+               lower = 和(ch, 32)
+            }
+         }
+
+         もしlowerが97ならば {
+            何もしない
+         }
+         そうでなければ {
+            もしlowerが101ならば {
+               何もしない
+            }
+            そうでなければ {
+               もしlowerが105ならば {
+                  何もしない
+               }
+               そうでなければ {
+                  もしlowerが111ならば {
+                     何もしない
+                  }
+                  そうでなければ {
+                     もしlowerが117ならば {
+                        何もしない
+                     }
+                     そうでなければ {
+                        count = 和(count, 1)
+                     }
+                  }
+               }
+            }
+         }
+
+         jを増やす
+      }
+
+      もしcountがnならば {
+         resultにwordを追加する
+      }
+
+      wiを増やす
+   }
+
+   result が答え
+}

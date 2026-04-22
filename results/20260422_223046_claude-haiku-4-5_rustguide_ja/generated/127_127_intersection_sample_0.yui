@@ -1,0 +1,53 @@
+標準ライブラリを使う
+
+# 素数判定関数
+is_prime = 入力 n に対し {
+   もし n が 2 より小さいならば {
+      偽が答え
+   }
+   もし n が 2 ならば {
+      真が答え
+   }
+   i = 2
+   n回くり返す {
+      もし i が n より大きいならば {
+         くり返しを抜ける
+      }
+      もし 剰余(n, i) が 0 ならば {
+         偽が答え
+      }
+      i を増やす
+   }
+   真が答え
+}
+
+intersection = 入力 interval1, interval2 に対し {
+   # interval1 = [start1, end1], interval2 = [start2, end2]
+   start1 = interval1[0]
+   end1 = interval1[1]
+   start2 = interval2[0]
+   end2 = interval2[1]
+   
+   # 交差部分の開始地点 = max(start1, start2)
+   intersection_start = 最大値(start1, start2)
+   
+   # 交差部分の終了地点 = min(end1, end2)
+   intersection_end = 最小値(end1, end2)
+   
+   # 交差部分が存在するかチェック
+   もし intersection_start が intersection_end より大きいならば {
+      "NO"が答え
+   }
+   
+   # 交差部分の長さを計算
+   length = 差(intersection_end, intersection_start)
+   length を増やす
+   
+   # 長さが素数かチェック
+   もし is_prime(length) が 真 ならば {
+      "YES"が答え
+   }
+   そうでなければ {
+      "NO"が答え
+   }
+}

@@ -1,0 +1,28 @@
+標準ライブラリを使う
+
+mean_absolute_deviation = 入力 numbers に対し {
+    平均値 = 和(numbers) を 長さ(numbers) で割った値
+    偏差リスト = []
+    長さ(numbers) 回 くり返す {
+        i = カウンタ
+        差 = numbers[i] が 平均値 より大きい
+        もし 差 ならば {
+            偏差リスト の末尾 に numbers[i] が 平均値 より大きい を追加する
+        } そうでなければ {
+            偏差リスト の末尾 に 平均値 が numbers[i] より大きい を追加する
+        }
+    }
+    和(偏差リスト) を 長さ(偏差リスト) で割った値 が 答え
+}
+標準ライブラリを使う
+
+mean_absolute_deviation = 入力 numbers に対し {
+    平均値 = 和(numbers) を 長さ(numbers) で割った値
+    偏差の合計 = 0
+    長さ(numbers) 回 くり返す {
+        i = カウンタ
+        差 = 絶対値(numbers[i] が 平均値 より大きい)
+        偏差の合計 を 差 に追加する
+    }
+    偏差の合計 を 長さ(numbers) で割った値 が 答え
+}

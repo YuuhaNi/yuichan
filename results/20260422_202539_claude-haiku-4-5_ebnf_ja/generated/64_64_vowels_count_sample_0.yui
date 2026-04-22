@@ -1,0 +1,28 @@
+標準ライブラリを使う
+
+vowels_count = 入力 s に対し {
+  count = 0
+  i = 0
+  s の大きさ が length に対し {
+    もし i が length より小さい ならば {
+      char = s[i]
+      もし char が "a" ならば {
+        count を増やす
+      }
+      そうでなければ もし char が "e" ならば {
+        count を増やす
+      }
+      そうでなければ もし char が "i" ならば {
+        count を増やす
+      }
+      そうでなければ もし char が "o" ならば {
+        count を増やす
+      }
+      そうでなければ もし char が "u" ならば {
+        count を増やす
+      }
+      i を増やす
+    }
+  }
+  count が 答え
+}

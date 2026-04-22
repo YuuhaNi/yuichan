@@ -1,0 +1,33 @@
+標準ライブラリを使う
+
+unique_digits = 入力 x に対し {
+   result = []
+   x の大きさ 回くり返す {
+      i = 0
+      num = x[i]
+      has_even_digit = 偽
+      
+      もし num が 0 ならば {
+         has_even_digit = 真
+      }
+      そうでなければ {
+         num_str = 文字列化(num)
+         num_str の大きさ 回くり返す {
+            digit_char = num_str[i]
+            digit = 整数化(digit_char)
+            もし 剰余(digit, 2) が 0 ならば {
+               has_even_digit = 真
+               くり返しを抜ける
+            }
+            i を増やす
+         }
+      }
+      
+      もし has_even_digit が 偽 ならば {
+         result に x[i] を追加する
+      }
+      i を増やす
+   }
+   
+   result が答え
+}

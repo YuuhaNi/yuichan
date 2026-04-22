@@ -1,0 +1,21 @@
+標準ライブラリを使う
+
+count_distinct_characters = 入力 string に対し {
+   distinct = []
+   i = 0
+   stringの大きさ回くり返す{
+      char = string[i]
+      # 小文字に統一（大文字を小文字に変換）
+      もしcharが65以上ならば{
+         もしcharが90以下ならば{
+            char = 和(char, 32)
+         }
+      }
+      # distinctに含まれていなければ追加
+      もしcharがdistinctのいずれでもないならば{
+         distinctにcharを追加する
+      }
+      iを増やす
+   }
+   distinctの大きさが答え
+}

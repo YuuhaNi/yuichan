@@ -1,0 +1,55 @@
+標準ライブラリを使う
+
+sort_third = 入力 l に対し {
+   # ステップ 1: インデックスが 3 で割り切れる要素を抽出
+   third_elements = []
+   i = 0
+   l の大きさ 回 くり返す {
+      remainder = 剰余(i, 3)
+      もし remainder が 0 ならば {
+         third_elements に l[i] を追加する
+      }
+      i を増やす
+   }
+   
+   # ステップ 2: 抽出した要素をソート
+   sorted_third = bubble_sort(third_elements)
+   
+   # ステップ 3: ソート済み要素を元の位置に戻す
+   result = []
+   i = 0
+   l の大きさ 回 くり返す {
+      result に l[i] を追加する
+   }
+   
+   sorted_index = 0
+   i = 0
+   l の大きさ 回 くり返す {
+      remainder = 剰余(i, 3)
+      もし remainder が 0 ならば {
+         result[i] = sorted_third[sorted_index]
+         sorted_index を増やす
+      }
+      i を増やす
+   }
+   
+   result が答え
+}
+
+# バブルソート (ヘルパー関数)
+bubble_sort = 入力 A に対し {
+   n = A の大きさ
+   n 回 くり返す {
+      i = 0
+      差(n, 1) 回 くり返す {
+         j = 和(i, 1)
+         もし A[i] が A[j] より大きい ならば {
+            tmp = A[i]
+            A[i] = A[j]
+            A[j] = tmp
+         }
+         i を増やす
+      }
+   }
+   A が答え
+}

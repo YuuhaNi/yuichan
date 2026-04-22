@@ -1,0 +1,59 @@
+標準ライブラリを使う
+
+order_by_points = 入力 nums に対し {
+  digit_sum = 入力 n に対し {
+    もし n が 0 より小さい ならば {
+      n = 差(0, n)
+    }
+    s = 0
+    もし n が 0 ならば {
+      0 が 答え
+    }
+    n 回 くり返す {
+      関数から抜ける
+    }
+    もし 真 が 真 ならば {
+      text = 文字列(n)
+      i = 0
+      textの大きさ 回 くり返す {
+        ch = text[i]
+        s = 和(s, 整数(ch))
+        iを増やす
+      }
+    }
+    s が 答え
+  }
+
+  result = []
+  used = []
+
+  numsの大きさ 回 くり返す {
+    usedに 偽を追加する
+  }
+
+  numsの大きさ 回 くり返す {
+    best_index = 値なし
+    best_sum = 値なし
+    i = 0
+    numsの大きさ 回 くり返す {
+      もし used[i] が 偽 ならば {
+        current = nums[i]
+        current_sum = digit_sum(current)
+        もし best_index が 値なし ならば {
+          best_index = i
+          best_sum = current_sum
+        } そうでなければ {
+          もし current_sum が best_sum より小さい ならば {
+            best_index = i
+            best_sum = current_sum
+          }
+        }
+      }
+      iを増やす
+    }
+    resultに nums[best_index]を追加する
+    used[best_index] = 真
+  }
+
+  result が 答え
+}

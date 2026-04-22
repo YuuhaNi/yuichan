@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+find_zero = 入力 xs, x に対し {
+   result = 0
+   power = 1
+   n = xsの大きさ
+   i = 0
+   n回くり返す {
+      もし i が n より小さい ならば {
+         term = 積(xs[i], power)
+         result = 和(result, term)
+         power = 積(power, x)
+         i = 和(i, 1)
+      }
+   }
+   result が答え
+}

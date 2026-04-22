@@ -1,0 +1,32 @@
+標準ライブラリを使う
+
+intersection = 入力 interval1, interval2 に対し {
+    start1 = interval1[0]
+    end1 = interval1[1]
+    start2 = interval2[0]
+    end2 = interval2[1]
+
+    left = 最大(start1, start2)
+    right = 最小(end1, end2)
+
+    もし left が right より大きい ならば {
+        "NO" が 答え
+    }
+
+    length = 差(right, left)
+
+    もし length が 2 より小さい ならば {
+        "NO" が 答え
+    }
+
+    i = 2
+    くり返し回数 = 差(length, 2)
+    くり返し回数 回 くり返す {
+        もし 剰余(length, i) が 0 ならば {
+            "NO" が 答え
+        }
+        iを増やす
+    }
+
+    "YES" が 答え
+}

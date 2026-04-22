@@ -1,0 +1,12 @@
+標準ライブラリを使う
+
+derivative = 入力 xs に対し {
+   n=xsの大きさ
+   result=[]
+   i=1
+   差(n,1)回くり返す{
+      resultに積(xs[i],i)を追加する
+      iを増やす
+   }
+   resultが答え
+}

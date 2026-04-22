@@ -1,0 +1,23 @@
+標準ライブラリを使う
+
+factorial = 入力 x に対し {
+   もし x が 0 ならば {
+      1 が答え
+   }
+   そうでなければ {
+      積(x, factorial(差(x, 1))) が答え
+   }
+}
+
+special_factorial = 入力 n に対し {
+   result = 1
+   n 回くり返す {
+      result_temp = 0
+      もし n が 0 ならば {
+         くり返しを抜ける
+      }
+      result = 積(result, factorial(n))
+      n を減らす
+   }
+   result が答え
+}

@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+get_row = 入力 lst, x に対し {
+  result = []
+  i = 0
+  lstの大きさ回 くり返す {
+    row = lst[i]
+    j = rowの大きさ
+    jを減らす
+    rowの大きさ回 くり返す {
+      もし row[j] が x ならば {
+        resultに [i, j] を追加する
+      }
+      jを減らす
+    }
+    iを増やす
+  }
+  result が 答え
+}

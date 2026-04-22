@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+can_arrange = 入力 arr に対し {
+   result = 差(0, 1)
+   sz = arrの大きさ
+   i = 1
+   sz回くり返す {
+      もし i が sz 以上ならば {
+         くり返しを抜ける
+      }
+      current = arr[i]
+      prev = arr[差(i, 1)]
+      もし current が prev より小さいならば {
+         result = i
+      }
+      i を増やす
+   }
+   result
+}

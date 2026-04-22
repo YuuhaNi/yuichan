@@ -1,0 +1,29 @@
+標準ライブラリを使う
+
+tri_helper = 入力 n に対し {
+   もし n が 1 ならば {
+      3 が答え
+   }
+   そうでなければ {
+      r = 剰余(n, 2)
+      もし r が 0 ならば {
+         和(1, 商(n, 2)) が答え
+      }
+      そうでなければ {
+         a = tri_helper(差(n, 1))
+         b = tri_helper(差(n, 2))
+         c = tri_helper(和(n, 1))
+         和(a, b, c) が答え
+      }
+   }
+}
+
+tri = 入力 n に対し {
+   result = []
+   i = 0
+   和(n, 1)回くり返す {
+      result に tri_helper(i) を追加する
+      i を増やす
+   }
+   result が答え
+}

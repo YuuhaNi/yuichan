@@ -1,0 +1,85 @@
+標準ライブラリを使う
+
+minPath = 入力 grid, k に対し {
+  n = gridの大きさ
+  pos = {}
+  i = 0
+  n回 くり返す {
+    j = 0
+    n回 くり返す {
+      v = grid[i][j]
+      pos["{v}"] = [i, j]
+      jを増やす
+    }
+    iを増やす
+  }
+
+  ans = []
+  cur = 1
+  ansにcurを追加する
+
+  もし kが1ならば {
+    ansが答え
+  }
+
+  rem = k
+  remを減らす
+
+  rem回 くり返す {
+    p = pos["{cur}"]
+    x = p[0]
+    y = p[1]
+
+    best = 値なし
+    cand = cur
+
+    もし xが0より大きいならば {
+      cand = grid[x - 1][y]
+      もし bestが値なしならば {
+        best = cand
+      } そうでなければ {
+        もし candがbestより小さいならば {
+          best = cand
+        }
+      }
+    }
+
+    もし xがn - 1より小さいならば {
+      cand = grid[x + 1][y]
+      もし bestが値なしならば {
+        best = cand
+      } そうでなければ {
+        もし candがbestより小さいならば {
+          best = cand
+        }
+      }
+    }
+
+    もし yが0より大きいならば {
+      cand = grid[x][y - 1]
+      もし bestが値なしならば {
+        best = cand
+      } そうでなければ {
+        もし candがbestより小さいならば {
+          best = cand
+        }
+      }
+    }
+
+    もし yがn - 1より小さいならば {
+      cand = grid[x][y + 1]
+      もし bestが値なしならば {
+        best = cand
+      } そうでなければ {
+        もし candがbestより小さいならば {
+          best = cand
+        }
+      }
+    }
+
+    cur = best
+    ansにcurを追加する
+  }
+
+  ansが答え
+}

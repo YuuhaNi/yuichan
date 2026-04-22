@@ -1,0 +1,22 @@
+標準ライブラリを使う
+
+decode_cyclic = 入力 s に対し {
+   result=""
+   n=sの大きさ
+   i=0
+   n回くり返す{
+      c=s[i]
+      r=剰余(i,3)
+      もしrが0ならば{
+         resultにcを追加する
+      }
+      もしrが1ならば{
+         result=c+result
+      }
+      もしrが2ならば{
+         result=差(result,c)
+      }
+      iを増やす
+   }
+   resultが答え
+}

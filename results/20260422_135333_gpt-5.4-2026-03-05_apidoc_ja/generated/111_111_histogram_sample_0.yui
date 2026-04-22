@@ -1,0 +1,32 @@
+標準ライブラリを使う
+
+histogram = 入力 test に対し {
+    もし test == "" なら {
+        {}
+    } でなければ {
+        chars = test.split(" ")
+        counts = {}
+        max_count = 0
+
+        charsそれぞれに対し ch -> {
+            もし counts[ch] == 値なし なら {
+                counts[ch] = 1
+            } でなければ {
+                counts[ch] = counts[ch] + 1
+            }
+
+            もし counts[ch] > max_count なら {
+                max_count = counts[ch]
+            }
+        }
+
+        result = {}
+        charsそれぞれに対し ch -> {
+            もし counts[ch] == max_count なら {
+                result[ch] = counts[ch]
+            }
+        }
+
+        result
+    }
+}

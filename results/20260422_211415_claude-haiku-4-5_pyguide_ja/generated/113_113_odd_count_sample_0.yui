@@ -1,0 +1,55 @@
+標準ライブラリを使う
+
+odd_count = 入力 lst に対し {
+   result = []
+   i = 0
+   lstの大きさ回くり返す {
+      s = lst[i]
+      odd_num = 0
+      j = 0
+      sの大きさ回くり返す {
+         char_code = s[j]
+         num = 差(char_code, 48)
+         もしnum が1ならば {
+            oddを増やす
+         }
+         そうでなければ {
+            もしnum が3ならば {
+               odd_numを増やす
+            }
+            そうでなければ {
+               もしnum が5ならば {
+                  odd_numを増やす
+               }
+               そうでなければ {
+                  もしnum が7ならば {
+                     odd_numを増やす
+                  }
+                  そうでなければ {
+                     もしnum が9ならば {
+                        odd_numを増やす
+                     }
+                  }
+               }
+            }
+         }
+         jを増やす
+      }
+      odd_str = 文字列化(odd_num)
+      template = "the number of odd elements in the string i of the input."
+      output = ""
+      k = 0
+      templateの大きさ回くり返す {
+         もしtemplate[k]が"i"[0]ならば {
+            outputにodd_strを追加する
+         }
+         そうでなければ {
+            outputにtemplate[k]を追加する
+         }
+         kを増やす
+      }
+      resultにoutputを追加する
+      iを増やす
+   }
+   result
+}

@@ -1,0 +1,61 @@
+標準ライブラリを使う
+
+order_by_points = 入力 nums に対し {
+   # 桁の合計を計算する関数
+   digit_sum = 入力 n に対し {
+      もし n が 0 より小さい ならば {
+         n = 積(-1, n)
+      }
+      sum = 0
+      n回くり返す {
+         sum = 和(sum, 剰余(n, 10))
+         n = 商(n, 10)
+         もし n が 0 ならば {
+            くり返しを抜ける
+         }
+      }
+      sum が答え
+   }
+
+   # 結果配列と元のインデックスを保持する配列を作成
+   result = []
+   i = 0
+   nums の大きさ 回 くり返す {
+      item = {"value": nums[i], "index": i, "sum": digit_sum(nums[i])}
+      result に item を追加する
+      i を増やす
+   }
+
+   # バブルソートで桁の合計でソート（同じ場合は元のインデックスで比較）
+   n = result の大きさ
+   i = 0
+   n 回 くり返す {
+      j = 0
+      差(n, 1) 回 くり返す {
+         もし result[j]["sum"] が result[差(j, -1)]["sum"] より大きい ならば {
+            temp = result[j]
+            result[j] = result[差(j, -1)]
+            result[差(j, -1)] = temp
+         } そうでなければ {
+            もし result[j]["sum"] が result[差(j, -1)]["sum"] ならば {
+               もし result[j]["index"] が result[差(j, -1)]["index"] より大きい ならば {
+                  temp = result[j]
+                  result[j] = result[差(j, -1)]
+                  result[差(j, -1)] = temp
+               }
+            }
+         }
+         j を増やす
+      }
+      i を増やす
+   }
+
+   # 値だけを抽出して返す
+   answer = []
+   i = 0
+   result の大きさ 回 くり返す {
+      answer に result[i]["value"] を追加する
+      i を増やす
+   }
+   answer が答え
+}

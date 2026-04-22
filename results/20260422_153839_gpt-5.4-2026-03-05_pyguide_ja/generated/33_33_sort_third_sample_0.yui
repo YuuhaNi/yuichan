@@ -1,0 +1,45 @@
+標準ライブラリを使う
+
+sort_third = 入力 l に対し {
+   picked = []
+   i = 0
+   lの大きさ回くり返す{
+      j = 商(i, 3)
+      もし積(j, 3)がiならば{
+         pickedにl[i]を追加する
+      }
+      iを増やす
+   }
+
+   n = pickedの大きさ
+   n回くり返す{
+      j = 0
+      差(n, 1)回くり返す{
+         もしjが差(n, 1)より小さいならば{
+            もしpicked[j]がpicked[和(j, 1)]より大きいならば{
+               tmp = picked[j]
+               picked[j] = picked[和(j, 1)]
+               picked[和(j, 1)] = tmp
+            }
+         }
+         jを増やす
+      }
+   }
+
+   result = []
+   i = 0
+   k = 0
+   lの大きさ回くり返す{
+      j = 商(i, 3)
+      もし積(j, 3)がiならば{
+         resultにpicked[k]を追加する
+         kを増やす
+      }
+      そうでなければ{
+         resultにl[i]を追加する
+      }
+      iを増やす
+   }
+
+   resultが答え
+}

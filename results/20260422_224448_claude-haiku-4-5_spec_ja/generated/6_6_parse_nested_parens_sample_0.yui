@@ -1,0 +1,43 @@
+標準ライブラリを使う
+
+parse_nested_parens = 入力 paren_string に対し {
+   groups = []
+   i = 0
+   
+   i < paren_stringの大きさ まで {
+      もし paren_string[i] が 32 以外ならば {
+         max_depth = 0
+         current_depth = 0
+         
+         i < paren_stringの大きさ まで {
+            char_code = paren_string[i]
+            
+            もし char_code が 40 ならば {
+               current_depth を増やす
+               もし current_depth が max_depth より大きいならば {
+                  max_depth = current_depth
+               }
+            }
+            そうでなければ {
+               もし char_code が 41 ならば {
+                  current_depth を減らす
+               }
+               そうでなければ {
+                  もし char_code が 32 ならば {
+                     くり返しを抜ける
+                  }
+               }
+            }
+            
+            i を増やす
+         }
+         
+         groupsに max_depth を追加する
+      }
+      そうでなければ {
+         i を増やす
+      }
+   }
+   
+   groups が答え
+}

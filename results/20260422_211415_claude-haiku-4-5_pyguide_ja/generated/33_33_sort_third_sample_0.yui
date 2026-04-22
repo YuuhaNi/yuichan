@@ -1,0 +1,43 @@
+標準ライブラリを使う
+
+sort_third = 入力 l に対し {
+   # インデックスが3で割り切れる要素を抽出
+   third_elements = []
+   i = 0
+   l の大きさ 回くり返す {
+      もし 剰余(i, 3) が 0 ならば {
+         third_elements に l[i] を追加する
+      }
+      i を増やす
+   }
+   
+   # third_elements をソート（バブルソート）
+   n = third_elements の大きさ
+   n 回くり返す {
+      j = 0
+      差(n, 1) 回くり返す {
+         もし third_elements[j] が third_elements[差(j, 1)] より大きいならば {
+            temp = third_elements[j]
+            third_elements[j] = third_elements[差(j, 1)]
+            third_elements[差(j, 1)] = temp
+         }
+         j を増やす
+      }
+   }
+   
+   # 結果を構築
+   result = []
+   i = 0
+   third_index = 0
+   l の大きさ 回くり返す {
+      もし 剰余(i, 3) が 0 ならば {
+         result に third_elements[third_index] を追加する
+         third_index を増やす
+      } そうでなければ {
+         result に l[i] を追加する
+      }
+      i を増やす
+   }
+   
+   result が答え
+}

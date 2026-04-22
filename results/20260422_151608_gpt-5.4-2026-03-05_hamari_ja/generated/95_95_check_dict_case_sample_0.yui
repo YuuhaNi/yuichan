@@ -1,0 +1,45 @@
+標準ライブラリを使う
+
+check_dict_case = 入力 dict に対し {
+   keys=dictのキー列
+   n=keysの大きさ
+   もしnが0ならば{
+      偽が答え
+   }
+
+   lower_count=0
+   upper_count=0
+   i=0
+
+   n回くり返す{
+      k=keys[i]
+
+      もしkが文字列以外ならば{
+         偽が答え
+      }
+
+      もしkが小文字ならば{
+         lower_countを増やす
+      }
+      そうでなければ{
+         もしkが大文字ならば{
+            upper_countを増やす
+         }
+         そうでなければ{
+            偽が答え
+         }
+      }
+
+      iを増やす
+   }
+
+   もしlower_countがnならば{
+      真が答え
+   }
+
+   もしupper_countがnならば{
+      偽が答え
+   }
+
+   偽が答え
+}

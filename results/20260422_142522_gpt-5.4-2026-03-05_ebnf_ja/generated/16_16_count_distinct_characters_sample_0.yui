@@ -1,0 +1,12 @@
+標準ライブラリを使う
+
+count_distinct_characters = 入力 string に対し {
+    lower = 小文字にする(string)
+    seen = {}
+    i = 0
+    lowerの大きさ回 くり返す {
+        seen[lower[i]] = 真
+        iを増やす
+    }
+    seenの大きさが答え
+}

@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+starts_one_ends = 入力 n に対し {
+   # n桁の数は 10^(n-1) 個ある
+   total=1
+   i=1
+   n回くり返す{
+      total=積(total,10)
+      iを増やす
+   }
+   total=商(total,10)
+
+   # 先頭が1の数は 10^(n-1) 個
+   starts=total
+
+   # 末尾が1の数も 10^(n-1) 個
+   ends=total
+
+   # 両方満たす数 (先頭も末尾も1) は n=1 でも n>=2 でも 10^(n-2) 個に相当し、
+   # 上の total を 10 で割ればよい
+   both=商(total,10)
+   もしnが1ならば{
+      both=1
+   }
+
+   和(差(和(starts,ends),both),0)が答え
+}

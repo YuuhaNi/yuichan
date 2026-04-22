@@ -1,0 +1,52 @@
+標準ライブラリを使う
+
+solve = 入力 s に対し {
+   result = ""
+   hasAlpha = 0
+   len = sの大きさ
+   
+   len回くり返す {
+      i = 繰り返し回数
+      差を減らす
+      c = s[i]
+      
+      もしcが"a"以上ならば {
+         もしcが"z"以下ならば {
+            hasAlpha = 1
+            upper = 大文字化(c)
+            resultにupperを連結する
+         }
+         そうでなければ {
+            もしcが"A"以上ならば {
+               もしcが"Z"以下ならば {
+                  hasAlpha = 1
+                  lower = 小文字化(c)
+                  resultにlowerを連結する
+               }
+               そうでなければ {
+                  resultにcを連結する
+               }
+            }
+            そうでなければ {
+               resultにcを連結する
+            }
+         }
+      }
+      そうでなければ {
+         resultにcを連結する
+      }
+   }
+   
+   もしhasAlphaが0ならば {
+      reversed = ""
+      len回くり返す {
+         i = 繰り返し回数
+         差を減らす
+         idx = 差(差(len,1),i)
+         reversed = 連結(reversed,s[idx])
+      }
+      reversedが答え
+   }
+   
+   resultが答え
+}

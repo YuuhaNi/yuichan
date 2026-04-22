@@ -1,0 +1,23 @@
+標準ライブラリを使う
+
+sort_numbers = 入力 numbers に対し {
+   parts=numbersを" "で分割する
+   order=["zero","one","two","three","four","five","six","seven","eight","nine"]
+   result=[]
+   i=0
+   n=partsの大きさ
+
+   n回くり返す{
+      w=parts[i]
+      j=0
+      10回くり返す{
+         もしwがorder[j]ならば{
+            resultにwを追加する
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+
+   resultを" "で結合したものが答え
+}

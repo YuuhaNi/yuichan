@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+change_base = 入力 x, base に対し {
+   もしxが0ならば{
+      "0"が答え
+   }
+
+   result=""
+   n=x
+   1000回くり返す{
+      もしnが0ならば{
+         くり返しを抜ける
+      }
+      digit=剰余(n,base)
+      result="{digit}{result}"
+      n=商(n,base)
+   }
+   resultが答え
+}

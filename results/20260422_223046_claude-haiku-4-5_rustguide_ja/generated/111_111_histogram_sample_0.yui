@@ -1,0 +1,64 @@
+標準ライブラリを使う
+
+histogram = 入力 test に対し {
+   counts = {}
+   
+   # 空文字列の場合は空のオブジェクトを返す
+   もし test が "" ならば {
+      countsが答え
+   }
+   
+   # スペースで分割して各文字をカウント
+   chars = 配列化(test)
+   i = 0
+   chars の大きさ 回くり返す {
+      c = chars[i]
+      
+      # スペース（32）をスキップ
+      もし c が 32 以外 ならば {
+         char_str = 文字列化(c)
+         
+         # 既にカウントに存在するか確認
+         もし char_str が counts のいずれかならば {
+            counts[char_str] を増やす
+         } そうでなければ {
+            counts[char_str] = 1
+         }
+      }
+      
+      i を増やす
+   }
+   
+   # 最大カウント値を見つける
+   max_count = 0
+   i = 0
+   chars の大きさ 回くり返す {
+      c = chars[i]
+      もし c が 32 以外 ならば {
+         char_str = 文字列化(c)
+         current = counts[char_str]
+         もし current が max_count より大きい ならば {
+            max_count = current
+         }
+      }
+      i を増やす
+   }
+   
+   # 最大カウントを持つ文字のみを結果に含める
+   result = {}
+   i = 0
+   chars の大きさ 回くり返す {
+      c = chars[i]
+      もし c が 32 以外 ならば {
+         char_str = 文字列化(c)
+         もし result が char_str のいずれでもないならば {
+            もし counts[char_str] が max_count ならば {
+               result[char_str] = max_count
+            }
+         }
+      }
+      i を増やす
+   }
+   
+   result が答え
+}

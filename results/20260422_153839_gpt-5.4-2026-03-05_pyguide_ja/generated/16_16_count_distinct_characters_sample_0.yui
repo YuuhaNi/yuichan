@@ -1,0 +1,24 @@
+標準ライブラリを使う
+
+count_distinct_characters = 入力 string に対し {
+   seen = []
+   i = 0
+
+   stringの大きさ回くり返す{
+      ch = string[i]
+
+      もしchが65以上ならば{
+         もしchが90以下ならば{
+            ch = 和(ch, 32)
+         }
+      }
+
+      もしchがseenのいずれでもないならば{
+         seenにchを追加する
+      }
+
+      iを増やす
+   }
+
+   seenの大きさが答え
+}

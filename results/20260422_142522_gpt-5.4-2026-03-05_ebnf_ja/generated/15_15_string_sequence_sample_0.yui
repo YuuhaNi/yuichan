@@ -1,0 +1,14 @@
+標準ライブラリを使う
+
+string_sequence = 入力 n に対し {
+    もし n が 0 以下 ならば {
+        "0" が 答え
+    }
+    result = "0"
+    i = 1
+    n回 くり返す {
+        result = 連結(result, " ", 文字列(i))
+        iを増やす
+    }
+    result が 答え
+}

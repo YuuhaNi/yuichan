@@ -1,0 +1,13 @@
+標準ライブラリを使う
+
+sum_squares = 入力 lst に対し {
+   total=0
+   i=0
+   lstの大きさ回くり返す{
+      x=lst[i]
+      y=天井(x)
+      total=和(total,積(y,y))
+      iを増やす
+   }
+   totalが答え
+}

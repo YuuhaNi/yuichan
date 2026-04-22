@@ -1,0 +1,36 @@
+標準ライブラリを使う
+
+solve = 入力 N に対し {
+   # 各桁の総和を計算
+   digit_sum = 0
+   temp = N
+   
+   0より大きいくり返す {
+      もし temp が 0 ならば {
+         くり返しを抜ける
+      }
+      digit = 剰余(temp, 10)
+      digit_sum = 和(digit_sum, digit)
+      temp = 商(temp, 10)
+   }
+   
+   # digit_sum を2進数に変換
+   もし digit_sum が 0 ならば {
+      "0"
+   }
+   そうでなければ {
+      binary = ""
+      num = digit_sum
+      
+      0より大きいくり返す {
+         もし num が 0 ならば {
+            くり返しを抜ける
+         }
+         remainder = 剰余(num, 2)
+         binary = 連結(remainder, binary)
+         num = 商(num, 2)
+      }
+      
+      binary
+   }
+}

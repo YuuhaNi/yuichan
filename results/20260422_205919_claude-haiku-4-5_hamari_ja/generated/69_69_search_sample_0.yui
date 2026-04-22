@@ -1,0 +1,24 @@
+標準ライブラリを使う
+
+search = 入力 lst に対し {
+   result = 差(0, 1)
+   i = 0
+   lstの大きさ回くり返す {
+      num = lst[i]
+      count = 0
+      j = 0
+      lstの大きさ回くり返す {
+         もし lst[j] が num ならば {
+            count を増やす
+         }
+         j を増やす
+      }
+      もし count が num 以上ならば {
+         もし num が result より大きい ならば {
+            result = num
+         }
+      }
+      i を増やす
+   }
+   result
+}

@@ -1,0 +1,36 @@
+標準ライブラリを使う
+
+find_max = 入力 words に対し {
+    best = ""
+    best_count = -1
+
+    words の各要素を w で繰り返す {
+        chars = 配列化(w)
+        unique = []
+
+        chars の各要素を c で繰り返す {
+            found = 偽
+            unique の各要素を u で繰り返す {
+                もし u == c なら {
+                    found = 真
+                }
+            }
+            もし found == 偽 なら {
+                unique = unique + [c]
+            }
+        }
+
+        count = 長さ(unique)
+
+        もし count > best_count なら {
+            best = w
+            best_count = count
+        } でなければ もし count == best_count なら {
+            もし w < best なら {
+                best = w
+            }
+        }
+    }
+
+    best
+}

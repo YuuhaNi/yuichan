@@ -1,0 +1,24 @@
+標準ライブラリを使う
+
+count_distinct_characters = 入力 string に対し {
+   chars=[]
+   i=0
+   n=stringの長さ
+   n回くり返す{
+      ch=小文字にする(string[i])
+      seen=0
+      j=0
+      m=charsの大きさ
+      m回くり返す{
+         もしchars[j]がchならば{
+            seen=1
+         }
+         jを増やす
+      }
+      もしseenが0ならば{
+         charsにchを追加する
+      }
+      iを増やす
+   }
+   charsの大きさが答え
+}

@@ -1,0 +1,30 @@
+標準ライブラリを使う
+
+double_the_difference = 入力 lst に対し {
+  もし 配列判定(lst) が 偽 ならば {
+    戻す 0
+  }
+  
+  filtered = []
+  i = 0
+  繰り返す (i < 長さ(lst)) {
+    item = lst[i]
+    もし 整数判定(item) かつ item > 0 かつ 剰余(item, 2) = 1 ならば {
+      filtered = 追加(filtered, item)
+    }
+    i = i + 1
+  }
+  
+  もし 長さ(filtered) = 0 ならば {
+    戻す 0
+  }
+  
+  squared = []
+  j = 0
+  繰り返す (j < 長さ(filtered)) {
+    squared = 追加(squared, 積(filtered[j], filtered[j]))
+    j = j + 1
+  }
+  
+  戻す 和(squared)
+}

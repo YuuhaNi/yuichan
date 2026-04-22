@@ -1,0 +1,25 @@
+標準ライブラリを使う
+
+incr_list=入力lに対し{
+   result=[]
+   n=lの大きさ
+   i=0
+   n回くり返す{
+      x=l[i]
+      resultにxを増やしたものを追加する
+      iを増やす
+   }
+   resultが答え
+}
+標準ライブラリを使う
+
+incr_list=入力lに対し{
+   result=[]
+   n=lの大きさ
+   i=0
+   n回くり返す{
+      resultに和(l[i],1)を追加する
+      iを増やす
+   }
+   resultが答え
+}

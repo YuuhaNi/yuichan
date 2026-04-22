@@ -1,0 +1,29 @@
+標準ライブラリを使う
+
+sort_third = 入力 l に対し {
+    thirds = []
+    i = 0
+    ながら i < 長さ(l) {
+        もし 剰余(i, 3) == 0 なら {
+            thirds = 足す(thirds, [l[i]])
+        }
+        i = 和(i, 1)
+    }
+
+    thirds = ソート(thirds)
+
+    result = []
+    i = 0
+    j = 0
+    ながら i < 長さ(l) {
+        もし 剰余(i, 3) == 0 なら {
+            result = 足す(result, [thirds[j]])
+            j = 和(j, 1)
+        } でなければ {
+            result = 足す(result, [l[i]])
+        }
+        i = 和(i, 1)
+    }
+
+    result
+}

@@ -1,0 +1,41 @@
+標準ライブラリを使う
+
+separate_paren_groups = 入力 paren_string に対し {
+   # 空白を除去した文字列を作成
+   cleaned = ""
+   paren_string の大きさ回くり返す {
+      i = 0
+      char = paren_string[i]
+      もし char が 32 以外ならば {
+         cleaned に char を追加する
+      }
+      i を増やす
+   }
+   
+   # 括弧グループを分割
+   result = []
+   current = ""
+   depth = 0
+   cleaned の大きさ回くり返す {
+      i = 0
+      char = cleaned[i]
+      current に char を追加する
+      
+      # '(' は文字コード40、')' は文字コード41
+      もし char が 40 ならば {
+         depth を増やす
+      }
+      そうでなければ {
+         depth を減らす
+      }
+      
+      # depth が0になったら1つのグループが完成
+      もし depth が 0 ならば {
+         result に current を追加する
+         current = ""
+      }
+      i を増やす
+   }
+   
+   result が答え
+}

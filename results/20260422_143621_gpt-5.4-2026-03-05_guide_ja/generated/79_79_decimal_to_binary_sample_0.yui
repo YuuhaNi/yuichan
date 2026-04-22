@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+decimal_to_binary = 入力 decimal に対し {
+   もしdecimalが0ならば{
+      "db0db"が答え
+   }
+
+   bits = ""
+   n = decimal
+
+   n回くり返す{
+      もしnが0ならば{
+         くり返しを抜ける
+      }
+
+      もし剰余(n, 2)が0ならば{
+         bits = "0{bits}"
+      }
+      そうでなければ{
+         bits = "1{bits}"
+      }
+
+      n = 商(n, 2)
+   }
+
+   "db{bits}db"が答え
+}

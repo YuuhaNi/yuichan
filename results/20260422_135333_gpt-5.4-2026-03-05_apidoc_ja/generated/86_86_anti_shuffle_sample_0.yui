@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+anti_shuffle = 入力 s に対し {
+  parts = s.split(" ")
+  sorted_parts = []
+
+  parts.each(入力 w に対し {
+    chars = []
+    w.each(入力 c に対し {
+      chars.push(c)
+    })
+    chars.sort()
+    sorted_parts.push(chars.join(""))
+  })
+
+  戻る sorted_parts.join(" ")
+}

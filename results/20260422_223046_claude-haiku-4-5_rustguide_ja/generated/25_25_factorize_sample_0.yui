@@ -1,0 +1,23 @@
+標準ライブラリを使う
+
+factorize = 入力 n に対し {
+   factors = []
+   divisor = 2
+   
+   n回くり返す {
+      もし divisor が n より大きいならば {
+         くり返しを抜ける
+      }
+      
+      もし 剰余(n, divisor) が 0 ならば {
+         factors に divisor を追加する
+         n = 商(n, divisor)
+      } そうでなければ {
+         divisor を増やす
+      }
+   }
+   
+   もし n が 1 より大きいならば {
+      factors に n を追加する
+   }
+}

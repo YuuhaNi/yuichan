@@ -1,0 +1,13 @@
+標準ライブラリを使う
+
+filter_integers = 入力 values に対し {
+  結果 = []
+  i = 0
+  繰り返す (i < 長さ(values)) {
+    もし 整数判定(values[i]) ならば {
+      結果 = 結果 + [values[i]]
+    }
+    i = i + 1
+  }
+  結果を返す
+}

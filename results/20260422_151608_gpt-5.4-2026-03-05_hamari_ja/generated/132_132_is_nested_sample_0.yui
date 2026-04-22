@@ -1,0 +1,35 @@
+標準ライブラリを使う
+
+is_nested = 入力 string に対し {
+    depth=0
+    nested=0
+    i=0
+    n=stringの長さ
+
+    n回くり返す{
+        ch=string[i]
+        もしchが"["ならば{
+            depthを増やす
+            もしdepthが2以上ならば{
+                nested=1
+            }
+        }
+        そうでなければ{
+            もしchが"]"ならば{
+                もしdepthが0ならば{
+                    偽が答え
+                }
+                depthを減らす
+            }
+        }
+        iを増やす
+    }
+
+    もしdepthが0ならば{
+        もしnestedが1ならば{
+            真が答え
+        }
+    }
+
+    偽が答え
+}

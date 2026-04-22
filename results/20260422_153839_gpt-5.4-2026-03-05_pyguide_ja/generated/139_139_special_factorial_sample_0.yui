@@ -1,0 +1,14 @@
+標準ライブラリを使う
+
+special_factorial = 入力 n に対し {
+   result = 1
+   current = 1
+
+   n回くり返す{
+      current = 積(current, n)
+      result = 積(result, current)
+      n = 差(n, 1)
+   }
+
+   resultが答え
+}

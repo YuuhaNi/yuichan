@@ -1,0 +1,25 @@
+標準ライブラリを使う
+
+generate_integers = 入力 a, b に対し {
+   result = []
+   start = 最小値(a, b)
+   stop = 最大値(a, b)
+   i = start
+
+   もし剰余(i, 2)が0以外ならば {
+      i = 和(i, 1)
+   }
+
+   もし差(stop, start)が1以下ならば {
+      result が答え
+   }
+
+   和(差(stop, i), 1)回くり返す {
+      もしiがstop以下ならば {
+         resultにiを追加する
+         i = 和(i, 2)
+      }
+   }
+
+   result が答え
+}

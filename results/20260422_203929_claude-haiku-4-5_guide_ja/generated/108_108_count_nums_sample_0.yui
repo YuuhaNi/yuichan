@@ -1,0 +1,56 @@
+標準ライブラリを使う
+
+count_nums = 入力 arr に対し {
+   count = 0
+   arrの大きさ回くり返す {
+      i = 0
+      num = arr[i]
+      iを増やす
+      
+      # 負の数の場合、符号を分離
+      もしnumが0より小さいならば {
+         digit_sum = num
+      } そうでなければ {
+         digit_sum = 0
+         num回くり返す {
+            digit_sum = 和(digit_sum, 1)
+         }
+      }
+      
+      # 各桁の合計が0より大きいかチェック
+      もしdigit_sumが0より大きいならば {
+         countを増やす
+      }
+   }
+   countが答え
+}
+標準ライブラリを使う
+
+count_nums = 入力 arr に対し {
+   count = 0
+   i = 0
+   arrの大きさ回くり返す {
+      num = arr[i]
+      digit_sum = 0
+      
+      # 負の数の場合
+      もしnumが0より小さいならば {
+         digit_sum = num
+         num = 0
+         numを増やす
+      } そうでなければ {
+         # 正の数の場合、各桁を足す
+         temp = num
+         temp回くり返す {
+            digit_sumを増やす
+         }
+      }
+      
+      # 桁の合計が0より大きいかチェック
+      もしdigit_sumが0より大きいならば {
+         countを増やす
+      }
+      iを増やす
+   }
+   countが答え
+}

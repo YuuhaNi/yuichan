@@ -1,0 +1,26 @@
+標準ライブラリを使う
+
+fizz_buzz = 入力 n に対し {
+   count = 0
+   i = 0
+   差(n,1)回くり返す {
+      remainder11 = 剰余(i, 11)
+      remainder13 = 剰余(i, 13)
+      もしremainder11が0ならば {
+         str = 文字列化(i)
+         もし"7"がstrのいずれかならば {
+            countを増やす
+         }
+      }
+      そうでなければ {
+         もしremainder13が0ならば {
+            str = 文字列化(i)
+            もし"7"がstrのいずれかならば {
+               countを増やす
+            }
+         }
+      }
+      iを増やす
+   }
+   count が答え
+}

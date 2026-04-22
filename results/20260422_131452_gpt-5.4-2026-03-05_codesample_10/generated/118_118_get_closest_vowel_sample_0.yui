@@ -1,0 +1,33 @@
+標準ライブラリを使う
+
+get_closest_vowel = 入力 word に対し {
+   n=wordの大きさ
+   もしnが3より小さいならば{
+      ""が答え
+   }
+
+   vowels=["a","e","i","o","u","A","E","I","O","U"]
+   i=差(n,2)
+
+   n回くり返す{
+      もしiが1未満ならば{
+         くり返しを抜ける
+      }
+
+      c=word[i]
+      left=word[差(i,1)]
+      right=word[和(i,1)]
+
+      もしcがvowelsのいずれかならば{
+         もしleftがvowelsのいずれでもないならば{
+            もしrightがvowelsのいずれでもないならば{
+               cが答え
+            }
+         }
+      }
+
+      i=差(i,1)
+   }
+
+   ""が答え
+}

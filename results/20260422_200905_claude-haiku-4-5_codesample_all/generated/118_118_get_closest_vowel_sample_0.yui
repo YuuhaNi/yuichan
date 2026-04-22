@@ -1,0 +1,59 @@
+標準ライブラリを使う
+
+get_closest_vowel = 入力 word に対し {
+   vowels = "aeiouAEIOU"
+   n = word の大きさ
+   
+   # 最初と最後の母音はカウントされないので、走査範囲は 1 から n-2 まで
+   もし n が 3 より小さい ならば {
+      ""が答え
+   }
+   
+   result = ""
+   closest_pos = -1
+   closest_dist = 999999
+   
+   # i は 1 から n-2 まで走査 (最初と最後を除く)
+   i = 1
+   差(n, 2) 回 くり返す {
+      c = word[i]
+      
+      # c が母音かどうか調べる
+      もし c が vowels のいずれか ならば {
+         # c の左右が両方とも子音かどうか調べる
+         left = word[差(i, 1)]
+         right = word[和(i, 1)]
+         
+         left_is_consonant = 0
+         right_is_consonant = 0
+         
+         # left が子音か調べる (母音でなければ子音)
+         もし left が vowels のいずれでもない ならば {
+            left_is_consonant = 1
+         }
+         
+         # right が子音か調べる (母音でなければ子音)
+         もし right が vowels のいずれでもない ならば {
+            right_is_consonant = 1
+         }
+         
+         # 両側が子音なら、この母音は候補
+         もし left_is_consonant が 1 ならば {
+            もし right_is_consonant が 1 ならば {
+               # 右側から最も近い母音を探すので、距離は (n-1-i)
+               dist = 差(差(n, 1), i)
+               もし dist が closest_dist より小さい ならば {
+                  closest_dist = dist
+                  closest_pos = i
+                  result = ""
+                  result に c を追加する
+               }
+            }
+         }
+      }
+      
+      i を増やす
+   }
+   
+   result が答え
+}

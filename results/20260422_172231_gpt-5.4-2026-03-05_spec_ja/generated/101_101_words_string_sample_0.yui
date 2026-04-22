@@ -1,0 +1,37 @@
+標準ライブラリを使う
+
+words_string = 入力 s に対し {
+   result = []
+   current = []
+
+   i = 0
+   sの大きさ回くり返す {
+      c = s[i]
+
+      もし c が 32 ならば {
+         もし currentの大きさ が 0 以外ならば {
+            resultに文字列化(current)を追加する
+            current = []
+         }
+      }
+      そうでなければ {
+         もし c が 44 ならば {
+            もし currentの大きさ が 0 以外ならば {
+               resultに文字列化(current)を追加する
+               current = []
+            }
+         }
+         そうでなければ {
+            currentにcを追加する
+         }
+      }
+
+      iを増やす
+   }
+
+   もし currentの大きさ が 0 以外ならば {
+      resultに文字列化(current)を追加する
+   }
+
+   result が答え
+}

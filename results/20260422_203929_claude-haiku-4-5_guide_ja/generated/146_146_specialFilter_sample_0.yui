@@ -1,0 +1,31 @@
+標準ライブラリを使う
+
+specialFilter = 入力 nums に対し {
+   count = 0
+   i = 0
+   numsの大きさ回くり返す {
+      num = nums[i]
+      
+      もし num が 10 より大きい ならば {
+         # 数値を文字列に変換して最初と最後の桁を取得
+         str_num = 文字列化(num)
+         first_digit = 整数化(str_num[0])
+         last_digit = 整数化(str_num[差(str_num の大きさ, 1)])
+         
+         # 最初の桁が奇数かチェック
+         first_is_odd = 剰余(first_digit, 2)
+         # 最後の桁が奇数かチェック
+         last_is_odd = 剰余(last_digit, 2)
+         
+         もし first_is_odd が 1 ならば {
+            もし last_is_odd が 1 ならば {
+               count を増やす
+            }
+         }
+      }
+      
+      i を増やす
+   }
+   
+   count が答え
+}

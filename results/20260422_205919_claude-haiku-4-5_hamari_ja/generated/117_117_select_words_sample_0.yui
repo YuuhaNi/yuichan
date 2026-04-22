@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+select_words = 入力 s, n に対し {
+   子音 = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"
+   words = sを" "で分割する
+   result = []
+   
+   wordsの大きさ回くり返す {
+      i = 反復変数
+      word = words[i]
+      count = 0
+      
+      wordの大きさ回くり返す {
+         j = 反復変数
+         char = wordのj番目
+         もしcharが子音のいずれかならば {
+            countを増やす
+         }
+      }
+      
+      もしcountがnならば {
+         resultにwordを追加する
+      }
+   }
+   
+   result が答え
+}

@@ -1,0 +1,25 @@
+標準ライブラリを使う
+
+count_up_to = 入力 n に対し {
+   primes = []
+   candidate = 2
+   もし n が 2 より小さい ならば {
+      値なし が答え
+   }
+   candidate が n より小さい の間 {
+      is_prime = 真
+      i = 2
+      i が candidate より小さい の間 {
+         もし candidate が i で割った剰余が 0 ならば {
+            is_prime = 偽
+            くり返しを抜ける
+         }
+         i を増やす
+      }
+      もし is_prime ならば {
+         primes に candidate を追加する
+      }
+      candidate を増やす
+   }
+   primes が答え
+}

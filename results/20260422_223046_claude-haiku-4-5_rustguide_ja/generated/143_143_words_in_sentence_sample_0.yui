@@ -1,0 +1,69 @@
+標準ライブラリを使う
+
+is_prime = 入力 n に対し {
+   もしnが2より小さいならば{
+      偽が答え
+   }
+   もしnが2ならば{
+      真が答え
+   }
+   i = 2
+   n回くり返す{
+      もしiがnより大きいならば{
+         くり返しを抜ける
+      }
+      もし剰余(n, i)が0ならば{
+         偽が答え
+      }
+      iを増やす
+   }
+   真が答え
+}
+
+words_in_sentence = 入力 sentence に対し {
+   words = []
+   current_word = ""
+   
+   sentence の大きさ回くり返す{
+      idx = 0
+      sentence の大きさ回くり返す{
+         もしidxがsentenceの大きさ以上ならば{
+            くり返しを抜ける
+         }
+         char = sentence[idx]
+         もしcharが32ならば{
+            もしcurrent_wordの大きさが0より大きいならば{
+               wordsにcurrent_wordを追加する
+               current_word = ""
+            }
+         }そうでなければ{
+            current_wordに文字列化(char)を追加する
+         }
+         idxを増やす
+      }
+      くり返しを抜ける
+   }
+   
+   もしcurrent_wordの大きさが0より大きいならば{
+      wordsにcurrent_wordを追加する
+   }
+   
+   result = ""
+   i = 0
+   wordsの大きさ回くり返す{
+      もしiがwordsの大きさ以上ならば{
+         くり返しを抜ける
+      }
+      word = words[i]
+      word_len = wordの大きさ
+      もしis_prime(word_len)が真ならば{
+         もしresultの大きさが0より大きいならば{
+            result = 和(result, " ")
+         }
+         result = 和(result, word)
+      }
+      iを増やす
+   }
+   
+   resultが答え
+}

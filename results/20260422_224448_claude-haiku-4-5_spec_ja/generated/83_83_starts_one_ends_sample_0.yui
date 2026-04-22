@@ -1,0 +1,24 @@
+標準ライブラリを使う
+
+starts_one_ends = 入力 n に対し {
+   count = 0
+   start = 10の(差(n,1))乗
+   end = 差(積(10,start),1)
+   
+   start回くり返す {
+      num = 和(start,count)
+      first_digit = 商(num,10の(差(n,1))乗)
+      last_digit = 剰余(num,10)
+      
+      もしfirst_digitが1ならば {
+         countを増やす
+      }
+      そうでなければ {
+         もしlast_digitが1ならば {
+            countを増やす
+         }
+      }
+   }
+   
+   count が答え
+}

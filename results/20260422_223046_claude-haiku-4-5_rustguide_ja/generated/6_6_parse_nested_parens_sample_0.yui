@@ -1,0 +1,28 @@
+標準ライブラリを使う
+
+parse_nested_parens = 入力 paren_string に対し {
+   groups = []
+   current_max = 0
+   current_depth = 0
+   i = 0
+   paren_string の大きさ 回くり返す {
+      char = paren_string[i]
+      もし char が "("[0] ならば {
+         current_depth を増やす
+         もし current_depth が current_max より大きいならば {
+            current_max = current_depth
+         }
+      }
+      もし char が ")"{0} ならば {
+         current_depth を減らす
+      }
+      もし char が " "[0] ならば {
+         groups に current_max を追加する
+         current_max = 0
+         current_depth = 0
+      }
+      i を増やす
+   }
+   groups に current_max を追加する
+   groups が答え
+}

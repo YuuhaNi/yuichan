@@ -1,0 +1,37 @@
+標準ライブラリを使う
+
+intersection = 入力 interval1, interval2 に対し {
+  interval1_start = interval1[0]
+  interval1_end = interval1[1]
+  interval2_start = interval2[0]
+  interval2_end = interval2[1]
+  
+  交差_start = 最大値(interval1_start, interval2_start)
+  交差_end = 最小値(interval1_end, interval2_end)
+  
+  もし 交差_start が 交差_end より大きい ならば {
+    "NO" が 答え
+  }
+  
+  交差_長さ = 差(交差_end, 交差_start)
+  交差_長さ = 和(交差_長さ, 1)
+  
+  もし 交差_長さ が 2 より小さい ならば {
+    "NO" が 答え
+  }
+  
+  i = 2
+  もし 交差_長さ が 2 以上 ならば {
+    交差_長さ 回 くり返す {
+      もし 剰余(交差_長さ, i) が 0 ならば {
+        "NO" が 答え
+      }
+      i を増やす
+      もし i が 交差_長さ より大きい ならば {
+        くり返しを抜ける
+      }
+    }
+  }
+  
+  "YES" が 答え
+}

@@ -1,0 +1,32 @@
+標準ライブラリを使う
+
+prod_signs = 入力 arr に対し {
+   もしarrの大きさが0ならば{
+      Noneが答え
+   }
+
+   sum_abs=0
+   sign_prod=1
+   i=0
+
+   arrの大きさ回くり返す{
+      x=arr[i]
+
+      もしxが0より小さいならば{
+         sum_abs=差(sum_abs,x)
+         sign_prod=差(0,sign_prod)
+      }
+      そうでなければ{
+         もしxが0より大きいならば{
+            sum_abs=和(sum_abs,x)
+         }
+         そうでなければ{
+            sign_prod=0
+         }
+      }
+
+      iを増やす
+   }
+
+   積(sum_abs,sign_prod)が答え
+}

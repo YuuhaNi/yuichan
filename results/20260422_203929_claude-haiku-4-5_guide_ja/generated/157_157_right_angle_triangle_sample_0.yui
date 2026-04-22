@@ -1,0 +1,36 @@
+標準ライブラリを使う
+
+right_angle_triangle = 入力 a, b, c に対し {
+   # 3辺を昇順にソート（最も長い辺を特定するため）
+   sides = [a, b, c]
+   
+   # 簡単なソート: 3つの値を比較して並べ替え
+   i = 0
+   3回くり返す {
+      j = 0
+      2回くり返す {
+         もし sides[j] が sides[差(j,1)] より大きい ならば {
+            temp = sides[j]
+            sides[j] = sides[差(j,1)]
+            sides[差(j,1)] = temp
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+   
+   # ピタゴラスの定理: a² + b² = c²
+   # sides[0]² + sides[1]² = sides[2]² なら直角三角形
+   a_sq = 積(sides[0], sides[0])
+   b_sq = 積(sides[1], sides[1])
+   c_sq = 積(sides[2], sides[2])
+   
+   sum_sq = 和(a_sq, b_sq)
+   
+   もし sum_sq が c_sq ならば {
+      真が答え
+   }
+   そうでなければ {
+      偽が答え
+   }
+}

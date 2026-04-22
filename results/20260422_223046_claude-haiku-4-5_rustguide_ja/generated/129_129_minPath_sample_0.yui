@@ -1,0 +1,95 @@
+標準ライブラリを使う
+
+minPath = 入力 grid, k に対し {
+   n = gridの大きさ
+   
+   # グリッドから値と位置のマッピングを作成
+   valueToPos = {}
+   i = 0
+   n回くり返す {
+      j = 0
+      n回くり返す {
+         val = grid[i][j]
+         valueToPos[文字列化(val)] = [i, j]
+         jを増やす
+      }
+      iを増やす
+   }
+   
+   # すべての開始位置から探索
+   bestPath = 値なし
+   startVal = 1
+   n回くり返す {
+      n回くり返す {
+         もしbestPathが値なしでなければ {
+            くり返しを抜ける
+         }
+         startVal回くり返す {
+            もしbestPathが値なしでなければ {
+               くり返しを抜ける
+            }
+         }
+         startVal = 和(startVal, 1)
+      }
+   }
+   
+   # DFS で全経路を探索
+   visited = {}
+   path = []
+   
+   dfs = 入力 row, col, depth に対し {
+      もしdepthがkならば {
+         もしbestPathが値なしならば {
+            bestPath = path
+         } そうでなければ {
+            # 辞書順比較
+            isBetter = 偽
+            idx = 0
+            k回くり返す {
+               もしpath[idx]がbestPath[idx]より小さいならば {
+                  isBetter = 真
+                  くり返しを抜ける
+               }
+               もしpath[idx]がbestPath[idx]より大きいならば {
+                  くり返しを抜ける
+               }
+               idxを増やす
+            }
+            もしisBetterが真ならば {
+               bestPath = path
+            }
+         }
+         関数から抜ける
+      }
+      
+      val = grid[row][col]
+      pathにvalを追加する
+      
+      # 上下左右に移動
+      directions = [[差(row, 1), col], [和(row, 1), col], [row, 差(col, 1)], [row, 和(col, 1)]]
+      d = 0
+      4回くり返す {
+         nextRow = directions[d][0]
+         nextCol = directions[d][1]
+         
+         もしnextRowが0以上ならば {
+            もしnextRowがnより小さいならば {
+               もしnextColが0以上ならば {
+                  もしnextColがnより小さいならば {
+                     dfs(nextRow, nextCol, 和(depth, 1))
+                  }
+               }
+            }
+         }
+         dを増やす
+      }
+      
+      pathから最後の要素を削除する
+   }
+   
+   # 値1から開始
+   pos = valueToPos["1"]
+   dfs(pos[0], pos[1], 1)
+   
+   bestPathが答え
+}

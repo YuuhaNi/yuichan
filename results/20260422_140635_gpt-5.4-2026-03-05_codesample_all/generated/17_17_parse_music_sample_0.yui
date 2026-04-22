@@ -1,0 +1,40 @@
+標準ライブラリを使う
+
+parse_music=入力music_stringに対し{
+   result=[]
+   token=""
+   i=0
+   n=music_stringの大きさ
+
+   n回くり返す{
+      c=music_string[i]
+      もしcが32ならば{
+         もしtokenが"o"ならば{
+            resultに4を追加する
+         }
+         もしtokenが"o|"ならば{
+            resultに2を追加する
+         }
+         もしtokenが".|"ならば{
+            resultに1を追加する
+         }
+         token=""
+      }
+      そうでなければ{
+         tokenにcを追加する
+      }
+      iを増やす
+   }
+
+   もしtokenが"o"ならば{
+      resultに4を追加する
+   }
+   もしtokenが"o|"ならば{
+      resultに2を追加する
+   }
+   もしtokenが".|"ならば{
+      resultに1を追加する
+   }
+
+   resultが答え
+}

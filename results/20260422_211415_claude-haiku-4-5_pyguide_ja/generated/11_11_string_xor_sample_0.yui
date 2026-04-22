@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+string_xor = 入力 a, b に対し {
+   result = ""
+   i = 0
+   aの大きさ回くり返す {
+      bit_a = 整数化(a[i])
+      bit_b = 整数化(b[i])
+      xor_bit = 0
+      もしbit_aがbit_bならば {
+         xor_bit = 0
+      } そうでなければ {
+         xor_bit = 1
+      }
+      resultに文字列化(xor_bit)を追加する
+      iを増やす
+   }
+   resultが答え
+}

@@ -1,0 +1,37 @@
+標準ライブラリを使う
+
+fix_spaces = 入力 text に対し {
+    result=""
+    i=0
+    n=textの長さ
+
+    iがnより小さい間くり返す{
+        ch=text[i]
+        もしchが" "ならば{
+            j=i
+            jがnより小さい間くり返す{
+                もしtext[j]が" "ならば{
+                    jを増やす
+                }
+                そうでなければ{
+                    くり返しを抜ける
+                }
+            }
+
+            run=差(j,i)
+            もしrunが1ならば{
+                result=文字列結合(result,"_")
+            }
+            そうでなければ{
+                result=文字列結合(result,"-")
+            }
+            i=j
+        }
+        そうでなければ{
+            result=文字列結合(result,ch)
+            iを増やす
+        }
+    }
+
+    resultが答え
+}

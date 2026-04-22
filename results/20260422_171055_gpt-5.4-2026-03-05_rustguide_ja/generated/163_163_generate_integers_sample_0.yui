@@ -1,0 +1,26 @@
+標準ライブラリを使う
+
+generate_integers = 入力 a, b に対し {
+   result = []
+
+   もしaがbより大きいならば{
+      temp = a
+      a = b
+      b = temp
+   }
+
+   i = a
+   count = 和(差(b, a), 1)
+
+   count回くり返す{
+      もし剰余(i, 2)が0ならば{
+         もし差(b, a)が2より小さいならば{
+         }そうでなければ{
+            resultにiを追加する
+         }
+      }
+      i = 和(i, 1)
+   }
+
+   resultが答え
+}

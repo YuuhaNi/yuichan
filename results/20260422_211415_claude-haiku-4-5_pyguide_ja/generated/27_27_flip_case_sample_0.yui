@@ -1,0 +1,29 @@
+標準ライブラリを使う
+
+flip_case = 入力 string に対し {
+   result = ""
+   stringの大きさ回くり返す {
+      i = 0
+      stringの大きさ回くり返す {
+         char_code = string[i]
+         もし char_code が 97 以上ならば {
+            もし char_code が 122 以下ならば {
+               result に 差(char_code, 32) を追加する
+               i を増やす
+               くり返しを抜ける
+            }
+         }
+         もし char_code が 65 以上ならば {
+            もし char_code が 90 以下ならば {
+               result に 和(char_code, 32) を追加する
+               i を増やす
+               くり返しを抜ける
+            }
+         }
+         result に char_code を追加する
+         i を増やす
+         くり返しを抜ける
+      }
+   }
+   result が答え
+}

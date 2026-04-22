@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+change_base = 入力 x, base に対し {
+    result = ""
+    もし x が 0 ならば {
+        "0" が 答え
+    }
+    x を減らす
+    x = 和(x, 1)
+    x 回 くり返す {
+        remainder = 剰余(x, base)
+        result の末尾に 文字列(remainder) を追加する
+        x = 商(x, base)
+        もし x が 0 ならば {
+            くり返しを抜ける
+        }
+    }
+    result が 答え
+}

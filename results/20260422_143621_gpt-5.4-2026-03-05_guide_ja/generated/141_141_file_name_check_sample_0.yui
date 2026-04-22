@@ -1,0 +1,120 @@
+標準ライブラリを使う
+
+file_name_check = 入力 file_name に対し {
+   dot_count = 0
+   dot_pos = -1
+   i = 0
+
+   file_nameの大きさ回くり返す{
+      もしfile_name[i]が"."[0]ならば{
+         dot_countを増やす
+         dot_pos = i
+      }
+      iを増やす
+   }
+
+   もしdot_countが1以外ならば{
+      "No"が答え
+   }
+
+   もしdot_posが0以下ならば{
+      "No"が答え
+   }
+
+   first = file_name[0]
+   is_letter = 偽
+
+   もしfirstが"a"[0]以上ならば{
+      もしfirstが"z"[0]以下ならば{
+         is_letter = 真
+      }
+   }
+   もしfirstが"A"[0]以上ならば{
+      もしfirstが"Z"[0]以下ならば{
+         is_letter = 真
+      }
+   }
+
+   もしis_letterが偽ならば{
+      "No"が答え
+   }
+
+   ext = ""
+   i = 差(dot_pos, 0)
+   iを増やす
+   file_nameの大きさ回くり返す{
+      もしiがfile_nameの大きさ以上ならば{
+         くり返しを抜ける
+      }
+      extにfile_name[i]を追加する
+      iを増やす
+   }
+
+   もしextが"txt"ならば{
+      digit_run = 0
+      i = 0
+      file_nameの大きさ回くり返す{
+         c = file_name[i]
+         もしcが"0"[0]以上ならば{
+            もしcが"9"[0]以下ならば{
+               digit_runを増やす
+               もしdigit_runが3以上ならば{
+                  "No"が答え
+               }
+            }そうでなければ{
+               digit_run = 0
+            }
+         }そうでなければ{
+            digit_run = 0
+         }
+         iを増やす
+      }
+      "Yes"が答え
+   }
+
+   もしextが"exe"ならば{
+      digit_run = 0
+      i = 0
+      file_nameの大きさ回くり返す{
+         c = file_name[i]
+         もしcが"0"[0]以上ならば{
+            もしcが"9"[0]以下ならば{
+               digit_runを増やす
+               もしdigit_runが3以上ならば{
+                  "No"が答え
+               }
+            }そうでなければ{
+               digit_run = 0
+            }
+         }そうでなければ{
+            digit_run = 0
+         }
+         iを増やす
+      }
+      "Yes"が答え
+   }
+
+   もしextが"dll"ならば{
+      digit_run = 0
+      i = 0
+      file_nameの大きさ回くり返す{
+         c = file_name[i]
+         もしcが"0"[0]以上ならば{
+            もしcが"9"[0]以下ならば{
+               digit_runを増やす
+               もしdigit_runが3以上ならば{
+                  "No"が答え
+               }
+            }そうでなければ{
+               digit_run = 0
+            }
+         }そうでなければ{
+            digit_run = 0
+         }
+         iを増やす
+      }
+      "Yes"が答え
+   }
+
+   "No"が答え
+}

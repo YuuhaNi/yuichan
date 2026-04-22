@@ -1,0 +1,71 @@
+標準ライブラリを使う
+
+histogram = 入力 test に対し {
+   # 空文字列の場合は空のオブジェクトを返す
+   もし test が "" ならば {
+      {}が答え
+   }
+
+   # スペースで分割して文字の配列を得る
+   chars = []
+   current = ""
+   i = 0
+   test の大きさ 回 くり返す {
+      c = test[i]
+      もし c が 32 ならば {
+         # スペース (文字コード 32) なら current を chars に追加
+         もし current が "" 以外 ならば {
+            chars に current を追加する
+         }
+         current = ""
+      }
+      そうでなければ {
+         current に c を追加する
+      }
+      i を増やす
+   }
+   # 最後の文字を追加
+   もし current が "" 以外 ならば {
+      chars に current を追加する
+   }
+
+   # 各文字のカウントを数える
+   counts = {}
+   j = 0
+   chars の大きさ 回 くり返す {
+      char = chars[j]
+      もし counts に char が含まれるならば {
+         counts[char] を増やす
+      }
+      そうでなければ {
+         counts[char] = 1
+      }
+      j を増やす
+   }
+
+   # 最大カウントを見つける
+   max_count = 0
+   k = 0
+   chars の大きさ 回 くり返す {
+      char = chars[k]
+      もし counts[char] が max_count より大きい ならば {
+         max_count = counts[char]
+      }
+      k を増やす
+   }
+
+   # 最大カウントを持つ文字だけを結果に入れる
+   result = {}
+   m = 0
+   chars の大きさ 回 くり返す {
+      char = chars[m]
+      もし counts[char] が max_count ならば {
+         もし result に char が含まれない ならば {
+            result[char] = max_count
+         }
+      }
+      m を増やす
+   }
+
+   result が答え
+}

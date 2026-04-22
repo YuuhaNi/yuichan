@@ -1,0 +1,47 @@
+標準ライブラリを使う
+
+parse_music = 入力 music_string に対し {
+   result = []
+   i = 0
+   
+   i < music_stringの大きさ 回くり返す {
+      もし music_string[i] が 32 ならば {
+         # スペース（ASCII 32）をスキップ
+         iを増やす
+      }
+      そうでなければ {
+         もし music_string[i] が 111 ならば {
+            # 'o'（ASCII 111）
+            もし i + 1 < music_stringの大きさ が 真 ならば {
+               もし music_string[i + 1] が 39 ならば {
+                  # o' - 全音符（4拍）
+                  resultに 4 を追加する
+                  i = 和(i, 2)
+               }
+               そうでなければ {
+                  # o - 全音符（4拍）
+                  resultに 4 を追加する
+                  iを増やす
+               }
+            }
+            そうでなければ {
+               # o - 全音符（4拍）
+               resultに 4 を追加する
+               iを増やす
+            }
+         }
+         そうでなければ {
+            もし music_string[i] が 46 ならば {
+               # '.'（ASCII 46） - 4分音符（1拍）
+               resultに 1 を追加する
+               iを増やす
+            }
+            そうでなければ {
+               iを増やす
+            }
+         }
+      }
+   }
+   
+   result が答え
+}

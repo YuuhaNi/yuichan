@@ -1,0 +1,9 @@
+標準ライブラリを使う
+
+special_factorial = 入力 n に対し {
+  もし n が 1 なら {
+    1
+  } でなければ {
+    積(n, special_factorial(差(n, 1)), special_factorial(差(n, 1)))
+  }
+}

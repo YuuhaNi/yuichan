@@ -1,0 +1,38 @@
+標準ライブラリを使う
+
+check_dict_case = 入力 dict に対し {
+  もし 配列化(dict)の長さ == 0 ならば {
+    偽を返す
+  }
+  
+  keys = 配列化(dict)
+  all_lowercase = 真
+  all_uppercase = 真
+  
+  i = 0
+  繰り返す i < keys の長さ {
+    key = keys[i]
+    
+    もし 文字列判定(key)でない ならば {
+      偽を返す
+    }
+    
+    もし key != 文字列化(key)の小文字化 ならば {
+      all_lowercase = 偽
+    }
+    
+    もし key != 文字列化(key)の大文字化 ならば {
+      all_uppercase = 偽
+    }
+    
+    i = i + 1
+  }
+  
+  もし all_lowercase ならば {
+    真を返す
+  } そうでなく もし all_uppercase ならば {
+    真を返す
+  } そうでなく {
+    偽を返す
+  }
+}

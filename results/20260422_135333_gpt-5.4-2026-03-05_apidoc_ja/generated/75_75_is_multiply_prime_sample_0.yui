@@ -1,0 +1,50 @@
+標準ライブラリを使う
+
+is_multiply_prime = 入力 a に対し {
+  i = 2
+  もし a < 8 なら {
+    戻る 偽
+  }
+  i の間、 i <= a {
+    もし 剰余(a, i) == 0 なら {
+      j = 2
+      j の間、 j <= 商(a, i) {
+        もし 剰余(商(a, i), j) == 0 なら {
+          k = 商(商(a, i), j)
+          もし 積(i, j, k) == a なら {
+            pi = 2
+            i_is_prime = 真
+            pi の間、 pi < i {
+              もし 剰余(i, pi) == 0 なら {
+                i_is_prime = 偽
+              }
+              pi = 和(pi, 1)
+            }
+            pj = 2
+            j_is_prime = 真
+            pj の間、 pj < j {
+              もし 剰余(j, pj) == 0 なら {
+                j_is_prime = 偽
+              }
+              pj = 和(pj, 1)
+            }
+            pk = 2
+            k_is_prime = 真
+            pk の間、 pk < k {
+              もし 剰余(k, pk) == 0 なら {
+                k_is_prime = 偽
+              }
+              pk = 和(pk, 1)
+            }
+            もし i_is_prime かつ j_is_prime かつ k_is_prime なら {
+              戻る 真
+            }
+          }
+        }
+        j = 和(j, 1)
+      }
+    }
+    i = 和(i, 1)
+  }
+  戻る 偽
+}

@@ -1,0 +1,56 @@
+標準ライブラリを使う
+
+maximum = 入力 arr, k に対し {
+   result = []
+   i = 0
+   k回くり返す{
+      max_val = 最小値(arr)
+      j = 0
+      arrの大きさ回くり返す{
+         もしarr[j]がmax_valより大きいならば{
+            max_val = arr[j]
+         }
+         jを増やす
+      }
+      resultにmax_valを追加する
+      
+      # max_valを配列から削除（最初に見つかったものを削除）
+      j = 0
+      削除済み = 偽
+      arrの大きさ回くり返す{
+         もし削除済みが偽ならば{
+            もしarr[j]がmax_valならば{
+               # j番目の要素を削除
+               k_idx = j
+               k_idx回くり返す{
+                  もしk_idxが差(arrの大きさ, 1)より小さいならば{
+                     arr[k_idx] = arr[k_idx + 1]
+                     k_idxを増やす
+                  }
+               }
+               削除済み = 真
+            }
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+   
+   # resultをソート（昇順）
+   result_len = resultの大きさ
+   i = 0
+   result_len回くり返す{
+      j = 0
+      差(result_len, 1)回くり返す{
+         もしresult[j]がresult[j + 1]より大きいならば{
+            tmp = result[j]
+            result[j] = result[差(j, 1)]
+            result[差(j, 1)] = tmp
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+   
+   resultが答え
+}
