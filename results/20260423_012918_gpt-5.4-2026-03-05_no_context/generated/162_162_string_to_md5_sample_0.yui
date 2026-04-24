@@ -1,0 +1,9 @@
+標準ライブラリを使う
+
+string_to_md5 = 入力 text に対し {
+    もし text が "" なら {
+        None
+    } それ以外なら {
+        text の md5
+    }
+}

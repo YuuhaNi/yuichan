@@ -1,0 +1,7 @@
+標準ライブラリを使う
+
+mean_absolute_deviation = 入力 numbers に対し {
+    平均値 = numbers の合計 / numbers の長さ
+    偏差リスト = numbers を各要素 x に対し { |x - 平均値| } に変換
+    偏差リスト の合計 / 偏差リスト の長さ
+}

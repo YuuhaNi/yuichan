@@ -1,0 +1,21 @@
+標準ライブラリを使う
+
+by_length = 入力 arr に対し {
+  names = {
+    1: "One",
+    2: "Two",
+    3: "Three",
+    4: "Four",
+    5: "Five",
+    6: "Six",
+    7: "Seven",
+    8: "Eight",
+    9: "Nine"
+  }
+
+  arr
+  |> ソート
+  |> 逆順
+  |> 絞り込み(入力 n に対し { n >= 1 かつ n <= 9 })
+  |> 写像(入力 n に対し { names[n] })
+}

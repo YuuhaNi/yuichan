@@ -1,0 +1,16 @@
+標準ライブラリを使う
+
+filter_by_substring = 入力 strings, substring に対し {
+
+filter_by_substring = 入力 strings, substring に対し {
+  strings.filter(文字列 => 文字列.contains(substring))
+}
+filter_by_substring = 入力 strings, substring に対し {
+  結果 = []
+  strings.each(文字列 => {
+    もし (文字列.contains(substring)) {
+      結果.add(文字列)
+    }
+  })
+  結果を返す
+}

@@ -1,0 +1,16 @@
+標準ライブラリを使う
+
+correct_bracketing = 入力 brackets に対し {
+    depth = 0
+    brackets の各文字を順に文字 ch として繰り返す {
+        もし ch == "<" なら {
+            depth = depth + 1
+        } 違えば {
+            depth = depth - 1
+            もし depth < 0 なら {
+                False を返す
+            }
+        }
+    }
+    depth == 0 を返す
+}

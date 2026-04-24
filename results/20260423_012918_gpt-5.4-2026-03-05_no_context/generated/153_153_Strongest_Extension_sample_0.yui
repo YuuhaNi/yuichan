@@ -1,0 +1,28 @@
+標準ライブラリを使う
+
+Strongest_Extension = 入力 class_name, extensions に対し {
+    strongest = extensions[0]
+    strongest_power = -1000000
+
+    extensions の各 extension について {
+        cap = 0
+        sm = 0
+
+        extension の各 ch について {
+            もし ch >= "A" かつ ch <= "Z" なら {
+                cap = cap + 1
+            } 違えば もし ch >= "a" かつ ch <= "z" なら {
+                sm = sm + 1
+            }
+        }
+
+        power = cap - sm
+
+        もし power > strongest_power なら {
+            strongest_power = power
+            strongest = extension
+        }
+    }
+
+    class_name + "." + strongest
+}

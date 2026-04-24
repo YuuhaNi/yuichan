@@ -1,0 +1,25 @@
+標準ライブラリを使う
+
+separate_paren_groups = 入力 paren_string に対し {
+    cleaned = paren_string の " " を "" に置換
+    result = []
+    current = ""
+    depth = 0
+
+    cleaned の各文字について { ch =>
+        current = current + ch
+
+        もし ch == "(" なら {
+            depth = depth + 1
+        } そうでなくもし ch == ")" なら {
+            depth = depth - 1
+        }
+
+        もし depth == 0 なら {
+            result に current を追加
+            current = ""
+        }
+    }
+
+    result を返す
+}

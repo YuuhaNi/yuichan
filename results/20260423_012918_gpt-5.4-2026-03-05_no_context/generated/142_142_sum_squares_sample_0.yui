@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+sum_squares = 入力 lst に対し {
+    total = 0
+    i = 0
+
+    lst の各要素 x について {
+        もし i % 3 == 0 なら {
+            total = total + x * x
+        } そうでなく もし i % 4 == 0 なら {
+            total = total + x * x * x
+        } そうでなければ {
+            total = total + x
+        }
+        i = i + 1
+    }
+
+    total を返す
+}

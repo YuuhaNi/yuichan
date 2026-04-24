@@ -1,0 +1,7 @@
+標準ライブラリを使う
+
+filter_integers = 入力 values に対し {
+    values を それぞれ v として 絞り込み、 {
+        v の型が 整数
+    }
+}

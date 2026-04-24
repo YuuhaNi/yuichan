@@ -1,0 +1,15 @@
+標準ライブラリを使う
+
+longest = 入力 strings に対し {
+  もし strings が [] なら {
+    None
+  } でなければ {
+    畳み込み(
+      入力 acc, s に対し {
+        もし 文字数(s) > 文字数(acc) なら { s } でなければ { acc }
+      },
+      先頭(strings),
+      残り(strings)
+    )
+  }
+}

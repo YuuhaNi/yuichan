@@ -1,0 +1,16 @@
+標準ライブラリを使う
+
+sort_array = 入力 array に対し {
+  もし array の長さ == 0 なら {
+    []
+  } そうでなければ {
+    sorted = array をコピーしてソートしたもの
+    first = array の 0 番目
+    last = array の (array の長さ - 1) 番目
+    もし (first + last) % 2 == 1 なら {
+      sorted
+    } そうでなければ {
+      sorted を反転したもの
+    }
+  }
+}

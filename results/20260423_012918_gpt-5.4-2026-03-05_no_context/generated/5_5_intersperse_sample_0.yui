@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+intersperse = 入力 numbers, delimeter に対し {
+  もし numbers の長さ <= 1 なら numbers
+  そうでなければ {
+    result = []
+    i = 0
+    numbers の長さ まで繰り返す間 {
+      result = result + [numbers[i]]
+      もし i < numbers の長さ - 1 なら {
+        result = result + [delimeter]
+      }
+      i = i + 1
+    }
+    result
+  }
+}

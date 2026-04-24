@@ -1,0 +1,37 @@
+標準ライブラリを使う
+
+prime_fib = 入力 n に対し {
+  is_prime = 入力 x に対し {
+    もし x < 2 なら {
+      false
+    } 違えば {
+      d = 2
+      ok = true
+      繰り返し d * d <= x の間 {
+        もし x % d == 0 なら {
+          ok = false
+          d = x
+        } 違えば {
+          d = d + 1
+        }
+      }
+      ok
+    }
+  }
+
+  a = 1
+  b = 2
+  count = 0
+
+  繰り返し true の間 {
+    もし is_prime(a) なら {
+      count = count + 1
+      もし count == n なら {
+        a
+      }
+    }
+    next = a + b
+    a = b
+    b = next
+  }
+}

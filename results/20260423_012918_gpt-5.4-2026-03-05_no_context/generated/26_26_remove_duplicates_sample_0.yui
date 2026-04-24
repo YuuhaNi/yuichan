@@ -1,0 +1,7 @@
+標準ライブラリを使う
+
+remove_duplicates = 入力 numbers に対し {
+    numbers を絞る |x| {
+        (numbers を数える |y| { y == x }) == 1
+    }
+}

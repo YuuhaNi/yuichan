@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+cycpattern_check = 入力 a, b に対し {
+
+cycpattern_check = 入力 a, b に対し {
+    もし b の長さ > a の長さ ならば {
+        False を返す
+    }
+    
+    b_doubled = b + b
+    
+    もし a が b_doubled を含む ならば {
+        True を返す
+    } そうでなければ {
+        False を返す
+    }
+}

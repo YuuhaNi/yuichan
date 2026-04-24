@@ -1,0 +1,7 @@
+標準ライブラリを使う
+
+filter_by_prefix = 入力 strings, prefix に対し {
+    strings から、入力 s に対し {
+        s が prefix で始まる
+    } を満たすものを抽出する
+}

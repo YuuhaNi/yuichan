@@ -1,0 +1,11 @@
+標準ライブラリを使う
+
+do_algebra = 入力 operator, operand に対し {
+    expr = operand[0] を文字列変換
+    i = 0
+    反復 i < operatorの長さ の間 {
+        expr = expr + " " + operator[i] + " " + (operand[i + 1] を文字列変換)
+        i = i + 1
+    }
+    戻る expr を評価
+}

@@ -1,0 +1,15 @@
+{
+  "model": "gpt-5.4-2026-03-05",
+  "lang": "en",
+  "prompt_style": "instruction",
+  "k": 1,
+  "temperature": 0.2,
+  "total_problems": 164,
+  "passed_problems": 159,
+  "pass_at_k": 96.95,
+  "confidence_interval_95": {
+    "lower": 93.06,
+    "upper": 98.69
+  },
+  "timestamp": "20260423_043200"
+}

@@ -1,0 +1,13 @@
+標準ライブラリを使う
+
+count_distinct_characters = 入力 string に対し {
+
+count_distinct_characters = 入力 string に対し {
+  string を小文字に変換した結果を normalized とする
+  normalized を文字のリストに変換した結果をユニークにした結果の長さを返す
+}
+count_distinct_characters = 入力 string に対し {
+  normalized = string を小文字に変換
+  unique_chars = normalized を文字のリストに変換してユニークにする
+  unique_chars の長さを返す
+}

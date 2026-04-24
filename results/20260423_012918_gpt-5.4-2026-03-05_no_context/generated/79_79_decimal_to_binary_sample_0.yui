@@ -1,0 +1,5 @@
+標準ライブラリを使う
+
+decimal_to_binary = 入力 decimal に対し {
+    戻る "db" + decimal を2進文字列に変換 + "db"
+}

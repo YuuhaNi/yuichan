@@ -1,0 +1,24 @@
+標準ライブラリを使う
+
+select_words = 入力 s, n に対し {
+    子音 = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"
+    
+    単語リスト = s を空白で分割
+    
+    結果 = []
+    
+    単語リスト の各要素 word に対し {
+        子音数 = 0
+        word の各文字 char に対し {
+            char が子音に含まれるなら {
+                子音数 = 子音数 + 1
+            }
+        }
+        
+        子音数 が n と等しいなら {
+            結果 に word を追加
+        }
+    }
+    
+    結果 を返す
+}

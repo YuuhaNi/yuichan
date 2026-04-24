@@ -1,0 +1,11 @@
+標準ライブラリを使う
+
+next_smallest = 入力 lst に対し {
+  unique = lst を重複削除
+  もし unique の長さ < 2 なら {
+    None
+  } それ以外なら {
+    sorted = unique を昇順ソート
+    sorted[1]
+  }
+}

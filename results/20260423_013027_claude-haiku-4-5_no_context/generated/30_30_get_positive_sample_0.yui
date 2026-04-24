@@ -1,0 +1,10 @@
+標準ライブラリを使う
+
+get_positive = 入力 l に対し {
+
+get_positive = 入力 l に対し {
+  l を filter(x => x > 0)
+}
+get_positive = 入力 l に対し {
+  l.filter(x => x > 0)
+}

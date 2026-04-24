@@ -1,0 +1,16 @@
+標準ライブラリを使う
+
+parse_music = 入力 music_string に対し {
+
+parse_music = 入力 music_string に対し {
+  music_string を ' ' で分割した結果を notes とする
+  
+  notes を map する (note に対し {
+    note が 'o\'' と等しい場合 { 4 を返す }
+    note が 'o|' と等しい場合 { 2 を返す }
+    note が '.|' と等しい場合 { 1 を返す }
+    その他の場合 { 0 を返す }
+  })
+}
+parse_music('o o| .| o| o| .| .| .| .| o o')
+→ [4, 2, 1, 2, 2, 1, 1, 1, 1, 4, 4]

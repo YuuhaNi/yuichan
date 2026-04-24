@@ -1,0 +1,35 @@
+標準ライブラリを使う
+
+skjkasdkd = 入力 lst に対し {
+    isPrime = 入力 n に対し {
+        もし n < 2 なら {
+            false
+        } でなければ {
+            i = 2
+            prime = true
+            繰り返し i * i <= n の間 {
+                もし n % i == 0 なら {
+                    prime = false
+                    i = n
+                } でなければ {
+                    i = i + 1
+                }
+            }
+            prime
+        }
+    }
+
+    maxPrime = -1
+    各要素 x について lst を繰り返す {
+        もし isPrime(x) かつ x > maxPrime なら {
+            maxPrime = x
+        }
+    }
+
+    sum = 0
+    繰り返し maxPrime > 0 の間 {
+        sum = sum + (maxPrime % 10)
+        maxPrime = maxPrime / 10
+    }
+    sum
+}

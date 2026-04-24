@@ -1,0 +1,16 @@
+標準ライブラリを使う
+
+remove_vowels = 入力 text に対し {
+
+remove_vowels = 入力 text に対し {
+  母音 = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+  結果 = ''
+  
+  text の各文字 char に対し {
+    char が母音に含まれていなければ {
+      結果 = 結果 + char
+    }
+  }
+  
+  結果を返す
+}

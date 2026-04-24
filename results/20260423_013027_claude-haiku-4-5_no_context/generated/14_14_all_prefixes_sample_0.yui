@@ -1,0 +1,13 @@
+標準ライブラリを使う
+
+all_prefixes = 入力 string に対し {
+
+all_prefixes = 入力 string に対し {
+  結果 = []
+  i = 1
+  string の長さまで繰り返す {
+    結果に string の 1 から i までを追加
+    i = i + 1
+  }
+  結果を返す
+}

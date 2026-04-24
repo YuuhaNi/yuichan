@@ -1,0 +1,9 @@
+標準ライブラリを使う
+
+digits = 入力 n に対し {
+  n を文字列に変換した各文字を数字に変換したリストを digits_list とする
+  digits_list から奇数のみをフィルタリングしたリストを odd_digits とする
+  
+  odd_digits が空の場合は 0 を返す
+  そうでなければ odd_digits の全要素の積を返す
+}

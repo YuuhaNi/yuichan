@@ -1,0 +1,11 @@
+標準ライブラリを使う
+
+total_match = 入力 lst1, lst2 に対し {
+    sum1 = lst1 を map(入力 s に対し { s の長さ }) して sum
+    sum2 = lst2 を map(入力 s に対し { s の長さ }) して sum
+    もし sum1 <= sum2 なら {
+        lst1
+    } でなければ {
+        lst2
+    }
+}

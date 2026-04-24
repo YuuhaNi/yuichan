@@ -1,0 +1,22 @@
+標準ライブラリを使う
+
+search = 入力 lst に対し {
+
+search = 入力 lst に対し {
+  # リストの各要素の頻度をカウント
+  freq_map = {}
+  lst の各要素 x に対し {
+    freq_map[x] = (freq_map.get(x, 0) + 1)
+  }
+  
+  # 条件を満たす最大の整数を探す
+  result = -1
+  freq_map の各キー num に対し {
+    # num の頻度が num 以上であるかチェック
+    もし freq_map[num] >= num かつ num > result ならば {
+      result = num
+    }
+  }
+  
+  result を返す
+}

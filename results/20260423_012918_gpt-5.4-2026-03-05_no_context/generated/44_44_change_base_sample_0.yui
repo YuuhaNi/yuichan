@@ -1,0 +1,9 @@
+標準ライブラリを使う
+
+change_base = 入力 x, base に対し {
+    もし x < base ならば {
+        戻る x を文字列に変換
+    } でなければ {
+        戻る change_base(x / base, base) と (x % base) を文字列に変換 を連結
+    }
+}

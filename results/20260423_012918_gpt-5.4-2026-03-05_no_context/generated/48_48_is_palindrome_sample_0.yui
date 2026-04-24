@@ -1,0 +1,5 @@
+標準ライブラリを使う
+
+is_palindrome = 入力 text に対し {
+    text == text[::-1]
+}

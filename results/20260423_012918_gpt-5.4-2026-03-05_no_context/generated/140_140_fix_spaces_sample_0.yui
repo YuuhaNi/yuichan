@@ -1,0 +1,5 @@
+標準ライブラリを使う
+
+fix_spaces = 入力 text に対し {
+    text.replace(/ {2,}/g, "-").replace(/ /g, "_")
+}

@@ -1,0 +1,22 @@
+標準ライブラリを使う
+
+find_closest_elements = 入力 numbers に対し {
+    sorted_numbers = numbers を ソートする
+    closest_a = sorted_numbers[0]
+    closest_b = sorted_numbers[1]
+    min_diff = closest_b - closest_a
+
+    1 から (sorted_numbers の長さ - 2) まで 繰り返す i について {
+        a = sorted_numbers[i]
+        b = sorted_numbers[i + 1]
+        diff = b - a
+
+        もし diff < min_diff なら {
+            min_diff = diff
+            closest_a = a
+            closest_b = b
+        }
+    }
+
+    (closest_a, closest_b)
+}

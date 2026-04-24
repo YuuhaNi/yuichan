@@ -1,0 +1,41 @@
+標準ライブラリを使う
+
+is_sorted = 入力 lst に対し {
+    もし 長さ(lst) <= 1 なら {
+        true を返す
+    }
+
+    counts = 連想配列()
+    prev = lst[0]
+    counts[prev] = 1
+
+    i = 1
+    反復 i < 長さ(lst) の間 {
+        current = lst[i]
+
+        もし current < prev なら {
+            false を返す
+        }
+
+        もし current == prev なら {
+            counts[current] = counts[current] + 1
+            もし counts[current] > 2 なら {
+                false を返す
+            }
+        } 違えば {
+            もし current が counts に含まれない なら {
+                counts[current] = 1
+            } 違えば {
+                counts[current] = counts[current] + 1
+                もし counts[current] > 2 なら {
+                    false を返す
+                }
+            }
+        }
+
+        prev = current
+        i = i + 1
+    }
+
+    true を返す
+}

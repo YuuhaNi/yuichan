@@ -1,0 +1,10 @@
+標準ライブラリを使う
+
+even_odd_count = 入力 num に対し {
+    s = num を文字列に変換する
+    chars = s を文字の並びに変換する
+    digits = chars から、各 c について c が "-" でないものを抽出する
+    even = digits から、各 c について (c を整数に変換する) % 2 == 0 であるものの個数
+    odd = digits の個数 - even
+    (even, odd)
+}

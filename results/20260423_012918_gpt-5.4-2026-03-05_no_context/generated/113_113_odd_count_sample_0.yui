@@ -1,0 +1,13 @@
+標準ライブラリを使う
+
+odd_count = 入力 lst に対し {
+    lst の各要素を x にして写像 {
+        odds = x の各文字を c にして数える {
+            c == "1" または c == "3" または c == "5" または c == "7" または c == "9"
+        }
+        n = odds を文字列に変換
+        "the number of odd elements in the string i of the input." の各文字を ch にして連結 {
+            もし ch == "i" なら n そうでなければ ch
+        }
+    }
+}

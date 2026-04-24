@@ -1,0 +1,9 @@
+標準ライブラリを使う
+
+below_threshold = 入力 l, t に対し {
+    もし 全て(l, 入力 x に対し x <= t) なら {
+        True
+    } でなければ {
+        False
+    }
+}

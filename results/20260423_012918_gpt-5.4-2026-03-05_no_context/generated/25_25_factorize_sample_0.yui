@@ -1,0 +1,18 @@
+標準ライブラリを使う
+
+factorize = 入力 n に対し {
+  mutable x = n
+  mutable d = 2
+  mutable result = []
+
+  x > 1 の間 {
+    x % d == 0 なら {
+      result に d を追加
+      x = x / d
+    } そうでなければ {
+      d = d + 1
+    }
+  }
+
+  result
+}

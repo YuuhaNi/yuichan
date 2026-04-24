@@ -1,0 +1,70 @@
+標準ライブラリを使う
+# 数字文字のコード ('0'=48, '9'=57) と整数の相互変換
+# "0" は文字列、0 は整数。型が違うので混同しない
+
+# 文字コード (48..57) → 整数 0..9
+digit_code_to_int=入力cに対し{
+   差(c,48)が答え
+}
+
+# 整数 0..9 → 文字コード (48..57)
+int_to_digit_code=入力nに対し{
+   和(n,48)が答え
+}
+
+# 正の数字列 "123" を整数 123 に変換
+parse_int=入力sに対し{
+   n=sの大きさ
+   result=0
+   i=0
+   n回くり返す{
+      d=差(s[i],48)
+      result=和(積(result,10),d)
+      iを増やす
+   }
+   resultが答え
+}
+
+# 0..9 の1桁整数か判定
+is_single_digit=入力nに対し{
+   result=0
+   もしnが0以上ならば{
+      もしnが9以下ならば{
+         result=1
+      }
+   }
+   resultが答え
+}
+
+# テスト: 文字コード ↔ 整数
+>>> digit_code_to_int(48)
+0
+>>> digit_code_to_int(57)
+9
+>>> int_to_digit_code(0)
+48
+>>> int_to_digit_code(5)
+53
+# テスト: 数字列を整数に
+>>> parse_int("0")
+0
+>>> parse_int("7")
+7
+>>> parse_int("42")
+42
+>>> parse_int("123")
+123
+# テスト: 組み込み関数
+>>> 整数化("42")
+42
+>>> 文字列化(42)
+"42"
+# テスト: 1桁判定は 1/0 で返す
+>>> is_single_digit(0)
+1
+>>> is_single_digit(9)
+1
+>>> is_single_digit(10)
+0
+>>> is_single_digit(-1)
+0

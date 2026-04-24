@@ -1,0 +1,14 @@
+標準ライブラリを使う
+
+hex_key = 入力 num に対し {
+    prime_digits = 「2357BD」
+    count = 0
+
+    num の各文字を c として繰り返す {
+        もし prime_digits が c を含む なら {
+            count = count + 1
+        }
+    }
+
+    count
+}

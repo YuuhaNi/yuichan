@@ -1,0 +1,13 @@
+標準ライブラリを使う
+
+special_factorial = 入力 n に対し {
+    total = 1
+    factorial = 1
+
+    1 から n まで繰り返す i について {
+        factorial = factorial * i
+        total = total * factorial
+    }
+
+    total を返す
+}

@@ -1,0 +1,29 @@
+標準ライブラリを使う
+
+words_in_sentence = 入力 sentence に対し {
+  words = sentence を " " で分割する
+  prime_words = []
+
+  words の各 word について {
+    length = word の長さ
+    もし length が 2 未満 なら {
+      続ける
+    }
+
+    is_prime = 真
+    i = 2
+    i について length の平方根 以下 の間 {
+      もし length を i で割った余り が 0 なら {
+        is_prime = 偽
+        抜ける
+      }
+      i = i + 1
+    }
+
+    もし is_prime なら {
+      prime_words に word を追加する
+    }
+  }
+
+  prime_words を " " で連結して返す
+}

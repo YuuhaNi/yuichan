@@ -1,0 +1,16 @@
+標準ライブラリを使う
+
+smallest_change = 入力 arr に対し {
+    変数 n = arr の長さ
+    変数 count = 0
+    
+    変数 i = 0
+    i < n / 2 の間 {
+        もし arr[i] != arr[n - 1 - i] ならば {
+            count = count + 1
+        }
+        i = i + 1
+    }
+    
+    count を返す
+}

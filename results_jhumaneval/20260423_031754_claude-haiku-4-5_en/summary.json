@@ -1,0 +1,15 @@
+{
+  "model": "claude-haiku-4-5",
+  "lang": "en",
+  "prompt_style": "instruction",
+  "k": 1,
+  "temperature": 0.2,
+  "total_problems": 164,
+  "passed_problems": 154,
+  "pass_at_k": 93.9,
+  "confidence_interval_95": {
+    "lower": 89.14,
+    "upper": 96.65
+  },
+  "timestamp": "20260423_031754"
+}

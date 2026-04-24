@@ -1,0 +1,26 @@
+標準ライブラリを使う
+
+by_length = 入力 arr に対し {
+
+by_length = 入力 arr に対し {
+  // 1から9までの数値のみをフィルタリング
+  filtered = arr.filter(x => x >= 1 && x <= 9)
+  
+  // 空配列の場合は空配列を返す
+  もし filtered.length == 0 ならば {
+    return []
+  }
+  
+  // ソート
+  sorted = filtered.sort((a, b) => a - b)
+  
+  // 逆順
+  reversed = sorted.reverse()
+  
+  // 数字を名前に置き換える
+  names = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"]
+  
+  result = reversed.map(num => names[num - 1])
+  
+  return result
+}

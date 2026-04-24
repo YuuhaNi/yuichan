@@ -1,0 +1,7 @@
+標準ライブラリを使う
+
+mean_absolute_deviation = 入力 numbers に対し {
+    mean = numbers の平均
+    deviations = numbers を { x => (x - mean) の絶対値 } で写像
+    deviations の平均
+}

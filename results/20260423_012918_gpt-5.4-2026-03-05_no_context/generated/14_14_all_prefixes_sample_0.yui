@@ -1,0 +1,5 @@
+標準ライブラリを使う
+
+all_prefixes = 入力 string に対し {
+  1からstringの長さまでの範囲をそれぞれ i => stringの0からiまでの部分文字列 で写像する
+}

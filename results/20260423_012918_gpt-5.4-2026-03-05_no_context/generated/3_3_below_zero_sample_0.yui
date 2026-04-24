@@ -1,0 +1,12 @@
+標準ライブラリを使う
+
+below_zero = 入力 operations に対し {
+    balance = 0
+    operations の各要素 op について {
+        balance = balance + op
+        もし balance <= 0 なら {
+            True を返す
+        }
+    }
+    False を返す
+}

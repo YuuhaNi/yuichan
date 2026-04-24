@@ -1,0 +1,20 @@
+標準ライブラリを使う
+
+simplify = 入力 x, n に対し {
+    # xを分子と分母に分割
+    x_parts = x.分割("/")
+    x_numerator = 整数(x_parts[0])
+    x_denominator = 整数(x_parts[1])
+    
+    # nを分子と分母に分割
+    n_parts = n.分割("/")
+    n_numerator = 整数(n_parts[0])
+    n_denominator = 整数(n_parts[1])
+    
+    # x * n = (x_numerator * n_numerator) / (x_denominator * n_denominator)
+    result_numerator = x_numerator * n_numerator
+    result_denominator = x_denominator * n_denominator
+    
+    # 結果が整数かどうかを判定（分子が分母で割り切れるか）
+    戻す result_numerator % result_denominator == 0
+}

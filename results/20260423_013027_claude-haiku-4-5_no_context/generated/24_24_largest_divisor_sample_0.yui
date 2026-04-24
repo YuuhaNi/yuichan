@@ -1,0 +1,14 @@
+標準ライブラリを使う
+
+largest_divisor = 入力 n に対し {
+
+largest_divisor = 入力 n に対し {
+  i = 2
+  繰り返す (i * i <= n) {
+    n が i で割り切れるなら {
+      n / i を返す
+    }
+    i = i + 1
+  }
+  1 を返す
+}

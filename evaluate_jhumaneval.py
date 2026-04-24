@@ -314,14 +314,36 @@ def extract_python_code(generated_text: str) -> str:
     lines = text.split('\n')
     code_lines = []
     in_code = False
+    in_docstring = False
+    docstring_delim = None
 
     for line in lines:
         stripped = line.strip()
-        if stripped.startswith('def ') or stripped.startswith('class ') or stripped.startswith('import ') or stripped.startswith('from '):
+        if not in_code and (stripped.startswith('def ') or stripped.startswith('class ') or stripped.startswith('import ') or stripped.startswith('from ')):
             in_code = True
         if in_code:
-            # 説明文と思われる行で終了
-            if stripped and not stripped.startswith('#') and not any(c in stripped for c in '(){}[].:=+-*/<>'):
+            # docstring 内や関数本体のインデント中は打ち切らない
+            is_indented = line.startswith((' ', '\t'))
+
+            # docstring の開閉を追跡（同一行で開閉するケースも考慮）
+            if not in_docstring:
+                for delim in ('"""', "'''"):
+                    if delim in stripped:
+                        # 行内で開閉が完結しているか
+                        count = stripped.count(delim)
+                        if count >= 2:
+                            pass  # 開閉完了、状態維持
+                        else:
+                            in_docstring = True
+                            docstring_delim = delim
+                        break
+            else:
+                if docstring_delim and docstring_delim in stripped:
+                    in_docstring = False
+                    docstring_delim = None
+
+            # 説明文と思われる行で終了（ただし docstring 内やインデントされた行は除外）
+            if not in_docstring and not is_indented and stripped and not stripped.startswith('#') and not any(c in stripped for c in '(){}[].:=+-*/<>'):
                 if len(stripped) > 50 and ' ' in stripped:
                     break
             code_lines.append(line)

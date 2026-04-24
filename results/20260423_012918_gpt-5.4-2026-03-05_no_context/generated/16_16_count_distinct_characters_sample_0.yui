@@ -1,0 +1,5 @@
+標準ライブラリを使う
+
+count_distinct_characters = 入力 string に対し {
+    string を小文字化する を文字列に変換する を文字の配列にする を集合に変換する の要素数
+}

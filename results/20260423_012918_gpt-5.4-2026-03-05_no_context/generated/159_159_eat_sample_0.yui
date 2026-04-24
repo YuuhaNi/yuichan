@@ -1,0 +1,9 @@
+標準ライブラリを使う
+
+eat = 入力 number, need, remaining に対し {
+  もし remaining >= need なら {
+    [number + need, remaining - need]
+  } それ以外なら {
+    [number + remaining, 0]
+  }
+}

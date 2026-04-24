@@ -1,0 +1,38 @@
+標準ライブラリを使う
+
+file_name_check = 入力 file_name に対し {
+    もし file_name の "." の出現回数 != 1 なら {
+        "No" を返す
+    }
+
+    parts = file_name を "." で分割
+    name = parts[0]
+    ext = parts[1]
+
+    もし name == "" なら {
+        "No" を返す
+    }
+
+    first = name[0]
+    もし !((first >= "a" かつ first <= "z") または (first >= "A" かつ first <= "Z")) なら {
+        "No" を返す
+    }
+
+    もし !(ext == "txt" または ext == "exe" または ext == "dll") なら {
+        "No" を返す
+    }
+
+    digit_count = 0
+    各文字 c について file_name を反復 {
+        もし c >= "0" かつ c <= "9" なら {
+            digit_count = digit_count + 1
+            もし digit_count >= 3 なら {
+                "No" を返す
+            }
+        } 違えば {
+            digit_count = 0
+        }
+    }
+
+    "Yes" を返す
+}

@@ -1,0 +1,34 @@
+標準ライブラリを使う
+
+order_by_points = 入力 nums に対し {
+
+order_by_points = 入力 nums に対し {
+  // 各要素に元のインデックスを付与
+  indexed_nums = nums.map((num, index) => {num, index})
+  
+  // 桁の合計を計算する補助関数
+  digit_sum = 入力 n に対し {
+    n = n.abs()
+    合計 = 0
+    n > 0 の間 {
+      合計 = 合計 + (n % 10)
+      n = n / 10
+    }
+    合計
+  }
+  
+  // ソート：桁の合計で昇順、同じ場合は元のインデックスで昇順
+  sorted = indexed_nums.sort((a, b) => {
+    sum_a = digit_sum(a.num)
+    sum_b = digit_sum(b.num)
+    
+    sum_a != sum_b の場合 {
+      sum_a - sum_b
+    } そうでなければ {
+      a.index - b.index
+    }
+  })
+  
+  // 元の値のみを抽出して返す
+  sorted.map(item => item.num)
+}

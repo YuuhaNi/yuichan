@@ -1,0 +1,5 @@
+標準ライブラリを使う
+
+sum_product = 入力 numbers に対し {
+  (numbersの合計, numbersを1から掛け合わせる)
+}

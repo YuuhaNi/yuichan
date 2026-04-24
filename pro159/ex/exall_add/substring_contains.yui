@@ -1,0 +1,89 @@
+標準ライブラリを使う
+# 部分文字列の検索は文字コード配列を自前で走査する
+# 文字列は文字コード (int) の配列として扱える
+
+# 位置 pos から t が s と一致するか (1/0)
+match_at=入力s,t,posに対し{
+   ns=sの大きさ
+   nt=tの大きさ
+   result=1
+   # t が s の末尾を超えるなら不一致
+   もし和(pos,nt)がnsより大きいならば{
+      result=0
+   }
+   そうでなければ{
+      i=0
+      nt回くり返す{
+         a=s[和(pos,i)]
+         b=t[i]
+         もしaがb以外ならば{
+            result=0
+         }
+         iを増やす
+      }
+   }
+   resultが答え
+}
+
+# s の中で t が最初に現れる位置 (なければ -1)
+index_of=入力s,tに対し{
+   ns=sの大きさ
+   nt=tの大きさ
+   result=-1
+   # 走査範囲は 0..ns-nt
+   limit=和(差(ns,nt),1)
+   もしlimitが0より大きいならば{
+      p=0
+      found=0
+      limit回くり返す{
+         もしfoundが0ならば{
+            もしmatch_at(s,t,p)が1ならば{
+               result=p
+               found=1
+            }
+         }
+         pを増やす
+      }
+   }
+   resultが答え
+}
+
+# t を含むかどうかを 1/0 で返す
+contains=入力s,tに対し{
+   pos=index_of(s,t)
+   result=0
+   もしposが0以上ならば{
+      result=1
+   }
+   resultが答え
+}
+
+# テスト: 位置付き一致
+>>> match_at("banana","nan",2)
+1
+>>> match_at("banana","nan",0)
+0
+>>> match_at("banana","ana",1)
+1
+>>> match_at("banana","ana",3)
+1
+# テスト: 最初の出現位置
+>>> index_of("banana","nan")
+2
+>>> index_of("banana","ana")
+1
+>>> index_of("banana","xyz")
+-1
+>>> index_of("hello","h")
+0
+>>> index_of("hello","")
+0
+# テスト: 含有判定は 1/0 で返す
+>>> contains("banana","nan")
+1
+>>> contains("banana","xyz")
+0
+>>> contains("hello","ell")
+1
+>>> contains("abc","")
+1

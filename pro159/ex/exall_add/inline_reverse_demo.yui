@@ -1,0 +1,79 @@
+標準ライブラリを使う
+# 配列の反転も関数の中に直接書く
+# 新しい配列を作り、後ろから読んで順に追加する
+
+# 末尾から k 個を逆順で返す
+last_k_reversed=入力arr,kに対し{
+   n=arrの大きさ
+   result=[]
+   i=0
+   # idx は n-1, n-2, ... と減っていく
+   k回くり返す{
+      idx=差(差(n,1),i)
+      resultにarr[idx]を追加する
+      iを増やす
+   }
+   resultが答え
+}
+
+# 配列を丸ごと逆順
+reverse_arr=入力arrに対し{
+   n=arrの大きさ
+   result=[]
+   i=0
+   n回くり返す{
+      idx=差(差(n,1),i)
+      resultにarr[idx]を追加する
+      iを増やす
+   }
+   resultが答え
+}
+
+# 回文 (前から読んでも後ろから読んでも同じ) かどうかを 1/0 で返す
+is_palindromic_array=入力arrに対し{
+   n=arrの大きさ
+   # まず反転
+   rev=[]
+   i=0
+   n回くり返す{
+      idx=差(差(n,1),i)
+      revにarr[idx]を追加する
+      iを増やす
+   }
+   # 各要素を比較
+   result=1
+   i=0
+   n回くり返す{
+      もしarr[i]がrev[i]以外ならば{
+         result=0
+      }
+      iを増やす
+   }
+   resultが答え
+}
+
+# テスト: 末尾 k 個を逆順
+>>> last_k_reversed([1,2,3,4,5],3)
+[5,4,3]
+>>> last_k_reversed([1,2,3,4,5],1)
+[5]
+>>> last_k_reversed([10,20],2)
+[20,10]
+# テスト: 反転
+>>> reverse_arr([1,2,3,4,5])
+[5,4,3,2,1]
+>>> reverse_arr([])
+[]
+>>> reverse_arr([42])
+[42]
+# テスト: 回文判定は 1/0 で返す
+>>> is_palindromic_array([1,2,3,2,1])
+1
+>>> is_palindromic_array([1,2,2,1])
+1
+>>> is_palindromic_array([1,2,3])
+0
+>>> is_palindromic_array([])
+1
+>>> is_palindromic_array([7])
+1

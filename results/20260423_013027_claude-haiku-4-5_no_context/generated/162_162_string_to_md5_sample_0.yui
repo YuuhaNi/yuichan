@@ -1,0 +1,15 @@
+標準ライブラリを使う
+
+string_to_md5 = 入力 text に対し {
+  もし text が空文字列 ならば {
+    None を返す
+  }
+  
+  text の md5 ハッシュを返す
+}
+標準ライブラリを使う
+
+string_to_md5 = 入力 text に対し {
+  もし text == "" ならば None を返す
+  md5(text) を返す
+}

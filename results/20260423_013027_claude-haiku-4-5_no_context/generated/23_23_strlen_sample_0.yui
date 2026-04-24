@@ -1,0 +1,8 @@
+標準ライブラリを使う
+
+strlen = 入力 string に対し {
+
+strlen = 入力 string に対し {
+  string.length
+}
+strlen = 入力 string に対し string.length

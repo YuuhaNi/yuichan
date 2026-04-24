@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+sorted_list_sum = 入力 lst に対し {
+
+sorted_list_sum = 入力 lst に対し {
+    # 偶数長の文字列のみをフィルタリング
+    even_strings = lst.filter(s => s.length % 2 == 0)
+    
+    # 長さで昇順、同じ長さならアルファベット順でソート
+    result = even_strings.sort((a, b) => {
+        長さの比較 = a.length - b.length
+        もし 長さの比較 != 0 ならば {
+            長さの比較を返す
+        }
+        # 同じ長さの場合はアルファベット順
+        a.compare(b)を返す
+    })
+    
+    resultを返す
+}
+list_sort(["aa", "a", "aaa"]) => ["aa"]
+  - "a"（長さ1）と"aaa"（長さ3）は奇数長なので削除
+  - "aa"（長さ2）のみ残る
+
+list_sort(["ab", "a", "aaa", "cd"]) => ["ab", "cd"]
+  - "a"（長さ1）と"aaa"（長さ3）は奇数長なので削除
+  - "ab"と"cd"は両方長さ2で、アルファベット順に並ぶ

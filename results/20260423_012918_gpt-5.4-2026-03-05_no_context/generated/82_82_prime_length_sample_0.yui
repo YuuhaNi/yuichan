@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+prime_length = 入力 string に対し {
+    length = stringの長さ
+    もし length < 2 なら {
+        False
+    } でなければ {
+        i = 2
+        while i * i <= length {
+            もし length % i == 0 なら {
+                False を返す
+            }
+            i = i + 1
+        }
+        True
+    }
+}

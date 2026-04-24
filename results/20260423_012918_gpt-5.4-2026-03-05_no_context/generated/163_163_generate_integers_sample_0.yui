@@ -1,0 +1,24 @@
+標準ライブラリを使う
+
+generate_integers = 入力 a, b に対し {
+    start = 最小値(a, b)
+    end = 最大値(a, b)
+
+    もし start % 2 != 0 なら {
+        start = start + 1
+    }
+
+    result = []
+    i = start
+
+    反復 (i <= end) の間 {
+        もし i != 2 かつ i != 4 かつ i != 6 かつ i != 8 なら {
+            もし i % 2 == 0 なら {
+                result に i を追加
+            }
+        }
+        i = i + 2
+    }
+
+    result
+}

@@ -1,0 +1,30 @@
+標準ライブラリを使う
+
+encode = 入力 message に対し {
+    変数 result = ""
+
+    message の各文字 c について {
+        変数 ch = c
+
+        もし ch == "a" なら { ch = "y" }
+        違えば もし ch == "e" なら { ch = "c" }
+        違えば もし ch == "i" なら { ch = "g" }
+        違えば もし ch == "o" なら { ch = "m" }
+        違えば もし ch == "u" なら { ch = "s" }
+        違えば もし ch == "A" なら { ch = "y" }
+        違えば もし ch == "E" なら { ch = "c" }
+        違えば もし ch == "I" なら { ch = "g" }
+        違えば もし ch == "O" なら { ch = "m" }
+        違えば もし ch == "U" なら { ch = "s" }
+
+        もし ch >= "a" かつ ch <= "z" なら {
+            ch = ch を大文字にする
+        } 違えば もし ch >= "A" かつ ch <= "Z" なら {
+            ch = ch を小文字にする
+        }
+
+        result = result + ch
+    }
+
+    result を返す
+}

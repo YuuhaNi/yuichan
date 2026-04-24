@@ -1,0 +1,33 @@
+標準ライブラリを使う
+
+histogram = 入力 test に対し {
+  もし test == "" なら {
+    戻す {}
+  }
+
+  words = test を " " で分割
+  counts = {}
+  maxCount = 0
+
+  words の各要素 w について {
+    current = counts[w]
+    もし current == 未定義 なら {
+      current = 0
+    }
+    current = current + 1
+    counts[w] = current
+
+    もし current > maxCount なら {
+      maxCount = current
+    }
+  }
+
+  result = {}
+  counts の各キー k と値 v について {
+    もし v == maxCount なら {
+      result[k] = v
+    }
+  }
+
+  戻す result
+}

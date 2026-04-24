@@ -1,0 +1,16 @@
+標準ライブラリを使う
+
+sort_array = 入力 arr に対し {
+  arr を ソート(
+    比較関数: (a, b) => {
+      a_count = a の2進数表現における1の個数
+      b_count = b の2進数表現における1の個数
+      
+      もし a_count != b_count ならば {
+        戻す a_count - b_count
+      }
+      
+      戻す a - b
+    }
+  )
+}

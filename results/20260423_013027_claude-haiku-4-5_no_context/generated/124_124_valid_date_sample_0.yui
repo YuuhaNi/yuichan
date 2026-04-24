@@ -1,0 +1,49 @@
+標準ライブラリを使う
+
+valid_date = 入力 date に対し {
+    # 1. 空文字列チェック
+    もし date が空 ならば {
+        False を返す
+    }
+    
+    # 2. フォーマットチェック (mm-dd-yyyy)
+    parts = date を "-" で分割
+    もし parts の長さ ≠ 3 ならば {
+        False を返す
+    }
+    
+    month_str = parts[0]
+    day_str = parts[1]
+    year_str = parts[2]
+    
+    # 数値への変換と妥当性チェック
+    もし month_str が数値でない または day_str が数値でない または year_str が数値でない ならば {
+        False を返す
+    }
+    
+    month = month_str を整数に変換
+    day = day_str を整数に変換
+    year = year_str を整数に変換
+    
+    # 3. 月の範囲チェック (1-12)
+    もし month < 1 または month > 12 ならば {
+        False を返す
+    }
+    
+    # 4. 日数の範囲チェック
+    もし month が [1, 3, 5, 7, 8, 10, 12] に含まれる ならば {
+        もし day < 1 または day > 31 ならば {
+            False を返す
+        }
+    } そうでなく もし month が [4, 6, 9, 11] に含まれる ならば {
+        もし day < 1 または day > 30 ならば {
+            False を返す
+        }
+    } そうでなく もし month = 2 ならば {
+        もし day < 1 または day > 29 ならば {
+            False を返す
+        }
+    }
+    
+    True を返す
+}

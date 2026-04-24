@@ -1,0 +1,26 @@
+標準ライブラリを使う
+
+count_up_to = 入力 n に対し {
+  もし n <= 2 なら {
+    []
+  } でなければ {
+    result = []
+    i = 2
+    の間 i < n のあいだ {
+      is_prime = 真
+      j = 2
+      の間 j * j <= i のあいだ {
+        もし i % j == 0 なら {
+          is_prime = 偽
+          抜ける
+        }
+        j = j + 1
+      }
+      もし is_prime なら {
+        result = result に i を追加したもの
+      }
+      i = i + 1
+    }
+    result
+  }
+}

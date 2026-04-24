@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+parse_nested_parens = 入力 paren_string に対し {
+
+parse_nested_parens = 入力 paren_string に対し {
+  グループ = paren_string を " " で分割
+  結果 = []
+  
+  グループ の各要素 group に対し {
+    最大深さ = 0
+    現在深さ = 0
+    
+    group の各文字 char に対し {
+      char が "(" の場合 {
+        現在深さ = 現在深さ + 1
+        最大深さ = max(最大深さ, 現在深さ)
+      }
+      char が ")" の場合 {
+        現在深さ = 現在深さ - 1
+      }
+    }
+    
+    結果 に 最大深さ を追加
+  }
+  
+  結果 を返す
+}

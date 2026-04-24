@@ -1,0 +1,9 @@
+標準ライブラリを使う
+
+make_palindrome = 入力 string に対し {
+    もし string が 文字列反転(string) と等しければ {
+        真
+    } でなければ {
+        偽
+    }
+}

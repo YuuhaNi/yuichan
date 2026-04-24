@@ -1,0 +1,16 @@
+標準ライブラリを使う
+
+correct_bracketing = 入力 brackets に対し {
+    count = 0
+    brackets の各文字を c として繰り返す {
+        もし c == "(" なら {
+            count = count + 1
+        } 違えば {
+            count = count - 1
+            もし count < 0 なら {
+                False を返す
+            }
+        }
+    }
+    count == 0 を返す
+}

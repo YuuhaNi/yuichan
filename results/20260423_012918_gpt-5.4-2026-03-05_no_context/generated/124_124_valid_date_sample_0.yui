@@ -1,0 +1,49 @@
+標準ライブラリを使う
+
+valid_date = 入力 date に対し {
+    もし date == "" なら {
+        False を返す
+    }
+
+    parts = date を "-" で分割する
+    もし parts の長さ != 3 なら {
+        False を返す
+    }
+
+    month_str = parts[0]
+    day_str = parts[1]
+    year_str = parts[2]
+
+    もし month_str の長さ != 2 または day_str の長さ != 2 または year_str の長さ != 4 なら {
+        False を返す
+    }
+
+    もし month_str が数字のみでない または day_str が数字のみでない または year_str が数字のみでない なら {
+        False を返す
+    }
+
+    month = month_str を整数にする
+    day = day_str を整数にする
+
+    もし month < 1 または month > 12 なら {
+        False を返す
+    }
+
+    もし month == 1 または month == 3 または month == 5 または month == 7 または month == 8 または month == 10 または month == 12 なら {
+        もし day < 1 または day > 31 なら {
+            False を返す
+        }
+    } そうでなくもし month == 4 または month == 6 または month == 9 または month == 11 なら {
+        もし day < 1 または day > 30 なら {
+            False を返す
+        }
+    } そうでなくもし month == 2 なら {
+        もし day < 1 または day > 29 なら {
+            False を返す
+        }
+    } そうでなければ {
+        False を返す
+    }
+
+    True を返す
+}

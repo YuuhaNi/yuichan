@@ -1,0 +1,13 @@
+標準ライブラリを使う
+
+circular_shift = 入力 x, shift に対し {
+    文字列 s = x を文字列に変換
+    整数 n = s の長さ
+    
+    もし shift > n ならば {
+        返す s を反転
+    }
+    
+    整数 実効shift = shift を n で割った余り
+    返す s の後ろから実効shift 文字 + s の最初から (n - 実効shift) 文字
+}

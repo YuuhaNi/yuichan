@@ -1,0 +1,33 @@
+標準ライブラリを使う
+
+int_to_mini_roman = 入力 number に対し {
+    mutable n = number
+    mutable result = ""
+
+    pairs = [
+        [1000, "m"],
+        [900, "cm"],
+        [500, "d"],
+        [400, "cd"],
+        [100, "c"],
+        [90, "xc"],
+        [50, "l"],
+        [40, "xl"],
+        [10, "x"],
+        [9, "ix"],
+        [5, "v"],
+        [4, "iv"],
+        [1, "i"]
+    ]
+
+    pairs をそれぞれ 入力 pair に対し {
+        value = pair[0]
+        roman = pair[1]
+        n / value 回 {
+            result = result + roman
+            n = n - value
+        }
+    }
+
+    result
+}

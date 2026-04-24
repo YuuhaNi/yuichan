@@ -1,0 +1,68 @@
+標準ライブラリを使う
+
+vowels_count = 入力 s に対し {
+  もし s が "" なら { 0 }
+  違えば {
+    文字列長 = s の長さ
+    index = 0
+    count = 0
+
+    その間 (index < 文字列長) {
+      ch = s[index]
+      もし (ch == "a") または (ch == "e") または (ch == "i") または (ch == "o") または (ch == "u") なら {
+        count = count + 1
+      }
+      index = index + 1
+    }
+
+    count
+  }
+}
+
+テスト "empty string" {
+  チェック 等しい(0, vowels_count(""))
+}
+
+テスト "single vowel" {
+  チェック 等しい(1, vowels_count("a"))
+}
+
+テスト "single consonant" {
+  チェック 等しい(0, vowels_count("b"))
+}
+
+テスト "multiple vowels" {
+  チェック 等しい(5, vowels_count("aeiou"))
+}
+
+テスト "mixed letters" {
+  チェック 等しい(2, vowels_count("hello"))
+}
+
+テスト "no vowels" {
+  チェック 等しい(0, vowels_count("rhythm"))
+}
+
+テスト "repeated vowels" {
+  チェック 等しい(4, vowels_count("queue"))
+}
+
+テスト "uppercase ignored" {
+  チェック 等しい(0, vowels_count("AEIOU"))
+}
+
+テスト "mixed case" {
+  チェック 等しい(1, vowels_count("Apple"))
+}
+
+テスト "sentence with spaces" {
+  チェック 等しい(3, vowels_count("a b c e"))
+}
+
+テスト "vowels with symbols" {
+  チェック 等しい(2, vowels_count("h3llo!"))
+}
+
+テスト "long word" {
+  チェック 等しい(4, vowels_count("beautiful"))
+}

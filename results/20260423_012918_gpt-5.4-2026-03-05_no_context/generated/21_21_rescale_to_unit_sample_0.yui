@@ -1,0 +1,8 @@
+標準ライブラリを使う
+
+rescale_to_unit = 入力 numbers に対し {
+    min_val = numbersの最小値
+    max_val = numbersの最大値
+    range = max_val - min_val
+    numbersの各要素を入力 x に対し (x - min_val) / range に変換したもの
+}

@@ -1,0 +1,21 @@
+標準ライブラリを使う
+
+how_many_times = 入力 string, substring に対し {
+    もし substring == "" なら {
+        0
+    } 違えば {
+        count = 0
+        i = 0
+        substring_length = substring の長さ
+        string_length = string の長さ
+
+        string_length - substring_length 以上の間 {
+            もし string の部分文字列(i, i + substring_length) == substring なら {
+                count = count + 1
+            }
+            i = i + 1
+        }
+
+        count
+    }
+}

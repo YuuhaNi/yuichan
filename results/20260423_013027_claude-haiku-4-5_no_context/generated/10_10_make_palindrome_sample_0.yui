@@ -1,0 +1,6 @@
+標準ライブラリを使う
+
+make_palindrome = 入力 string に対し {
+    反転 = string を逆順にする
+    string == 反転 を返す
+}

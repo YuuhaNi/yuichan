@@ -1,0 +1,21 @@
+標準ライブラリを使う
+
+how_many_times = 入力 string, substring に対し {
+
+how_many_times = 入力 string, substring に対し {
+  もし substring が空なら {
+    0 を返す
+  }
+  
+  変数 count = 0
+  変数 i = 0
+  
+  繰り返す i < string の長さ - substring の長さ + 1 の間 {
+    もし string の i から substring の長さ 分 が substring と等しいなら {
+      count = count + 1
+    }
+    i = i + 1
+  }
+  
+  count を返す
+}

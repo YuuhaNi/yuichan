@@ -1,0 +1,8 @@
+標準ライブラリを使う
+
+fruit_distribution = 入力 s, n に対し {
+    parts = sを" "で分割
+    apples = parts[0]を整数に変換
+    oranges = parts[3]を整数に変換
+    戻り値 n - apples - oranges
+}

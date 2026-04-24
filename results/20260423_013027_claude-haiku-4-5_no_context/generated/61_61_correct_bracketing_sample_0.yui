@@ -1,0 +1,22 @@
+標準ライブラリを使う
+
+correct_bracketing = 入力 brackets に対し {
+
+correct_bracketing = 入力 brackets に対し {
+    count = 0
+    
+    brackets の各文字 char に対し {
+        char が "(" の場合 {
+            count = count + 1
+        }
+        char が ")" の場合 {
+            count = count - 1
+        }
+        
+        count < 0 の場合 {
+            False を返す
+        }
+    }
+    
+    count == 0 を返す
+}

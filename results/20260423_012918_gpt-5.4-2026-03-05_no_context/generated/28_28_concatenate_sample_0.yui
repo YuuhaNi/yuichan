@@ -1,0 +1,5 @@
+標準ライブラリを使う
+
+concatenate = 入力 strings に対し {
+    strings の各要素を連結する
+}

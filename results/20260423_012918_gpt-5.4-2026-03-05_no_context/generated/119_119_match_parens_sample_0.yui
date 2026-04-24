@@ -1,0 +1,31 @@
+標準ライブラリを使う
+
+match_parens = 入力 lst に対し {
+  もし 長さ(lst) != 2 なら {
+    戻る "No"
+  }
+
+  s1 = lst[0]
+  s2 = lst[1]
+
+  check_good = 入力 s に対し {
+    bal = 0
+    各 ch を s について {
+      もし ch == "(" なら {
+        bal = bal + 1
+      } 違えば {
+        bal = bal - 1
+      }
+      もし bal < 0 なら {
+        戻る 偽
+      }
+    }
+    戻る bal == 0
+  }
+
+  もし check_good(s1 + s2) または check_good(s2 + s1) なら {
+    戻る "Yes"
+  } 違えば {
+    戻る "No"
+  }
+}

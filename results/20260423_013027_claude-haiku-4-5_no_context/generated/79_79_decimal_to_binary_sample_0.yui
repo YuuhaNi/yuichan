@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+decimal_to_binary = 入力 decimal に対し {
+    binary_string = ""
+    
+    もし decimal == 0 ならば {
+        戻す "db0db"
+    }
+    
+    繰り返す decimal > 0 の間 {
+        remainder = decimal % 2
+        binary_string = 文字列(remainder) + binary_string
+        decimal = decimal / 2
+    }
+    
+    戻す "db" + binary_string + "db"
+}

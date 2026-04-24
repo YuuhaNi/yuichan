@@ -1,0 +1,12 @@
+標準ライブラリを使う
+
+do_algebra = 入力 operator, operand に対し {
+  式 = operand[0]を文字列に変換
+  
+  i = 0から operator の長さ - 1 まで {
+    式 = 式 + operator[i] + operand[i + 1]を文字列に変換
+  }
+  
+  結果 = 式を評価
+  結果を返す
+}

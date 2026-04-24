@@ -1,0 +1,11 @@
+標準ライブラリを使う
+
+reverse_delete = 入力 s, c に対し {
+    filtered = ""
+    s の各文字 ch について {
+        もし !(c が ch を含む) なら {
+            filtered = filtered + ch
+        }
+    }
+    戻る (filtered, filtered == filtered を反転)
+}

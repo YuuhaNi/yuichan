@@ -1,0 +1,13 @@
+標準ライブラリを使う
+
+double_the_difference = 入力 lst に対し {
+
+double_the_difference = 入力 lst に対し {
+  合計 = 0
+  各 num を lst で {
+    もし num > 0 かつ num が整数 かつ num % 2 == 1 なら {
+      合計 = 合計 + (num * num)
+    }
+  }
+  合計を返す
+}

@@ -1,0 +1,13 @@
+標準ライブラリを使う
+
+is_simple_power = 入力 x, n に対し {
+  もし x == 1 なら {
+    true
+  } 違えば もし n == 1 または n == 0 なら {
+    false
+  } 違えば もし x % n != 0 なら {
+    false
+  } 違えば {
+    is_simple_power(x / n, n)
+  }
+}

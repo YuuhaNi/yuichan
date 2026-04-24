@@ -1,0 +1,7 @@
+標準ライブラリを使う
+
+maximum = 入力 arr, k に対し {
+  sorted = arr を ソートする
+  n = arr の 長さ
+  sorted の [n - k から n まで] を返す
+}

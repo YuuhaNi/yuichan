@@ -1,0 +1,44 @@
+標準ライブラリを使う
+
+intersection = 入力 interval1, interval2 に対し {
+  start1 = interval1[0]
+  end1 = interval1[1]
+  start2 = interval2[0]
+  end2 = interval2[1]
+
+  left = 最大(start1, start2)
+  right = 最小(end1, end2)
+
+  もし left > right なら {
+    "NO"
+  } それ以外なら {
+    length = right - left
+
+    もし length < 2 なら {
+      "NO"
+    } それ以外なら {
+      isPrime = 入力 n に対し {
+        もし n < 2 なら {
+          false
+        } それ以外なら {
+          i = 2
+          prime = true
+          繰り返し i * i <= n の間 {
+            もし n % i == 0 なら {
+              prime = false
+              抜ける
+            }
+            i = i + 1
+          }
+          prime
+        }
+      }
+
+      もし isPrime(length) なら {
+        "YES"
+      } それ以外なら {
+        "NO"
+      }
+    }
+  }
+}

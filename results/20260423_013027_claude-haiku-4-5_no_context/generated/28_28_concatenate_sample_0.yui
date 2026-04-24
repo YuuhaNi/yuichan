@@ -1,0 +1,10 @@
+標準ライブラリを使う
+
+concatenate = 入力 strings に対し {
+
+concatenate = 入力 strings に対し {
+  strings を "" で結合する
+}
+concatenate = 入力 strings に対し {
+  strings の各要素を連結して "" で繋ぐ
+}

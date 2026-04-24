@@ -1,0 +1,10 @@
+標準ライブラリを使う
+
+right_angle_triangle = 入力 a, b, c に対し {
+    sides = [a, b, c] を昇順に並べる
+    もし sides[0] <= 0 または sides[0] + sides[1] <= sides[2] なら {
+        False
+    } そうでなければ {
+        sides[0] * sides[0] + sides[1] * sides[1] == sides[2] * sides[2]
+    }
+}

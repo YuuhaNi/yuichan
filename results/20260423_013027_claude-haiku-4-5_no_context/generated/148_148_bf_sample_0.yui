@@ -1,0 +1,20 @@
+標準ライブラリを使う
+
+bf = 入力 planet1, planet2 に対し {
+    惑星リスト = ("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
+    
+    もし planet1 が惑星リスト に含まれない または planet2 が惑星リスト に含まれない ならば {
+        戻す ()
+    }
+    
+    index1 = 惑星リスト.位置(planet1)
+    index2 = 惑星リスト.位置(planet2)
+    
+    もし index1 > index2 ならば {
+        temp = index1
+        index1 = index2
+        index2 = temp
+    }
+    
+    戻す 惑星リスト[index1 + 1 : index2]
+}

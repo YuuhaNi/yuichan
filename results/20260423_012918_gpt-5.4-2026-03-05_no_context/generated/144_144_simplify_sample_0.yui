@@ -1,0 +1,16 @@
+標準ライブラリを使う
+
+simplify = 入力 x, n に対し {
+    xParts = x を "/" で分割
+    nParts = n を "/" で分割
+
+    xa = xParts の 0 番目 を整数に変換
+    xb = xParts の 1 番目 を整数に変換
+    na = nParts の 0 番目 を整数に変換
+    nb = nParts の 1 番目 を整数に変換
+
+    分子 = xa * na
+    分母 = xb * nb
+
+    return 分子 % 分母 == 0
+}

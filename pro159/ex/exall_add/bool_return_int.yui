@@ -1,0 +1,75 @@
+標準ライブラリを使う
+# 判定の結果は 1 (はい) か 0 (いいえ) の整数で返す
+# 複数の判定を組み合わせるときは、1/0 の整数として 積() (AND) や 和() (OR) を使う
+
+# 18歳以上 かつ 会員 なら参加可
+can_join=入力age,is_memberに対し{
+   result=0
+   もしageが18以上ならば{
+      もしis_memberが1ならば{
+         result=1
+      }
+   }
+   resultが答え
+}
+
+# 成人判定
+is_adult=入力ageに対し{
+   result=0
+   もしageが18以上ならば{
+      result=1
+   }
+   resultが答え
+}
+
+# フラグ (1/0) の確認
+is_member_flag=入力flagに対し{
+   result=0
+   もしflagが1ならば{
+      result=1
+   }
+   resultが答え
+}
+
+# AND: 積() の結果が 1 なら両方成立
+and_demo=入力age,flagに対し{
+   a=is_adult(age)
+   b=is_member_flag(flag)
+   積(a,b)が答え
+}
+
+# OR: 和() が 0 より大きければどちらか成立
+or_demo=入力age,flagに対し{
+   a=is_adult(age)
+   b=is_member_flag(flag)
+   result=0
+   もし和(a,b)が0より大きいならば{
+      result=1
+   }
+   resultが答え
+}
+
+# テスト: 基本の判定 (1/0 で返る)
+>>> can_join(25,1)
+1
+>>> can_join(25,0)
+0
+>>> can_join(16,1)
+0
+# テスト: AND 組み合わせ
+>>> and_demo(25,1)
+1
+>>> and_demo(16,1)
+0
+# テスト: OR 組み合わせ
+>>> or_demo(16,1)
+1
+>>> or_demo(16,0)
+0
+>>> or_demo(25,0)
+1
+# テスト: 境界値
+>>> is_adult(18)
+1
+>>> is_adult(17)
+0

@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+pluck = 入力 arr に対し {
+  もし arr の長さ == 0 なら {
+    []
+  } でなければ {
+    bestValue = null
+    bestIndex = null
+    i = 0
+
+    arr をそれぞれ v について {
+      もし v % 2 == 0 なら {
+        もし bestValue == null または v < bestValue なら {
+          bestValue = v
+          bestIndex = i
+        }
+      }
+      i = i + 1
+    }
+
+    もし bestValue == null なら {
+      []
+    } でなければ {
+      [bestValue, bestIndex]
+    }
+  }
+}

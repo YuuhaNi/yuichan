@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+bf = 入力 planet1, planet2 に対し {
+    惑星列 = ("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
+
+    i1 = 惑星列 で planet1 の位置
+    i2 = 惑星列 で planet2 の位置
+
+    もし i1 == -1 または i2 == -1 なら {
+        ()
+    } でなければ {
+        開始 = もし i1 < i2 なら { i1 + 1 } でなければ { i2 + 1 }
+        終了 = もし i1 < i2 なら { i2 } でなければ { i1 }
+
+        惑星列[開始..終了]
+    }
+}

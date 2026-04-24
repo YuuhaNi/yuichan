@@ -1,0 +1,5 @@
+標準ライブラリを使う
+
+truncate_number = 入力 number に対し {
+    number - floor(number)
+}

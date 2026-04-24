@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+longest = 入力 strings に対し {
+
+longest = 入力 strings に対し {
+  もし strings が空なら {
+    None を返す
+  }
+  
+  最長 = strings[0]
+  strings の各要素 s に対し {
+    もし s の長さ > 最長 の長さ なら {
+      最長 = s
+    }
+  }
+  最長 を返す
+}

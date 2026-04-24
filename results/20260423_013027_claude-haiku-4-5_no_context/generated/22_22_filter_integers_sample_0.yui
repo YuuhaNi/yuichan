@@ -1,0 +1,16 @@
+標準ライブラリを使う
+
+filter_integers = 入力 values に対し {
+
+filter_integers = 入力 values に対し {
+  values.filter(値 => 値.型 == 整数型)
+}
+filter_integers = 入力 values に対し {
+  結果 = []
+  values.各要素(値 => {
+    もし 値.型 == 整数型 ならば {
+      結果.追加(値)
+    }
+  })
+  結果を返す
+}

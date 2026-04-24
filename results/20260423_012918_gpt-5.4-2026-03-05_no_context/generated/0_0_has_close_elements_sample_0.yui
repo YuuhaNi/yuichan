@@ -1,0 +1,13 @@
+標準ライブラリを使う
+
+has_close_elements = 入力 numbers, threshold に対し {
+  numbersの長さ を n とする
+  0 から n - 1 まで繰り返す i について {
+    i + 1 から n - 1 まで繰り返す j について {
+      もし ((numbersのi番目 - numbersのj番目)の絶対値 < threshold) なら {
+        真 を返す
+      }
+    }
+  }
+  偽 を返す
+}

@@ -1,0 +1,8 @@
+標準ライブラリを使う
+
+sort_third = 入力 l に対し {
+    third = [l[i] | i ← [0..(長さ(l) - 1)], i % 3 == 0]
+    sorted_third = ソート(third)
+    j = 0
+    [もし i % 3 == 0 なら sorted_third[j ← j + 1; j - 1] それ以外なら l[i] | i ← [0..(長さ(l) - 1)]]
+}

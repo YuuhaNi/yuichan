@@ -1,0 +1,20 @@
+標準ライブラリを使う
+
+strange_sort_list = 入力 lst に対し {
+    sorted = lstをソートする
+    result = []
+    left = 0
+    right = sortedの長さ - 1
+
+    その間 (left <= right) {
+        result = resultに(sorted[left])を追加したもの
+        left = left + 1
+
+        もし (left <= right) なら {
+            result = resultに(sorted[right])を追加したもの
+            right = right - 1
+        }
+    }
+
+    result
+}

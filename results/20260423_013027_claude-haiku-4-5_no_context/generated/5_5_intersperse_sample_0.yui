@@ -1,0 +1,19 @@
+標準ライブラリを使う
+
+intersperse = 入力 numbers, delimeter に対し {
+
+intersperse = 入力 numbers, delimeter に対し {
+  もし numbers の長さ <= 1 なら {
+    numbers を返す
+  }
+  
+  結果 = []
+  i = 0 まで numbers の長さ - 1 未満 {
+    結果 に numbers[i] を追加
+    結果 に delimeter を追加
+    i = i + 1
+  }
+  結果 に numbers[numbers の長さ - 1] を追加
+  
+  結果 を返す
+}

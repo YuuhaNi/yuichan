@@ -1,0 +1,24 @@
+標準ライブラリを使う
+
+sort_numbers = 入力 numbers に対し {
+
+sort_numbers = 入力 numbers に対し {
+  数値マップ = {
+    'zero': 0,
+    'one': 1,
+    'two': 2,
+    'three': 3,
+    'four': 4,
+    'five': 5,
+    'six': 6,
+    'seven': 7,
+    'eight': 8,
+    'nine': 9
+  }
+  
+  単語リスト = numbers を空白で分割
+  
+  ソート済み = 単語リスト を (a, b) => 数値マップ[a] - 数値マップ[b] でソート
+  
+  ソート済み を空白で結合
+}

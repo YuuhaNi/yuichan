@@ -1,0 +1,22 @@
+標準ライブラリを使う
+
+split_words = 入力 txt に対し {
+
+split_words = 入力 txt に対し {
+  もし txt に " " が含まれる {
+    txt を " " で分割して返す
+  } そうでなく txt に "," が含まれる {
+    txt を "," で分割して返す
+  } そうでなく {
+    count = 0
+    txt の各文字 c に対し {
+      もし c が小文字 {
+        ord_value = ord(c) - ord('a')
+        もし ord_value が奇数 {
+          count = count + 1
+        }
+      }
+    }
+    count を返す
+  }
+}

@@ -1,0 +1,77 @@
+標準ライブラリを使う
+# 並べ替えが必要なときは関数の中にバブルソートを直接書く
+# (別ファイルの bubble_sort は呼び出し側には見えないため)
+
+# 得点配列から高い方 3 人の平均
+top3_average=入力scoresに対し{
+   n=scoresの大きさ
+   # コピーを作って降順に並べ替える
+   sorted=[]
+   i=0
+   n回くり返す{
+      sortedにscores[i]を追加する
+      iを増やす
+   }
+   # 二重ループで降順バブルソート
+   i=0
+   n回くり返す{
+      j=0
+      差(差(n,i),1)回くり返す{
+         a=sorted[j]
+         k=和(j,1)
+         b=sorted[k]
+         # 降順なので a < b なら交換
+         もしaがbより小さいならば{
+            sorted[j]=b
+            sorted[k]=a
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+   top=和(sorted[0],和(sorted[1],sorted[2]))
+   商(top,3)が答え
+}
+
+# 配列を昇順に並べ替えて中央の値を返す (n は奇数前提)
+median_of=入力arrに対し{
+   n=arrの大きさ
+   sorted=[]
+   i=0
+   n回くり返す{
+      sortedにarr[i]を追加する
+      iを増やす
+   }
+   i=0
+   n回くり返す{
+      j=0
+      差(差(n,i),1)回くり返す{
+         a=sorted[j]
+         k=和(j,1)
+         b=sorted[k]
+         もしaがbより大きいならば{
+            sorted[j]=b
+            sorted[k]=a
+         }
+         jを増やす
+      }
+      iを増やす
+   }
+   mid=商(n,2)
+   sorted[mid]が答え
+}
+
+# テスト: 上位3人平均
+>>> top3_average([50,60,70,80,90])
+80
+>>> top3_average([100,90,80,70,60,50])
+90
+>>> top3_average([10,20,30])
+20
+# テスト: 中央値
+>>> median_of([3,1,4,1,5,9,2,6,5])
+4
+>>> median_of([7])
+7
+>>> median_of([1,2,3])
+2

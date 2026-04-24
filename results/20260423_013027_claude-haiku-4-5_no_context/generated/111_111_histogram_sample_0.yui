@@ -1,0 +1,25 @@
+標準ライブラリを使う
+
+histogram = 入力 test に対し {
+
+histogram = 入力 test に対し {
+  もし test が空なら {}を返す
+  
+  words = test を空白で分割
+  counts = {}
+  
+  words の各 word に対し {
+    counts[word] = (counts[word] か 0) + 1
+  }
+  
+  max_count = counts の値の最大値
+  
+  result = {}
+  counts の各 (char, count) に対し {
+    もし count が max_count と等しいなら {
+      result[char] = count
+    }
+  }
+  
+  result を返す
+}

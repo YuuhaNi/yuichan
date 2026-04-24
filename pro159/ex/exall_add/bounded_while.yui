@@ -1,0 +1,92 @@
+標準ライブラリを使う
+# 終了回数が事前に分からないループは、十分大きい回数の N回くり返す の中で
+# 条件を満たしたら くり返しを抜ける で打ち切る
+
+# 1+2+...+k が初めて target 以上になる最小の k
+first_k_sum_over=入力targetに対し{
+   total=0
+   k=0
+   # 上限 100000 で暴走を防ぐ
+   100000回くり返す{
+      もしtotalがtarget以上ならば{
+         くり返しを抜ける
+      }
+      kを増やす
+      total=和(total,k)
+   }
+   kが答え
+}
+
+# コラッツ列で n が 1 に到達するまでのステップ数
+collatz_steps=入力nに対し{
+   steps=0
+   10000回くり返す{
+      もしnが1以下ならば{
+         くり返しを抜ける
+      }
+      もし剰余(n,2)が0ならば{
+         n=商(n,2)
+      }
+      そうでなければ{
+         n=和(積(n,3),1)
+      }
+      stepsを増やす
+   }
+   stepsが答え
+}
+
+# 整数平方根 (k*k <= n を満たす最大の k)
+isqrt=入力nに対し{
+   k=0
+   limit=和(n,1)
+   found=0
+   result=0
+   limit回くり返す{
+      もしfoundが0ならば{
+         sq=積(k,k)
+         もしsqがnより大きいならば{
+            result=差(k,1)
+            found=1
+         }
+      }
+      kを増やす
+   }
+   もしfoundが0ならば{
+      result=差(k,1)
+   }
+   resultが答え
+}
+
+# テスト: 合計が target を超える最小の k
+>>> first_k_sum_over(1)
+1
+>>> first_k_sum_over(3)
+2
+>>> first_k_sum_over(6)
+3
+>>> first_k_sum_over(10)
+4
+>>> first_k_sum_over(15)
+5
+# テスト: コラッツ
+>>> collatz_steps(1)
+0
+>>> collatz_steps(2)
+1
+>>> collatz_steps(3)
+7
+>>> collatz_steps(6)
+8
+# テスト: 整数平方根
+>>> isqrt(0)
+0
+>>> isqrt(1)
+1
+>>> isqrt(4)
+2
+>>> isqrt(10)
+3
+>>> isqrt(16)
+4
+>>> isqrt(99)
+9

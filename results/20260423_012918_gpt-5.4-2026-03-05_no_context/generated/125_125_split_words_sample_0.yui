@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+split_words = 入力 txt に対し {
+    もし txt.含む(" ") なら {
+        txt.分割(" ")
+    } そうでなくもし txt.含む(",") なら {
+        txt.分割(",")
+    } でなければ {
+        txt.文字列にする()
+           .文字たち()
+           .絞る(入力 c に対し {
+               "abcdefghijklmnopqrstuvwxyz".位置(c) >= 0 かつ
+               "abcdefghijklmnopqrstuvwxyz".位置(c) % 2 == 0
+           })
+           .長さ()
+    }
+}

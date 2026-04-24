@@ -1,0 +1,5 @@
+標準ライブラリを使う
+
+filter_by_substring = 入力 strings, substring に対し {
+  strings を絞り込み(s => s を含むか(substring))
+}

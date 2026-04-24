@@ -1,0 +1,11 @@
+標準ライブラリを使う
+
+rescale_to_unit = 入力 numbers に対し {
+
+rescale_to_unit = 入力 numbers に対し {
+  最小値 = numbers の最小値
+  最大値 = numbers の最大値
+  範囲 = 最大値 - 最小値
+  
+  numbers を各要素 n に対し (n - 最小値) / 範囲 に変換
+}

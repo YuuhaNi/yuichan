@@ -1,0 +1,27 @@
+標準ライブラリを使う
+
+move_one_ball = 入力 arr に対し {
+  もし arr の長さ == 0 なら {
+    True を返す
+  }
+
+  drops = 0
+
+  i = 0
+  の間、i < arr の長さ - 1 を繰り返す {
+    もし arr[i] > arr[i + 1] なら {
+      drops = drops + 1
+    }
+    i = i + 1
+  }
+
+  もし drops == 0 なら {
+    True を返す
+  }
+
+  もし drops == 1 かつ arr[arr の長さ - 1] < arr[0] なら {
+    True を返す
+  }
+
+  False を返す
+}

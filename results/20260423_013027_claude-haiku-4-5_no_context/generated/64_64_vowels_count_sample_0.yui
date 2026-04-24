@@ -1,0 +1,29 @@
+標準ライブラリを使う
+
+vowels_count = 入力 s に対し {
+    母音 = "aeiouAEIOU"
+    カウント = 0
+    s の各文字 c に対し {
+        c が母音に含まれるなら {
+            カウント = カウント + 1
+        }
+    }
+    カウント を返す
+}
+
+# テストケース
+テスト1 = vowels_count("Hello World")
+テスト2 = vowels_count("aeiou")
+テスト3 = vowels_count("AEIOU")
+テスト4 = vowels_count("bcdfg")
+テスト5 = vowels_count("")
+テスト6 = vowels_count("Programming")
+テスト7 = vowels_count("AaEeIiOoUu")
+
+出力(テスト1)  # 3
+出力(テスト2)  # 5
+出力(テスト3)  # 5
+出力(テスト4)  # 0
+出力(テスト5)  # 0
+出力(テスト6)  # 3
+出力(テスト7)  # 10

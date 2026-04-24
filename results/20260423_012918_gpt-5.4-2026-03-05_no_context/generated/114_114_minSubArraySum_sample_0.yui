@@ -1,0 +1,17 @@
+標準ライブラリを使う
+
+minSubArraySum = 入力 nums に対し {
+    もし nums の長さ == 0 なら {
+        0
+    } でなければ {
+        変数 current = nums[0]
+        変数 best = nums[0]
+
+        nums の 1 から nums の長さ - 1 まで反復 i について {
+            current = 標準ライブラリの最小(current + nums[i], nums[i])
+            best = 標準ライブラリの最小(best, current)
+        }
+
+        best
+    }
+}

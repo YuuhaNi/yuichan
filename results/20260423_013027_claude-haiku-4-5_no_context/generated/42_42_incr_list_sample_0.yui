@@ -1,0 +1,10 @@
+標準ライブラリを使う
+
+incr_list = 入力 l に対し {
+
+incr_list = 入力 l に対し {
+  l を map(要素 に対し { 要素 + 1 })
+}
+incr_list = 入力 l に対し {
+  l.map(x => x + 1)
+}

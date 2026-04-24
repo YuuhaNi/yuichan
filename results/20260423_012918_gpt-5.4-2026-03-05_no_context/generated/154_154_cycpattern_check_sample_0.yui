@@ -1,0 +1,20 @@
+標準ライブラリを使う
+
+cycpattern_check = 入力 a, b に対し {
+    もし b が "" なら {
+        True を返す
+    }
+
+    n = b の長さ
+    i = 0
+
+    i < n の間 {
+        rotated = (b の部分文字列 i から n) + (b の部分文字列 0 から i)
+        もし a が rotated を含む なら {
+            True を返す
+        }
+        i = i + 1
+    }
+
+    False を返す
+}

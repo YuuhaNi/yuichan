@@ -1,0 +1,23 @@
+標準ライブラリを使う
+
+triples_sum_to_zero = 入力 l に対し {
+
+triples_sum_to_zero = 入力 l に対し {
+  n = l の長さ
+  
+  もし n < 3 ならば {
+    False を返す
+  }
+  
+  i = 0 から n - 3 まで {
+    j = i + 1 から n - 2 まで {
+      k = j + 1 から n - 1 まで {
+        もし l[i] + l[j] + l[k] == 0 ならば {
+          True を返す
+        }
+      }
+    }
+  }
+  
+  False を返す
+}
