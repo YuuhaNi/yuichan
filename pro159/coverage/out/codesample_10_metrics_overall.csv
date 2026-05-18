@@ -1,0 +1,3 @@
+category,n_samples,n_features_total,n_features_used,coverage,total_occurrences,shannon_entropy,normalized_entropy,gini_simpson,effective_n
+syntax,10,39,39,1.0,726,2.7281955277747585,0.7446839418293804,0.9004166382077727,15.305244198998981
+stdlib,10,20,15,0.75,43,2.479942643463988,0.9157668651986661,0.8945375878853434,11.940579527928138
